@@ -1,0 +1,51 @@
+"use client";
+import HeroBgAbstract from "@/app/components/heroBgAbstract";
+import TrustedPill from "@/app/components/trustedPill";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_REVEL_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import CTAButton from "../components/common/ctaButton";
+
+function HeroSectionElement() {
+  const animationContainer = useRef(null);
+  useGSAP(
+    () => {
+      const elements = gsap.utils.toArray(".reveal");
+      gsap.from(elements, COMMON_REVEL_ANIMATION);
+    },
+    { scope: animationContainer },
+  );
+
+  return (
+    <div className="w-full h-full relative bg-white overflow-hidden">
+      <HeroBgAbstract />
+      <div
+        ref={animationContainer}
+        className="w-ful h-full relative z-20 flex flex-col items-center max-w-4xl mx-auto justify-center">
+        <TrustedPill className="reveal mb-14" />
+        <div className="flex flex-col items-center justify-center gap-2">
+          <h1 className="reveal font-inter text-6xl font-bold tracking-tight text-(--text-main-color)">
+            We Build <span className="font-playfair-display italic font-semibold">Scalable</span>
+          </h1>
+          <h1 className="reveal font-inter text-6xl font-bold tracking-tight text-(--text-main-color)">
+            Digital Products & <span className="font-playfair-display italic font-semibold">AI Systems</span>
+          </h1>
+        </div>
+        <p className="reveal font-inter text-lg max-w-xl font-medium text-pretty text-center pt-4 text-(--text-main-color)">
+          UI/UX Design, SaaS Development & AI Automation to help startups and businesses build, launch and scale faster.
+        </p>
+        <div className="w-full flex items-center justify-center gap-6 max-w-xl mx-auto pt-10">
+          <CTAButton btnStyle="CTA_PRIMARY" className="reveal">
+            Get Your Product Built
+          </CTAButton>
+          <CTAButton btnStyle="CTA_SECONDARY" className="reveal">
+            Book a Call
+          </CTAButton>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default HeroSectionElement;
