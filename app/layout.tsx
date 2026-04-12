@@ -1,7 +1,7 @@
 import NavBarComponent from "@/app/components/navbar/navBar";
 import "@/app/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Instrument_Sans, Playfair_Display } from "next/font/google";
 import SmoothScrollProvider from "./components/smoothScrollProvider";
 import { RootLayoutInterface } from "./utils/interface/common.interface";
 
@@ -13,6 +13,10 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutInterface) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} h-full antialiased`}>
       <body className="w-full h-full">
         <SmoothScrollProvider>
           <NavBarComponent />
