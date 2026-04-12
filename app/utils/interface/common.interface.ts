@@ -16,3 +16,22 @@ export interface ButtonEleInterface extends ButtonHTMLAttributes<HTMLButtonEleme
 export interface TrustedPillInterface {
   className?: string;
 }
+
+export type ANIMATION_DIRECTION = "TOP_LEFT" | "TOP_RIGHT" | "BOTTOM_LEFT" | "BOTTOM_RIGHT";
+
+export interface AboutUsCardsDataArrayInterface {
+  direction: ANIMATION_DIRECTION;
+  icon: React.ReactNode;
+  count: number;
+  label: string;
+}
+export interface AboutUsCardInterface {
+  data: AboutUsCardsDataArrayInterface;
+
+  className?: string;
+}
+
+export interface RollingCounterNumberInterface {
+  className?: string;
+  count: number;
+}
