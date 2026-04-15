@@ -9,7 +9,7 @@ function SmoothScrollProvider({ children }: SmoothScrollProviderInterface) {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 0.95 });
+    const lenis = new Lenis({ duration: 2 });
 
     // Use requestAnimationFrame to continuously update the scroll
     function raf(time: number) {

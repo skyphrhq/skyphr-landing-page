@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { ButtonHTMLAttributes } from "react";
 
 export interface RootLayoutInterface {
@@ -34,4 +35,17 @@ export interface AboutUsCardInterface {
 export interface RollingCounterNumberInterface {
   className?: string;
   count: number;
+}
+export interface OurProcessCardInterface {
+  imageOptions: {
+    imagePath: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+    className?: string;
+    loading?: "lazy" | "eager";
+  };
+  title: string;
+  description: string;
+  gridStyle: "col-span-3" | "col-span-2" | "col-span-1";
 }
