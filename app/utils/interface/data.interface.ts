@@ -43,3 +43,5 @@ export interface OurServiceCardDataArrayInterface {
     darkColor: string;
   };
 }
+
+

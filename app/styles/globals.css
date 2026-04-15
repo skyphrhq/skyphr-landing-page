@@ -34,7 +34,7 @@
 }
 @media (min-width: 1200px) {
   .skyphr-container {
-    width: clamp(calc(100% - 100px), calc(100% - 15vw), calc(100% - 300px));
+    width: clamp(calc(100% - 150px), calc(100% - 15vw), calc(100% - 300px));
   }
 }
 
