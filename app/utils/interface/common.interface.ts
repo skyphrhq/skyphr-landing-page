@@ -47,5 +47,43 @@ export interface OurProcessCardInterface {
   };
   title: string;
   description: string;
-  gridStyle: "col-span-3" | "col-span-2" | "col-span-1";
+  gridStyle?: "col-span-3" | "col-span-2" | "col-span-1";
+  label?: string;
+}
+
+export interface BlogCardInterface {
+  imageOptions: {
+    imagePath: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+    className?: string;
+    loading?: "lazy" | "eager";
+  };
+  title: string;
+  description: string;
+  label?: string;
+  date?: string;
+}
+
+export interface FaqCommonCardInterface {
+  question: string;
+  answer: (className?: string) => React.ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
+  index: number;
+}
+
+export interface ClientTestimonialCardInterface {
+  imageOptions: {
+    imagePath: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+    className?: string;
+    loading?: "lazy" | "eager";
+  };
+  quote: string;
+  name: string;
+  role: string;
 }
