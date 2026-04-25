@@ -19,8 +19,8 @@ function PageNotFound() {
             priority
             loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            placeholder="blur"
-            blurDataURL=""
+            // placeholder="blur"
+            // blurDataURL=""
           />
         </div>
         <div className="w-full h-fit z-10 flex flex-col items-center justify-center relative text-center px-4">
