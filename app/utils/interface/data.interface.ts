@@ -26,7 +26,7 @@ export interface OurServiceCardDataArrayInterface {
   title: string;
   description: string;
   className?: string;
-  imageOprions: {
+  imageOptions: {
     imagePath: StaticImageData;
     width: number;
     height: number;
@@ -43,8 +43,3 @@ export interface OurServiceCardDataArrayInterface {
     darkColor: string;
   };
 }
-
-
-
-
-

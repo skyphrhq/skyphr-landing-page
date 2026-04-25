@@ -26,13 +26,13 @@ function OurServiceCardComponent({ data }: { data: OurServiceCardDataArrayInterf
         <div className="w-fit h-fit" style={{ background: data?.style?.darkColor }}>
           <div className="w-full h-full p-10">
             <Image
-              src={data?.imageOprions.imagePath}
-              alt={data?.imageOprions.alt}
-              width={data?.imageOprions.width}
-              height={data?.imageOprions.height}
-              className={twMerge("rounded-lg", data?.imageOprions.className)}
-              loading={data?.imageOprions?.loading ? data?.imageOprions?.loading : "lazy"}
-              style={{ minWidth: `${data?.imageOprions?.width}px`, minHeight: `${data?.imageOprions?.height}px` }}
+              src={data?.imageOptions.imagePath}
+              alt={data?.imageOptions.alt}
+              width={data?.imageOptions.width}
+              height={data?.imageOptions.height}
+              className={twMerge("rounded-lg", data?.imageOptions.className)}
+              loading={data?.imageOptions?.loading ? data?.imageOptions?.loading : "lazy"}
+              style={{ minWidth: `${data?.imageOptions?.width}px`, minHeight: `${data?.imageOptions?.height}px` }}
             />
           </div>
         </div>

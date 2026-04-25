@@ -45,3 +45,22 @@
     width: 100%;
   }
 }
+
+.text-white-color:-webkit-autofill,
+.text-white-color:-webkit-autofill:hover,
+.text-white-color:-webkit-autofill:focus,
+.text-white-color:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--root-white-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.text-black-color:-webkit-autofill,
+.text-black-color:-webkit-autofill:hover,
+.text-black-color:-webkit-autofill:focus,
+.text-black-color:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--root-black-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

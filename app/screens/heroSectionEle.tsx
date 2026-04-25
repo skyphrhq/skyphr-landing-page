@@ -18,7 +18,7 @@ function HeroSectionElement() {
   );
 
   return (
-    <div className="w-full h-fit relative bg-white overflow-hidden py-46">
+    <div className="w-full h-fit relative bg-white overflow-hidden pt-55 pb-35">
       <HeroBgAbstract />
       <div
         ref={animationContainer}

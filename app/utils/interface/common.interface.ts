@@ -12,6 +12,7 @@ export interface SmoothScrollProviderInterface {
 export interface ButtonEleInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY";
+  href?: string;
 }
 
 export interface TrustedPillInterface {
@@ -86,4 +87,36 @@ export interface ClientTestimonialCardInterface {
   quote: string;
   name: string;
   role: string;
+}
+
+export interface OurValueCardInterface {
+  id: number;
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  bgColor: string;
+  color: string;
+}
+
+export interface OurTeamMembersDataArrayInterface {
+  name: string;
+  role: string;
+  description: string;
+  social: {
+    platform: string;
+    icon: React.ElementType;
+    url: string;
+    title: string;
+    ariaLabel: string;
+    target?: string;
+    rel?: string;
+  }[];
+  imageOptions: {
+    imagePath: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+    className?: string;
+    loading?: "lazy" | "eager";
+  };
 }

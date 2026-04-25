@@ -117,13 +117,14 @@ function ContactUsSection() {
             <div className="contact-card bg-(--root-white-color) rounded-2xl border border-(--border-color) p-8 h-full relative">
               <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField placeholder="First Name" />
-                  <InputField placeholder="Last Name" />
+                  <InputField className="text-black-color" placeholder="First Name" />
+                  <InputField className="text-black-color" placeholder="Last Name" />
                 </div>
 
-                <InputField type="email" placeholder="Email Address" />
+                <InputField type="email" className="text-black-color" placeholder="Email Address" />
 
                 <InputField
+                  className="text-black-color"
                   type="select"
                   placeholder="India"
                   options={[
@@ -133,12 +134,14 @@ function ContactUsSection() {
                   ]}
                 />
 
-                <InputField isTelWithCode={true} placeholder="Contact Number" />
+                <InputField className="text-black-color" isTelWithCode={true} placeholder="Contact Number" />
 
-                <InputField type="textarea" placeholder="Type your message here..." />
+                <InputField className="text-black-color" type="textarea" placeholder="Type your message here..." />
 
                 <div className="mt-2 relative">
-                  <div className="w-full rounded-xl bg-gray-50 border border-gray-100 p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-gray-100 transition-colors border-dashed">
+                  <label
+                    htmlFor="uploadFile"
+                    className="w-full rounded-xl bg-gray-50 border border-gray-100 p-6 flex flex-col items-start justify-start text-center cursor-pointer hover:bg-gray-100 transition-colors border-dashed">
                     <div className="flex items-center gap-2 mb-1">
                       <svg
                         className="w-5 h-5 text-gray-400 rotate-45"
@@ -156,10 +159,22 @@ function ContactUsSection() {
                     <span className="text-xs text-gray-400 italic">
                       Supported files: .pdf, .docx, .odt, .ods, .ppt/x, .xls/x, .rtf, .txt
                     </span>
-                  </div>
+                  </label>
+                  <input
+                    id="uploadFile"
+                    className="hidden"
+                    type="file"
+                    accept=".pdf,.doc,.docx,.odt,.ods,.ppt,.pptx,.xls,.xlsx,.rtf,.txt"
+                  />
                 </div>
 
-                <CtaServiceButton label="Start a Conversation" href="" showArrow={false} theme="black" className="w-full text-center" />
+                <CtaServiceButton
+                  label="Start a Conversation"
+                  href=""
+                  showArrow={false}
+                  theme="black"
+                  className="w-full text-center"
+                />
               </form>
             </div>
           </div>

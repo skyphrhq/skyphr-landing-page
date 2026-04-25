@@ -1,5 +1,6 @@
 import QuoteIcon from "@/app/assets/quote.svg";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 import { ClientTestimonialCardInterface } from "../utils/interface/common.interface";
 
 function TestimonialCard({ data }: { data: ClientTestimonialCardInterface }) {
@@ -14,7 +15,7 @@ function TestimonialCard({ data }: { data: ClientTestimonialCardInterface }) {
               width={data.imageOptions.width}
               height={data.imageOptions.height}
               loading={data.imageOptions.loading || "lazy"}
-              className={data.imageOptions.className}
+              className={twMerge("w-full h-full object-cover object-top", data.imageOptions.className)}
             />
           </div>
           <div className="w-full relative">

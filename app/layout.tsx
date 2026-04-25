@@ -1,9 +1,10 @@
 import NavBarComponent from "@/app/components/navbar/navBar";
 import "@/app/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter, Instrument_Sans, Playfair_Display } from "next/font/google";
+import { Instrument_Sans, Inter, Playfair_Display } from "next/font/google";
 import SmoothScrollProvider from "./components/smoothScrollProvider";
 import { RootLayoutInterface } from "./utils/interface/common.interface";
+import FooterScreen from "./screens/footerScreen";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -25,11 +26,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutInterface) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} h-full antialiased`}>
-      <body className="w-full h-full">
+    <html
+      lang="en"
+      className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} antialiased`}>
+      <body className="w-full">
         <SmoothScrollProvider>
           <NavBarComponent />
           {children}
+          <div className="w-full overflow-hidden">
+            <FooterScreen />
+          </div>
         </SmoothScrollProvider>
       </body>
     </html>
