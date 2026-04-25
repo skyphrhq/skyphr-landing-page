@@ -60,7 +60,9 @@ function NavBarComponent() {
       ref={navBarContainer}
       className="w-full max-w-full top-0 left-1/2 -translate-x-1/2 fixed z-9999 bg-transparent border-b border-b-(--border-color) overflow-hidden">
       <div className="w-full skyphr-container flex items-center justify-between h-auto px-10 py-5 backdrop-blur-[1px] relative z-2 navbar-inner-wrapper">
-        <Image width={180} height={40} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+        <Link href="/" className="cursor-pointer">
+          <Image width={180} height={40} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+        </Link>
         <div className="w-fit">
           <ul className="w-fit flex items-center justify-center gap-3">
             {NAVBAR_LINKS_DATA?.map((item) => {
@@ -76,7 +78,7 @@ function NavBarComponent() {
             })}
           </ul>
         </div>
-        <CTAButton btnStyle="CTA_SECONDARY" className="reveal">
+        <CTAButton btnStyle="CTA_SECONDARY" className="reveal" href="/">
           Book a Call
         </CTAButton>
       </div>

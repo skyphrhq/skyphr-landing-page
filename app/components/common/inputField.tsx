@@ -15,7 +15,7 @@ export const InputField: React.FC<
   InputFieldProps & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>
 > = ({ type = "text", placeholder, className = "", options = [], isTelWithCode = false, ...props }) => {
   const baseClasses =
-    "w-full border-b border-gray-200 outline-none py-3 text-base text-(--text-main-color) bg-transparent placeholder-(--placeholder-color) focus:border-gray-500 transition-colors font-medium font-inter";
+    "w-full border-b border-gray-200 outline-none py-3 text-base text-white-color bg-transparent placeholder-(--placeholder-color) focus:border-gray-500 transition-colors font-medium font-inter";
 
   if (type === "textarea") {
     return (

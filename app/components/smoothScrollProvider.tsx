@@ -2,23 +2,51 @@
 
 import { gsap, ScrollTrigger } from "@/app/lib/gsap";
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { SmoothScrollProviderInterface } from "../utils/interface/common.interface";
 
 function SmoothScrollProvider({ children }: SmoothScrollProviderInterface) {
-  gsap.registerPlugin(ScrollTrigger);
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 2, lerp: 0.1 });
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Use requestAnimationFrame to continuously update the scroll
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    const lenis = new Lenis();
+    lenisRef.current = lenis;
 
-    requestAnimationFrame(raf);
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const update = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+
+    gsap.ticker.add(update);
+
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(update);
+    };
   }, []);
+
+  useEffect(() => {
+    if (!lenisRef.current) return;
+
+    const lenis = lenisRef.current;
+
+    // Reset scroll instantly
+    lenis.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
+
+    // Force resize + recalculation AFTER DOM settles
+    requestAnimationFrame(() => {
+      lenis.resize(); // 🔥 important
+      ScrollTrigger.refresh(true); // force full refresh
+    });
+  }, [pathname]);
 
   return <>{children}</>;
 }

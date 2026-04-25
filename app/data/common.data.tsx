@@ -1,3 +1,4 @@
+import CEOImage from "@/app/assets/dummy-testimonial.png";
 import MockupFive from "@/app/assets/mockup-five.png";
 import MockupFour from "@/app/assets/mockup-four.png";
 import MockupOne from "@/app/assets/mockup-one.png";
@@ -11,11 +12,16 @@ import {
   ServiceDataInterface,
 } from "@/app/utils/interface/data.interface";
 import { FaBriefcase, FaClock } from "react-icons/fa";
+import { FiLayers, FiLinkedin, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 import { IoMdTrendingUp } from "react-icons/io";
 import { MdPeopleAlt } from "react-icons/md";
-import { AboutUsCardsDataArrayInterface } from "../utils/interface/common.interface";
+import {
+  AboutUsCardsDataArrayInterface,
+  OurTeamMembersDataArrayInterface,
+  OurValueCardInterface,
+} from "../utils/interface/common.interface";
 
-export const FETURED_WORK_DATA: FeaturedWorkInterface[] = [
+export const FEATURED_WORK_DATA: FeaturedWorkInterface[] = [
   {
     id: "mockup-one",
     imagePath: MockupOne,
@@ -110,7 +116,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       baseColor: "#AC9BFF",
       darkColor: "#8674ED",
     },
-    imageOprions: {
+    imageOptions: {
       imagePath: UiUxDesign,
       width: 300,
       height: 300,
@@ -130,7 +136,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       baseColor: "#FF767A",
       darkColor: "#FF5B60",
     },
-    imageOprions: {
+    imageOptions: {
       imagePath: WebAppDevelopment,
       width: 300,
       height: 300,
@@ -150,11 +156,76 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       baseColor: "#B8C56F",
       darkColor: "#9FAD4A",
     },
-    imageOprions: {
+    imageOptions: {
       imagePath: WebAppDevelopment,
       width: 300,
       height: 300,
       alt: "Web App Development",
+    },
+  },
+];
+
+export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description:
+      "We simplify complex ideas into intuitive digital experiences. Every product we design focuses on usability, clear structure, and meaningful interactions.",
+    icon: FiLayers,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description:
+      "Our systems are designed to grow with your business. We build scalable architectures that support long-term performance and evolving product needs.",
+    icon: FiTrendingUp,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description:
+      "Speed and efficiency are at the core of our development process. We ensure every product is optimized for fast load times and smooth user experiences.",
+    icon: FiZap,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "User-Centered Approach",
+    description:
+      "We design with real users in mind. Every decision is guided by user behavior, ensuring products are intuitive, engaging, and impactful.",
+    icon: FiUsers,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
+  {
+    name: "Varun Patel",
+    role: "Founder & CEO",
+    description:
+      "Focused on building scalable SaaS products, AI systems, and modern web applications with performance, usability, and real-world impact at the core.",
+    social: [
+      {
+        platform: "LinkedIn",
+        icon: FiLinkedin,
+        url: "https://linkedin.com/in/your-profile",
+        title: "LinkedIn",
+        ariaLabel: "LinkedIn",
+        target: "_blank",
+        rel: "noopener noreferrer",
+      },
+    ],
+    imageOptions: {
+      imagePath: CEOImage,
+      width: 450,
+      height: 635,
+      alt: "Ui Ux Design",
     },
   },
 ];

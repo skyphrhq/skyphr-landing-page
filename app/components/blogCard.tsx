@@ -28,7 +28,7 @@ function BlogCard({ imageOptions, title, description, label, date }: BlogCardInt
           loading={imageOptions.loading || "lazy"}
           className={twMerge("w-full h-full object-cover aspect-video min-h-65 max-h-65", imageOptions.className)}
         />
-        <span className="block w-full h-full bg-black/20 backdrop-blur-[2px] absolute top-0 left-0 opacity-0 group-hover/blog-card:opacity-90 transition-all duration-300"></span>
+        <span className="block w-full h-full bg-black/20 backdrop-blur-[2px] absolute top-0 left-0 opacity-0 group-hover/blog-card:opacity-90 transition-all duration-300 rounded-xl"></span>
 
         {label && (
           <span className="absolute top-4 left-4 text-xs font-medium font-inter px-3 py-1.5 rounded-full bg-(--root-white-color) backdrop-blur-sm text-(--root-black-color) border border-(--root-black-color)">
