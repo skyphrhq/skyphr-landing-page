@@ -1,6 +1,6 @@
+import { OurServiceCardDataArrayInterface } from "@/app/utils/interface/data.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import { OurServiceCardDataArrayInterface } from "../utils/interface/data.interface";
 import CtaServiceButton from "./common/ctaServiceBtn";
 
 function OurServiceCardComponent({ data }: { data: OurServiceCardDataArrayInterface }) {

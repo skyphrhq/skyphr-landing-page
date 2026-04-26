@@ -1,9 +1,9 @@
 "use client";
+import OurTeamIntroCard from "@/app/components/ourTeamIntroCard";
+import { OUR_TEAM_MEMBERS_DATA } from "@/app/data/common.data";
 import { gsap } from "@/app/lib/gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import OurTeamIntroCard from "../components/ourTeamIntroCard";
-import { OUR_TEAM_MEMBERS_DATA } from "../data/common.data";
 
 function OurTeamSection() {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -4,11 +4,11 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
 import { gsap } from "@/app/lib/gsap";
+import TestimonialCard from "@/app/components/testimonialCard";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import TestimonialCard from "../components/testimonialCard";
-import { CLIENT_TESTIMONIAL_DATA } from "../data/testimonial.data";
 
 function ClientTestimonial() {
   const [sliderRef, instanceRef] = useKeenSlider({

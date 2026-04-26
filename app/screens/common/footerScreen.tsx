@@ -1,7 +1,7 @@
+import SkyphrWhiteLogo from "@/app/assets/skyphr-logo-transparent-white.png";
+import { SOCIAL_LINKS } from "@/app/data/socilaLinks.data";
 import Image from "next/image";
 import Link from "next/link";
-import SkyphrWhiteLogo from "../assets/skyphr-logo-transparent-white.png";
-import { SOCIAL_LINKS } from "../data/socilaLinks.data";
 
 function FooterScreen() {
   return (
@@ -84,11 +84,15 @@ function FooterScreen() {
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4 mt-8">
           <p className="text-(--placeholder-color) text-sm">© {new Date().getFullYear()}. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-(--placeholder-color) text-sm hover:text-(--root-white-color) transition-colors">
+            <Link
+              href="#"
+              className="text-(--placeholder-color) text-sm hover:text-(--root-white-color) transition-colors">
               Privacy Policy
             </Link>
             <span className="w-px h-5 bg-(--placeholder-color)"></span>
-            <Link href="#" className="text-(--placeholder-color) text-sm hover:text-(--root-white-color) transition-colors">
+            <Link
+              href="#"
+              className="text-(--placeholder-color) text-sm hover:text-(--root-white-color) transition-colors">
               Terms of Service
             </Link>
           </div>

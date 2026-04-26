@@ -1,14 +1,14 @@
+import { HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
+import AboutSection from "@/app/screens/aboutSection";
+import ClientTestimonial from "@/app/screens/common/clientTestimonial";
+import FeaturedWorks from "@/app/screens/common/featuredWorks";
+import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
+import OurInsightsSection from "@/app/screens/common/ourInsightsSection";
+import OurProcessSection from "@/app/screens/common/ourProcessSection";
+import OurServiceSection from "@/app/screens/common/ourServiceSection";
+import ContactUsSection from "@/app/screens/contactUsSection";
 import HeroSectionElement from "@/app/screens/heroSectionEle";
-import OurProcessSection from "@/app/screens/ourProcessSection";
-import { HOME_PAGE_DATA } from "../data/pageData/home.data";
-import AboutSection from "../screens/aboutSection";
-import ClientTestimonial from "../screens/clientTestimonial";
-import ContactUsSection from "../screens/contactUsSection";
-import FeaturedWorks from "../screens/featuredWorks";
-import FrequentlyAskedQuestions from "../screens/frequentlyAskedQuestions";
-import OurInsightsSection from "../screens/ourInsightsSection";
-import OurServiceSection from "../screens/ourServiceSection";
-import ReadyToScaleSection from "../screens/readyToScaleSection";
+import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 
 export default function Home() {
   return (

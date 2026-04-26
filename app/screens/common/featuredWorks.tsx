@@ -1,10 +1,10 @@
 "use client";
 import { gsap } from "@/app/lib/gsap";
+import { FEATURED_WORK_DATA } from "@/app/data/common.data";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { FEATURED_WORK_DATA } from "../data/common.data";
 
 function FeaturedWorks({
   showShadow = true,
@@ -67,8 +67,8 @@ function FeaturedWorks({
           </h2>
 
           <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
-            A selection of digital products and experiences we’ve designed and built focused on performance,
-            usability, and real-world impact.
+            A selection of digital products and experiences we’ve designed and built focused on performance, usability,
+            and real-world impact.
           </p>
         </div>
       )}

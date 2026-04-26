@@ -2,7 +2,7 @@ import ContinuousGrowth from "@/app/assets/continuous-growth.png";
 import DeliveryAndHandoff from "@/app/assets/delivery-handoff.png";
 import KickOffDiscovery from "@/app/assets/kickoff-discovery.png";
 import StrategyAndPlanning from "@/app/assets/strategy-planning.png";
-import { OurProcessCardInterface } from "../utils/interface/common.interface";
+import { OurProcessCardInterface } from "@/app/utils/interface/common.interface";
 
 export const OUR_PROCESS_DATA: OurProcessCardInterface[] = [
   {

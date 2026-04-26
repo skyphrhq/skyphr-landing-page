@@ -1,5 +1,5 @@
 import DummyUserImg from "@/app/assets/dummy-testimonial.png";
-import { ClientTestimonialCardInterface } from "../utils/interface/common.interface";
+import { ClientTestimonialCardInterface } from "@/app/utils/interface/common.interface";
 
 export const CLIENT_TESTIMONIAL_DATA: ClientTestimonialCardInterface[] = [
   {

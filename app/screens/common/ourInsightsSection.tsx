@@ -1,9 +1,9 @@
 "use client";
 import { gsap } from "@/app/lib/gsap";
+import BlogCard from "@/app/components/blogCard";
+import { INSIGHTS_DATA } from "@/app/data/insights.data";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import BlogCard from "../components/blogCard";
-import { INSIGHTS_DATA } from "../data/insights.data";
 
 function OurInsightsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
