@@ -1,7 +1,7 @@
 import MockupOne from "@/app/assets/mockup-one.png";
 import MockupThree from "@/app/assets/mockup-three.png";
 import MockupTwo from "@/app/assets/mockup-two.png";
-import { BlogCardInterface } from "@/apputils/interface/common.interface";
+import { BlogCardInterface } from "@/app/utils/interface/common.interface";
 
 export const INSIGHTS_DATA: BlogCardInterface[] = [
   {

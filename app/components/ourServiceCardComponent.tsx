@@ -1,4 +1,4 @@
-import { OurServiceCardDataArrayInterface } from "@/apputils/interface/data.interface";
+import { OurServiceCardDataArrayInterface } from "@/app/utils/interface/data.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import CtaServiceButton from "./common/ctaServiceBtn";

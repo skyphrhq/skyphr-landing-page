@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "@/app/lib/gsap";
-import { RollingCounterNumberInterface } from "@/apputils/interface/common.interface";
+import { RollingCounterNumberInterface } from "@/app/utils/interface/common.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";

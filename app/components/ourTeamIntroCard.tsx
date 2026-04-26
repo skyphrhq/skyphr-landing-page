@@ -1,5 +1,5 @@
 import QuoteIcon from "@/app/assets/quote.svg";
-import { OurTeamMembersDataArrayInterface } from "@/apputils/interface/common.interface";
+import { OurTeamMembersDataArrayInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import Link from "next/link";
 

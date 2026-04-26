@@ -15,7 +15,7 @@ import {
   AboutUsCardsDataArrayInterface,
   OurTeamMembersDataArrayInterface,
   OurValueCardInterface,
-} from "@/apputils/interface/common.interface";
+} from "@/app/utils/interface/common.interface";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FiLayers, FiLinkedin, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 import { IoMdTrendingUp } from "react-icons/io";

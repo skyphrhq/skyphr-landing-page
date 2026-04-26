@@ -1,5 +1,5 @@
 "use client";
-import { FaqCommonCardInterface } from "@/apputils/interface/common.interface";
+import { FaqCommonCardInterface } from "@/app/utils/interface/common.interface";
 
 function FaqCommonCard({ question, answer, isOpen, onToggle, index }: FaqCommonCardInterface) {
   return (

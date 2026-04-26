@@ -1,7 +1,7 @@
 "use client";
 
 import { gsap, ScrollTrigger } from "@/app/lib/gsap";
-import { SmoothScrollProviderInterface } from "@/apputils/interface/common.interface";
+import { SmoothScrollProviderInterface } from "@/app/utils/interface/common.interface";
 import Lenis from "lenis";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";

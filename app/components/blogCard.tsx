@@ -1,4 +1,4 @@
-import { BlogCardInterface } from "@/apputils/interface/common.interface";
+import { BlogCardInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import CTAButton from "./common/ctaButton";
