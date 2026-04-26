@@ -1,9 +1,9 @@
 "use client";
 import { gsap } from "@/app/lib/gsap";
+import FaqCommonCard from "@/app/components/faqCommonCard";
+import { FAQ_DATA } from "@/app/data/faq.data";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
-import FaqCommonCard from "../components/faqCommonCard";
-import { FAQ_DATA } from "../data/faq.data";
 
 function FrequentlyAskedQuestions() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -65,7 +65,8 @@ function FrequentlyAskedQuestions() {
           </h2>
 
           <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
-            Everything you need to know before starting your project with <span className="font-bold font-instrument-sans">Skyphr</span>
+            Everything you need to know before starting your project with{" "}
+            <span className="font-bold font-instrument-sans">Skyphr</span>
           </p>
         </div>
 

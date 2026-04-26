@@ -1,4 +1,4 @@
-import { ABOUT_US_INFO_CARD_DATA } from "../common.data";
+import { ABOUT_US_INFO_CARD_DATA } from "@/app/data/common.data";
 
 export const ABOUT_US_PAGE_DATA = {
   aboutUsData: {
@@ -8,5 +8,4 @@ export const ABOUT_US_PAGE_DATA = {
     ctaLink: "#",
     aboutUsCardsData: ABOUT_US_INFO_CARD_DATA,
   },
-
 };

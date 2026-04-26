@@ -1,7 +1,7 @@
 import { ABOUT_US_CARD_ANIMATION_CLASS } from "@/app/utils/constants/animation.constant";
+import { AboutUsCardInterface } from "@/app/utils/interface/common.interface";
 import { FaPlus } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
-import { AboutUsCardInterface } from "../utils/interface/common.interface";
 
 function AboutUsInfoCard({ data, className }: AboutUsCardInterface) {
   const { icon, count, label, direction } = data;

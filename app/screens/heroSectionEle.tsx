@@ -3,9 +3,9 @@ import HeroBgAbstract from "@/app/components/heroBgAbstract";
 import TrustedPill from "@/app/components/trustedPill";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_REVEL_ANIMATION } from "@/app/utils/constants/animation.constant";
+import CTAButton from "@/app/components/common/ctaButton";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import CTAButton from "../components/common/ctaButton";
 
 function HeroSectionElement() {
   const animationContainer = useRef(null);

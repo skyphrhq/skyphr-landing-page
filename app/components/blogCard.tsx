@@ -1,6 +1,6 @@
+import { BlogCardInterface } from "@/apputils/interface/common.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import { BlogCardInterface } from "../utils/interface/common.interface";
 import CTAButton from "./common/ctaButton";
 
 function BlogCard({ imageOptions, title, description, label, date }: BlogCardInterface) {

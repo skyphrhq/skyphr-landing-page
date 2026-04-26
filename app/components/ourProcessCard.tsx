@@ -1,6 +1,6 @@
+import { OurProcessCardInterface } from "@/apputils/interface/common.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import { OurProcessCardInterface } from "../utils/interface/common.interface";
 
 function OurProcessCard({ imageOptions, title, description, label }: OurProcessCardInterface) {
   return (

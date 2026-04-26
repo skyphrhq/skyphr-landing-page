@@ -1,9 +1,9 @@
 "use client";
 import { gsap } from "@/app/lib/gsap";
+import { RollingCounterNumberInterface } from "@/apputils/interface/common.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { RollingCounterNumberInterface } from "../utils/interface/common.interface";
 
 function RollingCounterNumber({ count, className }: RollingCounterNumberInterface) {
   const containerRef = useRef<HTMLDivElement | null>(null);

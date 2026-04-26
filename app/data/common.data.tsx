@@ -11,15 +11,15 @@ import {
   OurServiceCardDataArrayInterface,
   ServiceDataInterface,
 } from "@/app/utils/interface/data.interface";
-import { FaBriefcase, FaClock } from "react-icons/fa";
-import { FiLayers, FiLinkedin, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
-import { IoMdTrendingUp } from "react-icons/io";
-import { MdPeopleAlt } from "react-icons/md";
 import {
   AboutUsCardsDataArrayInterface,
   OurTeamMembersDataArrayInterface,
   OurValueCardInterface,
-} from "../utils/interface/common.interface";
+} from "@/apputils/interface/common.interface";
+import { FaBriefcase, FaClock } from "react-icons/fa";
+import { FiLayers, FiLinkedin, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
+import { IoMdTrendingUp } from "react-icons/io";
+import { MdPeopleAlt } from "react-icons/md";
 
 export const FEATURED_WORK_DATA: FeaturedWorkInterface[] = [
   {

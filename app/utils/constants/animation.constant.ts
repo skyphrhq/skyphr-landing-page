@@ -1,4 +1,4 @@
-import { ANIMATION_DIRECTION } from "../interface/common.interface";
+import { ANIMATION_DIRECTION } from "@/appinterface/common.interface";
 
 export const COMMON_REVEL_ANIMATION: gsap.TweenVars = {
   y: 0,

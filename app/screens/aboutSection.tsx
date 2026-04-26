@@ -1,13 +1,13 @@
 "use client";
 import SkyPhrIcon from "@/app/assets/skyphr-icon.png";
 import { gsap } from "@/app/lib/gsap";
+import AboutUsInfoCard from "@/app/components/aboutUsInfoCard";
+import CTAButton from "@/app/components/common/ctaButton";
+import { AboutUsCardsDataArrayInterface } from "@/app/utils/interface/common.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import AboutUsInfoCard from "../components/aboutUsInfoCard";
-import CTAButton from "../components/common/ctaButton";
-import { AboutUsCardsDataArrayInterface } from "../utils/interface/common.interface";
 
 function AboutSection({
   className,

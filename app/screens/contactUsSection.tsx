@@ -1,11 +1,12 @@
 "use client";
 import { gsap } from "@/app/lib/gsap";
+import CtaServiceButton from "@/app/components/common/ctaServiceBtn";
+import InputField from "@/app/components/common/inputField";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import CtaServiceButton from "../components/common/ctaServiceBtn";
-import InputField from "../components/common/inputField";
+import { twMerge } from "tailwind-merge";
 
-function ContactUsSection() {
+function ContactUsSection({ classNames }: { classNames?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -49,7 +50,9 @@ function ContactUsSection() {
   );
 
   return (
-    <div className="w-full h-full bg-(--about-us-card-bg) py-20 lg:py-30 font-inter" ref={containerRef}>
+    <div
+      className={twMerge("w-full h-full bg-(--about-us-card-bg) py-20 lg:py-30 font-inter", classNames)}
+      ref={containerRef}>
       <div className="skyphr-container">
         <div className="w-full pb-15">
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
