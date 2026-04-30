@@ -1,8 +1,9 @@
 "use client";
 import SkyPhrIcon from "@/app/assets/skyphr-icon.png";
-import { gsap } from "@/app/lib/gsap";
 import AboutUsInfoCard from "@/app/components/aboutUsInfoCard";
 import CTAButton from "@/app/components/common/ctaButton";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { AboutUsCardsDataArrayInterface } from "@/app/utils/interface/common.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
@@ -26,21 +27,16 @@ function AboutSection({
 
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 85%",
-          end: "bottom top",
-          markers: false,
-        },
+      if (!containerRef.current) return;
+      const titleSec = gsap.utils.toArray(".reveal-text-animation");
+      const getTitleAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 85%",
+        end: "bottom top",
       });
+      gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
+
+      
       const elements = gsap.utils.toArray(".card-reveal");
       gsap.to(elements, {
         scaleX: 1,
@@ -66,18 +62,15 @@ function AboutSection({
           <div className="w-full flex flex-col items-start justify-start gap-6 py-10">
             <h2 className="text-(--text-main-color) text-4xl font-instrument-sans font-semibold leading-12">
               {data?.title?.map((item, index) => (
-                <span key={index} className="block reveal-text blur-[10px] opacity-0 translate-y-7.5">
+                <span key={index} className="block reveal-text-animation">
                   {item}
                 </span>
               ))}
             </h2>
-            <p className="text-(--text-secondary-color) text-lg font-instrument-sans font-normal reveal-text blur-[10px] opacity-0 translate-y-7.5">
+            <p className="text-(--text-secondary-color) text-lg font-instrument-sans font-normal reveal-text-animation">
               {data?.description}
             </p>
-            <CTAButton
-              btnStyle="CTA_PRIMARY"
-              href={data?.ctaLink}
-              className="reveal-text blur-[10px] opacity-0 translate-y-7.5">
+            <CTAButton btnStyle="CTA_PRIMARY" href={data?.ctaLink} className="reveal-text-animation">
               {data?.ctaText}
             </CTAButton>
           </div>

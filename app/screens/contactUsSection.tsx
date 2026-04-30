@@ -1,7 +1,8 @@
 "use client";
-import { gsap } from "@/app/lib/gsap";
 import CtaServiceButton from "@/app/components/common/ctaServiceBtn";
 import InputField from "@/app/components/common/inputField";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
@@ -11,62 +12,34 @@ function ContactUsSection({ classNames }: { classNames?: string }) {
 
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom top",
-          markers: false,
-        },
-      });
+      if (containerRef.current) {
+        const titleSec = gsap.utils.toArray(".reveal-text-animation");
+        const { FROM, TO } = COMMON_SCROLL_TRIGGER_ANIMATION({ trigger: containerRef.current });
+        gsap.fromTo(titleSec, FROM, TO);
 
-      const cards = gsap.utils.toArray(".contact-card");
-      gsap.fromTo(
-        cards,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            end: "bottom top",
-            markers: false,
-          },
-        },
-      );
+        const cards = gsap.utils.toArray(".contact-card");
+        gsap.fromTo(cards, FROM, TO);
+      }
     },
     { scope: containerRef },
   );
 
   return (
-    <div
-      className={twMerge("w-full h-full bg-(--about-us-card-bg) py-20 lg:py-30 font-inter", classNames)}
-      ref={containerRef}>
-      <div className="skyphr-container">
+    <div className={twMerge("w-full h-full bg-(--about-us-card-bg) py-20 lg:py-30 font-inter", classNames)}>
+      <div className="skyphr-container" ref={containerRef}>
         <div className="w-full pb-15">
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Let’s</span>
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Talk</span>
+            <span className="reveal-text-animation">Let’s</span>
+            <span className="reveal-text-animation">Talk</span>
           </h2>
 
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">
+            <span className="reveal-text-animation">
               About Your <span className="font-playfair-display italic font-semibold">Project</span>
             </span>
           </h2>
 
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
+          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
             Have a question or idea? Share your requirements and we’ll get back to you within 24 hours.
           </p>
         </div>

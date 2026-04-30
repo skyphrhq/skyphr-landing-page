@@ -3,7 +3,7 @@ import { ButtonEleInterface } from "@/app/utils/interface/common.interface";
 import { GoArrowUpRight } from "react-icons/go";
 import { twMerge } from "tailwind-merge";
 
-function CTAButton({ children, btnStyle, className, href, ...props }: ButtonEleInterface) {
+function CTAButton({ children, btnStyle, className, href, target, rel, ...props }: ButtonEleInterface) {
   const { parentWrapper, childrenWrapper } = GET_BUTTON_STYLE(btnStyle);
 
   let wrapperElem: React.ElementType = "button";
@@ -11,7 +11,7 @@ function CTAButton({ children, btnStyle, className, href, ...props }: ButtonEleI
   const Tag = wrapperElem as React.ElementType;
 
   return (
-    <Tag {...props} href={href} className={twMerge(parentWrapper, className)}>
+    <Tag {...props} href={href} target={target} rel={rel} className={twMerge(parentWrapper, className)}>
       {btnStyle === "CTA_PRIMARY" ? (
         <span className="w-8 h-8 min-w-8 min-h-8 rounded-full bg-(--root-white-color) text-(--cta-button-background) flex items-center justify-center absolute top-1/2 -left-full -translate-y-1/2 group-hover/btn:left-1.5 transition-all duration-300">
           <GoArrowUpRight className="font-semibold" />

@@ -55,7 +55,6 @@
   transition: background-color 5000s ease-in-out 0s;
 }
 
-
 .text-black-color:-webkit-autofill,
 .text-black-color:-webkit-autofill:hover,
 .text-black-color:-webkit-autofill:focus,
@@ -63,4 +62,11 @@
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
   -webkit-text-fill-color: var(--root-black-color) !important;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.reveal-animation,
+.reveal-text-animation {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(30px);
 }
