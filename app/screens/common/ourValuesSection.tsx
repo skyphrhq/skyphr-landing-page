@@ -1,45 +1,32 @@
 "use client";
+import OurValueCommonCard from "@/app/components/ourValueCommonCard";
+import { OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { gsap } from "@/app/lib/gsap";
-import { OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import OurValueCommonCard from "@/app/components/ourValueCommonCard";
 
 function OurValuesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom top",
-          markers: false,
-        },
+      if (!containerRef.current) return;
+      const titleSec = gsap.utils.toArray(".reveal-text-animation");
+      const getTitleAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "bottom top",
       });
+      gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
 
-      const revealCard = gsap.utils.toArray(".reveal-card");
-      gsap.to(revealCard, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 50%",
-          end: "bottom top",
-          markers: false,
-        },
+      // Now We will write the code for the Card reveal animation on scroll time
+      const revealCard = gsap.utils.toArray(".reveal-animation");
+      const getCardAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 50%",
+        end: "bottom top",
       });
+      gsap.fromTo(revealCard, getCardAnimations.FROM, getCardAnimations.TO);
     },
     { scope: containerRef },
   );
@@ -47,14 +34,14 @@ function OurValuesSection() {
     <div className="w-full h-auto py-30" ref={containerRef}>
       <div className="skyphr-container">
         <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-          <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">The</span>
-          <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Values</span>
-          <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">That</span>
-          <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Drive</span>
-          <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Us</span>
+          <span className="reveal-text-animation">The</span>
+          <span className="reveal-text-animation">Values</span>
+          <span className="reveal-text-animation">That</span>
+          <span className="reveal-text-animation">Drive</span>
+          <span className="reveal-text-animation">Us</span>
         </h2>
 
-        <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
+        <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
           The principles we follow in every project guiding how we think, build, and deliver meaningful digital
           experiences.
         </p>
@@ -62,7 +49,7 @@ function OurValuesSection() {
       <div className="skyphr-container">
         <div className="w-full grid grid-cols-2 gap-6 pt-15">
           {OUR_VALUES_CARD_DATA?.map((item, index) => (
-            <div key={index} className={`reveal-card blur-[10px] opacity-0 translate-y-10`}>
+            <div key={index} className={`reveal-animation`}>
               <OurValueCommonCard {...item} />
             </div>
           ))}

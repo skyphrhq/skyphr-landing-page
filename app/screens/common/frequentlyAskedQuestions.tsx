@@ -1,7 +1,8 @@
 "use client";
-import { gsap } from "@/app/lib/gsap";
 import FaqCommonCard from "@/app/components/faqCommonCard";
 import { FAQ_DATA } from "@/app/data/faq.data";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 
@@ -15,37 +16,23 @@ function FrequentlyAskedQuestions() {
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom top",
-          markers: false,
-        },
+      if (!containerRef.current) return;
+      const titleSec = gsap.utils.toArray(".reveal-text-animation");
+      const getTitleAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "bottom top",
       });
+      gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
 
-      const revealQuestion = gsap.utils.toArray(".reveal-question");
-      gsap.to(revealQuestion, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 60%",
-          end: "bottom top",
-          markers: false,
-        },
+      // Now We will Write the GSAP Code for the Card Reveal Animations.
+      const revealQuestion = gsap.utils.toArray(".reveal-animation");
+      const getCardAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 60%",
+        end: "bottom top",
       });
+      gsap.fromTo(revealQuestion, getCardAnimations.FROM, getCardAnimations.TO);
     },
     { scope: containerRef },
   );
@@ -55,16 +42,16 @@ function FrequentlyAskedQuestions() {
       <div className="skyphr-container">
         <div className="w-full pb-15">
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Got</span>
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Questions?</span>
+            <span className="reveal-text-animation">Got</span>
+            <span className="reveal-text-animation">Questions?</span>
           </h2>
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">
+            <span className="reveal-text-animation">
               We&apos;ve Got <span className="font-playfair-display italic font-semibold">Answers</span>
             </span>
           </h2>
 
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
+          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
             Everything you need to know before starting your project with{" "}
             <span className="font-bold font-instrument-sans">Skyphr</span>
           </p>
@@ -72,7 +59,7 @@ function FrequentlyAskedQuestions() {
 
         <div className="w-full max-w-3xl mx-auto space-y-3">
           {FAQ_DATA.map((item, index) => (
-            <div key={index} className="reveal-question blur-[10px] opacity-0 translate-y-7.5">
+            <div key={index} className="reveal-animation">
               <FaqCommonCard
                 question={item.question}
                 answer={item.answer}

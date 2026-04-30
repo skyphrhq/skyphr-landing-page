@@ -78,7 +78,12 @@ function NavBarComponent() {
             })}
           </ul>
         </div>
-        <CTAButton btnStyle="CTA_SECONDARY" className="reveal" href="/">
+        <CTAButton
+          btnStyle="CTA_SECONDARY"
+          className="reveal"
+          href="https://cal.com/skyphr/30min"
+          target="_blank"
+          rel="noopener noreferrer">
           Book a Call
         </CTAButton>
       </div>

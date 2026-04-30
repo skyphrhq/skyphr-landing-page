@@ -3,9 +3,10 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
-import { gsap } from "@/app/lib/gsap";
 import TestimonialCard from "@/app/components/testimonialCard";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
@@ -24,37 +25,22 @@ function ClientTestimonial() {
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom top",
-          markers: false,
-        },
+      if (!containerRef.current) return;
+      const titleSec = gsap.utils.toArray(".reveal-text-animation");
+      const getTitleAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "bottom top",
       });
+      gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
 
-      const revealCard = gsap.utils.toArray(".reveal-card");
-      gsap.to(revealCard, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 50%",
-          end: "bottom top",
-          markers: false,
-        },
+      const revealCard = gsap.utils.toArray(".reveal-animation");
+      const getCardAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 50%",
+        end: "bottom top",
       });
+      gsap.fromTo(revealCard, getCardAnimations.FROM, getCardAnimations.TO);
     },
     { scope: containerRef },
   );
@@ -64,16 +50,16 @@ function ClientTestimonial() {
       <div className="px-4">
         <div className="w-full pb-15">
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Trusted</span>
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">by Clients</span>
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Worldwide</span>
+            <span className="reveal-text-animation">Trusted</span>
+            <span className="reveal-text-animation">by Clients</span>
+            <span className="reveal-text-animation">Worldwide</span>
           </h2>
 
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
+          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
             We focus on results and our clients’ experiences speak louder than anything else
           </p>
         </div>
-        <div className="w-full reveal-card blur-[10px] opacity-0 translate-y-10">
+        <div className="w-full reveal-animation">
           <div ref={sliderRef} className="keen-slider">
             {CLIENT_TESTIMONIAL_DATA?.map((item, index) => (
               <div key={index} className="keen-slider__slide">

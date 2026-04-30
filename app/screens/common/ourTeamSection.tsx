@@ -2,6 +2,7 @@
 import OurTeamIntroCard from "@/app/components/ourTeamIntroCard";
 import { OUR_TEAM_MEMBERS_DATA } from "@/app/data/common.data";
 import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
@@ -10,41 +11,23 @@ function OurTeamSection() {
 
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom top",
-          markers: false,
-        },
+      if (!containerRef.current) return;
+      const titleSec = gsap.utils.toArray(".reveal-text-animation");
+      const getTitleAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "bottom top",
       });
+      gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
 
-      const cards = gsap.utils.toArray(".contact-card");
-      gsap.fromTo(
-        cards,
-        { y: 50, opacity: 0, filter: "blur(10px)" },
-        {
-          y: 0,
-          opacity: 1,
-          filter: "blur(0px)",
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            end: "bottom top",
-            markers: false,
-          },
-        },
-      );
+      //  Now We will write the code for the Card reveal animation on scroll time.
+      const cards = gsap.utils.toArray(".reveal-animation");
+      const getCardAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 80%",
+        end: "bottom top",
+      });
+      gsap.fromTo(cards, getCardAnimations.FROM, getCardAnimations.TO);
     },
     { scope: containerRef },
   );
@@ -53,19 +36,19 @@ function OurTeamSection() {
       <div className="skyphr-container">
         <div className="w-full pb-15">
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">
+            <span className="reveal-text-animation">
               The Person Behind <span className="font-playfair-display italic font-semibold">Skyphr</span>
             </span>
           </h2>
 
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
+          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
             Skyphr is built and led by a developer focused on creating scalable digital products and AI-driven systems
             with a strong emphasis on performance, usability, and real-world impact.
           </p>
         </div>
         <div className="max-w-[60%] mx-auto">
           {OUR_TEAM_MEMBERS_DATA?.map((member, index) => (
-            <div key={index} className="contact-card">
+            <div key={index} className="reveal-animation">
               <OurTeamIntroCard data={member} />
             </div>
           ))}

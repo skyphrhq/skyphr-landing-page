@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function FooterScreen() {
   return (
-    <div className="w-full bg-[#111111] py-8 relative overflow-hidden font-inter">
+    <div className="w-full bg-(--root-black-color) py-8 relative overflow-hidden font-inter">
       {/* Huge Background Text */}
       <div className="absolute bottom-[-5%] sm:bottom-[-15%] left-0 right-0 flex justify-center w-full pointer-events-none select-none overflow-hidden">
         <span className="text-[25vw] leading-none font-bold text-white/2 font-instrument-sans whitespace-nowrap text-center">

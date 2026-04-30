@@ -1,6 +1,7 @@
 "use client";
-import { gsap } from "@/app/lib/gsap";
 import { FEATURED_WORK_DATA } from "@/app/data/common.data";
+import { gsap } from "@/app/lib/gsap";
+import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
@@ -19,41 +20,23 @@ function FeaturedWorks({
 
   useGSAP(
     () => {
-      const titleSec = gsap.utils.toArray(".reveal-text");
-      gsap.to(titleSec, {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 85%",
-          end: "bottom top",
-          markers: false,
-        },
+      if (!containerRef.current) return;
+      const titleSec = gsap.utils.toArray(".reveal-text-animation");
+      const getTitleAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 85%",
+        end: "bottom top",
       });
+      gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
 
-      const cards = gsap.utils.toArray(".contact-card");
-      gsap.fromTo(
-        cards,
-        { y: 50, opacity: 0, filter: "blur(10px)" },
-        {
-          y: 0,
-          opacity: 1,
-          filter: "blur(0px)",
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 100%",
-            end: "bottom top",
-            markers: false,
-          },
-        },
-      );
+      //  Now We will Write the GSAP Code for the Card Reveal Animations.
+      const cards = gsap.utils.toArray(".reveal-animation");
+      const getCardAnimations = COMMON_SCROLL_TRIGGER_ANIMATION({
+        trigger: containerRef.current,
+        start: "top 100%",
+        end: "bottom top",
+      });
+      gsap.fromTo(cards, getCardAnimations.FROM, getCardAnimations.TO);
     },
     { scope: containerRef },
   );
@@ -62,11 +45,11 @@ function FeaturedWorks({
       {showHeader && (
         <div className="skyphr-container pb-15!">
           <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Featured</span>
-            <span className="reveal-text blur-[10px] opacity-0 translate-y-7.5">Work</span>
+            <span className="reveal-text-animation">Featured</span>
+            <span className="reveal-text-animation">Work</span>
           </h2>
 
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text blur-[10px] opacity-0 translate-y-7.5">
+          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
             A selection of digital products and experiences we’ve designed and built focused on performance, usability,
             and real-world impact.
           </p>
@@ -80,7 +63,7 @@ function FeaturedWorks({
         <div className="flex marquee-wrapper">
           <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0">
             {FEATURED_WORK_DATA?.map((item) => (
-              <div key={item.id} className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden contact-card">
+              <div key={item.id} className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -96,7 +79,7 @@ function FeaturedWorks({
             {FEATURED_WORK_DATA?.map((item) => (
               <div
                 key={`clone-${item.id}`}
-                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden contact-card">
+                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -112,7 +95,7 @@ function FeaturedWorks({
             {FEATURED_WORK_DATA?.map((item) => (
               <div
                 key={`clone-two-${item.id}`}
-                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden contact-card">
+                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -128,7 +111,7 @@ function FeaturedWorks({
             {FEATURED_WORK_DATA?.map((item) => (
               <div
                 key={`clone-three-${item.id}`}
-                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden contact-card">
+                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}

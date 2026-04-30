@@ -13,6 +13,8 @@ export interface ButtonEleInterface extends ButtonHTMLAttributes<HTMLButtonEleme
   children: React.ReactNode;
   btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY";
   href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export interface TrustedPillInterface {
