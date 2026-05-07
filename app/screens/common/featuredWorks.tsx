@@ -1,21 +1,14 @@
 "use client";
-import { FEATURED_WORK_DATA } from "@/app/data/common.data";
+import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { FeaturedWorksSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function FeaturedWorks({
-  showShadow = true,
-  showHeader = false,
-  className,
-}: {
-  showShadow?: boolean;
-  showHeader?: boolean;
-  className?: string;
-}) {
+function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSectionInterface) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -41,20 +34,8 @@ function FeaturedWorks({
     { scope: containerRef },
   );
   return (
-    <div ref={containerRef} className={twMerge("w-full h-auto", className)}>
-      {showHeader && (
-        <div className="skyphr-container pb-15!">
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">Featured</span>
-            <span className="reveal-text-animation">Work</span>
-          </h2>
-
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
-            A selection of digital products and experiences we’ve designed and built focused on performance, usability,
-            and real-world impact.
-          </p>
-        </div>
-      )}
+    <div ref={containerRef} className={twMerge("w-full h-auto", classNames)}>
+      {data?.header && <CommonSectionHeader header={data.header} />}
       <div className="w-full overflow-hidden p-5 marquee-custom-slider relative">
         {showShadow && (
           <div className="absolute w-full h-[90px] bg-linear-to-b from-(--bg-blue-shade) to-(--root-white-color) top-0 left-0 z-2 pointer-events-none blur-2xl opacity-60"></div>
@@ -62,7 +43,7 @@ function FeaturedWorks({
 
         <div className="flex marquee-wrapper">
           <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0">
-            {FEATURED_WORK_DATA?.map((item) => (
+            {data?.featuredWorksData?.map((item) => (
               <div key={item.id} className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
@@ -76,7 +57,7 @@ function FeaturedWorks({
             ))}
           </div>
           <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0" aria-hidden="true">
-            {FEATURED_WORK_DATA?.map((item) => (
+            {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-${item.id}`}
                 className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
@@ -92,7 +73,7 @@ function FeaturedWorks({
             ))}
           </div>
           <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0" aria-hidden="true">
-            {FEATURED_WORK_DATA?.map((item) => (
+            {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-two-${item.id}`}
                 className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
@@ -108,7 +89,7 @@ function FeaturedWorks({
             ))}
           </div>
           <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0" aria-hidden="true">
-            {FEATURED_WORK_DATA?.map((item) => (
+            {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-three-${item.id}`}
                 className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">

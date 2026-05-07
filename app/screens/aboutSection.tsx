@@ -1,28 +1,16 @@
 "use client";
-import SkyPhrIcon from "@/app/assets/skyphr-icon.png";
+import SkyPhrIcon from "@/app/assets/logo/skyphr-icon.webp";
 import AboutUsInfoCard from "@/app/components/aboutUsInfoCard";
 import CTAButton from "@/app/components/common/ctaButton";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
-import { AboutUsCardsDataArrayInterface } from "@/app/utils/interface/common.interface";
+import { AboutSectionElementInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function AboutSection({
-  className,
-  data,
-}: {
-  className?: string;
-  data?: {
-    title: string[];
-    description: string;
-    ctaText: string;
-    ctaLink: string;
-    aboutUsCardsData: AboutUsCardsDataArrayInterface[];
-  };
-}) {
+function AboutSection({ classNames, data }: AboutSectionElementInterface) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -36,7 +24,6 @@ function AboutSection({
       });
       gsap.fromTo(titleSec, getTitleAnimations.FROM, getTitleAnimations.TO);
 
-      
       const elements = gsap.utils.toArray(".card-reveal");
       gsap.to(elements, {
         scaleX: 1,
@@ -56,28 +43,48 @@ function AboutSection({
   );
 
   return (
-    <div ref={containerRef} className={twMerge("skyphr-container w-full h-fit py-30", className)}>
+    <div ref={containerRef} className={twMerge("skyphr-container w-full h-fit py-30", classNames)}>
       <div className="w-full flex items-stretch justify-start gap-20">
         <div className="w-[45%]">
           <div className="w-full flex flex-col items-start justify-start gap-6 py-10">
-            <h2 className="text-(--text-main-color) text-4xl font-instrument-sans font-semibold leading-12">
-              {data?.title?.map((item, index) => (
-                <span key={index} className="block reveal-text-animation">
-                  {item}
-                </span>
-              ))}
-            </h2>
-            <p className="text-(--text-secondary-color) text-lg font-instrument-sans font-normal reveal-text-animation">
-              {data?.description}
-            </p>
-            <CTAButton btnStyle="CTA_PRIMARY" href={data?.ctaLink} className="reveal-text-animation">
-              {data?.ctaText}
-            </CTAButton>
+            {data?.header?.title?.map((titleRow, rowIndex) => (
+              <h2
+                className="text-(--text-main-color) text-4xl font-instrument-sans font-semibold leading-12"
+                key={rowIndex}>
+                {titleRow.map((chunk, index) => (
+                  <span
+                    key={index}
+                    className={twMerge("block", chunk?.variant === "brand" && "text-(--primary-color-variant)")}>
+                    {chunk?.text}
+                  </span>
+                ))}
+              </h2>
+            ))}
+
+            {data?.header?.description?.map((description, index) => (
+              <p
+                className="text-(--text-secondary-color) text-lg font-instrument-sans font-normal reveal-text-animation"
+                key={index}>
+                {description?.map((chunk, chunkIndex) => {
+                  return (
+                    <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                      {chunk.text}
+                    </span>
+                  );
+                })}
+              </p>
+            ))}
+
+            {data?.cta && (
+              <CTAButton btnStyle={data?.cta?.variant} href={data?.cta?.href} className="reveal-text-animation">
+                {data?.cta?.label}
+              </CTAButton>
+            )}
           </div>
         </div>
         <div className="w-[55%]">
           <div className="w-full h-full grid grid-cols-2 gap-4 relative">
-            {data?.aboutUsCardsData?.map((item, index) => (
+            {data?.cards?.map((item, index) => (
               <AboutUsInfoCard key={index} className={"card-reveal scale-x-0 scale-y-0"} data={item} />
             ))}
             <div className="w-20 min-w-20 min-h-20 h-20 bg-(--root-white-color) rounded-full flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

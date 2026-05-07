@@ -1,6 +1,6 @@
-import MockupOne from "@/app/assets/mockup-one.png";
-import MockupThree from "@/app/assets/mockup-three.png";
-import MockupTwo from "@/app/assets/mockup-two.png";
+import MockupOne from "@/app/assets/webp/mockup-one.webp";
+import MockupThree from "@/app/assets/webp/mockup-three.webp";
+import MockupTwo from "@/app/assets/webp/mockup-two.webp";
 import { BlogCardInterface } from "@/app/utils/interface/common.interface";
 
 export const INSIGHTS_DATA: BlogCardInterface[] = [

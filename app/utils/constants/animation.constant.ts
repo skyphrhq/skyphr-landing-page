@@ -3,7 +3,7 @@ import { ANIMATION_DIRECTION } from "@/app/utils/interface/common.interface";
 
 export const COMMON_REVEL_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars } = {
   FROM: {
-    y: 30,
+    y: 50,
     opacity: 0,
     filter: "blur(10px)",
   },
@@ -30,7 +30,7 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
 }): { FROM: gsap.TweenVars; TO: gsap.TweenVars } => {
   return {
     FROM: {
-      y: 30,
+      y: 50,
       opacity: 0,
       filter: "blur(10px)",
     },

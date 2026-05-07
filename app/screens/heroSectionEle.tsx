@@ -4,10 +4,12 @@ import HeroBgAbstract from "@/app/components/heroBgAbstract";
 import TrustedPill from "@/app/components/trustedPill";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_REVEL_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { HeroSectionElementInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
-function HeroSectionElement() {
+function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
   const animationContainer = useRef(null);
   useGSAP(
     () => {
@@ -18,36 +20,63 @@ function HeroSectionElement() {
   );
 
   return (
-    <div className="w-full h-fit relative bg-white overflow-hidden pt-55 pb-35">
+    <div className={twMerge("w-full h-fit relative bg-white overflow-hidden pt-55 pb-35", classNames)}>
       <HeroBgAbstract />
       <div
         ref={animationContainer}
         className="w-ful h-full relative z-20 flex flex-col items-center max-w-4xl mx-auto justify-center">
-        <TrustedPill className="reveal-animation mb-14" />
+        {data?.trustedBy && data?.trustedBy?.length > 0 && <TrustedPill className="reveal-animation mb-14" />}
         <div className="flex flex-col items-center justify-center gap-2">
-          <h1 className="reveal-animation font-instrument-sans text-6xl font-bold tracking-tight text-(--text-main-color)">
-            We Build <span className="font-playfair-display italic font-semibold">Scalable</span>
-          </h1>
-          <h1 className="reveal-animation font-instrument-sans text-6xl font-bold tracking-tight text-(--text-main-color)">
-            Digital Products & <span className="font-playfair-display italic font-semibold">AI Systems</span>
-          </h1>
+          {data?.header?.title?.map((titleRow, rowIndex) => (
+            <h1
+              className="font-instrument-sans text-6xl font-bold tracking-tight text-(--text-main-color)"
+              key={rowIndex}>
+              {titleRow?.map((chunk, index) => {
+                return (
+                  <span
+                    className={twMerge(
+                      "font-instrument-sans reveal-animation",
+                      chunk?.classNames,
+                      "reveal-animation",
+                      chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                    )}
+                    key={index}>
+                    {chunk.text}
+                  </span>
+                );
+              })}
+            </h1>
+          ))}
         </div>
-        <p className="reveal-animation font-instrument-sans text-lg max-w-xl font-medium text-pretty text-center pt-4 text-(--text-main-color)">
-          UI/UX Design, SaaS Development & AI Automation to help startups and businesses build, launch and scale faster.
-        </p>
-        <div className="w-full flex items-center justify-center gap-6 max-w-xl mx-auto pt-10">
-          <CTAButton btnStyle="CTA_PRIMARY" className="reveal-animation ">
-            Get Your Product Built
-          </CTAButton>
-          <CTAButton
-            btnStyle="CTA_SECONDARY"
-            className="reveal-animation"
-            href="https://cal.com/skyphr/30min"
-            target="_blank"
-            rel="noopener noreferrer">
-            Book a Call
-          </CTAButton>
-        </div>
+
+        {data?.header?.description?.map((description, index) => (
+          <p
+            className="reveal-animation font-instrument-sans text-lg max-w-xl font-medium text-pretty text-center pt-4 text-(--text-main-color)"
+            key={index}>
+            {description?.map((chunk, chunkIndex) => {
+              return (
+                <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                  {chunk.text}
+                </span>
+              );
+            })}
+          </p>
+        ))}
+        {data?.ctas && (
+          <div className="w-full flex items-center justify-center gap-6 max-w-xl mx-auto pt-10">
+            {data?.ctas?.map((button, index) => (
+              <CTAButton
+                key={index}
+                btnStyle={button.variant as "CTA_PRIMARY" | "CTA_SECONDARY"}
+                className={twMerge(button?.classNames, "reveal-animation")}
+                href={button.href as string}
+                target={button.target as "_blank" | "_self" | "_parent" | "_top"}
+                rel={button.rel as string}>
+                {button.label}
+              </CTAButton>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

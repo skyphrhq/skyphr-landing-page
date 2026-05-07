@@ -1,12 +1,14 @@
 "use client";
 import BlogCard from "@/app/components/blogCard";
-import { INSIGHTS_DATA } from "@/app/data/insights.data";
+import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { OurInsightsSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
-function OurInsightsSection() {
+function OurInsightsSection({ data, classNames }: OurInsightsSectionInterface) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -33,27 +35,11 @@ function OurInsightsSection() {
   );
 
   return (
-    <div className="w-full h-full bg-(--about-us-card-bg) py-30" ref={containerRef}>
+    <div className={twMerge("w-full h-full bg-(--about-us-card-bg) py-30", classNames)} ref={containerRef}>
       <div className="skyphr-container">
-        <div className="w-full pb-15">
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">Insights That Build</span>
-          </h2>
-
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">
-              Better <span className="font-playfair-display italic font-semibold">Products</span>
-            </span>
-          </h2>
-
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
-            Explore ideas, strategies, and real-world insights on building scalable, high-performing digital products
-            with <span className="font-bold font-instrument-sans">Skyphr</span>
-          </p>
-        </div>
-
+        <CommonSectionHeader header={data.header} />
         <div className="w-full grid grid-cols-3 gap-6">
-          {INSIGHTS_DATA.slice(0, 3).map((item, index) => (
+          {data.blogsData.slice(0, 3).map((item, index) => (
             <div key={index} className="col-span-1 reveal-animation">
               <BlogCard {...item} />
             </div>

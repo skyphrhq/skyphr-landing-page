@@ -1,4 +1,4 @@
-import SkyphrWhiteLogo from "@/app/assets/skyphr-logo-transparent-white.png";
+import SkyphrWhiteLogo from "@/app/assets/logo/skyphr-logo-transparent-white.webp";
 import { SOCIAL_LINKS } from "@/app/data/socilaLinks.data";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +8,7 @@ function FooterScreen() {
     <div className="w-full bg-(--root-black-color) py-8 relative overflow-hidden font-inter">
       {/* Huge Background Text */}
       <div className="absolute bottom-[-5%] sm:bottom-[-15%] left-0 right-0 flex justify-center w-full pointer-events-none select-none overflow-hidden">
-        <span className="text-[25vw] leading-none font-bold text-white/2 font-instrument-sans whitespace-nowrap text-center">
+        <span className="text-[25vw] leading-none font-bold text-white/6 font-instrument-sans whitespace-nowrap text-center">
           Skyphr
         </span>
       </div>

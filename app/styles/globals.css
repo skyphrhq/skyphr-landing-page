@@ -64,9 +64,9 @@
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.reveal-animation,
+/* .reveal-animation,
 .reveal-text-animation {
   opacity: 0;
   filter: blur(10px);
   transform: translateY(30px);
-}
+} */

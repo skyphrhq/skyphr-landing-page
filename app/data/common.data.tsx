@@ -1,25 +1,28 @@
 import CEOImage from "@/app/assets/dummy-testimonial.png";
-import MockupFive from "@/app/assets/mockup-five.png";
-import MockupFour from "@/app/assets/mockup-four.png";
-import MockupOne from "@/app/assets/mockup-one.png";
-import MockupThree from "@/app/assets/mockup-three.png";
-import MockupTwo from "@/app/assets/mockup-two.png";
-import WebAppDevelopment from "@/app/assets/saas-app-development.png";
-import UiUxDesign from "@/app/assets/ui-ux-design.png";
+import MockupFive from "@/app/assets/webp/mockup-five.webp";
+import MockupFour from "@/app/assets/webp/mockup-four.webp";
+import MockupOne from "@/app/assets/webp/mockup-one.webp";
+import MockupThree from "@/app/assets/webp/mockup-three.webp";
+import MockupTwo from "@/app/assets/webp/mockup-two.webp";
+import WebAppDevelopment from "@/app/assets/webp/saas-app-development.webp";
+import UiUxDesign from "@/app/assets/webp/ui-ux-design.webp";
+import {
+  AboutUsCardsDataArrayInterface,
+  OurStepsDataInterface,
+  OurTeamMembersDataArrayInterface,
+  OurValueCardInterface,
+} from "@/app/utils/interface/common.interface";
 import {
   FeaturedWorkInterface,
   OurServiceCardDataArrayInterface,
   ServiceDataInterface,
 } from "@/app/utils/interface/data.interface";
-import {
-  AboutUsCardsDataArrayInterface,
-  OurTeamMembersDataArrayInterface,
-  OurValueCardInterface,
-} from "@/app/utils/interface/common.interface";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FiLayers, FiLinkedin, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 import { IoMdTrendingUp } from "react-icons/io";
 import { MdPeopleAlt } from "react-icons/md";
+
+import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
 
 export const FEATURED_WORK_DATA: FeaturedWorkInterface[] = [
   {
@@ -118,7 +121,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: UiUxDesign,
-      width: 300,
+      width: 350,
       height: 300,
       alt: "Ui Ux Design",
     },
@@ -138,7 +141,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: WebAppDevelopment,
-      width: 300,
+      width: 350,
       height: 300,
       alt: "Web App Development",
     },
@@ -158,7 +161,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: WebAppDevelopment,
-      width: 300,
+      width: 350,
       height: 300,
       alt: "Web App Development",
     },
@@ -171,7 +174,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     title: "Clarity Over Complexity",
     description:
       "We simplify complex ideas into intuitive digital experiences. Every product we design focuses on usability, clear structure, and meaningful interactions.",
-    icon: FiLayers,
+    icon: <FiLayers className="text-2xl" />,
     color: "#AC9BFF",
     bgColor: "rgba(172, 155, 255, 0.5)",
   },
@@ -180,7 +183,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     title: "Built for Scale",
     description:
       "Our systems are designed to grow with your business. We build scalable architectures that support long-term performance and evolving product needs.",
-    icon: FiTrendingUp,
+    icon: <FiTrendingUp className="text-2xl" />,
     color: "#B8C56F",
     bgColor: "rgba(184, 197, 111, 0.5)",
   },
@@ -189,7 +192,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     title: "Performance First",
     description:
       "Speed and efficiency are at the core of our development process. We ensure every product is optimized for fast load times and smooth user experiences.",
-    icon: FiZap,
+    icon: <FiZap className="text-2xl" />,
     color: "#FF767A",
     bgColor: "rgba(255, 118, 122, 0.5)",
   },
@@ -198,7 +201,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     title: "User-Centered Approach",
     description:
       "We design with real users in mind. Every decision is guided by user behavior, ensuring products are intuitive, engaging, and impactful.",
-    icon: FiUsers,
+    icon: <FiUsers className="text-2xl" />,
     color: "#5DADE2",
     bgColor: "rgba(93, 173, 226, 0.5)",
   },
@@ -213,7 +216,7 @@ export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
     social: [
       {
         platform: "LinkedIn",
-        icon: FiLinkedin,
+        icon: <FiLinkedin />,
         url: "https://linkedin.com/in/your-profile",
         title: "LinkedIn",
         ariaLabel: "LinkedIn",
@@ -227,5 +230,44 @@ export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
       height: 635,
       alt: "Ui Ux Design",
     },
+  },
+];
+
+export const STEPS_WE_FOLLOW_IN_SERVICES: OurStepsDataInterface[] = [
+  {
+    num: "01",
+    title: "Discovery & Strategy",
+    desc: "We understand your business, users and goals to create a clear strategy and roadmap.",
+    icon: <FaRegCompass className="w-6 h-6 text-gray-800" />,
+    iconBgColor: "bg-purple-50",
+    numBgColor: "bg-purple-100",
+    numTextColor: "text-purple-800",
+  },
+  {
+    num: "02",
+    title: "Design & Experience",
+    desc: "We design intuitive, user-focused experiences that are modern, engaging and conversion-driven.",
+    icon: <FaRegLightbulb className="w-6 h-6 text-gray-800" />,
+    iconBgColor: "bg-yellow-50",
+    numBgColor: "bg-yellow-100",
+    numTextColor: "text-yellow-800",
+  },
+  {
+    num: "03",
+    title: "Development & Build",
+    desc: "We build scalable, secure and high-performance products using modern technologies.",
+    icon: <FaCode className="w-6 h-6 text-gray-800" />,
+    iconBgColor: "bg-pink-50",
+    numBgColor: "bg-pink-100",
+    numTextColor: "text-pink-800",
+  },
+  {
+    num: "04",
+    title: "Launch & Scale",
+    desc: "We launch with confidence and continuously optimize to help your product grow and scale.",
+    icon: <FaRocket className="w-6 h-6 text-gray-800" />,
+    iconBgColor: "bg-indigo-50",
+    numBgColor: "bg-indigo-100",
+    numTextColor: "text-indigo-800",
   },
 ];

@@ -13,33 +13,47 @@ import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 export default function Home() {
   return (
     <div className="w-full h-auto">
-      <HeroSectionElement />
-      <div className="w-full">
-        <FeaturedWorks />
-      </div>
-
-      <div className="w-full">
-        <AboutSection data={HOME_PAGE_DATA.aboutUsData} />
-      </div>
-      <div className="w-full">
-        <OurServiceSection />
-      </div>
-      <div className="w-full">
-        <OurProcessSection />
-      </div>
-      <div className="w-full">
-        <ClientTestimonial />
-      </div>
-
-      <div className="w-full overflow-hidden">
-        <FrequentlyAskedQuestions />
-      </div>
-      <div className="w-full overflow-hidden">
-        <OurInsightsSection />
-      </div>
-      <div className="w-full overflow-hidden">
-        <ReadyToScaleSection />
-      </div>
+      {HOME_PAGE_DATA?.hero && <HeroSectionElement data={HOME_PAGE_DATA.hero} />}
+      {HOME_PAGE_DATA?.featuredWorks && (
+        <div className="w-full">
+          <FeaturedWorks data={HOME_PAGE_DATA.featuredWorks} />
+        </div>
+      )}₹
+      {HOME_PAGE_DATA?.about && (
+        <div className="w-full">
+          <AboutSection data={HOME_PAGE_DATA.about} />
+        </div>
+      )}
+      {HOME_PAGE_DATA?.services && (
+        <div className="w-full">
+          <OurServiceSection data={HOME_PAGE_DATA.services} />
+        </div>
+      )}
+      {HOME_PAGE_DATA?.process && (
+        <div className="w-full">
+          <OurProcessSection data={HOME_PAGE_DATA.process} />
+        </div>
+      )}
+      {HOME_PAGE_DATA?.testimonials && (
+        <div className="w-full">
+          <ClientTestimonial classNames="!py-0" data={HOME_PAGE_DATA.testimonials} />
+        </div>
+      )}
+      {HOME_PAGE_DATA?.faq && (
+        <div className="w-full overflow-hidden">
+          <FrequentlyAskedQuestions data={HOME_PAGE_DATA.faq} />
+        </div>
+      )}
+      {HOME_PAGE_DATA?.ourInsights && (
+        <div className="w-full overflow-hidden">
+          <OurInsightsSection data={HOME_PAGE_DATA.ourInsights} />
+        </div>
+      )}
+      {HOME_PAGE_DATA?.readyToScale && (
+        <div className="w-full overflow-hidden">
+          <ReadyToScaleSection data={HOME_PAGE_DATA.readyToScale} />
+        </div>
+      )}
       <div className="w-full overflow-hidden">
         <ContactUsSection />
       </div>

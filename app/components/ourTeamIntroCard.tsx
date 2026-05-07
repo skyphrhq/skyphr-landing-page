@@ -1,4 +1,4 @@
-import QuoteIcon from "@/app/assets/quote.svg";
+import QuoteIcon from "@/app/assets/svg/quote.svg";
 import { OurTeamMembersDataArrayInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,7 +46,7 @@ function OurTeamIntroCard({ data }: { data: OurTeamMembersDataArrayInterface }) 
                         target={socialMedia.target}
                         rel={socialMedia.rel}
                         className="group w-10 h-10 flex items-center justify-center rounded-full border border-(--border-color,) text-(--text-main-color) hover:text-(--root-white-color) hover:bg-(--root-black-color) transition-all duration-300">
-                        <socialMedia.icon />
+                        {socialMedia.icon}
                       </Link>
                     );
                   })}

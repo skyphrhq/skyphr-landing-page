@@ -1,17 +1,22 @@
-import BgAbstractImage from "@/app/assets/background.png";
+import BgAbstractImage from "@/app/assets/webp/skyphr-hero-background.webp";
 import Image from "next/image";
-function HeroBgAbstract() {
+import { twMerge } from "tailwind-merge";
+function HeroBgAbstract({ className = "" }: { className?: string }) {
   return (
     <>
       <Image
-        width={6925}
-        height={3840}
+        width={1500}
+        height={1000}
         src={BgAbstractImage}
         alt="Background Abstract Image"
-        className="w-full h-full absolute inset-0 z-10 opacity-70"
+        className={twMerge("w-full h-full absolute inset-0 z-10 opacity-70", className)}
+        loading="eager"
       />
       <div
-        className="w-full aspect-square absolute inset-0 pointer-events-none flex items-center justify-center blur-[200px] rounded-[200%] opacity-70"
+        className={twMerge(
+          "w-full aspect-square absolute inset-0 pointer-events-none flex items-center justify-center blur-[200px] rounded-[200%] opacity-70",
+          className,
+        )}
         style={{
           background: `
 radial-gradient(circle at center, rgba(105,116,226,0.6) 0%, rgba(105,116,226,0.3) 30%, transparent 60%),

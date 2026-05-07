@@ -1,4 +1,4 @@
-import QuoteIcon from "@/app/assets/quote.svg";
+import QuoteIcon from "@/app/assets/svg/quote.svg";
 import { ClientTestimonialCardInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
