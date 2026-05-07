@@ -1,5 +1,5 @@
 "use client";
-import SkyPhrLogo from "@/app/assets/skyphr-logo-transparent-black.png";
+import SkyPhrLogo from "@/app/assets/logo/skyphr-logo-transparent-black.webp";
 import CTAButton from "@/app/components/common/ctaButton";
 import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
 import { gsap } from "@/app/lib/gsap";

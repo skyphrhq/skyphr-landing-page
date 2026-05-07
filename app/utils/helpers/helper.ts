@@ -13,4 +13,7 @@ export const CreateScrollTrigger = ({
   start,
   end,
   markers,
+  toggleActions: "play none none none",
 });
+
+export const IsOdd = (index: number): boolean => index % 2 !== 0;

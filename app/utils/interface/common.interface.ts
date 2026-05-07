@@ -1,3 +1,4 @@
+import { SectionHeader } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 import { ButtonHTMLAttributes } from "react";
 
@@ -71,7 +72,7 @@ export interface BlogCardInterface {
 
 export interface FaqCommonCardInterface {
   question: string;
-  answer: (className?: string) => React.ReactNode;
+  answer: React.ReactNode;
   isOpen: boolean;
   onToggle: () => void;
   index: number;
@@ -95,7 +96,7 @@ export interface OurValueCardInterface {
   id: number;
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon: React.ReactNode;
   bgColor: string;
   color: string;
 }
@@ -106,7 +107,7 @@ export interface OurTeamMembersDataArrayInterface {
   description: string;
   social: {
     platform: string;
-    icon: React.ElementType;
+    icon: React.ReactNode;
     url: string;
     title: string;
     ariaLabel: string;
@@ -121,4 +122,19 @@ export interface OurTeamMembersDataArrayInterface {
     className?: string;
     loading?: "lazy" | "eager";
   };
+}
+
+export interface CommonSectionHeaderInterface {
+  header: SectionHeader;
+  className?: string;
+}
+
+export interface OurStepsDataInterface {
+  num: string;
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+  iconBgColor: string;
+  numBgColor: string;
+  numTextColor: string;
 }

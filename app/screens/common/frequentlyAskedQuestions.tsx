@@ -1,12 +1,14 @@
 "use client";
+import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import FaqCommonCard from "@/app/components/faqCommonCard";
-import { FAQ_DATA } from "@/app/data/faq.data";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { FrequentlyAskedQuestionsInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
-function FrequentlyAskedQuestions() {
+function FrequentlyAskedQuestions({ data, classNames }: FrequentlyAskedQuestionsInterface) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -38,27 +40,12 @@ function FrequentlyAskedQuestions() {
   );
 
   return (
-    <div className="w-full h-full py-30" ref={containerRef}>
+    <div className={twMerge("w-full h-full py-30", classNames)} ref={containerRef}>
       <div className="skyphr-container">
-        <div className="w-full pb-15">
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">Got</span>
-            <span className="reveal-text-animation">Questions?</span>
-          </h2>
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">
-              We&apos;ve Got <span className="font-playfair-display italic font-semibold">Answers</span>
-            </span>
-          </h2>
-
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
-            Everything you need to know before starting your project with{" "}
-            <span className="font-bold font-instrument-sans">Skyphr</span>
-          </p>
-        </div>
+        <CommonSectionHeader header={data?.header} />
 
         <div className="w-full max-w-3xl mx-auto space-y-3">
-          {FAQ_DATA.map((item, index) => (
+          {data?.faqsItems.map((item, index) => (
             <div key={index} className="reveal-animation">
               <FaqCommonCard
                 question={item.question}

@@ -13,7 +13,7 @@ function OurProcessCard({ imageOptions, title, description, label }: OurProcessC
             width={imageOptions?.width}
             height={imageOptions?.height}
             loading={imageOptions?.loading || "lazy"}
-            className={twMerge("rounded-lg w-full", imageOptions?.className)}
+            className={twMerge("rounded-lg w-full object-cover object-center", imageOptions?.className)}
           />
         </div>
         <div className="w-full flex flex-col items-start justify-start gap-5 px-4 pb-4">

@@ -35,7 +35,7 @@ function FaqCommonCard({ question, answer, isOpen, onToggle, index }: FaqCommonC
         <div className="overflow-hidden min-h-0">
           <div className="px-6 pb-5">
             <span className="w-full h-px border border-dashed border-(--border-color) block mb-5"></span>
-            <div className="text-(--text-secondary-color) text-base font-inter leading-relaxed">{answer()}</div>
+            <div className="text-(--text-secondary-color) text-base font-inter leading-relaxed">{answer}</div>
           </div>
         </div>
       </div>

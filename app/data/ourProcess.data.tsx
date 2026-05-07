@@ -1,7 +1,8 @@
-import ContinuousGrowth from "@/app/assets/continuous-growth.png";
-import DeliveryAndHandoff from "@/app/assets/delivery-handoff.png";
-import KickOffDiscovery from "@/app/assets/kickoff-discovery.png";
-import StrategyAndPlanning from "@/app/assets/strategy-planning.png";
+import ContinuousGrowth from "@/app/assets/webp/continuous-growth.webp";
+import CreativeDesign from "@/app/assets/webp/creative-design.webp";
+import DeliveryAndHandoff from "@/app/assets/webp/delivery-handoff.webp";
+import KickOffDiscovery from "@/app/assets/webp/kickoff-discovery.webp";
+import StrategyAndPlanning from "@/app/assets/webp/strategy-planning.webp";
 import { OurProcessCardInterface } from "@/app/utils/interface/common.interface";
 
 export const OUR_PROCESS_DATA: OurProcessCardInterface[] = [
@@ -11,7 +12,7 @@ export const OUR_PROCESS_DATA: OurProcessCardInterface[] = [
       "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
     imageOptions: {
       imagePath: KickOffDiscovery,
-      width: 620,
+      width: 600,
       height: 270,
       alt: "Kickoff & Discovery",
     },
@@ -34,7 +35,7 @@ export const OUR_PROCESS_DATA: OurProcessCardInterface[] = [
     description:
       "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
     imageOptions: {
-      imagePath: ContinuousGrowth,
+      imagePath: CreativeDesign,
       width: 600,
       height: 270,
       alt: "Creative Design",

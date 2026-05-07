@@ -1,4 +1,4 @@
-import NotFoundImage from "@/app/assets/skyphr-404.png";
+import NotFoundImage from "@/app/assets/webp/skyphr-404.webp";
 import Image from "next/image";
 import CTAButton from "./components/common/ctaButton";
 import HeroBgAbstract from "./components/heroBgAbstract";
@@ -19,8 +19,6 @@ function PageNotFound() {
             priority
             loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            // placeholder="blur"
-            // blurDataURL=""
           />
         </div>
         <div className="w-full h-fit z-10 flex flex-col items-center justify-center relative text-center px-4">

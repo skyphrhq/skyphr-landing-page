@@ -43,3 +43,8 @@ export interface OurServiceCardDataArrayInterface {
     darkColor: string;
   };
 }
+
+export interface FaqCommonCardData {
+  question: string;
+  answer: React.ReactNode;
+}

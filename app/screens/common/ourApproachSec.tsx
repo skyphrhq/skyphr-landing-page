@@ -1,51 +1,16 @@
 "use client";
 
+import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { OurApproachSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useLayoutEffect, useRef } from "react";
+import { twMerge } from "tailwind-merge";
+
 import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
 
-const steps = [
-  {
-    num: "01",
-    title: "Discovery & Strategy",
-    desc: "We understand your business, users and goals to create a clear strategy and roadmap.",
-    icon: <FaRegCompass className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-purple-50",
-    numBgColor: "bg-purple-100",
-    numTextColor: "text-purple-800",
-  },
-  {
-    num: "02",
-    title: "Design & Experience",
-    desc: "We design intuitive, user-focused experiences that are modern, engaging and conversion-driven.",
-    icon: <FaRegLightbulb className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-yellow-50",
-    numBgColor: "bg-yellow-100",
-    numTextColor: "text-yellow-800",
-  },
-  {
-    num: "03",
-    title: "Development & Build",
-    desc: "We build scalable, secure and high-performance products using modern technologies.",
-    icon: <FaCode className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-pink-50",
-    numBgColor: "bg-pink-100",
-    numTextColor: "text-pink-800",
-  },
-  {
-    num: "04",
-    title: "Launch & Scale",
-    desc: "We launch with confidence and continuously optimize to help your product grow and scale.",
-    icon: <FaRocket className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-indigo-50",
-    numBgColor: "bg-indigo-100",
-    numTextColor: "text-indigo-800",
-  },
-];
-
-function OurApproachSection() {
+function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
 
@@ -81,22 +46,9 @@ function OurApproachSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="py-24 bg-white overflow-hidden">
+    <div ref={sectionRef} className={twMerge("py-30 overflow-hidden", classNames)}>
       <div className="skyphr-container">
-        <div className="w-full pb-15">
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">How</span>
-            <span className="reveal-text-animation">We</span>
-            <span className="reveal-text-animation">
-              Build & <span className="font-playfair-display italic font-semibold">Scale</span>
-            </span>
-          </h2>
-
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
-            A streamlined approach to designing, building, and scaling digital products. From strategy to launch, we
-            create high-performance systems focused on user experience, efficiency, and long-term growth.
-          </p>
-        </div>
+        <CommonSectionHeader header={data?.header} />
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-25">
           {/* Left Side: Circular Animation */}
@@ -148,9 +100,7 @@ function OurApproachSection() {
                   to Scale
                 </h3>
                 <div className="w-8 h-[2px] bg-gray-200 mb-4 rounded-full"></div>
-                <p className="text-sm text-gray-500 font-medium font-instrument-sans">
-                  Strategy. Design. Build.
-                </p>
+                <p className="text-sm text-gray-500 font-medium font-instrument-sans">Strategy. Design. Build.</p>
                 <p className="text-sm text-gray-500 font-medium mt-1 font-instrument-sans">Launch. Grow.</p>
               </div>
             </div>
@@ -158,12 +108,12 @@ function OurApproachSection() {
 
           {/* Right Side: Steps */}
           <div className="w-1/2 grow">
-            {steps.map((step, index) => (
+            {data?.steps.map((step, index) => (
               <div
                 key={index}
                 className="flex gap-6 items-start relative pb-8 border-b border-gray-100 last:border-0 last:pb-0">
                 <div
-                  className={`w-16 h-16 rounded-2xl flex-shrink-0 flex items-center justify-center border border-gray-100/50 ${step.iconBgColor}`}>
+                  className={`w-16 h-16 rounded-2xl shrink-0 flex items-center justify-center border border-gray-100/50 ${step.iconBgColor}`}>
                   {step.icon}
                 </div>
 

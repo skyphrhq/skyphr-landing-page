@@ -1,4 +1,5 @@
 "use client";
+import { CONTACT_PAGE_DATA } from "@/app/data/pageData/contact.data";
 import { gsap } from "@/app/lib/gsap";
 import ClientTestimonial from "@/app/screens/common/clientTestimonial";
 import ContactHeroSection from "@/app/screens/contactHeroSection";
@@ -11,18 +12,23 @@ function ContactUsPage() {
   };
   return (
     <div className="w-full h-auto">
-      <ContactHeroSection onStartProjectClick={handleStartAProject} />
+      {CONTACT_PAGE_DATA?.hero && (
+        <ContactHeroSection data={CONTACT_PAGE_DATA?.hero} onStartProjectClick={handleStartAProject} />
+      )}
 
       <div id="contact-us-section" className="w-full overflow-hidden">
         <ContactUsSection classNames="py-20!" />
       </div>
-      <div className="w-full">
-        <ClientTestimonial />
-      </div>
-
-      <div className="w-full">
-        <ReadyToScaleSection classNames="pt-0! pb-30" />
-      </div>
+      {CONTACT_PAGE_DATA?.testimonials && (
+        <div className="w-full">
+          <ClientTestimonial data={CONTACT_PAGE_DATA.testimonials} />
+        </div>
+      )}
+      {CONTACT_PAGE_DATA.readyToScale && (
+        <div className="w-full">
+          <ReadyToScaleSection data={CONTACT_PAGE_DATA.readyToScale} classNames="pt-0! pb-30" />
+        </div>
+      )}
     </div>
   );
 }
