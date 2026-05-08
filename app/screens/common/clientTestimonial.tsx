@@ -63,12 +63,20 @@ function ClientTestimonial({ data, classNames }: ClientTestimonialSectionInterfa
 
         <div className="w-full flex items-center justify-center gap-4 pt-10 reveal-animation">
           <button
+            title="previous"
+            name="previous"
+            aria-label="previous"
+            type="button"
             onClick={() => instanceRef.current?.prev()}
             className="w-12 h-12 rounded-full bg-(--root-black-color) flex items-center justify-center text-(--root-white-color) group relative ring-1 ring-(--root-black-color) hover:text-(--root-black-color) cursor-pointer">
             <FaArrowLeftLong className="relative z-10 text-xl" />
             <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-0 h-0 min-w-0 min-h-0 bg-(--root-white-color) block rounded-full group-hover:min-w-full group-hover:min-h-full transition-all duration-300"></span>
           </button>
           <button
+            title="next"
+            name="next"
+            aria-label="next"
+            type="button"
             onClick={() => instanceRef.current?.next()}
             className="w-12 h-12 rounded-full bg-(--root-black-color) flex items-center justify-center text-(--root-white-color) group relative ring-1 ring-(--root-black-color) hover:text-(--root-black-color) cursor-pointer">
             <FaArrowRightLong className="relative z-10 text-xl" />
