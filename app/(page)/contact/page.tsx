@@ -1,10 +1,12 @@
 "use client";
 import { CONTACT_PAGE_DATA } from "@/app/data/pageData/contact.data";
 import { gsap } from "@/app/lib/gsap";
-import ClientTestimonial from "@/app/screens/common/clientTestimonial";
 import ContactHeroSection from "@/app/screens/contactHeroSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
+import dynamic from "next/dynamic";
+
+const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
 
 function ContactUsPage() {
   const handleStartAProject = () => {

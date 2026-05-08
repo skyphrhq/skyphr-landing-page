@@ -1,7 +1,5 @@
 import { HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
 import AboutSection from "@/app/screens/aboutSection";
-import ClientTestimonial from "@/app/screens/common/clientTestimonial";
-import FeaturedWorks from "@/app/screens/common/featuredWorks";
 import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
 import OurInsightsSection from "@/app/screens/common/ourInsightsSection";
 import OurProcessSection from "@/app/screens/common/ourProcessSection";
@@ -9,6 +7,10 @@ import OurServiceSection from "@/app/screens/common/ourServiceSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import HeroSectionElement from "@/app/screens/heroSectionEle";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
+import dynamic from "next/dynamic";
+
+const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
+const FeaturedWorks = dynamic(() => import("@/app/screens/common/featuredWorks"));
 
 export default function Home() {
   return (
@@ -18,7 +20,8 @@ export default function Home() {
         <div className="w-full">
           <FeaturedWorks data={HOME_PAGE_DATA.featuredWorks} />
         </div>
-      )}₹
+      )}
+
       {HOME_PAGE_DATA?.about && (
         <div className="w-full">
           <AboutSection data={HOME_PAGE_DATA.about} />
