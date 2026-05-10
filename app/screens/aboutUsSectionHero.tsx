@@ -19,7 +19,7 @@ function AboutUsSectionHeroElem({ data, classNames }: AboutUsHeroSectionInterfac
   );
 
   return (
-    <div className={twMerge("w-full h-fit relative bg-white overflow-hidden", classNames)}>
+    <div className={twMerge("w-full h-fit relative pt-55 pb-35 overflow-hidden", classNames)}>
       <HeroBgAbstract />
 
       <div
