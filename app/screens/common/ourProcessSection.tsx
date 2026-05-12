@@ -34,12 +34,12 @@ function OurProcessSection({ data, classNames }: OurProcessSectionInterface) {
     { scope: containerRef },
   );
   return (
-    <div className={twMerge("w-full h-full py-30", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-full py-15! md:py-20! lg:py-30! overflow-hidden @container", classNames)} ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />
-        <div className="w-full grid grid-cols-6 gap-6">
+        <div className="w-full grid grid-colo-1 xl:grid-cols-6 gap-6">
           {data?.steps?.map((item, index) => (
-            <div key={index} className={`${item?.gridStyle} reveal-animation`}>
+            <div key={index} className={`${item?.gridStyle} reveal-animation @max-xl:col-span-1`}>
               <OurProcessCard {...item} />
             </div>
           ))}

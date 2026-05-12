@@ -14,7 +14,7 @@ const FeaturedWorks = dynamic(() => import("@/app/screens/common/featuredWorks")
 
 export default function Home() {
   return (
-    <div className="w-full h-auto">
+    <div className="w-auto h-auto">
       {HOME_PAGE_DATA?.hero && <HeroSectionElement data={HOME_PAGE_DATA.hero} />}
       {HOME_PAGE_DATA?.featuredWorks && (
         <div className="w-full">
@@ -57,9 +57,11 @@ export default function Home() {
           <ReadyToScaleSection data={HOME_PAGE_DATA.readyToScale} />
         </div>
       )}
-      <div className="w-full overflow-hidden">
-        <ContactUsSection />
-      </div>
+      {HOME_PAGE_DATA?.contactUs && (
+        <div className="w-full overflow-hidden">
+          <ContactUsSection data={HOME_PAGE_DATA.contactUs} />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import {
   AboutSection,
+  ContactUsSectionInterface,
   FAQSection,
   FeaturedWorkDataInterface,
   HeroSection,
@@ -81,5 +82,10 @@ export interface ServicesSectionHeroInterface {
 
 export interface OurApproachSectionInterface {
   data: OurApproachInterface;
+  classNames?: string;
+}
+
+export interface ContactUsSectionDataInterface {
+  data: ContactUsSectionInterface;
   classNames?: string;
 }

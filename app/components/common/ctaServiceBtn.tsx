@@ -8,18 +8,18 @@ function CtaServiceButton({ label, href, className, showArrow = true, theme = "w
     <a
       href={href}
       className={twMerge(
-        "w-fit h-fit min-w-[230px] min-h-[45px] max-h-[45px] rounded-full font-bold font-instrument-sans overflow-hidden flex items-start justify-start text-sm hover:scale-x-105 group transition-all duration-300 ring-1 relative",
+        "w-fit h-fit min-w-57.5 min-h-11.25 max-h-11.25 rounded-full font-bold font-instrument-sans overflow-hidden flex items-start justify-start text-sm hover:scale-x-105 group transition-all duration-300 ring-1 relative",
         isBlackTheme
           ? "bg-(--root-black-color) text-(--root-white-color) ring-(--root-black-color) hover:text-(--root-black-color)"
           : "bg-(--root-white-color) text-(--root-black-color) ring-(--root-white-color) hover:text-(--root-white-color)",
         className,
       )}>
-      <span className="flex flex-col gap-2 items-start justify-start group-hover:-translate-y-[53px] transition-all duration-300 relative z-2 w-full">
-        <span className={`text-nowrap min-h-[45px] flex px-8 py-3 items-center ${showArrow ? "justify-between" : "justify-center"} gap-5 w-full text-center`}>
+      <span className="flex flex-col gap-2 items-start justify-start group-hover:-translate-y-13.25 transition-all duration-300 relative z-2 w-full">
+        <span className={`text-nowrap min-h-11.25 flex px-5 sm:px-8 py-3 items-center ${showArrow ? "justify-between" : "justify-center"} gap-5 w-full text-center`}>
           <span>{label}</span>
           {showArrow && <ImArrowUpRight2 />}
         </span>
-        <span className={`text-nowrap min-h-[45px] flex px-8 py-3 items-center ${showArrow ? "justify-between" : "justify-center"} gap-5 w-full text-center`}>
+        <span className={`text-nowrap min-h-11.25 flex px-5 sm:px-8 py-3 items-center ${showArrow ? "justify-between" : "justify-center"} gap-5 w-full text-center`}>
           <span>{label}</span>
           {showArrow && <ImArrowUpRight2 />}
         </span>

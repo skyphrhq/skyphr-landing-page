@@ -1,3 +1,4 @@
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
@@ -32,6 +33,7 @@ export const CONTACT_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
+  contactUs: COMMON_CONTACT_US_SECTION_DATA,
   testimonials: {
     header: {
       title: [[{ text: "Trusted by Clients " }, { text: "Worldwide", variant: "italic", classNames: "font-bold" }]],

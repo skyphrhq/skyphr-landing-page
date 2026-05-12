@@ -1,4 +1,5 @@
 import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
@@ -98,4 +99,5 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
     },
     clientsFeedback: CLIENT_TESTIMONIAL_DATA,
   },
+  contactUs: COMMON_CONTACT_US_SECTION_DATA,
 };

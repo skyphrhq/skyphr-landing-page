@@ -138,3 +138,7 @@ export interface OurStepsDataInterface {
   numBgColor: string;
   numTextColor: string;
 }
+
+export interface CommonButtonInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}

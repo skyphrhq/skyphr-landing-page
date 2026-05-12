@@ -8,14 +8,14 @@ function BlogCard({ imageOptions, title, description, label, date }: BlogCardInt
     <div className="group/blog-card w-full h-full bg-(--root-white-color) rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col gap-3 cursor-pointer relative border border-(--border-color)">
       <div className="w-full grow p-5 flex flex-col gap-5 relative z-5">
         {date && (
-          <span className="w-fit text-sm font-inter font-normal text-(--text-main-color) border border-(--text-main-color)/25 px-4 py-1.5 rounded-full">
+          <span className="w-fit text-[10px] md:text-sm font-inter font-normal text-(--text-main-color) border border-(--text-main-color)/25 px-4 py-1.5 rounded-full">
             {date}
           </span>
         )}
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-2xl font-bold text-(--text-main-color) font-instrument-sans leading-tight">{title}</h3>
-          <p className="text-sm text-(--text-main-color)/65 font-inter font-normal leading-relaxed">{description}</p>
+          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-(--text-main-color) font-instrument-sans leading-tight">{title}</h3>
+          <p className="text-xs md:text-sm text-(--text-main-color)/65 font-inter font-normal leading-relaxed">{description}</p>
         </div>
       </div>
 

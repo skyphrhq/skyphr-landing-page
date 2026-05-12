@@ -81,25 +81,25 @@ export const OUR_SERVICES_DATA: ServiceDataInterface[] = [
 export const ABOUT_US_INFO_CARD_DATA: AboutUsCardsDataArrayInterface[] = [
   {
     direction: "TOP_LEFT",
-    icon: <MdPeopleAlt className="text-xl text-(--text-main-color)" />,
+    icon: <MdPeopleAlt className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 10,
     label: "Happy Clients",
   },
   {
     direction: "TOP_RIGHT",
-    icon: <FaBriefcase className="text-xl text-(--text-main-color)" />,
+    icon: <FaBriefcase className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 20,
     label: "Projects Delivered",
   },
   {
     direction: "BOTTOM_LEFT",
-    icon: <FaClock className="text-xl text-(--text-main-color)" />,
+    icon: <FaClock className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 4,
     label: "Years Of Building Scalable Products",
   },
   {
     direction: "BOTTOM_RIGHT",
-    icon: <IoMdTrendingUp className="text-xl text-(--text-main-color)" />,
+    icon: <IoMdTrendingUp className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 10,
     label: "Scalable Systems Built",
   },
@@ -108,7 +108,7 @@ export const ABOUT_US_INFO_CARD_DATA: AboutUsCardsDataArrayInterface[] = [
 export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   {
     title: "UI UX Design",
-    className: "sticky top-[20%]",
+    className: "sticky top-[100px] md:top-[20%]",
     description:
       "We design intuitive, high-converting user experiences focused on clarity, usability, and seamless interaction across modern digital products.",
     ctaButton: {
@@ -128,7 +128,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   },
   {
     title: "SaaS & Web App Development",
-    className: "sticky top-[25%]",
+    className: "sticky top-[130px] md:top-[25%]",
     description:
       "We build scalable SaaS and web applications with modern architecture, optimized performance, and reliable infrastructure for long-term growth.",
     ctaButton: {
@@ -148,7 +148,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   },
   {
     title: "SaaS & Web App Development",
-    className: "sticky top-[30%]",
+    className: "sticky top-[160px] md:top-[30%]",
     description:
       "We build scalable SaaS and web applications with modern architecture, optimized performance, and reliable infrastructure for long-term growth.",
     ctaButton: {

@@ -18,9 +18,11 @@ function ContactUsPage() {
         <ContactHeroSection data={CONTACT_PAGE_DATA?.hero} onStartProjectClick={handleStartAProject} />
       )}
 
-      <div id="contact-us-section" className="w-full overflow-hidden">
-        <ContactUsSection classNames="py-20!" />
-      </div>
+      {CONTACT_PAGE_DATA?.contactUs && (
+        <div className="w-full overflow-hidden" id="contact-us-section">
+          <ContactUsSection data={CONTACT_PAGE_DATA.contactUs} />
+        </div>
+      )}
       {CONTACT_PAGE_DATA?.testimonials && (
         <div className="w-full">
           <ClientTestimonial data={CONTACT_PAGE_DATA.testimonials} />

@@ -24,9 +24,11 @@ function AboutUsPage() {
       <div className="w-full">
         <OurTeamSection />
       </div>
-      <div className="w-full overflow-hidden">
-        <ContactUsSection />
-      </div>
+      {ABOUT_US_PAGE_DATA?.contactUs && (
+        <div className="w-full overflow-hidden">
+          <ContactUsSection data={ABOUT_US_PAGE_DATA.contactUs} />
+        </div>
+      )}
     </div>
   );
 }

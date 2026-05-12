@@ -1,4 +1,5 @@
 import { OUR_SERVICE_CARD_DATA, OUR_VALUES_CARD_DATA, STEPS_WE_FOLLOW_IN_SERVICES } from "@/app/data/common.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const SERVICES_PAGE_DATA: CommonPageDataInterface = {
@@ -93,4 +94,5 @@ export const SERVICES_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
+  contactUs: COMMON_CONTACT_US_SECTION_DATA,
 };

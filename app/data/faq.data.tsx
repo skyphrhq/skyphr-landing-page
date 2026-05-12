@@ -53,9 +53,27 @@ export const FAQ_DATA: FaqCommonCardData[] = [
     question: "How do we get started?",
     answer: (
       <p>
-        Visit our <span className="font-semibold underline cursor-pointer">Contact Us</span> page or{" "}
-        <span className="font-semibold underline cursor-pointer">book a free 30-minute call</span>. We’ll understand
-        your requirements and guide you through the next steps.
+        Visit our{" "}
+        <a
+          href="/contact"
+          title="Contact Us"
+          aria-label="Contact Us"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="font-semibold underline cursor-pointer">
+          Contact Us
+        </a>{" "}
+        page or{" "}
+        <a
+          href="https://cal.com/skyphr/30min"
+          title="Book A Call"
+          aria-label="Book A Call"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="font-semibold underline cursor-pointer">
+          book a free 30-minute call
+        </a>
+        . We’ll understand your requirements and guide you through the next steps.
       </p>
     ),
   },

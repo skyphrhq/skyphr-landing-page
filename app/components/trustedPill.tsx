@@ -15,16 +15,16 @@ export default function TrustedPill({ className }: TrustedPillInterface) {
       )}>
       {/* Avatars */}
       <div className="flex -space-x-3">
-        <div className="w-8 h-8 rounded-full overflow-hidden border border-(--text-main-color)">
+        <div className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full overflow-hidden border border-(--text-main-color)">
           <Image src={DummyImage} alt="client" width={32} height={32} />
         </div>
 
-        <div className="w-8 h-8 rounded-full overflow-hidden border border-(--text-main-color)">
+        <div className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full overflow-hidden border border-(--text-main-color)">
           <Image src={DummyImage} alt="client" width={32} height={32} />
         </div>
 
         <div
-          className="w-8 h-8 rounded-full flex items-center justify-center 
+          className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full flex items-center justify-center 
           bg-black text-[10px] text-(--text-white-color) border border-(--text-main-color)">
           <FaPlus />
         </div>

@@ -17,6 +17,29 @@ function ClientTestimonial({ data, classNames }: ClientTestimonialSectionInterfa
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     mode: "snap",
+    breakpoints: {
+      "(max-width: 640px)": {
+        slides: {
+          perView: 1,
+          spacing: 16,
+          origin: "center",
+        },
+      },
+      "(min-width: 641px) and (max-width: 1024px)": {
+        slides: {
+          perView: 1.2,
+          spacing: 20,
+          origin: "center",
+        },
+      },
+      "(min-width: 1025px) and (max-width: 1280px)": {
+        slides: {
+          perView: 1.5,
+          spacing: 24,
+          origin: "center",
+        },
+      },
+    },
     slides: {
       perView: 1.8,
       spacing: 30,
@@ -48,7 +71,7 @@ function ClientTestimonial({ data, classNames }: ClientTestimonialSectionInterfa
   );
 
   return (
-    <div className={twMerge("w-full h-fit py-30", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-fit py-15! md:py-20! lg:py-30! overflow-hidden", classNames)} ref={containerRef}>
       <div className="px-4">
         <CommonSectionHeader header={data?.header} />
         <div className="w-full reveal-animation">
@@ -61,7 +84,7 @@ function ClientTestimonial({ data, classNames }: ClientTestimonialSectionInterfa
           </div>
         </div>
 
-        <div className="w-full flex items-center justify-center gap-4 pt-10 reveal-animation">
+        <div className="w-full flex items-center justify-center gap-4 pt-10 reveal-animation pb-1">
           <button
             title="previous"
             name="previous"

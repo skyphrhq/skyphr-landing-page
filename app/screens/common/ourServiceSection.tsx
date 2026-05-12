@@ -25,12 +25,14 @@ function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
   );
 
   return (
-    <div ref={animationContainer} className={twMerge("w-full h-auto bg-(--about-us-card-bg) py-25", classNames)}>
-      <div className="skyphr-container">
-        <div className="w-full flex items-center justify-center sticky top-[30vh]">
+    <div
+      ref={animationContainer}
+      className={twMerge("w-full h-auto bg-(--about-us-card-bg) py-15! md:py-20! lg:py-30!", classNames)}>
+      <div className="skyphr-container @container">
+        <div className="w-full flex items-center justify-center md:sticky md:top-[30vh] overflow-hidden">
           {data?.header?.title?.map((titleRow, rowIndex) => (
             <h2
-              className="bg-clip-text text-transparent bg-linear-to-t from-(--border-color) to-[#a7a7a7] font-black uppercase text-[clamp(60px,25vh,160px)] font-instrument-sans reveal-animation"
+              className="bg-clip-text text-transparent bg-linear-to-t text-nowrap from-(--border-color) to-[#a7a7a7] font-black uppercase text-[clamp(40px,4.5vh,120px)] sm:text-[clamp(60px,9.5vh,120px)] xl:text-[clamp(60px,25vh,160px)] font-instrument-sans reveal-animation"
               key={rowIndex}>
               {titleRow?.map((chunk, chunkIndex) => {
                 return (
@@ -42,12 +44,12 @@ function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
             </h2>
           ))}
         </div>
-        <div className="max-w-4xl mx-auto space-y-20 reveal-animation">
+        <div className="max-w-4xl mx-auto space-y-10 md:space-y-20 reveal-animation">
           {data?.items?.map((item, index) => (
             <OurServiceCardComponent key={index} data={item} />
           ))}
 
-          <div className="h-2.5 opacity-0 bg-purple-400 sticky top-[40%] z-50 rounded-xl flex items-center justify-center text-2xl font-bold">
+          <div className="h-2.5 opacity-0 bg-purple-400 sticky top-47.5 md:top-[40%] z-50 rounded-xl flex items-center justify-center text-2xl font-bold">
             5
           </div>
         </div>

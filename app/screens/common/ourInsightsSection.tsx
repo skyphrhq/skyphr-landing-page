@@ -35,12 +35,14 @@ function OurInsightsSection({ data, classNames }: OurInsightsSectionInterface) {
   );
 
   return (
-    <div className={twMerge("w-full h-full bg-(--about-us-card-bg) py-30", classNames)} ref={containerRef}>
+    <div
+      className={twMerge("w-full h-full bg-(--about-us-card-bg) py-15! md:py-20! lg:py-30!", classNames)}
+      ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />
-        <div className="w-full grid grid-cols-3 gap-6">
+        <div className="w-full flex flex-row overflow-auto items-stretch justify-start lg:grid lg:grid-cols-3 gap-6">
           {data.blogsData.slice(0, 3).map((item, index) => (
-            <div key={index} className="col-span-1 reveal-animation">
+            <div key={index} className="w-full lg:col-span-1 reveal-animation">
               <BlogCard {...item} />
             </div>
           ))}

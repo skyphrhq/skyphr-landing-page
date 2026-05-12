@@ -22,40 +22,42 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
   );
 
   return (
-    <div className={twMerge("w-full py-30", classNames)}>
+    <div className={twMerge("w-full py-15! md:py-20! lg:py-30!", classNames)}>
       <div className="skyphr-container">
-        <div className="w-full h-auto px-10 py-20 rounded-2xl relative border border-(--border-color) bg-(--root-white-color) overflow-hidden flex flex-col items-center gap-10">
+        <div className="w-full h-auto px-4 py-8 md:py-13 md:px-8 lg:px-10 lg:py-20 rounded-2xl relative border border-(--border-color) bg-(--root-white-color) overflow-hidden flex flex-col items-center gap-10">
           <HeroBgAbstract />
           <div
             ref={animationContainer}
-            className="w-ful h-full relative z-20 flex flex-col items-center max-w-4xl mx-auto justify-center">
-            <div className="flex flex-col items-center justify-center gap-2">
-              {data?.header?.title?.map((text, index) => (
-                <h2
+            className="w-ful h-full relative z-20 flex flex-col items-center lg:max-w-4xl mx-auto justify-center">
+            <div className="w-full h-auto flex flex-col items-center justify-center gap-5">
+              <div className="flex flex-col items-center justify-center gap-2">
+                {data?.header?.title?.map((text, index) => (
+                  <h2
+                    key={index}
+                    className="reveal-text-animation font-instrument-sans text-3xl md:text-4xl text-center lg:text-5xl font-bold tracking-tight text-(--text-main-color)">
+                    {text?.map((word, wordIndex) => (
+                      <span
+                        key={wordIndex}
+                        className={`${word?.variant === "italic" ? "font-playfair-display italic font-semibold" : ""}`}>
+                        {word?.text}
+                      </span>
+                    ))}
+                  </h2>
+                ))}
+              </div>
+
+              {data?.header?.description?.map((text, index) => (
+                <p
                   key={index}
-                  className="reveal-text-animation font-instrument-sans text-5xl font-bold tracking-tight text-(--text-main-color)">
+                  className="reveal-text-animation font-instrument-sans text-sm md:text-base font-medium text-pretty text-center text-(--text-main-color) md:max-w-[70%] lg:max-w-[65%]">
                   {text?.map((word, wordIndex) => (
-                    <span
-                      key={wordIndex}
-                      className={`${word?.variant === "italic" ? "font-playfair-display italic font-semibold" : ""}`}>
+                    <span key={wordIndex} className={twMerge("pl-1", word?.classNames)}>
                       {word?.text}
                     </span>
                   ))}
-                </h2>
+                </p>
               ))}
             </div>
-
-            {data?.header?.description?.map((text, index) => (
-              <p
-                key={index}
-                className="reveal-text-animation font-instrument-sans text-base font-medium text-pretty text-center pt-4 text-(--text-main-color) max-w-[65%]">
-                {text?.map((word, wordIndex) => (
-                  <span key={wordIndex} className={twMerge("block", word?.classNames)}>
-                    {word?.text}
-                  </span>
-                ))}
-              </p>
-            ))}
 
             <div className="w-full flex items-center justify-center gap-6 max-w-xl mx-auto pt-10">
               {data?.ctas?.map((button, index) => (

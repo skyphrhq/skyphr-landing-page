@@ -6,8 +6,8 @@ import { twMerge } from "tailwind-merge";
 function TestimonialCard({ data }: { data: ClientTestimonialCardInterface }) {
   return (
     <div className="w-full h-fit">
-      <div className="w-full bg-(--about-us-card-bg) rounded-xl border border-(--border-color) p-6">
-        <div className="w-full flex items-stretch justify-start gap-8">
+      <div className="w-full bg-(--about-us-card-bg) rounded-lg md:rounded-xl border border-(--border-color) p-4.5 md:p-6">
+        <div className="w-full flex flex-col md:flex-row items-stretch justify-start gap-8">
           <div className="aspect-450/635 rounded-lg">
             <Image
               alt={data.imageOptions.alt}
@@ -19,21 +19,21 @@ function TestimonialCard({ data }: { data: ClientTestimonialCardInterface }) {
             />
           </div>
           <div className="w-full relative">
-            <div className="w-full h-full flex flex-col items-start justify-center gap-10 relative z-10">
+            <div className="w-full h-full flex flex-col items-start justify-center gap-6 md:gap-10 relative z-10">
               <div className="flex items-start justify-start">
-                <span className="text-2xl text-(--text-secondary-color) font-instrument-sans font-semibold text-pretty">
+                <span className="text-xl md:text-2xl text-(--text-secondary-color) font-instrument-sans font-semibold text-pretty">
                   {`"${data.quote}"`}
                 </span>
               </div>
               <span className="w-full h-px bg-(--text-secondary-color)"></span>
-              <div className="w-full flex flex-col items-start justify-start">
-                <span className="block text-xl text-(--root-black-color) font-instrument-sans font-semibold">
+              <div className="w-full flex flex-col items-start justify-start gap-0.5">
+                <span className="block text-base sm:text-lg md:text-xl text-(--root-black-color) font-instrument-sans font-semibold">
                   {data.name}
                 </span>
-                <span className="block text-sm text-(--text-secondary-color) font-inter font-normal">{data.role}</span>
+                <span className="block text-xs sm:text-sm text-(--text-secondary-color) font-inter font-normal">{data.role}</span>
               </div>
             </div>
-            <Image src={QuoteIcon} alt="Quote Icon" width={280} height={225} className="absolute top-0 right-0" />
+            <Image src={QuoteIcon} alt="Quote Icon" width={280} height={225} className="absolute top-0 right-0 hidden md:block" />
           </div>
         </div>
       </div>

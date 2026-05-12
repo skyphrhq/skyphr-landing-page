@@ -3,7 +3,24 @@ import { FAQ_DATA } from "@/app/data/faq.data";
 import { INSIGHTS_DATA } from "@/app/data/insights.data";
 import { OUR_PROCESS_DATA } from "@/app/data/ourProcess.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
-import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
+import { CommonPageDataInterface, ContactUsSectionInterface } from "@/app/utils/interface/page.interface";
+
+export const COMMON_CONTACT_US_SECTION_DATA: ContactUsSectionInterface = {
+  header: {
+    title: [
+      [{ text: "Let’s " }, { text: "Talk ", variant: "italic" }],
+      [{ text: "About Your " }, { text: "Project", variant: "italic", classNames: "font-semibold" }],
+    ],
+
+    description: [
+      [
+        {
+          text: "Have a question or idea? Share your requirements and we’ll get back to you within 24 hours.",
+        },
+      ],
+    ],
+  },
+};
 
 export const HOME_PAGE_DATA: CommonPageDataInterface = {
   hero: {
@@ -23,7 +40,7 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
     ctas: [
       {
         label: "Get Your Product Built",
-        href: "#",
+        href: "/contact",
         variant: "CTA_PRIMARY",
       },
       {
@@ -145,4 +162,5 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
+  contactUs: COMMON_CONTACT_US_SECTION_DATA
 };

@@ -43,13 +43,13 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
   );
 
   return (
-    <div ref={containerRef} className={twMerge("skyphr-container w-full h-fit py-30", classNames)}>
-      <div className="w-full flex items-stretch justify-start gap-20">
-        <div className="w-[45%]">
-          <div className="w-full flex flex-col items-start justify-start gap-6 py-10">
+    <div ref={containerRef} className={twMerge("skyphr-container w-full overflow-hidden h-fit py-15! md:py-20! lg:py-30!", classNames)}>
+      <div className="w-full flex flex-col md:flex-row items-stretch justify-start gap-10 lg:gap-20">
+        <div className="w-full md:w-[45%]">
+          <div className="w-full flex flex-col items-start justify-start gap-6 md:py-10 @container">
             {data?.header?.title?.map((titleRow, rowIndex) => (
               <h2
-                className="text-(--text-main-color) text-4xl font-instrument-sans font-semibold leading-12"
+                className="text-(--text-main-color) text-2xl xs:text-[26px] md:text-4xl font-instrument-sans font-semibold leading-9 md:leading-12"
                 key={rowIndex}>
                 {titleRow.map((chunk, index) => (
                   <span
@@ -63,7 +63,7 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
 
             {data?.header?.description?.map((description, index) => (
               <p
-                className="text-(--text-secondary-color) text-lg font-instrument-sans font-normal reveal-text-animation"
+                className="text-(--text-secondary-color) text-base lg:text-lg font-instrument-sans font-normal reveal-text-animation"
                 key={index}>
                 {description?.map((chunk, chunkIndex) => {
                   return (
@@ -76,19 +76,22 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
             ))}
 
             {data?.cta && (
-              <CTAButton btnStyle={data?.cta?.variant} href={data?.cta?.href} className="reveal-text-animation">
+              <CTAButton
+                btnStyle={data?.cta?.variant}
+                href={data?.cta?.href}
+                className="reveal-text-animation @max-xs:max-w-62! @max-xs:min-w-62!">
                 {data?.cta?.label}
               </CTAButton>
             )}
           </div>
         </div>
-        <div className="w-[55%]">
-          <div className="w-full h-full grid grid-cols-2 gap-4 relative">
+        <div className="w-full md:w-[55%]">
+          <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-4 relative">
             {data?.cards?.map((item, index) => (
-              <AboutUsInfoCard key={index} className={"card-reveal scale-x-0 scale-y-0"} data={item} />
+              <AboutUsInfoCard key={index} className={"card-reveal md:scale-x-0 md:scale-y-0"} data={item} />
             ))}
-            <div className="w-20 min-w-20 min-h-20 h-20 bg-(--root-white-color) rounded-full flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="w-[60px] h-[60px] min-w-[60px] min-h-[60px] rounded-full flex items-center justify-center bg-(--about-us-card-bg)">
+            <div className="w-20 min-w-20 min-h-20 h-20 bg-(--root-white-color) rounded-full items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+              <span className="w-15 h-15 min-w-15 min-h-15 rounded-full flex items-center justify-center bg-(--about-us-card-bg)">
                 <Image
                   width={30}
                   height={30}

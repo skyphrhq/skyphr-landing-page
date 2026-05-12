@@ -102,6 +102,10 @@ export interface OurApproachInterface {
   steps: OurStepsDataInterface[];
 }
 
+export interface ContactUsSectionInterface {
+  header: SectionHeader;
+}
+
 // ===============================
 // PAGE TYPE
 // ===============================
@@ -117,4 +121,5 @@ export interface CommonPageDataInterface {
   readyToScale?: ReadyToScaleSectionDataInterface;
   ourValues?: OurValuesInterface;
   ourApproach?: OurApproachInterface;
+  contactUs?: ContactUsSectionInterface;
 }
