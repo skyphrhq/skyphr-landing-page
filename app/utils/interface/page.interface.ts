@@ -7,6 +7,7 @@ import {
   ClientTestimonialCardInterface,
   OurProcessCardInterface,
   OurStepsDataInterface,
+  OurTeamMembersDataArrayInterface,
   OurValueCardInterface,
 } from "@/app/utils/interface/common.interface";
 import {
@@ -106,6 +107,11 @@ export interface ContactUsSectionInterface {
   header: SectionHeader;
 }
 
+export interface OurTeamSectionInterface {
+  header: SectionHeader;
+  members: OurTeamMembersDataArrayInterface[];
+}
+
 // ===============================
 // PAGE TYPE
 // ===============================
@@ -121,5 +127,6 @@ export interface CommonPageDataInterface {
   readyToScale?: ReadyToScaleSectionDataInterface;
   ourValues?: OurValuesInterface;
   ourApproach?: OurApproachInterface;
+  ourTeam?: OurTeamSectionInterface;
   contactUs?: ContactUsSectionInterface;
 }

@@ -1,12 +1,14 @@
 "use client";
+import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import OurTeamIntroCard from "@/app/components/ourTeamIntroCard";
-import { OUR_TEAM_MEMBERS_DATA } from "@/app/data/common.data";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { OurTeamSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
-function OurTeamSection() {
+function OurTeamSection({ data, classNames }: OurTeamSectionInterface) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -32,22 +34,11 @@ function OurTeamSection() {
     { scope: containerRef },
   );
   return (
-    <div className="w-full h-full bg-(--root-white-color) pb-30" ref={containerRef}>
+    <div className={twMerge("w-full h-full bg-(--root-white-color) pb-30", classNames)} ref={containerRef}>
       <div className="skyphr-container">
-        <div className="w-full pb-15">
-          <h2 className="flex items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[45px] font-bold">
-            <span className="reveal-text-animation">
-              The Person Behind <span className="font-playfair-display italic font-semibold">Skyphr</span>
-            </span>
-          </h2>
-
-          <p className="max-w-125 text-pretty text-center mx-auto text-lg pt-4 reveal-text-animation">
-            Skyphr is built and led by a developer focused on creating scalable digital products and AI-driven systems
-            with a strong emphasis on performance, usability, and real-world impact.
-          </p>
-        </div>
-        <div className="max-w-[60%] mx-auto">
-          {OUR_TEAM_MEMBERS_DATA?.map((member, index) => (
+        <CommonSectionHeader header={data.header} />
+        <div className="lg:max-w-[85%] xl:max-w-[60%] mx-auto">
+          {data.members?.map((member, index) => (
             <div key={index} className="reveal-animation">
               <OurTeamIntroCard data={member} />
             </div>

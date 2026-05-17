@@ -1,7 +1,10 @@
+import CEOImage from "@/app/assets/dummy-testimonial.png";
 import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
+import { createElement } from "react";
+import { FiLinkedin } from "react-icons/fi";
 
 export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
   hero: {
@@ -98,6 +101,43 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       ],
     },
     clientsFeedback: CLIENT_TESTIMONIAL_DATA,
+  },
+  ourTeam: {
+    header: {
+      title: [[{ text: "The Person Behind " }, { text: "Skyphr", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "Skyphr is built and led by a developer focused on creating scalable digital products and AI-driven systems with a strong emphasis on performance, usability, and real-world impact.",
+          },
+        ],
+      ],
+    },
+    members: [
+      {
+        name: "Varun Patel",
+        role: "Founder & CEO",
+        description:
+          "Focused on building scalable SaaS products, AI systems, and modern web applications with performance, usability, and real-world impact at the core.",
+        social: [
+          {
+            platform: "LinkedIn",
+            icon: createElement(FiLinkedin),
+            url: "https://linkedin.com/in/your-profile",
+            title: "LinkedIn",
+            ariaLabel: "LinkedIn",
+            target: "_blank",
+            rel: "noopener noreferrer",
+          },
+        ],
+        imageOptions: {
+          imagePath: CEOImage,
+          width: 450,
+          height: 635,
+          alt: "Ui Ux Design",
+        },
+      },
+    ],
   },
   contactUs: COMMON_CONTACT_US_SECTION_DATA,
 };

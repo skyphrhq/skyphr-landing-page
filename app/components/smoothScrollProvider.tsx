@@ -48,7 +48,7 @@ function SmoothScrollProvider({ children }: SmoothScrollProviderInterface) {
     });
   }, [pathname]);
 
-  return <>{children}</>;
+  return <main className="w-full h-auto">{children}</main>;
 }
 
 export default SmoothScrollProvider;

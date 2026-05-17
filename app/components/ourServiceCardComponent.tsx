@@ -28,12 +28,12 @@ function OurServiceCardComponent({
           "w-full h-full flex flex-col md:flex-row gap-5 md:gap-0 items-stretch justify-between @container",
           innerWrapperClassNames,
         )}>
-        <div className="grow">
-          <div className="w-full h-full py-5 px-4 md:p-10 @container">
+        <div className="md:w-1/2 grow">
+          <div className="w-full h-full py-5 px-4 md:p-5 lg:p-10 @container">
             <div className="space-y-5 md:space-y-7">
-              <h1 className="text-2xl lg:text-4xl font-bold font-instrument-sans text-(--root-black-color)">
+              <span className="text-[20px] md:text-[26px] lg:text-[28px] xl:text-[30px] 2xl:text-[34px] inline-block font-bold font-instrument-sans text-(--root-black-color)">
                 {data?.title}
-              </h1>
+              </span>
               <p className="text-sm sm:text-base md:text-lg font-normal font-inter text-(--text-main-color)">
                 {data?.description}
               </p>
@@ -43,15 +43,15 @@ function OurServiceCardComponent({
             </div>
           </div>
         </div>
-        <div className="w-full md:w-fit h-fit @max-md:rounded-t-lg" style={{ background: data?.style?.darkColor }}>
-          <div className="w-full h-full md:p-10">
+        <div className="w-full md:w-1/2 @max-md:rounded-t-lg" style={{ background: data?.style?.darkColor }}>
+          <div className="w-full h-full min-w-full! max-w-full! md:p-5 lg:p-10">
             <Image
               src={data?.imageOptions.imagePath}
               alt={data?.imageOptions.alt}
               width={data?.imageOptions.width}
               height={data?.imageOptions.height}
               className={twMerge(
-                "rounded-lg object-cover w-full h-full @max-md:min-w-full! @max-md:max-w-full!",
+                "rounded-lg object-cover w-full h-full min-w-full! max-w-full!",
                 data?.imageOptions.className,
               )}
               loading={data?.imageOptions?.loading ? data?.imageOptions?.loading : "lazy"}

@@ -10,22 +10,38 @@ import ServicesSectionHero from "@/app/screens/servicesSectionHero";
 
 function ServicesPage() {
   return (
-    <div className="w-full h-auto">
-      {SERVICES_PAGE_DATA?.hero && <ServicesSectionHero data={SERVICES_PAGE_DATA.hero} />}
-      {SERVICES_PAGE_DATA?.services && <OurServicesListingSection data={SERVICES_PAGE_DATA.services} />}
-      {SERVICES_PAGE_DATA?.ourApproach && <OurApproachSection data={SERVICES_PAGE_DATA.ourApproach} />}
+    <>
+      {SERVICES_PAGE_DATA?.hero && (
+        <section className="w-full h-auto">
+          <ServicesSectionHero data={SERVICES_PAGE_DATA.hero} />
+        </section>
+      )}
+      {SERVICES_PAGE_DATA?.services && (
+        <section className="w-full h-auto">
+          <OurServicesListingSection data={SERVICES_PAGE_DATA.services} />
+        </section>
+      )}
+      {SERVICES_PAGE_DATA?.ourApproach && (
+        <section className="w-full h-auto">
+          <OurApproachSection classNames="pb-0! md:pb-0! xl:pb-0!" data={SERVICES_PAGE_DATA.ourApproach} />
+        </section>
+      )}
       {SERVICES_PAGE_DATA?.ourValues && (
-        <div className="w-full">
+        <section className="w-full h-auto">
           <OurValuesSection data={SERVICES_PAGE_DATA.ourValues} />
-        </div>
+        </section>
       )}
-      {SERVICES_PAGE_DATA?.readyToScale && <ReadyToScaleSection data={SERVICES_PAGE_DATA.readyToScale} />}
+      {SERVICES_PAGE_DATA?.readyToScale && (
+        <section>
+          <ReadyToScaleSection data={SERVICES_PAGE_DATA.readyToScale} />
+        </section>
+      )}
       {SERVICES_PAGE_DATA?.contactUs && (
-        <div className="w-full overflow-hidden">
+        <section className="w-full h-auto overflow-hidden">
           <ContactUsSection data={SERVICES_PAGE_DATA.contactUs} />
-        </div>
+        </section>
       )}
-    </div>
+    </>
   );
 }
 

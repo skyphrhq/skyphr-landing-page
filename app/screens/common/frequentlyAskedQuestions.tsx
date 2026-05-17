@@ -40,7 +40,7 @@ function FrequentlyAskedQuestions({ data, classNames }: FrequentlyAskedQuestions
   );
 
   return (
-    <div className={twMerge("w-full h-full py-15! md:py-20! lg:py-30!", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-full py-15! md:py-20! xl:py-30!", classNames)} ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data?.header} />
 

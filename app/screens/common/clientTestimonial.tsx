@@ -71,7 +71,7 @@ function ClientTestimonial({ data, classNames }: ClientTestimonialSectionInterfa
   );
 
   return (
-    <div className={twMerge("w-full h-fit py-15! md:py-20! lg:py-30! overflow-hidden", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-fit py-15! md:py-20! xl:py-30! overflow-hidden", classNames)} ref={containerRef}>
       <div className="px-4">
         <CommonSectionHeader header={data?.header} />
         <div className="w-full reveal-animation">

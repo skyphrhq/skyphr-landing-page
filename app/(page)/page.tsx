@@ -14,54 +14,58 @@ const FeaturedWorks = dynamic(() => import("@/app/screens/common/featuredWorks")
 
 export default function Home() {
   return (
-    <div className="w-auto h-auto">
-      {HOME_PAGE_DATA?.hero && <HeroSectionElement data={HOME_PAGE_DATA.hero} />}
+    <>
+      {HOME_PAGE_DATA?.hero && (
+        <section className="w-full h-auto">
+          <HeroSectionElement data={HOME_PAGE_DATA.hero} />
+        </section>
+      )}
       {HOME_PAGE_DATA?.featuredWorks && (
-        <div className="w-full">
+        <section className="w-full h-auto">
           <FeaturedWorks data={HOME_PAGE_DATA.featuredWorks} />
-        </div>
+        </section>
       )}
 
       {HOME_PAGE_DATA?.about && (
-        <div className="w-full">
+        <section className="w-full h-auto">
           <AboutSection data={HOME_PAGE_DATA.about} />
-        </div>
+        </section>
       )}
       {HOME_PAGE_DATA?.services && (
-        <div className="w-full">
+        <section className="w-full h-auto">
           <OurServiceSection data={HOME_PAGE_DATA.services} />
-        </div>
+        </section>
       )}
       {HOME_PAGE_DATA?.process && (
-        <div className="w-full">
+        <section className="w-full h-auto">
           <OurProcessSection data={HOME_PAGE_DATA.process} />
-        </div>
+        </section>
       )}
       {HOME_PAGE_DATA?.testimonials && (
-        <div className="w-full">
-          <ClientTestimonial classNames="!py-0" data={HOME_PAGE_DATA.testimonials} />
-        </div>
+        <section className="w-full h-auto">
+          <ClientTestimonial classNames="py-0! md:py-0! xl:py-0!" data={HOME_PAGE_DATA.testimonials} />
+        </section>
       )}
       {HOME_PAGE_DATA?.faq && (
-        <div className="w-full overflow-hidden">
+        <section className="w-full h-auto overflow-hidden">
           <FrequentlyAskedQuestions data={HOME_PAGE_DATA.faq} />
-        </div>
+        </section>
       )}
       {HOME_PAGE_DATA?.ourInsights && (
-        <div className="w-full overflow-hidden">
+        <section className="w-full h-auto overflow-hidden">
           <OurInsightsSection data={HOME_PAGE_DATA.ourInsights} />
-        </div>
+        </section>
       )}
       {HOME_PAGE_DATA?.readyToScale && (
-        <div className="w-full overflow-hidden">
+        <section className="w-full h-auto overflow-hidden">
           <ReadyToScaleSection data={HOME_PAGE_DATA.readyToScale} />
-        </div>
+        </section>
       )}
       {HOME_PAGE_DATA?.contactUs && (
-        <div className="w-full overflow-hidden">
+        <section className="w-full h-auto overflow-hidden">
           <ContactUsSection data={HOME_PAGE_DATA.contactUs} />
-        </div>
+        </section>
       )}
-    </div>
+    </>
   );
 }

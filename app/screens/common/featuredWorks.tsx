@@ -38,13 +38,13 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
       {data?.header && <CommonSectionHeader header={data.header} />}
       <div className="w-full overflow-hidden p-5 marquee-custom-slider relative">
         {showShadow && (
-          <div className="absolute w-full h-[90px] bg-linear-to-b from-(--bg-blue-shade) to-(--root-white-color) top-0 left-0 z-2 pointer-events-none blur-2xl opacity-60"></div>
+          <div className="absolute w-full h-22.5 bg-linear-to-b from-(--bg-blue-shade) to-(--root-white-color) top-0 left-0 z-2 pointer-events-none blur-2xl opacity-60"></div>
         )}
 
         <div className="flex marquee-wrapper">
-          <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0">
+          <div className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0">
             {data?.featuredWorksData?.map((item) => (
-              <div key={item.id} className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+              <div key={item.id} className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -56,11 +56,13 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0" aria-hidden="true">
+          <div
+            className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0"
+            aria-hidden="true">
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-${item.id}`}
-                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+                className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -72,11 +74,13 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0" aria-hidden="true">
+          <div
+            className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0"
+            aria-hidden="true">
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-two-${item.id}`}
-                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+                className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -88,11 +92,13 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-start gap-10 pr-10 marquee-group shrink-0" aria-hidden="true">
+          <div
+            className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0"
+            aria-hidden="true">
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-three-${item.id}`}
-                className="min-w-[380px] aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+                className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -106,7 +112,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
           </div>
         </div>
         {showShadow && (
-          <div className="absolute w-full h-[90px] bg-(--root-white-color) opacity-60 blur-2xl bottom-0 left-0 z-2 pointer-events-none"></div>
+          <div className="absolute w-full h-22.5 bg-(--root-white-color) opacity-60 blur-2xl bottom-0 left-0 z-2 pointer-events-none"></div>
         )}
       </div>
     </div>

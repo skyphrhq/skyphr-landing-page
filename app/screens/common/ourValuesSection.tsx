@@ -33,10 +33,10 @@ function OurValuesSection({ data, classNames }: OurValuesSectionInterface) {
     { scope: containerRef },
   );
   return (
-    <div className={twMerge("w-full h-auto py-30", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-auto py-15! md:py-20! xl:py-30!", classNames)} ref={containerRef}>
       <CommonSectionHeader header={data?.header} />
       <div className="skyphr-container">
-        <div className="w-full grid grid-cols-2 gap-6 pt-15">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
           {data?.valuesCards?.map((item, index) => (
             <div key={index} className={`reveal-animation`}>
               <OurValueCommonCard {...item} />

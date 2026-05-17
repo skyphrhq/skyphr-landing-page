@@ -86,7 +86,10 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
                   key={index}
                   btnStyle={cta.variant}
                   className={twMerge("reveal-animation", cta.classNames)}
-                  onClick={onStartProjectClick}>
+                  onClick={!cta?.href ? onStartProjectClick : undefined}
+                  href={cta.href as string}
+                  target={cta.target as "_blank" | "_self" | "_parent" | "_top"}
+                  rel={cta.rel as string}>
                   {cta.label}
                 </CTAButton>
               );

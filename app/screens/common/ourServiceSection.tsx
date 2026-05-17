@@ -27,12 +27,12 @@ function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
   return (
     <div
       ref={animationContainer}
-      className={twMerge("w-full h-auto bg-(--about-us-card-bg) py-15! md:py-20! lg:py-30!", classNames)}>
+      className={twMerge("w-full h-auto bg-(--about-us-card-bg) py-15! md:py-20! xl:py-30!", classNames)}>
       <div className="skyphr-container @container">
         <div className="w-full flex items-center justify-center md:sticky md:top-[30vh] overflow-hidden">
           {data?.header?.title?.map((titleRow, rowIndex) => (
             <h2
-              className="bg-clip-text text-transparent bg-linear-to-t text-nowrap from-(--border-color) to-[#a7a7a7] font-black uppercase text-[clamp(40px,4.5vh,120px)] sm:text-[clamp(60px,9.5vh,120px)] xl:text-[clamp(60px,25vh,160px)] font-instrument-sans reveal-animation"
+              className="bg-clip-text text-transparent bg-linear-to-t text-nowrap from-(--border-color) to-[#a7a7a7] font-black uppercase text-[clamp(40px,4.5vh,120px)] sm:text-[clamp(60px,11.5vh,120px)] lg:text-[clamp(100px,14vh,160px)] xl:text-[clamp(60px,25vh,160px)] font-instrument-sans reveal-animation"
               key={rowIndex}>
               {titleRow?.map((chunk, chunkIndex) => {
                 return (
@@ -44,7 +44,7 @@ function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
             </h2>
           ))}
         </div>
-        <div className="max-w-4xl mx-auto space-y-10 md:space-y-20 reveal-animation">
+        <div className="max-w-5xl mx-auto space-y-10 md:space-y-20 reveal-animation">
           {data?.items?.map((item, index) => (
             <OurServiceCardComponent key={index} data={item} />
           ))}
