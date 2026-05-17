@@ -11,25 +11,43 @@ const FeaturedWorks = dynamic(() => import("@/app/screens/common/featuredWorks")
 
 function AboutUsPage() {
   return (
-    <div className="w-full h-auto">
-      {ABOUT_US_PAGE_DATA?.hero && <AboutUsSectionHeroElem data={ABOUT_US_PAGE_DATA.hero} />}
+    <>
+      {ABOUT_US_PAGE_DATA?.hero && (
+        <section className="w-full h-auto">
+          <AboutUsSectionHeroElem data={ABOUT_US_PAGE_DATA.hero} />
+        </section>
+      )}
       {ABOUT_US_PAGE_DATA?.about && (
-        <div className="w-full">
+        <section className="w-full h-auto overflow-hidden">
           <AboutSection classNames="py-15" data={ABOUT_US_PAGE_DATA.about} />
-        </div>
+        </section>
       )}
-      {ABOUT_US_PAGE_DATA?.ourValues && <OurValuesSection data={ABOUT_US_PAGE_DATA.ourValues} />}
-      {ABOUT_US_PAGE_DATA?.featuredWorks && <FeaturedWorks data={ABOUT_US_PAGE_DATA.featuredWorks} />}
-      {ABOUT_US_PAGE_DATA?.testimonials && <ClientTestimonial data={ABOUT_US_PAGE_DATA.testimonials} />}
-      <div className="w-full">
-        <OurTeamSection />
-      </div>
+      {ABOUT_US_PAGE_DATA?.ourValues && (
+        <section className="w-full h-auto overflow-hidden">
+          <OurValuesSection data={ABOUT_US_PAGE_DATA.ourValues} />
+        </section>
+      )}
+      {ABOUT_US_PAGE_DATA?.featuredWorks && (
+        <section className="w-full h-auto">
+          <FeaturedWorks data={ABOUT_US_PAGE_DATA.featuredWorks} />
+        </section>
+      )}
+      {ABOUT_US_PAGE_DATA?.testimonials && (
+        <section className="w-full h-auto">
+          <ClientTestimonial data={ABOUT_US_PAGE_DATA.testimonials} />
+        </section>
+      )}
+      {ABOUT_US_PAGE_DATA?.ourTeam && (
+        <section className="w-full h-auto overflow-hidden">
+          <OurTeamSection data={ABOUT_US_PAGE_DATA.ourTeam} />
+        </section>
+      )}
       {ABOUT_US_PAGE_DATA?.contactUs && (
-        <div className="w-full overflow-hidden">
+        <section className="w-full h-auto overflow-hidden">
           <ContactUsSection data={ABOUT_US_PAGE_DATA.contactUs} />
-        </div>
+        </section>
       )}
-    </div>
+    </>
   );
 }
 

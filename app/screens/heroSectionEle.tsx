@@ -20,7 +20,11 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
   );
 
   return (
-    <div className={twMerge("w-full h-fit relative bg-white overflow-hidden pt-32 pb-20 px-4 xl:pt-55 xl:pb-35", classNames)}>
+    <div
+      className={twMerge(
+        "w-full h-fit relative bg-white overflow-hidden pt-32 pb-20 px-4 xl:pt-55 xl:pb-35",
+        classNames,
+      )}>
       <HeroBgAbstract />
       <div
         ref={animationContainer}
@@ -29,7 +33,7 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
         <div className="flex flex-col items-center justify-center gap-2">
           {data?.header?.title?.map((titleRow, rowIndex) => (
             <h1
-              className="font-instrument-sans text-4xl text-center xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
+              className="font-instrument-sans text-center text-4xl  xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
               key={rowIndex}>
               {titleRow?.map((chunk, index) => {
                 return (
@@ -68,7 +72,10 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
               <CTAButton
                 key={index}
                 btnStyle={button.variant as "CTA_PRIMARY" | "CTA_SECONDARY"}
-                className={twMerge(button?.classNames, "reveal-animation w-full @max-xs:max-w-62! @max-xs:min-w-62! xs:w-fit")}
+                className={twMerge(
+                  button?.classNames,
+                  "reveal-animation w-full @max-xs:max-w-62! @max-xs:min-w-62! xs:w-fit",
+                )}
                 href={button.href as string}
                 target={button.target as "_blank" | "_self" | "_parent" | "_top"}
                 rel={button.rel as string}>

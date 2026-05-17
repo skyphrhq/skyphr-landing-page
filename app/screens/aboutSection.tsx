@@ -43,13 +43,15 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
   );
 
   return (
-    <div ref={containerRef} className={twMerge("skyphr-container w-full overflow-hidden h-fit py-15! md:py-20! lg:py-30!", classNames)}>
-      <div className="w-full flex flex-col md:flex-row items-stretch justify-start gap-10 lg:gap-20">
-        <div className="w-full md:w-[45%]">
-          <div className="w-full flex flex-col items-start justify-start gap-6 md:py-10 @container">
+    <div
+      ref={containerRef}
+      className={twMerge("skyphr-container w-full overflow-hidden h-fit py-15! md:py-20! xl:py-30!", classNames)}>
+      <div className="w-full flex flex-col lg:flex-row items-stretch justify-start gap-10 md:gap-15 lg:gap-5">
+        <div className="w-full md:w-full lg:w-[45%]">
+          <div className="w-full flex flex-col items-start justify-start gap-6 lg:py-10 @container">
             {data?.header?.title?.map((titleRow, rowIndex) => (
               <h2
-                className="text-(--text-main-color) text-2xl xs:text-[26px] md:text-4xl font-instrument-sans font-semibold leading-9 md:leading-12"
+                className="text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[36px] font-instrument-sans font-semibold leading-9 md:leading-12"
                 key={rowIndex}>
                 {titleRow.map((chunk, index) => (
                   <span
@@ -85,10 +87,10 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
             )}
           </div>
         </div>
-        <div className="w-full md:w-[55%]">
+        <div className="w-full md:w-full lg:w-[55%] relative @container">
           <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-4 relative">
             {data?.cards?.map((item, index) => (
-              <AboutUsInfoCard key={index} className={"card-reveal md:scale-x-0 md:scale-y-0"} data={item} />
+              <AboutUsInfoCard key={index} className={"card-reveal about-us-common-card-section  max-md:scale-x-100 md:scale-x-0 md:scale-y-0"} data={item} />
             ))}
             <div className="w-20 min-w-20 min-h-20 h-20 bg-(--root-white-color) rounded-full items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex">
               <span className="w-15 h-15 min-w-15 min-h-15 rounded-full flex items-center justify-center bg-(--about-us-card-bg)">

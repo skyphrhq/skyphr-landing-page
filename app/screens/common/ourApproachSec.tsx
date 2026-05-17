@@ -46,7 +46,7 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
   }, []);
 
   return (
-    <div ref={sectionRef} className={twMerge("py-30 overflow-hidden", classNames)}>
+    <div ref={sectionRef} className={twMerge("py-15! md:py-20! xl:py-30! overflow-hidden", classNames)}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data?.header} />
 
@@ -107,11 +107,11 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
           </div>
 
           {/* Right Side: Steps */}
-          <div className="w-1/2 grow">
+          <div className="w-full lg:w-1/2 grow">
             {data?.steps.map((step, index) => (
               <div
                 key={index}
-                className="flex gap-6 items-start relative pb-8 border-b border-gray-100 last:border-0 last:pb-0">
+                className="flex gap-6 items-start relative pb-8 last:pb-0">
                 <div
                   className={`w-16 h-16 rounded-2xl shrink-0 flex items-center justify-center border border-gray-100/50 ${step.iconBgColor}`}>
                   {step.icon}

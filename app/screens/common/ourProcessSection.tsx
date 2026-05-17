@@ -8,6 +8,12 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
+function getLgGridStyle(gridStyle?: string) {
+  if (gridStyle === "col-span-3") return "lg:col-span-3";
+  if (gridStyle === "col-span-2") return "lg:col-span-2";
+  return "lg:col-span-1";
+}
+
 function OurProcessSection({ data, classNames }: OurProcessSectionInterface) {
   const containerRef = useRef<HTMLDivElement>(null);
   useGSAP(
@@ -34,12 +40,16 @@ function OurProcessSection({ data, classNames }: OurProcessSectionInterface) {
     { scope: containerRef },
   );
   return (
-    <div className={twMerge("w-full h-full py-15! md:py-20! lg:py-30! overflow-hidden @container", classNames)} ref={containerRef}>
+    <div
+      className={twMerge("w-full h-full py-15! md:py-20! xl:py-30! overflow-hidden @container", classNames)}
+      ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />
-        <div className="w-full grid grid-colo-1 xl:grid-cols-6 gap-6">
+        <div className="w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {data?.steps?.map((item, index) => (
-            <div key={index} className={`${item?.gridStyle} reveal-animation @max-xl:col-span-1`}>
+            <div
+              key={index}
+              className={twMerge("reveal-animation col-span-1 md:col-span-2", getLgGridStyle(item?.gridStyle))}>
               <OurProcessCard {...item} />
             </div>
           ))}

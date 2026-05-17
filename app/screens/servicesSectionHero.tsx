@@ -19,14 +19,14 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
     { scope: animationContainer },
   );
   return (
-    <div className={twMerge("w-full h-fit relative overflow-hidden pt-50 pb-30", classNames)}>
-      <div className="skyphr-container">
-        <div ref={animationContainer} className="w-ful h-full relative z-20 flex items-center justify-center">
-          <div className="w-1/2">
+    <div className={twMerge("w-full h-fit relative overflow-hidden pt-28 pb-20 px-4 xl:pt-55 xl:pb-35", classNames)}>
+      <div className="skyphr-container px-0!">
+        <div ref={animationContainer} className="w-ful h-full relative z-20 flex flex-col gap-10 md:gap-0 md:flex-row items-center justify-center">
+          <div className="w-full md:w-1/2">
             <div className="flex flex-col items-start justify-start gap-2">
               {data?.header?.title?.map((title, index) => (
                 <h1
-                  className="font-instrument-sans text-5xl font-bold tracking-tight text-(--text-main-color)  reveal-animation"
+                  className="font-instrument-sans text-4xl xl:text-5xl font-bold tracking-tight text-(--text-main-color)  reveal-animation"
                   key={index}>
                   {title?.map((chunk, chunkIndex) => (
                     <span
@@ -78,7 +78,7 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
               </div>
             )}
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <Image
               src={ServiceHeroImage}
               width={800}

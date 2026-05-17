@@ -7,7 +7,7 @@ function CommonSectionHeader({ header, className }: CommonSectionHeaderInterface
     <div className={twMerge("skyphr-container px-0! pb-7! md:pb-15!", className)}>
       {header?.title?.map((titleRow, rowIndex) => (
         <h2
-          className="flex flex-wrap items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[34px] xl:text-[45px] font-bold"
+          className="flex flex-wrap items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
           key={rowIndex}>
           {titleRow?.map((chunk, index) => {
             return (

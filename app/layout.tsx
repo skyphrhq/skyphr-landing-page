@@ -31,9 +31,9 @@ export default function RootLayout({ children }: RootLayoutInterface) {
         <SmoothScrollProvider>
           <NavBarComponent />
           {children}
-          <div className="w-full overflow-hidden">
+          <footer className="w-full overflow-hidden">
             <FooterScreen />
-          </div>
+          </footer>
         </SmoothScrollProvider>
       </body>
     </html>

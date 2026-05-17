@@ -6,6 +6,7 @@ import {
   HeroSection,
   OurApproachInterface,
   OurInsightsSection,
+  OurTeamSectionInterface as OurTeamSectionDataInterface,
   OurValuesInterface,
   ProcessSection,
   ReadyToScaleSectionDataInterface,
@@ -87,5 +88,10 @@ export interface OurApproachSectionInterface {
 
 export interface ContactUsSectionDataInterface {
   data: ContactUsSectionInterface;
+  classNames?: string;
+}
+
+export interface OurTeamSectionInterface {
+  data: OurTeamSectionDataInterface;
   classNames?: string;
 }

@@ -5,6 +5,7 @@ export interface NavbarLinksInterface {
   label: string;
   href: string;
   type: "button" | "link";
+  isLink?: boolean;
   dropDown: NavbarLinksInterface[];
   target?: "_blank" | "_self";
 }

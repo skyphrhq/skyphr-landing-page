@@ -22,7 +22,7 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
   );
 
   return (
-    <div className={twMerge("w-full py-15! md:py-20! lg:py-30!", classNames)}>
+    <div className={twMerge("w-full py-15! md:py-20! xl:py-30!", classNames)}>
       <div className="skyphr-container">
         <div className="w-full h-auto px-4 py-8 md:py-13 md:px-8 lg:px-10 lg:py-20 rounded-2xl relative border border-(--border-color) bg-(--root-white-color) overflow-hidden flex flex-col items-center gap-10">
           <HeroBgAbstract />

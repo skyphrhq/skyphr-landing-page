@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 
 const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
 
-function ContactUsPage() {
+function HireUSPage() {
   const handleStartAProject = () => {
     gsap.to(window, { duration: 1, scrollTo: "#contact-us-section", ease: "power2.inOut" });
   };
@@ -17,8 +17,7 @@ function ContactUsPage() {
       {CONTACT_PAGE_DATA?.hero && (
         <section className="w-full h-auto">
           <ContactHeroSection data={CONTACT_PAGE_DATA?.hero} onStartProjectClick={handleStartAProject} />
-          </section>
-
+        </section>
       )}
 
       {CONTACT_PAGE_DATA?.contactUs && (
@@ -40,4 +39,4 @@ function ContactUsPage() {
   );
 }
 
-export default ContactUsPage;
+export default HireUSPage;

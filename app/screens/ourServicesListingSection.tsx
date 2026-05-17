@@ -2,7 +2,6 @@ import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import OurServiceCardComponent from "@/app/components/ourServiceCardComponent";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
-import { IsOdd } from "@/app/utils/helpers/helper";
 import { OurServiceSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -40,13 +39,7 @@ function OurServicesListingSection({ data, classNames }: OurServiceSectionInterf
         <CommonSectionHeader header={data?.header} />
         <div className="w-full h-fit flex flex-col gap-12 max-w-5xl mx-auto">
           {data?.items.map((item, index) => (
-            <OurServiceCardComponent
-              key={index}
-              data={item}
-              cardStyle="solid"
-              wrapperClassNames="reveal-animation"
-              innerWrapperClassNames={IsOdd(index) ? "flex-row-reverse" : ""}
-            />
+            <OurServiceCardComponent key={index} data={item} cardStyle="solid" wrapperClassNames="reveal-animation" />
           ))}
         </div>
       </div>
