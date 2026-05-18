@@ -119,31 +119,48 @@
     background-color: var(--active-hover-link-bg);
     color: var(--text-main-color) !important;
   }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-right {
+    transform: translateX(2px);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-root {
+    transform: translate(-50%, 0);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-nested {
+    transform: translate(0, 0);
+  }
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down,
 .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-down {
   transform: rotate(180deg);
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-right,
 .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-right {
   transform: translateX(2px);
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown,
 .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-root,
 .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown-root {
   transform: translate(-50%, 0);
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-nested,
 .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown-nested {
   transform: translate(0, 0);
 }
@@ -294,9 +311,7 @@
   .skyphr-navbar-main-wrapper .skyphr-nav-dropdown.is-open > ul {
     overflow: visible !important;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down,
   .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-down,
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-right,
   .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-right {
     transform: none;
   }
