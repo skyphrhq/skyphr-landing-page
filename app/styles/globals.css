@@ -33,7 +33,6 @@
 
 .fixed-body-container .skyphr-main-wrapper {
   overflow: hidden;
-  touch-action: none;
   height: 100vh !important;
 }
 
@@ -186,7 +185,7 @@
     position: fixed !important;
     inset: 0;
     width: 100% !important;
-    height: 100vh !important;
+    height: 100dvh !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     justify-content: flex-start !important;
@@ -256,7 +255,11 @@
     padding: 50px 16px !important;
     justify-content: flex-start !important;
     overflow: auto !important;
-    max-height: calc(100vh - 100px) !important;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 10px) !important;
+    padding-top: 70px !important;
   }
   .skyphr-navbar-main-wrapper .skyphr-nav-item,
   .skyphr-navbar-main-wrapper .skyphr-nav-dropdown,

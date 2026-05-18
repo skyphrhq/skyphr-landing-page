@@ -7,7 +7,7 @@ function CommonHirePageHeroSection({ data }: { data: HireHeroSection }) {
   return (
     <div className="w-full h-auto relative overflow-hidden">
       <HeroBgAbstract />
-      <div className="skyphr-container relative z-11 h-auto pt-15! pb-20! xl:pt-45! xl:pb-25! overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-10">
+      <div className="skyphr-container relative z-11 h-auto pt-20! pb-20! xl:pt-45! xl:pb-25! overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-10">
         <div className="w-full lg:w-[50%] flex flex-col justify-center max-w-150">
           <h1 className="mt-6 font-instrument-sans text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-(--text-main-color) leading-[1.3]">
             {data.header.title.map((titleRow, rowIndex) => (
