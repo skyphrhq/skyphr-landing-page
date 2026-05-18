@@ -33,7 +33,7 @@
 
 .fixed-body-container .skyphr-main-wrapper {
   overflow: hidden;
-  height: 100vh !important;
+  height: 100dvh !important;
 }
 
 .skyphr-container {
