@@ -124,13 +124,18 @@ function NavBarComponent() {
             "grow flex items-center justify-center skyphr-navbar-content-wrapper",
             isMobileMenuOpen && "is-open",
           )}>
-          <Button
-            type="button"
-            aria-label="Close navigation menu"
-            onClick={handleCloseMobileMenu}
-            className="skyphr-mobile-nav-close-btn">
-            <FaXmark className="text-xl text-(--text-main-color)" />
-          </Button>
+          <div className="skyphr-mobile-nav-close-btn-wrapper">
+            <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+              <Image width={130} height={30} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+            </Link>
+            <Button
+              type="button"
+              aria-label="Close navigation menu"
+              onClick={handleCloseMobileMenu}
+              className="skyphr-mobile-nav-close-btn">
+              <FaXmark className="text-xl text-(--text-main-color)" />
+            </Button>
+          </div>
           <div
             data-lenis-prevent
             data-lenis-prevent-touch

@@ -33,21 +33,22 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
         ref={animationContainer}
         className="w-ful h-full relative z-20 flex flex-col items-center max-w-4xl mx-auto justify-center">
         <div className="flex flex-col items-center justify-center leading-[1.1]">
-          {data?.header?.title?.map((title, index) => {
+          {data?.header?.title?.map((title, rowIndex) => {
             return (
               <h1
-                key={index}
-                className="reveal-animation font-instrument-sans text-6xl font-bold tracking-tight text-(--text-main-color)">
-                {title.map((text, index) => {
+                className="font-instrument-sans text-center text-4xl  xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
+                key={rowIndex}>
+                {title?.map((chunk, index) => {
                   return (
                     <span
-                      key={index}
                       className={twMerge(
-                        "font-playfair-display italic font-semibold text-(--text-main-color)",
-                        text.variant === "italic" ? "italic" : "",
-                        text.classNames,
-                      )}>
-                      {text.text}
+                        "font-instrument-sans reveal-animation",
+                        chunk?.classNames,
+                        "reveal-animation",
+                        chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                      )}
+                      key={index}>
+                      {chunk.text}
                     </span>
                   );
                 })}
