@@ -110,11 +110,16 @@ function NavBarComponent() {
           <Image width={180} height={40} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
         </Link>
         <div
+          data-lenis-prevent
+          data-lenis-prevent-touch
+          data-lenis-prevent-wheel
           onClick={(event) => {
             if (event.target === event.currentTarget) {
               handleCloseMobileMenu();
             }
           }}
+          onTouchMove={(event) => event.stopPropagation()}
+          onWheel={(event) => event.stopPropagation()}
           className={twMerge(
             "grow flex items-center justify-center skyphr-navbar-content-wrapper",
             isMobileMenuOpen && "is-open",
@@ -126,7 +131,11 @@ function NavBarComponent() {
             className="skyphr-mobile-nav-close-btn">
             <FaXmark className="text-xl text-(--text-main-color)" />
           </Button>
-          <div className="w-full grow skyphr-navbar-links-wrapper">
+          <div
+            data-lenis-prevent
+            data-lenis-prevent-touch
+            data-lenis-prevent-wheel
+            className="w-full grow skyphr-navbar-links-wrapper">
             <ul className="w-full flex items-center justify-center gap-3 skyphr-nav-links-wrapper-list">
               {NAVBAR_LINKS_DATA?.map((item) => (
                 <NavBarCommonLinkComponent
