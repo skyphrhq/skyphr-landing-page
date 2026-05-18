@@ -17,7 +17,8 @@
   --text-white-color: #f2f2f2;
   --about-us-card-bg: #f5f5f5;
   --placeholder-color: #9ca3af;
-  --active-link-bg: #e3e3e3;
+  --active-link-bg: #000000;
+  --active-hover-link-bg: #e3e3e3;
 }
 
 .font-playfair-display {
@@ -28,6 +29,12 @@
 }
 .font-instrument-sans {
   font-family: var(--font-instrument-sans);
+}
+
+.fixed-body-container .skyphr-main-wrapper {
+  overflow: hidden;
+  touch-action: none;
+  height: 100vh !important;
 }
 
 .skyphr-container {
@@ -103,10 +110,16 @@
 }
 
 .skyphr-navbar-main-wrapper .skyphr-nav-item.is-active > .skyphr-nav-link,
-.skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link,
 .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link {
   background-color: var(--active-link-bg);
-  color: var(--text-main-color);
+  color: var(--text-white-color) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link {
+    background-color: var(--active-hover-link-bg);
+    color: var(--text-main-color) !important;
+  }
 }
 
 .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down,
@@ -208,7 +221,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
     visibility: visible;
-    pointer-events: none;
+    pointer-events: auto;
     transition: opacity 0.35s ease;
     z-index: -1;
   }
@@ -233,16 +246,17 @@
     width: 100% !important;
     flex: 1 !important;
     min-height: 0 !important;
+    background-color: var(--root-white-color) !important;
   }
   .skyphr-navbar-main-wrapper .skyphr-navbar-links-wrapper .skyphr-nav-links-wrapper-list {
     flex-direction: column !important;
     gap: 20px !important;
-    background-color: var(--root-white-color) !important;
     width: 100% !important;
     height: 100% !important;
     padding: 50px 16px !important;
     justify-content: flex-start !important;
-    padding-top: 70px !important;
+    overflow: auto !important;
+    max-height: calc(100vh - 100px) !important;
   }
   .skyphr-navbar-main-wrapper .skyphr-nav-item,
   .skyphr-navbar-main-wrapper .skyphr-nav-dropdown,
@@ -285,7 +299,7 @@
   }
   .skyphr-navbar-main-wrapper .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open) > .skyphr-nav-link {
     background-color: var(--active-link-bg);
-    color: var(--text-main-color);
+    color: var(--text-white-color) !important;
   }
   .skyphr-navbar-main-wrapper
     .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open)

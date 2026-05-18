@@ -1,3 +1,4 @@
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { OurServiceCardDataArrayInterface } from "@/app/utils/interface/data.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
@@ -17,10 +18,11 @@ function OurServiceCardComponent({
   return (
     <div
       className={twMerge(
-        "h-fit z-10 rounded-lg md:rounded-xl flex items-center justify-center overflow-hidden",
+        "h-fit z-10 flex items-center justify-center overflow-hidden",
         data?.className,
         cardStyle === "sticky" ? "sticky z-10" : "relative! inset-0!",
         wrapperClassNames,
+        COMMON_BORDER_RADIUS,
       )}
       style={{ background: data?.style?.baseColor }}>
       <div
@@ -43,7 +45,9 @@ function OurServiceCardComponent({
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 @max-md:rounded-t-lg" style={{ background: data?.style?.darkColor }}>
+        <div
+          className={twMerge("w-full md:w-1/2", COMMON_BORDER_RADIUS)}
+          style={{ background: data?.style?.darkColor }}>
           <div className="w-full h-full min-w-full! max-w-full! md:p-5 lg:p-10">
             <Image
               src={data?.imageOptions.imagePath}
@@ -51,8 +55,9 @@ function OurServiceCardComponent({
               width={data?.imageOptions.width}
               height={data?.imageOptions.height}
               className={twMerge(
-                "rounded-lg object-cover w-full h-full min-w-full! max-w-full!",
+                "object-cover w-full h-full min-w-full! max-w-full!",
                 data?.imageOptions.className,
+                COMMON_BORDER_RADIUS,
               )}
               loading={data?.imageOptions?.loading ? data?.imageOptions?.loading : "lazy"}
               style={{ minWidth: `${data?.imageOptions?.width}px`, minHeight: `${data?.imageOptions?.height}px` }}

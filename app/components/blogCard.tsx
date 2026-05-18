@@ -1,3 +1,4 @@
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { BlogCardInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
@@ -5,7 +6,11 @@ import CTAButton from "./common/ctaButton";
 
 function BlogCard({ imageOptions, title, description, label, date }: BlogCardInterface) {
   return (
-    <div className="group/blog-card w-full h-full bg-(--root-white-color) rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col gap-3 cursor-pointer relative border border-(--border-color)">
+    <div
+      className={twMerge(
+        "group/blog-card w-full h-full bg-(--root-white-color) overflow-hidden transition-colors duration-300 flex flex-col gap-3 cursor-pointer relative border border-(--border-color)",
+        COMMON_BORDER_RADIUS,
+      )}>
       <div className="w-full grow p-5 flex flex-col gap-5 relative z-5">
         {date && (
           <span className="w-fit text-[10px] md:text-sm font-inter font-normal text-(--text-main-color) border border-(--text-main-color)/25 px-4 py-1.5 rounded-full">
@@ -14,12 +19,20 @@ function BlogCard({ imageOptions, title, description, label, date }: BlogCardInt
         )}
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-(--text-main-color) font-instrument-sans leading-tight">{title}</h3>
-          <p className="text-xs md:text-sm text-(--text-main-color)/65 font-inter font-normal leading-relaxed">{description}</p>
+          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-(--text-main-color) font-instrument-sans leading-tight">
+            {title}
+          </h3>
+          <p className="text-xs md:text-sm text-(--text-main-color)/65 font-inter font-normal leading-relaxed">
+            {description}
+          </p>
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden rounded-xl flex-1 aspect-video min-h-65 max-h-65">
+      <div
+        className={twMerge(
+          "relative w-full overflow-hidden flex-1 aspect-video min-h-65 max-h-65",
+          COMMON_BORDER_RADIUS,
+        )}>
         <Image
           alt={imageOptions.alt}
           src={imageOptions.imagePath}

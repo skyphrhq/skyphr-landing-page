@@ -3,6 +3,7 @@ import CTAButton from "@/app/components/common/ctaButton";
 import HeroBgAbstract from "@/app/components/heroBgAbstract";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { ReadyToScaleSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -24,7 +25,11 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
   return (
     <div className={twMerge("w-full py-15! md:py-20! xl:py-30!", classNames)}>
       <div className="skyphr-container">
-        <div className="w-full h-auto px-4 py-8 md:py-13 md:px-8 lg:px-10 lg:py-20 rounded-2xl relative border border-(--border-color) bg-(--root-white-color) overflow-hidden flex flex-col items-center gap-10">
+        <div
+          className={twMerge(
+            "w-full h-auto px-4 py-8 md:py-13 md:px-8 lg:px-10 lg:py-20 relative border border-(--border-color) bg-(--root-white-color) overflow-hidden flex flex-col items-center gap-10",
+            COMMON_BORDER_RADIUS,
+          )}>
           <HeroBgAbstract />
           <div
             ref={animationContainer}

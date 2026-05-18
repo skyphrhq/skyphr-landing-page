@@ -1,12 +1,18 @@
 import QuoteIcon from "@/app/assets/svg/quote.svg";
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { OurTeamMembersDataArrayInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 function OurTeamIntroCard({ data }: { data: OurTeamMembersDataArrayInterface }) {
   return (
     <div className="w-full h-fit">
-      <div className="w-full bg-(--about-us-card-bg) rounded-lg md:rounded-xl border border-(--border-color) p-4.5 md:p-6">
+      <div
+        className={twMerge(
+          "w-full bg-(--about-us-card-bg) border border-(--border-color) p-4.5 md:p-6",
+          COMMON_BORDER_RADIUS,
+        )}>
         <div className="w-full flex flex-col md:flex-row items-stretch justify-start gap-8">
           <div className="aspect-450/635 rounded-lg">
             <Image

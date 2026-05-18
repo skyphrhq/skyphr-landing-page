@@ -1,4 +1,5 @@
 import { ABOUT_US_CARD_ANIMATION_CLASS } from "@/app/utils/constants/animation.constant";
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { AboutUsCardInterface } from "@/app/utils/interface/common.interface";
 import { FaPlus } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
@@ -8,9 +9,10 @@ function AboutUsInfoCard({ data, className }: AboutUsCardInterface) {
   return (
     <div
       className={twMerge(
-        "w-full h-full bg-(--about-us-card-bg) p-5 md:p-10 rounded-lg",
+        "w-full h-full bg-(--about-us-card-bg) p-5 md:p-10",
         ABOUT_US_CARD_ANIMATION_CLASS(direction),
         className,
+        COMMON_BORDER_RADIUS,
       )}>
       <div className="flex flex-col items-start justify-start gap-8">
         <div className="w-10 h-10 min-w-10 min-h-10 md:w-14 md:min-w-14 md:min-h-14 md:h-14 rounded-full flex items-center justify-center bg-(--root-white-color)">
@@ -21,7 +23,9 @@ function AboutUsInfoCard({ data, className }: AboutUsCardInterface) {
             <span>{count}</span>
             <FaPlus className="text-sm sm:text-base md:text-lg text-(--text-secondary-color)" />
           </span>
-          <p className="text-sm sm:text-base md:text-lg font-medium font-instrument-sans text-(--text-secondary-color)">{label}</p>
+          <p className="text-sm sm:text-base md:text-lg font-medium font-instrument-sans text-(--text-secondary-color)">
+            {label}
+          </p>
         </div>
       </div>
     </div>

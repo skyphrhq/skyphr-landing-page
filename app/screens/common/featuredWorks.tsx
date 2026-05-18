@@ -2,6 +2,7 @@
 import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { FeaturedWorksSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
@@ -44,7 +45,9 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
         <div className="flex marquee-wrapper">
           <div className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0">
             {data?.featuredWorksData?.map((item) => (
-              <div key={item.id} className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+              <div
+                key={item.id}
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -62,7 +65,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-${item.id}`}
-                className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -80,7 +83,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-two-${item.id}`}
-                className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.id}
@@ -98,7 +101,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-three-${item.id}`}
-                className="min-w-95 aspect-380/380 rounded-lg overflow-hidden reveal-animation">
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.id}
