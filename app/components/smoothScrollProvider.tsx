@@ -11,44 +11,36 @@ function SmoothScrollProvider({ children }: SmoothScrollProviderInterface) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const lenis = new Lenis();
     lenisRef.current = lenis;
 
-    lenis.on("scroll", ScrollTrigger.update);
+    const onScroll = () => ScrollTrigger.update();
+    const update = (time: number) => lenis.raf(time * 1000);
 
-    const update = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
+    lenis.on("scroll", onScroll);
     gsap.ticker.add(update);
-
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      lenis.destroy();
       gsap.ticker.remove(update);
+      lenis.off?.("scroll", onScroll);
+      lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
   useEffect(() => {
-    if (!lenisRef.current) return;
-
     const lenis = lenisRef.current;
+    if (!lenis) return;
 
-    // Reset scroll instantly
-    lenis.scrollTo(0, { immediate: true });
-    window.scrollTo(0, 0);
-
-    // Force resize + recalculation AFTER DOM settles
-    requestAnimationFrame(() => {
-      lenis.resize(); // 🔥 important
-      ScrollTrigger.refresh(true); // force full refresh
+    const frame = requestAnimationFrame(() => {
+      lenis.resize();
+      ScrollTrigger.refresh(true);
     });
-  }, [pathname]);
 
-  return <main className="w-full h-auto">{children}</main>;
+    return () => cancelAnimationFrame(frame);
+  }, [pathname]);
+  return <main className="w-full h-auto skyphr-main-wrapper">{children}</main>;
 }
 
 export default SmoothScrollProvider;

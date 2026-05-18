@@ -4,6 +4,7 @@ import CommonContactUsForm from "@/app/components/commonContatcUsForm";
 
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { ContactUsSectionDataInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -33,7 +34,11 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
         <div className="w-full xl:max-w-[80%] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative items-stretch">
             <div className="flex flex-col md:flex-row lg:flex-col items-start justify-between gap-8">
-              <div className="contact-card bg-(--cta-button-background) w-full rounded-lg md:rounded-xl lg:rounded-2xl p-6 xl:p-10 xl:px-14 h-full">
+              <div
+                className={twMerge(
+                  "contact-card bg-(--cta-button-background) w-full p-6 xl:p-10 xl:px-14 h-full",
+                  COMMON_BORDER_RADIUS,
+                )}>
                 <div className="w-full h-full flex flex-col items-start justify-center">
                   <div className="mb-5 md:mb-10">
                     <p className="text-(--text-white-color) font-inter text-sm mb-2 font-medium">Email Us</p>
@@ -57,7 +62,11 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                 </div>
               </div>
 
-              <div className="contact-card bg-(--root-white-color) w-full rounded-lg md:rounded-xl lg:rounded-2xl p-6 xl:p-10 xl:px-14 border border-(--border-color) flex flex-col gap-8">
+              <div
+                className={twMerge(
+                  "contact-card bg-(--root-white-color) w-full p-6 xl:p-10 xl:px-14 border border-(--border-color) flex flex-col gap-8",
+                  COMMON_BORDER_RADIUS,
+                )}>
                 <h3 className="font-bold text-(--text-main-color) text-xl md:text-2xl font-instrument-sans">
                   Our Offices
                 </h3>
@@ -79,7 +88,11 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
               </div>
             </div>
 
-            <div className="contact-card bg-(--root-white-color) rounded-lg md:rounded-xl lg:rounded-2xl border border-(--border-color) p-4 md:p-8 h-full relative">
+            <div
+              className={twMerge(
+                "contact-card bg-(--root-white-color) border border-(--border-color) p-4 md:p-8 h-full relative",
+                COMMON_BORDER_RADIUS,
+              )}>
               <CommonContactUsForm />
             </div>
           </div>

@@ -14,3 +14,6 @@ export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY") => {
       };
   }
 };
+
+
+export const COMMON_BORDER_RADIUS = "rounded-lg md:rounded-xl lg:rounded-2xl";
