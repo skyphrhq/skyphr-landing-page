@@ -1,4 +1,6 @@
-export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY") => {
+import { twMerge } from "tailwind-merge";
+
+export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY", theme?: "LIGHT" | "DARK") => {
   switch (btnStyle) {
     case "CTA_PRIMARY":
       return {
@@ -8,12 +10,18 @@ export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY") => {
       };
     case "CTA_SECONDARY":
       return {
-        parentWrapper:
-          "px-6 min-w-[170px] py-2.5 min-h-[45px] bg-(--root-black-color) text-(--root-white-color) font-instrument-sans text-sm sm:text-base rounded-full border-0 outline-0 font-semibold group/btn overflow-hidden relative cursor-pointer ring-[1px] ring-(--root-black-color) flex items-center justify-between gap-6",
-        childrenWrapper: "relative z-10 group-hover/btn:text-(--root-black-color) transition-all duration-300 w-fit-content",
+        parentWrapper: twMerge(
+          "px-6 min-w-[170px] py-2.5 min-h-[45px] font-instrument-sans text-sm sm:text-base rounded-full border-0 outline-0 font-semibold group/btn overflow-hidden relative cursor-pointer ring-[1px] ring-(--root-black-color) flex items-center justify-between gap-6",
+          theme === "DARK"
+            ? "bg-(--root-black-color) text-(--root-white-color) ring-(--root-black-color)"
+            : "bg-(--root-white-color) text-(--root-black-color)",
+        ),
+        childrenWrapper: twMerge(
+          "relative z-10  transition-all duration-300 w-fit-content",
+          theme === "DARK" ? "group-hover/btn:text-(--root-black-color)" : "group-hover/btn:text-(--root-white-color)",
+        ),
       };
   }
 };
-
 
 export const COMMON_BORDER_RADIUS = "rounded-lg md:rounded-xl lg:rounded-2xl";

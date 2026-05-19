@@ -16,6 +16,7 @@ export interface ButtonEleInterface extends ButtonHTMLAttributes<HTMLButtonEleme
   href?: string;
   target?: string;
   rel?: string;
+  theme?: "LIGHT" | "DARK";
 }
 
 export interface TrustedPillInterface {

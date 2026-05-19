@@ -3,8 +3,8 @@ import { ButtonEleInterface } from "@/app/utils/interface/common.interface";
 import { GoArrowUpRight } from "react-icons/go";
 import { twMerge } from "tailwind-merge";
 
-function CTAButton({ children, btnStyle, className, href, target, rel, ...props }: ButtonEleInterface) {
-  const { parentWrapper, childrenWrapper } = GET_BUTTON_STYLE(btnStyle);
+function CTAButton({ children, btnStyle, className, href, target, rel, theme = "DARK", ...props }: ButtonEleInterface) {
+  const { parentWrapper, childrenWrapper } = GET_BUTTON_STYLE(btnStyle, theme);
 
   let wrapperElem: React.ElementType = "button";
   if (href) wrapperElem = "a";
@@ -17,7 +17,11 @@ function CTAButton({ children, btnStyle, className, href, target, rel, ...props 
           <GoArrowUpRight className="font-semibold" />
         </span>
       ) : (
-        <span className="absolute top-1/2 right-6 -translate-y-1/2 w-2 h-2 min-w-2 min-h-2 bg-(--root-white-color) block rounded-full group-hover/btn:min-w-full group-hover/btn:min-h-full  group-hover/btn:right-0 transition-all duration-300"></span>
+        <span
+          className={twMerge(
+            "absolute top-1/2 right-6 -translate-y-1/2 w-2 h-2 min-w-2 min-h-2 block rounded-full group-hover/btn:min-w-full group-hover/btn:min-h-full  group-hover/btn:right-0 transition-all duration-300",
+            theme === "DARK" ? "bg-(--root-white-color)" : "bg-(--root-black-color)",
+          )}></span>
       )}
       <span className={childrenWrapper}>{children}</span>
       {btnStyle === "CTA_PRIMARY" ? (
@@ -25,11 +29,14 @@ function CTAButton({ children, btnStyle, className, href, target, rel, ...props 
           <GoArrowUpRight className="font-semibold" />
         </span>
       ) : (
-        <span className="absolute top-1/2 right-6 -translate-y-1/2 min-w-0 min-h-0 bg-(--root-black-color) block rounded-full group-hover/btn:min-h-2.5 group-hover/btn:min-w-2.5  transition-all duration-500 z-10"></span>
+        <span
+          className={twMerge(
+            "absolute top-1/2 right-6 -translate-y-1/2 min-w-0 min-h-0  block rounded-full group-hover/btn:min-h-2.5 group-hover/btn:min-w-2.5  transition-all duration-500 z-10",
+            theme === "DARK" ? "bg-(--root-black-color)" : "bg-(--root-white-color)",
+          )}></span>
       )}
     </Tag>
   );
 }
-
 
 export default CTAButton;
