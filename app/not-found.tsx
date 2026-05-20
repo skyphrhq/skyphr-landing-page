@@ -16,7 +16,7 @@ function PageNotFound() {
             alt="404 Image"
             width={800}
             height={500}
-            className="w-full h-full max-w-[800px] max-h-[500px] object-contain pointer-events-none select-none"
+            className="w-full h-full max-w-200 max-h-125 object-contain pointer-events-none select-none"
             priority
             loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -30,7 +30,9 @@ function PageNotFound() {
           </p>
 
           <div className="flex gap-4 mt-8 flex-wrap justify-center">
-            <CTAButton btnStyle="CTA_PRIMARY">Back To Homepage</CTAButton>
+            <CTAButton btnStyle="CTA_PRIMARY" href="/" rel="noopener noreferrer">
+              Back To Homepage
+            </CTAButton>
           </div>
         </div>
       </div>

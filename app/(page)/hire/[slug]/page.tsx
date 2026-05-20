@@ -1,5 +1,4 @@
-"use client";
-import { getHirePageData } from "@/app/data/pageData/hire";
+import { HIRE_PAGE_DATA_BY_SLUG, getHirePageData } from "@/app/data/pageData/hire";
 import AboutSection from "@/app/screens/aboutSection";
 import CommonHirePageHeroSection from "@/app/screens/common/commonHirePageHeroSection";
 import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
@@ -7,12 +6,26 @@ import OurValuesSection from "@/app/screens/common/ourValuesSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import dynamic from "next/dynamic";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
 
-function HireFromSkyphr() {
-  const params = useParams<{ slug: string }>();
-  const hirePageData = getHirePageData(params.slug);
+type HireFromSkyphrProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return Object.keys(HIRE_PAGE_DATA_BY_SLUG).map((slug) => ({
+    slug,
+  }));
+}
+
+async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
+  const { slug } = await params;
+  const hirePageData = getHirePageData(slug);
 
   if (!hirePageData) {
     notFound();

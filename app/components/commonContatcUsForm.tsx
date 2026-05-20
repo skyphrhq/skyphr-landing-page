@@ -1,3 +1,5 @@
+"use client";
+
 import CtaServiceButton from "@/app/components/common/ctaServiceBtn";
 import InputField from "@/app/components/common/inputField";
 function CommonContactUsForm() {
