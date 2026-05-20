@@ -1,9 +1,7 @@
 import CTAButton from "@/app/components/common/ctaButton";
-import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
-import { HIRE_PAGE_DATA_BY_SLUG } from "@/app/data/pageData/hire";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
+import { HIRE_SEO_PAGE_LINKS, MAIN_SEO_PAGE_LINKS, RESOURCE_SEO_PAGE_LINKS } from "@/app/data/seoPages.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
-import { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,74 +19,18 @@ type SitemapGroup = {
   links: SitemapLink[];
 };
 
-const primaryPageIds = new Set(["home", "about", "services", "hire", "contact"]);
-
-function findNavItem(id: string, items: NavbarLinksInterface[] = NAVBAR_LINKS_DATA): NavbarLinksInterface | undefined {
-  for (const item of items) {
-    if (item.id === id) {
-      return item;
-    }
-
-    const match = findNavItem(id, item.dropDown);
-
-    if (match) {
-      return match;
-    }
-  }
-}
-
-function collectLinkedItems(items: NavbarLinksInterface[]): SitemapLink[] {
-  return items.flatMap((item) => {
-    const currentLink = item.isLink ? [{ label: item.label, href: item.href }] : [];
-    return [...currentLink, ...collectLinkedItems(item.dropDown)];
-  });
-}
-
-function getHireLinks(): SitemapLink[] {
-  const hireNavItem = findNavItem("hire");
-  const navigationLinks = hireNavItem ? collectLinkedItems(hireNavItem.dropDown) : [];
-  const navigationLinkByHref = new Map(navigationLinks.map((link) => [link.href, link]));
-
-  return Object.keys(HIRE_PAGE_DATA_BY_SLUG).map((slug) => {
-    const href = `/hire/${slug}`;
-
-    return (
-      navigationLinkByHref.get(href) ?? {
-        href,
-        label: slug
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" "),
-      }
-    );
-  });
-}
-
-const mainPages: SitemapLink[] = NAVBAR_LINKS_DATA.filter((item) => primaryPageIds.has(item.id)).map((item) => ({
-  label: item.label,
-  href: item.href,
-}));
-
-const servicePages: SitemapLink[] =
-  findNavItem("services")
-    ?.dropDown.filter((item) => item.isLink)
-    .map((item) => ({
-      label: item.label,
-      href: item.href,
-    })) ?? [];
-
 const sitemapGroups: SitemapGroup[] = [
   {
     title: "Main Pages",
-    links: mainPages,
-  },
-  {
-    title: "Service Pages",
-    links: servicePages,
+    links: MAIN_SEO_PAGE_LINKS.map((page) => ({ label: page.pageName, href: page.href })),
   },
   {
     title: "Hire Pages",
-    links: getHireLinks(),
+    links: HIRE_SEO_PAGE_LINKS.map((page) => ({ label: page.pageName, href: page.href })),
+  },
+  {
+    title: "Resources",
+    links: RESOURCE_SEO_PAGE_LINKS.map((page) => ({ label: page.pageName, href: page.href })),
   },
 ];
 

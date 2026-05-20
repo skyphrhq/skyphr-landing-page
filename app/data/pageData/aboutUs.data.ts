@@ -24,7 +24,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
     ctas: [
       {
         label: "Get Your Product Built",
-        href: "#",
+        href: "/contact",
         variant: "CTA_PRIMARY",
       },
       {
@@ -58,7 +58,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
     },
     cta: {
       label: "Get Your Product Built",
-      href: "#",
+      href: "/contact",
       variant: "CTA_PRIMARY",
     },
     cards: ABOUT_US_INFO_CARD_DATA,

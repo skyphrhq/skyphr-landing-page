@@ -71,7 +71,7 @@ function NavBarComponent() {
         },
       });
       gsap.to(navbarInnerWrapper, {
-        padding: "10px 16px",
+        padding: "16px 16px",
         duration: 0.6,
         ease: "power4.inOut",
         scrollTrigger: {
@@ -105,78 +105,80 @@ function NavBarComponent() {
         "w-full max-w-full top-0 left-1/2 -translate-x-1/2 fixed z-9999 bg-transparent border-b border-b-(--border-color) skyphr-navbar-main-wrapper",
         areDropdownsSuppressed && "is-dropdown-suppressed",
       )}>
-      <div className="w-full skyphr-container flex items-center justify-between h-auto py-2.5! xl:py-5! backdrop-blur-[1px] relative z-2 navbar-inner-wrapper">
-        <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
-          <Image width={180} height={40} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
-        </Link>
-        <div
-          data-lenis-prevent
-          data-lenis-prevent-touch
-          data-lenis-prevent-wheel
-          onClick={(event) => {
-            if (event.target === event.currentTarget) {
-              handleCloseMobileMenu();
-            }
-          }}
-          onTouchMove={(event) => event.stopPropagation()}
-          onWheel={(event) => event.stopPropagation()}
-          className={twMerge(
-            "grow flex items-center justify-center skyphr-navbar-content-wrapper",
-            isMobileMenuOpen && "is-open",
-          )}>
-          <div className="skyphr-mobile-nav-close-btn-wrapper">
-            <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
-              <Image width={130} height={30} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
-            </Link>
-            <Button
-              type="button"
-              aria-label="Close navigation menu"
-              onClick={handleCloseMobileMenu}
-              className="skyphr-mobile-nav-close-btn">
-              <FaXmark className="text-xl text-(--text-main-color)" />
-            </Button>
-          </div>
+      <div className="w-full skyphr-container h-auto backdrop-blur-[1px] relative z-2">
+        <div className="py-2.5 xl:py-5 navbar-inner-wrapper  flex items-center justify-between ">
+          <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+            <Image width={180} height={40} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+          </Link>
           <div
             data-lenis-prevent
             data-lenis-prevent-touch
             data-lenis-prevent-wheel
-            className="w-full grow skyphr-navbar-links-wrapper">
-            <ul className="w-full flex items-center justify-center gap-3 skyphr-nav-links-wrapper-list">
-              {NAVBAR_LINKS_DATA?.map((item) => (
-                <NavBarCommonLinkComponent
-                  key={item?.id}
-                  item={item}
-                  openDropdowns={openDropdowns}
-                  onToggleDropdown={handleToggleDropdown}
-                  onCloseMobileMenu={handleCloseMobileMenu}
-                  onNavigate={handleNavigate}
-                  pathname={pathname}
-                />
-              ))}
-            </ul>
+            onClick={(event) => {
+              if (event.target === event.currentTarget) {
+                handleCloseMobileMenu();
+              }
+            }}
+            onTouchMove={(event) => event.stopPropagation()}
+            onWheel={(event) => event.stopPropagation()}
+            className={twMerge(
+              "grow flex items-center justify-center skyphr-navbar-content-wrapper",
+              isMobileMenuOpen && "is-open",
+            )}>
+            <div className="skyphr-mobile-nav-close-btn-wrapper">
+              <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+                <Image width={130} height={30} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+              </Link>
+              <Button
+                type="button"
+                aria-label="Close navigation menu"
+                onClick={handleCloseMobileMenu}
+                className="skyphr-mobile-nav-close-btn">
+                <FaXmark className="text-xl text-(--text-main-color)" />
+              </Button>
+            </div>
+            <div
+              data-lenis-prevent
+              data-lenis-prevent-touch
+              data-lenis-prevent-wheel
+              className="w-full grow skyphr-navbar-links-wrapper">
+              <ul className="w-full flex items-center justify-center gap-3 skyphr-nav-links-wrapper-list">
+                {NAVBAR_LINKS_DATA?.map((item) => (
+                  <NavBarCommonLinkComponent
+                    key={item?.id}
+                    item={item}
+                    openDropdowns={openDropdowns}
+                    onToggleDropdown={handleToggleDropdown}
+                    onCloseMobileMenu={handleCloseMobileMenu}
+                    onNavigate={handleNavigate}
+                    pathname={pathname}
+                  />
+                ))}
+              </ul>
+            </div>
+            <div className="w-fit skyphr-nav-cta-btn-wrapper">
+              <CTAButton
+                btnStyle="CTA_SECONDARY"
+                className="reveal ml-auto"
+                href="https://cal.com/skyphr/30min"
+                target="_blank"
+                rel="noopener noreferrer">
+                Book a Call
+              </CTAButton>
+            </div>
           </div>
-          <div className="w-fit skyphr-nav-cta-btn-wrapper">
-            <CTAButton
-              btnStyle="CTA_SECONDARY"
-              className="reveal ml-auto"
-              href="https://cal.com/skyphr/30min"
-              target="_blank"
-              rel="noopener noreferrer">
-              Book a Call
-            </CTAButton>
-          </div>
+          <Button
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => {
+              setAreDropdownsSuppressed(false);
+              setIsMobileMenuOpen(true);
+            }}
+            className="block xmd:hidden">
+            <GiHamburgerMenu className="text-2xl text-(--text-main-color) transition-all" />
+          </Button>
         </div>
-        <Button
-          type="button"
-          aria-label="Open navigation menu"
-          aria-expanded={isMobileMenuOpen}
-          onClick={() => {
-            setAreDropdownsSuppressed(false);
-            setIsMobileMenuOpen(true);
-          }}
-          className="block xmd:hidden">
-          <GiHamburgerMenu className="text-2xl text-(--text-main-color) transition-all" />
-        </Button>
       </div>
       <span className="w-full h-full absolute blur-2xl inset-0 opacity-20 bg-(--root-white-color) z-1 origin-center bg-animation-element"></span>
     </nav>

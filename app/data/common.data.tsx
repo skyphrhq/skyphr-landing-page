@@ -113,7 +113,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "We design intuitive, high-converting user experiences focused on clarity, usability, and seamless interaction across modern digital products.",
     ctaButton: {
       label: "Explore Design Solutions",
-      href: "/services/ui-ux-design",
+      href: "/services",
     },
     style: {
       baseColor: "#AC9BFF",
@@ -133,7 +133,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "We build scalable SaaS and web applications with modern architecture, optimized performance, and reliable infrastructure for long-term growth.",
     ctaButton: {
       label: "Explore Web App Solutions",
-      href: "/services/ui-ux-design",
+      href: "/services",
     },
     style: {
       baseColor: "#FF767A",
@@ -153,7 +153,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "We build scalable SaaS and web applications with modern architecture, optimized performance, and reliable infrastructure for long-term growth.",
     ctaButton: {
       label: "Explore Web App Solutions",
-      href: "/services/ui-ux-design",
+      href: "/services",
     },
     style: {
       baseColor: "#B8C56F",

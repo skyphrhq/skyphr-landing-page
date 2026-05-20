@@ -76,7 +76,7 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
     },
     cta: {
       label: "Get Your Product Built",
-      href: "#",
+      href: "/contact",
       variant: "CTA_PRIMARY",
     },
     cards: ABOUT_US_INFO_CARD_DATA,
