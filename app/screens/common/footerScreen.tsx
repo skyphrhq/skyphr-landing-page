@@ -65,7 +65,7 @@ function FooterScreen() {
         {/* Middle Content */}
         <div className="flex flex-col py-12 md:py-14 lg:py-16 gap-10 lg:gap-12">
           <div className="w-full">
-            <div className="w-full flex flex-col items-center md:flex-row gap-10 md:gap-20 lg:gap-28">
+            <div className="w-full flex flex-col md:items-center md:flex-row gap-10 md:gap-20 lg:gap-28">
               <div className="max-w-90">
                 <div className="flex items-center gap-3 mb-6">
                   <Image
@@ -73,7 +73,7 @@ function FooterScreen() {
                     alt="Skyphr Logo"
                     width={220}
                     height={57}
-                    className="w-[220px] h-[57px] object-contain -ml-2.5"
+                    className="w-55 h-14.25 object-contain -ml-2.5"
                   />
                 </div>
                 <p className="text-neutral-300 text-sm leading-6">
@@ -105,7 +105,7 @@ function FooterScreen() {
                   <Link
                     key={`${group.title}-${link.href}-${link.label}`}
                     href={link.href}
-                    className="text-neutral-400 hover:text-white transition-colors text-base font-medium">
+                    className="text-(--footer-links-color) hover:text-(--text-white-color) transition-colors text-base font-medium">
                     {link.label}
                   </Link>
                 ))}
@@ -119,8 +119,14 @@ function FooterScreen() {
           <p className="text-neutral-500 text-sm">© {new Date().getFullYear()} Skyphr. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link
+              href="/privacy-policy"
+              className="text-(--footer-links-color) text-sm hover:text-(--root-white-color) transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="w-px h-5 bg-(--footer-links-color)"></span>
+            <Link
               href="/sitemap"
-              className="text-neutral-500 text-sm hover:text-(--root-white-color) transition-colors">
+              className="text-(--footer-links-color) text-sm hover:text-(--root-white-color) transition-colors">
               Sitemap
             </Link>
           </div>

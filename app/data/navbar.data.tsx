@@ -189,4 +189,5 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
     ],
   },
   { id: "contact", label: "Contact", href: "/contact", type: "link", isLink: true, target: "_self", dropDown: [] },
+  { id: "blog", label: "Blog", href: "/blog", type: "link", isLink: true, target: "_self", dropDown: [] },
 ];
