@@ -1,4 +1,4 @@
-import CEOImage from "@/app/assets/dummy-testimonial.png";
+import CEOImage from "@/app/assets/webp/varun-patel.webp";
 import MockupFive from "@/app/assets/webp/mockup-five.webp";
 import MockupFour from "@/app/assets/webp/mockup-four.webp";
 import MockupOne from "@/app/assets/webp/mockup-one.webp";

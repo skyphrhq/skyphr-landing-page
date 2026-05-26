@@ -19,7 +19,7 @@ function AboutUsPage() {
       )}
       {ABOUT_US_PAGE_DATA?.about && (
         <section className="w-full h-auto overflow-hidden">
-          <AboutSection classNames="py-15" data={ABOUT_US_PAGE_DATA.about} />
+          <AboutSection classNames="pb-0! md:pb-0! xl:pb-0!" data={ABOUT_US_PAGE_DATA.about} />
         </section>
       )}
       {ABOUT_US_PAGE_DATA?.ourValues && (

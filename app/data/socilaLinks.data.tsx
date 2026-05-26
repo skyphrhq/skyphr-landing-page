@@ -1,24 +1,24 @@
-import { FiGithub, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 export const SOCIAL_LINKS = [
   {
     icon: FiInstagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/skyphrhq/",
     label: "Instagram",
   },
   {
     icon: FiTwitter,
-    href: "https://twitter.com",
+    href: "https://x.com/skyphrhq",
     label: "Twitter",
   },
   {
     icon: FiLinkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/skyphr",
     label: "LinkedIn",
   },
   {
-    icon: FiGithub,
-    href: "https://github.com",
-    label: "GitHub",
+    icon: FiFacebook,
+    href: "https://www.facebook.com/profile.php?id=61574322422964",
+    label: "Facebook",
   },
 ];

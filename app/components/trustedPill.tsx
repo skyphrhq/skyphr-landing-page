@@ -1,4 +1,4 @@
-import DummyImage from "@/app/assets/dummy.webp";
+import DummyImage from "@/app/assets/webp/dummy.webp";
 import { TrustedPillInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";

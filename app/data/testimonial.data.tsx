@@ -1,4 +1,4 @@
-import DummyUserImg from "@/app/assets/dummy-testimonial.png";
+import DummyUserImg from "@/app/assets/webp/dummy-testimonial.webp";
 import { ClientTestimonialCardInterface } from "@/app/utils/interface/common.interface";
 
 export const CLIENT_TESTIMONIAL_DATA: ClientTestimonialCardInterface[] = [

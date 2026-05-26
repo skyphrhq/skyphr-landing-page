@@ -1,4 +1,4 @@
-import CEOImage from "@/app/assets/dummy-testimonial.png";
+import CEOImage from "@/app/assets/webp/varun-patel.webp";
 import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
@@ -123,7 +123,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
           {
             platform: "LinkedIn",
             icon: createElement(FiLinkedin),
-            url: "https://linkedin.com/in/your-profile",
+            url: "https://www.linkedin.com/in/varun-patel-aa465828b/",
             title: "LinkedIn",
             ariaLabel: "LinkedIn",
             target: "_blank",
@@ -134,7 +134,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
           imagePath: CEOImage,
           width: 450,
           height: 635,
-          alt: "Ui Ux Design",
+          alt: "Varun Patel",
         },
       },
     ],
