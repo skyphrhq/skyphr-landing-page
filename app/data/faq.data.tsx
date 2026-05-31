@@ -78,3 +78,64 @@ export const FAQ_DATA: FaqCommonCardData[] = [
     ),
   },
 ];
+
+export const HOME_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "Why choose Skyphr for SaaS and AI development?",
+    answer: (
+      <p>
+        <span className="font-semibold">Skyphr</span> combines <span className="font-semibold">Product Strategy,</span>{" "}
+        <span className="font-semibold">UI/UX design</span>,{" "}
+        <span className="font-semibold">Software Engineering,</span> and{" "}
+        <span className="font-semibold">AI expertise,</span> to help businesses build scalable digital products faster
+        and more efficiently.
+      </p>
+    ),
+  },
+  {
+    question: "Do you work with international clients?",
+    answer: (
+      <p>
+        Yes. We work with <span className="font-semibold">Startups,</span>{" "}
+        <span className="font-semibold">SaaS companies,</span> and{" "}
+        <span className="font-semibold">Enterprises globally,</span> with a strong focus on serving businesses across
+        <span className="font-semibold">Europe,</span> the <span className="font-semibold">United Kingdom,</span>{" "}
+        <span className="font-semibold">North America,</span> and emerging markets.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build an MVP for a startup?",
+    answer: (
+      <p>
+        Absolutely. We specialize in <span className="font-semibold">MVP development,</span> helping startups validate
+        ideas, launch faster, and scale efficiently.
+      </p>
+    ),
+  },
+  {
+    question: "What AI services do you provide?",
+    answer: (
+      <p>
+        We offer <span className="font-semibold">AI automation services,</span>{" "}
+        <span className="font-semibold">AI integrations,</span>{" "}
+        <span className="font-semibold">workflow automation,</span>{" "}
+        <span className="font-semibold">custom AI applications,</span>{" "}
+        <span className="font-semibold">machine learning solutions,</span> and{" "}
+        <span className="font-semibold">AI-powered product development</span>
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide ongoing support after launch?",
+    answer: (
+      <p>
+        Yes. We offer <span className="font-semibold">Product Maintenance,</span>{" "}
+        <span className="font-semibold">Performance Optimization,</span>{" "}
+        <span className="font-semibold">feature development,</span>{" "}
+        <span className="font-semibold">AI enhancements,</span> and long-term technical support to help your product
+        grow.
+      </p>
+    ),
+  },
+];

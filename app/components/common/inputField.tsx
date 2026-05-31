@@ -9,15 +9,17 @@ interface InputFieldProps {
   placeholder?: string;
   className?: string;
   options?: { label: string; value: string }[];
-  isTelWithCode?: boolean; // specialized for the +91 layout if needed
+  isTelWithCode?: boolean;
+  error?: string;
 }
 
 export const InputField: React.FC<
   InputFieldProps & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>
-> = ({ type = "text", placeholder, className = "", options = [], isTelWithCode = false, ...props }) => {
+> = ({ type = "text", placeholder, className = "", options = [], isTelWithCode = false, error, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const currentValue = typeof props.value === "string" ? props.value : selectedValue;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -34,58 +36,71 @@ export const InputField: React.FC<
 
   if (type === "textarea") {
     return (
-      <textarea
-        placeholder={placeholder}
-        className={`${baseClasses} min-h-[100px] resize-none ${className}`}
-        {...(props as any)}
-      />
+      <div>
+        <textarea
+          placeholder={placeholder}
+          className={`${baseClasses} min-h-[100px] resize-none ${className} ${error ? "border-red-500" : ""}`}
+          {...(props as any)}
+        />
+        {error && <p className="mt-1 text-xs font-inter text-red-500">{error}</p>}
+      </div>
     );
   }
 
   if (type === "select") {
-    const selectedOption = options.find((opt) => opt.value === selectedValue);
+    const selectedOption = options.find((opt) => opt.value === currentValue);
 
     return (
-      <div className="relative w-full" ref={dropdownRef}>
-        <div
-          className={`${baseClasses} cursor-pointer flex justify-between items-center ${className} ${!selectedValue ? "text-(--placeholder-color)" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span>{selectedOption ? selectedOption.label : placeholder}</span>
-          <svg
-            className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""} text-gray-500`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+      <div>
+        <div className="relative w-full" ref={dropdownRef}>
+          <button
+            type="button"
+            className={`${baseClasses} cursor-pointer flex justify-between items-center text-left ${className} ${!currentValue ? "text-(--placeholder-color)" : ""} ${error ? "border-red-500" : ""}`}
+            onClick={() => setIsOpen(!isOpen)}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
+            <span>{selectedOption ? selectedOption.label : placeholder}</span>
+            <svg
+              className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""} text-gray-500`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
 
-        {isOpen && (
-          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-100 rounded-xl shadow-lg max-h-60 overflow-y-auto">
-            <div className="py-1">
-              {options.map((opt, i) => (
-                <div
-                  key={i}
-                  className={`px-4 py-2.5 text-sm cursor-pointer hover:bg-gray-50 transition-colors text-black-color font-medium font-inter ${selectedValue === opt.value ? "bg-gray-50" : ""}`}
-                  onClick={() => {
-                    setSelectedValue(opt.value);
-                    setIsOpen(false);
-                    if (props.onChange) {
-                      const event = {
-                        target: { name: props.name, value: opt.value },
-                      } as any;
-                      props.onChange(event);
-                    }
-                  }}
-                >
-                  {opt.label}
-                </div>
-              ))}
+          {isOpen && (
+            <div
+              data-lenis-prevent
+              data-lenis-prevent-touch
+              data-lenis-prevent-wheel
+              className="absolute z-10 w-full mt-1 bg-white border border-gray-100 rounded-xl shadow-lg max-h-60 overflow-y-auto overscroll-contain"
+            >
+              <div className="py-1">
+                {options.map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    className={`w-full text-left px-4 py-2.5 text-sm cursor-pointer hover:bg-gray-50 transition-colors text-black-color font-medium font-inter ${currentValue === opt.value ? "bg-gray-50" : ""}`}
+                    onClick={() => {
+                      setSelectedValue(opt.value);
+                      setIsOpen(false);
+                      if (props.onChange) {
+                        const event = {
+                          target: { name: props.name, value: opt.value },
+                        } as any;
+                        props.onChange(event);
+                      }
+                    }}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+        {error && <p className="mt-1 text-xs font-inter text-red-500">{error}</p>}
       </div>
     );
   }
@@ -94,7 +109,17 @@ export const InputField: React.FC<
     return <PhoneInputField {...props} placeholder={placeholder} className={className} />;
   }
 
-  return <input type={type} placeholder={placeholder} className={`${baseClasses} ${className}`} {...(props as any)} />;
+  return (
+    <div>
+      <input
+        type={type}
+        placeholder={placeholder}
+        className={`${baseClasses} ${className} ${error ? "border-red-500" : ""}`}
+        {...(props as any)}
+      />
+      {error && <p className="mt-1 text-xs font-inter text-red-500">{error}</p>}
+    </div>
+  );
 };
 
 const PhoneInputField = ({ placeholder, className, ...props }: any) => {
@@ -138,7 +163,12 @@ const PhoneInputField = ({ placeholder, className, ...props }: any) => {
         </div>
 
         {isOpen && (
-          <div className="absolute z-10 top-full left-0 mt-1 w-24 bg-white border border-gray-100 rounded-xl shadow-lg max-h-48 overflow-y-auto">
+          <div
+            data-lenis-prevent
+            data-lenis-prevent-touch
+            data-lenis-prevent-wheel
+            className="absolute z-10 top-full left-0 mt-1 w-24 bg-white border border-gray-100 rounded-xl shadow-lg max-h-48 overflow-y-auto overscroll-contain"
+          >
             <div className="py-1">
               {codeOptions.map((opt, i) => (
                 <div

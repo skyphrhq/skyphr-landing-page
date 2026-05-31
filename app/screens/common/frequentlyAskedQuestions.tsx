@@ -3,6 +3,7 @@ import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import FaqCommonCard from "@/app/components/faqCommonCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { FrequentlyAskedQuestionsInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
@@ -40,7 +41,7 @@ function FrequentlyAskedQuestions({ data, classNames }: FrequentlyAskedQuestions
   );
 
   return (
-    <div className={twMerge("w-full h-full py-15! md:py-20! xl:py-30!", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-full",COMMON_SECTION_PADDING, classNames)} ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data?.header} />
 

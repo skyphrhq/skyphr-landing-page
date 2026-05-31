@@ -1,3 +1,4 @@
+"use client";
 import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import OurServiceCardComponent from "@/app/components/ourServiceCardComponent";
 import { gsap } from "@/app/lib/gsap";

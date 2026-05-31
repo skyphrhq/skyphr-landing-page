@@ -3,6 +3,7 @@ import BlogCard from "@/app/components/blogCard";
 import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { OurInsightsSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -36,7 +37,7 @@ function OurInsightsSection({ data, classNames }: OurInsightsSectionInterface) {
 
   return (
     <div
-      className={twMerge("w-full h-full bg-(--about-us-card-bg) py-15! md:py-20! xl:py-30!", classNames)}
+      className={twMerge("w-full h-full bg-(--about-us-card-bg)",COMMON_SECTION_PADDING, classNames)}
       ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />

@@ -1,5 +1,5 @@
 import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA, OUR_SERVICE_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
+import { HOME_PAGE_FAQ_DATA } from "@/app/data/faq.data";
 import { INSIGHTS_DATA } from "@/app/data/insights.data";
 import { OUR_PROCESS_DATA } from "@/app/data/ourProcess.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
@@ -26,13 +26,13 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
   hero: {
     header: {
       title: [
-        [{ text: "We Build " }, { text: "Scalable", variant: "italic" }],
-        [{ text: "Digital Products & " }, { text: "AI Systems", variant: "italic" }],
+        [{ text: "Build Scalable " }, { text: "Digital Products,", variant: "italic" }],
+        [{ text: "SaaS Platforms & " }, { text: "AI Systems", variant: "italic" }],
       ],
       description: [
         [
           {
-            text: "UI/UX Design, SaaS Development & AI Automation to help startups and businesses build, launch and scale faster.",
+            text: "Skyphr is a global AI development company and digital product development partner helping startups, SaaS businesses, and enterprises design, build, and scale innovative software solutions. From UI/UX design and SaaS development to AI automation services, we create high-performance digital products that accelerate growth.",
           },
         ],
       ],
@@ -63,13 +63,18 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
         [
           { text: "Skyphr Builds Scalable" },
           { text: "Digital Products & AI Systems", variant: "italic" },
-          { text: "for Modern Companies" },
+          { text: "for Modern Businesses" },
         ],
       ],
       description: [
         [
           {
-            text: "We partner with companies to design, build and scale high-performance digital products and AI systems built for speed, reliability and long-term growth.",
+            text: "At Skyphr, we partner with startups, SaaS companies, and enterprises worldwide to design, develop, and scale custom digital products, AI-powered solutions, and web applications. Our team combines strategic product thinking, modern software development, and AI innovation to deliver scalable systems built for performance, reliability, and long-term business growth.",
+          },
+        ],
+        [
+          {
+            text: "Whether you're launching an MVP, building a SaaS platform, automating operations with AI, or scaling an existing product, we help turn ambitious ideas into market-ready solutions.",
           },
         ],
       ],
@@ -91,11 +96,19 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
 
   process: {
     header: {
-      title: [[{ text: "Our Simple " }, { text: "and Proven Process" }]],
+      title: [
+        [
+          { text: "Our " },
+          { text: "Simple", variant: "italic" },
+          { text: " & " },
+          { text: "Proven ", variant: "italic" },
+        ],
+        [{ text: "Product " }, { text: "Development  ", variant: "italic" }, { text: " Process" }],
+      ],
       description: [
         [
           {
-            text: "From idea to launch, here's how we make sure your project runs smoothly every time",
+            text: "From idea validation to product launch and continuous optimization, our proven development process helps businesses build digital products faster and with confidence.",
           },
         ],
       ],
@@ -109,7 +122,12 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: "We focus on results and our clients’ experiences speak louder than anything else",
+            text: "Businesses across Europe, North America, and global markets trust Skyphr to deliver scalable software products, SaaS platforms, and AI-powered solutions that drive measurable growth.",
+          },
+        ],
+        [
+          {
+            text: "We focus on delivering results, building long-term partnerships, and helping companies launch products faster with confidence.",
           },
         ],
       ],
@@ -127,7 +145,7 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
     },
-    faqsItems: FAQ_DATA,
+    faqsItems: HOME_PAGE_FAQ_DATA,
   },
   ourInsights: {
     header: {
@@ -162,5 +180,5 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
-  contactUs: COMMON_CONTACT_US_SECTION_DATA
+  contactUs: COMMON_CONTACT_US_SECTION_DATA,
 };

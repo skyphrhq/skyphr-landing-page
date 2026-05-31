@@ -79,7 +79,7 @@ export function NavBarCommonLinkComponent({
         <button
           type="button"
           onClick={handleNavLinkClick}
-          className={twMerge(navLinkClassName, "w-full")}
+          className={twMerge(navLinkClassName, "w-full skyphr-nav-btn-link")}
           aria-haspopup="true"
           aria-expanded={isOpen}>
           {navContent}

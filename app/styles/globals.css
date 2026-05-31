@@ -48,7 +48,7 @@
 }
 @media (min-width: 1200px) {
   .skyphr-container {
-    width: min(calc(100% - 150px), 1440px);
+    width: min(calc(100% - 150px), 1540px);
   }
 }
 
@@ -115,12 +115,16 @@
   color: var(--text-white-color) !important;
 }
 
+.skyphr-navbar-main-wrapper .skyphr-nav-item.is-active > .skyphr-nav-btn-link {
+  background-color: var(--active-link-bg) !important;
+  color: var(--text-white-color) !important;
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link {
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:not(.is-active):hover > .skyphr-nav-link {
     background-color: var(--active-hover-link-bg);
     color: var(--text-main-color) !important;
   }
-
   .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down {
     transform: rotate(180deg);
   }

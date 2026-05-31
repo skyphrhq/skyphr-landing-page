@@ -4,6 +4,7 @@ import AboutUsInfoCard from "@/app/components/aboutUsInfoCard";
 import CTAButton from "@/app/components/common/ctaButton";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { AboutSectionElementInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
@@ -45,8 +46,8 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
   return (
     <div
       ref={containerRef}
-      className={twMerge("skyphr-container w-full overflow-hidden h-fit py-15! md:py-20! xl:py-30!", classNames)}>
-      <div className="w-full flex flex-col lg:flex-row items-stretch justify-start gap-10 md:gap-15 lg:gap-5">
+      className={twMerge("skyphr-container w-full overflow-hidden h-fit", COMMON_SECTION_PADDING, classNames)}>
+      <div className="w-full flex flex-col lg:flex-row items-stretch justify-start gap-10 md:gap-15 lg:gap-20">
         <div className="w-full md:w-full lg:w-[45%]">
           <div className="w-full flex flex-col items-start justify-start gap-6 lg:py-10 @container">
             {data?.header?.title?.map((titleRow, rowIndex) => (
@@ -63,19 +64,21 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
               </h2>
             ))}
 
-            {data?.header?.description?.map((description, index) => (
-              <p
-                className="text-(--text-secondary-color) text-base lg:text-lg font-instrument-sans font-normal reveal-text-animation"
-                key={index}>
-                {description?.map((chunk, chunkIndex) => {
-                  return (
-                    <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
-                      {chunk.text}
-                    </span>
-                  );
-                })}
-              </p>
-            ))}
+            <div className="w-full flex flex-col items-start justify-start gap-5">
+              {data?.header?.description?.map((description, index) => (
+                <p
+                  className="text-(--text-secondary-color) text-base lg:text-lg font-instrument-sans font-normal reveal-text-animation"
+                  key={index}>
+                  {description?.map((chunk, chunkIndex) => {
+                    return (
+                      <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                        {chunk.text}
+                      </span>
+                    );
+                  })}
+                </p>
+              ))}
+            </div>
 
             {data?.cta && (
               <CTAButton
@@ -90,7 +93,11 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
         <div className="w-full md:w-full lg:w-[55%] relative @container">
           <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-4 relative">
             {data?.cards?.map((item, index) => (
-              <AboutUsInfoCard key={index} className={"card-reveal about-us-common-card-section  max-md:scale-x-100 md:scale-x-0 md:scale-y-0"} data={item} />
+              <AboutUsInfoCard
+                key={index}
+                className={"card-reveal about-us-common-card-section  max-md:scale-x-100 md:scale-x-0 md:scale-y-0"}
+                data={item}
+              />
             ))}
             <div className="w-20 min-w-20 min-h-20 h-20 bg-(--root-white-color) rounded-full items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex">
               <span className="w-15 h-15 min-w-15 min-h-15 rounded-full flex items-center justify-center bg-(--about-us-card-bg)">

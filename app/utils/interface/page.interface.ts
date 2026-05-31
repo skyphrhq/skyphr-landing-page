@@ -1,7 +1,7 @@
 // ===============================
 // TEXT SYSTEM
 
-import {
+import type {
   AboutUsCardsDataArrayInterface,
   BlogCardInterface,
   ClientTestimonialCardInterface,
@@ -10,7 +10,7 @@ import {
   OurTeamMembersDataArrayInterface,
   OurValueCardInterface,
 } from "@/app/utils/interface/common.interface";
-import {
+import type {
   FaqCommonCardData,
   FeaturedWorkInterface,
   OurServiceCardDataArrayInterface,
@@ -112,6 +112,51 @@ export interface OurTeamSectionInterface {
   members: OurTeamMembersDataArrayInterface[];
 }
 
+export type DevelopmentProcessStep = {
+  title: string;
+  description: string;
+};
+
+export type DevelopmentProcessSectionData = {
+  header: SectionHeader;
+  steps: DevelopmentProcessStep[];
+};
+export type FeaturesIncludeSectionData = {
+  header: SectionHeader;
+  features: string[];
+};
+
+export type WhatWeBuildSectionData = {
+  header: SectionHeader;
+  cards: { title: string; description: string }[];
+};
+
+export type UseCaseItem = {
+  title: string;
+  description?: string;
+};
+
+export type UseCaseSectionData = {
+  header: SectionHeader;
+  items: UseCaseItem[];
+};
+
+export type TechnologyItem = {
+  name: string;
+  logoSrc?: string;
+  logoAlt?: string;
+};
+
+export type TechnologyStackGroup = {
+  title: string;
+  technologies: TechnologyItem[];
+};
+
+export type TechnologyStackSectionData = {
+  header: SectionHeader;
+  groups: TechnologyStackGroup[];
+};
+
 // ===============================
 // PAGE TYPE
 // ===============================
@@ -127,6 +172,11 @@ export interface CommonPageDataInterface {
   readyToScale?: ReadyToScaleSectionDataInterface;
   ourValues?: OurValuesInterface;
   ourApproach?: OurApproachInterface;
+  developmentProcess?: DevelopmentProcessSectionData;
+  whatWeBuild?: WhatWeBuildSectionData;
+  featuresInclude?: FeaturesIncludeSectionData;
+  useCase?: UseCaseSectionData;
+  technologyStack?: TechnologyStackSectionData;
   ourTeam?: OurTeamSectionInterface;
   contactUs?: ContactUsSectionInterface;
 }

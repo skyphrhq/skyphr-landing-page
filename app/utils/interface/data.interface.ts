@@ -1,10 +1,12 @@
+import { CommonPageDataInterface, HeroSection } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 
 export interface NavbarLinksInterface {
   id: string;
   label: string;
   href: string;
-  type: "button" | "link";
+  priority: number;
+  type: "button" | "link" | "listing"; // The "Listing" will be only visible in the sitemap.xml and not in the navbar
   isLink?: boolean;
   dropDown: NavbarLinksInterface[];
   target?: "_blank" | "_self";
@@ -48,4 +50,12 @@ export interface OurServiceCardDataArrayInterface {
 export interface FaqCommonCardData {
   question: string;
   answer: React.ReactNode;
+}
+
+export interface HireHeroSection extends HeroSection {
+  highlights: string[];
+}
+
+export interface HirePageDataInterface extends Omit<CommonPageDataInterface, "hero"> {
+  hero: HireHeroSection;
 }

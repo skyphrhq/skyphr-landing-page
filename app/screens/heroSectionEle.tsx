@@ -52,20 +52,22 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
             </h1>
           ))}
         </div>
+        <div className="w-full flex flex-col items-start justify-start gap-5">
+          {data?.header?.description?.map((description, index) => (
+            <p
+              className="reveal-animation font-instrument-sans text-base lg:text-lg max-w-3xl font-medium text-pretty text-center pt-5 text-(--text-main-color)"
+              key={index}>
+              {description?.map((chunk, chunkIndex) => {
+                return (
+                  <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                    {chunk.text}
+                  </span>
+                );
+              })}
+            </p>
+          ))}
+        </div>
 
-        {data?.header?.description?.map((description, index) => (
-          <p
-            className="reveal-animation font-instrument-sans text-base lg:text-lg max-w-xl font-medium text-pretty text-center pt-4 text-(--text-main-color)"
-            key={index}>
-            {description?.map((chunk, chunkIndex) => {
-              return (
-                <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
-                  {chunk.text}
-                </span>
-              );
-            })}
-          </p>
-        ))}
         {data?.ctas && (
           <div className="w-full flex flex-col xs:flex-row items-center justify-center gap-6 max-w-62  xs:max-w-xl mx-auto pt-10 @container">
             {data?.ctas?.map((button, index) => (

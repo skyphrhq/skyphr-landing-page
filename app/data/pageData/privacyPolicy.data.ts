@@ -1,10 +1,11 @@
 export type PrivacyPolicySection = {
-  title: string;
+  title?: string;
   paragraphs?: string[];
-  items?: {
-    label: string;
-    description: string;
+  itemsList?: {
+    label?: string;
+    description?: string;
   }[];
+  subSections?: PrivacyPolicySection[];
   note?: string;
 };
 
@@ -20,7 +21,9 @@ export type PrivacyPolicyPageData = {
     title: string;
     description: string;
     email: string;
-    address: string[];
+    website?: string;
+    address: string;
+    responseNote?: string;
   };
   securityBanner: {
     title: string;
@@ -38,80 +41,580 @@ export const PRIVACY_POLICY_PAGE_DATA: PrivacyPolicyPageData = {
     highlightedTitle: "Policy",
     description:
       "We keep your data handling clear, careful, and limited to what helps us operate Skyphr and respond to your requests.",
-    lastUpdated: "May 2026",
+    lastUpdated: "30 May 2026",
   },
   sections: [
     {
-      title: "Introduction",
       paragraphs: [
-        "Welcome to Skyphr. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regard to your personal information, please contact us.",
-        "When you visit our website and more generally use any of our services, we appreciate that you are trusting us with your personal information. We take your privacy very seriously and explain what information we collect, how we use it, and what rights you have in relation to it.",
+        `Welcome to Skyphr ("Company," "we," "our," or "us"). We are committed to protecting your privacy and ensuring transparency about how we collect, use, store, and protect your personal information.`,
+        `This Privacy Policy explains how Skyphr collects, processes, and safeguards information when you visit our website, use our services, communicate with us, or engage with our digital products, AI solutions, SaaS platforms, software development services, UI/UX design services, automation solutions, and related offerings.`,
+        `By using our website and services, you agree to the practices described in this Privacy Policy.`,
       ],
     },
     {
-      title: "Information We Collect",
-      paragraphs: [
-        "We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our services, participate in activities on the website, or otherwise contact us.",
-      ],
-      items: [
+      title: "1. Who We Are",
+      paragraphs: ["Skyphr is a digital product development and AI solutions company specializing in:"],
+      itemsList: [
         {
-          label: "Personal data",
-          description: "Name, email address, phone number, company details, and project requirements.",
+          label: "AI Development & Automation",
         },
         {
-          label: "Usage data",
-          description: "Information about how you use our website, including pages visited and response type.",
+          label: "SaaS Product Development",
         },
         {
-          label: "Cookie data",
-          description: "Cookies and similar tracking technologies that help us understand website activity.",
+          label: "Custom Software Development",
+        },
+        {
+          label: "Web Application Development",
+        },
+        {
+          label: "Mobile App Development",
+        },
+        {
+          label: "UI/UX Design",
+        },
+        {
+          label: "Cloud Solutions",
+        },
+        {
+          label: "Digital Product Strategy",
+        },
+        {
+          label: "Business Process Automation",
+        },
+        {
+          label: "AI Consulting Services",
         },
       ],
     },
     {
-      title: "How We Use Your Info",
-      paragraphs: [
-        "We use personal information collected via our website for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, to enter into or perform a contract with you, with your consent, and for compliance with our legal obligations.",
-        "This includes responding to questions, sending administrative information to you, fulfilling and managing requests, and supporting business communication.",
+      title: "2. Information We Collect",
+      subSections: [
+        {
+          title: "Personal Information",
+          paragraphs: ["We may collect information that identifies you directly, including:"],
+          itemsList: [
+            {
+              label: "Full name",
+            },
+            {
+              label: "Email address",
+            },
+            {
+              label: "Phone number",
+            },
+            {
+              label: "Company name",
+            },
+            {
+              label: "Job title",
+            },
+            {
+              label: "Business information",
+            },
+            {
+              label: "Billing information",
+            },
+            {
+              label: "Communication records",
+            },
+          ],
+        },
+        {
+          title: "Technical Information",
+          paragraphs: ["When you visit our website, we may automatically collect:"],
+          itemsList: [
+            {
+              label: "IP address",
+            },
+            {
+              label: "Browser type and version",
+            },
+            {
+              label: "Device information",
+            },
+            {
+              label: "Operating system",
+            },
+            {
+              label: "Referring URLs",
+            },
+            {
+              label: "Pages visited",
+            },
+            {
+              label: "Session duration",
+            },
+            {
+              label: "Website interaction data",
+            },
+            {
+              label: "Geographic location (approximate)",
+            },
+          ],
+        },
+        {
+          title: "Project and Service Information",
+          paragraphs: ["When engaging our services, we may collect:"],
+          itemsList: [
+            {
+              label: "Project requirements",
+            },
+            {
+              label: "Design assets",
+            },
+            {
+              label: "Business documentation",
+            },
+            {
+              label: "Software specifications",
+            },
+            {
+              label: "API credentials provided by you",
+            },
+            {
+              label: "User feedback and communications",
+            },
+          ],
+        },
+        {
+          title: "AI and Automation Data",
+          paragraphs: [
+            "For AI development, automation, and SaaS-related projects, we may process data provided by clients solely for delivering agreed services and according to contractual obligations.",
+          ],
+          itemsList: [],
+        },
       ],
     },
     {
-      title: "Cookies & Tracking",
-      paragraphs: [
-        "We may use cookies and similar tracking technologies to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our cookie notice.",
+      title: "3. How We Use Your Information",
+      subSections: [
+        {
+          paragraphs: ["We use information to:"],
+          itemsList: [
+            {
+              label: "Provide software development services",
+            },
+            {
+              label: "Deliver AI development and automation solutions",
+            },
+            {
+              label: "Create and manage SaaS applications",
+            },
+            {
+              label: "Improve website performance and user experience",
+            },
+            {
+              label: "Respond to inquiries and support requests",
+            },
+            {
+              label: "Process business transactions",
+            },
+            {
+              label: "Manage contracts and client relationships",
+            },
+            {
+              label: "Send project updates and communications",
+            },
+            {
+              label: "Improve our products and services",
+            },
+            {
+              label: "Ensure security and prevent fraud",
+            },
+            {
+              label: "Comply with legal obligations",
+            },
+            {
+              label: "Conduct analytics and performance monitoring",
+            },
+          ],
+        },
+        {
+          paragraphs: ["We process personal data only when we have a lawful basis to do so."],
+          itemsList: [],
+        },
       ],
-      note: "Most web browsers are set to accept cookies by default. You can usually choose to set your browser to remove cookies or to reject cookies.",
     },
     {
-      title: "Third-Party Disclosure",
-      paragraphs: [
-        "We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations. We may process or share your data based on legal bases such as consent, legitimate interests, performance of a contract, or legal obligations.",
+      title: "4. Legal Basis for Processing (GDPR)",
+      subSections: [
+        {
+          paragraphs: [
+            "For users located in the European Economic Area (EEA), United Kingdom, or similar jurisdictions, we process personal information under the following legal bases:",
+          ],
+          itemsList: [
+            {
+              label: "Consent",
+            },
+            {
+              label: "Contractual necessity",
+            },
+            {
+              label: "Legal obligations",
+            },
+            {
+              label: "Legitimate business interests",
+            },
+            {
+              label: "Protection of vital interests",
+            },
+          ],
+        },
+        {
+          paragraphs: ["Where consent is required, you may withdraw it at any time."],
+          itemsList: [],
+        },
       ],
     },
     {
-      title: "Data Storage & Security",
-      paragraphs: [
-        "We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law.",
-        "We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the internet or information storage technology can be guaranteed to be fully secure.",
+      title: "5. Cookies and Tracking Technologies",
+      subSections: [
+        {
+          paragraphs: ["Skyphr uses cookies and similar technologies to:"],
+          itemsList: [
+            {
+              label: "Improve website functionality",
+            },
+            {
+              label: "Remember user preferences",
+            },
+            {
+              label: "Analyze website traffic",
+            },
+            {
+              label: "Measure marketing performance",
+            },
+            {
+              label: "Enhance user experience",
+            },
+          ],
+        },
+        {
+          paragraphs: ["Cookies may include:"],
+          itemsList: [
+            {
+              label: "Essential Cookies:",
+              description: "Required for website functionality and security.",
+            },
+            {
+              label: "Analytics Cookies:",
+              description: "Used to understand visitor behavior and improve website performance.",
+            },
+            {
+              label: "Marketing Cookies:",
+              description: "Used to measure advertising effectiveness and improve campaign relevance.",
+            },
+          ],
+        },
+        {
+          paragraphs: ["You may control cookies through your browser settings."],
+          itemsList: [],
+        },
       ],
     },
     {
-      title: "Your Privacy Rights",
-      paragraphs: [
-        "In some regions, such as the EEA and UK, you have certain rights under applicable data protection laws. These may include the right to request access and obtain a copy of your personal information, request rectification or erasure, restrict the processing of your personal information, and data portability where applicable.",
+      title: "6. How We Share Information",
+      subSections: [
+        {
+          paragraphs: ["We do not sell personal information.", "We may share information with:"],
+          itemsList: [
+            {
+              label: "Service Providers:",
+              description:
+                "Trusted third-party vendors that help us operate our business, including cloud hosting providers, analytics providers, CRM platforms, payment processors, email communication services, and project management tools.",
+            },
+            {
+              label: "Business Transfers:",
+              description:
+                "Information may be transferred in connection with a merger, acquisition, restructuring, or sale of assets.",
+            },
+            {
+              label: "Legal Requirements:",
+              description:
+                "We may disclose information when required by law, regulation, legal process, or governmental request.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "7. International Data Transfers",
+      subSections: [
+        {
+          paragraphs: [
+            "As a global digital product and AI development company, we may process information in multiple countries.",
+            "When transferring personal data internationally, we implement appropriate safeguards, including:",
+          ],
+          itemsList: [
+            {
+              label: "Standard Contractual Clauses (SCCs)",
+            },
+            {
+              label: "Contractual protections",
+            },
+            {
+              label: "Security controls",
+            },
+            {
+              label: "Applicable legal compliance measures",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "8. Data Retention",
+      subSections: [
+        {
+          paragraphs: ["We retain personal information only for as long as necessary to:"],
+          itemsList: [
+            {
+              label: "Deliver contracted services",
+            },
+            {
+              label: "Maintain business records",
+            },
+            {
+              label: "Meet legal obligations",
+            },
+            {
+              label: "Resolve disputes",
+            },
+            {
+              label: "Enforce agreements",
+            },
+          ],
+        },
+        {
+          paragraphs: ["When information is no longer required, we securely delete or anonymize it."],
+          itemsList: [],
+        },
+      ],
+    },
+    {
+      title: "9. Data Security",
+      subSections: [
+        {
+          paragraphs: [
+            "We implement industry-standard technical and organizational measures to protect personal information, including:",
+          ],
+          itemsList: [
+            {
+              label: "Secure servers",
+            },
+            {
+              label: "Access controls",
+            },
+            {
+              label: "Data encryption where appropriate",
+            },
+            {
+              label: "Secure development practices",
+            },
+            {
+              label: "Employee confidentiality obligations",
+            },
+            {
+              label: "Monitoring and security controls",
+            },
+          ],
+        },
+        {
+          paragraphs: [
+            "While we strive to protect information, no method of transmission or storage can be guaranteed to be 100% secure.",
+          ],
+          itemsList: [],
+        },
+      ],
+    },
+    {
+      title: "10. Your Privacy Rights",
+      subSections: [
+        {
+          paragraphs: ["Depending on your location, you may have rights including:"],
+          itemsList: [
+            {
+              label: "Right to Access:",
+              description: "Request a copy of your personal information.",
+            },
+            {
+              label: "Right to Correction:",
+              description: "Request correction of inaccurate information.",
+            },
+            {
+              label: "Right to Deletion:",
+              description: "Request deletion of your personal information where legally permitted.",
+            },
+            {
+              label: "Right to Restrict Processing:",
+              description: "Request limited processing of your data.",
+            },
+            {
+              label: "Right to Data Portability:",
+              description: "Request transfer of your information in a structured format.",
+            },
+            {
+              label: "Right to Object:",
+              description: "Object to certain processing activities.",
+            },
+            {
+              label: "Right to Withdraw Consent:",
+              description: "Withdraw consent at any time where processing is based on consent.",
+            },
+          ],
+        },
+        {
+          paragraphs: ["To exercise your rights, contact us at privacy@skyphr.com."],
+          itemsList: [],
+        },
+      ],
+    },
+    {
+      title: "11. Client Data and Confidentiality",
+      subSections: [
+        {
+          paragraphs: [
+            "Skyphr respects the confidentiality of all client information.",
+            "For software development, AI development, SaaS platforms, automation systems, and digital product projects:",
+          ],
+          itemsList: [
+            {
+              label: "Client-owned data remains the property of the client",
+            },
+            {
+              label: "We process data solely for project delivery",
+            },
+            {
+              label: "Confidential information is protected through contractual obligations",
+            },
+            {
+              label: "Access is limited to authorized personnel",
+            },
+            {
+              label: "Where applicable, Data Processing Agreements (DPAs) may be executed with clients",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "12. Third-Party Services",
+      subSections: [
+        {
+          paragraphs: [
+            "Our website and services may contain links to third-party websites, platforms, or tools.",
+            "We are not responsible for the privacy practices of external websites or services. Users should review their privacy policies separately.",
+          ],
+          itemsList: [],
+        },
+      ],
+    },
+    {
+      title: "13. Children's Privacy",
+      subSections: [
+        {
+          paragraphs: [
+            "Our services are intended for businesses, organizations, and individuals over the age of 18.",
+            "We do not knowingly collect personal information from children under 13 years of age. If we become aware that such information has been collected, we will take reasonable steps to remove it.",
+          ],
+          itemsList: [],
+        },
+      ],
+    },
+    {
+      title: "14. AI Systems and Automated Processing",
+      subSections: [
+        {
+          paragraphs: [
+            "As an AI development and automation company, Skyphr may develop, deploy, or manage AI-powered systems.",
+            "When processing data through AI systems:",
+          ],
+          itemsList: [
+            {
+              label: "We aim to use data responsibly and ethically",
+            },
+            {
+              label: "AI outputs may require human review",
+            },
+            {
+              label: "We implement reasonable safeguards to reduce risks",
+            },
+            {
+              label: "Clients remain responsible for ensuring lawful use of data they provide",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "15. California Privacy Rights (CCPA/CPRA)",
+      subSections: [
+        {
+          paragraphs: ["For California residents, you may have rights including:"],
+          itemsList: [
+            {
+              label: "Right to know what personal information is collected",
+            },
+            {
+              label: "Right to access collected information",
+            },
+            {
+              label: "Right to request deletion",
+            },
+            {
+              label: "Right to correct inaccurate information",
+            },
+            {
+              label: "Right to limit certain uses of personal information",
+            },
+            {
+              label: "Right to non-discrimination for exercising privacy rights",
+            },
+          ],
+        },
+        {
+          paragraphs: ["Requests may be submitted through our contact information listed below."],
+          itemsList: [],
+        },
+      ],
+    },
+    {
+      title: "16. Changes to This Privacy Policy",
+      subSections: [
+        {
+          paragraphs: ["We may update this Privacy Policy periodically to reflect:"],
+          itemsList: [
+            {
+              label: "Changes in laws or regulations",
+            },
+            {
+              label: "New technologies",
+            },
+            {
+              label: "Updated business practices",
+            },
+            {
+              label: "Service improvements",
+            },
+          ],
+        },
+        {
+          paragraphs: ['Any updates will be posted on this page with a revised "Last Updated" date.'],
+          itemsList: [],
+        },
       ],
     },
   ],
   contact: {
-    title: "Contact Us",
-    description: "If you have questions or comments about this notice, you may email us at",
+    title: "17. Contact Us",
+    description:
+      "If you have questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact:",
     email: "support@skyphr.com",
-    address: [
-      "Skyphr, Digital Product Studio",
-      "123 Innovation Road, Suite 400",
-      "San Francisco, CA 94103",
-      "United States",
-    ],
+    website: "www.skyphr.com",
+    address: "A 568, Money Plant High Street, Gota, Ahmedabad, Gujarat 382470",
+    responseNote:
+      "We will make reasonable efforts to respond to privacy-related requests in accordance with applicable laws and regulations.",
   },
   securityBanner: {
     title: "Security is our architecture.",

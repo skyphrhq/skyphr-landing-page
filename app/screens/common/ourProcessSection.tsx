@@ -3,6 +3,7 @@ import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import OurProcessCard from "@/app/components/ourProcessCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { OurProcessSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -41,7 +42,7 @@ function OurProcessSection({ data, classNames }: OurProcessSectionInterface) {
   );
   return (
     <div
-      className={twMerge("w-full h-full py-15! md:py-20! xl:py-30! overflow-hidden @container", classNames)}
+      className={twMerge("w-full h-full overflow-hidden @container",COMMON_SECTION_PADDING, classNames)}
       ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />

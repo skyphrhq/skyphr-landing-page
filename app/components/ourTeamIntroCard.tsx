@@ -27,7 +27,7 @@ function OurTeamIntroCard({ data }: { data: OurTeamMembersDataArrayInterface }) 
           <div className="w-full relative">
             <div className="w-full h-full flex flex-col items-start justify-center gap-6 md:gap-10 relative z-10">
               <div className="flex items-start justify-start">
-                <span className="text-xl md:text-2xl text-(--text-secondary-color) font-instrument-sans font-semibold text-pretty">
+                <span className="text-xl leading-7 text-(--text-secondary-color) font-instrument-sans font-semibold text-pretty">
                   {data.description}
                 </span>
               </div>

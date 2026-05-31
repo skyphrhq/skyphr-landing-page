@@ -2,6 +2,7 @@
 import OurServiceCardComponent from "@/app/components/ourServiceCardComponent";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { OurServiceSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -27,7 +28,7 @@ function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
   return (
     <div
       ref={animationContainer}
-      className={twMerge("w-full h-auto bg-(--about-us-card-bg) py-15! md:py-20! xl:py-30!", classNames)}>
+      className={twMerge("w-full h-auto bg-(--about-us-card-bg)",COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container @container">
         <div className="w-full flex items-center justify-center md:sticky md:top-[30vh] overflow-hidden">
           {data?.header?.title?.map((titleRow, rowIndex) => (
