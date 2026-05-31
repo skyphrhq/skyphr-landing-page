@@ -10,13 +10,18 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
   hero: {
     header: {
       title: [
-        [{ text: "We Design & Build " }, { text: "Thoughtful", variant: "italic" }],
+        [{ text: "We Design & Build " }, { text: "Scalable", variant: "italic" }],
         [{ text: "Digital Products & " }, { text: "AI Systems", variant: "italic" }],
       ],
       description: [
         [
           {
-            text: "We are a design and engineering team focused on building high-quality digital products and AI-driven systems. From early-stage startups to growing businesses, we help turn ideas into reliable, scalable solutions.",
+            text: "Skyphr is a digital product development and AI engineering company focused on creating high-performance software, scalable SaaS platforms, and intelligent automation systems. We combine strategy, design, and engineering to help startups, businesses, and founders transform ideas into reliable digital products that deliver real business value.",
+          },
+        ],
+        [
+          {
+            text: "From product discovery and UI/UX design to full-scale software development and AI integration, we build solutions that are fast, scalable, and designed for long-term growth.",
           },
         ],
       ],
@@ -51,7 +56,17 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: "We partner with companies to design, build and scale high-performance digital products and AI systems built for speed, reliability and long-term growth.",
+            text: "We partner with ambitious startups, growing businesses, and innovative organizations worldwide to design, develop, and scale digital products that solve real-world problems.",
+          },
+        ],
+        [
+          {
+            text: "Our expertise spans SaaS development, AI-powered applications, workflow automation, web platforms, and custom software solutions. Every product we create is built with a focus on performance, usability, scalability, and measurable business outcomes.",
+          },
+        ],
+        [
+          {
+            text: "Whether you're launching a new product, modernizing existing systems, or integrating AI into your business, Skyphr provides the technical expertise and product thinking needed to move faster and scale confidently.",
           },
         ],
       ],
@@ -69,7 +84,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: " The principles we follow in every project guiding how we think, build, and deliver meaningful digital experiences.",
+            text: "The principles that guide every decision we make from product strategy and design to engineering and delivery. These values help us build meaningful digital experiences and long-lasting partnerships.",
           },
         ],
       ],
@@ -82,7 +97,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: "A selection of digital products and experiences we’ve designed and built focused on performance, usability, and real-world impact.",
+            text: "A collection of digital products, SaaS platforms, and AI-powered solutions we've designed and developed. Every project reflects our commitment to quality engineering, exceptional user experience, and measurable business impact.",
           },
         ],
       ],
@@ -95,7 +110,12 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: "We focus on results and our clients’ experiences speak louder than anything else",
+            text: "We believe successful partnerships are built on trust, transparency, and results. Our clients choose Skyphr because we focus on solving business challenges, delivering reliable technology, and creating products that support long-term growth.",
+          },
+        ],
+        [
+          {
+            text: "From startups launching their first product to established businesses adopting AI-driven workflows, we help teams build with confidence and scale with purpose.",
           },
         ],
       ],
@@ -108,9 +128,30 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: "Skyphr is built and led by a developer focused on creating scalable digital products and AI-driven systems with a strong emphasis on performance, usability, and real-world impact.",
+            text: "Skyphr ",
+            classNames: "font-semibold",
+          },
+          {
+            text: "Skyphr was founded by",
+          },
+          {
+            text: " Varun Patel, ",
+            classNames: "font-semibold",
+          },
+          {
+            text: "a software developer, product builder, and technology entrepreneur passionate about creating scalable digital products and AI-driven systems.",
           },
         ],
+        // [
+        //   {
+        //     text: "With years of experience building SaaS platforms, web applications, automation solutions, and modern digital experiences, Varun established Skyphr with a simple mission: to help businesses leverage technology to grow faster, operate smarter, and build products users genuinely love.",
+        //   },
+        // ],
+        // [
+        //   {
+        //     text: "His hands-on approach combines product strategy, user experience thinking, software engineering, and AI innovation to deliver solutions that create real-world impact.",
+        //   },
+        // ],
       ],
     },
     members: [
@@ -118,7 +159,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
         name: "Varun Patel",
         role: "Founder & CEO",
         description:
-          "Focused on building scalable SaaS products, AI systems, and modern web applications with performance, usability, and real-world impact at the core.",
+          "Focused on building scalable SaaS products, AI-powered systems, modern web applications, and intelligent automation solutions. Driven by performance, usability, innovation, and long-term business value, Varun leads Skyphr's vision of helping companies build smarter digital products for the future.",
         social: [
           {
             platform: "LinkedIn",

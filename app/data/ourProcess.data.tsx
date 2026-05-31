@@ -7,62 +7,62 @@ import { OurProcessCardInterface } from "@/app/utils/interface/common.interface"
 
 export const OUR_PROCESS_DATA: OurProcessCardInterface[] = [
   {
-    title: "Kickoff & Discovery",
+    title: "Discovery & Product Strategy",
     description:
-      "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
+      "We begin by understanding your business goals, target audience, market opportunities, and technical requirements. This ensures every decision aligns with your growth objectives and product vision.",
     imageOptions: {
       imagePath: KickOffDiscovery,
       width: 600,
       height: 270,
-      alt: "Kickoff & Discovery",
+      alt: "Discovery & Product Strategy",
     },
     gridStyle: "col-span-3",
   },
   {
-    title: "Strategy & Planning",
+    title: "Planning & Solution Architecture",
     description:
-      "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
+      "Our team defines the product roadmap, user journeys, technology stack, and development strategy to create a scalable foundation for long-term success",
     imageOptions: {
       imagePath: StrategyAndPlanning,
       width: 600,
       height: 270,
-      alt: "Strategy & Planning",
+      alt: "Planning & Solution Architecture",
     },
     gridStyle: "col-span-3",
   },
   {
-    title: "Creative Design",
+    title: "UI/UX Design & Prototyping",
     description:
-      "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
+      "We design intuitive user experiences and high-converting interfaces that balance user needs, business goals, and modern design standards.",
     imageOptions: {
       imagePath: CreativeDesign,
       width: 600,
       height: 270,
-      alt: "Creative Design",
+      alt: "UI/UX Design & Prototyping",
     },
     gridStyle: "col-span-2",
   },
   {
-    title: "Delivery & Handoff",
+    title: "Development & Launch",
     description:
-      "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
+      "Our developers build, test, and deploy secure, scalable software solutions using modern frameworks and best practices to ensure quality and performance.",
     imageOptions: {
       imagePath: DeliveryAndHandoff,
       width: 600,
       height: 270,
-      alt: "Delivery & Handoff",
+      alt: "Development & Launch",
     },
     gridStyle: "col-span-2",
   },
   {
-    title: "Continuous Growth",
+    title: "Growth, Optimization & Support",
     description:
-      "We start by understanding your goals, audience, and vision — so every design decision is aligned with your business.",
+      "After launch, we continue improving your product through performance optimization, feature enhancements, AI integrations, and ongoing technical support.",
     imageOptions: {
       imagePath: ContinuousGrowth,
       width: 600,
       height: 270,
-      alt: "Continuous Growth",
+      alt: "Growth, Optimization & Support",
     },
     gridStyle: "col-span-2",
   },

@@ -7,7 +7,7 @@ function CommonSectionHeader({ header, className }: CommonSectionHeaderInterface
     <div className={twMerge("skyphr-container px-0! pb-7! md:pb-15!", className)}>
       {header?.title?.map((titleRow, rowIndex) => (
         <h2
-          className="flex flex-wrap items-center justify-center gap-2 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
+          className="flex flex-wrap items-center justify-center gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
           key={rowIndex}>
           {titleRow?.map((chunk, index) => {
             return (
@@ -18,26 +18,28 @@ function CommonSectionHeader({ header, className }: CommonSectionHeaderInterface
                   chunk?.classNames,
                 )}
                 key={index}>
-                {chunk.text}
+                {chunk.text.trim()}
               </span>
             );
           })}
         </h2>
       ))}
-
-      {header?.description?.map((description, index) => (
-        <p
-          className="max-w-125 text-pretty text-center mx-auto text-sm sm:text-base md:text-lg pt-4 reveal-text-animation"
-          key={index}>
-          {description?.map((chunk, chunkIndex) => {
-            return (
-              <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
-                {chunk.text}
-              </span>
-            );
-          })}
-        </p>
-      ))}
+      <div className="w-full flex flex-col items-start justify-start gap-5">
+        {" "}
+        {header?.description?.map((description, index) => (
+          <p
+            className="max-w-2xl text-pretty text-center mx-auto text-sm sm:text-base md:text-lg pt-4 reveal-text-animation"
+            key={index}>
+            {description?.map((chunk, chunkIndex) => {
+              return (
+                <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                  {chunk.text}
+                </span>
+              );
+            })}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }

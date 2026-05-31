@@ -1,8 +1,10 @@
-import {
+import type {
   AboutSection,
   ContactUsSectionInterface,
+  DevelopmentProcessSectionData,
   FAQSection,
   FeaturedWorkDataInterface,
+  FeaturesIncludeSectionData,
   HeroSection,
   OurApproachInterface,
   OurInsightsSection,
@@ -11,7 +13,10 @@ import {
   ProcessSection,
   ReadyToScaleSectionDataInterface,
   ServicesSection,
+  TechnologyStackSectionData,
   TestimonialSection,
+  UseCaseSectionData,
+  WhatWeBuildSectionData,
 } from "@/app/utils/interface/page.interface";
 
 export interface HeroSectionElementInterface {
@@ -93,5 +98,30 @@ export interface ContactUsSectionDataInterface {
 
 export interface OurTeamSectionInterface {
   data: OurTeamSectionDataInterface;
+  classNames?: string;
+}
+
+export interface DevelopmentProcessSectionInterface {
+  data: DevelopmentProcessSectionData;
+  classNames?: string;
+}
+
+export interface FeaturesIncludeSectionProps {
+  data: FeaturesIncludeSectionData;
+  classNames?: string;
+}
+
+export interface WhatWeBuildSectionProps {
+  data: WhatWeBuildSectionData;
+  classNames?: string;
+}
+
+export interface UseCaseSectionProps {
+  data: UseCaseSectionData;
+  classNames?: string;
+}
+
+export interface TechnologyStackSectionProps {
+  data: TechnologyStackSectionData;
   classNames?: string;
 }

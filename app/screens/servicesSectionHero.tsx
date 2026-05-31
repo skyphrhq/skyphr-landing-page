@@ -1,8 +1,9 @@
 "use client";
-import ServiceHeroImage from "@/app/assets/webp/skyphr-service-hero.webp";
+import ServiceHeroImage from "@/app/assets/webp/saas-app-development.webp";
 import CTAButton from "@/app/components/common/ctaButton";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_REVEL_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { ServicesSectionHeroInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
@@ -21,7 +22,9 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
   return (
     <div className={twMerge("w-full h-fit relative overflow-hidden pt-28 pb-20 px-4 xl:pt-55 xl:pb-35", classNames)}>
       <div className="skyphr-container px-0!">
-        <div ref={animationContainer} className="w-ful h-full relative z-20 flex flex-col gap-10 md:gap-0 md:flex-row items-center justify-center">
+        <div
+          ref={animationContainer}
+          className="w-ful h-full relative z-20 flex flex-col gap-10 xl:gap-20 md:flex-row items-center justify-center">
           <div className="w-full md:w-1/2">
             <div className="flex flex-col items-start justify-start gap-2">
               {data?.header?.title?.map((title, index) => (
@@ -81,11 +84,11 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
           <div className="w-full md:w-1/2">
             <Image
               src={ServiceHeroImage}
-              width={800}
-              height={600}
+              width={750}
+              height={750}
               alt="Services Hero"
               loading="eager"
-              className="w-full h-full object-contain select-none pointer-events-none"
+              className={twMerge("select-none pointer-events-none", COMMON_BORDER_RADIUS)}
             />
           </div>
         </div>

@@ -40,17 +40,19 @@ function AboutUsSectionHeroElem({ data, classNames }: AboutUsHeroSectionInterfac
             </h1>
           ))}
         </div>
-        {data?.header?.description?.map((text, index) => (
-          <p
-            key={index}
-            className="reveal-animation font-instrument-sans text-lg max-w-2xl font-medium text-pretty text-center pt-7.5 text-(--text-main-color)">
-            {text?.map((word, wordIndex) => (
-              <span key={wordIndex} className={twMerge("block", word?.classNames)}>
-                {word?.text}
-              </span>
-            ))}
-          </p>
-        ))}
+        <div className="w-full flex flex-col items-center justify-center gap-5">
+          {data?.header?.description?.map((text, index) => (
+            <p
+              key={index}
+              className="reveal-animation font-instrument-sans text-lg max-w-2xl font-medium text-pretty text-center pt-7.5 text-(--text-main-color)">
+              {text?.map((word, wordIndex) => (
+                <span key={wordIndex} className={twMerge("block", word?.classNames)}>
+                  {word?.text}
+                </span>
+              ))}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );

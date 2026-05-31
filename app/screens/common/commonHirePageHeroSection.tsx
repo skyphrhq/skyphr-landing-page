@@ -1,6 +1,6 @@
 import CommonContactUsForm from "@/app/components/commonContatcUsForm";
 import HeroBgAbstract from "@/app/components/heroBgAbstract";
-import { HireHeroSection } from "@/app/data/pageData/hire/types";
+import { HireHeroSection } from "@/app/utils/interface/data.interface";
 import { twMerge } from "tailwind-merge";
 
 function CommonHirePageHeroSection({ data }: { data: HireHeroSection }) {

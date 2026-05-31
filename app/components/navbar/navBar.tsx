@@ -143,17 +143,23 @@ function NavBarComponent() {
               data-lenis-prevent-wheel
               className="w-full grow skyphr-navbar-links-wrapper">
               <ul className="w-full flex items-center justify-center gap-3 skyphr-nav-links-wrapper-list">
-                {NAVBAR_LINKS_DATA?.map((item) => (
-                  <NavBarCommonLinkComponent
-                    key={item?.id}
-                    item={item}
-                    openDropdowns={openDropdowns}
-                    onToggleDropdown={handleToggleDropdown}
-                    onCloseMobileMenu={handleCloseMobileMenu}
-                    onNavigate={handleNavigate}
-                    pathname={pathname}
-                  />
-                ))}
+                {NAVBAR_LINKS_DATA?.map((item) => {
+                  if (item.type === "listing") {
+                    return null; // Skip rendering this item in the navbar
+                  } else {
+                    return (
+                      <NavBarCommonLinkComponent
+                        key={item?.id}
+                        item={item}
+                        openDropdowns={openDropdowns}
+                        onToggleDropdown={handleToggleDropdown}
+                        onCloseMobileMenu={handleCloseMobileMenu}
+                        onNavigate={handleNavigate}
+                        pathname={pathname}
+                      />
+                    );
+                  }
+                })}
               </ul>
             </div>
             <div className="w-fit skyphr-nav-cta-btn-wrapper">

@@ -3,6 +3,7 @@ import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import OurValueCommonCard from "@/app/components/ourValueCommonCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { OurValuesSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -33,7 +34,7 @@ function OurValuesSection({ data, classNames }: OurValuesSectionInterface) {
     { scope: containerRef },
   );
   return (
-    <div className={twMerge("w-full h-auto py-15! md:py-20! xl:py-30!", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-auto", COMMON_SECTION_PADDING, classNames)} ref={containerRef}>
       <CommonSectionHeader header={data?.header} />
       <div className="skyphr-container">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">

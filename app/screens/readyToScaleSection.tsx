@@ -3,7 +3,7 @@ import CTAButton from "@/app/components/common/ctaButton";
 import HeroBgAbstract from "@/app/components/heroBgAbstract";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
-import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
+import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { ReadyToScaleSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -23,7 +23,7 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
   );
 
   return (
-    <div className={twMerge("w-full py-15! md:py-20! xl:py-30!", classNames)}>
+    <div className={twMerge("w-full",COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
         <div
           className={twMerge(

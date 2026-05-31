@@ -7,6 +7,7 @@ import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import TestimonialCard from "@/app/components/testimonialCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { ClientTestimonialSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -71,7 +72,7 @@ function ClientTestimonial({ data, classNames }: ClientTestimonialSectionInterfa
   );
 
   return (
-    <div className={twMerge("w-full h-fit py-15! md:py-20! xl:py-30! overflow-hidden", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-fit overflow-hidden", COMMON_SECTION_PADDING, classNames)} ref={containerRef}>
       <div className="px-4">
         <CommonSectionHeader header={data?.header} />
         <div className="w-full reveal-animation">

@@ -9,6 +9,7 @@ import { useLayoutEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 
 const ICON_SIZE_CLASSNAMES = "w-4 h-4 sm:w-6 sm:h-6 sm:min-w-g sm:min-h-6 text-gray-800";
 const ICON_CONTAINER_SIZE_CLASSNAMES = "w-9 h-9 sm:w-14 sm:h-14 sm:min-w-14 sm:min-h-14 md:w-16 md:h-16";
@@ -49,7 +50,7 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
   }, []);
 
   return (
-    <div ref={sectionRef} className={twMerge("py-15! md:py-20! xl:py-30! overflow-hidden", classNames)}>
+    <div ref={sectionRef} className={twMerge("overflow-hidden",COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data?.header} />
 

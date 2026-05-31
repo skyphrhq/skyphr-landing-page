@@ -1,13 +1,28 @@
-import { SEO_PAGE_LINKS } from "@/app/data/seoPages.data";
-import { MetadataRoute } from "next";
+import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
+import type { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
+import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://skyphr.com";
+const siteUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return SEO_PAGE_LINKS.map((page) => ({
+const createSiteMapEntry = (page: NavbarLinksInterface): MetadataRoute.Sitemap[number] => {
+  return {
     url: `${siteUrl}${page.href === "/" ? "" : page.href}`,
     lastModified: new Date(),
-    changeFrequency: page.contentType === "Hire Page" ? "weekly" : "monthly",
-    priority: page.href === "/" ? 1 : page.contentType === "Hire Page" || page.href === "/hire" ? 0.8 : 0.7,
-  }));
+    changeFrequency: page.href.startsWith("/hire") ? "weekly" : "monthly",
+    priority: page.priority,
+  };
+};
+
+const generateSiteMapEntries = (page: NavbarLinksInterface): MetadataRoute.Sitemap => {
+  const entries: MetadataRoute.Sitemap = [];
+
+  if (page.isLink) {
+    entries.push(createSiteMapEntry(page));
+  }
+
+  return [...entries, ...page.dropDown.flatMap((subPage) => generateSiteMapEntries(subPage))];
+};
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return NAVBAR_LINKS_DATA.flatMap((page) => generateSiteMapEntries(page));
 }

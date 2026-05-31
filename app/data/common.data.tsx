@@ -1,4 +1,3 @@
-import CEOImage from "@/app/assets/webp/varun-patel.webp";
 import MockupFive from "@/app/assets/webp/mockup-five.webp";
 import MockupFour from "@/app/assets/webp/mockup-four.webp";
 import MockupOne from "@/app/assets/webp/mockup-one.webp";
@@ -6,6 +5,7 @@ import MockupThree from "@/app/assets/webp/mockup-three.webp";
 import MockupTwo from "@/app/assets/webp/mockup-two.webp";
 import WebAppDevelopment from "@/app/assets/webp/saas-app-development.webp";
 import UiUxDesign from "@/app/assets/webp/ui-ux-design.webp";
+import CEOImage from "@/app/assets/webp/varun-patel.webp";
 import {
   AboutUsCardsDataArrayInterface,
   OurStepsDataInterface,
@@ -83,37 +83,37 @@ export const ABOUT_US_INFO_CARD_DATA: AboutUsCardsDataArrayInterface[] = [
     direction: "TOP_LEFT",
     icon: <MdPeopleAlt className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 10,
-    label: "Happy Clients",
+    label: "Happy Clients Worldwide",
   },
   {
     direction: "TOP_RIGHT",
     icon: <FaBriefcase className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 20,
-    label: "Projects Delivered",
+    label: "Projects Successfully Delivered",
   },
   {
     direction: "BOTTOM_LEFT",
     icon: <FaClock className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 4,
-    label: "Years Of Building Scalable Products",
+    label: "Years Building Scalable Digital Products",
   },
   {
     direction: "BOTTOM_RIGHT",
     icon: <IoMdTrendingUp className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 10,
-    label: "Scalable Systems Built",
+    label: "AI Systems & Scalable Platforms Built",
   },
 ];
 
 export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   {
-    title: "UI UX Design",
+    title: "UI/UX Design Services",
     className: "sticky top-[100px] md:top-[20%]",
     description:
-      "We design intuitive, high-converting user experiences focused on clarity, usability, and seamless interaction across modern digital products.",
+      "We create user-centered UI/UX designs that improve engagement, increase conversions, and deliver seamless experiences across web and mobile applications. Our product design process focuses on usability, accessibility, and business outcomes.",
     ctaButton: {
       label: "Explore Design Solutions",
-      href: "/services",
+      href: "/services/ui-ux-design",
     },
     style: {
       baseColor: "#AC9BFF",
@@ -127,13 +127,13 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
   },
   {
-    title: "SaaS & Web App Development",
+    title: "SaaS & Web Application Development",
     className: "sticky top-[130px] md:top-[25%]",
     description:
-      "We build scalable SaaS and web applications with modern architecture, optimized performance, and reliable infrastructure for long-term growth.",
+      "As a SaaS development company, we build scalable web applications and cloud-based software platforms using modern technologies and robust architectures. Our solutions are optimized for performance, security, and future growth.",
     ctaButton: {
       label: "Explore Web App Solutions",
-      href: "/services",
+      href: "/services/saas-app-development",
     },
     style: {
       baseColor: "#FF767A",
@@ -143,17 +143,17 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: WebAppDevelopment,
       width: 350,
       height: 300,
-      alt: "Web App Development",
+      alt: "SaaS & Web Application Development",
     },
   },
   {
-    title: "SaaS & Web App Development",
+    title: "AI Development & Automation Services",
     className: "sticky top-[160px] md:top-[30%]",
     description:
-      "We build scalable SaaS and web applications with modern architecture, optimized performance, and reliable infrastructure for long-term growth.",
+      "We help businesses automate workflows, improve efficiency, and unlock new opportunities through custom AI solutions, AI integrations, intelligent automation, and machine learning-powered systems tailored to business needs.",
     ctaButton: {
-      label: "Explore Web App Solutions",
-      href: "/services",
+      label: "Explore AI Solutions",
+      href: "/services/ai-development",
     },
     style: {
       baseColor: "#B8C56F",
@@ -163,7 +163,27 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: WebAppDevelopment,
       width: 350,
       height: 300,
-      alt: "Web App Development",
+      alt: "AI Development & Automation Services",
+    },
+  },
+  {
+    title: "Custom Software Development",
+    className: "sticky top-[160px] md:top-[30%]",
+    description:
+      "We develop scalable custom software solutions designed around your unique business requirements. From MVP development to enterprise software systems, we deliver reliable products built to support long-term growth.",
+    ctaButton: {
+      label: "Explore Software Solutions",
+      href: "/services/custom-software-development",
+    },
+    style: {
+      baseColor: "#FC905F",
+      darkColor: "#FB7D44",
+    },
+    imageOptions: {
+      imagePath: WebAppDevelopment,
+      width: 350,
+      height: 300,
+      alt: "Custom Software Development",
     },
   },
 ];
@@ -173,7 +193,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     id: 1,
     title: "Clarity Over Complexity",
     description:
-      "We simplify complex ideas into intuitive digital experiences. Every product we design focuses on usability, clear structure, and meaningful interactions.",
+      "We believe great products should feel simple, even when the technology behind them is complex. Our approach focuses on intuitive user experiences, clear workflows, and thoughtful design that helps users achieve their goals effortlessly.",
     icon: <FiLayers className="text-2xl" />,
     color: "#AC9BFF",
     bgColor: "rgba(172, 155, 255, 0.5)",
@@ -182,7 +202,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     id: 2,
     title: "Built for Scale",
     description:
-      "Our systems are designed to grow with your business. We build scalable architectures that support long-term performance and evolving product needs.",
+      "We create software architectures and digital platforms designed for long-term growth. Every system is engineered to handle increasing users, data, and business demands without compromising performance.",
     icon: <FiTrendingUp className="text-2xl" />,
     color: "#B8C56F",
     bgColor: "rgba(184, 197, 111, 0.5)",
@@ -191,7 +211,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     id: 3,
     title: "Performance First",
     description:
-      "Speed and efficiency are at the core of our development process. We ensure every product is optimized for fast load times and smooth user experiences.",
+      "Speed, reliability, and efficiency are at the core of our development process. From optimized frontend experiences to scalable backend systems, we ensure every product performs at the highest level.",
     icon: <FiZap className="text-2xl" />,
     color: "#FF767A",
     bgColor: "rgba(255, 118, 122, 0.5)",
@@ -200,7 +220,7 @@ export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
     id: 4,
     title: "User-Centered Approach",
     description:
-      "We design with real users in mind. Every decision is guided by user behavior, ensuring products are intuitive, engaging, and impactful.",
+      "Technology succeeds when people enjoy using it. We prioritize user needs, behaviors, and feedback to create products that are intuitive, engaging, and impactful.",
     icon: <FiUsers className="text-2xl" />,
     color: "#5DADE2",
     bgColor: "rgba(93, 173, 226, 0.5)",

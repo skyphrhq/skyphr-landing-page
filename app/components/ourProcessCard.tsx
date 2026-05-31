@@ -5,7 +5,8 @@ import { twMerge } from "tailwind-merge";
 
 function OurProcessCard({ imageOptions, title, description, label }: OurProcessCardInterface) {
   return (
-    <div className={twMerge("w-full h-fit bg-(--about-us-card-bg) p-2.5 md:p-4 overflow-hidden", COMMON_BORDER_RADIUS)}>
+    <div
+      className={twMerge("w-full h-full bg-(--about-us-card-bg) p-2.5 md:p-4 overflow-hidden", COMMON_BORDER_RADIUS)}>
       <div className="w-full flex flex-col items-start justify-start gap-4">
         <div className="w-full h-fit">
           <Image

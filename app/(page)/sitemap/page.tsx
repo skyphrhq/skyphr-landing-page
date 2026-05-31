@@ -1,6 +1,6 @@
 import CTAButton from "@/app/components/common/ctaButton";
+import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
-import { HIRE_SEO_PAGE_LINKS, MAIN_SEO_PAGE_LINKS, RESOURCE_SEO_PAGE_LINKS } from "@/app/data/seoPages.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { Metadata } from "next";
 
@@ -21,16 +21,18 @@ type SitemapGroup = {
 
 const sitemapGroups: SitemapGroup[] = [
   {
-    title: "Main Pages",
-    links: MAIN_SEO_PAGE_LINKS.map((page) => ({ label: page.pageName, href: page.href })),
+    title: "Company Pages",
+    links: NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+  },
+  {
+    title: "Services Pages",
+    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat(),
   },
   {
     title: "Hire Pages",
-    links: HIRE_SEO_PAGE_LINKS.map((page) => ({ label: page.pageName, href: page.href })),
-  },
-  {
-    title: "Resources",
-    links: RESOURCE_SEO_PAGE_LINKS.map((page) => ({ label: page.pageName, href: page.href })),
+    links: NAVBAR_LINKS_DATA.map((page) =>
+      page.id === "hire" ? page.dropDown.flatMap((category) => category.dropDown) : [],
+    ).flat(),
   },
 ];
 
