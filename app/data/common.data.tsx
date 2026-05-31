@@ -6,6 +6,8 @@ import MockupTwo from "@/app/assets/webp/mockup-two.webp";
 import WebAppDevelopment from "@/app/assets/webp/saas-app-development.webp";
 import UiUxDesign from "@/app/assets/webp/ui-ux-design.webp";
 import CEOImage from "@/app/assets/webp/varun-patel.webp";
+import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-development.webp";
+import AiDevelopmentAutomation from "@/app/assets/webp/ai-development-automation.webp";
 import {
   AboutUsCardsDataArrayInterface,
   OurStepsDataInterface,
@@ -153,14 +155,14 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "We help businesses automate workflows, improve efficiency, and unlock new opportunities through custom AI solutions, AI integrations, intelligent automation, and machine learning-powered systems tailored to business needs.",
     ctaButton: {
       label: "Explore AI Solutions",
-      href: "/services/ai-development",
+      href: "/services/ai-development-automation",
     },
     style: {
       baseColor: "#B8C56F",
       darkColor: "#9FAD4A",
     },
     imageOptions: {
-      imagePath: WebAppDevelopment,
+      imagePath: AiDevelopmentAutomation,
       width: 350,
       height: 300,
       alt: "AI Development & Automation Services",
@@ -180,7 +182,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       darkColor: "#FB7D44",
     },
     imageOptions: {
-      imagePath: WebAppDevelopment,
+      imagePath: CustomSoftwareDevelopment,
       width: 350,
       height: 300,
       alt: "Custom Software Development",
