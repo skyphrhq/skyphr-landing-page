@@ -1,5 +1,5 @@
 import NotFoundImage from "@/app/assets/webp/skyphr-404.webp";
-import { HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
+import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import Image from "next/image";
 import CTAButton from "./components/common/ctaButton";
 import HeroBgAbstract from "./components/heroBgAbstract";

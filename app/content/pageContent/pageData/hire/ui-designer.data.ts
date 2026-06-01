@@ -1,25 +1,25 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
-export const PYTHON_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
+export const UI_DESIGNER_HIRE_PAGE_DATA: HirePageDataInterface = {
   hero: {
     header: {
-      title: [[{ text: "Hire Expert " }, { text: "Python Developers", variant: "italic" }]],
+      title: [[{ text: "Hire Expert " }, { text: "UI Designers", variant: "italic" }]],
       description: [
         [
           {
-            text: "Add Python developers to your team for backend systems, automation workflows, data processing, AI integrations, and scalable product engineering.",
+            text: "Work with UI designers who create polished, responsive, and brand-aligned interfaces for websites, dashboards, SaaS products, and mobile experiences.",
           },
         ],
       ],
     },
     highlights: [
-      "Backend, automation, and scripting expertise",
-      "AI, data, and workflow integration support",
-      "Clean API and service development",
-      "Reliable code for growing product teams",
+      "High-fidelity web and app interface design",
+      "Responsive layouts for every viewport",
+      "Design systems, components, and visual consistency",
+      "Developer-ready Figma handoff",
     ],
   },
   ourValues: {

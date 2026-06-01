@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://skyphr-landing-page.vercel.app/.well-known/api-catalog",
+      "service-doc": [
+        {
+          "href": "https://skyphr-landing-page.vercel.app/sitemap.xml",
+          "type": "application/xml"
+        },
+        {
+          "href": "https://skyphr-landing-page.vercel.app/robots.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://skyphr-landing-page.vercel.app/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://skyphr-landing-page.vercel.app/.well-known/http-message-signatures-directory",
+          "type": "application/http-message-signatures-directory+json"
+        }
+      ]
+    }
+  ]
+}

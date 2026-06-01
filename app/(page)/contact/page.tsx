@@ -1,5 +1,5 @@
 "use client";
-import { CONTACT_PAGE_DATA } from "@/app/data/pageData/contact.data";
+import { CONTACT_PAGE_DATA } from "@/app/content/pageContent/pageData/contact.data";
 import { gsap } from "@/app/lib/gsap";
 import ContactHeroSection from "@/app/screens/contactHeroSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
@@ -17,8 +17,7 @@ function ContactUsPage() {
       {CONTACT_PAGE_DATA?.hero && (
         <section className="w-full h-auto">
           <ContactHeroSection data={CONTACT_PAGE_DATA?.hero} onStartProjectClick={handleStartAProject} />
-          </section>
-
+        </section>
       )}
 
       {CONTACT_PAGE_DATA?.contactUs && (

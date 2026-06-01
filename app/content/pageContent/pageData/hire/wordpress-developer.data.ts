@@ -1,26 +1,25 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
-
-export const TAILWIND_CSS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
+export const WORDPRESS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   hero: {
     header: {
-      title: [[{ text: "Hire Expert " }, { text: "Tailwind CSS Developers", variant: "italic" }]],
+      title: [[{ text: "Hire Expert " }, { text: "WordPress Developers", variant: "italic" }]],
       description: [
         [
           {
-            text: "Ship polished, responsive interfaces with Tailwind CSS developers who turn product designs into clean, scalable, utility-first UI systems.",
+            text: "Work with WordPress developers who create fast, easy-to-manage websites, custom themes, landing pages, and CMS experiences built around your business goals.",
           },
         ],
       ],
     },
     highlights: [
-      "Pixel-aligned responsive UI implementation",
-      "Reusable Tailwind component systems",
-      "Design system and style cleanup support",
-      "Fast iteration for landing pages and SaaS products",
+      "Custom WordPress themes and templates",
+      "CMS setup for marketing and content teams",
+      "Speed, security, and responsive optimization",
+      "Plugin customization and third-party integrations",
     ],
   },
   ourValues: {

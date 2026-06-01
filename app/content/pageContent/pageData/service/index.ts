@@ -1,5 +1,5 @@
-import { SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA } from "@/app/data/pageData/service/saas-app-development";
-import { UI_UX_DESIGN_SERVICE_PAGE_DATA } from "@/app/data/pageData/service/ui-ux-service-page";
+import { SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/service/saas-app-development";
+import { UI_UX_DESIGN_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/service/ui-ux-service-page";
 
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 

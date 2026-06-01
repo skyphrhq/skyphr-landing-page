@@ -1,4 +1,4 @@
-import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
+import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import type { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
 import type { MetadataRoute } from "next";
 

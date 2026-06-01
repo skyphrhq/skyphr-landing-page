@@ -1,26 +1,26 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
 
-export const WIREFRAME_DESIGNER_HIRE_PAGE_DATA: HirePageDataInterface = {
+export const NODEJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   hero: {
     header: {
-      title: [[{ text: "Hire Expert " }, { text: "Wireframe Designers", variant: "italic" }]],
+      title: [[{ text: "Hire Expert " }, { text: "Node.js Developers", variant: "italic" }]],
       description: [
         [
           {
-            text: "Clarify your product flow with wireframe designers who shape user journeys, page structure, and interaction logic before visual design begins.",
+            text: "Build reliable backend systems with Node.js developers who create APIs, services, integrations, and scalable infrastructure for modern applications.",
           },
         ],
       ],
     },
     highlights: [
-      "User flows and product structure planning",
-      "Low and mid-fidelity wireframes",
-      "Landing page, SaaS, and dashboard layout planning",
-      "Clear handoff for UI design and development",
+      "REST and real-time API development",
+      "Backend services for SaaS and web apps",
+      "Database, auth, and payment integrations",
+      "Scalable server-side architecture",
     ],
   },
   ourValues: {

@@ -1,6 +1,6 @@
 import SkyphrWhiteLogo from "@/app/assets/logo/skyphr-logo-transparent-white.webp";
-import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
-import { SOCIAL_LINKS } from "@/app/data/socilaLinks.data";
+import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { SOCIAL_LINKS } from "@/app/content/pageContent/socilaLinks.data";
 import Image from "next/image";
 import Link from "next/link";
 

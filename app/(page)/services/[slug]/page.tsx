@@ -1,4 +1,4 @@
-import { getServicePageData, SERVICE_PAGE_DATA_BY_SLUG } from "@/app/data/pageData/service";
+import { getServicePageData, SERVICE_PAGE_DATA_BY_SLUG } from "@/app/content/pageContent/pageData/service";
 import DevelopmentProcessSection from "@/app/screens/common/developmentProcessSection";
 import FeaturesIncludeSection from "@/app/screens/common/featuresIncludeSection";
 import OurApproachSection from "@/app/screens/common/ourApproachSec";

@@ -1,0 +1,23 @@
+# Content usage preferences for automated systems.
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+# AI crawlers: allow public pages, block internal/API and build asset paths.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: Claude-Web
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: YouBot
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Default crawlers: allow public pages, block internal/API and build asset paths.
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://skyphr-landing-page.vercel.app/sitemap.xml

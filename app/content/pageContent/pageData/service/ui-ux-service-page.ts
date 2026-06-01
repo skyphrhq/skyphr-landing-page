@@ -1,8 +1,12 @@
-import { OUR_SERVICE_CARD_DATA, OUR_VALUES_CARD_DATA, STEPS_WE_FOLLOW_IN_SERVICES } from "@/app/data/common.data";
-import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
+import {
+  OUR_SERVICE_CARD_DATA,
+  OUR_VALUES_CARD_DATA,
+  STEPS_WE_FOLLOW_IN_SERVICES,
+} from "@/app/content/pageContent/common.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
-export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
+export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   hero: {
     header: {
       title: [
@@ -134,88 +138,6 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         title: "Testing, Launch & Optimization",
         description:
           "We test performance, security, responsiveness, and usability before deployment, then optimize based on real usage and business needs.",
-      },
-    ],
-  },
-  useCase: {
-    header: {
-      title: [[{ text: "Ideal For Businesses" }, { text: "Building", variant: "italic" }]],
-      description: [
-        [
-          {
-            text: "Whether you are launching a new SaaS product or improving internal operations, we help build web applications that support real business workflows.",
-          },
-        ],
-      ],
-    },
-    items: [
-      {
-        title: "Startup SaaS MVPs",
-      },
-      {
-        title: "Internal Business Dashboards",
-      },
-      {
-        title: "Client Portals",
-      },
-      {
-        title: "CRM Platforms",
-      },
-      {
-        title: "Resource Management Systems",
-      },
-      {
-        title: "E-commerce Admin Panels",
-      },
-      {
-        title: "AI-Powered Tools",
-      },
-      {
-        title: "Booking Platforms",
-      },
-      {
-        title: "Reporting Dashboards",
-      },
-    ],
-  },
-  technologyStack: {
-    header: {
-      title: [[{ text: "Technologies" }, { text: "We Use", variant: "italic" }]],
-      description: [
-        [
-          {
-            text: "We choose the right tools based on your product goals, scalability needs, integrations, and long-term maintainability.",
-          },
-        ],
-      ],
-    },
-    groups: [
-      {
-        title: "Frontend",
-        technologies: [{ name: "React.js" }, { name: "Next.js" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
-      },
-      {
-        title: "Backend",
-        technologies: [{ name: "Node.js" }, { name: "FastAPI" }, { name: "Python" }, { name: "Express.js" }],
-      },
-      {
-        title: "Database",
-        technologies: [{ name: "PostgreSQL" }, { name: "MySQL" }, { name: "MongoDB" }, { name: "Redis" }],
-      },
-      {
-        title: "Integrations",
-        technologies: [
-          { name: "Stripe" },
-          { name: "Razorpay" },
-          { name: "Google APIs" },
-          { name: "Cloudinary" },
-          { name: "Resend" },
-          { name: "OpenAI APIs" },
-        ],
-      },
-      {
-        title: "Deployment",
-        technologies: [{ name: "Vercel" }, { name: "VPS" }, { name: "Docker" }, { name: "Nginx" }, { name: "Cloudflare" }],
       },
     ],
   },

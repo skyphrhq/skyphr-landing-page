@@ -5,7 +5,7 @@ import { UIComponent as BlogsSideBar } from "@/app/components/blog/blogsSideBar"
 import { UIComponent as FeaturedVisual } from "@/app/components/blog/featuredVisual";
 import { UIComponent as QuoteBlock } from "@/app/components/blog/quoteBlock";
 import { UIComponent as TextSection } from "@/app/components/blog/textSection";
-import { NEXTJS_MODERN_BUSINESSES_BLOG_DATA } from "@/app/data/pageData/blog/nextjs-modern-businesses.data";
+import { NEXTJS_MODERN_BUSINESSES_BLOG_DATA } from "@/app/content/pageContent/pageData/blog/nextjs-modern-businesses.data";
 
 function BlogArticleScreen() {
   const blog = NEXTJS_MODERN_BUSINESSES_BLOG_DATA;

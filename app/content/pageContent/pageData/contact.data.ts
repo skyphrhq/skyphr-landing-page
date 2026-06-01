@@ -1,5 +1,5 @@
-import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const CONTACT_PAGE_DATA: CommonPageDataInterface = {

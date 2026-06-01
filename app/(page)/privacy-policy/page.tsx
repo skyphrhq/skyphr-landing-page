@@ -1,6 +1,6 @@
 import HeroBgAbstract from "@/app/components/heroBgAbstract";
-import { HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { PRIVACY_POLICY_PAGE_DATA, PrivacyPolicySection } from "@/app/data/pageData/privacyPolicy.data";
+import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { PRIVACY_POLICY_PAGE_DATA, PrivacyPolicySection } from "@/app/content/pageContent/pageData/privacyPolicy.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import type { Metadata } from "next";

@@ -1,25 +1,25 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
-export const FULLSTACK_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
+export const GSAP_ANIMATION_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   hero: {
     header: {
-      title: [[{ text: "Hire Expert " }, { text: "Full Stack Developers", variant: "italic" }]],
+      title: [[{ text: "Hire Expert " }, { text: "GSAP Animation Developers", variant: "italic" }]],
       description: [
         [
           {
-            text: "Move faster with full stack developers who can own frontend, backend, APIs, databases, and integrations from prototype to production.",
+            text: "Add polished motion to your website or product with GSAP specialists who build smooth interactions, scroll experiences, and performance-conscious animations.",
           },
         ],
       ],
     },
     highlights: [
-      "Frontend, backend, and API development",
-      "Database design and third-party integrations",
-      "SaaS, admin panel, and product dashboard experience",
-      "End-to-end ownership with scalable code practices",
+      "ScrollTrigger and timeline-based interactions",
+      "Landing page and product storytelling motion",
+      "Performance-conscious animation implementation",
+      "Responsive motion across desktop and mobile",
     ],
   },
   ourValues: {

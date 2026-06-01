@@ -1,7 +1,11 @@
 import CEOImage from "@/app/assets/webp/varun-patel.webp";
-import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import {
+  ABOUT_US_INFO_CARD_DATA,
+  FEATURED_WORK_DATA,
+  OUR_VALUES_CARD_DATA,
+} from "@/app/content/pageContent/common.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 import { createElement } from "react";
 import { FiLinkedin } from "react-icons/fi";

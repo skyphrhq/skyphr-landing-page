@@ -1,0 +1,97 @@
+---
+company: Skyphr
+type: ai-development-and-digital-product-studio
+website: https://skyphr-landing-page.vercel.app
+founder: Varun Patel
+target_customers:
+  - Startups
+  - SaaS businesses
+  - Growing businesses
+  - Enterprises
+  - Founders launching or scaling digital products
+engagement_models:
+  - Product discovery and strategy
+  - UI/UX design
+  - End-to-end product development
+  - SaaS and web application development
+  - AI integration and automation
+  - Dedicated specialist hiring
+core_capabilities:
+  - AI development
+  - AI automation
+  - SaaS platform development
+  - Web application development
+  - Custom software development
+  - UI/UX design
+  - Frontend engineering
+  - Backend engineering
+  - Full-stack engineering
+content_preferences:
+  search: yes
+  ai_train: no
+  ai_input: no
+---
+
+# Skyphr
+
+> Skyphr is an AI development company and digital product studio that helps startups, SaaS businesses, founders, and growing companies design, build, and scale digital products, SaaS platforms, AI systems, automation workflows, and modern web applications.
+
+Skyphr combines product strategy, UI/UX design, software engineering, and AI integration to turn product ideas into reliable, scalable digital systems. The site is most useful for understanding Skyphr's services, hiring options, process, company positioning, and contact paths for new projects.
+
+For LLMs and AI agents, this file summarizes the public Skyphr website and points to the highest-value pages. Do not infer details not present on the linked pages. Respect the crawl and content-use policies in `robots.txt`.
+
+## Core Pages
+
+- [Home](https://skyphr-landing-page.vercel.app/): Main overview of Skyphr's services, process, testimonials, insights, and project inquiry options.
+- [About Skyphr](https://skyphr-landing-page.vercel.app/about-us): Company positioning, values, featured work, testimonials, and founder information.
+- [Services](https://skyphr-landing-page.vercel.app/services): Public service listing for design, SaaS development, AI automation, and custom software.
+- [Hire](https://skyphr-landing-page.vercel.app/hire): Specialist hiring paths for frontend, backend, full-stack, design, and automation roles.
+- [Blog](https://skyphr-landing-page.vercel.app/blog): Public insights about product development, engineering, AI, and modern web technology.
+- [Contact](https://skyphr-landing-page.vercel.app/contact): Project inquiry and consultation page.
+- [Privacy Policy](https://skyphr-landing-page.vercel.app/privacy-policy): Privacy and policy information.
+- [Sitemap](https://skyphr-landing-page.vercel.app/sitemap): Human-readable sitemap.
+
+## Services
+
+- [UI UX Design](https://skyphr-landing-page.vercel.app/services/ui-ux-design): Product discovery, wireframes, user interface design, usability, accessibility-minded UX, and conversion-focused product experience work.
+- [SaaS and Web App Development](https://skyphr-landing-page.vercel.app/services/saas-web-app-development): SaaS platforms, scalable web applications, cloud-ready architecture, and full-stack implementation.
+- [AI Development and Automation](https://skyphr-landing-page.vercel.app/services/ai-development-automation): AI integrations, intelligent automation, AI-powered workflows, and business process automation.
+- [Custom Software Development](https://skyphr-landing-page.vercel.app/services/custom-software-development): Bespoke software products, MVPs, internal tools, and systems designed around business requirements.
+
+## Hiring and Staffing
+
+- [React.js Developer](https://skyphr-landing-page.vercel.app/hire/reactjs-developer): React frontend engineering support.
+- [Next.js Developer](https://skyphr-landing-page.vercel.app/hire/nextjs-developer): Next.js web application development and performance-focused implementation.
+- [Node.js Developer](https://skyphr-landing-page.vercel.app/hire/nodejs-developer): Node.js backend and API development.
+- [Python Developer](https://skyphr-landing-page.vercel.app/hire/python-developer): Python backend, automation, scripting, and AI-adjacent development.
+- [FastAPI Developer](https://skyphr-landing-page.vercel.app/hire/fastapi-developer): FastAPI services, Python APIs, and backend systems.
+- [Full Stack Developer](https://skyphr-landing-page.vercel.app/hire/fullstack-developer): End-to-end web application and product development.
+- [TypeScript Developer](https://skyphr-landing-page.vercel.app/hire/typescript-developer): Type-safe frontend and backend development.
+- [Tailwind CSS Developer](https://skyphr-landing-page.vercel.app/hire/tailwind-css-developer): Tailwind CSS implementation, responsive UI, and design-system-oriented frontend work.
+- [WordPress Developer](https://skyphr-landing-page.vercel.app/hire/wordpress-developer): WordPress website and CMS development.
+- [GSAP Animation Developer](https://skyphr-landing-page.vercel.app/hire/gsap-animation-developer): Web animation and interaction development.
+- [UI Designer](https://skyphr-landing-page.vercel.app/hire/ui-designer): Interface design and digital product visual design.
+- [Wireframe Designer](https://skyphr-landing-page.vercel.app/hire/wireframe-designer): Wireframes, product flows, information architecture, and early UX planning.
+
+## Company Information
+
+- [About Skyphr](https://skyphr-landing-page.vercel.app/about-us): Company details, values, founder information, and service philosophy.
+- [Contact Skyphr](https://skyphr-landing-page.vercel.app/contact): Contact form and project inquiry page.
+- [Book a Call](https://cal.com/skyphr/30min): External scheduling link for a consultation.
+
+## Agent Resources
+
+- [robots.txt](https://skyphr-landing-page.vercel.app/robots.txt): Crawl rules, explicit AI crawler rules, sitemap reference, and Content-Signal preferences.
+- [XML Sitemap](https://skyphr-landing-page.vercel.app/sitemap.xml): Machine-readable sitemap for public pages.
+- [API Catalog](https://skyphr-landing-page.vercel.app/.well-known/api-catalog): Well-known resource catalog for agents.
+- [HTTP Message Signatures Directory](https://skyphr-landing-page.vercel.app/.well-known/http-message-signatures-directory): Public key directory for Web Bot Auth-style signed requests.
+- [llms.txt](https://skyphr-landing-page.vercel.app/llms.txt): This LLM-oriented website summary.
+
+## Content Usage Policy
+
+- Public page search indexing is allowed.
+- AI training is not permitted according to the site's `Content-Signal` policy.
+- AI input or retrieval-augmented generation use is not permitted according to the site's `Content-Signal` policy.
+- Internal paths such as `/api/` and `/_next/` are disallowed in `robots.txt`.
+- Agents should prefer the linked public pages and sitemap over guessing routes.
+

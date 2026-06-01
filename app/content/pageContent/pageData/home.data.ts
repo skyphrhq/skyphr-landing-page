@@ -1,8 +1,12 @@
-import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA, OUR_SERVICE_CARD_DATA } from "@/app/data/common.data";
-import { HOME_PAGE_FAQ_DATA } from "@/app/data/faq.data";
-import { INSIGHTS_DATA } from "@/app/data/insights.data";
-import { OUR_PROCESS_DATA } from "@/app/data/ourProcess.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import {
+  ABOUT_US_INFO_CARD_DATA,
+  FEATURED_WORK_DATA,
+  OUR_SERVICE_CARD_DATA,
+} from "@/app/content/pageContent/common.data";
+import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { INSIGHTS_DATA } from "@/app/content/pageContent/insights.data";
+import { OUR_PROCESS_DATA } from "@/app/content/pageContent/ourProcess.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { CommonPageDataInterface, ContactUsSectionInterface } from "@/app/utils/interface/page.interface";
 
 export const COMMON_CONTACT_US_SECTION_DATA: ContactUsSectionInterface = {
