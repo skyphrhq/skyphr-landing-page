@@ -28,3 +28,6 @@ package-lock.json
 *.md
 !README.md
 !TradeMark.md
+!app/content/
+!app/content/markdown/
+!app/content/markdown/**/*.md
