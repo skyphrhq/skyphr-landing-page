@@ -1,4 +1,4 @@
-import { ABOUT_US_PAGE_DATA } from "@/app/data/pageData/aboutUs.data";
+import { ABOUT_US_PAGE_DATA } from "@/app/content/pageContent/pageData/aboutUs.data";
 import AboutSection from "@/app/screens/aboutSection";
 import AboutUsSectionHeroElem from "@/app/screens/aboutUsSectionHero";
 import OurTeamSection from "@/app/screens/common/ourTeamSection";

@@ -1,6 +1,6 @@
 import CTAButton from "@/app/components/common/ctaButton";
-import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
-import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/data/pageData/home.data";
+import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { Metadata } from "next";
 

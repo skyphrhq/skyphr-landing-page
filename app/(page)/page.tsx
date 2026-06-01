@@ -1,4 +1,4 @@
-import { HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
+import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import AboutSection from "@/app/screens/aboutSection";
 import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
 import OurInsightsSection from "@/app/screens/common/ourInsightsSection";

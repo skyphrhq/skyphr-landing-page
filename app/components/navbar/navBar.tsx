@@ -3,7 +3,7 @@ import SkyPhrLogo from "@/app/assets/logo/skyphr-logo-transparent-black.webp";
 import Button from "@/app/components/common/button";
 import CTAButton from "@/app/components/common/ctaButton";
 import { NavBarCommonLinkComponent } from "@/app/components/common/navBarCommonLinkComponent";
-import { NAVBAR_LINKS_DATA } from "@/app/data/navbar.data";
+import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { gsap } from "@/app/lib/gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";

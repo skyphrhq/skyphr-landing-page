@@ -1,25 +1,26 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
-export const UI_DESIGNER_HIRE_PAGE_DATA: HirePageDataInterface = {
+
+export const WIREFRAME_DESIGNER_HIRE_PAGE_DATA: HirePageDataInterface = {
   hero: {
     header: {
-      title: [[{ text: "Hire Expert " }, { text: "UI Designers", variant: "italic" }]],
+      title: [[{ text: "Hire Expert " }, { text: "Wireframe Designers", variant: "italic" }]],
       description: [
         [
           {
-            text: "Work with UI designers who create polished, responsive, and brand-aligned interfaces for websites, dashboards, SaaS products, and mobile experiences.",
+            text: "Clarify your product flow with wireframe designers who shape user journeys, page structure, and interaction logic before visual design begins.",
           },
         ],
       ],
     },
     highlights: [
-      "High-fidelity web and app interface design",
-      "Responsive layouts for every viewport",
-      "Design systems, components, and visual consistency",
-      "Developer-ready Figma handoff",
+      "User flows and product structure planning",
+      "Low and mid-fidelity wireframes",
+      "Landing page, SaaS, and dashboard layout planning",
+      "Clear handoff for UI design and development",
     ],
   },
   ourValues: {

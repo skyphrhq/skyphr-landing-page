@@ -1,25 +1,26 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/data/common.data";
-import { FAQ_DATA } from "@/app/data/faq.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/data/pageData/home.data";
-import { CLIENT_TESTIMONIAL_DATA } from "@/app/data/testimonial.data";
+import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
-export const WORDPRESS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
+
+export const NEXTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   hero: {
     header: {
-      title: [[{ text: "Hire Expert " }, { text: "WordPress Developers", variant: "italic" }]],
+      title: [[{ text: "Hire Expert " }, { text: "Next.js Developers", variant: "italic" }]],
       description: [
         [
           {
-            text: "Work with WordPress developers who create fast, easy-to-manage websites, custom themes, landing pages, and CMS experiences built around your business goals.",
+            text: "Scale your product with Next.js developers who build SEO-ready, high-performance web applications using modern routing, rendering, and deployment patterns.",
           },
         ],
       ],
     },
     highlights: [
-      "Custom WordPress themes and templates",
-      "CMS setup for marketing and content teams",
-      "Speed, security, and responsive optimization",
-      "Plugin customization and third-party integrations",
+      "App Router and server component expertise",
+      "SEO-ready pages and fast load performance",
+      "API routes, integrations, and full-stack delivery",
+      "Production-ready builds with clean handoff",
     ],
   },
   ourValues: {

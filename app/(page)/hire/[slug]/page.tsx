@@ -1,4 +1,4 @@
-import { HIRE_PAGE_DATA_BY_SLUG, getHirePageData } from "@/app/data/pageData/hire";
+import { HIRE_PAGE_DATA_BY_SLUG, getHirePageData } from "@/app/content/pageContent/pageData/hire";
 import AboutSection from "@/app/screens/aboutSection";
 import CommonHirePageHeroSection from "@/app/screens/common/commonHirePageHeroSection";
 import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
