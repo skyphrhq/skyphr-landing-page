@@ -35,42 +35,46 @@ function FeaturesIncludeSection({ data, classNames }: FeaturesIncludeSectionProp
   );
   return (
     <section ref={containerRef} className={twMerge("w-full h-auto", COMMON_SECTION_PADDING, classNames)}>
-      <div className="skyphr-container grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16 xl:gap-20">
-        <div className="lg:sticky lg:top-30">
-          {data.header.title.map((titleRow, rowIndex) => (
-            <h2
-              className="flex flex-wrap items-center gap-2 font-instrument-sans text-[32px] font-bold leading-tight text-(--text-main-color) md:text-[42px] xl:text-[52px]"
-              key={rowIndex}>
-              {titleRow.map((chunk, index) => (
-                <span
-                  className={twMerge(
-                    "font-instrument-sans reveal-text-animation",
-                    chunk.variant === "italic" && "font-playfair-display italic font-semibold",
-                    chunk.classNames,
-                  )}
-                  key={index}>
-                  {chunk.text}
-                </span>
-              ))}
-            </h2>
-          ))}
+      <div className="skyphr-container flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16 xl:gap-20">
+        <div className="lg:sticky lg:top-30 lg:w-[40%] xl:w-[50%]">
+          <div className="flex flex-col items-start justify-start gap-2">
+            {data.header.title.map((titleRow, rowIndex) => (
+              <h2
+                className="flex flex-wrap items-center gap-2 font-instrument-sans font-bold leading-tight text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px]"
+                key={rowIndex}>
+                {titleRow.map((chunk, index) => (
+                  <span
+                    className={twMerge(
+                      "font-instrument-sans reveal-text-animation",
+                      chunk.variant === "italic" && "font-playfair-display italic font-semibold",
+                      chunk.classNames,
+                    )}
+                    key={index}>
+                    {chunk.text}
+                  </span>
+                ))}
+              </h2>
+            ))}
+          </div>
 
-          {data.header.description?.map((description, index) => (
-            <p
-              className="mt-5 max-w-140 font-instrument-sans text-base leading-7 text-(--text-secondary-color) md:text-lg"
-              key={index}>
-              {description.map((chunk, chunkIndex) => (
-                <span className={twMerge(chunk.classNames)} key={chunkIndex}>
-                  {chunk.text}
-                </span>
-              ))}
-            </p>
-          ))}
+          <div className="flex flex-col items-start justify-start gap-2">
+            {data.header.description?.map((description, index) => (
+              <p
+                className="mt-5 max-w-140 font-instrument-sans text-base leading-7 text-(--text-secondary-color) md:text-lg"
+                key={index}>
+                {description.map((chunk, chunkIndex) => (
+                  <span className={twMerge(chunk.classNames)} key={chunkIndex}>
+                    {chunk.text}
+                  </span>
+                ))}
+              </p>
+            ))}
+          </div>
         </div>
 
         <div
           className={twMerge(
-            "border border-(--border-color) bg-(--root-white-color) p-4 md:p-6",
+            "border border-(--border-color) bg-(--root-white-color) p-4 md:p-6 w-full lg:w-[60%] xl:w-[50%]",
             COMMON_BORDER_RADIUS,
           )}>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">

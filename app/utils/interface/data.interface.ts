@@ -1,4 +1,4 @@
-import { CommonPageDataInterface, HeroSection } from "@/app/utils/interface/page.interface";
+import { CommonPageDataInterface, HeroSection, ImageOptionsInterface } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 
 export interface NavbarLinksInterface {
@@ -29,14 +29,7 @@ export interface OurServiceCardDataArrayInterface {
   title: string;
   description: string;
   className?: string;
-  imageOptions: {
-    imagePath: StaticImageData;
-    width: number;
-    height: number;
-    alt: string;
-    className?: string;
-    loading?: "lazy" | "eager";
-  };
+  imageOptions: ImageOptionsInterface;
   ctaButton: {
     label: string;
     href: string;

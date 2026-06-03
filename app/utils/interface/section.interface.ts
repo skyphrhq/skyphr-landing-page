@@ -16,6 +16,7 @@ import type {
   TechnologyStackSectionData,
   TestimonialSection,
   UseCaseSectionData,
+  WhyChooseSectionData,
   WhatWeBuildSectionData,
 } from "@/app/utils/interface/page.interface";
 
@@ -123,5 +124,10 @@ export interface UseCaseSectionProps {
 
 export interface TechnologyStackSectionProps {
   data: TechnologyStackSectionData;
+  classNames?: string;
+}
+
+export interface WhyChooseSectionProps {
+  data: WhyChooseSectionData;
   classNames?: string;
 }

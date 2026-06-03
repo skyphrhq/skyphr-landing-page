@@ -1,9 +1,6 @@
 import CEOImage from "@/app/assets/webp/varun-patel.webp";
-import {
-  ABOUT_US_INFO_CARD_DATA,
-  FEATURED_WORK_DATA,
-  OUR_VALUES_CARD_DATA,
-} from "@/app/content/pageContent/common.data";
+import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA } from "@/app/content/pageContent/common.data";
+import { OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -23,11 +20,11 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
             text: "Skyphr is a digital product development and AI engineering company focused on creating high-performance software, scalable SaaS platforms, and intelligent automation systems. We combine strategy, design, and engineering to help startups, businesses, and founders transform ideas into reliable digital products that deliver real business value.",
           },
         ],
-        [
-          {
-            text: "From product discovery and UI/UX design to full-scale software development and AI integration, we build solutions that are fast, scalable, and designed for long-term growth.",
-          },
-        ],
+        // [
+        //   {
+        //     text: "From product discovery and UI/UX design to full-scale software development and AI integration, we build solutions that are fast, scalable, and designed for long-term growth.",
+        //   },
+        // ],
       ],
     },
     ctas: [
@@ -68,11 +65,11 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
             text: "Our expertise spans SaaS development, AI-powered applications, workflow automation, web platforms, and custom software solutions. Every product we create is built with a focus on performance, usability, scalability, and measurable business outcomes.",
           },
         ],
-        [
-          {
-            text: "Whether you're launching a new product, modernizing existing systems, or integrating AI into your business, Skyphr provides the technical expertise and product thinking needed to move faster and scale confidently.",
-          },
-        ],
+        // [
+        //   {
+        //     text: "Whether you're launching a new product, modernizing existing systems, or integrating AI into your business, Skyphr provides the technical expertise and product thinking needed to move faster and scale confidently.",
+        //   },
+        // ],
       ],
     },
     cta: {
@@ -117,11 +114,11 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
             text: "We believe successful partnerships are built on trust, transparency, and results. Our clients choose Skyphr because we focus on solving business challenges, delivering reliable technology, and creating products that support long-term growth.",
           },
         ],
-        [
-          {
-            text: "From startups launching their first product to established businesses adopting AI-driven workflows, we help teams build with confidence and scale with purpose.",
-          },
-        ],
+        // [
+        //   {
+        //     text: "From startups launching their first product to established businesses adopting AI-driven workflows, we help teams build with confidence and scale with purpose.",
+        //   },
+        // ],
       ],
     },
     clientsFeedback: CLIENT_TESTIMONIAL_DATA,

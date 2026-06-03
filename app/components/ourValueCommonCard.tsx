@@ -20,7 +20,7 @@ function OurValueCommonCard({ icon, title, description, bgColor }: OurValueCardI
         <h3 className="font-instrument-sans text-[20px] md:text-[26px] lg:text-[28px] font-bold mb-3 text-(--root-black-color)">
           {title}
         </h3>
-        <p className="font-instrument-sans text-sm sm:text-base md:text-lg font-normal text-(--text-main-color) leading-relaxed">
+        <p className="font-instrument-sans text-sm sm:text-base lg:text-lg font-normal text-(--text-main-color) leading-relaxed">
           {description}
         </p>
       </div>

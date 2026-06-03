@@ -8,8 +8,8 @@ import { useGSAP } from "@gsap/react";
 import { useLayoutEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
 import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
+import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
 
 const ICON_SIZE_CLASSNAMES = "w-4 h-4 sm:w-6 sm:h-6 sm:min-w-g sm:min-h-6 text-gray-800";
 const ICON_CONTAINER_SIZE_CLASSNAMES = "w-9 h-9 sm:w-14 sm:h-14 sm:min-w-14 sm:min-h-14 md:w-16 md:h-16";
@@ -50,9 +50,9 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
   }, []);
 
   return (
-    <div ref={sectionRef} className={twMerge("overflow-hidden",COMMON_SECTION_PADDING, classNames)}>
+    <div ref={sectionRef} className={twMerge("overflow-hidden", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
-        <CommonSectionHeader header={data?.header} />
+        <CommonSectionHeader header={data?.header} className="px-0!" />
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-25">
           {/* Left Side: Circular Animation */}
@@ -113,15 +113,20 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
 
               {/* Center Text (Static) */}
               <div className="absolute z-10 text-center flex flex-col items-center justify-center min-w-[50%] min-h-[50%] aspect-auto sm:w-50 sm:h-50 bg-white rounded-full">
-                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,50px)] font-bold text-gray-900 mb-1 tracking-tight font-instrument-sans">
-                  From Idea
+                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,45px)] font-bold text-gray-900 mb-1 tracking-tight font-instrument-sans">
+                  {data?.header?.heroHighlightedText?.textOne}
                 </h3>
-                <h3 className="text-xl sm:text-[clamp(24px,5vw,50px)] font-bold text-purple-400 mb-4 tracking-tight font-instrument-sans">
-                  to Scale
+                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,5vw,45px)] font-bold text-purple-400 mb-4 tracking-tight font-instrument-sans">
+                  {data?.header?.heroHighlightedText?.textTwo}
                 </h3>
                 <div className="w-8 h-0.5 bg-gray-200 mb-4 rounded-full"></div>
-                <p className="text-xs sm:text-[clamp(12px,3vw,20px)] text-gray-500 font-medium font-instrument-sans">Strategy. Design. Build.</p>
-                <p className="text-xs sm:text-[clamp(12px,3vw,20px)] text-gray-500 font-medium mt-1 font-instrument-sans">Launch. Grow.</p>
+                {data?.header?.heroHighlightedText?.description?.map((desc, index) => (
+                  <p
+                    key={index}
+                    className="text-xs sm:text-[clamp(12px,3vw,20px)] text-gray-500 font-medium font-instrument-sans">
+                    {desc.text}
+                  </p>
+                ))}
               </div>
             </div>
           </div>

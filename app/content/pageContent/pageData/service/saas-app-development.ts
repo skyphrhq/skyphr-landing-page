@@ -1,9 +1,7 @@
-import {
-  OUR_SERVICE_CARD_DATA,
-  OUR_VALUES_CARD_DATA,
-  STEPS_WE_FOLLOW_IN_SERVICES,
-} from "@/app/content/pageContent/common.data";
+import { OUR_SERVICE_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { STEPS_WE_FOLLOW_IN_SERVICES } from "@/app/content/pageContent/service-steps.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
@@ -107,40 +105,6 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       "Performance optimization",
     ],
   },
-  developmentProcess: {
-    header: {
-      title: [[{ text: "Our Strategic SaaS" }, { text: "Development Process", variant: "italic" }]],
-      description: [
-        [
-          {
-            text: "We follow a clear, structured process to transform your idea into a scalable, secure, and user-friendly SaaS product.",
-          },
-        ],
-      ],
-    },
-    steps: [
-      {
-        title: "Product Discovery & Planning",
-        description:
-          "We understand your business model, target users, workflows, core features, and long-term product goals before writing a single line of code.",
-      },
-      {
-        title: "UX Design & System Architecture",
-        description:
-          "We design user flows, wireframes, dashboards, database structure, roles, permissions, and the technical foundation required for scale.",
-      },
-      {
-        title: "SaaS Development & Integration",
-        description:
-          "We build the frontend, backend, APIs, authentication, admin panel, dashboards, payment flows, and third-party integrations.",
-      },
-      {
-        title: "Testing, Launch & Optimization",
-        description:
-          "We test performance, security, responsiveness, and usability before deployment, then optimize based on real usage and business needs.",
-      },
-    ],
-  },
   useCase: {
     header: {
       title: [[{ text: "Ideal For Businesses" }, { text: "Building", variant: "italic" }]],
@@ -155,6 +119,7 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     items: [
       {
         title: "Startup SaaS MVPs",
+        description: "hchdhahsdfhasd",
       },
       {
         title: "Internal Business Dashboards",
@@ -229,6 +194,40 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
+  developmentProcess: {
+    header: {
+      title: [[{ text: "Our Strategic SaaS" }, { text: "Development Process", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "We follow a clear, structured process to transform your idea into a scalable, secure, and user-friendly SaaS product.",
+          },
+        ],
+      ],
+    },
+    steps: [
+      {
+        title: "Product Discovery & Planning",
+        description:
+          "We understand your business model, target users, workflows, core features, and long-term product goals before writing a single line of code.",
+      },
+      {
+        title: "UX Design & System Architecture",
+        description:
+          "We design user flows, wireframes, dashboards, database structure, roles, permissions, and the technical foundation required for scale.",
+      },
+      {
+        title: "SaaS Development & Integration",
+        description:
+          "We build the frontend, backend, APIs, authentication, admin panel, dashboards, payment flows, and third-party integrations.",
+      },
+      {
+        title: "Testing, Launch & Optimization",
+        description:
+          "We test performance, security, responsiveness, and usability before deployment, then optimize based on real usage and business needs.",
+      },
+    ],
+  },
 
   services: {
     header: {
@@ -272,8 +271,8 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   readyToScale: {
     header: {
       title: [
-        [{ text: "Ready to " }, { text: "Scale?", variant: "italic" }],
-        [{ text: " Get Your " }, { text: "Custom Roadmap", variant: "italic" }],
+        [{ text: "Ready" }, { text: "to" }, { text: "Improve", variant: "italic" }],
+        [{ text: "Your" }, { text: "Product" }, { text: "Experience?", variant: "italic" }],
       ],
       description: [
         [

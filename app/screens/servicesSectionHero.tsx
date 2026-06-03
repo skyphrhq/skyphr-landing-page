@@ -1,5 +1,4 @@
 "use client";
-import ServiceHeroImage from "@/app/assets/webp/saas-app-development.webp";
 import CTAButton from "@/app/components/common/ctaButton";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_REVEL_ANIMATION } from "@/app/utils/constants/animation.constant";
@@ -20,29 +19,31 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
     { scope: animationContainer },
   );
   return (
-    <div className={twMerge("w-full h-fit relative overflow-hidden pt-28 pb-20 px-4 xl:pt-55 xl:pb-35", classNames)}>
+    <div className={twMerge("w-full h-fit relative overflow-hidden pt-28 pb-5 px-4 xl:pt-40 xl:pb-0", classNames)}>
       <div className="skyphr-container px-0!">
         <div
           ref={animationContainer}
           className="w-ful h-full relative z-20 flex flex-col gap-10 xl:gap-20 md:flex-row items-center justify-center">
           <div className="w-full md:w-1/2">
             <div className="flex flex-col items-start justify-start gap-2">
-              {data?.header?.title?.map((title, index) => (
+              {data?.header?.title?.map((titleRow, rowIndex) => (
                 <h1
-                  className="font-instrument-sans text-4xl xl:text-5xl font-bold tracking-tight text-(--text-main-color)  reveal-animation"
-                  key={index}>
-                  {title?.map((chunk, chunkIndex) => (
-                    <span
-                      key={chunkIndex}
-                      className={twMerge(
-                        chunk.variant === "bold" ? "font-bold" : "",
-                        chunk.variant === "italic" ? "font-italic" : "",
-                        chunk.variant === "brand" ? "text-(--brand-color)" : "",
-                        chunk.variant === "muted" ? "text-(--muted-color)" : "",
-                      )}>
-                      {chunk.text}
-                    </span>
-                  ))}
+                  className="font-instrument-sans text-start text-4xl xl:text-5xl font-bold tracking-tight text-(--text-main-color)"
+                  key={rowIndex}>
+                  {titleRow?.map((chunk, index) => {
+                    return (
+                      <span
+                        className={twMerge(
+                          "font-instrument-sans reveal-animation",
+                          chunk?.classNames,
+                          "reveal-animation",
+                          chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                        )}
+                        key={index}>
+                        {chunk.text}
+                      </span>
+                    );
+                  })}
                 </h1>
               ))}
             </div>
@@ -81,16 +82,22 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
               </div>
             )}
           </div>
-          <div className="w-full md:w-1/2">
-            <Image
-              src={ServiceHeroImage}
-              width={750}
-              height={750}
-              alt="Services Hero"
-              loading="eager"
-              className={twMerge("select-none pointer-events-none", COMMON_BORDER_RADIUS)}
-            />
-          </div>
+          {data?.header?.heroImage && (
+            <div className="w-full md:w-1/2">
+              <Image
+                src={data.header.heroImage.imagePath}
+                width={data.header.heroImage.width}
+                height={data.header.heroImage.height}
+                alt={data.header.heroImage.alt}
+                loading={data.header.heroImage.loading}
+                className={twMerge(
+                  "select-none pointer-events-none",
+                  COMMON_BORDER_RADIUS,
+                  data.header.heroImage.className,
+                )}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

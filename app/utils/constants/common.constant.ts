@@ -26,4 +26,4 @@ export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY", them
 
 export const COMMON_BORDER_RADIUS = "rounded-lg md:rounded-xl lg:rounded-2xl";
 
-export const COMMON_SECTION_PADDING = "py-15! md:py-20! xl:py-30!";
+export const COMMON_SECTION_PADDING = "py-15! md:py-20! xl:py-37.5!";

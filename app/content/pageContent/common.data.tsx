@@ -190,44 +190,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   },
 ];
 
-export const OUR_VALUES_CARD_DATA: OurValueCardInterface[] = [
-  {
-    id: 1,
-    title: "Clarity Over Complexity",
-    description:
-      "We believe great products should feel simple, even when the technology behind them is complex. Our approach focuses on intuitive user experiences, clear workflows, and thoughtful design that helps users achieve their goals effortlessly.",
-    icon: <FiLayers className="text-2xl" />,
-    color: "#AC9BFF",
-    bgColor: "rgba(172, 155, 255, 0.5)",
-  },
-  {
-    id: 2,
-    title: "Built for Scale",
-    description:
-      "We create software architectures and digital platforms designed for long-term growth. Every system is engineered to handle increasing users, data, and business demands without compromising performance.",
-    icon: <FiTrendingUp className="text-2xl" />,
-    color: "#B8C56F",
-    bgColor: "rgba(184, 197, 111, 0.5)",
-  },
-  {
-    id: 3,
-    title: "Performance First",
-    description:
-      "Speed, reliability, and efficiency are at the core of our development process. From optimized frontend experiences to scalable backend systems, we ensure every product performs at the highest level.",
-    icon: <FiZap className="text-2xl" />,
-    color: "#FF767A",
-    bgColor: "rgba(255, 118, 122, 0.5)",
-  },
-  {
-    id: 4,
-    title: "User-Centered Approach",
-    description:
-      "Technology succeeds when people enjoy using it. We prioritize user needs, behaviors, and feedback to create products that are intuitive, engaging, and impactful.",
-    icon: <FiUsers className="text-2xl" />,
-    color: "#5DADE2",
-    bgColor: "rgba(93, 173, 226, 0.5)",
-  },
-];
+
 
 export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
   {
@@ -255,41 +218,5 @@ export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
   },
 ];
 
-export const STEPS_WE_FOLLOW_IN_SERVICES: OurStepsDataInterface[] = [
-  {
-    num: "01",
-    title: "Discovery & Strategy",
-    desc: "We understand your business, users and goals to create a clear strategy and roadmap.",
-    icon: <FaRegCompass className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-purple-50",
-    numBgColor: "bg-purple-100",
-    numTextColor: "text-purple-800",
-  },
-  {
-    num: "02",
-    title: "Design & Experience",
-    desc: "We design intuitive, user-focused experiences that are modern, engaging and conversion-driven.",
-    icon: <FaRegLightbulb className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-yellow-50",
-    numBgColor: "bg-yellow-100",
-    numTextColor: "text-yellow-800",
-  },
-  {
-    num: "03",
-    title: "Development & Build",
-    desc: "We build scalable, secure and high-performance products using modern technologies.",
-    icon: <FaCode className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-pink-50",
-    numBgColor: "bg-pink-100",
-    numTextColor: "text-pink-800",
-  },
-  {
-    num: "04",
-    title: "Launch & Scale",
-    desc: "We launch with confidence and continuously optimize to help your product grow and scale.",
-    icon: <FaRocket className="w-6 h-6 text-gray-800" />,
-    iconBgColor: "bg-indigo-50",
-    numBgColor: "bg-indigo-100",
-    numTextColor: "text-indigo-800",
-  },
-];
+
+

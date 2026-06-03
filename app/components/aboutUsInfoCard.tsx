@@ -21,9 +21,9 @@ function AboutUsInfoCard({ data, className }: AboutUsCardInterface) {
         <div className="flex flex-col items-start justify-start gap-2">
           <span className="text-2xl sm:text-3xl md:text-4xl font-bold font-instrument-sans text-(--text-main-color) flex items-center justify-center gap-1">
             <span>{count}</span>
-            <FaPlus className="text-sm sm:text-base md:text-lg text-(--text-secondary-color)" />
+            <FaPlus className="text-sm sm:text-base lg:text-lg text-(--text-secondary-color)" />
           </span>
-          <p className="text-sm sm:text-base md:text-lg font-medium font-instrument-sans text-(--text-secondary-color)">
+          <p className="text-sm sm:text-base lg:text-lg font-medium font-instrument-sans text-(--text-secondary-color)">
             {label}
           </p>
         </div>

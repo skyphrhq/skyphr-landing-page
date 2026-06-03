@@ -1,5 +1,6 @@
-import { ABOUT_US_INFO_CARD_DATA, OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/common.data";
+import { ABOUT_US_INFO_CARD_DATA } from "@/app/content/pageContent/common.data";
 import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";

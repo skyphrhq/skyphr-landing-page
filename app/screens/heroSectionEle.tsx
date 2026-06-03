@@ -55,7 +55,7 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
         <div className="w-full flex flex-col items-start justify-start gap-5">
           {data?.header?.description?.map((description, index) => (
             <p
-              className="reveal-animation font-instrument-sans text-base lg:text-lg max-w-3xl font-medium text-pretty text-center pt-5 text-(--text-main-color)"
+              className="reveal-animation font-instrument-sans text-base lg:text-lg max-w-3xl font-medium text-pretty text-center pt-5 text-(--text-main-color) mx-auto"
               key={index}>
               {description?.map((chunk, chunkIndex) => {
                 return (

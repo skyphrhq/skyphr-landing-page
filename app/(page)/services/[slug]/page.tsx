@@ -6,6 +6,7 @@ import OurValuesSection from "@/app/screens/common/ourValuesSection";
 import TechnologyStackSection from "@/app/screens/common/technologyStackSection";
 import UseCaseSection from "@/app/screens/common/useCaseSection";
 import WhatWeBuildSection from "@/app/screens/common/whatWeBuildSection";
+import WhyChooseSection from "@/app/screens/common/whyChooseSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import ServicesSectionHero from "@/app/screens/servicesSectionHero";
@@ -46,16 +47,17 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
       {servicePageData.featuresInclude && (
         <FeaturesIncludeSection data={servicePageData.featuresInclude} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
-
-      {servicePageData.developmentProcess && (
-        <DevelopmentProcessSection classNames="pb-0! md:pb-0! xl:pb-0!" data={servicePageData.developmentProcess} />
-      )}
       {servicePageData.useCase && (
         <UseCaseSection data={servicePageData.useCase} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
       {servicePageData.technologyStack && (
         <TechnologyStackSection data={servicePageData.technologyStack} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
+
+      {servicePageData.developmentProcess && (
+        <DevelopmentProcessSection classNames="pb-0! md:pb-0! xl:pb-0!" data={servicePageData.developmentProcess} />
+      )}
+
       {servicePageData.ourApproach && (
         <section className="w-full h-auto">
           <OurApproachSection classNames="pb-0! md:pb-0! xl:pb-0!" data={servicePageData.ourApproach} />
@@ -65,6 +67,9 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
         <section className="w-full h-auto">
           <OurValuesSection data={servicePageData.ourValues} classNames="pb-0! md:pb-0! xl:pb-0!" />
         </section>
+      )}
+      {servicePageData.whyChoose && (
+        <WhyChooseSection data={servicePageData.whyChoose} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
       {servicePageData.readyToScale && (
         <section>
