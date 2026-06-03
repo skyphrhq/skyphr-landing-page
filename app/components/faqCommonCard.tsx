@@ -11,13 +11,13 @@ function FaqCommonCard({ question, answer, isOpen, onToggle, index }: FaqCommonC
       {/* Header row */}
       <div onClick={onToggle} className="flex items-center justify-between p-4 md:px-6 md:py-5 gap-4 cursor-pointer">
         <div className="flex items-center justify-start gap-5">
-          <span className="flex items-center gap-1 font-instrument-sans font-semibold text-(--cta-button-background) text-sm sm:text-base md:text-lg leading-snug">
+          <span className="flex items-center gap-1 font-instrument-sans font-semibold text-(--cta-button-background) text-sm sm:text-base lg:text-lg leading-snug">
             <span>{"{"}</span>
             <span>{index + 1}</span>
             <span>{"}"}</span>
           </span>
 
-          <span className="font-instrument-sans font-semibold text-(--text-main-color) text-sm sm:text-base md:text-lg leading-snug">
+          <span className="font-instrument-sans font-semibold text-(--text-main-color) text-sm sm:text-base lg:text-lg leading-snug">
             {question}
           </span>
         </div>

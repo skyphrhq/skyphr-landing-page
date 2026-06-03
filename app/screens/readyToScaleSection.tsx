@@ -35,11 +35,11 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
             ref={animationContainer}
             className="w-ful h-full relative z-20 flex flex-col items-center lg:max-w-4xl mx-auto justify-center">
             <div className="w-full h-auto flex flex-col items-center justify-center gap-5">
-              <div className="flex flex-col items-center justify-center gap-2">
+              <div className="flex flex-col items-center justify-center gap-2 lg:gap-4">
                 {data?.header?.title?.map((text, index) => (
                   <h2
                     key={index}
-                    className="reveal-text-animation font-instrument-sans text-3xl md:text-4xl text-center lg:text-5xl font-bold tracking-tight text-(--text-main-color)">
+                    className="reveal-text-animation font-instrument-sans text-3xl md:text-4xl text-center lg:text-5xl font-bold tracking-tight text-(--text-main-color) flex flex-row items-center justify-center gap-2 lg:gap-4">
                     {text?.map((word, wordIndex) => (
                       <span
                         key={wordIndex}
@@ -54,7 +54,7 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
               {data?.header?.description?.map((text, index) => (
                 <p
                   key={index}
-                  className="reveal-text-animation font-instrument-sans text-sm md:text-base font-medium text-pretty text-center text-(--text-main-color) md:max-w-[70%] lg:max-w-[65%]">
+                  className="reveal-text-animation font-instrument-sans text-sm md:text-base font-medium text-pretty text-center text-(--text-main-color) md:max-w-[80%]">
                   {text?.map((word, wordIndex) => (
                     <span key={wordIndex} className={twMerge("pl-1", word?.classNames)}>
                       {word?.text}

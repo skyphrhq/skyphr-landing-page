@@ -15,6 +15,7 @@ import type {
   FeaturedWorkInterface,
   OurServiceCardDataArrayInterface,
 } from "@/app/utils/interface/data.interface";
+import { StaticImageData } from "next/image";
 
 // ===============================
 export type TextVariant = "normal" | "bold" | "italic" | "brand" | "muted";
@@ -38,9 +39,25 @@ export interface CTA {
   rel?: string;
 }
 
+export interface ImageOptionsInterface {
+  imagePath: StaticImageData;
+  width: number;
+  height: number;
+  alt: string;
+  className?: string;
+  loading?: "lazy" | "eager";
+}
+
+export interface heroHighlightedText {
+  textOne: string;
+  textTwo: string;
+  description: TextChunk[];
+}
 export interface SectionHeader {
   title: TextChunk[][];
   description?: TextChunk[][];
+  heroImage?: ImageOptionsInterface;
+  heroHighlightedText?: heroHighlightedText;
 }
 
 // ===============================
@@ -157,6 +174,20 @@ export type TechnologyStackSectionData = {
   groups: TechnologyStackGroup[];
 };
 
+export type WhyChooseHighlight = {
+  value: string;
+  label: string;
+};
+
+export type WhyChooseReason = {
+  title: string;
+  description: string;
+};
+
+export type WhyChooseSectionData = {
+  header: SectionHeader;
+};
+
 // ===============================
 // PAGE TYPE
 // ===============================
@@ -177,6 +208,7 @@ export interface CommonPageDataInterface {
   featuresInclude?: FeaturesIncludeSectionData;
   useCase?: UseCaseSectionData;
   technologyStack?: TechnologyStackSectionData;
+  whyChoose?: WhyChooseSectionData;
   ourTeam?: OurTeamSectionInterface;
   contactUs?: ContactUsSectionInterface;
 }

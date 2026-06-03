@@ -36,7 +36,7 @@ function OurServiceCardComponent({
               <span className="text-[20px] md:text-[26px] lg:text-[28px] xl:text-[30px] 2xl:text-[34px] inline-block font-bold font-instrument-sans text-(--root-black-color)">
                 {data?.title}
               </span>
-              <p className="text-sm sm:text-base md:text-lg font-normal font-inter text-(--text-main-color)">
+              <p className="text-sm sm:text-base lg:text-lg font-normal font-inter text-(--text-main-color)">
                 {data?.description}
               </p>
               <div className="w-fit">

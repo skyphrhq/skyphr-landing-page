@@ -40,7 +40,7 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
         <div className="lg:sticky top-30 self-start">
           {data.header.title.map((titleRow, rowIndex) => (
             <h2
-              className="flex flex-wrap items-center gap-2 font-instrument-sans text-[32px] font-bold leading-tight text-(--text-main-color) md:text-[42px] xl:text-[52px]"
+              className="flex flex-wrap items-center gap-2 font-instrument-sans font-bold leading-tight text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px]"
               key={rowIndex}>
               {titleRow.map((chunk, index) => (
                 <span

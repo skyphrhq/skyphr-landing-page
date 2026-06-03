@@ -39,18 +39,18 @@ function UseCaseSection({ data, classNames }: UseCaseSectionProps) {
         <CommonSectionHeader header={data.header} className="px-0!" />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {data.items.map((item, index) => (
+          {data.items.map((item,) => (
             <div key={item.title} className="reveal-animation">
               <div
                 className={twMerge(
                   "group h-full border border-(--border-color) bg-(--root-white-color) p-5 transition-transform duration-300 hover:-translate-y-1",
                   COMMON_BORDER_RADIUS,
                 )}>
-                <div className="mb-5 flex items-center justify-between gap-4">
+                {/* <div className="mb-5 flex items-center justify-between gap-4">
                   <span className="flex size-10 items-center justify-center rounded-full border border-(--border-color) bg-(--active-hover-link-bg) font-instrument-sans text-xs font-bold text-(--text-main-color)">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                </div>
+                </div> */}
 
                 <h3 className="font-instrument-sans text-lg font-bold text-(--text-main-color) md:text-xl">
                   {item.title}

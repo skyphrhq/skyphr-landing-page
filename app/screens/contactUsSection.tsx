@@ -33,10 +33,10 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
         <CommonSectionHeader header={data?.header} />
         <div className="w-full xl:max-w-[80%] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative items-stretch">
-            <div className="flex flex-col md:flex-row lg:flex-col items-start justify-stretch gap-8">
+            <div className="flex flex-col md:flex-row lg:flex-col items-stretch lg:items-start justify-stretch gap-8">
               <div
                 className={twMerge(
-                  "contact-card bg-(--cta-button-background) w-full p-6 xl:p-10 xl:px-14 h-1/2 grow",
+                  "contact-card bg-(--cta-button-background) w-full p-6 xl:p-10 xl:px-14 lg:h-1/2 grow",
                   COMMON_BORDER_RADIUS,
                 )}>
                 <div className="w-full h-full flex flex-col items-start justify-center">
@@ -64,7 +64,7 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
 
               <div
                 className={twMerge(
-                  "contact-card bg-(--root-white-color) w-full p-6 xl:p-10 xl:px-14 border border-(--border-color) grow h-1/2",
+                  "contact-card bg-(--root-white-color) w-full p-6 xl:p-10 xl:px-14 border border-(--border-color) grow lg:h-1/2",
                   COMMON_BORDER_RADIUS,
                 )}>
                 <div className="w-full h-full flex flex-col items-start justify-center gap-10">

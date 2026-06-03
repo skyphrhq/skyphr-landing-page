@@ -36,7 +36,7 @@ function WhatWeBuildSection({ data, classNames }: WhatWeBuildSectionProps) {
   return (
     <section ref={containerRef} className={twMerge("w-full h-auto", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
-        <CommonSectionHeader header={data.header} className="" />
+        <CommonSectionHeader header={data.header} className="px-0!" />
 
         <div className="mt-10 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
           {data.cards.map((card, index) => {
@@ -44,22 +44,26 @@ function WhatWeBuildSection({ data, classNames }: WhatWeBuildSectionProps) {
               <div key={card.title} className="reveal-animation">
                 <div
                   className={twMerge(
-                    "group h-full border border-(--border-color) bg-(--root-white-color) p-5 transition-transform duration-300 hover:-translate-y-1 md:p-7",
+                    "group h-full border border-(--border-color) bg-(--root-white-color) p-5 md:p-7 relative overflow-hidden group",
                     COMMON_BORDER_RADIUS,
                   )}>
-                  <div className="mb-8 flex size-12 items-center justify-center rounded-2xl border border-(--border-color) bg-(--active-hover-link-bg)">
-                    <span className="font-instrument-sans text-sm font-bold text-(--text-main-color)">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                  <div className="w-full h-full relative z-10">
+                    <div className="mb-8 flex size-12 items-center justify-center rounded-2xl border border-(--border-color) bg-(--active-hover-link-bg)">
+                      <span className="font-instrument-sans text-sm font-bold text-(--text-main-color)">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    <h3 className="font-instrument-sans text-xl font-bold text-(--text-main-color) md:text-[22px]">
+                      {card.title}
+                    </h3>
+
+                    <p className="mt-3 font-instrument-sans text-sm leading-6 text-(--text-secondary-color) md:text-base md:leading-7">
+                      {card.description}
+                    </p>
                   </div>
 
-                  <h3 className="font-instrument-sans text-xl font-bold text-(--text-main-color) md:text-[22px]">
-                    {card.title}
-                  </h3>
-
-                  <p className="mt-3 font-instrument-sans text-sm leading-6 text-(--text-secondary-color) md:text-base md:leading-7">
-                    {card.description}
-                  </p>
+                  <span className="bg-(--bg-blue-shade) flex absolute top-0 left-0 w-full h-full opacity-10 group-hover:opacity-20 transition-all"></span>
                 </div>
               </div>
             );
