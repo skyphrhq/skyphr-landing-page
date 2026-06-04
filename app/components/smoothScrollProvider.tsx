@@ -1,46 +1,25 @@
+// components/SmoothScroll.tsx
 "use client";
 
-import { gsap, ScrollTrigger } from "@/app/lib/gsap";
-import { SmoothScrollProviderInterface } from "@/app/utils/interface/common.interface";
-import Lenis from "lenis";
-import { usePathname } from "next/navigation";
+import gsap from "gsap";
+import { LenisRef, ReactLenis } from "lenis/react";
 import { useEffect, useRef } from "react";
 
-function SmoothScrollProvider({ children }: SmoothScrollProviderInterface) {
-  const pathname = usePathname();
-  const lenisRef = useRef<Lenis | null>(null);
+export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const lenisRef = useRef<LenisRef>(null);
 
   useEffect(() => {
-    const lenis = new Lenis();
-    lenisRef.current = lenis;
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000); // Convert seconds to milliseconds
+    }
 
-    const onScroll = () => ScrollTrigger.update();
-    const update = (time: number) => lenis.raf(time * 1000);
-
-    lenis.on("scroll", onScroll);
     gsap.ticker.add(update);
-    gsap.ticker.lagSmoothing(0);
-
-    return () => {
-      gsap.ticker.remove(update);
-      lenis.off?.("scroll", onScroll);
-      lenis.destroy();
-      lenisRef.current = null;
-    };
+    return () => gsap.ticker.remove(update);
   }, []);
 
-  useEffect(() => {
-    const lenis = lenisRef.current;
-    if (!lenis) return;
-
-    const frame = requestAnimationFrame(() => {
-      lenis.resize();
-      ScrollTrigger.refresh(true);
-    });
-
-    return () => cancelAnimationFrame(frame);
-  }, [pathname]);
-  return <main className="w-full h-auto skyphr-main-wrapper">{children}</main>;
+  return (
+    <ReactLenis ref={lenisRef} root options={{ autoRaf: false }}>
+      <main className="w-full h-auto skyphr-main-wrapper">{children}</main>
+    </ReactLenis>
+  );
 }
-
-export default SmoothScrollProvider;

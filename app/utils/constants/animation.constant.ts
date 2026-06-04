@@ -22,11 +22,13 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
   start = "top 80%",
   end = "bottom top",
   markers = false,
+  stagger = 0.1,
 }: {
   trigger: Element | string;
   start?: string;
   end?: string;
   markers?: boolean;
+  stagger?: number;
 }): { FROM: gsap.TweenVars; TO: gsap.TweenVars } => {
   return {
     FROM: {
@@ -40,7 +42,7 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
       filter: "blur(0px)",
       duration: 1,
       ease: "power3.out",
-      stagger: 0.1,
+      stagger: stagger || 0.1,
       scrollTrigger: CreateScrollTrigger({
         trigger: trigger,
         start: start,
