@@ -26,6 +26,7 @@ function FeaturesIncludeSection({ data, classNames }: FeaturesIncludeSectionProp
       const revealElements = gsap.utils.toArray(".reveal-animation");
       const revealAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({
         trigger: containerRef.current,
+        stagger: 0.05,
         start: "top 65%",
         end: "bottom top",
       });
