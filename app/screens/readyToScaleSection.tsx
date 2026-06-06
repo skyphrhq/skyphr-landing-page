@@ -23,7 +23,7 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
   );
 
   return (
-    <div className={twMerge("w-full",COMMON_SECTION_PADDING, classNames)}>
+    <div className={twMerge("w-full", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
         <div
           className={twMerge(
@@ -43,7 +43,10 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
                     {text?.map((word, wordIndex) => (
                       <span
                         key={wordIndex}
-                        className={`${word?.variant === "italic" ? "font-playfair-display italic font-semibold" : ""}`}>
+                        className={twMerge(
+                          `${word?.variant === "italic" ? "font-playfair-display italic font-semibold" : ""}`,
+                          word?.classNames,
+                        )}>
                         {word?.text}
                       </span>
                     ))}

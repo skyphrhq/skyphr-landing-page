@@ -11,7 +11,7 @@ function OurValueCommonCard({ icon, title, description, bgColor }: OurValueCardI
       )}
       style={{ backgroundColor: bgColor }}>
       <div
-        className="flex items-center justify-center w-15 h-15 rounded-xl"
+        className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-lg"
         style={{ backgroundColor: "white", color: "black" }}>
         {icon}
       </div>

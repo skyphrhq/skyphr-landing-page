@@ -53,7 +53,7 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
       {
         id: "ai-development-automation",
         label: "AI Development & Automation",
-        href: "/services/ai-development-automation",
+        href: "/services/ai-development-services",
         type: "link",
         isLink: true,
         target: "_self",
@@ -61,9 +61,9 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
         dropDown: [],
       },
       {
-        id: "custom-software-development",
+        id: "custom-software-development-services",
         label: "Custom Software Development",
-        href: "/services/custom-software-development",
+        href: "/services/custom-software-development-services",
         type: "link",
         isLink: true,
         target: "_self",

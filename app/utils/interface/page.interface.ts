@@ -15,6 +15,7 @@ import type {
   FeaturedWorkInterface,
   OurServiceCardDataArrayInterface,
 } from "@/app/utils/interface/data.interface";
+import { Metadata } from "next";
 import { StaticImageData } from "next/image";
 
 // ===============================
@@ -192,6 +193,7 @@ export type WhyChooseSectionData = {
 // PAGE TYPE
 // ===============================
 export interface CommonPageDataInterface {
+  Metadata?: Metadata;
   hero?: HeroSection;
   featuredWorks?: FeaturedWorkDataInterface;
   about?: AboutSection;

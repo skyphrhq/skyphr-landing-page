@@ -55,8 +55,8 @@ function FooterScreen() {
   return (
     <div className="w-full bg-(--root-black-color) relative overflow-hidden font-inter">
       {/* Huge Background Text */}
-      <div className="absolute hidden xl:flex xl:bottom-[-15%] left-0 right-0 justify-center w-full pointer-events-none select-none overflow-hidden">
-        <span className="text-[24vw] leading-none font-bold text-white/2.5 font-instrument-sans whitespace-nowrap text-center">
+      <div className="absolute hidden xl:flex xl:bottom-[-5%] left-0 right-0 justify-center w-full pointer-events-none select-none overflow-hidden">
+        <span className="text-[clamp(120px,24vw,500px)]  leading-none font-bold text-white/3 font-instrument-sans whitespace-nowrap text-center">
           Skyphr
         </span>
       </div>
