@@ -1,5 +1,5 @@
 import UI_UX_DESIGN_HERO_4X_IMAGE from "@/app/assets/webp/4x/ui-ux-design-4x.webp";
-import { OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
+import { UI_UX_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { UI_UX_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -35,6 +35,7 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         width: 2000,
         alt: "UI/UX Design and Automation Services",
         className: "object-contain",
+        loading: "eager",
       },
     },
     ctas: [
@@ -286,7 +287,7 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
     },
-    valuesCards: OUR_VALUES_CARD_DATA,
+    valuesCards: UI_UX_SERVICE_VALUES_CARD_DATA,
   },
   readyToScale: {
     header: {

@@ -8,7 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { useLayoutEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
+import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
 
 const ICON_SIZE_CLASSNAMES = "w-4 h-4 sm:w-6 sm:h-6 sm:min-w-g sm:min-h-6 text-gray-800";
@@ -134,9 +134,12 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
           {/* Right Side: Steps */}
           <div className="w-full lg:w-1/2 grow">
             {data?.steps.map((step, index) => (
-              <div key={index} className="flex gap-6 items-start relative pb-8 last:pb-0">
+              <div key={index} className="flex flex-col xs:flex-row gap-6 items-start relative pb-8 last:pb-0">
                 <div
-                  className={`w-16 h-16 rounded-2xl shrink-0 flex items-center justify-center border border-gray-100/50 ${step.iconBgColor}`}>
+                  className={twMerge(
+                    `w-12 h-12 md:w-16 md:h-16 shrink-0 flex items-center justify-center border border-gray-100/50 ${step.iconBgColor}`,
+                    COMMON_BORDER_RADIUS,
+                  )}>
                   {step.icon}
                 </div>
 
