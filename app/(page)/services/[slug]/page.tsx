@@ -42,7 +42,7 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
         </section>
       )}
       {servicePageData.whatWeBuild && (
-        <WhatWeBuildSection data={servicePageData.whatWeBuild} classNames="pb-0! md:pb-0! xl:pb-0!" />
+        <WhatWeBuildSection data={servicePageData.whatWeBuild} />
       )}
       {servicePageData.featuresInclude && (
         <FeaturesIncludeSection data={servicePageData.featuresInclude} classNames="pb-0! md:pb-0! xl:pb-0!" />

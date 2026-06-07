@@ -5,6 +5,7 @@ import { SectionSchema } from "@/types/type";
 import { FormEvent, useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
+import { twMerge } from "tailwind-merge";
 
 type BlogsSideBarProps = {
   tags: string;
@@ -14,25 +15,9 @@ type BlogsSideBarProps = {
 export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: BlogsSideBarProps) => {
   const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
   const modalTitleId = useId();
-
-  useEffect(() => {
-    if (!isSubscribeModalOpen) return;
-
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsSubscribeModalOpen(false);
-      }
-    };
-
-    document.addEventListener("keydown", handleEscapeKey);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleEscapeKey);
-      document.body.style.overflow = "";
-    };
-  }, [isSubscribeModalOpen]);
 
   const handleSubscribeSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -43,7 +28,13 @@ export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: Bl
     setIsSubscribed(false);
     setIsSubscribeModalOpen(true);
   };
+  useEffect(() => {
+    const initialize = () => {
+      setIsMounted(true);
+    };
 
+    initialize();
+  }, []);
   return (
     <aside className="space-y-6 lg:sticky lg:top-28 lg:h-fit">
       <div>
@@ -71,12 +62,20 @@ export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: Bl
         </Button>
       </div>
 
-      {isSubscribeModalOpen &&
+      {isMounted &&
         createPortal(
           <div
             aria-labelledby={modalTitleId}
             aria-modal="true"
-            className="fixed inset-0 z-500000 flex items-center justify-center bg-(--root-black-color)/70 px-4 py-6"
+            data-lenis-prevent
+            data-lenis-prevent-touch
+            data-lenis-prevent-wheel
+            className={twMerge(
+              "fixed inset-0 z-500000 flex items-start justify-center overflow-y-auto overscroll-contain bg-(--root-black-color)/70 px-4 py-6 sm:items-center transition-all",
+              isSubscribeModalOpen
+                ? "visible pointer-events-auto opacity-100"
+                : "pointer-events-none opacity-0 invisible",
+            )}
             role="dialog">
             <button
               type="button"
@@ -89,7 +88,12 @@ export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: Bl
               data-lenis-prevent
               data-lenis-prevent-touch
               data-lenis-prevent-wheel
-              className="relative z-10 w-full max-w-120 rounded-2xl border border-(--border-color) bg-(--root-white-color) p-6 text-(--text-main-color) shadow-xl md:p-8">
+              className={twMerge(
+                "relative z-10 my-auto w-full max-w-120 shrink-0 transform-gpu overflow-y-auto rounded-2xl border border-(--border-color) bg-(--root-white-color) p-6 text-(--text-main-color) shadow-xl md:max-h-[calc(100dvh-48px)] md:p-8 transition-all delay-200",
+                isSubscribeModalOpen
+                  ? "visible pointer-events-auto opacity-100 scale-100"
+                  : "pointer-events-none opacity-0 invisible scale-95",
+              )}>
               <div className="flex items-start justify-between gap-5">
                 <div>
                   <h2 id={modalTitleId} className="mt-2 font-instrument-sans text-2xl font-bold">

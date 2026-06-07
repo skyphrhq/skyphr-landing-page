@@ -34,7 +34,7 @@ function WhatWeBuildSection({ data, classNames }: WhatWeBuildSectionProps) {
     { scope: containerRef },
   );
   return (
-    <section ref={containerRef} className={twMerge("w-full h-auto", COMMON_SECTION_PADDING, classNames)}>
+    <section ref={containerRef} className={twMerge("w-full h-auto bg-(--about-us-card-bg)", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} className="px-0!" />
 

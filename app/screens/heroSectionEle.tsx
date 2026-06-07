@@ -33,7 +33,7 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
         <div className="flex flex-col items-center justify-center gap-2">
           {data?.header?.title?.map((titleRow, rowIndex) => (
             <h1
-              className="font-instrument-sans text-center text-4xl  xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
+              className="font-instrument-sans text-center text-4xl xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
               key={rowIndex}>
               {titleRow?.map((chunk, index) => {
                 return (
