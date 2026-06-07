@@ -76,11 +76,11 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
             text: "At Skyphr, we partner with startups, SaaS companies, and enterprises worldwide to design, develop, and scale custom digital products, AI-powered solutions, and web applications. Our team combines strategic product thinking, modern software development, and AI innovation to deliver scalable systems built for performance, reliability, and long-term business growth.",
           },
         ],
-        [
-          {
-            text: "Whether you're launching an MVP, building a SaaS platform, automating operations with AI, or scaling an existing product, we help turn ambitious ideas into market-ready solutions.",
-          },
-        ],
+        // [
+        //   {
+        //     text: "Whether you're launching an MVP, building a SaaS platform, automating operations with AI, or scaling an existing product, we help turn ambitious ideas into market-ready solutions.",
+        //   },
+        // ],
       ],
     },
     cta: {

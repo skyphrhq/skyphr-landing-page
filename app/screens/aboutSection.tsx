@@ -67,7 +67,7 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
             <div className="w-full flex flex-col items-start justify-start gap-5">
               {data?.header?.description?.map((description, index) => (
                 <p
-                  className="text-(--text-secondary-color) text-base lg:text-lg font-instrument-sans font-normal reveal-text-animation"
+                  className="text-(--text-secondary-color) text-sm sm:text-base lg:text-lg font-instrument-sans font-normal reveal-text-animation"
                   key={index}>
                   {description?.map((chunk, chunkIndex) => {
                     return (

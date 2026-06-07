@@ -19,7 +19,7 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
     { scope: animationContainer },
   );
   return (
-    <div className={twMerge("w-full h-fit relative overflow-hidden pt-28 pb-5 px-4 xl:pt-40 xl:pb-0", classNames)}>
+    <div className={twMerge("w-full h-fit relative overflow-hidden pt-28 pb-10 px-4 xl:pt-40 xl:pb-22", classNames)}>
       <div className="skyphr-container px-0!">
         <div
           ref={animationContainer}

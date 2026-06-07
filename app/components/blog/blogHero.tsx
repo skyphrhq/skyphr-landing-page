@@ -12,7 +12,7 @@ export const UIComponent = ({ title, excerpt, authorName, authorRole, publishedA
   return (
     <header className="w-full pt-30 pb-8 md:pt-36 md:pb-12">
       <div className="mx-auto w-full">
-        <h1 className="mt-5 max-w-4xl font-instrument-sans text-4xl font-bold leading-[1.02] tracking-tight text-(--text-main-color) md:text-6xl xl:text-7xl">
+        <h1 className="mt-5 max-w-4xl font-instrument-sans text-3xl lg:text-5xl xl:text-7xl font-bold leading-10 lg:leading-15 xl:leading-20 tracking-tight text-(--text-main-color) ">
           {title}
         </h1>
         <p className="mt-6 max-w-3xl font-inter text-sm leading-7 text-(--text-secondary-color) md:text-base">

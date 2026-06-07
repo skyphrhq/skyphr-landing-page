@@ -54,7 +54,7 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
       <div className="skyphr-container">
         <CommonSectionHeader header={data?.header} className="px-0!" />
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-25">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-15 lg:gap-20 xl:gap-25">
           {/* Left Side: Circular Animation */}
           <div className="w-full lg:w-1/2 max-w-150 flex justify-center relative">
             <div className="relative min-w-[95%] min-h-[95%] aspect-square flex items-center justify-center">
@@ -113,17 +113,17 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
 
               {/* Center Text (Static) */}
               <div className="absolute z-10 text-center flex flex-col items-center justify-center min-w-[50%] min-h-[50%] aspect-auto sm:w-50 sm:h-50 bg-white rounded-full">
-                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,45px)] font-bold text-gray-900 mb-1 tracking-tight font-instrument-sans">
+                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,38px)] lg:text-[clamp(20px,3vw,26px)] xl:text-[clamp(24px,5vw,30px)] 2xl:text-[clamp(24px,8vw,40px)] font-bold text-gray-900 mb-1 tracking-tight font-instrument-sans">
                   {data?.header?.heroHighlightedText?.textOne}
                 </h3>
-                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,5vw,45px)] font-bold text-purple-400 mb-4 tracking-tight font-instrument-sans">
+                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,38px)] lg:text-[clamp(20px,3vw,26px)] xl:text-[clamp(24px,5vw,30px)] 2xl:text-[clamp(24px,8vw,40px)] font-bold text-purple-400 mb-4 tracking-tight font-instrument-sans">
                   {data?.header?.heroHighlightedText?.textTwo}
                 </h3>
                 <div className="w-8 h-0.5 bg-gray-200 mb-4 rounded-full"></div>
                 {data?.header?.heroHighlightedText?.description?.map((desc, index) => (
                   <p
                     key={index}
-                    className="text-xs sm:text-[clamp(12px,3vw,20px)] text-gray-500 font-medium font-instrument-sans">
+                    className="text-xs leading-7 md:text-[clamp(12px,3vw,20px)] lg:text-sm xl:text-[clamp(12px,3vw,16px)] 2xl:text-[clamp(12px,3vw,20px)] text-gray-500 font-medium font-instrument-sans">
                     {desc.text}
                   </p>
                 ))}

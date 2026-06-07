@@ -174,7 +174,7 @@ function CommonContactUsForm() {
             </svg>
             <span className="text-gray-600 font-medium font-inter">Attach a file</span>
           </div>
-          <span className="text-xs text-gray-400 italic">
+          <span className="text-xs text-gray-400 italic text-start">
             Supported files: .pdf, .docx, .odt, .ods, .ppt/x, .xls/x, .rtf, .txt
           </span>
         </label>
