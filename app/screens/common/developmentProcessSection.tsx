@@ -102,6 +102,23 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
                     <p className="mt-2 font-instrument-sans text-sm leading-6 text-(--text-secondary-color) md:text-base md:leading-7">
                       {step.description}
                     </p>
+                    {step?.list && (
+                      <div className="mt-3">
+                        <span className="font-instrument-sans font-semibold text-sm leading-6 text-(--text-main-color) md:text-base md:leading-7">
+                          {step.list?.title}
+                        </span>
+                        <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+                          {step.list.items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-2.5 font-inter text-sm leading-5 text-(--text-secondary-color)">
+                              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--cta-button-background)" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </li>
               );

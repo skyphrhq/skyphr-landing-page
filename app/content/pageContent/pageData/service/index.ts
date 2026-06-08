@@ -7,7 +7,7 @@ import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const SERVICE_PAGE_DATA_BY_SLUG: Record<string, CommonPageDataInterface> = {
   "ui-ux-design": UI_UX_DESIGN_SERVICE_PAGE_DATA,
-  "saas-web-app-development": SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA,
+  "saas-development-services": SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA,
   "ai-development-services": AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA,
   "custom-software-development-services": CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA,
 };

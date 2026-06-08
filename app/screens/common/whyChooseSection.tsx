@@ -11,7 +11,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function WhyChooseSection({ data: { header }, classNames }: WhyChooseSectionProps) {
+function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSectionProps) {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -77,21 +77,37 @@ function WhyChooseSection({ data: { header }, classNames }: WhyChooseSectionProp
                       })}
                     </h2>
                   ))}
-                  <div className="w-full flex flex-col items-start justify-start gap-4 pt-5">
-                    {header?.description?.map((description, index) => (
-                      <p
-                        className="lg:max-w-[90%] text-pretty text-start mr-auto text-sm sm:text-base lg:text-lg reveal-text-animation"
-                        key={index}>
-                        {description?.map((chunk, chunkIndex) => {
-                          return (
-                            <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
-                              {chunk.text}
-                            </span>
-                          );
-                        })}
-                      </p>
-                    ))}
-                  </div>
+                  {header?.description?.length !== 0 && (
+                    <div className="w-full flex flex-col items-start justify-start gap-4 pt-5">
+                      {header?.description?.map((description, index) => (
+                        <p
+                          className="lg:max-w-[90%] text-pretty text-start mr-auto text-sm sm:text-base lg:text-lg reveal-text-animation"
+                          key={index}>
+                          {description?.map((chunk, chunkIndex) => {
+                            return (
+                              <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                                {chunk.text}
+                              </span>
+                            );
+                          })}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                  {reasons && (
+                    <div className="pt-5">
+                      <ul className="flex flex-col gap-2">
+                        {reasons.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2.5 font-inter text-sm leading-5 text-(--text-secondary-color) reveal-text-animation">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--cta-button-background)" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
               <Image src={QuoteIcon} alt="Quote Icon" width={280} height={225} className="absolute top-0 right-0" />

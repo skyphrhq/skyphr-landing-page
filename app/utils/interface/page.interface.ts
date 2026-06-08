@@ -133,6 +133,7 @@ export interface OurTeamSectionInterface {
 export type DevelopmentProcessStep = {
   title: string;
   description: string;
+  list?: { title: string; items: string[] };
 };
 
 export type DevelopmentProcessSectionData = {
@@ -146,7 +147,7 @@ export type FeaturesIncludeSectionData = {
 
 export type WhatWeBuildSectionData = {
   header: SectionHeader;
-  cards: { title: string; description: string }[];
+  cards: { title: string; description: string; list?: { title: string; items: string[] } }[];
 };
 
 export type UseCaseItem = {
@@ -187,6 +188,7 @@ export type WhyChooseReason = {
 
 export type WhyChooseSectionData = {
   header: SectionHeader;
+  reasons?: string[];
 };
 
 // ===============================

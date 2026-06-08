@@ -41,9 +41,9 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
         dropDown: [],
       },
       {
-        id: "saas-web-app-development",
+        id: "saas-development-services",
         label: "SaaS & Web App Development",
-        href: "/services/saas-web-app-development",
+        href: "/services/saas-development-services",
         type: "link",
         isLink: true,
         target: "_self",
