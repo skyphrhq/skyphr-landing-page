@@ -156,3 +156,41 @@ export const CUSTOM_SOFTWARE_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] =
     bgColor: "rgba(93, 173, 226, 0.5)",
   },
 ];
+export const SAAS_DEVELOPMENT_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description:
+      "The best software feels effortless. We focus on creating intuitive experiences and streamlined workflows that reduce friction and improve usability.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built For Scale",
+    description:
+      "Every architecture decision is made with future growth in mind, ensuring your platform can support increasing users, transactions, and business complexity.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description:
+      "Speed, reliability, and efficiency are fundamental to every SaaS product we build, helping improve user satisfaction and business outcomes.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "User-Centered Development",
+    description:
+      "Successful software is built around users. We prioritize usability, accessibility, and customer experience throughout the product lifecycle.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];

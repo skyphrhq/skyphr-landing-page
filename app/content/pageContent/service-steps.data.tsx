@@ -154,3 +154,41 @@ export const CUSTOM_SOFTWARE_SERVICE_STEPS_WE_FOLLOW: OurStepsDataInterface[] = 
     numTextColor: "text-indigo-800",
   },
 ];
+export const SAAS_DEVELOPMENT_SERVICE_STEPS_WE_FOLLOW: OurStepsDataInterface[] = [
+  {
+    num: "01",
+    title: "Discovery & Strategy",
+    desc: "We align business goals, user needs, market opportunities, and technical requirements into a clear execution plan.",
+    icon: <FaRegCompass className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-purple-50",
+    numBgColor: "bg-purple-100",
+    numTextColor: "text-purple-800",
+  },
+  {
+    num: "02",
+    title: "Design & Experience",
+    desc: "We create intuitive, conversion-focused user experiences that improve adoption, engagement, and retention.",
+    icon: <FaRegLightbulb className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-yellow-50",
+    numBgColor: "bg-yellow-100",
+    numTextColor: "text-yellow-800",
+  },
+  {
+    num: "03",
+    title: "Development & Engineering",
+    desc: "Our engineers build scalable software architectures that support performance, security, and future expansion.",
+    icon: <FaCode className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-pink-50",
+    numBgColor: "bg-pink-100",
+    numTextColor: "text-pink-800",
+  },
+  {
+    num: "04",
+    title: "Launch & Growth",
+    desc: "We help launch confidently while continuously optimizing for user feedback, business performance, and growth opportunities.",
+    icon: <FaRocket className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-indigo-50",
+    numBgColor: "bg-indigo-100",
+    numTextColor: "text-indigo-800",
+  },
+];

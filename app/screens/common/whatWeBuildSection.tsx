@@ -34,7 +34,9 @@ function WhatWeBuildSection({ data, classNames }: WhatWeBuildSectionProps) {
     { scope: containerRef },
   );
   return (
-    <section ref={containerRef} className={twMerge("w-full h-auto bg-(--about-us-card-bg)", COMMON_SECTION_PADDING, classNames)}>
+    <section
+      ref={containerRef}
+      className={twMerge("w-full h-auto bg-(--about-us-card-bg)", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} className="px-0!" />
 
@@ -61,6 +63,23 @@ function WhatWeBuildSection({ data, classNames }: WhatWeBuildSectionProps) {
                     <p className="mt-3 font-instrument-sans text-sm leading-6 text-(--text-secondary-color) md:text-base md:leading-7">
                       {card.description}
                     </p>
+                    {card?.list && (
+                      <div className="mt-3">
+                        <span className="font-instrument-sans font-semibold text-sm leading-6 text-(--text-main-color) md:text-base md:leading-7">
+                          {card.list?.title}
+                        </span>
+                        <ul className="mt-2 flex flex-col gap-2">
+                          {card.list.items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-2.5 font-inter text-sm leading-5 text-(--text-secondary-color)">
+                              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--cta-button-background)" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
 
                   <span className="bg-(--bg-blue-shade) flex absolute top-0 left-0 w-full h-full opacity-10 group-hover:opacity-20 transition-all"></span>
