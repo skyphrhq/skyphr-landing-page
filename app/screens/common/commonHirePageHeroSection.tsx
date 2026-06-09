@@ -41,7 +41,7 @@ function CommonHirePageHeroSection({ data }: { data: HireHeroSection }) {
           <div className="mt-8 flex flex-col gap-4">
             {data.highlights.map((highlight) => (
               <div className="flex items-center gap-3" key={highlight}>
-                <div className="w-2.5 h-2.5 min-w-2.5 rounded-full bg-green-500" />
+                <div className="w-2.5 h-2.5 min-w-2.5 rounded-full bg-(--root-black-color)" />
                 <span className="text-base font-medium">{highlight}</span>
               </div>
             ))}
