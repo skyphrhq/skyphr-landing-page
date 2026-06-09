@@ -234,8 +234,12 @@ function CommonContactUsForm() {
 
       <button
         type="submit"
-        className="w-full min-h-11.25 rounded-full bg-(--root-black-color) text-(--root-white-color) font-bold font-instrument-sans text-sm px-5 sm:px-8 py-3 transition-transform duration-300 hover:scale-x-105">
-        Start a Conversation
+        className="w-full min-h-11.25 rounded-full bg-(--root-black-color) text-(--root-white-color) font-bold font-instrument-sans text-sm md:text-base lg:text-lg px-5 sm:px-8 py-3 transition-transform duration-300 relative overflow-hidden border border-(--root-black-color) group cursor-pointer">
+        <span className="w-full h-full flex items-center justify-center relative z-10 group-hover:text-(--root-black-color)">
+          Start a Conversation
+        </span>
+        <span className="absolute top-0 left-0 w-full h-full bg-(--root-black-color)"></span>
+        <span className="absolute top-0 left-0 w-[110%] h-[110%] bg-(--root-white-color) scale-y-0 group-hover:scale-y-100 transition-all origin-bottom"></span>
       </button>
     </form>
   );

@@ -84,7 +84,7 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                       <div className="w-full sm:max-w-[65%]">
                         <p className="font-semibold text-base md:text-lg text-(--text-main-color)">Canada</p>
                         <p className="text-sm text-(--text-secondary-color)">
-                          100 King St W, Hamilton, ON L8P 1A2, Canada
+                          314 Equestrian Way Unit-6, Cambridge, ON N3E 0E4
                         </p>
                       </div>
                     </div>
