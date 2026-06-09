@@ -1,6 +1,7 @@
 import { getServicePageData, SERVICE_PAGE_DATA_BY_SLUG } from "@/app/content/pageContent/pageData/service";
 import DevelopmentProcessSection from "@/app/screens/common/developmentProcessSection";
 import FeaturesIncludeSection from "@/app/screens/common/featuresIncludeSection";
+import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
 import OurApproachSection from "@/app/screens/common/ourApproachSec";
 import OurValuesSection from "@/app/screens/common/ourValuesSection";
 import TechnologyStackSection from "@/app/screens/common/technologyStackSection";
@@ -41,9 +42,7 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
           <ServicesSectionHero data={servicePageData.hero} />
         </section>
       )}
-      {servicePageData.whatWeBuild && (
-        <WhatWeBuildSection data={servicePageData.whatWeBuild} />
-      )}
+      {servicePageData.whatWeBuild && <WhatWeBuildSection data={servicePageData.whatWeBuild} />}
       {servicePageData.featuresInclude && (
         <FeaturesIncludeSection data={servicePageData.featuresInclude} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
@@ -70,6 +69,11 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
       )}
       {servicePageData.whyChoose && (
         <WhyChooseSection data={servicePageData.whyChoose} classNames="pb-0! md:pb-0! xl:pb-0!" />
+      )}
+      {servicePageData?.faq && (
+        <section className="w-full h-auto overflow-hidden">
+          <FrequentlyAskedQuestions data={servicePageData.faq} classNames="pb-0! md:pb-0! xl:pb-0!" />
+        </section>
       )}
       {servicePageData.readyToScale && (
         <section>
