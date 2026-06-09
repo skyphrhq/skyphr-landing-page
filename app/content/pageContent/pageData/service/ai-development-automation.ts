@@ -1,4 +1,5 @@
 import AI_DEVELOPMENT_AUTOMATION_4X_IMG from "@/app/assets/webp/4x/ai-development-automation-4x.webp";
+import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { AI_AUTOMATION_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { AI_AUTOMATION_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
@@ -293,6 +294,18 @@ export const AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA: CommonPageDataInterfac
         ],
       ],
     },
+  },
+  faq: {
+    header: {
+      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+      description: [
+        [
+          { text: "Everything you need to know before starting your project with " },
+          { text: "Skyphr", variant: "brand", classNames: "font-bold" },
+        ],
+      ],
+    },
+    faqsItems: HOME_PAGE_FAQ_DATA,
   },
   readyToScale: {
     header: {

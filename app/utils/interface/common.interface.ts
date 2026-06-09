@@ -143,3 +143,18 @@ export interface OurStepsDataInterface {
 export interface CommonButtonInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
+
+export type IpInfoLiteResponse = {
+  country_code?: string;
+};
+
+export type FormValues = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  country: string;
+  phoneNumber: string;
+  message: string;
+};
+
+export type FormErrors = Partial<Record<keyof FormValues, string>>;

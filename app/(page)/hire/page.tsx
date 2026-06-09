@@ -32,7 +32,7 @@ function HireUSPage() {
       )}
       {CONTACT_PAGE_DATA.readyToScale && (
         <section className="w-full h-auto overflow-hidden">
-          <ReadyToScaleSection data={CONTACT_PAGE_DATA.readyToScale} classNames="pt-0! pb-30" />
+          <ReadyToScaleSection data={CONTACT_PAGE_DATA.readyToScale} classNames="pt-0! md:pt-0! xl:pt-0!" />
         </section>
       )}
     </>

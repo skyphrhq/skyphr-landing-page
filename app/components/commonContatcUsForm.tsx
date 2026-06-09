@@ -3,18 +3,8 @@
 import InputField from "@/app/components/common/inputField";
 import { PHONE_NUMBER_FORMATE } from "@/app/utils/constants/numberFormate.constants";
 import { formateAndVerifyPhoneNumber, verifyPhoneNumberLength } from "@/app/utils/helpers/helper";
-import { useMemo, useState, type ChangeEvent, type FormEvent } from "react";
-
-type FormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  country: string;
-  phoneNumber: string;
-  message: string;
-};
-
-type FormErrors = Partial<Record<keyof FormValues, string>>;
+import { FormErrors, FormValues, IpInfoLiteResponse } from "@/app/utils/interface/common.interface";
+import { useEffect, useMemo, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 
 const initialFormValues: FormValues = {
   firstName: "",
@@ -25,10 +15,55 @@ const initialFormValues: FormValues = {
   message: "",
 };
 
+const IP_INFO_LITE_URL = "https://api.ipinfo.io/lite/me?token=13cd1dabec5b5b";
+
+const getSupportedCountryCode = (countryCode?: string) => {
+  if (!countryCode) return null;
+
+  const normalizedCountryCode = countryCode.toUpperCase();
+
+  return PHONE_NUMBER_FORMATE[normalizedCountryCode] ? normalizedCountryCode : null;
+};
+
+const getVisitorCountryCode = async () => {
+  return await fetch(IP_INFO_LITE_URL)
+    .then((response) => {
+      if (!response.ok) return null;
+
+      return response.json() as Promise<IpInfoLiteResponse>;
+    })
+    .then((data) => {
+      return getSupportedCountryCode(data?.country_code);
+    })
+    .catch(() => null);
+};
+
+const validateForm = (values: FormValues) => {
+  const errors: FormErrors = {};
+
+  if (!values.firstName.trim()) errors.firstName = "First name is required.";
+  if (!values.lastName.trim()) errors.lastName = "Last name is required.";
+  if (!values.email.trim()) {
+    errors.email = "Email address is required.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+    errors.email = "Enter a valid email address.";
+  }
+  if (!values.country) errors.country = "Country is required.";
+  if (!values.phoneNumber.trim()) {
+    errors.phoneNumber = "Contact number is required.";
+  } else if (!verifyPhoneNumberLength(values.phoneNumber, values.country)) {
+    errors.phoneNumber = "Enter a valid contact number for the selected country.";
+  }
+  if (!values.message.trim()) errors.message = "Message is required.";
+
+  return errors;
+};
+
 function CommonContactUsForm() {
   const [formValues, setFormValues] = useState<FormValues>(initialFormValues);
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const hasUserSelectedCountry = useRef(false);
 
   const countryOptions = useMemo(() => {
     const displayNames = new Intl.DisplayNames(["en"], { type: "region" });
@@ -41,28 +76,39 @@ function CommonContactUsForm() {
       .sort((firstCountry, secondCountry) => firstCountry.label.localeCompare(secondCountry.label));
   }, []);
 
-  const validateForm = (values: FormValues) => {
-    const errors: FormErrors = {};
+  useEffect(() => {
+    let isMounted = true;
 
-    if (!values.firstName.trim()) errors.firstName = "First name is required.";
-    if (!values.lastName.trim()) errors.lastName = "Last name is required.";
-    if (!values.email.trim()) {
-      errors.email = "Email address is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-      errors.email = "Enter a valid email address.";
-    }
-    if (!values.country) errors.country = "Country is required.";
-    if (!values.phoneNumber.trim()) {
-      errors.phoneNumber = "Contact number is required.";
-    } else if (!verifyPhoneNumberLength(values.phoneNumber, values.country)) {
-      errors.phoneNumber = "Enter a valid contact number for the selected country.";
-    }
-    if (!values.message.trim()) errors.message = "Message is required.";
+    getVisitorCountryCode().then((countryCode) => {
+      if (!isMounted || !countryCode || hasUserSelectedCountry.current) return;
 
-    return errors;
-  };
+      setFormValues((currentValues) => {
+        if (currentValues.country === countryCode) return currentValues;
+
+        const nextValues = {
+          ...currentValues,
+          country: countryCode,
+          phoneNumber: formateAndVerifyPhoneNumber(currentValues.phoneNumber, countryCode),
+        };
+
+        if (hasSubmitted) {
+          setFormErrors(validateForm(nextValues));
+        }
+
+        return nextValues;
+      });
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [hasSubmitted]);
 
   const updateFormValue = (name: keyof FormValues, value: string) => {
+    if (name === "country") {
+      hasUserSelectedCountry.current = true;
+    }
+
     setFormValues((currentValues) => {
       const nextValues = { ...currentValues, [name]: value };
 
@@ -188,8 +234,7 @@ function CommonContactUsForm() {
 
       <button
         type="submit"
-        className="w-full min-h-11.25 rounded-full bg-(--root-black-color) text-(--root-white-color) font-bold font-instrument-sans text-sm px-5 sm:px-8 py-3 transition-transform duration-300 hover:scale-x-105"
-      >
+        className="w-full min-h-11.25 rounded-full bg-(--root-black-color) text-(--root-white-color) font-bold font-instrument-sans text-sm px-5 sm:px-8 py-3 transition-transform duration-300 hover:scale-x-105">
         Start a Conversation
       </button>
     </form>

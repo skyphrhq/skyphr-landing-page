@@ -1,4 +1,5 @@
 import UI_UX_DESIGN_HERO_4X_IMAGE from "@/app/assets/webp/4x/ui-ux-design-4x.webp";
+import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { UI_UX_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { UI_UX_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
@@ -289,6 +290,18 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     },
     valuesCards: UI_UX_SERVICE_VALUES_CARD_DATA,
   },
+    faq: {
+      header: {
+        title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+        description: [
+          [
+            { text: "Everything you need to know before starting your project with " },
+            { text: "Skyphr", variant: "brand", classNames: "font-bold" },
+          ],
+        ],
+      },
+      faqsItems: HOME_PAGE_FAQ_DATA,
+    },
   readyToScale: {
     header: {
       title: [
