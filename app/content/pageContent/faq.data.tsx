@@ -139,3 +139,103 @@ export const HOME_PAGE_FAQ_DATA: FaqCommonCardData[] = [
     ),
   },
 ];
+
+// hire page
+export const HIRE_REACT_JS_DEVELOPER_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "How quickly can I hire a React.js developer?",
+    answer: (
+      <p>
+        Most React.js developers can be onboarded within a few days depending on{" "}
+        <span className="font-semibold">project requirements</span>,{" "}
+        <span className="font-semibold">team size</span>, and technology stack complexity.
+      </p>
+    ),
+  },
+  {
+    question: "Can I hire a dedicated React.js developer for a long-term project?",
+    answer: (
+      <p>
+        Yes. We offer dedicated React.js developers for{" "}
+        <span className="font-semibold">ongoing product development</span>, feature expansion, maintenance, and scaling
+        initiatives.
+      </p>
+    ),
+  },
+  {
+    question: "Do your React developers have SaaS experience?",
+    answer: (
+      <p>
+        Absolutely. Our team has experience building{" "}
+        <span className="font-semibold">SaaS platforms</span>, multi-tenant applications, subscription systems, and
+        customer-facing products.
+      </p>
+    ),
+  },
+  {
+    question: "Can React.js developers work with my existing team?",
+    answer: (
+      <p>
+        Yes. Our developers seamlessly integrate with your internal engineering, product, and design teams while
+        following your existing <span className="font-semibold">workflows and processes</span>.
+      </p>
+    ),
+  },
+  {
+    question: "What engagement models do you offer?",
+    answer: (
+      <p>
+        We offer <span className="font-semibold">dedicated developers</span>, team augmentation, project-based
+        development, and fully managed development teams.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide React.js developers with Next.js expertise?",
+    answer: (
+      <p>
+        Yes. Many of our developers specialize in both{" "}
+        <span className="font-semibold">React.js and Next.js</span> for high-performance, SEO-friendly web applications.
+      </p>
+    ),
+  },
+  {
+    question: "Why should I choose React.js for my web application?",
+    answer: (
+      <p>
+        React.js provides excellent performance, reusable components, scalability, strong community support, and faster
+        development cycles, making it ideal for{" "}
+        <span className="font-semibold">modern web applications and SaaS products</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you modernize our existing frontend application?",
+    answer: (
+      <p>
+        Yes. We help businesses migrate legacy frontend systems to React.js while improving{" "}
+        <span className="font-semibold">performance, maintainability, and user experience</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How do you ensure code quality?",
+    answer: (
+      <p>
+        We follow industry best practices including code reviews, testing, component architecture standards,
+        documentation, performance optimization, and{" "}
+        <span className="font-semibold">continuous quality assurance</span>.
+      </p>
+    ),
+  },
+  {
+    question: "What types of companies hire React.js developers from Skyphr?",
+    answer: (
+      <p>
+        Startups, SaaS companies, enterprises, product-led businesses, digital agencies, and organizations looking to
+        accelerate frontend development commonly hire our{" "}
+        <span className="font-semibold">React.js developers</span>.
+      </p>
+    ),
+  },
+];
