@@ -1,7 +1,7 @@
-import { FAQ_DATA } from "@/app/content/pageContent/faq.data";
-import { UI_UX_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
-import { COMMON_CONTACT_US_SECTION_DATA, HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
-import { UI_UX_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
+import { HIRE_REACT_JS_DEVELOPER_FAQ_DATA } from "@/app/content/pageContent/faq.data";
+import { HIRE_REACT_JS_DEVELOPER_VALUES_CARDS } from "@/app/content/pageContent/our-values.data";
+import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { HIRE_REACT_JS_DEVELOPER } from "@/app/content/pageContent/service-steps.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
 
@@ -12,109 +12,119 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "Bring in React.js engineers who build fast, reusable, and conversion-focused interfaces for SaaS platforms, dashboards, marketplaces, and modern web products.",
+            text: "Build high-performance web applications, SaaS platforms, dashboards, and digital products with experienced React.js developers who focus on scalability, performance, and long-term product growth.",
+          },
+        ],
+        [
+          {
+            text: `Whether you're launching a startup, modernizing an enterprise application, scaling a SaaS platform, or expanding your engineering team, Skyphr provides dedicated React.js developers who deliver clean architecture, reusable components, and exceptional user experiences.`,
           },
         ],
       ],
     },
     highlights: [
-      "Component-driven React architecture",
-      "Reusable UI systems with clean state management",
-      "Performance-focused frontend delivery",
-      "Flexible engagement for product teams and startups",
+      "Dedicated React.js engineers for modern product development",
+      "Scalable frontend architecture built for growth",
+      "Performance-driven web application development",
+      "Flexible hiring models for startups and enterprises",
     ],
   },
   whatWeBuild: {
     header: {
       title: [
         [{ text: "What " }, { text: "We " }, { text: "Build " }, { text: "Under" }],
-        [{ text: "UI/UX Design Services", variant: "italic", classNames: "text-center" }],
+        [{ text: "React.js" }, { text: "Development" }, { text: "Services" }],
       ],
       description: [
         [
           {
-            text: "We design modern digital experiences that help businesses improve usability, reduce friction, increase customer satisfaction, and drive measurable results.",
+            text: "We help businesses design and develop scalable React.js applications that improve user engagement, accelerate product delivery, and support long-term business objectives.",
           },
         ],
       ],
     },
     cards: [
       {
-        title: "SaaS Product Design",
+        title: "SaaS Application Development",
         description:
-          "UI/UX design for SaaS platforms, dashboards, multi-user systems, and subscription-based products built for scalability, usability, and long-term growth.",
+          "Build scalable SaaS products with modern React.js architecture, reusable components, subscription workflows, user management systems, and enterprise-grade performance.",
       },
       {
-        title: "Web Application Design",
+        title: "Custom Web Application Development",
         description:
-          "Design intuitive web applications with seamless user journeys, optimized workflows, and responsive experiences across devices.",
+          "Develop responsive and feature-rich web applications tailored to your business processes, customer requirements, and operational goals.",
       },
       {
-        title: "Mobile App Design",
+        title: "Enterprise Frontend Development",
         description:
-          "Create engaging iOS and Android experiences with user-centered mobile UI design, intuitive navigation, and conversion-focused interfaces.",
+          "Create powerful enterprise interfaces, internal business systems, ERP platforms, and operational dashboards designed for efficiency and scalability.",
       },
       {
-        title: "Enterprise UX Design",
+        title: "React Dashboard Development",
         description:
-          "Design complex business software, internal tools, ERP systems, and enterprise platforms that improve efficiency and simplify operations.",
+          "Develop real-time dashboards, analytics platforms, reporting systems, and data visualization applications that transform complex information into actionable insights.",
       },
       {
-        title: "Dashboard & Data Visualization Design",
+        title: "React eCommerce Development",
         description:
-          "Transform complex data into actionable insights through intuitive dashboards, reporting interfaces, and visual analytics experiences.",
+          "Build conversion-focused eCommerce storefronts with fast page loads, seamless checkout experiences, personalized customer journeys, and scalable architecture.",
       },
       {
-        title: "Design Systems & UI Libraries",
+        title: "React Migration & Modernization",
         description:
-          "Build scalable design systems, reusable components, style guides, and UI frameworks that ensure consistency across products and teams.",
+          "Modernize legacy applications by migrating outdated frontend technologies to React.js while improving performance, maintainability, and user experience.",
       },
     ],
   },
   featuresInclude: {
     header: {
       title: [
-        [{ text: "Features" }, { text: "We" }, { text: "Can" }, { text: "Design" }, { text: "Into" }],
+        [{ text: "Features" }, { text: "We" }, { text: "Can" }, { text: "Build" }, { text: "Into" }],
         [
           { text: "Your", variant: "italic" },
-          { text: "Digital", variant: "italic" },
-          { text: "Product", variant: "italic" },
+          { text: "React.js", variant: "italic" },
+          { text: "Application", variant: "italic" },
         ],
       ],
       description: [
         [
           {
-            text: "Every business has unique users, goals, and workflows. We design experiences tailored to your audience while balancing usability, performance, and business outcomes.",
+            text: "Every business has unique workflows, customers, and growth objectives. We develop React.js solutions tailored to your operational requirements and product vision.",
           },
         ],
       ],
     },
     features: [
-      "User research",
-      "Customer journey mapping",
-      "Information architecture",
-      "User flow design",
-      "Wireframe",
-      "Interactive prototypes",
-      "Dashboard design",
-      "Mobile app interfaces",
-      "Web application interfaces",
-      "Design systems",
-      "Component libraries",
-      "Accessibility standards",
-      "Responsive design",
-      "Micro-interactions",
-      "Data visualization",
-      "Conversion optimization",
-      "Onboarding experiences",
-      "Multi-user workflows",
-      "Enterprise software UX",
-      "AI product interfaces",
+      "Component-based architecture",
+      "Reusable UI libraries",
+      "Responsive web applications",
+      "Single Page Applications (SPA)",
+      "Progressive Web Apps (PWA)",
+      "Multi-tenant SaaS platforms",
+      "Enterprise dashboards",
+      "Admin panels",
       "Customer portals",
-      "SaaS dashboards",
-      "Product analytics experiences",
-      "User testing",
-      "Usability improvements",
+      "User authentication systems",
+      "Role-based access control",
+      "API integrations",
+      "Third-party service integrations",
+      "Real-time applications",
+      "Data visualization dashboards",
+      "Reporting systems",
+      "Workflow automation interfaces",
+      "CRM interfaces",
+      "ERP frontends",
+      "Marketplace platforms",
+      "Subscription management portals",
+      "Payment gateway integrations",
+      "AI-powered web interfaces",
+      "Mobile-responsive design",
+      "State management solutions",
+      "Performance optimization",
+      "SEO-friendly React applications",
+      "Accessibility compliance",
+      "Internationalization support",
+      "Analytics integrations",
     ],
   },
   useCase: {
@@ -122,143 +132,217 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       title: [
         [{ text: "Why" }, { text: "Executive" }, { text: "Teams" }],
         [
-          { text: "Invest", variant: "italic" },
-          { text: "in", variant: "italic" },
-          { text: "Better", variant: "italic" },
-          { text: "UX", variant: "italic" },
+          { text: "Hire", variant: "italic" },
+          { text: "React.js", variant: "italic" },
+          { text: "Developers", variant: "italic" },
         ],
       ],
       description: [
         [
           {
-            text: "Exceptional user experience is no longer a competitive advantage it's a business requirement. Companies that prioritize UX consistently outperform competitors in customer satisfaction, product adoption, and revenue growth.",
+            text: "React.js has become one of the most trusted frontend technologies for building scalable digital products. Executive teams choose React because it accelerates development while supporting long-term product growth.",
           },
         ],
       ],
     },
     items: [
       {
-        title: "Higher User Adoption",
+        title: "Faster Product Delivery",
         description:
-          "Reduce onboarding friction and help users achieve value faster through intuitive product experiences.",
+          "Reusable components and efficient development workflows reduce time-to-market for new products and features.",
       },
       {
-        title: "Increased Customer Retention",
-        description: "Improve customer satisfaction and loyalty by designing experiences users genuinely enjoy.",
-      },
-      {
-        title: "Faster Product Growth",
+        title: "Better User Experience",
         description:
-          "Create scalable user experiences that support product expansion, feature adoption, and long-term business goals.",
+          "React enables fast, responsive, and highly interactive user experiences that increase engagement and customer satisfaction.",
       },
       {
-        title: "Lower Development Costs",
+        title: "Improved Scalability",
         description:
-          "Validate ideas early through wireframes and prototypes, reducing expensive redesigns and development rework.",
+          "Build applications that support growing user bases, expanding feature sets, and increasing business complexity.",
       },
       {
-        title: "Better Conversion Rates",
+        title: "Lower Long-Term Costs",
         description:
-          "Design conversion-focused experiences that increase signups, engagement, upgrades, and customer acquisition.",
+          "Maintainable code structures and reusable architectures reduce future development and maintenance expenses.",
       },
       {
-        title: "Stronger Brand Perception",
-        description: "Build trust and credibility through professional, consistent, and modern digital experiences.",
+        title: "Stronger Product Performance",
+        description:
+          "Optimize loading times, rendering speed, and application responsiveness to improve user retention and conversions.",
+      },
+      {
+        title: "Future-Proof Technology Stack",
+        description:
+          "React is backed by a massive ecosystem, strong community support, and widespread adoption among leading technology companies.",
       },
     ],
   },
-  whyChoose: {
+
+  technologyStack: {
     header: {
-      title: [
-        [{ text: "Why" }, { text: "Choose" }, { text: "Skyphr" }, { text: "As" }, { text: "Your" }],
-        [
-          { text: "UI/UX", variant: "italic" },
-          { text: "Design", variant: "italic" },
-          { text: "Partner", variant: "italic" },
-        ],
-      ],
+      title: [[{ text: "React.js" }, { text: "Technologies" }, { text: "& Expertise" }]],
       description: [
         [
           {
-            text: "Whether you're launching a new SaaS platform, redesigning an existing product, building an enterprise application, or improving customer engagement, our team helps transform complex ideas into intuitive, scalable digital experiences.",
-          },
-        ],
-        [
-          {
-            text: "We partner with founders, product leaders, and executive teams to design products that users adopt faster, engage with longer, and recommend more often.",
+            text: "Our React.js developers work across modern frontend ecosystems and complementary technologies.",
           },
         ],
       ],
     },
+    groups: [
+      {
+        title: "Frontend Technologies",
+        technologies: [
+          { name: "React.js" },
+          { name: "Next.js" },
+          { name: "TypeScript" },
+          { name: "JavaScript ES6+" },
+          { name: "Redux" },
+          { name: "Zustand" },
+          { name: "React Query" },
+          { name: "Tailwind CSS" },
+          { name: "Material UI" },
+          { name: "Chakra UI" },
+        ],
+      },
+      {
+        title: "Backend & API Integration",
+        technologies: [
+          { name: "Node.js" },
+          { name: "Express.js" },
+          { name: "REST APIs" },
+          { name: "GraphQL" },
+          { name: "Firebase" },
+          { name: "Supabase" },
+        ],
+      },
+      {
+        title: "Cloud & Deployment",
+        technologies: [
+          { name: "AWS" },
+          { name: "Azure" },
+          { name: "Google Cloud" },
+          { name: "Vercel" },
+          { name: "Netlify" },
+          { name: "Docker" },
+        ],
+      },
+    ],
   },
 
   developmentProcess: {
     header: {
-      title: [[{ text: "Easy Four Step To hire" }]],
+      title: [
+        [{ text: "Easy" }, { text: "Four-Step" }, { text: "Process" }, { text: "To" }],
+        [{ text: "Hire" }, { text: "React.js" }, { text: "Developers" }],
+      ],
       description: [
         [
           {
-            text: "We follow a structured UX design process that combines business strategy, user research, and modern interface design to create products people enjoy using.",
+            text: "We follow a streamlined engagement model that helps companies quickly onboard experienced React.js engineers and accelerate product development.",
           },
         ],
       ],
     },
     steps: [
       {
-        title: "Discovery & UX Research",
+        title: "Discovery & Requirement Analysis",
         description:
-          "We analyze your business objectives, target audience, customer behavior, competitors, and product requirements to establish a strong strategic foundation.",
+          "We evaluate your business goals, technical requirements, project scope, timelines, and team structure to identify the ideal React.js development resources.",
       },
       {
-        title: "User Experience Strategy",
+        title: "Developer Selection",
         description:
-          "We define information architecture, customer journeys, user flows, navigation structures, and interaction models that support user goals and business growth.",
+          "Review carefully selected React.js developers based on technical expertise, domain experience, communication skills, and project requirements.",
       },
       {
-        title: "UI Design & Prototyping",
+        title: "Team Integration & Development",
         description:
-          "We create wireframes, high-fidelity interfaces, interactive prototypes, and scalable design systems that bring your product vision to life.",
+          "Developers integrate into your existing workflows, collaborate with stakeholders, and begin building scalable frontend solutions.",
       },
       {
-        title: "Testing & Optimization",
+        title: "Continuous Delivery & Optimization",
         description:
-          "We validate designs through usability testing, stakeholder feedback, and iterative improvements to ensure the best possible user experience before development begins.",
+          "We continuously improve application performance, user experience, code quality, and development efficiency throughout the engagement.",
       },
     ],
   },
 
   ourApproach: {
     header: {
-      title: [[{ text: "How " }, { text: "We" }, { text: "Design" }, { text: "&" }, { text: "Scale" }]],
+      title: [
+        [{ text: "How " }, { text: "We" }, { text: "Build" }, { text: "&" }, { text: "Scale" }],
+        [{ text: "React.js" }, { text: "Products" }],
+      ],
       description: [
         [
           {
-            text: "A streamlined approach to designing, building, and scaling digital products. From strategy to launch, we create high-performance systems focused on user experience, efficiency, and long-term growth.",
+            text: "A proven framework for building scalable frontend applications that align with business objectives and user expectations.",
           },
         ],
       ],
       heroHighlightedText: {
-        textOne: "From Vision",
-        textTwo: "to Experience",
-        description: [{ text: "Research. Strategy. Design." }, { text: "Validate. Scale." }],
+        textOne: "From Concept",
+        textTwo: "to Launch",
+        description: [{ text: "Strategy. Development. Optimization." }],
       },
     },
-    steps: UI_UX_SERVICE_STEPS_WE_FOLLOW,
+    steps: HIRE_REACT_JS_DEVELOPER,
   },
   ourValues: {
     header: {
-      title: [[{ text: "The" }, { text: "Values" }, { text: "That" }, { text: "Drive" }, { text: "Us" }]],
+      title: [
+        [{ text: "The" }, { text: "Values" }, { text: "That" }, { text: "Drive" }, { text: "Our" }],
+        [{ text: "React" }, { text: "Development" }, { text: "Team" }],
+      ],
       description: [
         [
           {
-            text: "The principles behind every design decision, ensuring we create meaningful digital experiences that deliver business value.",
+            text: "The principles behind every product we build and every engineering decision we make.",
           },
         ],
       ],
     },
-    valuesCards: UI_UX_SERVICE_VALUES_CARD_DATA,
+    valuesCards: HIRE_REACT_JS_DEVELOPER_VALUES_CARDS,
   },
-  readyToScale: HOME_PAGE_DATA.readyToScale,
+  whyChoose: {
+    header: {
+      title: [
+        [{ text: "Why" }, { text: "Choose" }, { text: "Skyphr" }, { text: "As" }, { text: "Your" }],
+        [
+          { text: "React.js", variant: "italic" },
+          { text: "Development", variant: "italic" },
+          { text: "Partner", variant: "italic" },
+        ],
+      ],
+      description: [
+        [
+          {
+            text: "Choosing the right React.js development company directly impacts product quality, scalability, and speed to market.",
+          },
+        ],
+        [
+          {
+            text: "At Skyphr, we partner with founders, CTOs, CIOs, product leaders, and executive teams to build modern digital products that deliver measurable business outcomes.",
+          },
+        ],
+      ],
+    },
+    reasons: [
+      "Experienced React.js developers",
+      "Dedicated hiring models",
+      "Flexible engagement options",
+      "SaaS and enterprise expertise",
+      "Modern development practices",
+      "Agile delivery processes",
+      "Scalable architecture design",
+      "Global collaboration capabilities",
+      "Transparent communication",
+      "Long-term technology partnership",
+    ],
+  },
+
   testimonials: {
     header: {
       title: [[{ text: "Trusted by Clients " }, { text: "Worldwide", variant: "italic", classNames: "font-bold" }]],
@@ -274,15 +358,41 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   },
   faq: {
     header: {
-      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+      title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
+      description: [],
+    },
+    faqsItems: HIRE_REACT_JS_DEVELOPER_FAQ_DATA,
+  },
+  readyToScale: {
+    header: {
+      title: [
+        [{ text: "Ready to" }, { text: "Scale" }],
+        [{ text: "Your Product" }, { text: "Team?", variant: "italic" }],
+      ],
       description: [
         [
-          { text: "Everything you need to know before hiring talent through " },
-          { text: "Skyphr", variant: "brand", classNames: "font-bold" },
+          {
+            text: "Book a free 30-minute strategy call with Skyphr to discuss your product goals, technical requirements, hiring needs, and growth plans.",
+          },
+        ],
+        [
+          {
+            text: `Whether you need a single React.js developer or a dedicated frontend engineering team, we'll help you build, launch, and scale faster with confidence.`,
+          },
         ],
       ],
     },
-    faqsItems: FAQ_DATA,
+    ctas: [
+      {
+        label: "Book a Free Call",
+        href: "https://cal.com/skyphr/30min",
+        variant: "CTA_SECONDARY",
+        external: true,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        classNames: "min-w-55",
+      },
+    ],
   },
   contactUs: COMMON_CONTACT_US_SECTION_DATA,
 };

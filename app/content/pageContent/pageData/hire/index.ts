@@ -14,7 +14,7 @@ import { WORDPRESS_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pa
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
 
 export const HIRE_PAGE_DATA_BY_SLUG: Record<string, HirePageDataInterface> = {
-  "reactjs-developer": REACTJS_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-react-js-developers": REACTJS_DEVELOPER_HIRE_PAGE_DATA,
   "nextjs-developer": NEXTJS_DEVELOPER_HIRE_PAGE_DATA,
   "wordpress-developer": WORDPRESS_DEVELOPER_HIRE_PAGE_DATA,
   "gsap-animation-developer": GSAP_ANIMATION_DEVELOPER_HIRE_PAGE_DATA,

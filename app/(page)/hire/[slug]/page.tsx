@@ -71,11 +71,6 @@ async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
         <WhyChooseSection data={hirePageData.whyChoose} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
 
-      {hirePageData.readyToScale && (
-        <section className="w-full h-auto overflow-hidden">
-          <ReadyToScaleSection classNames="pb-0! mb:pb-0! xl:pb-0!" data={hirePageData.readyToScale} />
-        </section>
-      )}
       {hirePageData.testimonials && (
         <section className="w-full h-auto overflow-hidden">
           <ClientTestimonial classNames="pb-0! mb:pb-0! xl:pb-0!" data={hirePageData.testimonials} />
@@ -84,6 +79,12 @@ async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
       {hirePageData.faq && (
         <section className="w-full h-auto overflow-hidden">
           <FrequentlyAskedQuestions data={hirePageData.faq} />
+        </section>
+      )}
+
+      {hirePageData.readyToScale && (
+        <section className="w-full h-auto overflow-hidden">
+          <ReadyToScaleSection classNames="pb-0! mb:pb-0! xl:pb-0!" data={hirePageData.readyToScale} />
         </section>
       )}
       {hirePageData.contactUs && (

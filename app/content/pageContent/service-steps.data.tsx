@@ -192,3 +192,44 @@ export const SAAS_DEVELOPMENT_SERVICE_STEPS_WE_FOLLOW: OurStepsDataInterface[] =
     numTextColor: "text-indigo-800",
   },
 ];
+
+// Hire Page
+
+export const HIRE_REACT_JS_DEVELOPER: OurStepsDataInterface[] = [
+  {
+    num: "01",
+    title: "Build For Scale",
+    desc: "We architect React applications that support future growth without requiring expensive rewrites.",
+    icon: <FaRegCompass className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-purple-50",
+    numBgColor: "bg-purple-100",
+    numTextColor: "text-purple-800",
+  },
+  {
+    num: "02",
+    title: "Product-Focused Engineering",
+    desc: "Every development decision aligns with user needs, business goals, and measurable outcomes.",
+    icon: <FaRegLightbulb className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-yellow-50",
+    numBgColor: "bg-yellow-100",
+    numTextColor: "text-yellow-800",
+  },
+  {
+    num: "03",
+    title: "Performance First",
+    desc: "Fast-loading, responsive applications create better customer experiences and stronger business results.",
+    icon: <FaCode className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-pink-50",
+    numBgColor: "bg-pink-100",
+    numTextColor: "text-pink-800",
+  },
+  {
+    num: "04",
+    title: "Long-Term Maintainability",
+    desc: "Clean code, reusable components, and structured architecture reduce technical debt and improve development velocity.",
+    icon: <FaRocket className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />,
+    iconBgColor: "bg-indigo-50",
+    numBgColor: "bg-indigo-100",
+    numTextColor: "text-indigo-800",
+  },
+];

@@ -93,7 +93,7 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
           {
             id: "reactjs-developer",
             label: "React.js Developer",
-            href: "/hire/reactjs-developer",
+            href: "/hire/hire-react-js-developers",
             type: "link",
             isLink: true,
             target: "_self",
