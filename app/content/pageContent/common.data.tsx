@@ -135,7 +135,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "As a SaaS development company, we build scalable web applications and cloud-based software platforms using modern technologies and robust architectures. Our solutions are optimized for performance, security, and future growth.",
     ctaButton: {
       label: "Explore Web App Solutions",
-      href: "/services/saas-app-development",
+      href: "/services/saas-development-services",
     },
     style: {
       baseColor: "#FF767A",
@@ -155,7 +155,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "We help businesses automate workflows, improve efficiency, and unlock new opportunities through custom AI solutions, AI integrations, intelligent automation, and machine learning-powered systems tailored to business needs.",
     ctaButton: {
       label: "Explore AI Solutions",
-      href: "/services/ai-development-automation",
+      href: "/services/ai-development-services",
     },
     style: {
       baseColor: "#B8C56F",
@@ -175,7 +175,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       "We develop scalable custom software solutions designed around your unique business requirements. From MVP development to enterprise software systems, we deliver reliable products built to support long-term growth.",
     ctaButton: {
       label: "Explore Software Solutions",
-      href: "/services/custom-software-development",
+      href: "/services/custom-software-development-services",
     },
     style: {
       baseColor: "#FC905F",
