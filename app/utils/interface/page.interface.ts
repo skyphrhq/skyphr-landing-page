@@ -195,7 +195,7 @@ export type WhyChooseSectionData = {
 // PAGE TYPE
 // ===============================
 export interface CommonPageDataInterface {
-  Metadata?: Metadata;
+  metadata?: Metadata;
   hero?: HeroSection;
   featuredWorks?: FeaturedWorkDataInterface;
   about?: AboutSection;

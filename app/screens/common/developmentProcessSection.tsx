@@ -36,8 +36,8 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
 
   return (
     <section ref={containerRef} className={twMerge("w-full h-auto", COMMON_SECTION_PADDING, classNames)}>
-      <div className="skyphr-container grid items-stretch grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
-        <div className="lg:sticky top-30 self-start">
+      <div className="skyphr-container flex items-stretch flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-20">
+        <div className="lg:sticky top-30 self-start w-full lg:w-1/2">
           {data.header.title.map((titleRow, rowIndex) => (
             <h2
               className="flex flex-wrap items-center gap-2 font-instrument-sans font-bold leading-tight text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px]"
@@ -69,7 +69,7 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
           ))}
         </div>
 
-        <div className="grow">
+        <div className="grow w-full lg:w-1/2">
           <ol className="space-y-7">
             {data.steps.map((step, index) => {
               const stepNumber = String(index + 1).padStart(2, "0");

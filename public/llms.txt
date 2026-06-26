@@ -61,17 +61,17 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 ## Hiring and Staffing
 
 - [React.js Developer](https://skyphr-landing-page.vercel.app/hire/reactjs-developer): React frontend engineering support.
-- [Next.js Developer](https://skyphr-landing-page.vercel.app/hire/nextjs-developer): Next.js web application development and performance-focused implementation.
-- [Node.js Developer](https://skyphr-landing-page.vercel.app/hire/nodejs-developer): Node.js backend and API development.
-- [Python Developer](https://skyphr-landing-page.vercel.app/hire/python-developer): Python backend, automation, scripting, and AI-adjacent development.
-- [FastAPI Developer](https://skyphr-landing-page.vercel.app/hire/fastapi-developer): FastAPI services, Python APIs, and backend systems.
-- [Full Stack Developer](https://skyphr-landing-page.vercel.app/hire/fullstack-developer): End-to-end web application and product development.
-- [TypeScript Developer](https://skyphr-landing-page.vercel.app/hire/typescript-developer): Type-safe frontend and backend development.
-- [Tailwind CSS Developer](https://skyphr-landing-page.vercel.app/hire/tailwind-css-developer): Tailwind CSS implementation, responsive UI, and design-system-oriented frontend work.
-- [WordPress Developer](https://skyphr-landing-page.vercel.app/hire/wordpress-developer): WordPress website and CMS development.
-- [GSAP Animation Developer](https://skyphr-landing-page.vercel.app/hire/gsap-animation-developer): Web animation and interaction development.
-- [UI Designer](https://skyphr-landing-page.vercel.app/hire/ui-designer): Interface design and digital product visual design.
-- [Wireframe Designer](https://skyphr-landing-page.vercel.app/hire/wireframe-designer): Wireframes, product flows, information architecture, and early UX planning.
+- [Next.js Developer](https://skyphr-landing-page.vercel.app/hire/hire-nextjs-developers): Next.js web application development and performance-focused implementation.
+- [Node.js Developer](https://skyphr-landing-page.vercel.app/hire/hire-nodejs-developers): Node.js backend and API development.
+- [Python Developer](https://skyphr-landing-page.vercel.app/hire/hire-python-developers): Python backend, automation, scripting, and AI-adjacent development.
+- [FastAPI Developer](https://skyphr-landing-page.vercel.app/hire/hire-fastapi-developers): FastAPI services, Python APIs, and backend systems.
+- [Full Stack Developer](https://skyphr-landing-page.vercel.app/hire/hire-full-stack-developers): End-to-end web application and product development.
+- [TypeScript Developer](https://skyphr-landing-page.vercel.app/hire/hire-typescript-developers): Type-safe frontend and backend development.
+- [Tailwind CSS Developer](https://skyphr-landing-page.vercel.app/hire/hire-tailwind-css-developers): Tailwind CSS implementation, responsive UI, and design-system-oriented frontend work.
+- [WordPress Developer](https://skyphr-landing-page.vercel.app/hire/hire-wordpress-developers): WordPress website and CMS development.
+- [GSAP Animation Developer](https://skyphr-landing-page.vercel.app/hire/hire-gsap-animation-developers): Web animation and interaction development.
+- [UI Designer](https://skyphr-landing-page.vercel.app/hire/hire-ui-designers): Interface design and digital product visual design.
+- [Wireframe Designer](https://skyphr-landing-page.vercel.app/hire/hire-wireframe-designers): Wireframes, product flows, information architecture, and early UX planning.
 
 ## Company Information
 

@@ -24,22 +24,24 @@ function CommonSectionHeader({ header, className }: CommonSectionHeaderInterface
           })}
         </h2>
       ))}
-      <div className="w-full flex flex-col items-start justify-start gap-5">
-        {" "}
-        {header?.description?.map((description, index) => (
-          <p
-            className="max-w-2xl text-pretty text-center mx-auto text-sm sm:text-base lg:text-lg pt-4 reveal-text-animation"
-            key={index}>
-            {description?.map((chunk, chunkIndex) => {
-              return (
-                <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
-                  {chunk.text}
-                </span>
-              );
-            })}
-          </p>
-        ))}
-      </div>
+      {header?.description?.length !== 0 && (
+        <div className="w-full flex flex-col items-start justify-start gap-5 pt-4">
+          {" "}
+          {header?.description?.map((description, index) => (
+            <p
+              className="max-w-2xl text-pretty text-center mx-auto text-sm sm:text-base lg:text-lg reveal-text-animation"
+              key={index}>
+              {description?.map((chunk, chunkIndex) => {
+                return (
+                  <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                    {chunk.text}
+                  </span>
+                );
+              })}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -3,9 +3,35 @@ import { HIRE_REACT_JS_DEVELOPER_VALUES_CARDS } from "@/app/content/pageContent/
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { HIRE_REACT_JS_DEVELOPER } from "@/app/content/pageContent/service-steps.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
 
 export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
+  metadata: {
+    title: "Hire React.js Developers | Dedicated React JS Development Team | Skyphr",
+    description:
+      "Hire expert React.js developers from Skyphr to build scalable SaaS platforms, web applications, dashboards, enterprise software, and modern frontend solutions. Flexible hiring models, fast onboarding, and production-ready React development.",
+    openGraph: {
+      title: "Hire React.js Developers | Dedicated React JS Development Team | Skyphr",
+      description:
+        "Hire expert React.js developers from Skyphr to build scalable SaaS platforms, web applications, dashboards, enterprise software, and modern frontend solutions. Flexible hiring models, fast onboarding, and production-ready React development.",
+      images: "/og-image/hire-react-js-developers.png",
+      type: "website",
+    },
+    twitter: {
+      title: "Hire React.js Developers | Dedicated React JS Development Team | Skyphr",
+      description:
+        "Hire expert React.js developers from Skyphr to build scalable SaaS platforms, web applications, dashboards, enterprise software, and modern frontend solutions. Flexible hiring models, fast onboarding, and production-ready React development.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/hire-react-js-developers.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/hire/hire-react-js-developers`,
+    },
+  },
+
   hero: {
     header: {
       title: [[{ text: "Hire Expert " }, { text: "React.js Developers", variant: "italic" }]],

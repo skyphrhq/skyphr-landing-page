@@ -11,6 +11,7 @@ import WhatWeBuildSection from "@/app/screens/common/whatWeBuildSection";
 import WhyChooseSection from "@/app/screens/common/whyChooseSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
@@ -21,12 +22,21 @@ type HireFromSkyphrProps = {
   }>;
 };
 
-export const dynamicParams = false;
-
 export function generateStaticParams() {
   return Object.keys(HIRE_PAGE_DATA_BY_SLUG).map((slug) => ({
     slug,
   }));
+}
+
+export async function generateMetadata({ params }: HireFromSkyphrProps): Promise<Metadata> {
+  const { slug } = await params;
+  const hirePageData = getHirePageData(slug);
+
+  if (!hirePageData) {
+    notFound();
+  }
+
+  return hirePageData.metadata || {};
 }
 
 async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
@@ -84,7 +94,7 @@ async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
 
       {hirePageData.readyToScale && (
         <section className="w-full h-auto overflow-hidden">
-          <ReadyToScaleSection classNames="pb-0! mb:pb-0! xl:pb-0!" data={hirePageData.readyToScale} />
+          <ReadyToScaleSection classNames="pt-0! mb:pt-0! xl:pt-0!" data={hirePageData.readyToScale} />
         </section>
       )}
       {hirePageData.contactUs && (
