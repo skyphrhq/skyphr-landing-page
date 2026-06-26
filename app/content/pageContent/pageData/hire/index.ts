@@ -2,6 +2,7 @@ import { FASTAPI_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/page
 import { FULLSTACK_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/fullstack-developer.data";
 import { GSAP_ANIMATION_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/gsap-animation-developer.data";
 import { NEXTJS_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/nextjs-developer.data";
+
 import { NODEJS_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/nodejs-developer.data";
 import { PYTHON_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/python-developer.data";
 import { REACTJS_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/reactjs-developer.data";
@@ -15,17 +16,17 @@ import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
 
 export const HIRE_PAGE_DATA_BY_SLUG: Record<string, HirePageDataInterface> = {
   "hire-react-js-developers": REACTJS_DEVELOPER_HIRE_PAGE_DATA,
-  "nextjs-developer": NEXTJS_DEVELOPER_HIRE_PAGE_DATA,
-  "wordpress-developer": WORDPRESS_DEVELOPER_HIRE_PAGE_DATA,
-  "gsap-animation-developer": GSAP_ANIMATION_DEVELOPER_HIRE_PAGE_DATA,
-  "fullstack-developer": FULLSTACK_DEVELOPER_HIRE_PAGE_DATA,
-  "typescript-developer": TYPESCRIPT_DEVELOPER_HIRE_PAGE_DATA,
-  "tailwind-css-developer": TAILWIND_CSS_DEVELOPER_HIRE_PAGE_DATA,
-  "nodejs-developer": NODEJS_DEVELOPER_HIRE_PAGE_DATA,
-  "fastapi-developer": FASTAPI_DEVELOPER_HIRE_PAGE_DATA,
-  "python-developer": PYTHON_DEVELOPER_HIRE_PAGE_DATA,
-  "ui-designer": UI_DESIGNER_HIRE_PAGE_DATA,
-  "wireframe-designer": WIREFRAME_DESIGNER_HIRE_PAGE_DATA,
+  "hire-nextjs-developers": NEXTJS_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-wordpress-developers": WORDPRESS_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-gsap-animation-developers": GSAP_ANIMATION_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-full-stack-developers": FULLSTACK_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-typescript-developers": TYPESCRIPT_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-tailwind-css-developers": TAILWIND_CSS_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-nodejs-developers": NODEJS_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-fastapi-developers": FASTAPI_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-python-developers": PYTHON_DEVELOPER_HIRE_PAGE_DATA,
+  "hire-ui-designers": UI_DESIGNER_HIRE_PAGE_DATA,
+  "hire-wireframe-designers": WIREFRAME_DESIGNER_HIRE_PAGE_DATA,
 };
 
 export function getHirePageData(slug: string) {

@@ -195,7 +195,7 @@ export const SAAS_DEVELOPMENT_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] 
   },
 ];
 
-// hire page 
+// hire page
 export const HIRE_REACT_JS_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
   {
     id: 1,
@@ -230,6 +230,359 @@ export const HIRE_REACT_JS_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
     description:
       "Successful software is built around users. We prioritize usability, accessibility, and customer experience throughout the product lifecycle.",
     icon: <FiUsers className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_WORDPRESS_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated WordPress Developers",
+    description: "Hire full-time WordPress developers dedicated exclusively to your project.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Extension",
+    description: "Expand your internal development team with experienced WordPress specialists.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Hire WordPress experts for fixed-scope website development projects.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Managed Development Team",
+    description: "Access a complete team of designers, developers, QA specialists, and project managers.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_GSAP_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated GSAP Developers",
+    description: "Hire full-time GSAP experts focused exclusively on your project requirements.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Extension",
+    description: "Scale your existing frontend team with experienced animation specialists.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Engage a dedicated GSAP team for specific animation projects and interactive experiences.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Offshore Development Team",
+    description: "Access global GSAP development talent while optimizing development costs and delivery timelines.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_FULL_STACK_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated Full Stack Developers",
+    description: "Hire dedicated developers who work exclusively on your project.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Full Stack Development Teams",
+    description:
+      "Build an entire development team including developers, designers, QA specialists, and project managers.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Engage our experts for specific product builds, platform launches, or modernization initiatives.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Staff Augmentation",
+    description: "Extend your existing engineering team with experienced Full Stack Developers.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_TYPESCRIPT_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated TypeScript Developers",
+    description: "Hire full-time TypeScript developers exclusively for your project.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Extension",
+    description: "Expand your existing engineering team with experienced TypeScript specialists.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Hire a complete TypeScript development team for fixed-scope projects.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Offshore Development Team",
+    description: "Access global TypeScript talent while optimizing development costs.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_TAILWIND_CSS_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated Tailwind CSS Developers",
+    description: "Hire full-time Tailwind CSS experts dedicated exclusively to your project.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Augmentation",
+    description: "Extend your existing development team with experienced Tailwind CSS professionals.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Engage our specialists for complete frontend development projects with defined deliverables.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Offshore Development Team",
+    description:
+      "Build a cost-effective remote development team while maintaining high-quality standards and productivity.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_NODE_JS_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated Node.js Developers",
+    description: "Hire full-time Node.js developers exclusively focused on your project.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Augmentation",
+    description: "Extend your existing engineering team with skilled Node.js professionals.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Managed Development Teams",
+    description: "Access complete development teams managed by Skyphr for end-to-end project delivery.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Project-Based Engagement",
+    description: "Hire Node.js experts for specific projects, MVP development, migrations, or feature implementations.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_FASTAPI_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated FastAPI Developers",
+    description: "Hire full-time FastAPI engineers dedicated exclusively to your project.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Augmentation",
+    description: "Extend your existing engineering team with experienced FastAPI specialists.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Engage a complete FastAPI development team for fixed-scope projects and product launches.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Offshore Development Teams",
+    description: "Scale development capacity with cost-effective offshore FastAPI experts.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_PYTHON_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated Python Developers",
+    description: "Extend your internal team with full-time Python specialists.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Team Augmentation",
+    description: "Scale development capacity quickly without long-term hiring commitments.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Hire a complete Python development team for end-to-end project execution.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Offshore Development Team",
+    description: "Access highly skilled Python engineers while optimizing operational costs.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_UI_DESIGNER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated UI Designers",
+    description: "Hire full-time UI designers dedicated exclusively to your product and business goals.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Extended Design Team",
+    description: "Augment your existing product or design team with experienced UI professionals.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Project-Based Engagement",
+    description: "Engage UI designers for specific design projects, redesign initiatives, or product launches.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Design Leadership Support",
+    description:
+      "Access senior UI specialists who can guide design strategy, systems, and product experience decisions.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const HIRE_WIREFRAME_DESIGNER_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Dedicated Wireframe Designers",
+    description: "Hire full-time wireframe designers for ongoing product design initiatives.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Project-Based Engagement",
+    description: "Ideal for MVPs, redesigns, SaaS platforms, and new product launches.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Team Extension",
+    description: "Expand your existing UX or product design team with specialized wireframing expertise.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Design Consulting",
+    description: "Engage experienced UX strategists for product planning, research, and wireframe architecture.",
+    icon: <FiZap className="text-2xl" />,
     color: "#5DADE2",
     bgColor: "rgba(93, 173, 226, 0.5)",
   },

@@ -52,7 +52,7 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
                 alt="Why Choose Skyphr"
                 width={500}
                 height={500}
-                className={twMerge("object-cover", COMMON_BORDER_RADIUS)}
+                className={twMerge("object-cover w-full h-full", COMMON_BORDER_RADIUS)}
               />
             </div>
             <div className="w-full md:w-[60%] relative z-10">

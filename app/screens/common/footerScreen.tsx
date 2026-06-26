@@ -1,57 +1,51 @@
+"use client";
+
 import SkyphrWhiteLogo from "@/app/assets/logo/skyphr-logo-transparent-white.webp";
 import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { SOCIAL_LINKS } from "@/app/content/pageContent/socilaLinks.data";
 import Image from "next/image";
 import Link from "next/link";
-
-type FooterLink = {
-  label: string;
-  href: string;
-};
-
-const FOOTER_COMPANY_LINKS: FooterLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services" },
-  { label: "Hire", href: "/hire" },
-  { label: "Contact", href: "/contact" },
-];
-
-const FOOTER_SERVICE_LINKS: FooterLink[] = [
-  { label: "UI UX Design", href: "/services" },
-  { label: "SaaS & Web App Development", href: "/services" },
-  { label: "AI/ML", href: "/services" },
-];
-const FOOTER_HIRE_FRONTEND_LINKS: FooterLink[] =
-  NAVBAR_LINKS_DATA.find((item) => item.id === "hire")
-    ?.dropDown?.find((subItem) => subItem.id === "frontend-engineering")
-    ?.dropDown?.map(({ label, href }) => ({ label, href })) || [];
-
-const FOOTER_HIRE_BACKEND_LINKS: FooterLink[] =
-  NAVBAR_LINKS_DATA.find((item) => item.id === "hire")
-    ?.dropDown?.find((subItem) => subItem.id === "backend-engineering")
-    ?.dropDown?.map(({ label, href }) => ({ label, href })) || [];
-
-const FOOTER_HIRE_UI_UX_LINKS: FooterLink[] =
-  NAVBAR_LINKS_DATA.find((item) => item.id === "hire")
-    ?.dropDown?.find((subItem) => subItem.id === "ui-ux-design")
-    ?.dropDown?.map(({ label, href }) => ({ label, href })) || [];
-
-const FOOTER_RESOURCE_LINKS: FooterLink[] = [
-  { label: "Sitemap", href: "/sitemap" },
-  { label: "Start a Project", href: "/contact" },
-];
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 
 const FOOTER_LINK_GROUPS = [
-  { title: "Company", links: FOOTER_COMPANY_LINKS },
-  { title: "Services", links: FOOTER_SERVICE_LINKS },
-  { title: "Hire Frontend", links: FOOTER_HIRE_FRONTEND_LINKS },
-  { title: "Hire Backend", links: FOOTER_HIRE_BACKEND_LINKS },
-  { title: "Hire UI/UX", links: FOOTER_HIRE_UI_UX_LINKS },
-  { title: "Resources", links: FOOTER_RESOURCE_LINKS },
+  {
+    title: "Company",
+    links: NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+  },
+  { title: "Services", links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat() },
+  {
+    title: "Hire Frontend",
+    links: NAVBAR_LINKS_DATA.map((page) =>
+      page.id === "hire"
+        ? page.dropDown?.filter((item) => item.id === "frontend-engineering").flatMap((category) => category.dropDown)
+        : [],
+    ).flat(),
+  },
+  {
+    title: "Hire Backend",
+    links: NAVBAR_LINKS_DATA.map((page) =>
+      page.id === "hire"
+        ? page.dropDown?.filter((item) => item.id === "backend-engineering").flatMap((category) => category.dropDown)
+        : [],
+    ).flat(),
+  },
+  {
+    title: "Hire UI/UX",
+    links: NAVBAR_LINKS_DATA.map((page) =>
+      page.id === "hire"
+        ? page.dropDown?.filter((item) => item.id === "ui-ux-design").flatMap((category) => category.dropDown)
+        : [],
+    ).flat(),
+  },
 ];
 
 function FooterScreen() {
+  const pathname = usePathname();
+  const [openFooterGroup, setOpenFooterGroup] = useState<{ pathname: string; title: string } | null>(null);
+  const activeFooterGroup = openFooterGroup?.pathname === pathname ? openFooterGroup.title : null;
+
   return (
     <div className="w-full bg-(--root-black-color) relative overflow-hidden font-inter">
       {/* Huge Background Text */}
@@ -97,7 +91,37 @@ function FooterScreen() {
             </div>
           </div>
           {/* Links Columns */}
-          <div className="grid flex-1 grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-x-7 gap-y-10 pt-2">
+          <div className="flex flex-col md:hidden border-t border-white/10">
+            {FOOTER_LINK_GROUPS.map((group) => (
+              <div key={group.title} className="border-b border-white/10">
+                <button
+                  type="button"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left text-white"
+                  aria-expanded={activeFooterGroup === group.title}
+                  onClick={() =>
+                    setOpenFooterGroup(activeFooterGroup === group.title ? null : { pathname, title: group.title })
+                  }>
+                  <span className="text-base font-medium">{group.title}</span>
+                  <FaChevronDown
+                    className={`text-xs shrink-0 transition-transform duration-300 ${activeFooterGroup === group.title ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {activeFooterGroup === group.title && (
+                  <div className="flex flex-col gap-3 pb-5">
+                    {group.links.map((link) => (
+                      <Link
+                        key={`${group.title}-${link.href}-${link.label}`}
+                        href={link.href}
+                        className="text-(--footer-links-color) hover:text-(--text-white-color) transition-colors text-base font-medium">
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="hidden flex-1 grid-cols-2 md:grid md:grid-cols-3 xl:flex xl:items-start xl:justify-between gap-x-7 gap-y-10 pt-2">
             {FOOTER_LINK_GROUPS.map((group) => (
               <div key={group.title} className="flex flex-col gap-4">
                 <span className="text-white font-medium text-sm">{group.title}</span>
