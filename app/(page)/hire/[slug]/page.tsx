@@ -1,3 +1,4 @@
+import JsonLd from "@/app/components/JsonLd";
 import { HIRE_PAGE_DATA_BY_SLUG, getHirePageData } from "@/app/content/pageContent/pageData/hire";
 import CommonHirePageHeroSection from "@/app/screens/common/commonHirePageHeroSection";
 import DevelopmentProcessSection from "@/app/screens/common/developmentProcessSection";
@@ -11,6 +12,8 @@ import WhatWeBuildSection from "@/app/screens/common/whatWeBuildSection";
 import WhyChooseSection from "@/app/screens/common/whyChooseSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
+import { normalizePageMetadata } from "@/app/utils/seo/metadata";
+import { compactSchemas, generateBreadcrumbSchema, generateFaqSchema, generateServiceSchema } from "@/app/utils/seo/schema";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
@@ -36,7 +39,7 @@ export async function generateMetadata({ params }: HireFromSkyphrProps): Promise
     notFound();
   }
 
-  return hirePageData.metadata || {};
+  return hirePageData.metadata ? normalizePageMetadata(hirePageData.metadata, `/hire/${slug}`) : {};
 }
 
 async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
@@ -47,8 +50,25 @@ async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
     notFound();
   }
 
+  const metadataTitle = typeof hirePageData.metadata?.title === "string" ? hirePageData.metadata.title : "Hire from Skyphr";
+  const metadataDescription = hirePageData.metadata?.description ?? "";
+  const schemas = compactSchemas([
+    generateServiceSchema({
+      name: metadataTitle,
+      description: metadataDescription,
+      path: `/hire/${slug}`,
+    }),
+    hirePageData.faq ? generateFaqSchema(hirePageData.faq.faqsItems) : null,
+    generateBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Hire", path: "/hire" },
+      { name: metadataTitle.replace(/\s\|\sSkyphr$/, ""), path: `/hire/${slug}` },
+    ]),
+  ]);
+
   return (
     <>
+      <JsonLd data={schemas} />
       {hirePageData.hero && (
         <section className="w-full h-auto">
           <CommonHirePageHeroSection data={hirePageData.hero} />
