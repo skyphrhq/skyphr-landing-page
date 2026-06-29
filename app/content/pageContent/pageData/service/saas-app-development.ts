@@ -3,9 +3,34 @@ import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { SAAS_DEVELOPMENT_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SAAS_DEVELOPMENT_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "SaaS Development Services | Custom SaaS Application Development Company | Skyphr",
+    description:
+      "Build scalable SaaS platforms with Skyphr. Custom SaaS development, SaaS MVPs, enterprise software, cloud applications, AI-powered products, dashboards, CRM systems, and business automation solutions.",
+    openGraph: {
+      title: "SaaS Development Services | Custom SaaS Application Development Company | Skyphr",
+      description:
+        "Build scalable SaaS platforms with Skyphr. Custom SaaS development, SaaS MVPs, enterprise software, cloud applications, AI-powered products, dashboards, CRM systems, and business automation solutions.",
+      images: "/og-image/saas-development-services.png",
+      type: "website",
+    },
+    twitter: {
+      title: "SaaS Development Services | Custom SaaS Application Development Company | Skyphr",
+      description:
+        "Build scalable SaaS platforms with Skyphr. Custom SaaS development, SaaS MVPs, enterprise software, cloud applications, AI-powered products, dashboards, CRM systems, and business automation solutions.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/saas-development-services.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/services/saas-development-services`,
+    },
+  },
   hero: {
     header: {
       title: [
@@ -496,18 +521,18 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       "End-to-end design, development, and support",
     ],
   },
-    faq: {
-      header: {
-        title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
-        description: [
-          [
-            { text: "Everything you need to know before starting your project with " },
-            { text: "Skyphr", variant: "brand", classNames: "font-bold" },
-          ],
+  faq: {
+    header: {
+      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+      description: [
+        [
+          { text: "Everything you need to know before starting your project with " },
+          { text: "Skyphr", variant: "brand", classNames: "font-bold" },
         ],
-      },
-      faqsItems: HOME_PAGE_FAQ_DATA,
+      ],
     },
+    faqsItems: HOME_PAGE_FAQ_DATA,
+  },
   readyToScale: {
     header: {
       title: [
