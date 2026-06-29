@@ -3,9 +3,34 @@ import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { CUSTOM_SOFTWARE_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { CUSTOM_SOFTWARE_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "Custom Software Development Services for Businesses & Enterprises | Skyphr",
+    description:
+      "Build scalable, secure, and high-performance custom software tailored to your business needs. Skyphr delivers enterprise software development, workflow automation, business applications, and digital transformation solutions for growing companies.",
+    openGraph: {
+      title: "Custom Software Development Services for Businesses & Enterprises | Skyphr",
+      description:
+        "Build scalable, secure, and high-performance custom software tailored to your business needs. Skyphr delivers enterprise software development, workflow automation, business applications, and digital transformation solutions for growing companies.",
+      images: "/og-image/custom-software-development-services.png",
+      type: "website",
+    },
+    twitter: {
+      title: "Custom Software Development Services for Businesses & Enterprises | Skyphr",
+      description:
+        "Build scalable, secure, and high-performance custom software tailored to your business needs. Skyphr delivers enterprise software development, workflow automation, business applications, and digital transformation solutions for growing companies.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/custom-software-development-services.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/services/custom-software-development-services`,
+    },
+  },
   hero: {
     header: {
       title: [

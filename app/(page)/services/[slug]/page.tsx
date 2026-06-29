@@ -11,6 +11,7 @@ import WhyChooseSection from "@/app/screens/common/whyChooseSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import ServicesSectionHero from "@/app/screens/servicesSectionHero";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type HireFromSkyphrProps = {
@@ -25,6 +26,17 @@ export function generateStaticParams() {
   return Object.keys(SERVICE_PAGE_DATA_BY_SLUG).map((slug) => ({
     slug,
   }));
+}
+
+export async function generateMetadata({ params }: HireFromSkyphrProps): Promise<Metadata> {
+  const { slug } = await params;
+  const hirePageData = getServicePageData(slug);
+
+  if (!hirePageData) {
+    notFound();
+  }
+
+  return hirePageData.metadata || {};
 }
 
 async function ServicesPage({ params }: HireFromSkyphrProps) {

@@ -3,9 +3,34 @@ import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { AI_AUTOMATION_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { AI_AUTOMATION_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "AI Development Services for Businesses & Enterprises | Skyphr",
+    description:
+      "Build custom AI solutions, AI automation systems, intelligent applications, and enterprise AI products with Skyphr. We help businesses leverage artificial intelligence to improve efficiency, automate operations, and drive growth.",
+    openGraph: {
+      title: "AI Development Services for Businesses & Enterprises | Skyphr",
+      description:
+        "Build custom AI solutions, AI automation systems, intelligent applications, and enterprise AI products with Skyphr. We help businesses leverage artificial intelligence to improve efficiency, automate operations, and drive growth.",
+      images: "/og-image/ai-development-services.png",
+      type: "website",
+    },
+    twitter: {
+      title: "AI Development Services for Businesses & Enterprises | Skyphr",
+      description:
+        "Build custom AI solutions, AI automation systems, intelligent applications, and enterprise AI products with Skyphr. We help businesses leverage artificial intelligence to improve efficiency, automate operations, and drive growth.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/ai-development-services.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/services/ai-development-services`,
+    },
+  },
   hero: {
     header: {
       title: [
