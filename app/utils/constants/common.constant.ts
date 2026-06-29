@@ -28,4 +28,7 @@ export const COMMON_BORDER_RADIUS = "rounded-lg md:rounded-xl lg:rounded-2xl";
 
 export const COMMON_SECTION_PADDING = "py-15! md:py-20! xl:py-37.5!";
 
-export const SITE_BASE_URL = "https://skyphr-landing-page.vercel.app";
+export const SITE_BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "https://skyphr-landing-page.vercel.app").replace(
+  /\/$/,
+  "",
+);

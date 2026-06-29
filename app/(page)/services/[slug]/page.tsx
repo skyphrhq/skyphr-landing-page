@@ -1,3 +1,4 @@
+import JsonLd from "@/app/components/JsonLd";
 import { getServicePageData, SERVICE_PAGE_DATA_BY_SLUG } from "@/app/content/pageContent/pageData/service";
 import DevelopmentProcessSection from "@/app/screens/common/developmentProcessSection";
 import FeaturesIncludeSection from "@/app/screens/common/featuresIncludeSection";
@@ -11,6 +12,8 @@ import WhyChooseSection from "@/app/screens/common/whyChooseSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import ServicesSectionHero from "@/app/screens/servicesSectionHero";
+import { normalizePageMetadata } from "@/app/utils/seo/metadata";
+import { compactSchemas, generateBreadcrumbSchema, generateFaqSchema, generateServiceSchema } from "@/app/utils/seo/schema";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -36,7 +39,11 @@ export async function generateMetadata({ params }: HireFromSkyphrProps): Promise
     notFound();
   }
 
-  return hirePageData.metadata || {};
+  if (slug === "ui-ux-design") {
+    return hirePageData.metadata || {};
+  }
+
+  return hirePageData.metadata ? normalizePageMetadata(hirePageData.metadata, `/services/${slug}`) : {};
 }
 
 async function ServicesPage({ params }: HireFromSkyphrProps) {
@@ -47,8 +54,28 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
     notFound();
   }
 
+  const metadataTitle = typeof servicePageData.metadata?.title === "string" ? servicePageData.metadata.title : "Skyphr Service";
+  const metadataDescription = servicePageData.metadata?.description ?? "";
+  const schemas =
+    slug === "ui-ux-design"
+      ? []
+      : compactSchemas([
+          generateServiceSchema({
+            name: metadataTitle,
+            description: metadataDescription,
+            path: `/services/${slug}`,
+          }),
+          servicePageData.faq ? generateFaqSchema(servicePageData.faq.faqsItems) : null,
+          generateBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: metadataTitle.replace(/\s\|\sSkyphr$/, ""), path: `/services/${slug}` },
+          ]),
+        ]);
+
   return (
     <>
+      {schemas.length > 0 && <JsonLd data={schemas} />}
       {servicePageData.hero && (
         <section className="w-full h-auto">
           <ServicesSectionHero data={servicePageData.hero} />

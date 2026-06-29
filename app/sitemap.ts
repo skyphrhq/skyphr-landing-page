@@ -1,8 +1,9 @@
 import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import type { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
 import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+const siteUrl = SITE_BASE_URL;
 
 const createSiteMapEntry = (page: NavbarLinksInterface): MetadataRoute.Sitemap[number] => {
   return {
