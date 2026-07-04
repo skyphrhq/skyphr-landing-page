@@ -51,6 +51,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 <Image
                   src={item.imagePath}
                   alt={item.id}
+                  title={item.id}
                   width={380}
                   height={380}
                   loading="lazy"
@@ -69,6 +70,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 <Image
                   src={item.imagePath}
                   alt={item.id}
+                  title={item.id}
                   width={380}
                   height={380}
                   loading="lazy"
@@ -87,6 +89,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 <Image
                   src={item.imagePath}
                   alt={item.id}
+                  title={item.id}
                   width={380}
                   height={380}
                   loading="lazy"
@@ -105,6 +108,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 <Image
                   src={item.imagePath}
                   alt={item.id}
+                  title={item.id}
                   width={380}
                   height={380}
                   loading="lazy"

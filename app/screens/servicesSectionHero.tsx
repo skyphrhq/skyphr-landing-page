@@ -91,6 +91,7 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
                 width={data.header.heroImage.width}
                 height={data.header.heroImage.height}
                 alt={data.header.heroImage.alt}
+                title={data.header.heroImage.alt}
                 loading={data.header.heroImage.loading}
                 className={twMerge(
                   "select-none pointer-events-none",

@@ -52,6 +52,7 @@ function OurServiceCardComponent({
             <Image
               src={data?.imageOptions.imagePath}
               alt={data?.imageOptions.alt}
+              title={data?.imageOptions.alt}
               width={data?.imageOptions.width}
               height={data?.imageOptions.height}
               className={twMerge(

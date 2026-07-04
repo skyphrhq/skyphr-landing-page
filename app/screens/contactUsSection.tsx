@@ -44,6 +44,7 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                     <p className="text-(--text-white-color) font-inter text-sm mb-2 font-medium">Email Us</p>
                     <a
                       href="mailto:sales@skyphr.com"
+                      title="Email sales@skyphr.com"
                       className="text-xl md:text-2xl lg:text-3xl font-semibold hover:underline font-instrument-sans text-(--text-white-color)">
                       sales@skyphr.com
                     </a>
@@ -54,6 +55,7 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                     <div className="flex flex-col gap-3">
                       <a
                         href="tel:+919512293490"
+                        title="Call Skyphr India"
                         className="text-lg md:text-xl lg:text-2xl font-semibold hover:underline font-instrument-sans text-(--text-white-color)">
                         India: +91-927-482-9076
                       </a>

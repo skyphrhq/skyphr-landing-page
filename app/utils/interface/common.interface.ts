@@ -154,6 +154,7 @@ export type FormValues = {
   email: string;
   country: string;
   phoneNumber: string;
+  attachment: File | null;
   message: string;
 };
 

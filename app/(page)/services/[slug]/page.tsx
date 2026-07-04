@@ -39,10 +39,6 @@ export async function generateMetadata({ params }: HireFromSkyphrProps): Promise
     notFound();
   }
 
-  if (slug === "ui-ux-design") {
-    return hirePageData.metadata || {};
-  }
-
   return hirePageData.metadata ? normalizePageMetadata(hirePageData.metadata, `/services/${slug}`) : {};
 }
 
@@ -56,22 +52,19 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
 
   const metadataTitle = typeof servicePageData.metadata?.title === "string" ? servicePageData.metadata.title : "Skyphr Service";
   const metadataDescription = servicePageData.metadata?.description ?? "";
-  const schemas =
-    slug === "ui-ux-design"
-      ? []
-      : compactSchemas([
-          generateServiceSchema({
-            name: metadataTitle,
-            description: metadataDescription,
-            path: `/services/${slug}`,
-          }),
-          servicePageData.faq ? generateFaqSchema(servicePageData.faq.faqsItems) : null,
-          generateBreadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: metadataTitle.replace(/\s\|\sSkyphr$/, ""), path: `/services/${slug}` },
-          ]),
-        ]);
+  const schemas = compactSchemas([
+    generateServiceSchema({
+      name: metadataTitle,
+      description: metadataDescription,
+      path: `/services/${slug}`,
+    }),
+    servicePageData.faq ? generateFaqSchema(servicePageData.faq.faqsItems) : null,
+    generateBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services" },
+      { name: metadataTitle.replace(/\s\|\sSkyphr$/, ""), path: `/services/${slug}` },
+    ]),
+  ]);
 
   return (
     <>

@@ -5,13 +5,14 @@ import { twMerge } from "tailwind-merge";
 
 function CTAButton({ children, btnStyle, className, href, target, rel, theme = "DARK", ...props }: ButtonEleInterface) {
   const { parentWrapper, childrenWrapper } = GET_BUTTON_STYLE(btnStyle, theme);
+  const title = typeof props.title === "string" ? props.title : typeof children === "string" ? children : undefined;
 
   let wrapperElem: React.ElementType = "button";
   if (href) wrapperElem = "a";
   const Tag = wrapperElem as React.ElementType;
 
   return (
-    <Tag {...props} href={href} target={target} rel={rel} className={twMerge(parentWrapper, className)}>
+    <Tag {...props} href={href} target={target} rel={rel} title={title} className={twMerge(parentWrapper, className)}>
       {btnStyle === "CTA_PRIMARY" ? (
         <span className="w-8 h-8 min-w-8 min-h-8 rounded-full bg-(--root-white-color) text-(--cta-button-background) flex items-center justify-center absolute top-1/2 -left-full -translate-y-1/2 group-hover/btn:left-1.5 transition-all duration-300">
           <GoArrowUpRight className="font-semibold" />

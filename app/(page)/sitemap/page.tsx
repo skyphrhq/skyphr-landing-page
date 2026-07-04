@@ -1,13 +1,23 @@
+import JsonLd from "@/app/components/JsonLd";
 import CTAButton from "@/app/components/common/ctaButton";
 import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
-import { Metadata } from "next";
+import { createPageMetadata } from "@/app/utils/seo/metadata";
+import { generateBreadcrumbSchema, generateWebPageSchema } from "@/app/utils/seo/schema";
+import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Sitemap | Skyphr",
-  description: "Explore Skyphr pages, services, hiring pages, and contact links in one place.",
-};
+const title = "Sitemap | Skyphr Website Pages & Resources";
+const description =
+  "Browse the Skyphr sitemap to quickly access our services, solutions, company information, resources, and important website pages in one convenient location.";
+const path = "/sitemap";
+
+export const metadata: Metadata = createPageMetadata({
+  title,
+  description,
+  path,
+  image: "/og-image/sitemap.png",
+});
 
 type SitemapLink = {
   label: string;
@@ -39,6 +49,15 @@ const sitemapGroups: SitemapGroup[] = [
 export default function SitemapPage() {
   return (
     <main className="w-full bg-(--root-white-color)">
+      <JsonLd
+        data={[
+          generateWebPageSchema({ title, description, path }),
+          generateBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Sitemap", path },
+          ]),
+        ]}
+      />
       <section className="w-full px-4 pt-30 pb-12 md:pt-42 md:pb-16 xl:pt-55 xl:pb-20">
         <div className="skyphr-container px-0!">
           <div className="max-w-4xl">

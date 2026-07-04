@@ -35,6 +35,7 @@ function BlogCard({ imageOptions, title, description, label, date }: BlogCardInt
         )}>
         <Image
           alt={imageOptions.alt}
+          title={imageOptions.alt}
           src={imageOptions.imagePath}
           width={imageOptions.width}
           height={imageOptions.height}

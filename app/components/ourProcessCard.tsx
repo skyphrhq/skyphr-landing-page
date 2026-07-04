@@ -11,6 +11,7 @@ function OurProcessCard({ imageOptions, title, description, label }: OurProcessC
         <div className="w-full h-fit">
           <Image
             alt={imageOptions?.alt}
+            title={imageOptions?.alt}
             src={imageOptions?.imagePath}
             width={imageOptions?.width}
             height={imageOptions?.height}

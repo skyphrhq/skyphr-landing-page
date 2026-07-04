@@ -24,3 +24,4 @@ Disallow: /api/
 Disallow: /_next/
 
 Sitemap: https://skyphr.com/sitemap.xml
+LLMs: https://skyphr.com/llms.txt

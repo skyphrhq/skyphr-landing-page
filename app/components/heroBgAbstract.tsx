@@ -9,6 +9,7 @@ function HeroBgAbstract({ className = "" }: { className?: string }) {
         height={1000}
         src={BgAbstractImage}
         alt="Background Abstract Image"
+        title="Background Abstract Image"
         className={twMerge("w-full h-full absolute inset-0 z-10 opacity-70 pointer-events-none", className)}
         loading="eager"
         fetchPriority="high"

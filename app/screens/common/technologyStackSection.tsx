@@ -60,6 +60,7 @@ function TechnologyStackSection({ data, classNames }: TechnologyStackSectionProp
                       <Image
                         src={technology.logoSrc}
                         alt={technology.logoAlt || technology.name}
+                        title={technology.logoAlt || technology.name}
                         width={20}
                         height={20}
                         className="size-5 object-contain"

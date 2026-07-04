@@ -106,6 +106,7 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
                   height={30}
                   src={SkyPhrIcon}
                   alt="SkyPhr Icon"
+                  title="SkyPhr Icon"
                   loading="lazy"
                   className="animate-spin [animation-duration:5s]"
                 />

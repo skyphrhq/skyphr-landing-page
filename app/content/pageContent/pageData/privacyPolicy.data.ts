@@ -1,3 +1,6 @@
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
+import { Metadata } from "next";
+
 export type PrivacyPolicySection = {
   title?: string;
   paragraphs?: string[];
@@ -10,6 +13,7 @@ export type PrivacyPolicySection = {
 };
 
 export type PrivacyPolicyPageData = {
+  metadata?: Metadata;
   hero: {
     title: string;
     highlightedTitle: string;
@@ -36,6 +40,30 @@ export type PrivacyPolicyPageData = {
 };
 
 export const PRIVACY_POLICY_PAGE_DATA: PrivacyPolicyPageData = {
+  metadata: {
+    title: "Privacy Policy | Skyphr",
+    description:
+      "Read Skyphr's Privacy Policy to understand how we collect, use, store, and protect your personal information while providing our digital product and software development services.",
+    openGraph: {
+      title: "Privacy Policy | Skyphr",
+      description:
+        "Read Skyphr's Privacy Policy to understand how we collect, use, store, and protect your personal information while providing our digital product and software development services.",
+      images: "/og-image/privacy-policy.png",
+      type: "website",
+    },
+    twitter: {
+      title: "Privacy Policy | Skyphr",
+      description:
+        "Read Skyphr's Privacy Policy to understand how we collect, use, store, and protect your personal information while providing our digital product and software development services.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/privacy-policy.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/privacy-policy`,
+    },
+  },
   hero: {
     title: "Privacy",
     highlightedTitle: "Policy",

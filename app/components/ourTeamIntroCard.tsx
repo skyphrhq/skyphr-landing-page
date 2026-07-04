@@ -17,6 +17,7 @@ function OurTeamIntroCard({ data }: { data: OurTeamMembersDataArrayInterface }) 
           <div className="aspect-450/635 rounded-lg">
             <Image
               alt={data.imageOptions.alt}
+              title={data.imageOptions.alt}
               src={data.imageOptions.imagePath}
               width={data.imageOptions.width}
               height={data.imageOptions.height}
@@ -59,7 +60,14 @@ function OurTeamIntroCard({ data }: { data: OurTeamMembersDataArrayInterface }) 
                 </div>
               </div>
             </div>
-            <Image src={QuoteIcon} alt="Quote Icon" width={280} height={225} className="absolute top-0 right-0" />
+            <Image
+              src={QuoteIcon}
+              alt="Quote Icon"
+              title="Quote Icon"
+              width={280}
+              height={225}
+              className="absolute top-0 right-0"
+            />
           </div>
         </div>
       </div>

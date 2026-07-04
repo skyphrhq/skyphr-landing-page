@@ -1,8 +1,33 @@
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const CONTACT_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "Contact Skyphr | Let's Build Your Next Digital Product Together",
+    description:
+      "Contact Skyphr to discuss your AI, SaaS, software development, or UI/UX project. Connect with our experts and discover how we can help accelerate your business growth",
+    openGraph: {
+      title: "Contact Skyphr | Let's Build Your Next Digital Product Together",
+      description:
+        "Contact Skyphr to discuss your AI, SaaS, software development, or UI/UX project. Connect with our experts and discover how we can help accelerate your business growth",
+      images: "/og-image/contact-us.png",
+      type: "website",
+    },
+    twitter: {
+      title: "Contact Skyphr | Let's Build Your Next Digital Product Together",
+      description:
+        "Contact Skyphr to discuss your AI, SaaS, software development, or UI/UX project. Connect with our experts and discover how we can help accelerate your business growth",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/contact-us.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/contact`,
+    },
+  },
   hero: {
     header: {
       title: [

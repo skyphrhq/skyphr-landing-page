@@ -7,6 +7,7 @@ import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { INSIGHTS_DATA } from "@/app/content/pageContent/insights.data";
 import { OUR_PROCESS_DATA } from "@/app/content/pageContent/ourProcess.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface, ContactUsSectionInterface } from "@/app/utils/interface/page.interface";
 
 export const COMMON_CONTACT_US_SECTION_DATA: ContactUsSectionInterface = {
@@ -27,6 +28,30 @@ export const COMMON_CONTACT_US_SECTION_DATA: ContactUsSectionInterface = {
 };
 
 export const HOME_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "Skyphr | AI Development, SaaS Development & UI/UX Design Company",
+    description:
+      "Skyphr helps startups and businesses build AI-powered products, scalable SaaS platforms, and intuitive UI/UX designs. Partner with us to turn your idea into a market-ready solution.",
+    openGraph: {
+      title: "Skyphr | AI Development, SaaS Development & UI/UX Design Company",
+      description:
+        "Skyphr helps startups and businesses build AI-powered products, scalable SaaS platforms, and intuitive UI/UX designs. Partner with us to turn your idea into a market-ready solution.",
+      images: "/og-image/home-page.png",
+      type: "website",
+    },
+    twitter: {
+      title: "Skyphr | AI Development, SaaS Development & UI/UX Design Company",
+      description:
+        "Skyphr helps startups and businesses build AI-powered products, scalable SaaS platforms, and intuitive UI/UX designs. Partner with us to turn your idea into a market-ready solution.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/home-page.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}`,
+    },
+  },
   hero: {
     header: {
       title: [
@@ -129,11 +154,11 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
             text: "Businesses across Europe, North America, and global markets trust Skyphr to deliver scalable software products, SaaS platforms, and AI-powered solutions that drive measurable growth.",
           },
         ],
-        [
-          {
-            text: "We focus on delivering results, building long-term partnerships, and helping companies launch products faster with confidence.",
-          },
-        ],
+        // [
+        //   {
+        //     text: "We focus on delivering results, building long-term partnerships, and helping companies launch products faster with confidence.",
+        //   },
+        // ],
       ],
     },
     clientsFeedback: CLIENT_TESTIMONIAL_DATA,

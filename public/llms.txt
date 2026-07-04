@@ -36,6 +36,7 @@ indexing:
   temporary_noindex:
     - /services
     - /hire
+    - /404
 ---
 
 # Skyphr
@@ -56,6 +57,7 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 - [Contact](https://skyphr.com/contact): Project inquiry and consultation page.
 - [Privacy Policy](https://skyphr.com/privacy-policy): Privacy and policy information.
 - [Sitemap](https://skyphr.com/sitemap): Human-readable sitemap.
+- [404 Page](https://skyphr.com/404): Not-found page. This route is marked `noindex, follow`.
 
 ## Services
 
@@ -88,18 +90,20 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 ## Agent Resources
 
 - [robots.txt](https://skyphr.com/robots.txt): Crawl rules, explicit AI crawler rules, sitemap reference, and Content-Signal preferences.
+- [llms.txt](https://skyphr.com/llms.txt): LLM-oriented public website summary and preferred page map.
 - [XML Sitemap](https://skyphr.com/sitemap.xml): Machine-readable sitemap for public pages.
 - [API Catalog](https://skyphr.com/.well-known/api-catalog): Well-known resource catalog for agents.
 - [HTTP Message Signatures Directory](https://skyphr.com/.well-known/http-message-signatures-directory): Public key directory for Web Bot Auth-style signed requests.
-- [llms.txt](https://skyphr.com/llms.txt): This LLM-oriented website summary.
 
 ## Technical SEO Signals
 
 - Primary language: `en-US`.
 - Default robots tag for indexed pages: `index, follow`.
 - Temporary navigation routes `/services` and `/hire` use page-level `noindex, follow`.
+- The `/404` not-found page uses `noindex, follow`.
 - Canonical URLs, Open Graph metadata, Twitter/X metadata, and schema.org JSON-LD are implemented through the Next.js App Router metadata pattern and reusable JSON-LD helpers.
 - Global structured data includes `Organization` and `WebSite`.
+- Home, about, privacy policy, sitemap, services navigation, hire navigation, and 404 pages include `WebPage` and `BreadcrumbList` schema where applicable.
 - Detail service and hiring pages include `Service`, `BreadcrumbList`, and FAQ schema where FAQ content exists.
 - The blog page includes `BlogPosting` and `BreadcrumbList` schema.
 - The contact page includes `ContactPage` and `BreadcrumbList` schema.
@@ -108,6 +112,7 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 
 - Public page search indexing is allowed.
 - Page-level robots tags should be respected. `/services` and `/hire` are crawlable but currently marked `noindex, follow`.
+- The 404 route is crawlable for discovery but marked `noindex, follow`.
 - AI training is not permitted according to the site's `Content-Signal` policy.
 - AI input or retrieval-augmented generation use is not permitted according to the site's `Content-Signal` policy.
 - Internal paths such as `/api/` and `/_next/` are disallowed in `robots.txt`.

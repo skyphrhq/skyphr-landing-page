@@ -107,8 +107,16 @@ function NavBarComponent() {
       )}>
       <div className="w-full skyphr-container h-auto backdrop-blur-[1px] relative z-2">
         <div className="py-2.5 xl:py-5 navbar-inner-wrapper  flex items-center justify-between ">
-          <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
-            <Image width={180} height={40} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+          <Link href="/" title="Skyphr Home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+            <Image
+              width={180}
+              height={40}
+              src={SkyPhrLogo}
+              alt="SkyPhr Logo"
+              title="SkyPhr Logo"
+              className="w-45  h-10"
+              priority
+            />
           </Link>
           <div
             data-lenis-prevent
@@ -126,8 +134,16 @@ function NavBarComponent() {
               isMobileMenuOpen && "is-open",
             )}>
             <div className="skyphr-mobile-nav-close-btn-wrapper">
-              <Link href="/" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
-                <Image width={130} height={30} src={SkyPhrLogo} alt="SkyPhr Logo" className="w-45  h-10" priority />
+              <Link href="/" title="Skyphr Home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+                <Image
+                  width={130}
+                  height={30}
+                  src={SkyPhrLogo}
+                  alt="SkyPhr Logo"
+                  title="SkyPhr Logo"
+                  className="w-45  h-10"
+                  priority
+                />
               </Link>
               <Button
                 type="button"
