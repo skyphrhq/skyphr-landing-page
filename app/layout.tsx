@@ -64,7 +64,7 @@ export default function RootLayout({ children }: RootLayoutInterface) {
               j.async=true;
               j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
               f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-M5ST3QB7');
+            })(window,document,'script','dataLayer','GTM-NW7LWQVT');
           `}
         </Script>
       </head>
@@ -72,7 +72,7 @@ export default function RootLayout({ children }: RootLayoutInterface) {
       <body className="w-full">
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M5ST3QB7"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NW7LWQVT"
             height="0"
             width="0"
             style={{
