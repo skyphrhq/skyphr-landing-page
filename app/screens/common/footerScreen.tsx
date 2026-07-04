@@ -65,6 +65,7 @@ function FooterScreen() {
                   <Image
                     src={SkyphrWhiteLogo}
                     alt="Skyphr Logo"
+                    title="Skyphr Logo"
                     width={220}
                     height={57}
                     className="w-55 h-14.25 object-contain -ml-2.5"
@@ -83,6 +84,7 @@ function FooterScreen() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
+                    title={label}
                     className="group w-11 h-11 flex items-center justify-center rounded-full border border-white/20 text-neutral-300 hover:text-white hover:border-white hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,255,255,0.12)] transition-all duration-300">
                     <Icon className="text-xl transition-transform duration-300 group-hover:scale-110" />
                   </Link>
@@ -112,6 +114,7 @@ function FooterScreen() {
                       <Link
                         key={`${group.title}-${link.href}-${link.label}`}
                         href={link.href}
+                        title={link.label}
                         className="text-(--footer-links-color) hover:text-(--text-white-color) transition-colors text-base font-medium">
                         {link.label}
                       </Link>
@@ -129,6 +132,7 @@ function FooterScreen() {
                   <Link
                     key={`${group.title}-${link.href}-${link.label}`}
                     href={link.href}
+                    title={link.label}
                     className="text-(--footer-links-color) hover:text-(--text-white-color) transition-colors text-base font-medium">
                     {link.label}
                   </Link>
@@ -144,12 +148,14 @@ function FooterScreen() {
           <div className="flex items-center gap-4">
             <Link
               href="/privacy-policy"
+              title="Privacy Policy"
               className="text-(--footer-links-color) text-sm hover:text-(--root-white-color) transition-colors">
               Privacy Policy
             </Link>
             <span className="w-px h-5 bg-(--footer-links-color)"></span>
             <Link
               href="/sitemap"
+              title="Sitemap"
               className="text-(--footer-links-color) text-sm hover:text-(--root-white-color) transition-colors">
               Sitemap
             </Link>

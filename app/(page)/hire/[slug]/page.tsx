@@ -13,11 +13,15 @@ import WhyChooseSection from "@/app/screens/common/whyChooseSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
-import { compactSchemas, generateBreadcrumbSchema, generateFaqSchema, generateServiceSchema } from "@/app/utils/seo/schema";
+import {
+  compactSchemas,
+  generateBreadcrumbSchema,
+  generateFaqSchema,
+  generateServiceSchema,
+} from "@/app/utils/seo/schema";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
-const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
+// const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
 
 type HireFromSkyphrProps = {
   params: Promise<{
@@ -50,7 +54,8 @@ async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
     notFound();
   }
 
-  const metadataTitle = typeof hirePageData.metadata?.title === "string" ? hirePageData.metadata.title : "Hire from Skyphr";
+  const metadataTitle =
+    typeof hirePageData.metadata?.title === "string" ? hirePageData.metadata.title : "Hire from Skyphr";
   const metadataDescription = hirePageData.metadata?.description ?? "";
   const schemas = compactSchemas([
     generateServiceSchema({
@@ -101,11 +106,11 @@ async function HireFromSkyphr({ params }: HireFromSkyphrProps) {
         <WhyChooseSection data={hirePageData.whyChoose} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
 
-      {hirePageData.testimonials && (
+      {/* {hirePageData.testimonials && (
         <section className="w-full h-auto overflow-hidden">
           <ClientTestimonial classNames="pb-0! mb:pb-0! xl:pb-0!" data={hirePageData.testimonials} />
         </section>
-      )}
+      )} */}
       {hirePageData.faq && (
         <section className="w-full h-auto overflow-hidden">
           <FrequentlyAskedQuestions data={hirePageData.faq} />

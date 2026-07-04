@@ -3,11 +3,36 @@ import { ABOUT_US_INFO_CARD_DATA, FEATURED_WORK_DATA } from "@/app/content/pageC
 import { OUR_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 import { createElement } from "react";
 import { FiLinkedin } from "react-icons/fi";
 
 export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "About Skyphr | AI, SaaS & Digital Product Development Company",
+    description:
+      "Learn about Skyphr, a global design and development company helping startups and businesses build AI solutions, SaaS platforms, custom software, and exceptional digital experiences.",
+    openGraph: {
+      title: "About Skyphr | AI, SaaS & Digital Product Development Company",
+      description:
+        "Learn about Skyphr, a global design and development company helping startups and businesses build AI solutions, SaaS platforms, custom software, and exceptional digital experiences.",
+      images: "/og-image/about-us.png",
+      type: "website",
+    },
+    twitter: {
+      title: "About Skyphr | AI, SaaS & Digital Product Development Company",
+      description:
+        "Learn about Skyphr, a global design and development company helping startups and businesses build AI solutions, SaaS platforms, custom software, and exceptional digital experiences.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/about-us.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/about-us`,
+    },
+  },
   hero: {
     header: {
       title: [

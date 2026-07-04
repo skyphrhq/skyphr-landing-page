@@ -72,7 +72,12 @@ export function NavBarCommonLinkComponent({
         parentWrapperClassName,
       )}>
       {shouldRenderLink ? (
-        <Link href={item?.href} target={item?.target} onClick={handleNavLinkClick} className={navLinkClassName}>
+        <Link
+          href={item?.href}
+          target={item?.target}
+          title={item?.label}
+          onClick={handleNavLinkClick}
+          className={navLinkClassName}>
           {navContent}
         </Link>
       ) : hasDropdown ? (

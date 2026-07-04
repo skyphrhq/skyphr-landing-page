@@ -1,19 +1,51 @@
+import JsonLd from "@/app/components/JsonLd";
 import NotFoundImage from "@/app/assets/webp/skyphr-404.webp";
 import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
+import { createPageMetadata } from "@/app/utils/seo/metadata";
+import { generateBreadcrumbSchema, generateWebPageSchema } from "@/app/utils/seo/schema";
+import type { Metadata } from "next";
 import Image from "next/image";
 import CTAButton from "./components/common/ctaButton";
 import HeroBgAbstract from "./components/heroBgAbstract";
 import ReadyToScaleSection from "./screens/readyToScaleSection";
 
+const title = "Page Not Found | Skyphr";
+const description = "The Skyphr page you are looking for does not exist or may have been moved.";
+const path = "/404";
+
+export const metadata: Metadata = createPageMetadata({
+  title,
+  description,
+  path,
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
+});
+
 function PageNotFound() {
   return (
     <div className="w-full h-auto">
+      <JsonLd
+        data={[
+          generateWebPageSchema({ title, description, path }),
+          generateBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Page Not Found", path },
+          ]),
+        ]}
+      />
       <div className="w-full h-fit relative bg-white overflow-hidden py-20">
         <HeroBgAbstract />
         <div className="w-full h-fit relative z-10 flex items-center justify-center">
           <Image
             src={NotFoundImage}
             alt="404 Image"
+            title="404 Image"
             width={800}
             height={500}
             className="w-full h-full max-w-200 max-h-125 object-contain pointer-events-none select-none"

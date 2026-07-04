@@ -3,6 +3,7 @@ import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import OurTeamIntroCard from "@/app/components/ourTeamIntroCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { OurTeamSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -34,7 +35,7 @@ function OurTeamSection({ data, classNames }: OurTeamSectionInterface) {
     { scope: containerRef },
   );
   return (
-    <div className={twMerge("w-full h-full bg-(--root-white-color) pb-30", classNames)} ref={containerRef}>
+    <div className={twMerge("w-full h-fit overflow-hidden", COMMON_SECTION_PADDING, classNames)} ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />
         <div className="lg:max-w-[85%] xl:max-w-[60%] mx-auto">

@@ -1,15 +1,25 @@
+import JsonLd from "@/app/components/JsonLd";
 import HeroBgAbstract from "@/app/components/heroBgAbstract";
 import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { PRIVACY_POLICY_PAGE_DATA, PrivacyPolicySection } from "@/app/content/pageContent/pageData/privacyPolicy.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
+import { normalizePageMetadata } from "@/app/utils/seo/metadata";
+import { generateBreadcrumbSchema, generateWebPageSchema } from "@/app/utils/seo/schema";
 import type { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Skyphr",
-  description: "Skyphr privacy policy and data handling practices.",
-};
+const title =
+  typeof PRIVACY_POLICY_PAGE_DATA.metadata?.title === "string"
+    ? PRIVACY_POLICY_PAGE_DATA.metadata.title
+    : "Privacy Policy | Skyphr";
+const description =
+  PRIVACY_POLICY_PAGE_DATA.metadata?.description ?? "Skyphr privacy policy and data handling practices.";
+const path = "/privacy-policy";
+
+export const metadata: Metadata = PRIVACY_POLICY_PAGE_DATA.metadata
+  ? normalizePageMetadata(PRIVACY_POLICY_PAGE_DATA.metadata, path)
+  : { title, description };
 
 const PrivacyPolicySectionsRenderer = (section: PrivacyPolicySection, isSubSection: boolean = false) => {
   return (
@@ -71,6 +81,15 @@ function PrivacyPolicyPage() {
 
   return (
     <main className="w-full bg-(--root-white-color) font-instrument-sans text-(--text-main-color)">
+      <JsonLd
+        data={[
+          generateWebPageSchema({ title, description, path }),
+          generateBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Privacy Policy", path },
+          ]),
+        ]}
+      />
       <section className="w-full h-auto relative overflow-hidden">
         <HeroBgAbstract className="opacity-55" />
         <div className="skyphr-container relative z-11 pt-28! pb-20! xl:pt-45! xl:pb-35!">
@@ -112,7 +131,10 @@ function PrivacyPolicyPage() {
                   <address className="mt-6 rounded-lg bg-(--about-us-card-bg) p-5 font-instrument-sans text-sm xl:text-base leading-7 xl:leading-9 text-(--text-secondary-color) not-italic">
                     <div className="flex items-center justify-start gap-1">
                       <span className="block font-bold text-(--root-black-color)">Email: </span>
-                      <a className="font-semibold text-(--cta-button-background)" href={`mailto:${contact.email}`}>
+                      <a
+                        className="font-semibold text-(--cta-button-background)"
+                        href={`mailto:${contact.email}`}
+                        title={`Email ${contact.email}`}>
                         {contact.email}
                       </a>
                     </div>
@@ -122,6 +144,7 @@ function PrivacyPolicyPage() {
                         <a
                           className="font-semibold text-(--cta-button-background)"
                           href={`https://${contact.website}`}
+                          title={contact.website}
                           target="_blank"
                           rel="noopener noreferrer">
                           {contact.website}

@@ -3,9 +3,34 @@ import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { UI_UX_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { UI_UX_SERVICE_STEPS_WE_FOLLOW } from "@/app/content/pageContent/service-steps.data";
+import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 
 export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
+  metadata: {
+    title: "UI/UX Design Services | Modern Product Design & UX Solutions | Skyphr",
+    description:
+      "Create intuitive, user-focused digital experiences with Skyphr's UI/UX design services. We design web and mobile interfaces that improve usability, engagement, and business growth.",
+    openGraph: {
+      title: "UI/UX Design Services | Modern Product Design & UX Solutions | Skyphr",
+      description:
+        "Create intuitive, user-focused digital experiences with Skyphr's UI/UX design services. We design web and mobile interfaces that improve usability, engagement, and business growth.",
+      images: "/og-image/ui-ux-design.png",
+      type: "website",
+    },
+    twitter: {
+      title: "UI/UX Design Services | Modern Product Design & UX Solutions | Skyphr",
+      description:
+        "Create intuitive, user-focused digital experiences with Skyphr's UI/UX design services. We design web and mobile interfaces that improve usability, engagement, and business growth.",
+      card: "summary_large_image",
+      creator: "@skyphrhq",
+      site: "@skyphrhq",
+      images: "/og-image/ui-ux-design.png",
+    },
+    alternates: {
+      canonical: `${SITE_BASE_URL}/services/ui-ux-design`,
+    },
+  },
   hero: {
     header: {
       title: [
@@ -290,18 +315,18 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     },
     valuesCards: UI_UX_SERVICE_VALUES_CARD_DATA,
   },
-    faq: {
-      header: {
-        title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
-        description: [
-          [
-            { text: "Everything you need to know before starting your project with " },
-            { text: "Skyphr", variant: "brand", classNames: "font-bold" },
-          ],
+  faq: {
+    header: {
+      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+      description: [
+        [
+          { text: "Everything you need to know before starting your project with " },
+          { text: "Skyphr", variant: "brand", classNames: "font-bold" },
         ],
-      },
-      faqsItems: HOME_PAGE_FAQ_DATA,
+      ],
     },
+    faqsItems: HOME_PAGE_FAQ_DATA,
+  },
   readyToScale: {
     header: {
       title: [

@@ -24,6 +24,7 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
       <Image
         src={HumanRoboHand}
         alt="Human Robo Hand"
+        title="Human Robo Hand"
         width={1500}
         height={982}
         className="w-full h-full pointer-events-none select-none absolute object-cover opacity-8 top-0 right-0 z-10"
