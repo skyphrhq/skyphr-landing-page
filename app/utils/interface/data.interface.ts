@@ -1,10 +1,13 @@
+import { CommonPageDataInterface, HeroSection, ImageOptionsInterface } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 
 export interface NavbarLinksInterface {
   id: string;
   label: string;
   href: string;
-  type: "button" | "link";
+  priority: number;
+  type: "button" | "link" | "listing"; // The "Listing" will be only visible in the sitemap.xml and not in the navbar
+  isLink?: boolean;
   dropDown: NavbarLinksInterface[];
   target?: "_blank" | "_self";
 }
@@ -26,14 +29,7 @@ export interface OurServiceCardDataArrayInterface {
   title: string;
   description: string;
   className?: string;
-  imageOprions: {
-    imagePath: StaticImageData;
-    width: number;
-    height: number;
-    alt: string;
-    className?: string;
-    loading?: "lazy" | "eager";
-  };
+  imageOptions: ImageOptionsInterface;
   ctaButton: {
     label: string;
     href: string;
@@ -42,4 +38,17 @@ export interface OurServiceCardDataArrayInterface {
     baseColor: string;
     darkColor: string;
   };
+}
+
+export interface FaqCommonCardData {
+  question: string;
+  answer: React.ReactNode;
+}
+
+export interface HireHeroSection extends HeroSection {
+  highlights: string[];
+}
+
+export interface HirePageDataInterface extends Omit<CommonPageDataInterface, "hero"> {
+  hero: HireHeroSection;
 }

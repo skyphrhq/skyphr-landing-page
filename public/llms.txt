@@ -1,0 +1,119 @@
+---
+company: Skyphr
+type: ai-development-and-digital-product-studio
+website: https://skyphr.com
+language: en-US
+founder: Varun Patel
+target_customers:
+  - Startups
+  - SaaS businesses
+  - Growing businesses
+  - Enterprises
+  - Founders launching or scaling digital products
+engagement_models:
+  - Product discovery and strategy
+  - UI/UX design
+  - End-to-end product development
+  - SaaS and web application development
+  - AI integration and automation
+  - Dedicated specialist hiring
+core_capabilities:
+  - AI development
+  - AI automation
+  - SaaS platform development
+  - Web application development
+  - Custom software development
+  - UI/UX design
+  - Frontend engineering
+  - Backend engineering
+  - Full-stack engineering
+content_preferences:
+  search: yes
+  ai_train: no
+  ai_input: no
+indexing:
+  default: index, follow
+  temporary_noindex:
+    - /services
+    - /hire
+    - /404
+---
+
+# Skyphr
+
+> Skyphr is an AI development company and digital product studio that helps startups, SaaS businesses, founders, and growing companies design, build, and scale digital products, SaaS platforms, AI systems, automation workflows, and modern web applications.
+
+Skyphr combines product strategy, UI/UX design, software engineering, and AI integration to turn product ideas into reliable, scalable digital systems. The site is most useful for understanding Skyphr's services, hiring options, process, company positioning, and contact paths for new projects.
+
+For LLMs and AI agents, this file summarizes the public Skyphr website and points to the highest-value pages. The primary page language is English (`en-US`). Do not infer details not present on the linked pages. Respect the crawl, robots tag, and content-use policies in `robots.txt`.
+
+## Core Pages
+
+- [Home](https://skyphr.com/): Main overview of Skyphr's services, process, testimonials, insights, and project inquiry options.
+- [About Skyphr](https://skyphr.com/about-us): Company positioning, values, featured work, testimonials, and founder information.
+- [Services](https://skyphr.com/services): Service navigation page. This route is currently marked `noindex, follow` while detail pages remain the preferred indexed service URLs.
+- [Hire](https://skyphr.com/hire): Specialist hiring navigation page. This route is currently marked `noindex, follow` while detail pages remain the preferred indexed hiring URLs.
+- [Blog](https://skyphr.com/blog): Public insights about product development, engineering, AI, and modern web technology.
+- [Contact](https://skyphr.com/contact): Project inquiry and consultation page.
+- [Privacy Policy](https://skyphr.com/privacy-policy): Privacy and policy information.
+- [Sitemap](https://skyphr.com/sitemap): Human-readable sitemap.
+- [404 Page](https://skyphr.com/404): Not-found page. This route is marked `noindex, follow`.
+
+## Services
+
+- [UI UX Design](https://skyphr.com/services/ui-ux-design): Product discovery, wireframes, user interface design, usability, accessibility-minded UX, and conversion-focused product experience work.
+- [SaaS and Web App Development](https://skyphr.com/services/saas-development-services): SaaS platforms, scalable web applications, cloud-ready architecture, and full-stack implementation.
+- [AI Development and Automation](https://skyphr.com/services/ai-development-services): AI integrations, intelligent automation, AI-powered workflows, and business process automation.
+- [Custom Software Development](https://skyphr.com/services/custom-software-development-services): Bespoke software products, MVPs, internal tools, and systems designed around business requirements.
+
+## Hiring and Staffing
+
+- [React.js Developer](https://skyphr.com/hire/hire-react-js-developers): React frontend engineering support.
+- [Next.js Developer](https://skyphr.com/hire/hire-nextjs-developers): Next.js web application development and performance-focused implementation.
+- [Node.js Developer](https://skyphr.com/hire/hire-nodejs-developers): Node.js backend and API development.
+- [Python Developer](https://skyphr.com/hire/hire-python-developers): Python backend, automation, scripting, and AI-adjacent development.
+- [FastAPI Developer](https://skyphr.com/hire/hire-fastapi-developers): FastAPI services, Python APIs, and backend systems.
+- [Full Stack Developer](https://skyphr.com/hire/hire-full-stack-developers): End-to-end web application and product development.
+- [TypeScript Developer](https://skyphr.com/hire/hire-typescript-developers): Type-safe frontend and backend development.
+- [Tailwind CSS Developer](https://skyphr.com/hire/hire-tailwind-css-developers): Tailwind CSS implementation, responsive UI, and design-system-oriented frontend work.
+- [WordPress Developer](https://skyphr.com/hire/hire-wordpress-developers): WordPress website and CMS development.
+- [GSAP Animation Developer](https://skyphr.com/hire/hire-gsap-animation-developers): Web animation and interaction development.
+- [UI Designer](https://skyphr.com/hire/hire-ui-designers): Interface design and digital product visual design.
+- [Wireframe Designer](https://skyphr.com/hire/hire-wireframe-designers): Wireframes, product flows, information architecture, and early UX planning.
+
+## Company Information
+
+- [About Skyphr](https://skyphr.com/about-us): Company details, values, founder information, and service philosophy.
+- [Contact Skyphr](https://skyphr.com/contact): Contact form and project inquiry page.
+- [Book a Call](https://cal.com/skyphr/30min): External scheduling link for a consultation.
+
+## Agent Resources
+
+- [robots.txt](https://skyphr.com/robots.txt): Crawl rules, explicit AI crawler rules, sitemap reference, and Content-Signal preferences.
+- [llms.txt](https://skyphr.com/llms.txt): LLM-oriented public website summary and preferred page map.
+- [XML Sitemap](https://skyphr.com/sitemap.xml): Machine-readable sitemap for public pages.
+- [API Catalog](https://skyphr.com/.well-known/api-catalog): Well-known resource catalog for agents.
+- [HTTP Message Signatures Directory](https://skyphr.com/.well-known/http-message-signatures-directory): Public key directory for Web Bot Auth-style signed requests.
+
+## Technical SEO Signals
+
+- Primary language: `en-US`.
+- Default robots tag for indexed pages: `index, follow`.
+- Temporary navigation routes `/services` and `/hire` use page-level `noindex, follow`.
+- The `/404` not-found page uses `noindex, follow`.
+- Canonical URLs, Open Graph metadata, Twitter/X metadata, and schema.org JSON-LD are implemented through the Next.js App Router metadata pattern and reusable JSON-LD helpers.
+- Global structured data includes `Organization` and `WebSite`.
+- Home, about, privacy policy, sitemap, services navigation, hire navigation, and 404 pages include `WebPage` and `BreadcrumbList` schema where applicable.
+- Detail service and hiring pages include `Service`, `BreadcrumbList`, and FAQ schema where FAQ content exists.
+- The blog page includes `BlogPosting` and `BreadcrumbList` schema.
+- The contact page includes `ContactPage` and `BreadcrumbList` schema.
+
+## Content Usage Policy
+
+- Public page search indexing is allowed.
+- Page-level robots tags should be respected. `/services` and `/hire` are crawlable but currently marked `noindex, follow`.
+- The 404 route is crawlable for discovery but marked `noindex, follow`.
+- AI training is not permitted according to the site's `Content-Signal` policy.
+- AI input or retrieval-augmented generation use is not permitted according to the site's `Content-Signal` policy.
+- Internal paths such as `/api/` and `/_next/` are disallowed in `robots.txt`.
+- Agents should prefer the linked public pages and sitemap over guessing routes.

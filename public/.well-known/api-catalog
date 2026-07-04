@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://skyphr.com/.well-known/api-catalog",
+      "service-doc": [
+        {
+          "href": "https://skyphr.com/sitemap.xml",
+          "type": "application/xml"
+        },
+        {
+          "href": "https://skyphr.com/robots.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://skyphr.com/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://skyphr.com/.well-known/http-message-signatures-directory",
+          "type": "application/http-message-signatures-directory+json"
+        }
+      ]
+    }
+  ]
+}
