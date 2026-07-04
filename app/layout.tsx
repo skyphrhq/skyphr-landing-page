@@ -7,6 +7,7 @@ import { createPageMetadata } from "@/app/utils/seo/metadata";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/app/utils/seo/schema";
 import type { Metadata } from "next";
 import { Instrument_Sans, Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import SmoothScrollProvider from "./components/smoothScrollProvider";
 import { RootLayoutInterface } from "./utils/interface/common.interface";
 
@@ -42,8 +43,6 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
-import Script from "next/script";
-
 export default function RootLayout({ children }: RootLayoutInterface) {
   return (
     <html
@@ -52,20 +51,12 @@ export default function RootLayout({ children }: RootLayoutInterface) {
       className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} antialiased`}>
       <head>
         {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script id="google-tag-manager" strategy="beforeInteractive">
           {`
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-              });
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),
-              dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-M5ST3QB7');
           `}
         </Script>
