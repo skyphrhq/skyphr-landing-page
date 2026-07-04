@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "./animation.css";
 
+@theme {
+  --breakpoint-xs: 491px;
+  --breakpoint-xmd: 991px;
+}
+
 :root {
   --bg-blue-shade: #6974e2;
   --border-color: #dddddd;
@@ -11,6 +16,10 @@
   --text-main-color: #0f0f0f;
   --text-white-color: #f2f2f2;
   --about-us-card-bg: #f5f5f5;
+  --placeholder-color: #9ca3af;
+  --active-link-bg: #3846da;
+  --active-hover-link-bg: #e3e3e3;
+  --footer-links-color: #707070;
 }
 
 .font-playfair-display {
@@ -23,24 +32,329 @@
   font-family: var(--font-instrument-sans);
 }
 
+.fixed-body-container .skyphr-main-wrapper {
+  overflow: hidden;
+  height: 100dvh !important;
+}
+
 .skyphr-container {
   width: 100%;
   margin: 0 auto;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1199px) {
   .skyphr-container {
-    padding: 0 15px;
+    padding: 0 16px;
   }
 }
 @media (min-width: 1200px) {
   .skyphr-container {
-    width: clamp(calc(100% - 100px), calc(100% - 15vw), calc(100% - 300px));
+    width: min(calc(100% - 150px), 1540px);
   }
 }
 
-@media (min-width: 1900px) {
-  .skyphr-container {
-    max-width: 1440px;
+.text-white-color:-webkit-autofill,
+.text-white-color:-webkit-autofill:hover,
+.text-white-color:-webkit-autofill:focus,
+.text-white-color:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--root-white-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.text-black-color:-webkit-autofill,
+.text-black-color:-webkit-autofill:hover,
+.text-black-color:-webkit-autofill:focus,
+.text-black-color:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--root-black-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* .reveal-animation,
+.reveal-text-animation {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(30px);
+} */
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item {
+  position: relative;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-dropdown {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+  z-index: 10;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-dropdown-root {
+  transform: translate(-50%, 8px);
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-dropdown-nested {
+  transform: translate(8px, 0);
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-link {
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  font: inherit;
+  text-align: left;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item.is-active > .skyphr-nav-link,
+.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link {
+  background-color: var(--active-link-bg);
+  color: var(--text-white-color) !important;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item.is-active > .skyphr-nav-btn-link {
+  background-color: var(--active-link-bg) !important;
+  color: var(--text-white-color) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:not(.is-active):hover > .skyphr-nav-link {
+    background-color: var(--active-hover-link-bg);
+    color: var(--text-main-color) !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-right {
+    transform: translateX(2px);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-root {
+    transform: translate(-50%, 0);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-nested {
+    transform: translate(0, 0);
+  }
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-down {
+  transform: rotate(180deg);
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-right {
+  transform: translateX(2px);
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown-root {
+  transform: translate(-50%, 0);
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown-nested {
+  transform: translate(0, 0);
+}
+
+.skyphr-navbar-main-wrapper.is-dropdown-suppressed .skyphr-nav-dropdown {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-mobile-nav-close-btn-wrapper {
+  display: none;
+}
+
+@media only scree and (max-width: 767px) {
+  .about-us-common-card-section {
+    transform: scale(1) !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .skyphr-navbar-main-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    top: 0 !important;
+    border-radius: 0px !important;
+  }
+  .skyphr-navbar-main-wrapper .navbar-inner-wrapper {
+    padding: 16px 16px !important;
+    border-radius: 0px !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-navbar-logo-wrapper img {
+    width: 130 !important;
+    height: 30px !important;
+    max-width: 130px !important;
+    max-height: 30px !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-navbar-content-wrapper {
+    position: fixed !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100dvh !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    background-color: var(--root-white-color) !important;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease !important;
+    pointer-events: none;
+    z-index: 20;
+    max-width: 380px !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-navbar-content-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 1000vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: -1;
+    left: 100%;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-navbar-content-wrapper.is-open::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 1000vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.35s ease;
+    z-index: -1;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-navbar-content-wrapper.is-open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-mobile-nav-close-btn-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--root-white-color);
     width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .skyphr-navbar-main-wrapper .skyphr-mobile-nav-close-btn-wrapper .skyphr-navbar-logo-wrapper img {
+    width: 130 !important;
+    height: 30px !important;
+    max-width: 130px !important;
+    max-height: 30px !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-mobile-nav-close-btn-wrapper .skyphr-mobile-nav-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 999px;
+    background-color: var(--about-us-card-bg);
+  }
+  .skyphr-navbar-main-wrapper .skyphr-navbar-links-wrapper {
+    width: 100% !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    background-color: var(--root-white-color) !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-navbar-links-wrapper .skyphr-nav-links-wrapper-list {
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 50px 16px !important;
+    justify-content: flex-start !important;
+    overflow: auto !important;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 10px) !important;
+    padding-top: 90px !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-item,
+  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown,
+  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown > ul {
+    width: 100% !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown {
+    position: static !important;
+    display: grid !important;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    padding: 0px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    transition:
+      grid-template-rows 0.3s ease,
+      padding-top 0.3s ease !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown.is-open {
+    grid-template-rows: 1fr;
+    padding-top: 8px !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown > ul {
+    min-width: 0 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown.is-open > ul {
+    overflow: visible !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-down,
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-right {
+    transform: none;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open) > .skyphr-nav-link {
+    background-color: var(--active-link-bg);
+    color: var(--text-white-color) !important;
+  }
+  .skyphr-navbar-main-wrapper
+    .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open)
+    > .skyphr-nav-link
+    .skyphr-nav-chevron-down {
+    transform: rotate(180deg);
+  }
+  .skyphr-navbar-main-wrapper
+    .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open)
+    > .skyphr-nav-link
+    .skyphr-nav-chevron-right {
+    transform: rotate(90deg);
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-cta-btn-wrapper {
+    width: 100% !important;
+    background-color: var(--root-white-color) !important;
+    flex-shrink: 0 !important;
+    padding: 16px !important;
   }
 }

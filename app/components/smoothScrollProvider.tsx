@@ -1,26 +1,25 @@
+// components/SmoothScroll.tsx
 "use client";
 
-import { gsap, ScrollTrigger } from "@/app/lib/gsap";
-import Lenis from "lenis";
-import { useEffect } from "react";
-import { SmoothScrollProviderInterface } from "../utils/interface/common.interface";
+import gsap from "gsap";
+import { LenisRef, ReactLenis } from "lenis/react";
+import { useEffect, useRef } from "react";
 
-function SmoothScrollProvider({ children }: SmoothScrollProviderInterface) {
-  gsap.registerPlugin(ScrollTrigger);
+export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const lenisRef = useRef<LenisRef>(null);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 0.95 });
-
-    // Use requestAnimationFrame to continuously update the scroll
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000); // Convert seconds to milliseconds
     }
 
-    requestAnimationFrame(raf);
+    gsap.ticker.add(update);
+    return () => gsap.ticker.remove(update);
   }, []);
 
-  return <>{children}</>;
+  return (
+    <ReactLenis ref={lenisRef} root options={{ autoRaf: false }}>
+      <main className="w-full h-auto skyphr-main-wrapper">{children}</main>
+    </ReactLenis>
+  );
 }
-
-export default SmoothScrollProvider;

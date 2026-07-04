@@ -10,6 +10,8 @@
   animation: marquee 35s linear infinite;
   will-change: transform;
 }
-.marquee-custom-slider .marquee-wrapper:hover .marquee-group {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .marquee-custom-slider .marquee-wrapper:hover .marquee-group {
+    animation-play-state: paused;
+  }
 }
