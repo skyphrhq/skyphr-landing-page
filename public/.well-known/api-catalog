@@ -16,6 +16,14 @@
           "type": "text/plain"
         },
         {
+          "href": "https://skyphr.com/.well-known/agents.json",
+          "type": "application/json"
+        },
+        {
+          "href": "https://skyphr.com/.well-known/dns-aid-records.txt",
+          "type": "text/plain"
+        },
+        {
           "href": "https://skyphr.com/.well-known/http-message-signatures-directory",
           "type": "application/http-message-signatures-directory+json"
         }

@@ -1,0 +1,12 @@
+# DNS for AI Discovery (DNS-AID) records for skyphr.com
+# Publish these records in the public DNS zone for skyphr.com.
+# DNSSEC must be enabled for the zone, and the DS record must be published at the registrar.
+
+_index._agents.skyphr.com. 3600 IN HTTPS 1 skyphr.com. alpn="h2" port=443 mandatory=alpn,port key65400="/.well-known/agents.json"
+_index._agents.skyphr.com. 3600 IN SVCB 1 skyphr.com. alpn="h2" port=443 mandatory=alpn,port key65400="/.well-known/agents.json"
+
+# Optional protocol-specific discovery record.
+# Publish only if you want to advertise an Agent-to-Agent discovery endpoint.
+_a2a._agents.skyphr.com. 3600 IN SVCB 1 skyphr.com. alpn="a2a" port=443 mandatory=alpn,port key65400="/.well-known/agents.json"
+
+# key65400 is a private-use SvcParamKey for the endpoint path until DNS-AID endpoint parameters are registered.

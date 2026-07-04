@@ -1,0 +1,55 @@
+{
+  "name": "Skyphr",
+  "url": "https://skyphr.com",
+  "type": "organization-agent-index",
+  "language": "en-US",
+  "updated": "2026-07-04",
+  "discovery": {
+    "dnsAid": {
+      "indexOwnerName": "_index._agents.skyphr.com",
+      "recordReference": "https://skyphr.com/.well-known/dns-aid-records.txt",
+      "dnssecRequired": true
+    },
+    "web": [
+      {
+        "rel": "llms",
+        "href": "https://skyphr.com/llms.txt",
+        "type": "text/plain"
+      },
+      {
+        "rel": "robots",
+        "href": "https://skyphr.com/robots.txt",
+        "type": "text/plain"
+      },
+      {
+        "rel": "sitemap",
+        "href": "https://skyphr.com/sitemap.xml",
+        "type": "application/xml"
+      },
+      {
+        "rel": "api-catalog",
+        "href": "https://skyphr.com/.well-known/api-catalog",
+        "type": "application/linkset+json"
+      },
+      {
+        "rel": "http-message-signatures-directory",
+        "href": "https://skyphr.com/.well-known/http-message-signatures-directory",
+        "type": "application/http-message-signatures-directory+json"
+      }
+    ]
+  },
+  "publicPages": {
+    "home": "https://skyphr.com/",
+    "about": "https://skyphr.com/about-us",
+    "services": "https://skyphr.com/services",
+    "hire": "https://skyphr.com/hire",
+    "blog": "https://skyphr.com/blog",
+    "contact": "https://skyphr.com/contact"
+  },
+  "contentPolicy": {
+    "search": "allowed",
+    "aiTraining": "not_allowed",
+    "aiInput": "not_allowed",
+    "source": "https://skyphr.com/robots.txt"
+  }
+}

@@ -93,6 +93,8 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 - [llms.txt](https://skyphr.com/llms.txt): LLM-oriented public website summary and preferred page map.
 - [XML Sitemap](https://skyphr.com/sitemap.xml): Machine-readable sitemap for public pages.
 - [API Catalog](https://skyphr.com/.well-known/api-catalog): Well-known resource catalog for agents.
+- [Agent Index](https://skyphr.com/.well-known/agents.json): Organization-level agent discovery index for DNS-AID and web-based discovery.
+- [DNS-AID Records](https://skyphr.com/.well-known/dns-aid-records.txt): DNS record reference for `_index._agents.skyphr.com` and related DNS-AID publication.
 - [HTTP Message Signatures Directory](https://skyphr.com/.well-known/http-message-signatures-directory): Public key directory for Web Bot Auth-style signed requests.
 
 ## Technical SEO Signals
@@ -107,6 +109,7 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 - Detail service and hiring pages include `Service`, `BreadcrumbList`, and FAQ schema where FAQ content exists.
 - The blog page includes `BlogPosting` and `BreadcrumbList` schema.
 - The contact page includes `ContactPage` and `BreadcrumbList` schema.
+- DNS-AID discovery should be published in DNS under `_index._agents.skyphr.com` using SVCB/HTTPS records and a DNSSEC-signed public zone.
 
 ## Content Usage Policy
 
