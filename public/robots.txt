@@ -1,10 +1,6 @@
-# Content usage preferences for automated systems.
-Content-Signal: ai-train=no, search=yes, ai-input=no
-
-# Site language: en-US.
+# Site language: en-US
 # Public pages are crawlable. Page-level robots tags control index/noindex where needed.
 
-# AI crawlers: allow public pages for search discovery, block internal/API and build asset paths.
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: Claude-Web
@@ -17,12 +13,9 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-# Default crawlers: allow public pages, block internal/API and build asset paths.
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 
 Sitemap: https://skyphr.com/sitemap.xml
-LLMs: https://skyphr.com/llms.txt
-Agents: https://skyphr.com/.well-known/agents.json
