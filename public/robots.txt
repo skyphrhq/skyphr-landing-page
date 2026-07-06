@@ -1,8 +1,9 @@
 # Site language: en-US
-# Public pages are crawlable. Page-level robots tags control index/noindex where needed.
+# Public pages are crawlable.
 
 User-agent: GPTBot
 User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
 User-agent: Claude-Web
 User-agent: ClaudeBot
 User-agent: Google-Extended
@@ -19,3 +20,4 @@ Disallow: /api/
 Disallow: /_next/
 
 Sitemap: https://skyphr.com/sitemap.xml
+LLMs: https://skyphr.com/llms.txt
