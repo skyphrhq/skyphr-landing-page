@@ -12,11 +12,9 @@ User-agent: YouBot
 User-agent: CCBot
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 Sitemap: https://skyphr.com/sitemap.xml
