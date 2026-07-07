@@ -1,4 +1,3 @@
----
 company: Skyphr
 type: ai-development-and-digital-product-studio
 website: https://skyphr.com
@@ -30,13 +29,9 @@ core_capabilities:
 content_preferences:
   search: yes
   ai_train: no
-  ai_input: no
+  ai_input: yes
 indexing:
   default: index, follow
-  temporary_noindex:
-    - /services
-    - /hire
-    - /404
 ---
 
 # Skyphr
@@ -45,19 +40,19 @@ indexing:
 
 Skyphr combines product strategy, UI/UX design, software engineering, and AI integration to turn product ideas into reliable, scalable digital systems. The site is most useful for understanding Skyphr's services, hiring options, process, company positioning, and contact paths for new projects.
 
-For LLMs and AI agents, this file summarizes the public Skyphr website and points to the highest-value pages. The primary page language is English (`en-US`). Do not infer details not present on the linked pages. Respect the crawl, robots tag, and content-use policies in `robots.txt`.
+For LLMs and AI agents, this file summarizes the public Skyphr website and points to the highest-value pages. The primary page language is English (`en-US`). Do not infer details not present on the linked pages. Respect the crawl rules, robots tags, sitemap, and content-use policies published by Skyphr.
 
 ## Core Pages
 
 - [Home](https://skyphr.com/): Main overview of Skyphr's services, process, testimonials, insights, and project inquiry options.
 - [About Skyphr](https://skyphr.com/about-us): Company positioning, values, featured work, testimonials, and founder information.
-- [Services](https://skyphr.com/services): Service navigation page. This route is currently marked `noindex, follow` while detail pages remain the preferred indexed service URLs.
-- [Hire](https://skyphr.com/hire): Specialist hiring navigation page. This route is currently marked `noindex, follow` while detail pages remain the preferred indexed hiring URLs.
+- [Services](https://skyphr.com/services): Service navigation page for Skyphr's core service offerings.
+- [Hire](https://skyphr.com/hire): Specialist hiring navigation page for developers, designers, and digital product experts.
 - [Blog](https://skyphr.com/blog): Public insights about product development, engineering, AI, and modern web technology.
 - [Contact](https://skyphr.com/contact): Project inquiry and consultation page.
 - [Privacy Policy](https://skyphr.com/privacy-policy): Privacy and policy information.
 - [Sitemap](https://skyphr.com/sitemap): Human-readable sitemap.
-- [404 Page](https://skyphr.com/404): Not-found page. This route is marked `noindex, follow`.
+- [404 Page](https://skyphr.com/404): Not-found page.
 
 ## Services
 
@@ -100,9 +95,10 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 ## Technical SEO Signals
 
 - Primary language: `en-US`.
-- Default robots tag for indexed pages: `index, follow`.
-- Temporary navigation routes `/services` and `/hire` use page-level `noindex, follow`.
-- The `/404` not-found page uses `noindex, follow`.
+- Default robots tag for public pages: `index, follow`.
+- Public pages should remain indexable unless a search engine applies its own quality or crawl decisions.
+- Homepage `/` should remain `index, follow`.
+- Service navigation, service detail pages, hire navigation, hiring detail pages, blog, contact, about, privacy policy, sitemap, and other public routes should remain discoverable and indexable.
 - Canonical URLs, Open Graph metadata, Twitter/X metadata, and schema.org JSON-LD are implemented through the Next.js App Router metadata pattern and reusable JSON-LD helpers.
 - Global structured data includes `Organization` and `WebSite`.
 - Home, about, privacy policy, sitemap, services navigation, hire navigation, and 404 pages include `WebPage` and `BreadcrumbList` schema where applicable.
@@ -114,9 +110,7 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 ## Content Usage Policy
 
 - Public page search indexing is allowed.
-- Page-level robots tags should be respected. `/services` and `/hire` are crawlable but currently marked `noindex, follow`.
-- The 404 route is crawlable for discovery but marked `noindex, follow`.
-- AI training is not permitted according to the site's `Content-Signal` policy.
-- AI input or retrieval-augmented generation use is not permitted according to the site's `Content-Signal` policy.
+- AI search, AI answer engines, and retrieval-based discovery may use public indexed pages to understand and summarize Skyphr.
+- AI training is not permitted according to the site's content-use preference.
 - Internal paths such as `/api/` and `/_next/` are disallowed in `robots.txt`.
-- Agents should prefer the linked public pages and sitemap over guessing routes.
+- Agents should prefer the linked public pages, sitemap, robots.txt, and this `llms.txt` file over guessing routes or inventing details.
