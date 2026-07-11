@@ -49,8 +49,8 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
             <div className="w-full md:w-[40%] relative z-10">
               <Image
                 src={DemoImage}
-                alt="Why Choose Skyphr"
-                title="Why Choose Skyphr"
+                alt="Skyphr product interface preview"
+                title="Skyphr product interface preview"
                 width={500}
                 height={500}
                 className={twMerge("object-cover w-full h-full", COMMON_BORDER_RADIUS)}
@@ -113,8 +113,8 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
               </div>
               <Image
                 src={QuoteIcon}
-                alt="Quote Icon"
-                title="Quote Icon"
+                alt=""
+                title=""
                 width={280}
                 height={225}
                 className="absolute top-0 right-0"

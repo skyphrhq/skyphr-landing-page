@@ -112,8 +112,8 @@ function NavBarComponent() {
               width={180}
               height={40}
               src={SkyPhrLogo}
-              alt="SkyPhr Logo"
-              title="SkyPhr Logo"
+              alt="Skyphr"
+              title="Skyphr"
               className="w-45  h-10"
               priority
             />
@@ -139,8 +139,8 @@ function NavBarComponent() {
                   width={130}
                   height={30}
                   src={SkyPhrLogo}
-                  alt="SkyPhr Logo"
-                  title="SkyPhr Logo"
+                  alt="Skyphr"
+                  title="Skyphr"
                   className="w-45  h-10"
                   priority
                 />

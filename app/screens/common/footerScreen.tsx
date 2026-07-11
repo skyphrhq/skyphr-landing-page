@@ -64,8 +64,8 @@ function FooterScreen() {
                 <div className="flex items-center gap-3 mb-6">
                   <Image
                     src={SkyphrWhiteLogo}
-                    alt="Skyphr Logo"
-                    title="Skyphr Logo"
+                    alt="Skyphr"
+                    title="Skyphr"
                     width={220}
                     height={57}
                     className="w-55 h-14.25 object-contain -ml-2.5"

@@ -44,8 +44,8 @@ function PageNotFound() {
         <div className="w-full h-fit relative z-10 flex items-center justify-center">
           <Image
             src={NotFoundImage}
-            alt="404 Image"
-            title="404 Image"
+            alt="Skyphr page not found illustration"
+            title="Skyphr page not found illustration"
             width={800}
             height={500}
             className="w-full h-full max-w-200 max-h-125 object-contain pointer-events-none select-none"

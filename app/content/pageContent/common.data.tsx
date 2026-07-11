@@ -30,22 +30,27 @@ export const FEATURED_WORK_DATA: FeaturedWorkInterface[] = [
   {
     id: "mockup-one",
     imagePath: MockupOne,
+    alt: "Dashboard interface mockup for a featured Skyphr project",
   },
   {
     id: "mockup-two",
     imagePath: MockupTwo,
+    alt: "Analytics and product interface mockup for a featured Skyphr project",
   },
   {
     id: "mockup-three",
     imagePath: MockupThree,
+    alt: "Web application screen mockup for a featured Skyphr project",
   },
   {
     id: "mockup-four",
     imagePath: MockupFour,
+    alt: "SaaS product interface mockup for a featured Skyphr project",
   },
   {
     id: "mockup-five",
     imagePath: MockupFive,
+    alt: "Digital product dashboard mockup for a featured Skyphr project",
   },
 ];
 
@@ -125,7 +130,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: UiUxDesign,
       width: 350,
       height: 300,
-      alt: "Ui Ux Design",
+      alt: "UI/UX design service illustration",
     },
   },
   {
@@ -145,7 +150,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: WebAppDevelopment,
       width: 350,
       height: 300,
-      alt: "SaaS & Web Application Development",
+      alt: "SaaS and web application development service illustration",
     },
   },
   {
@@ -165,7 +170,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: AiDevelopmentAutomation,
       width: 350,
       height: 300,
-      alt: "AI Development & Automation Services",
+      alt: "AI development and automation service illustration",
     },
   },
   {
@@ -185,7 +190,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: CustomSoftwareDevelopment,
       width: 350,
       height: 300,
-      alt: "Custom Software Development",
+      alt: "Custom software development service illustration",
     },
   },
 ];
@@ -213,10 +218,9 @@ export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
       imagePath: CEOImage,
       width: 450,
       height: 635,
-      alt: "Ui Ux Design",
+      alt: "Varun Patel, Founder and CEO of Skyphr",
     },
   },
 ];
-
 
 

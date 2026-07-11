@@ -59,7 +59,7 @@ export const CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterf
         imagePath: CUSTOM_SOFTWARE_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "UI/UX Design and Automation Services",
+        alt: "Custom software development services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

@@ -15,6 +15,7 @@ export interface NavbarLinksInterface {
 export interface FeaturedWorkInterface {
   id: string;
   imagePath: StaticImageData;
+  alt: string;
 }
 
 export interface ServiceDataInterface {

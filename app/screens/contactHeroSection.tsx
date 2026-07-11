@@ -23,8 +23,8 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
     <div className={twMerge("w-full h-fit relative bg-white overflow-hidden pt-32 pb-20 xl:pt-55 xl:pb-35", classNames)}>
       <Image
         src={HumanRoboHand}
-        alt="Human Robo Hand"
-        title="Human Robo Hand"
+        alt=""
+        title=""
         width={1500}
         height={982}
         className="w-full h-full pointer-events-none select-none absolute object-cover opacity-8 top-0 right-0 z-10"

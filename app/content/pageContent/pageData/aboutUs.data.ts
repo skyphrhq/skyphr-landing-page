@@ -201,7 +201,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
           imagePath: CEOImage,
           width: 450,
           height: 635,
-          alt: "Varun Patel",
+          alt: "Varun Patel, Founder and CEO of Skyphr",
         },
       },
     ],
