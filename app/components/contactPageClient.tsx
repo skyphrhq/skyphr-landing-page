@@ -5,9 +5,6 @@ import { gsap } from "@/app/lib/gsap";
 import ContactHeroSection from "@/app/screens/contactHeroSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
-import dynamic from "next/dynamic";
-
-const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
 
 function ContactPageClient() {
   const handleStartAProject = () => {
@@ -27,11 +24,11 @@ function ContactPageClient() {
           <ContactUsSection data={CONTACT_PAGE_DATA.contactUs} />
         </section>
       )}
-      {CONTACT_PAGE_DATA?.testimonials && (
+      {/* {CONTACT_PAGE_DATA?.testimonials && (
         <section className="w-full h-auto">
           <ClientTestimonial data={CONTACT_PAGE_DATA.testimonials} />
         </section>
-      )}
+      )} */}
       {CONTACT_PAGE_DATA.readyToScale && (
         <section className="w-full h-auto overflow-hidden">
           <ReadyToScaleSection data={CONTACT_PAGE_DATA.readyToScale} classNames="pt-0! md:pt-0! xl:pt-0!" />
