@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "site-navigation",
+      "type": "skill-md",
+      "description": "Find and retrieve Skyphr's public pages while respecting its published discovery and content-use policies.",
+      "url": "https://skyphr.com/skills/site-navigation/SKILL.md",
+      "digest": "sha256:b30665b49f54f79d37523837ac44b24de3337715c316e900a038bbd3ead1e986"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import SmoothScrollProvider from "./components/smoothScrollProvider";
+import WebMcpProvider from "./components/webMcpProvider";
 import { RootLayoutInterface } from "./utils/interface/common.interface";
 
 const playfairDisplay = Playfair_Display({
@@ -83,6 +84,8 @@ export default function RootLayout({ children }: RootLayoutInterface) {
         </noscript>
 
         <JsonLd data={[generateOrganizationSchema(), generateWebsiteSchema()]} />
+
+        <WebMcpProvider />
 
         <SmoothScrollProvider>
           <NavBarComponent />

@@ -1,0 +1,21 @@
+{
+  "serverInfo": {
+    "name": "Skyphr public agent tools",
+    "version": "1.0.0"
+  },
+  "endpoint": "/mcp",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": [
+      "navigate_site",
+      "search_site",
+      "retrieve_page"
+    ],
+    "resources": [],
+    "prompts": []
+  },
+  "description": "Public, read-only agent tools for navigating and retrieving Skyphr website content."
+}

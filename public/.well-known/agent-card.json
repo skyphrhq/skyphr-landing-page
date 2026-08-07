@@ -1,0 +1,38 @@
+{
+  "name": "Skyphr Agent",
+  "version": "1.0.0",
+  "description": "An agent discovery card for Skyphr's public website, digital product services, and project inquiry workflows.",
+  "supportedInterfaces": [
+    {
+      "url": "https://skyphr.com/a2a",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {
+      "id": "public-site-discovery",
+      "name": "Public Site Discovery",
+      "description": "Find Skyphr's public pages, services, hiring information, and agent discovery resources.",
+      "tags": ["discovery", "website", "services"],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["text/plain", "application/json"]
+    },
+    {
+      "id": "project-inquiry-guidance",
+      "name": "Project Inquiry Guidance",
+      "description": "Explain Skyphr's public service offerings and guide prospective clients toward the contact and consultation paths.",
+      "tags": ["consulting", "software-development", "contact"],
+      "inputModes": ["text/plain", "application/json"],
+      "outputModes": ["text/plain", "application/json"]
+    }
+  ],
+  "documentationUrl": "https://skyphr.com/llms.txt"
+}

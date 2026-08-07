@@ -35,6 +35,11 @@
         "rel": "http-message-signatures-directory",
         "href": "https://skyphr.com/.well-known/http-message-signatures-directory",
         "type": "application/http-message-signatures-directory+json"
+      },
+      {
+        "rel": "a2a-agent-card",
+        "href": "https://skyphr.com/.well-known/agent-card.json",
+        "type": "application/json"
       }
     ]
   },
