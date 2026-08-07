@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
           {
             key: "Link",
             value:
-              '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </.well-known/agents.json>; rel="service-doc"; type="application/json", </.well-known/dns-aid-records.txt>; rel="service-doc"; type="text/plain", </.well-known/http-message-signatures-directory>; rel="service-doc"; type="application/http-message-signatures-directory+json", </.well-known/mcp/server-card.json>; rel="service-doc"; type="application/json", </.well-known/agent-skills/index.json>; rel="service-doc"; type="application/json", </.well-known/agent-card.json>; rel="service-doc"; type="application/json", </.well-known/oauth-protected-resource>; rel="service-doc"; type="application/json", </llms.txt>; rel="service-doc"; type="text/plain", </sitemap.xml>; rel="service-doc"; type="application/xml", </robots.txt>; rel="service-doc"; type="text/plain"',
+              '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", </.well-known/agents.json>; rel="service-doc"; type="application/json", </.well-known/dns-aid-records.txt>; rel="service-doc"; type="text/plain", </.well-known/http-message-signatures-directory>; rel="service-doc"; type="application/http-message-signatures-directory+json", </.well-known/mcp/server-card.json>; rel="service-doc"; type="application/json", </.well-known/agent-skills/index.json>; rel="service-doc"; type="application/json", </.well-known/agent-card.json>; rel="service-doc"; type="application/json", </.well-known/oauth-protected-resource>; rel="service-doc"; type="application/json", </.well-known/oauth-authorization-server>; rel="service-doc"; type="application/json", </llms.txt>; rel="service-doc"; type="text/plain", </sitemap.xml>; rel="service-doc"; type="application/xml", </robots.txt>; rel="service-doc"; type="text/plain"',
           },
         ],
       },
@@ -102,6 +102,19 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/.well-known/oauth-protected-resource",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/json; charset=utf-8",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400",
+          },
+        ],
+      },
+      {
+        source: "/.well-known/oauth-authorization-server",
         headers: [
           {
             key: "Content-Type",

@@ -1,5 +1,6 @@
 {
   "resource": "https://skyphr.com",
-  "authorization_servers": [],
-  "scopes_supported": []
+  "authorization_servers": ["https://skyphr.com"],
+  "scopes_supported": ["openid"],
+  "bearer_methods_supported": ["header"]
 }
