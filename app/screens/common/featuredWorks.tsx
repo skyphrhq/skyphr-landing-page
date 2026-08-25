@@ -98,25 +98,6 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
               </div>
             ))}
           </div>
-          <div
-            className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0"
-            aria-hidden="true">
-            {data?.featuredWorksData?.map((item) => (
-              <div
-                key={`clone-three-${item.id}`}
-                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
-                <Image
-                  src={item.imagePath}
-                  alt=""
-                  title=""
-                  width={380}
-                  height={380}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
         </div>
         {showShadow && (
           <div className="absolute w-full h-22.5 bg-(--root-white-color) opacity-60 blur-2xl bottom-0 left-0 z-2 pointer-events-none"></div>

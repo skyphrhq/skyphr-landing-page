@@ -1,18 +1,24 @@
+import AiDevelopmentAutomation from "@/app/assets/webp/ai-development-automation.webp";
+import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-development.webp";
 import MockupFive from "@/app/assets/webp/mockup-five.webp";
 import MockupFour from "@/app/assets/webp/mockup-four.webp";
 import MockupOne from "@/app/assets/webp/mockup-one.webp";
 import MockupThree from "@/app/assets/webp/mockup-three.webp";
 import MockupTwo from "@/app/assets/webp/mockup-two.webp";
+
+import MockupEight from "@/app/assets/webp/mockup-eight.webp";
+import MockupEleven from "@/app/assets/webp/mockup-eleven.webp";
+import MockupNine from "@/app/assets/webp/mockup-nine.webp";
+import MockupSeven from "@/app/assets/webp/mockup-seven.webp";
+import MockupSix from "@/app/assets/webp/mockup-six.webp";
+import MockupTen from "@/app/assets/webp/mockup-ten.webp";
+
 import WebAppDevelopment from "@/app/assets/webp/saas-app-development.webp";
 import UiUxDesign from "@/app/assets/webp/ui-ux-design.webp";
 import CEOImage from "@/app/assets/webp/varun-patel.webp";
-import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-development.webp";
-import AiDevelopmentAutomation from "@/app/assets/webp/ai-development-automation.webp";
 import {
   AboutUsCardsDataArrayInterface,
-  OurStepsDataInterface,
   OurTeamMembersDataArrayInterface,
-  OurValueCardInterface,
 } from "@/app/utils/interface/common.interface";
 import {
   FeaturedWorkInterface,
@@ -20,11 +26,9 @@ import {
   ServiceDataInterface,
 } from "@/app/utils/interface/data.interface";
 import { FaBriefcase, FaClock } from "react-icons/fa";
-import { FiLayers, FiLinkedin, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
+import { FiLinkedin } from "react-icons/fi";
 import { IoMdTrendingUp } from "react-icons/io";
 import { MdPeopleAlt } from "react-icons/md";
-
-import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
 
 export const FEATURED_WORK_DATA: FeaturedWorkInterface[] = [
   {
@@ -51,6 +55,36 @@ export const FEATURED_WORK_DATA: FeaturedWorkInterface[] = [
     id: "mockup-five",
     imagePath: MockupFive,
     alt: "Digital product dashboard mockup for a featured Skyphr project",
+  },
+  {
+    id: "mockup-six",
+    imagePath: MockupSix,
+    alt: "Nouri AI nutrition assistant mobile app chat interface",
+  },
+  {
+    id: "mockup-seven",
+    imagePath: MockupSeven,
+    alt: "Nouri AI nutrition assistant welcome chat screen",
+  },
+  {
+    id: "mockup-eight",
+    imagePath: MockupEight,
+    alt: "Nouri mobile app meal photo upload options and navigation",
+  },
+  {
+    id: "mockup-nine",
+    imagePath: MockupNine,
+    alt: "Nouri AI nutrition assistant analysing an uploaded meal photo",
+  },
+  {
+    id: "mockup-ten",
+    imagePath: MockupTen,
+    alt: "Nouri AI meal analysis interface identifying food ingredients",
+  },
+  {
+    id: "mockup-eleven",
+    imagePath: MockupEleven,
+    alt: "Nouri mobile app displaying an uploaded meal for AI nutrition analysis",
   },
 ];
 
@@ -195,8 +229,6 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   },
 ];
 
-
-
 export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
   {
     name: "Varun Patel",
@@ -222,5 +254,3 @@ export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
     },
   },
 ];
-
-
