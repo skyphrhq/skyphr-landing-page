@@ -50,8 +50,8 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt={item.id}
-                  title={item.id}
+                  alt={item.alt}
+                  title={item.alt}
                   width={380}
                   height={380}
                   loading="lazy"
@@ -69,8 +69,8 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt={item.id}
-                  title={item.id}
+                  alt=""
+                  title=""
                   width={380}
                   height={380}
                   loading="lazy"
@@ -88,27 +88,8 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt={item.id}
-                  title={item.id}
-                  width={380}
-                  height={380}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div
-            className="flex items-center justify-start gap-5 xl:gap-10 pr-5 xl:pr-10 marquee-group shrink-0"
-            aria-hidden="true">
-            {data?.featuredWorksData?.map((item) => (
-              <div
-                key={`clone-three-${item.id}`}
-                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
-                <Image
-                  src={item.imagePath}
-                  alt={item.id}
-                  title={item.id}
+                  alt=""
+                  title=""
                   width={380}
                   height={380}
                   loading="lazy"

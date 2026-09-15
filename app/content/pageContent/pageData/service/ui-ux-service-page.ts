@@ -59,7 +59,7 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: UI_UX_DESIGN_HERO_4X_IMAGE,
         height: 2000,
         width: 2000,
-        alt: "UI/UX Design and Automation Services",
+        alt: "UI/UX design services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

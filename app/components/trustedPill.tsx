@@ -1,4 +1,5 @@
 import DummyImage from "@/app/assets/webp/dummy.webp";
+import DummyImageTwo from "@/app/assets/webp/dummy-image.webp";
 import { TrustedPillInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
@@ -13,14 +14,13 @@ export default function TrustedPill({ className }: TrustedPillInterface) {
       shadow-[0_0_20px_rgba(56,70,218,0.5)] w-fit mb-10`,
         className,
       )}>
-      {/* Avatars */}
       <div className="flex -space-x-3">
         <div className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full overflow-hidden border border-(--text-main-color)">
-          <Image src={DummyImage} alt="client" title="client" width={32} height={32} />
+          <Image src={DummyImage} alt="Client avatar" title="Client avatar" width={32} height={32} />
         </div>
 
         <div className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full overflow-hidden border border-(--text-main-color)">
-          <Image src={DummyImage} alt="client" title="client" width={32} height={32} />
+          <Image src={DummyImageTwo} alt="Client avatar" title="Client avatar" width={32} height={32} />
         </div>
 
         <div
@@ -30,7 +30,6 @@ export default function TrustedPill({ className }: TrustedPillInterface) {
         </div>
       </div>
 
-      {/* Text */}
       <p className="text-sm text-(--text-main-color) font-medium whitespace-nowrap">Trusted by Growing Startups</p>
     </div>
   );

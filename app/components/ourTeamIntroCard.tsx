@@ -62,8 +62,8 @@ function OurTeamIntroCard({ data }: { data: OurTeamMembersDataArrayInterface }) 
             </div>
             <Image
               src={QuoteIcon}
-              alt="Quote Icon"
-              title="Quote Icon"
+              alt=""
+              title=""
               width={280}
               height={225}
               className="absolute top-0 right-0"
