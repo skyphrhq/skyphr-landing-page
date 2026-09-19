@@ -69,8 +69,8 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt=""
-                  title=""
+                  alt={item.alt}
+                  title={item.alt}
                   width={380}
                   height={380}
                   loading="lazy"
@@ -88,8 +88,8 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt=""
-                  title=""
+                  alt={item.alt}
+                  title={item.alt}
                   width={380}
                   height={380}
                   loading="lazy"
