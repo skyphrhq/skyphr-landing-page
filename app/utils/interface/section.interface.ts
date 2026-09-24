@@ -19,6 +19,7 @@ import type {
   WhyChooseSectionData,
   WhatWeBuildSectionData,
 } from "@/app/utils/interface/page.interface";
+import type { SkyAiHeroSection, SkyAiServicesSection } from "@/app/utils/interface/data.interface";
 
 export interface HeroSectionElementInterface {
   data: HeroSection;
@@ -129,5 +130,15 @@ export interface TechnologyStackSectionProps {
 
 export interface WhyChooseSectionProps {
   data: WhyChooseSectionData;
+  classNames?: string;
+}
+
+export interface SkyAiHeroSectionInterface {
+  data: SkyAiHeroSection;
+  classNames?: string;
+}
+
+export interface SkyAiServicesSectionInterface {
+  data: SkyAiServicesSection;
   classNames?: string;
 }

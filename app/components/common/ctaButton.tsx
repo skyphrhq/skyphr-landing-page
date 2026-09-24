@@ -3,7 +3,17 @@ import { ButtonEleInterface } from "@/app/utils/interface/common.interface";
 import { GoArrowUpRight } from "react-icons/go";
 import { twMerge } from "tailwind-merge";
 
-function CTAButton({ children, btnStyle, className, href, target, rel, theme = "DARK", ...props }: ButtonEleInterface) {
+function CTAButton({
+  children,
+  btnStyle,
+  className,
+  href,
+  target,
+  rel,
+  theme = "DARK",
+  icon = <GoArrowUpRight className="font-semibold" />,
+  ...props
+}: ButtonEleInterface) {
   const { parentWrapper, childrenWrapper } = GET_BUTTON_STYLE(btnStyle, theme);
   const title = typeof props.title === "string" ? props.title : typeof children === "string" ? children : undefined;
 
@@ -15,7 +25,7 @@ function CTAButton({ children, btnStyle, className, href, target, rel, theme = "
     <Tag {...props} href={href} target={target} rel={rel} title={title} className={twMerge(parentWrapper, className)}>
       {btnStyle === "CTA_PRIMARY" ? (
         <span className="w-8 h-8 min-w-8 min-h-8 rounded-full bg-(--root-white-color) text-(--cta-button-background) flex items-center justify-center absolute top-1/2 -left-full -translate-y-1/2 group-hover/btn:left-1.5 transition-all duration-300">
-          <GoArrowUpRight className="font-semibold" />
+          {icon}
         </span>
       ) : (
         <span
@@ -27,7 +37,7 @@ function CTAButton({ children, btnStyle, className, href, target, rel, theme = "
       <span className={childrenWrapper}>{children}</span>
       {btnStyle === "CTA_PRIMARY" ? (
         <span className="w-8 h-8 min-w-8 min-h-8 rounded-full bg-(--root-white-color) text-(--cta-button-background) flex items-center justify-center absolute top-1/2 right-1.5 -translate-y-1/2 group-hover/btn:translate-x-[130%] transition-all duration-300">
-          <GoArrowUpRight className="font-semibold" />
+          {icon}
         </span>
       ) : (
         <span

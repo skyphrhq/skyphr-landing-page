@@ -17,6 +17,7 @@ export interface ButtonEleInterface extends ButtonHTMLAttributes<HTMLButtonEleme
   target?: string;
   rel?: string;
   theme?: "LIGHT" | "DARK";
+  icon?: React.ReactNode;
 }
 
 export interface TrustedPillInterface {
