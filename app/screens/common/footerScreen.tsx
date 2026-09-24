@@ -75,6 +75,10 @@ function FooterScreen() {
                   Skyphr designs and builds scalable digital products with strategy, clean interfaces, and reliable
                   engineering.
                 </p>
+                <address className="not-italic text-neutral-300 text-sm leading-6 mt-4">
+                  A-568, Money Plant High St, Gota, Ahmedabad, Gujarat 382470, India
+                  <span className="block text-neutral-500">GSTIN: 24HARPP4908J1Z2</span>
+                </address>
               </div>
               <div className="flex items-center justify-start md:justify-end gap-3 grow">
                 {SOCIAL_LINKS.map(({ icon: Icon, href, label }, index) => (

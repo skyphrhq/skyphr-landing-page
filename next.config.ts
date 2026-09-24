@@ -1,6 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "skyphr-landing-page.vercel.app" }],
+        destination: "https://skyphr.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/varun-patel",
+        destination: "/about-us",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

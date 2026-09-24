@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "@/app/content/pageContent/socilaLinks.data";
+import { GOOGLE_MAPS_URL, SAME_AS_URLS, SITE_ALTERNATE_NAMES } from "@/app/content/pageContent/socilaLinks.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import type { FaqCommonCardData } from "@/app/utils/interface/data.interface";
 import { isValidElement, type ReactNode } from "react";
@@ -35,14 +35,67 @@ export const absoluteSchemaUrl = (path: string) => {
   return `${SITE_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 };
 
+export const ORGANIZATION_ID = `${SITE_BASE_URL}/#organization`;
+export const FOUNDER_PERSON_ID = `${SITE_BASE_URL}/about-us#varun-patel`;
+
 export const generateOrganizationSchema = (): JsonLd => ({
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${SITE_BASE_URL}/#organization`,
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": ORGANIZATION_ID,
   name: "Skyphr",
-  url: SITE_BASE_URL,
-  logo: absoluteSchemaUrl("/favicon/android-chrome-512x512.png"),
-  sameAs: SOCIAL_LINKS.map((link) => link.href),
+  alternateName: SITE_ALTERNATE_NAMES,
+  legalName: "Skyphr",
+  taxID: "24HARPP4908J1Z2",
+  url: `${SITE_BASE_URL}/`,
+  logo: {
+    "@type": "ImageObject",
+    url: absoluteSchemaUrl("/favicon/android-chrome-512x512.png"),
+    width: 512,
+    height: 512,
+  },
+  image: absoluteSchemaUrl("/og-image/home-page.png"),
+  description:
+    "Skyphr is a digital product, software, and AI engineering company in Ahmedabad, India, offering UI/UX design, website development, custom software, SaaS product development, AI agents and integrations, and Shopify/e-commerce development.",
+  founder: {
+    "@id": FOUNDER_PERSON_ID,
+  },
+  email: "sales@skyphr.com",
+  telephone: "+91-92748-29076",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "A-568, Money Plant High St, Gota",
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    postalCode: "382470",
+    addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: "+91-92748-29076",
+    email: "sales@skyphr.com",
+    url: "https://cal.com/skyphr/30min",
+    availableLanguage: ["English"],
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "10:00",
+      closes: "19:00",
+    },
+  ],
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "UI/UX design",
+    "Website development",
+    "Custom software development",
+    "SaaS product development",
+    "AI agents and AI integrations",
+    "Shopify and e-commerce development",
+  ],
+  hasMap: GOOGLE_MAPS_URL,
+  sameAs: SAME_AS_URLS,
 });
 
 export const generateWebsiteSchema = (): JsonLd => ({
@@ -50,9 +103,11 @@ export const generateWebsiteSchema = (): JsonLd => ({
   "@type": "WebSite",
   "@id": `${SITE_BASE_URL}/#website`,
   name: "Skyphr",
-  url: SITE_BASE_URL,
+  alternateName: SITE_ALTERNATE_NAMES,
+  url: `${SITE_BASE_URL}/`,
+  inLanguage: "en-US",
   publisher: {
-    "@id": `${SITE_BASE_URL}/#organization`,
+    "@id": ORGANIZATION_ID,
   },
 });
 
@@ -183,3 +238,43 @@ export const generateArticleSchema = ({
 });
 
 export const compactSchemas = (schemas: Array<JsonLd | null | undefined>) => schemas.filter(Boolean) as JsonLd[];
+
+export const generatePersonSchema = ({
+  id,
+  name,
+  jobTitle,
+  description,
+  path,
+  image,
+  homeLocation,
+  knowsAbout,
+  sameAs,
+}: {
+  id: string;
+  name: string;
+  jobTitle: string;
+  description: string;
+  path: string;
+  image: string;
+  homeLocation: string;
+  knowsAbout: string[];
+  sameAs: string[];
+}): JsonLd => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": id,
+  name,
+  jobTitle,
+  worksFor: {
+    "@id": ORGANIZATION_ID,
+  },
+  url: absoluteSchemaUrl(path),
+  image: absoluteSchemaUrl(image),
+  description,
+  homeLocation: {
+    "@type": "Place",
+    name: homeLocation,
+  },
+  knowsAbout,
+  sameAs,
+});

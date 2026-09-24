@@ -1,12 +1,18 @@
 import JsonLd from "@/app/components/JsonLd";
 import { ABOUT_US_PAGE_DATA } from "@/app/content/pageContent/pageData/aboutUs.data";
+import { FOUNDER_PERSON_DATA } from "@/app/content/pageContent/pageData/founder.data";
 import AboutSection from "@/app/screens/aboutSection";
 import AboutUsSectionHeroElem from "@/app/screens/aboutUsSectionHero";
 import OurTeamSection from "@/app/screens/common/ourTeamSection";
 import OurValuesSection from "@/app/screens/common/ourValuesSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
-import { generateBreadcrumbSchema, generateWebPageSchema } from "@/app/utils/seo/schema";
+import {
+  FOUNDER_PERSON_ID,
+  generateBreadcrumbSchema,
+  generatePersonSchema,
+  generateWebPageSchema,
+} from "@/app/utils/seo/schema";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -36,6 +42,7 @@ function AboutUsPage() {
             { name: "Home", path: "/" },
             { name: "About Us", path },
           ]),
+          generatePersonSchema({ id: FOUNDER_PERSON_ID, path, ...FOUNDER_PERSON_DATA }),
         ]}
       />
       {ABOUT_US_PAGE_DATA?.hero && (

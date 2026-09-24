@@ -54,10 +54,10 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                     <p className="text-(--text-white-color) font-inter text-sm mb-4 font-medium">Call Us</p>
                     <div className="flex flex-col gap-3">
                       <a
-                        href="tel:+919512293490"
+                        href="tel:+919274829076"
                         title="Call Skyphr India"
                         className="text-lg md:text-xl lg:text-2xl font-semibold hover:underline font-instrument-sans text-(--text-white-color)">
-                        India: +91-927-482-9076
+                        India: +91 92748 29076
                       </a>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                         <p className="font-semibold text-base md:text-lg text-(--text-main-color)">India</p>
 
                         <p className="text-sm text-(--text-secondary-color)">
-                          A 568, Money Plant High Street, Gota, Ahmedabad, Gujarat 382470
+                          A-568, Money Plant High St, Gota, Ahmedabad, Gujarat 382470, India
                         </p>
                       </div>
 
