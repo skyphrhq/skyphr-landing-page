@@ -112,12 +112,53 @@
   animation: skyai-dot-pulse 3.5s ease-in-out var(--skyai-pulse-delay, 0s) infinite;
 }
 
+/* "Built by SkyAI": faint dotted grid that fades out towards the section edges */
+.skyai-dot-grid {
+  background-image: radial-gradient(rgb(255 255 255 / 0.04) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 30%, transparent 100%);
+}
+
+/* Slow float for the Sky phone visual */
+@keyframes skyai-float {
+  0%,
+  100% {
+    translate: 0 6px;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+.skyai-float {
+  animation: skyai-float 6s ease-in-out infinite;
+}
+
+/* Soft halo behind "live" status dots */
+@keyframes skyai-live-pulse {
+  0% {
+    opacity: 0.6;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 2.4;
+  }
+}
+.skyai-live-pulse {
+  animation: skyai-live-pulse 2.4s ease-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .skyai-sparkle,
   .skyai-orbit-line,
   .skyai-orbit-dots,
-  .skyai-orbit-dot-pulse {
+  .skyai-orbit-dot-pulse,
+  .skyai-float {
     animation: none;
+  }
+  .skyai-live-pulse {
+    animation: none;
+    opacity: 0;
   }
 }
 

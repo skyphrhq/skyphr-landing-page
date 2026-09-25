@@ -1,8 +1,15 @@
 import JsonLd from "@/app/components/JsonLd";
 import SkyAiSubNav from "@/app/components/skyAiSubNav";
 import SkyAiTechStrip from "@/app/components/skyAiTechStrip";
+import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SKY_AI_PAGE_DATA } from "@/app/content/pageContent/pageData/skyAi.data";
+import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
+import OurApproachSection from "@/app/screens/common/ourApproachSec";
+import ContactUsSection from "@/app/screens/contactUsSection";
+import SkyAiBuiltBySection from "@/app/screens/skyAiBuiltBySection";
+import SkyAiChallengesSection from "@/app/screens/skyAiChallengesSection";
 import SkyAiHeroSection from "@/app/screens/skyAiHeroSection";
+import SkyAiSecuritySection from "@/app/screens/skyAiSecuritySection";
 import SkyAiServicesSection from "@/app/screens/skyAiServicesSection";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
 import { generateBreadcrumbSchema, generateWebPageSchema } from "@/app/utils/seo/schema";
@@ -43,6 +50,36 @@ function SkyAiPage() {
       {SKY_AI_PAGE_DATA?.services && (
         <section className="w-full h-auto">
           <SkyAiServicesSection data={SKY_AI_PAGE_DATA.services} />
+        </section>
+      )}
+      {SKY_AI_PAGE_DATA?.challenges && (
+        <section className="w-full h-auto">
+          <SkyAiChallengesSection data={SKY_AI_PAGE_DATA.challenges} />
+        </section>
+      )}
+      {SKY_AI_PAGE_DATA?.builtBy && (
+        <section className="w-full h-auto">
+          <SkyAiBuiltBySection data={SKY_AI_PAGE_DATA.builtBy} />
+        </section>
+      )}
+      {SKY_AI_PAGE_DATA?.ourApproach && (
+        <section className="w-full h-auto">
+          <OurApproachSection data={SKY_AI_PAGE_DATA.ourApproach} />
+        </section>
+      )}
+      {SKY_AI_PAGE_DATA?.security && (
+        <section className="w-full h-auto" aria-labelledby="skyai-security-heading">
+          <SkyAiSecuritySection data={SKY_AI_PAGE_DATA.security} />
+        </section>
+      )}
+      {HOME_PAGE_DATA?.faq && (
+        <section className="w-full h-auto overflow-hidden">
+          <FrequentlyAskedQuestions  data={HOME_PAGE_DATA.faq} />
+        </section>
+      )}
+      {HOME_PAGE_DATA?.contactUs && (
+        <section className="w-full h-auto overflow-hidden">
+          <ContactUsSection data={HOME_PAGE_DATA.contactUs} />
         </section>
       )}
     </>

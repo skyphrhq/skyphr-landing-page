@@ -28,6 +28,10 @@ export const COMMON_BORDER_RADIUS = "rounded-lg md:rounded-xl lg:rounded-2xl";
 
 export const COMMON_SECTION_PADDING = "py-15! md:py-20! xl:py-37.5!";
 
+// Tailwind v4 hover translate uses the `translate` property, so it doesn't fight GSAP's reveal transform
+export const SKYAI_SERVICE_CARD_BASE =
+  "reveal-animation h-full flex flex-col rounded-[20px] p-6 md:p-8 transition-[translate,background-color,border-color] duration-200 hover:-translate-y-0.5";
+
 export const SITE_BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "https://skyphr.com").replace(
   /\/$/,
   "",

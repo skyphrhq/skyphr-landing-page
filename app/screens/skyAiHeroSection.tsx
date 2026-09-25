@@ -52,14 +52,14 @@ function SkyAiHeroSection({ data, classNames }: SkyAiHeroSectionInterface) {
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(1100px,170vw)] h-80 md:h-120 pointer-events-none bg-[radial-gradient(closest-side,rgba(105,116,226,0.26),rgba(105,116,226,0.1)_55%,transparent)]"
           />
           {/* Decorative wordmark, the brand name is also part of the h1 below */}
-          <div aria-hidden="true" className="reveal-animation relative select-none">
+          <div aria-hidden="true" className="relative select-none">
             <p className="font-instrument-sans font-bold tracking-tighter leading-none text-7xl xs:text-8xl md:text-9xl xl:text-[10rem] text-(--text-main-color)">
-              <span className="skyai-wordmark-shadow">{data.wordmark.text}</span>
-              <span className="skyai-wordmark-shadow bg-linear-to-br from-[#9aa1f5] via-(--cta-button-background) to-[#6d3fe0] bg-clip-text text-transparent">
+              <span className="skyai-wordmark-shadow reveal-animation ">{data.wordmark.text}</span>
+              <span className="skyai-wordmark-shadow bg-linear-to-br from-[#9aa1f5] via-(--cta-button-background) to-[#6d3fe0] bg-clip-text text-transparent reveal-animation ">
                 {data.wordmark.highlightedText}
               </span>
               {/* Zero-width anchor right after the "I": the sparkle sits above the letter like the dot of an "i" */}
-              <span className="relative inline-block w-0">
+              <span className="relative inline-block w-0 reveal-animation ">
                 <span className="skyai-sparkle-anchor absolute">
                   <SparkleIcon className="skyai-sparkle block w-full h-full text-(--cta-button-background)" />
                 </span>
@@ -68,7 +68,7 @@ function SkyAiHeroSection({ data, classNames }: SkyAiHeroSectionInterface) {
           </div>
         </div>
 
-        <h1 className="reveal-animation font-instrument-sans text-center text-balance text-2xl sm:text-[1.75rem] xl:text-[2rem] font-bold tracking-normal leading-snug text-(--text-main-color) pt-6">
+        <h1 className="font-instrument-sans text-center text-balance text-2xl sm:text-[1.75rem] xl:text-[2rem] font-bold tracking-normal leading-snug text-(--text-main-color) pt-6">
           {data.header.title.map((titleRow, rowIndex) => (
             <span className="block" key={rowIndex}>
               {titleRow.map((chunk, index) => (
@@ -76,6 +76,7 @@ function SkyAiHeroSection({ data, classNames }: SkyAiHeroSectionInterface) {
                   className={twMerge(
                     chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
                     chunk?.classNames,
+                    "reveal-animation ",
                   )}
                   key={index}>
                   {chunk.text}

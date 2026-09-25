@@ -3,6 +3,7 @@ import SkyPhrLogo from "@/app/assets/logo/skyphr-logo-transparent-black.webp";
 import Button from "@/app/components/common/button";
 import CTAButton from "@/app/components/common/ctaButton";
 import { NavBarCommonLinkComponent } from "@/app/components/common/navBarCommonLinkComponent";
+import { SkyAiNavPill } from "@/app/components/navbar/skyAiNavPill";
 import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { gsap } from "@/app/lib/gsap";
 import { useGSAP } from "@gsap/react";
@@ -13,6 +14,8 @@ import { useEffect, useRef, useState } from "react";
 import { FaXmark } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { twMerge } from "tailwind-merge";
+
+const SHOW_SKYAI_NAV = process.env.NEXT_PUBLIC_SHOW_SKYAI_NAV === "true";
 
 function NavBarComponent() {
   const navBarContainer = useRef<HTMLDivElement | null>(null);
@@ -106,8 +109,8 @@ function NavBarComponent() {
         areDropdownsSuppressed && "is-dropdown-suppressed",
       )}>
       <div className="w-full skyphr-container h-auto backdrop-blur-[1px] relative z-2">
-        <div className="py-2.5 xl:py-5 navbar-inner-wrapper  flex items-center justify-between ">
-          <Link href="/" title="Skyphr Home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+        <div className="py-2.5 xl:py-5 navbar-inner-wrapper  flex items-center justify-between px-0!">
+          <Link href="/" title="Skyphr Home" aria-label="Skyphr home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
             <Image
               width={180}
               height={40}
@@ -134,7 +137,7 @@ function NavBarComponent() {
               isMobileMenuOpen && "is-open",
             )}>
             <div className="skyphr-mobile-nav-close-btn-wrapper">
-              <Link href="/" title="Skyphr Home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+              <Link href="/" title="Skyphr Home" aria-label="Skyphr home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
                 <Image
                   width={130}
                   height={30}
@@ -158,10 +161,11 @@ function NavBarComponent() {
               data-lenis-prevent-touch
               data-lenis-prevent-wheel
               className="w-full grow skyphr-navbar-links-wrapper">
-              <ul className="w-full flex items-center justify-center gap-3 skyphr-nav-links-wrapper-list">
+              <ul className="w-full flex items-center justify-center gap-2 skyphr-nav-links-wrapper-list">
+                {SHOW_SKYAI_NAV ? <SkyAiNavPill pathname={pathname} onNavigate={handleNavigate} /> : null}
                 {NAVBAR_LINKS_DATA?.map((item) => {
-                  if (item.type === "listing") {
-                    return null; // Skip rendering this item in the navbar
+                  if (item.type === "listing" || item.id === "home") {
+                    return null; // Skip rendering this item in the navbar (Home is reached via the logo)
                   } else {
                     return (
                       <NavBarCommonLinkComponent

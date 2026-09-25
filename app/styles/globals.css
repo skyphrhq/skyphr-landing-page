@@ -23,6 +23,9 @@
   --skyai-lavender-bg: #f6f7fe;
   --skyai-lavender-soft: #eef0fd;
   --skyai-lavender-border: #e5e8fb;
+  --skyai-night-start: #15143a;
+  --skyai-night-end: #3a3f9c;
+  --skyai-periwinkle-light: #c9ccff;
 }
 
 .font-playfair-display {
@@ -121,6 +124,25 @@
 .skyphr-navbar-main-wrapper .skyphr-nav-item.is-active > .skyphr-nav-btn-link {
   background-color: var(--active-link-bg) !important;
   color: var(--text-white-color) !important;
+}
+
+/* Top-level items share one pill base: grey pill on hover, focus and current page (dropdown items keep the blue) */
+.skyphr-navbar-main-wrapper .skyphr-nav-links-wrapper-list > .skyphr-nav-item > .skyphr-nav-link {
+  color: var(--text-main-color);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-links-wrapper-list > .skyphr-nav-item.is-active > .skyphr-nav-link,
+.skyphr-navbar-main-wrapper .skyphr-nav-links-wrapper-list > .skyphr-nav-item:focus-within > .skyphr-nav-link {
+  background-color: var(--active-hover-link-bg) !important;
+  color: var(--text-main-color) !important;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-links-wrapper-list > .skyphr-nav-item > .skyphr-nav-link:focus-visible {
+  outline: 2px solid var(--cta-button-background);
+  outline-offset: 2px;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -339,7 +361,7 @@
     transform: none;
   }
   .skyphr-navbar-main-wrapper .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open) > .skyphr-nav-link {
-    background-color: var(--active-link-bg);
+    background-color: var(--active-link-bg) !important;
     color: var(--text-white-color) !important;
   }
   .skyphr-navbar-main-wrapper
@@ -359,5 +381,215 @@
     background-color: var(--root-white-color) !important;
     flex-shrink: 0 !important;
     padding: 16px !important;
+  }
+}
+
+/* ---------- SkyAI navbar pill ---------- */
+@property --skyai-pill-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --skyai-pill-shimmer {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@keyframes skyai-pill-border-rotate {
+  to {
+    --skyai-pill-angle: 360deg;
+  }
+}
+
+@keyframes skyai-pill-background-breathe {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes skyai-pill-sparkle-twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15) rotate(90deg);
+    opacity: 1;
+  }
+}
+
+/* The highlight sweeps across in the first 30% of the cycle, then rests off-text */
+@keyframes skyai-pill-text-shimmer {
+  0% {
+    --skyai-pill-shimmer: 100%;
+  }
+  30%,
+  100% {
+    --skyai-pill-shimmer: 0%;
+  }
+}
+
+/* Outer element carries the rotating conic gradient; the inner pill covers all but a 1.5px ring */
+.skyphr-navbar-main-wrapper .skyai-nav-pill {
+  --skyai-pill-angle: 0deg;
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  height: 36px;
+  /* 1px ring drawn inside the 36px height */
+  padding: 2px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from var(--skyai-pill-angle),
+    rgba(56, 70, 218, 0.6),
+    rgba(105, 116, 226, 0.4),
+    var(--skyai-lavender-border),
+    rgba(56, 70, 218, 0.6)
+  );
+  animation: skyai-pill-border-rotate 4s linear infinite;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-pill:focus-visible {
+  outline: 2px solid var(--cta-button-background);
+  outline-offset: 2px;
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-pill-inner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  /* 13px + the 1px ring = the same 14px inset as the other nav items */
+  padding: 0 13px;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    135deg,
+    var(--skyai-lavender-soft) 0%,
+    var(--skyai-lavender-border) 50%,
+    var(--skyai-lavender-soft) 100%
+  );
+  background-size: 200% 200%;
+  animation: skyai-pill-background-breathe 6s ease-in-out infinite;
+}
+
+/* Deeper hover/active tone, faded in with opacity so it matches the other links' 200ms background fade */
+.skyphr-navbar-main-wrapper .skyai-nav-pill-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: var(--skyai-lavender-border);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-pill-text {
+  /* Inherit exactly like .skyphr-nav-link (font: inherit) so all labels share one size and baseline */
+  font: inherit;
+  font-weight: 500;
+  color: var(--text-main-color);
+  white-space: nowrap;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-text {
+    --skyai-pill-shimmer: 100%;
+    /* Peak #555a78 keeps >= 5.5:1 contrast on every pill background (down to #e5e8fb), so the text stays readable mid-sweep */
+    background-image: linear-gradient(
+      100deg,
+      var(--text-main-color) 0%,
+      var(--text-main-color) 42%,
+      #555a78 50%,
+      var(--text-main-color) 58%,
+      var(--text-main-color) 100%
+    );
+    background-size: 250% 100%;
+    background-position: var(--skyai-pill-shimmer) 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: skyai-pill-text-shimmer 5s ease-in-out infinite;
+  }
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-pill-sparkle-wrapper {
+  display: inline-flex;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-pill-sparkle {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: skyai-pill-sparkle-twinkle 2.4s ease-in-out infinite;
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-item.is-active > .skyai-nav-pill {
+  box-shadow: 0 0 0 4px rgba(56, 70, 218, 0.08);
+}
+
+.skyphr-navbar-main-wrapper .skyai-nav-item.is-active .skyai-nav-pill-inner::before {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skyphr-navbar-main-wrapper .skyai-nav-pill:hover {
+    animation-duration: 2s;
+  }
+
+  .skyphr-navbar-main-wrapper .skyai-nav-pill:hover .skyai-nav-pill-inner::before {
+    opacity: 1;
+  }
+
+  .skyphr-navbar-main-wrapper .skyai-nav-pill:hover .skyai-nav-pill-sparkle-wrapper {
+    transform: scale(1.2);
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .skyphr-navbar-main-wrapper .skyai-nav-pill {
+    display: flex;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skyphr-navbar-main-wrapper .skyai-nav-pill,
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-inner,
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-text,
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-sparkle {
+    animation: none !important;
+  }
+
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-inner {
+    background-position: 50% 50%;
+  }
+
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-sparkle {
+    opacity: 1;
+  }
+
+  .skyphr-navbar-main-wrapper .skyai-nav-pill-sparkle-wrapper {
+    transition: none;
+  }
+
+  .skyphr-navbar-main-wrapper .skyai-nav-pill:hover .skyai-nav-pill-sparkle-wrapper {
+    transform: none;
   }
 }

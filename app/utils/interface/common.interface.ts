@@ -1,4 +1,13 @@
-import { SectionHeader } from "@/app/utils/interface/page.interface";
+import {
+  SkyAiChallengeCard,
+  SkyAiChallengesSection,
+  SkyAiLensCard,
+  SkyAiProcessStep,
+  SkyAiServiceCard,
+  SkyAiServicesSection,
+  SkyAiSkyAgentCard,
+} from "@/app/utils/interface/data.interface";
+import { DevelopmentProcessStep, SectionHeader } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 import { ButtonHTMLAttributes } from "react";
 
@@ -129,6 +138,8 @@ export interface OurTeamMembersDataArrayInterface {
 export interface CommonSectionHeaderInterface {
   header: SectionHeader;
   className?: string;
+  headerParentClass?: string;
+  descriptionClass?: string;
 }
 
 export interface OurStepsDataInterface {
@@ -160,3 +171,88 @@ export type FormValues = {
 };
 
 export type FormErrors = Partial<Record<keyof FormValues, string>>;
+
+export interface SkyAiChallengeCardInterface {
+  card: SkyAiChallengeCard;
+  index: number;
+}
+
+export interface SkyAiChallengeCtaCardInterface {
+  data: NonNullable<SkyAiChallengesSection["ctaCard"]>;
+}
+
+export interface SkyAiServiceCardInterface {
+  card: SkyAiServiceCard;
+}
+
+export interface SkyAiServiceCtaCardInterface {
+  data: NonNullable<SkyAiServicesSection["ctaCard"]>;
+  // "frosted" is the glass version used on dark backgrounds
+  variant?: "solid" | "frosted";
+  className?: string;
+}
+
+export interface SkyAiNetworkLinesInterface {
+  color?: string;
+  lineOpacity?: number;
+  dotOpacity?: number;
+  className?: string;
+}
+
+export interface SkyAiSkyAgentCardInterface {
+  data: SkyAiSkyAgentCard;
+}
+
+export interface SkyAiLensCardInterface {
+  data: SkyAiLensCard;
+}
+
+export interface SkyAiStatusPillInterface {
+  label: string;
+  tone: "green" | "blue";
+  pulse?: boolean;
+}
+
+export interface SkyAiSectionBadgeInterface {
+  label: string;
+  icon?: React.ReactNode;
+  className?: string;
+}
+
+export interface ProcessStepCardInterface {
+  step: DevelopmentProcessStep;
+  index: number;
+  isLastStep?: boolean;
+  variant?: "numbered" | "icon";
+  icon?: React.ReactNode;
+  className?: string;
+  contentClassName?: string;
+}
+
+export interface SkyAiProcessStepInterface {
+  step: SkyAiProcessStep;
+  index: number;
+  deliverablesLabel: string;
+  className?: string;
+}
+
+export interface SkyAiScoreRingInterface {
+  score: number;
+  max?: number;
+  label: string;
+  className?: string;
+}
+
+export interface SkyAiModalInterface {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export interface SkyAiLiveCallModalInterface {
+  isOpen: boolean;
+  onClose: () => void;
+  data: SkyAiSkyAgentCard["liveCall"];
+}

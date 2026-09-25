@@ -1,16 +1,16 @@
 "use client";
 import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
-import SkyAiServiceCard from "@/app/components/skyAiServiceCard";
-import SkyAiServiceCtaCard from "@/app/components/skyAiServiceCtaCard";
+import SkyAiChallengeCard from "@/app/components/skyAiChallengeCard";
+import SkyAiChallengeCtaCard from "@/app/components/skyAiChallengeCtaCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
-import { SkyAiServicesSectionInterface } from "@/app/utils/interface/section.interface";
+import { SkyAiChallengesSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function SkyAiServicesSection({ data, classNames }: SkyAiServicesSectionInterface) {
+function SkyAiChallengesSection({ data, classNames }: SkyAiChallengesSectionInterface) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -41,24 +41,30 @@ function SkyAiServicesSection({ data, classNames }: SkyAiServicesSectionInterfac
       ref={containerRef}
       id={data.id}
       className={twMerge(
-        "w-full h-auto scroll-mt-20 bg-linear-to-b from-(--skyai-lavender-bg) to-(--root-white-color)",
+        "relative w-full h-auto scroll-mt-20 overflow-hidden bg-(--skyai-lavender-bg)",
         COMMON_SECTION_PADDING,
-
         classNames,
       )}>
-      <div className="skyphr-container">
+      {/* Soft lavender glow behind the heading */}
+      <div
+        aria-hidden="true"
+        className="absolute left-1/2 top-0 -translate-x-1/2 w-[min(1100px,170vw)] h-120 pointer-events-none bg-[radial-gradient(closest-side,rgba(105,116,226,0.16),transparent)]"
+      />
+
+      <div className="skyphr-container relative">
         <CommonSectionHeader header={data?.header} className="px-0!" />
 
-        {/* 3 × 2 on desktop, 2 columns on tablet, 1 on mobile; auto-rows-fr keeps every card the same height */}
-        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6">
-          {data.cards.map((card) => (
-            <SkyAiServiceCard key={card.title} card={card} />
+        {/* 2 × 2 from tablet up, 1 column on mobile; auto-rows-fr keeps every card the same height */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 auto-rows-fr gap-4 lg:gap-6">
+          {data.cards.map((card, index) => (
+            <SkyAiChallengeCard key={card.title} card={card} index={index} />
           ))}
-          {data.ctaCard && <SkyAiServiceCtaCard data={data.ctaCard} />}
         </div>
+
+        {data.ctaCard && <SkyAiChallengeCtaCard data={data.ctaCard} />}
       </div>
     </div>
   );
 }
 
-export default SkyAiServicesSection;
+export default SkyAiChallengesSection;

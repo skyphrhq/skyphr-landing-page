@@ -1,6 +1,7 @@
 import {
   CommonPageDataInterface,
   CTA,
+  DevelopmentProcessStep,
   HeroSection,
   ImageOptionsInterface,
   SectionHeader,
@@ -122,9 +123,132 @@ export interface SkyAiServicesSection {
   };
 }
 
+export interface SkyAiChallengeCard {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  imageOptions: {
+    imagePath: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+  };
+}
+
+export interface SkyAiChallengesSection {
+  id?: string;
+  badge: string;
+  header: SectionHeader;
+  cards: SkyAiChallengeCard[];
+  ctaCard?: {
+    title: string;
+    description: string;
+    cta: { label: string; href: string; target?: string; rel?: string };
+  };
+}
+
+export interface SkyAiBuiltByStat {
+  value: string;
+  label: string;
+}
+
+export interface SkyAiBuiltByStackChip {
+  label: string;
+  icon: React.ReactNode;
+}
+
+export interface SkyAiSkyAgentCard {
+  status: string;
+  title: string;
+  description: string;
+  stats: SkyAiBuiltByStat[];
+  stack: SkyAiBuiltByStackChip[];
+  imageOptions: {
+    imagePath: StaticImageData;
+    width: number;
+    height: number;
+    alt: string;
+  };
+  demo: {
+    label: string;
+    modalTitle: string;
+    videoUrl: string;
+  };
+  liveCall: {
+    label: string;
+    modalTitle: string;
+    // Shown to people; `phoneNumber` is the E.164 value used for tel: links and copying
+    displayNumber: string;
+    phoneNumber: string;
+    note: string;
+  };
+}
+
+export interface SkyAiLensIssue {
+  label: string;
+  severity: "high" | "medium";
+}
+
+export interface SkyAiLensCard {
+  status: string;
+  title: string;
+  description: string;
+  cta: { label: string; href: string; target?: string; rel?: string };
+  score: number;
+  scoreLabel: string;
+  issues: SkyAiLensIssue[];
+}
+
+export interface SkyAiBuiltBySection {
+  id?: string;
+  badge: string;
+  header: SectionHeader;
+  skyCard: SkyAiSkyAgentCard;
+  lensCard: SkyAiLensCard;
+  ctaCard: NonNullable<SkyAiServicesSection["ctaCard"]>;
+}
+
+export interface SkyAiProcessStep {
+  title: string;
+  description: string;
+  deliverables: string[];
+}
+
+export interface SkyAiProcessPrinciple {
+  label: string;
+  icon: React.ReactNode;
+}
+
+export interface SkyAiProcessSection {
+  id?: string;
+  badge: string;
+  header: SectionHeader;
+  steps: SkyAiProcessStep[];
+  deliverablesLabel: string;
+  principles: {
+    label: string;
+    items: SkyAiProcessPrinciple[];
+  };
+}
+
+export interface SkyAiSecurityCard extends DevelopmentProcessStep {
+  icon: React.ReactNode;
+}
+
+export interface SkyAiSecuritySection {
+  id?: string;
+  badge: { label: string; icon: React.ReactNode };
+  header: SectionHeader;
+  cards: SkyAiSecurityCard[];
+}
+
 export interface SkyAiPageDataInterface extends Omit<CommonPageDataInterface, "hero" | "services"> {
   hero: SkyAiHeroSection;
   subNav?: SkyAiSubNavItem[];
   techStrip?: SkyAiTechStrip;
   services?: SkyAiServicesSection;
+  challenges?: SkyAiChallengesSection;
+  builtBy?: SkyAiBuiltBySection;
+  buildProcess?: SkyAiProcessSection;
+  security?: SkyAiSecuritySection;
 }

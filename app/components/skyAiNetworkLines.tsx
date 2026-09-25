@@ -1,5 +1,7 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { SkyAiNetworkLinesInterface } from "@/app/utils/interface/common.interface";
+import { useEffect, useId, useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface OrbitDot {
   duration: number; // seconds per loop
@@ -75,55 +77,78 @@ const RIGHT_LINES: OrbitLine[] = [
   },
   {
     id: "skyai-orbit-r4",
-    d: "M -80 560 C 10 540 90 500 150 440",
-    dots: [{ duration: 19, offset: 8 }],
+    d: "M -80 560 C 10 540 90 500 150 440 C 220 370 290 230 320 -80",
+    dots: [{ duration: 24, offset: 8 }],
   },
 ];
 
-function OrbitSide({ lines, mirrored, delayStart }: { lines: OrbitLine[]; mirrored?: boolean; delayStart: number }) {
+interface OrbitSideProps {
+  lines: OrbitLine[];
+  mirrored?: boolean;
+  delayStart: number;
+  idPrefix: string;
+  color: string;
+  dotOpacity: number;
+  layer: "lines" | "dots";
+}
+
+function OrbitSide({ lines, mirrored, delayStart, idPrefix, color, dotOpacity, layer }: OrbitSideProps) {
   return (
     <g transform={mirrored ? "translate(768 0) scale(-1 1)" : undefined}>
-      <g className="skyai-orbit-lines" stroke="var(--cta-button-background)" strokeWidth="1" fill="none">
-        {lines.map((line, index) => (
-          <path
-            key={line.id}
-            id={line.id}
-            d={line.d}
-            pathLength={1}
-            vectorEffect="non-scaling-stroke"
-            className={`skyai-orbit-line ${index >= 2 ? "max-md:hidden" : ""}`}
-            style={{ ["--skyai-line-delay" as string]: `${(delayStart + index) * 150}ms` }}
-          />
-        ))}
-      </g>
-      {/* Dots stay off on mobile so nothing moves behind the text */}
-      <g className="skyai-orbit-dots max-md:hidden" fill="var(--cta-button-background)">
-        {lines.flatMap((line) =>
-          line.dots.map((dot, dotIndex) => (
-            <g key={`${line.id}-${dotIndex}`}>
-              <animateMotion dur={`${dot.duration}s`} begin={`-${dot.offset}s`} repeatCount="indefinite">
-                <mpath href={`#${line.id}`} />
-              </animateMotion>
-              <circle
-                r="3.5"
-                opacity={dot.pulseDelay === undefined ? 0.6 : undefined}
-                className={dot.pulseDelay === undefined ? undefined : "skyai-orbit-dot-pulse"}
-                style={
-                  dot.pulseDelay === undefined
-                    ? undefined
-                    : { ["--skyai-pulse-delay" as string]: `-${dot.pulseDelay}s` }
-                }
-              />
-            </g>
-          )),
-        )}
-      </g>
+      {layer === "lines" ? (
+        <g className="skyai-orbit-lines" stroke={color} strokeWidth="1" fill="none">
+          {lines.map((line, index) => (
+            <path
+              key={line.id}
+              id={`${idPrefix}-${line.id}`}
+              d={line.d}
+              pathLength={1}
+              className={`skyai-orbit-line ${index >= 2 ? "max-md:hidden" : ""}`}
+              style={{
+                ["--skyai-line-delay" as string]: `${(delayStart + index) * 150}ms`,
+              }}
+            />
+          ))}
+        </g>
+      ) : (
+        // Dots stay off on mobile so nothing moves behind the text
+        <g className="skyai-orbit-dots max-md:hidden" fill={color}>
+          {lines.flatMap((line) =>
+            line.dots.map((dot, dotIndex) => (
+              <g key={`${line.id}-${dotIndex}`} opacity={dotOpacity}>
+                <animateMotion dur={`${dot.duration}s`} begin={`-${dot.offset}s`} repeatCount="indefinite">
+                  <mpath href={`#${idPrefix}-${line.id}`} />
+                </animateMotion>
+                <circle
+                  r="3.5"
+                  opacity={dot.pulseDelay === undefined ? 0.6 : undefined}
+                  className={dot.pulseDelay === undefined ? undefined : "skyai-orbit-dot-pulse"}
+                  style={
+                    dot.pulseDelay === undefined
+                      ? undefined
+                      : {
+                          ["--skyai-pulse-delay" as string]: `-${dot.pulseDelay}s`,
+                        }
+                  }
+                />
+              </g>
+            )),
+          )}
+        </g>
+      )}
     </g>
   );
 }
 
-function SkyAiNetworkLines() {
+function SkyAiNetworkLines({
+  color = "var(--cta-button-background)",
+  lineOpacity = 0.22,
+  dotOpacity = 1,
+  className,
+}: SkyAiNetworkLinesInterface) {
   const svgRef = useRef<SVGSVGElement>(null);
+  // Unique ids so the network can render in more than one section without the paths and masks colliding
+  const idPrefix = `skyai-orbit-${useId().replace(/:/g, "")}`;
 
   // SMIL motion ignores prefers-reduced-motion, so pause it here (CSS covers the rest)
   useEffect(() => {
@@ -139,34 +164,52 @@ function SkyAiNetworkLines() {
     return () => query.removeEventListener("change", sync);
   }, []);
 
+  const sideProps = { idPrefix, color, dotOpacity };
+
+  const renderHalves = (layer: OrbitSideProps["layer"]) => (
+    <>
+      <svg x="0" y="0" width="50%" height="100%" viewBox="0 0 768 1024" preserveAspectRatio="xMinYMid slice">
+        <g strokeOpacity={lineOpacity}>
+          <OrbitSide lines={LEFT_LINES} delayStart={0} layer={layer} {...sideProps} />
+        </g>
+      </svg>
+      <svg x="50%" y="0" width="50%" height="100%" viewBox="0 0 768 1024" preserveAspectRatio="xMaxYMid slice">
+        <g strokeOpacity={lineOpacity}>
+          <OrbitSide lines={RIGHT_LINES} mirrored delayStart={LEFT_LINES.length} layer={layer} {...sideProps} />
+        </g>
+      </svg>
+    </>
+  );
+
   return (
     <svg
       ref={svgRef}
       aria-hidden="true"
       focusable="false"
-      className="absolute inset-0 w-full h-full z-10 pointer-events-none">
+      className={twMerge("absolute inset-0 w-full h-full z-10 pointer-events-none", className)}>
       <defs>
         {/* Fades the network out towards the centre so the wordmark, copy and buttons stay clear */}
-        <radialGradient id="skyai-orbit-fade" cx="50%" cy="45%" r="50%">
+        <radialGradient id={`${idPrefix}-fade`} cx="50%" cy="45%" r="50%">
           <stop offset="0.3" stopColor="black" />
           <stop offset="0.85" stopColor="white" />
         </radialGradient>
-        <mask id="skyai-orbit-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
-          <rect width="100%" height="100%" fill="url(#skyai-orbit-fade)" />
+        {/* Dots are much brighter than the faint lines, so they fade out sooner; otherwise a dot keeps
+            showing where its line has already faded and looks detached from it */}
+        <radialGradient id={`${idPrefix}-dot-fade`} cx="50%" cy="45%" r="50%">
+          <stop offset="0.5" stopColor="black" />
+          <stop offset="0.85" stopColor="white" />
+        </radialGradient>
+        <mask id={`${idPrefix}-mask`} maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+          <rect width="100%" height="100%" fill={`url(#${idPrefix}-fade)`} />
+        </mask>
+        <mask id={`${idPrefix}-dot-mask`} maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+          <rect width="100%" height="100%" fill={`url(#${idPrefix}-dot-fade)`} />
         </mask>
       </defs>
-      <g mask="url(#skyai-orbit-mask)" className="opacity-60 md:opacity-100">
-        <svg x="0" y="0" width="50%" height="100%" viewBox="0 0 768 1024" preserveAspectRatio="xMinYMid slice">
-          <g strokeOpacity="0.22">
-            <OrbitSide lines={LEFT_LINES} delayStart={0} />
-          </g>
-        </svg>
-        <svg x="50%" y="0" width="50%" height="100%" viewBox="0 0 768 1024" preserveAspectRatio="xMaxYMid slice">
-          <g strokeOpacity="0.22">
-            <OrbitSide lines={RIGHT_LINES} mirrored delayStart={LEFT_LINES.length} />
-          </g>
-        </svg>
+      <g mask={`url(#${idPrefix}-mask)`} className="opacity-60 md:opacity-100">
+        {renderHalves("lines")}
       </g>
+      <g mask={`url(#${idPrefix}-dot-mask)`}>{renderHalves("dots")}</g>
     </svg>
   );
 }

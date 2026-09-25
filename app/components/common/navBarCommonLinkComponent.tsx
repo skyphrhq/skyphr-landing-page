@@ -44,7 +44,7 @@ export function NavBarCommonLinkComponent({
   );
   const navLinkClassName = twMerge(
     "skyphr-nav-link flex items-center justify-between gap-2 font-medium font-instrument-sans transition-all text-(--text-secondary-color)",
-    `${isNested ? "w-full min-w-64 px-4 py-3 text-base rounded" : "px-3 py-1 text-lg rounded"}`,
+    `${isNested ? "w-full min-w-64 px-4 py-3 text-base rounded" : "h-9 px-3.5 text-lg rounded-full"}`,
     `${hasDropdown && isOpen ? "max-xmd:bg-(--active-link-bg)" : ""}`,
     !shouldRenderLink && hasDropdown && "cursor-pointer",
     !shouldRenderLink && !hasDropdown && "cursor-default",

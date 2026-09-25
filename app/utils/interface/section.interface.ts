@@ -19,7 +19,14 @@ import type {
   WhyChooseSectionData,
   WhatWeBuildSectionData,
 } from "@/app/utils/interface/page.interface";
-import type { SkyAiHeroSection, SkyAiServicesSection } from "@/app/utils/interface/data.interface";
+import type {
+  SkyAiBuiltBySection,
+  SkyAiChallengesSection,
+  SkyAiHeroSection,
+  SkyAiProcessSection,
+  SkyAiSecuritySection,
+  SkyAiServicesSection,
+} from "@/app/utils/interface/data.interface";
 
 export interface HeroSectionElementInterface {
   data: HeroSection;
@@ -140,5 +147,25 @@ export interface SkyAiHeroSectionInterface {
 
 export interface SkyAiServicesSectionInterface {
   data: SkyAiServicesSection;
+  classNames?: string;
+}
+
+export interface SkyAiChallengesSectionInterface {
+  data: SkyAiChallengesSection;
+  classNames?: string;
+}
+
+export interface SkyAiBuiltBySectionInterface {
+  data: SkyAiBuiltBySection;
+  classNames?: string;
+}
+
+export interface SkyAiProcessSectionInterface {
+  data: SkyAiProcessSection;
+  classNames?: string;
+}
+
+export interface SkyAiSecuritySectionInterface {
+  data: SkyAiSecuritySection;
   classNames?: string;
 }
