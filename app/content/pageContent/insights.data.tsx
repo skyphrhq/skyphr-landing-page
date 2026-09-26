@@ -14,7 +14,7 @@ export const INSIGHTS_DATA: BlogCardInterface[] = [
       imagePath: MockupOne,
       width: 600,
       height: 270,
-      alt: "How We Design Products That Scale",
+      alt: "Scalable product design interface mockup",
     },
   },
   {
@@ -27,7 +27,7 @@ export const INSIGHTS_DATA: BlogCardInterface[] = [
       imagePath: MockupTwo,
       width: 600,
       height: 270,
-      alt: "From Idea to Launch in 8 Weeks",
+      alt: "Product launch planning interface mockup",
     },
   },
   {
@@ -40,7 +40,7 @@ export const INSIGHTS_DATA: BlogCardInterface[] = [
       imagePath: MockupThree,
       width: 600,
       height: 270,
-      alt: "Why Most SaaS Products Fail at Onboarding",
+      alt: "SaaS onboarding interface mockup",
     },
   },
   {
@@ -52,7 +52,7 @@ export const INSIGHTS_DATA: BlogCardInterface[] = [
       imagePath: MockupOne,
       width: 600,
       height: 270,
-      alt: "The Hidden Cost of Skipping Discovery",
+      alt: "Product discovery dashboard mockup",
     },
   },
   {
@@ -65,7 +65,7 @@ export const INSIGHTS_DATA: BlogCardInterface[] = [
       imagePath: MockupTwo,
       width: 600,
       height: 270,
-      alt: "Building for Mobile-First in 2025",
+      alt: "Mobile-first product strategy interface mockup",
     },
   },
 ];

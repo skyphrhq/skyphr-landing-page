@@ -113,10 +113,10 @@ function OurApproachSection({ data, classNames }: OurApproachSectionInterface) {
 
               {/* Center Text (Static) */}
               <div className="absolute z-10 text-center flex flex-col items-center justify-center min-w-[50%] min-h-[50%] aspect-auto sm:w-50 sm:h-50 bg-white rounded-full">
-                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,38px)] lg:text-[clamp(20px,3vw,26px)] xl:text-[clamp(24px,5vw,30px)] 2xl:text-[clamp(24px,8vw,40px)] font-bold text-gray-900 mb-1 tracking-tight font-instrument-sans">
+                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,38px)] lg:text-[clamp(20px,3vw,26px)] xl:text-[clamp(35px,5vw,45px)]  font-bold text-gray-900 mb-1 tracking-tight font-instrument-sans">
                   {data?.header?.heroHighlightedText?.textOne}
                 </h3>
-                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,38px)] lg:text-[clamp(20px,3vw,26px)] xl:text-[clamp(24px,5vw,30px)] 2xl:text-[clamp(24px,8vw,40px)] font-bold text-purple-400 mb-4 tracking-tight font-instrument-sans">
+                <h3 className="text-[clamp(20px,3vw,26px)] sm:text-[clamp(24px,10vw,38px)] lg:text-[clamp(20px,3vw,26px)] xl:text-[clamp(30px,5vw,45px)] font-bold text-purple-400 mb-4 tracking-tight font-instrument-sans">
                   {data?.header?.heroHighlightedText?.textTwo}
                 </h3>
                 <div className="w-8 h-0.5 bg-gray-200 mb-4 rounded-full"></div>

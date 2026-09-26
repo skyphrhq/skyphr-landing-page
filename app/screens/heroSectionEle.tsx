@@ -28,29 +28,31 @@ function HeroSectionElement({ data, classNames }: HeroSectionElementInterface) {
       <HeroBgAbstract />
       <div
         ref={animationContainer}
-        className="w-ful h-full relative z-20 flex flex-col items-center max-w-4xl mx-auto justify-center">
+        className="w-ful h-full relative z-20 flex flex-col items-center max-w-5xl mx-auto justify-center">
         {data?.trustedBy && data?.trustedBy?.length > 0 && <TrustedPill className="reveal-animation mb-10 xl:mb-14" />}
         <div className="flex flex-col items-center justify-center gap-2">
-          {data?.header?.title?.map((titleRow, rowIndex) => (
-            <h1
-              className="font-instrument-sans text-center text-4xl xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
-              key={rowIndex}>
-              {titleRow?.map((chunk, index) => {
-                return (
-                  <span
-                    className={twMerge(
-                      "font-instrument-sans reveal-animation",
-                      chunk?.classNames,
-                      "reveal-animation",
-                      chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
-                    )}
-                    key={index}>
-                    {chunk.text}
-                  </span>
-                );
-              })}
-            </h1>
-          ))}
+          <h1 className="flex flex-col items-center justify-center gap-2">
+            {data?.header?.title?.map((titleRow, rowIndex) => (
+              <span
+                className="font-instrument-sans text-center text-4xl lg:text-5xl xl:text-[62px] 2xl:text-[72px] font-bold tracking-tight text-(--text-main-color)"
+                key={rowIndex}>
+                {titleRow?.map((chunk, index) => {
+                  return (
+                    <span
+                      className={twMerge(
+                        "font-instrument-sans reveal-animation",
+                        chunk?.classNames,
+                        "reveal-animation",
+                        chunk?.variant === "italic" && "italic font-bold! font-playfair-display text-(--cta-button-background)",
+                      )}
+                      key={index}>
+                      {chunk.text}
+                    </span>
+                  );
+                })}
+              </span>
+            ))}
+          </h1>
         </div>
         <div className="w-full flex flex-col items-start justify-start gap-5">
           {data?.header?.description?.map((description, index) => (

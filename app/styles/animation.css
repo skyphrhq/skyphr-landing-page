@@ -15,3 +15,157 @@
     animation-play-state: paused;
   }
 }
+
+/* ===== SkyAI hero ===== */
+
+.skyai-wordmark-shadow {
+  filter: drop-shadow(0 12px 28px rgba(15, 15, 15, 0.08));
+}
+
+/*
+ * The anchor is a zero-size box on the baseline, right after the "I" (Instrument Sans: cap height 0.72em).
+ * bottom = cap height + 10% gap, so the sparkle floats above the letter without touching it.
+ * left moves back to the centre of the "I" (its advance width, less the -0.05em tracking).
+ */
+.skyai-sparkle-anchor {
+  --skyai-i-advance: 0.254em;
+  width: 0.3em;
+  height: 0.3em;
+  bottom: calc(0.72em * 1.1);
+  left: calc(0.05em - var(--skyai-i-advance) / 2);
+  translate: -50% 0;
+}
+
+/* Sparkle: one ~1.2s spin with a scale pop, then rests; 6.2s per cycle (spin → 5s pause → spin) */
+@keyframes skyai-sparkle-spin {
+  0% {
+    rotate: 0deg;
+    animation-timing-function: ease-in-out;
+  }
+  19.35%,
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes skyai-sparkle-pop {
+  0% {
+    scale: 1;
+    animation-timing-function: ease-out;
+  }
+  9.7% {
+    scale: 1.1;
+    animation-timing-function: ease-in;
+  }
+  19.35%,
+  100% {
+    scale: 1;
+  }
+}
+.skyai-sparkle {
+  transform-origin: center;
+  animation:
+    skyai-sparkle-spin 3.2s infinite,
+    skyai-sparkle-pop 6.2s infinite;
+}
+
+/* Network lines: draw in once, staggered through --skyai-line-delay */
+@keyframes skyai-line-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.skyai-orbit-line {
+  stroke-dasharray: 1;
+  animation: skyai-line-draw 1.5s ease-out var(--skyai-line-delay, 0ms) both;
+}
+
+/* Dots fade in once the lines are drawn */
+@keyframes skyai-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.skyai-orbit-dots {
+  animation: skyai-fade-in 0.8s ease-out 1.4s both;
+}
+
+@keyframes skyai-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    scale: 1;
+  }
+  50% {
+    opacity: 0.8;
+    scale: 1.3;
+  }
+}
+.skyai-orbit-dot-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: skyai-dot-pulse 3.5s ease-in-out var(--skyai-pulse-delay, 0s) infinite;
+}
+
+/* "Built by SkyAI": faint dotted grid that fades out towards the section edges */
+.skyai-dot-grid {
+  background-image: radial-gradient(rgb(255 255 255 / 0.04) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 30%, transparent 100%);
+}
+
+/* Slow float for the Sky phone visual */
+@keyframes skyai-float {
+  0%,
+  100% {
+    translate: 0 6px;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+.skyai-float {
+  animation: skyai-float 6s ease-in-out infinite;
+}
+
+/* Soft halo behind "live" status dots */
+@keyframes skyai-live-pulse {
+  0% {
+    opacity: 0.6;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 2.4;
+  }
+}
+.skyai-live-pulse {
+  animation: skyai-live-pulse 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skyai-sparkle,
+  .skyai-orbit-line,
+  .skyai-orbit-dots,
+  .skyai-orbit-dot-pulse,
+  .skyai-float {
+    animation: none;
+  }
+  .skyai-live-pulse {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* SkyAI sub-navigation: scrollable on small screens without a visible scrollbar */
+.skyai-subnav-scroll {
+  scrollbar-width: none;
+}
+.skyai-subnav-scroll::-webkit-scrollbar {
+  display: none;
+}

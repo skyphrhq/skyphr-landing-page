@@ -158,7 +158,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
             classNames: "font-semibold",
           },
           {
-            text: "Skyphr was founded by",
+            text: "was founded by",
           },
           {
             text: " Varun Patel, ",
@@ -183,16 +183,24 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
     members: [
       {
         name: "Varun Patel",
-        role: "Founder & CEO",
-        description:
-          "Focused on building scalable SaaS products, AI-powered systems, modern web applications, and intelligent automation solutions. Driven by performance, usability, innovation, and long-term business value, Varun leads Skyphr's vision of helping companies build smarter digital products for the future.",
+        role: "Founder",
+        description: [
+          [
+            { text: "I started Skyphr" },
+            { text: "to build products" },
+            { text: "that don't just" },
+            { text: "demo well," },
+            { text: "but actually" },
+            { text: "work in production.", variant: "italic" },
+          ],
+        ],
         social: [
           {
             platform: "LinkedIn",
             icon: createElement(FiLinkedin),
             url: "https://www.linkedin.com/in/varun-patel-aa465828b/",
-            title: "LinkedIn",
-            ariaLabel: "LinkedIn",
+            title: "Varun Patel on LinkedIn",
+            ariaLabel: "Varun Patel on LinkedIn",
             target: "_blank",
             rel: "noopener noreferrer",
           },
@@ -201,7 +209,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
           imagePath: CEOImage,
           width: 450,
           height: 635,
-          alt: "Varun Patel",
+          alt: "Varun Patel, founder of Skyphr",
         },
       },
     ],

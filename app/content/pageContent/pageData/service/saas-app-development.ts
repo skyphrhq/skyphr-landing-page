@@ -67,7 +67,7 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: SAAS_APP_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "UI/UX Design and Automation Services",
+        alt: "SaaS application development services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

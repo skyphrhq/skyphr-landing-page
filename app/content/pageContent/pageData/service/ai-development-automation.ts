@@ -58,7 +58,7 @@ export const AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA: CommonPageDataInterfac
         imagePath: AI_DEVELOPMENT_AUTOMATION_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "UI/UX Design and Automation Services",
+        alt: "AI development and automation services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

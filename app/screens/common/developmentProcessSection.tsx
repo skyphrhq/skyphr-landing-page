@@ -1,8 +1,9 @@
 "use client";
 
+import ProcessStepCard from "@/app/components/processStepCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
-import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { DevelopmentProcessSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
@@ -71,58 +72,15 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
 
         <div className="grow w-full lg:w-1/2">
           <ol className="space-y-7">
-            {data.steps.map((step, index) => {
-              const stepNumber = String(index + 1).padStart(2, "0");
-              const isLastStep = index === data.steps.length - 1;
-
-              return (
-                <li
-                  key={`${step.title}-${stepNumber}`}
-                  className={twMerge(
-                    "relative flex gap-4 bg-(--about-us-card-bg) px-4 py-5 sm:gap-5 ",
-                    COMMON_BORDER_RADIUS,
-                  )}>
-                  <div className="relative flex shrink-0 flex-col items-center">
-                    <span className="relative z-30 flex size-11 items-center justify-center rounded-full border border-(--border-color) bg-(--root-white-color) font-instrument-sans text-sm font-bold text-(--text-main-color) sm:size-12">
-                      {stepNumber}
-                    </span>
-
-                    {!isLastStep && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute left-1/2 top-11 z-20 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-(--border-color) sm:top-12"
-                      />
-                    )}
-                  </div>
-
-                  <div className="min-w-0 pb-1 reveal-animation">
-                    <h3 className="font-instrument-sans text-lg font-bold leading-snug text-(--text-main-color) md:text-xl">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 font-instrument-sans text-sm leading-6 text-(--text-secondary-color) md:text-base md:leading-7">
-                      {step.description}
-                    </p>
-                    {step?.list && (
-                      <div className="mt-3">
-                        <span className="font-instrument-sans font-semibold text-sm leading-6 text-(--text-main-color) md:text-base md:leading-7">
-                          {step.list?.title}
-                        </span>
-                        <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
-                          {step.list.items.map((item) => (
-                            <li
-                              key={item}
-                              className="flex items-start gap-2.5 font-inter text-sm leading-5 text-(--text-secondary-color)">
-                              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--cta-button-background)" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </li>
-              );
-            })}
+            {data.steps.map((step, index) => (
+              <ProcessStepCard
+                key={`${step.title}-${index}`}
+                step={step}
+                index={index}
+                isLastStep={index === data.steps.length - 1}
+                contentClassName="reveal-animation"
+              />
+            ))}
           </ol>
         </div>
       </div>
