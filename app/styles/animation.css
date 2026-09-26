@@ -64,7 +64,7 @@
 .skyai-sparkle {
   transform-origin: center;
   animation:
-    skyai-sparkle-spin 6.2s infinite,
+    skyai-sparkle-spin 3.2s infinite,
     skyai-sparkle-pop 6.2s infinite;
 }
 

@@ -158,7 +158,7 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
             classNames: "font-semibold",
           },
           {
-            text: "Skyphr was founded by",
+            text: "was founded by",
           },
           {
             text: " Varun Patel, ",
@@ -184,7 +184,16 @@ export const ABOUT_US_PAGE_DATA: CommonPageDataInterface = {
       {
         name: "Varun Patel",
         role: "Founder",
-        description: "Varun Patel founded Skyphr after 4 years as a Full Stack MERN Developer at MindInventory.",
+        description: [
+          [
+            { text: "I started Skyphr" },
+            { text: "to build products" },
+            { text: "that don't just" },
+            { text: "demo well," },
+            { text: "but actually" },
+            { text: "work in production.", variant: "italic" },
+          ],
+        ],
         social: [
           {
             platform: "LinkedIn",

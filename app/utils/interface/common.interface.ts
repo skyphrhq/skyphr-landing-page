@@ -7,7 +7,7 @@ import {
   SkyAiServicesSection,
   SkyAiSkyAgentCard,
 } from "@/app/utils/interface/data.interface";
-import { DevelopmentProcessStep, SectionHeader } from "@/app/utils/interface/page.interface";
+import { DevelopmentProcessStep, SectionHeader, TextChunk } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 import { ButtonHTMLAttributes } from "react";
 
@@ -115,7 +115,7 @@ export interface OurValueCardInterface {
 export interface OurTeamMembersDataArrayInterface {
   name: string;
   role: string;
-  description: string;
+  description: TextChunk[][];
   social: {
     platform: string;
     icon: React.ReactNode;

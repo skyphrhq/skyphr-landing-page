@@ -6,6 +6,7 @@ import AboutUsSectionHeroElem from "@/app/screens/aboutUsSectionHero";
 import OurTeamSection from "@/app/screens/common/ourTeamSection";
 import OurValuesSection from "@/app/screens/common/ourValuesSection";
 import ContactUsSection from "@/app/screens/contactUsSection";
+import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
 import {
   FOUNDER_PERSON_ID,
@@ -62,7 +63,7 @@ function AboutUsPage() {
       )}
       {ABOUT_US_PAGE_DATA?.featuredWorks && (
         <section className="w-full h-auto">
-          <FeaturedWorks data={ABOUT_US_PAGE_DATA.featuredWorks} />
+          <FeaturedWorks data={ABOUT_US_PAGE_DATA.featuredWorks} classNames={`${COMMON_SECTION_PADDING} pt-0! md:pt-0! xl:pt-0!`} />
         </section>
       )}
       {/* {ABOUT_US_PAGE_DATA?.testimonials && (

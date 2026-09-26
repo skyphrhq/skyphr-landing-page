@@ -52,7 +52,7 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
           <div className="w-full flex flex-col items-start justify-start gap-6 lg:py-10 @container">
             {data?.header?.title?.map((titleRow, rowIndex) => (
               <h2
-                className="text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[36px] font-instrument-sans font-semibold leading-9 md:leading-12"
+                className="text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[38px] 2xl:text-[45px] font-instrument-sans font-semibold leading-9 md:leading-12 xl:leading-13 2xl:leading-15"
                 key={rowIndex}>
                 {titleRow.map((chunk, index) => (
                   <span
@@ -67,7 +67,7 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
             <div className="w-full flex flex-col items-start justify-start gap-5">
               {data?.header?.description?.map((description, index) => (
                 <p
-                  className="text-(--text-secondary-color) text-sm sm:text-base lg:text-lg font-instrument-sans font-normal reveal-text-animation"
+                  className="text-(--text-secondary-color) text-sm sm:text-base lg:text-lg xl:text-xl font-instrument-sans font-normal reveal-text-animation"
                   key={index}>
                   {description?.map((chunk, chunkIndex) => {
                     return (

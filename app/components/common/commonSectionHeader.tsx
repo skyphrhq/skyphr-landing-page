@@ -8,7 +8,7 @@ function CommonSectionHeader({ header, className, headerParentClass, description
       {header?.title?.map((titleRow, rowIndex) => (
         <h2
           className={twMerge(
-            "flex flex-wrap items-center justify-center gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[60px] 2xl:text-[72px] font-bold",
+            "flex flex-wrap items-center justify-center gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[50px] 2xl:text-[58px] font-bold",
             headerParentClass,
           )}
           key={rowIndex}>
@@ -17,7 +17,7 @@ function CommonSectionHeader({ header, className, headerParentClass, description
               <span
                 className={twMerge(
                   "font-instrument-sans reveal-text-animation",
-                  chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                  chunk?.variant === "italic" && "italic font-bold! font-playfair-display text-(--cta-button-background)",
                   chunk?.classNames,
                 )}
                 key={index}>
