@@ -32,6 +32,18 @@ export const COMMON_SECTION_PADDING = "py-15! md:py-20! xl:py-37.5!";
 export const SKYAI_SERVICE_CARD_BASE =
   "reveal-animation h-full flex flex-col rounded-[20px] p-6 md:p-8 transition-[translate,background-color,border-color] duration-200 hover:-translate-y-0.5";
 
+// TODO: replace with Sky's real phone number. `display` is shown to people, `e164` is used for tel: links and copying.
+// Used by /ai-voice-agent ("Call Sky yourself") and the Sky card on /sky-ai ("Try a live call").
+export const SKY_VOICE_PHONE_NUMBER = {
+  display: "+1 (000) 000-0000",
+  e164: "+10000000000",
+};
+
+// Spline scene for the orb in the /ai-voice-agent call demo (served from public/spline/)
+export const SKY_VOICE_ORB_SCENE_URL = "/spline/sky-voice-orb.splinecode";
+
+export const SKY_AI_CONSULTATION_URL = "https://cal.com/skyphr/30min";
+
 export const SITE_BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "https://skyphr.com").replace(
   /\/$/,
   "",

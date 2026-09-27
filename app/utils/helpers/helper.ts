@@ -21,6 +21,13 @@ export const CreateScrollTrigger = ({
 
 export const IsOdd = (index: number): boolean => index % 2 !== 0;
 
+// 75 -> "01:15"
+export const FormatCallTime = (totalSeconds: number) =>
+  `${String(Math.floor(totalSeconds / 60)).padStart(2, "0")}:${String(totalSeconds % 60).padStart(2, "0")}`;
+
+// Client-only: call from effects or event handlers, never during render (the server has no window)
+export const PrefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 export const NormalizePath = (path: string) => {
   if (path === "/") {
     return path;

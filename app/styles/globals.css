@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./animation.css";
+@import "./skyVoice.css";
 
 @theme {
   --breakpoint-xs: 491px;
@@ -26,6 +27,31 @@
   --skyai-night-start: #15143a;
   --skyai-night-end: #3a3f9c;
   --skyai-periwinkle-light: #c9ccff;
+  /* Sky AI voice agent page (/ai-voice-agent) */
+  --skyai-navy: #1a1e63;
+  --skyai-voice-muted: #5e6178;
+  --skyai-voice-body: #2a2c3f;
+  --skyai-voice-subtle: #8c8fa6;
+  --skyai-voice-idle: #c4c6d6;
+  --skyai-voice-indigo: #5560f0;
+  --skyai-voice-periwinkle: #7f89ff;
+  --skyai-voice-haze: #b9beff;
+  --skyai-voice-lilac: #e3d9ff;
+  --skyai-voice-bg-mid: #f7f6ff;
+  --skyai-voice-bg-end: #efeeff;
+  --skyai-voice-avatar-grey: #e7e8f3;
+  --skyai-voice-green: #16a34a;
+  --skyai-voice-green-bright: #22c55e;
+  --skyai-voice-green-light: #4ade80;
+  --skyai-voice-red: #ef4444;
+  --skyai-voice-red-light: #f87171;
+  --skyai-voice-success-bg: #f0fbf4;
+  --skyai-voice-success-bg-end: #e6f7ec;
+  --skyai-voice-success-border: #cbebd6;
+  --skyai-voice-success-text: #3f5b48;
+  --skyai-voice-orb-cyan: #22b8f0;
+  --skyai-voice-orb-magenta: #e0409a;
+  --skyai-voice-orb-orange: #f5692a;
 }
 
 .font-playfair-display {

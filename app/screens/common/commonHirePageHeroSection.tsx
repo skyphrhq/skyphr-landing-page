@@ -15,7 +15,7 @@ function CommonHirePageHeroSection({ data }: { data: HireHeroSection }) {
                 {titleRow.map((chunk, chunkIndex) => (
                   <span
                     className={twMerge(
-                      chunk.variant === "italic" && "italic font-semibold font-playfair-display",
+                      chunk.variant === "italic" && "italic font-semibold font-playfair-display text-(--cta-button-background)",
                       chunk.classNames,
                     )}
                     key={chunkIndex}>

@@ -6,6 +6,17 @@ import {
   SkyAiServiceCard,
   SkyAiServicesSection,
   SkyAiSkyAgentCard,
+  SkyVoiceCallConsoleData,
+  SkyVoiceCallFlowMessage,
+  SkyVoiceCallFlowStages,
+  SkyVoiceCallFlowStep,
+  SkyVoiceIndustry,
+  SkyVoiceInfoCardData,
+  SkyVoiceIntegration,
+  SkyVoiceParticipant,
+  SkyVoiceScriptLine,
+  SkyVoiceSpeaker,
+  SkyVoiceWhoForSection,
 } from "@/app/utils/interface/data.interface";
 import { DevelopmentProcessStep, SectionHeader, TextChunk } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
@@ -140,6 +151,8 @@ export interface CommonSectionHeaderInterface {
   className?: string;
   headerParentClass?: string;
   descriptionClass?: string;
+  // Render all title rows as lines of a single <h2> (default: one <h2> per row)
+  isSingleHeading?: boolean;
 }
 
 export interface OurStepsDataInterface {
@@ -252,8 +265,200 @@ export interface SkyAiModalInterface {
   className?: string;
 }
 
-export interface SkyAiLiveCallModalInterface {
-  isOpen: boolean;
-  onClose: () => void;
-  data: SkyAiSkyAgentCard["liveCall"];
+export type SkyVoiceCallPhase = "idle" | "live" | "ended";
+
+export interface SkyVoiceCallConsoleInterface {
+  data: SkyVoiceCallConsoleData;
+  className?: string;
+}
+
+export interface SkyVoiceCallPartyInterface {
+  participant: SkyVoiceParticipant;
+  tone: SkyVoiceSpeaker;
+  avatar: React.ReactNode;
+  isSpeaking: boolean;
+  activityLabels: SkyVoiceCallConsoleData["activityLabels"];
+}
+
+export interface SkyVoiceWaveBarsInterface {
+  tone: SkyVoiceSpeaker;
+  isActive: boolean;
+}
+
+export interface SkyVoiceCallControlInterface {
+  phase: SkyVoiceCallPhase;
+  labels: SkyVoiceCallConsoleData["controlLabels"];
+  onStart: () => void;
+  onEnd: () => void;
+}
+
+export interface SkyVoiceOrbInterface {
+  reducedMotion: boolean;
+}
+
+export interface SkyVoiceOrbPlaceholderInterface {
+  className?: string;
+}
+
+export interface SkyVoiceOrbSkeletonInterface {
+  className?: string;
+}
+
+export interface SkyVoiceTranscriptLine extends SkyVoiceScriptLine {
+  timestamp: number;
+  // True while the typewriter is still writing this line (`text` is then the partial text)
+  isTyping?: boolean;
+}
+
+export interface SkyVoiceTranscriptInterface {
+  data: SkyVoiceCallConsoleData["transcript"];
+  booked: SkyVoiceCallConsoleData["booked"];
+  names: Record<SkyVoiceSpeaker, string>;
+  lines: SkyVoiceTranscriptLine[];
+  phase: SkyVoiceCallPhase;
+}
+
+export interface SkyVoiceTranscriptLineInterface {
+  line: SkyVoiceTranscriptLine;
+  name: string;
+}
+
+export interface SkyVoiceBookedCardInterface {
+  data: SkyVoiceCallConsoleData["booked"];
+}
+
+export interface SkyVoiceCallFlowScrubberInterface {
+  steps: SkyVoiceCallFlowStep[];
+  activeIndex: number;
+  className?: string;
+}
+
+export interface SkyVoiceCallFlowScrubberMarkInterface {
+  time: string;
+  isDone: boolean;
+  isFirst: boolean;
+  isLast: boolean;
+}
+
+export interface SkyVoiceCallFlowStepsInterface {
+  steps: SkyVoiceCallFlowStep[];
+  activeIndex: number;
+  onSelect: (index: number) => void;
+  className?: string;
+}
+
+export interface SkyVoiceCallFlowStepInterface {
+  step: SkyVoiceCallFlowStep;
+  isActive: boolean;
+  isPast: boolean;
+  onSelect: () => void;
+}
+
+export interface SkyVoiceCallFlowStageInterface {
+  data: SkyVoiceCallFlowStages;
+  steps: SkyVoiceCallFlowStep[];
+  activeIndex: number;
+  // False while the section is off screen, so looping stage animations can pause
+  isAnimating: boolean;
+  className?: string;
+}
+
+export interface SkyVoiceCallFlowRingStageInterface {
+  data: SkyVoiceCallFlowStages["ring"];
+  isAnimating: boolean;
+}
+
+export interface SkyVoiceCallFlowGreetStageInterface {
+  data: SkyVoiceCallFlowStages["greet"];
+}
+
+export interface SkyVoiceCallFlowUnderstandStageInterface {
+  data: SkyVoiceCallFlowStages["understand"];
+}
+
+export interface SkyVoiceCallFlowBookStageInterface {
+  data: SkyVoiceCallFlowStages["book"];
+}
+
+export interface SkyVoiceCallFlowSaveStageInterface {
+  data: SkyVoiceCallFlowStages["save"];
+}
+
+export interface SkyVoiceCallFlowBubbleInterface {
+  message: SkyVoiceCallFlowMessage;
+  // Entrance delay in seconds, read by the stage's GSAP entrance
+  delay?: number;
+  className?: string;
+}
+
+export interface SkyVoiceCallFlowPillInterface {
+  label: string;
+  delay?: number;
+  className?: string;
+}
+
+export interface SkyVoiceWhoForIndexInterface {
+  data: SkyVoiceWhoForSection;
+  activeIndex: number;
+  // Below xmd each detail opens under its own row (accordion); above it they share the right-hand column
+  isStacked: boolean;
+  isAnimating: boolean;
+  onSelect: (index: number) => void;
+  className?: string;
+}
+
+export interface SkyVoiceWhoForIndexRowInterface {
+  industry: SkyVoiceIndustry;
+  isActive: boolean;
+  tabId: string;
+  panelId: string;
+  onSelect: () => void;
+  onKeyDown: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
+}
+
+export interface SkyVoiceWhoForDetailInterface {
+  industry: SkyVoiceIndustry;
+  labels: SkyVoiceWhoForSection["labels"];
+  isActive: boolean;
+  isAnimating: boolean;
+  tabId: string;
+  panelId: string;
+  className?: string;
+}
+
+export interface SkyVoiceWhoForGreetingInterface {
+  name: string;
+  greeting: string;
+  // Waveform loops only while this is true (active industry, section on screen)
+  isAnimating: boolean;
+}
+
+export interface SkyVoiceWhoForCtaInterface {
+  data: SkyVoiceWhoForSection["cta"];
+  // Stacked card with a full-width button (used inside the panel, under the industry list)
+  isCompact?: boolean;
+  className?: string;
+}
+
+export interface SkyVoiceInfoCardInterface {
+  data: SkyVoiceInfoCardData;
+  // Bottom block (points list, "In practice" note); aligned across the row via subgrid
+  children?: React.ReactNode;
+  className?: string;
+}
+
+export interface SkyVoiceInfoCardPointsInterface {
+  points: string[];
+  className?: string;
+}
+
+export interface SkyVoiceInfoCardPracticeInterface {
+  label: string;
+  text: string;
+  className?: string;
+}
+
+export interface SkyVoiceIntegrationCardInterface {
+  data: SkyVoiceIntegration;
+  className?: string;
 }

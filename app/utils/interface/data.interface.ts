@@ -169,19 +169,7 @@ export interface SkyAiSkyAgentCard {
     height: number;
     alt: string;
   };
-  demo: {
-    label: string;
-    modalTitle: string;
-    videoUrl: string;
-  };
-  liveCall: {
-    label: string;
-    modalTitle: string;
-    // Shown to people; `phoneNumber` is the E.164 value used for tel: links and copying
-    displayNumber: string;
-    phoneNumber: string;
-    note: string;
-  };
+  pageLink?: { label: string; href: string };
 }
 
 export interface SkyAiLensIssue {
@@ -251,4 +239,172 @@ export interface SkyAiPageDataInterface extends Omit<CommonPageDataInterface, "h
   builtBy?: SkyAiBuiltBySection;
   buildProcess?: SkyAiProcessSection;
   security?: SkyAiSecuritySection;
+}
+
+// ===============================
+// SKY AI VOICE AGENT PAGE (/ai-voice-agent)
+// ===============================
+export type SkyVoiceSpeaker = "caller" | "sky";
+
+export interface SkyVoiceScriptLine {
+  speaker: SkyVoiceSpeaker;
+  text: string;
+}
+
+export interface SkyVoiceParticipant {
+  name: string;
+  role: string;
+}
+
+export interface SkyVoiceBookedItem {
+  label: string;
+  icon: React.ReactNode;
+}
+
+export interface SkyVoiceCallConsoleData {
+  caller: SkyVoiceParticipant;
+  sky: SkyVoiceParticipant & { initial: string };
+  statusLabels: { idle: string; live: string; ended: string };
+  activityLabels: { speaking: string; listening: string };
+  controlLabels: {
+    start: string;
+    end: string;
+    replay: string;
+    startAria: string;
+    endAria: string;
+    replayAria: string;
+  };
+  transcript: { title: string; note: string; emptyText: string };
+  booked: { title: string; detail: string; items: SkyVoiceBookedItem[] };
+  script: SkyVoiceScriptLine[];
+}
+
+export interface SkyVoiceHeroSection extends HeroSection {
+  id?: string;
+  chip?: string;
+  console: SkyVoiceCallConsoleData;
+  stackNote?: string;
+}
+
+// "What happens in 90 seconds": one call, split into timed steps, each with its own stage visual
+export interface SkyVoiceCallFlowStep {
+  time: string;
+  title: string;
+  description: string;
+}
+
+export interface SkyVoiceCallFlowMessage extends SkyVoiceScriptLine {
+  name: string;
+}
+
+export interface SkyVoiceCallFlowDetail {
+  label: string;
+  value: string;
+}
+
+export interface SkyVoiceCallFlowRecordItem extends SkyVoiceCallFlowDetail {
+  icon: React.ReactNode;
+}
+
+export interface SkyVoiceCallFlowStages {
+  ring: { title: string; number: string; status: string };
+  greet: { message: SkyVoiceCallFlowMessage; profileTitle: string; profile: SkyVoiceCallFlowDetail[] };
+  understand: { message: SkyVoiceCallFlowMessage; detailsTitle: string; details: SkyVoiceCallFlowDetail[] };
+  book: {
+    calendarTitle: string;
+    days: string[];
+    times: string[];
+    // Slot ids are `${day}-${time}`, e.g. "Thu-4:30"
+    busySlots: string[];
+    bookedSlot: string;
+    message: SkyVoiceCallFlowMessage;
+    status: string;
+  };
+  save: {
+    lead: { name: string; company: string; tag: string };
+    summary: string;
+    items: SkyVoiceCallFlowRecordItem[];
+  };
+}
+
+export interface SkyVoiceCallFlowSection {
+  id?: string;
+  header: SectionHeader;
+  steps: SkyVoiceCallFlowStep[];
+  stages: SkyVoiceCallFlowStages;
+}
+
+// "Who it's for": one entry per industry, shown as a tab (desktop) or an accordion row (mobile)
+export interface SkyVoiceIndustry {
+  id: string;
+  icon: React.ReactNode;
+  name: string;
+  who: string;
+  problem: string;
+  handles: string[];
+  greeting: string;
+  books: string;
+  // Shown under the detail, e.g. for the industry Skyphr itself is in
+  note?: string;
+}
+
+export interface SkyVoiceWhoForSection {
+  id?: string;
+  header: SectionHeader;
+  labels: {
+    tablist: string;
+    books: string;
+    problem: string;
+    handles: string;
+    answers: string;
+    sky: string;
+  };
+  industries: SkyVoiceIndustry[];
+  cta: { title: string; description: string; button: CTA };
+}
+
+// Card used by "After the call" and "Trust and control": icon, title, paragraph, then a bottom block
+export interface SkyVoiceInfoCardData {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+export interface SkyVoiceAfterCallCard extends SkyVoiceInfoCardData {
+  points: string[];
+}
+
+export interface SkyVoiceIntegration {
+  icon: React.ReactNode;
+  name: string;
+  // Small pill next to the name; the open-ended "Your tools" card has none
+  role?: string;
+  description: string;
+  isOpenEnded?: boolean;
+}
+
+export interface SkyVoiceAfterCallSection {
+  id?: string;
+  header: SectionHeader;
+  cards: SkyVoiceAfterCallCard[];
+  integrations: { title: string; description: string; items: SkyVoiceIntegration[] };
+}
+
+export interface SkyVoiceTrustPrinciple extends SkyVoiceInfoCardData {
+  practice: string;
+}
+
+export interface SkyVoiceTrustSection {
+  id?: string;
+  header: SectionHeader;
+  practiceLabel: string;
+  principles: SkyVoiceTrustPrinciple[];
+}
+
+export interface AiVoiceAgentPageDataInterface extends Omit<CommonPageDataInterface, "hero"> {
+  hero: SkyVoiceHeroSection;
+  callFlow?: SkyVoiceCallFlowSection;
+  whoFor?: SkyVoiceWhoForSection;
+  afterCall?: SkyVoiceAfterCallSection;
+  trust?: SkyVoiceTrustSection;
 }
