@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const branch = process.env.VERCEL_GIT_COMMIT_REF;
 const isDevelopmentBranch = branch === "DEVELOPMENT";
 
+console.log("[next.config] branch:", branch, "| redirect enabled:", !isDevelopmentBranch);
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
