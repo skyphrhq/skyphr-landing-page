@@ -1,14 +1,21 @@
 import type { NextConfig } from "next";
 
+const branch = process.env.VERCEL_GIT_COMMIT_REF;
+const isDevelopmentBranch = branch === "DEVELOPMENT";
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "skyphr-landing-page.vercel.app" }],
-        destination: "https://skyphr.com/:path*",
-        permanent: true,
-      },
+      ...(!isDevelopmentBranch
+        ? [
+            {
+              source: "/:path*",
+              has: [{ type: "host" as const, value: "skyphr-landing-page.vercel.app" }],
+              destination: "https://skyphr.com/:path*",
+              permanent: true,
+            },
+          ]
+        : []),
       {
         source: "/varun-patel",
         destination: "/about-us",
