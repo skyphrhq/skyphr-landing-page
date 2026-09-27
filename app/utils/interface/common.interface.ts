@@ -227,6 +227,7 @@ export interface ProcessStepCardInterface {
   icon?: React.ReactNode;
   className?: string;
   contentClassName?: string;
+  style?: React.CSSProperties;
 }
 
 export interface SkyAiProcessStepInterface {

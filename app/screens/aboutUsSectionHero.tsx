@@ -34,7 +34,7 @@ function AboutUsSectionHeroElem({ data, classNames }: AboutUsHeroSectionInterfac
                 {text?.map((word, wordIndex) => (
                   <span
                     key={wordIndex}
-                    className={`${word?.variant === "italic" ? "font-playfair-display italic font-semibold" : ""}`}>
+                    className={`${word?.variant === "italic" ? "font-playfair-display italic font-bold! text-(--cta-button-background)" : ""}`}>
                     {word?.text}
                   </span>
                 ))}

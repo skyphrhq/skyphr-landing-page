@@ -233,8 +233,13 @@ export const OUR_TEAM_MEMBERS_DATA: OurTeamMembersDataArrayInterface[] = [
   {
     name: "Varun Patel",
     role: "Founder & CEO",
-    description:
-      "Focused on building scalable SaaS products, AI systems, and modern web applications with performance, usability, and real-world impact at the core.",
+    description: [
+      [
+        {
+          text: "Focused on building scalable SaaS products, AI systems, and modern web applications with performance, usability, and real-world impact at the core.",
+        },
+      ],
+    ],
     social: [
       {
         platform: "LinkedIn",

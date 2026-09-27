@@ -124,13 +124,9 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
         label: "Book a Free AI Consultation",
         href: "/contact",
         variant: "CTA_PRIMARY",
-        classNames: "bg-(--root-black-color) ring-(--root-black-color) min-w-0 pl-6 pr-13.5",
+        classNames: "min-w-0 pl-6 pr-13.5",
       },
     ],
-    exploreLink: {
-      label: "Explore SkyAI Services",
-      href: "#skyai-services",
-    },
     tags: [
       { label: "AI Agents", icon: createElement(HiSparkles) },
       { label: "LLM Integration", icon: createElement(HiDocumentText) },
@@ -287,12 +283,11 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     header: {
       title: [
         [{ text: "We don't just build AI for clients." }],
-        [{ text: "We run it ourselves.", classNames: "text-(--skyai-periwinkle-light)" }],
+        [{ text: "We run it ourselves.", variant: "italic", classNames: "bg-gradient-to-r from-[#B8A7FF] via-[#8B7CFF] to-[#6D8BFF] bg-clip-text text-transparent" }],
       ],
       description: [[{ text: "Real AI products we designed, built and use every day at Skyphr." }]],
     },
     skyCard: {
-      status: "In-house pilot · Beta",
       title: "Sky, our AI voice agent",
       description:
         "Built in-house by Skyphr. Sky answers real phone calls, talks naturally in the caller's language, and books real consultations on our calendar.",
