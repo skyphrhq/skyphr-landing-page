@@ -29,7 +29,7 @@ function SkyAiBuiltBySection({ data, classNames }: SkyAiBuiltBySectionInterface)
       const cardTextRevel = gsap.utils.toArray(".card-text-reveal");
       const { FROM, TO } = COMMON_SCROLL_TRIGGER_ANIMATION({
         trigger: containerRef.current,
-        start: "top 50%",
+        start: "top 70%",
         end: "bottom top",
       });
       gsap.fromTo(cardTextRevel, FROM, TO);

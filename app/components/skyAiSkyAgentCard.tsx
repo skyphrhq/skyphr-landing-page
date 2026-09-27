@@ -3,7 +3,6 @@ import CTAButton from "@/app/components/common/ctaButton";
 import SkyAiStatusPill from "@/app/components/skyAiStatusPill";
 import { SkyAiSkyAgentCardInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
-import { HiPhone, HiPlay } from "react-icons/hi2";
 
 function SkyAiSkyAgentCard({ data }: SkyAiSkyAgentCardInterface) {
   return (
@@ -48,22 +47,18 @@ function SkyAiSkyAgentCard({ data }: SkyAiSkyAgentCardInterface) {
           ))}
         </ul>
 
-        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 pt-7">
-          <CTAButton
-            type="button"
-            btnStyle="CTA_PRIMARY"
-            aria-haspopup="dialog"
-            icon={<HiPlay aria-hidden="true" />}
-            className="w-full sm:w-fit min-w-0 card-text-reveal">
-            {data.demo.label}
-          </CTAButton>
-          <CTAButton type="button" btnStyle="CTA_SECONDARY" aria-haspopup="dialog" className="w-full sm:w-fit card-text-reveal">
-            <span className="flex items-center gap-2">
-              <HiPhone className="size-4" aria-hidden="true" />
-              {data.liveCall.label}
-            </span>
-          </CTAButton>
-        </div>
+        {data.pageLink && (
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 pt-7">
+            <CTAButton
+              type="button"
+              btnStyle="CTA_PRIMARY"
+              aria-haspopup="dialog"
+              href={data?.pageLink?.href}
+              className="w-full sm:w-fit min-w-0 card-text-reveal">
+              {data.pageLink.label}
+            </CTAButton>
+          </div>
+        )}
       </div>
 
       {/* Anchored to the bottom so the phone runs off the card edge. It bleeds 12px below the card so the float never shows a gap */}

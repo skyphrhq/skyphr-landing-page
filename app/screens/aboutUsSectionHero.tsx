@@ -30,7 +30,7 @@ function AboutUsSectionHeroElem({ data, classNames }: AboutUsHeroSectionInterfac
             {data?.header?.title?.map((text, index) => (
               <h1
                 key={index}
-                className="reveal-animation font-instrument-sans  text-4xl  xl:text-5xl font-bold tracking-tight text-(--text-main-color)">
+                className="reveal-animation font-instrument-sans text-4xl lg:text-5xl xl:text-[62px] 2xl:text-[72px] font-bold tracking-tight text-(--text-main-color)">
                 {text?.map((word, wordIndex) => (
                   <span
                     key={wordIndex}

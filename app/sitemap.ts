@@ -5,6 +5,16 @@ import type { MetadataRoute } from "next";
 
 const siteUrl = SITE_BASE_URL;
 
+// Indexable pages that aren't in the header navigation, so NAVBAR_LINKS_DATA doesn't cover them
+const EXTRA_SITEMAP_PAGES: MetadataRoute.Sitemap = [
+  {
+    url: `${siteUrl}/ai-voice-agent`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+];
+
 const createSiteMapEntry = (page: NavbarLinksInterface): MetadataRoute.Sitemap[number] => {
   return {
     url: `${siteUrl}${page.href === "/" ? "" : page.href}`,
@@ -25,5 +35,5 @@ const generateSiteMapEntries = (page: NavbarLinksInterface): MetadataRoute.Sitem
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return NAVBAR_LINKS_DATA.flatMap((page) => generateSiteMapEntries(page));
+  return [...NAVBAR_LINKS_DATA.flatMap((page) => generateSiteMapEntries(page)), ...EXTRA_SITEMAP_PAGES];
 }

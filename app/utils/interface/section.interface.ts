@@ -26,6 +26,11 @@ import type {
   SkyAiProcessSection,
   SkyAiSecuritySection,
   SkyAiServicesSection,
+  SkyVoiceAfterCallSection,
+  SkyVoiceCallFlowSection,
+  SkyVoiceHeroSection,
+  SkyVoiceTrustSection,
+  SkyVoiceWhoForSection,
 } from "@/app/utils/interface/data.interface";
 
 export interface HeroSectionElementInterface {
@@ -167,5 +172,30 @@ export interface SkyAiProcessSectionInterface {
 
 export interface SkyAiSecuritySectionInterface {
   data: SkyAiSecuritySection;
+  classNames?: string;
+}
+
+export interface SkyVoiceHeroSectionInterface {
+  data: SkyVoiceHeroSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceCallFlowSectionInterface {
+  data: SkyVoiceCallFlowSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceWhoForSectionInterface {
+  data: SkyVoiceWhoForSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceAfterCallSectionInterface {
+  data: SkyVoiceAfterCallSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceTrustSectionInterface {
+  data: SkyVoiceTrustSection;
   classNames?: string;
 }

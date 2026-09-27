@@ -45,14 +45,17 @@ function ProcessStepCard({
         </div>
       ) : (
         <div className="relative flex shrink-0 flex-col items-center">
-          <span className="relative z-30 flex size-11 items-center justify-center rounded-full border border-(--border-color) bg-(--root-white-color) font-instrument-sans text-sm font-bold text-(--text-main-color) sm:size-12">
+          <span className="relative z-50 flex size-11 items-center justify-center rounded-full border border-(--border-color) bg-(--root-white-color) font-instrument-sans text-sm font-bold text-(--text-main-color) sm:size-12">
             {stepNumber}
           </span>
 
+          {/* Runs from under this circle to the top of the next one: the rest of this column, plus 68px
+              (20px bottom padding + 28px space-y-7 gap + 20px top padding) minus the circle (44px, 48px from sm).
+              Any longer and it paints over the next number, since earlier cards sit above later ones (zIndex). */}
           {!isLastStep && (
             <span
               aria-hidden="true"
-              className="absolute left-1/2 top-11 sm:top-12 z-20 h-[calc(100%+1.5rem)] sm:h-[calc(100%+2rem)] w-0.5 -translate-x-1/2 bg-[#8b95f6]"
+              className="absolute left-1/2 top-11 sm:top-12 z-20 h-[calc(100%+1.5rem)] sm:h-[calc(100%+1.25rem)] w-0.5 -translate-x-1/2 bg-(--text-secondary-color)"
             />
           )}
         </div>

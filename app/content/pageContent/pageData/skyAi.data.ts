@@ -283,7 +283,13 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     header: {
       title: [
         [{ text: "We don't just build AI for clients." }],
-        [{ text: "We run it ourselves.", variant: "italic", classNames: "bg-gradient-to-r from-[#B8A7FF] via-[#8B7CFF] to-[#6D8BFF] bg-clip-text text-transparent" }],
+        [
+          {
+            text: "We run it ourselves.",
+            variant: "italic",
+            classNames: "bg-gradient-to-r from-[#B8A7FF] via-[#8B7CFF] to-[#6D8BFF] bg-clip-text text-transparent",
+          },
+        ],
       ],
       description: [[{ text: "Real AI products we designed, built and use every day at Skyphr." }]],
     },
@@ -309,20 +315,8 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
         height: 800,
         alt: "Sky, Skyphr's AI voice agent, on a live call replying in Hindi and booking a consultation on Cal.com",
       },
-      demo: {
-        label: "Watch Sky in action",
-        modalTitle: "Sky in action",
-        // TODO: replace with the real Sky demo video URL (mp4/webm)
-        videoUrl: "https://example.com/sky-demo.mp4",
-      },
-      liveCall: {
-        label: "Try a live call",
-        modalTitle: "Call Sky now",
-        // TODO: replace with Sky's real phone number (both the display and the E.164 value)
-        displayNumber: "+91 00000 00000",
-        phoneNumber: "+910000000000",
-        note: "Sky is in beta. Calls are answered 24/7.",
-      },
+
+      pageLink: { label: "Let Sky answer your calls", href: "/ai-voice-agent" },
     },
     lensCard: {
       status: "Live",
@@ -357,7 +351,10 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     id: "skyai-process",
     badge: "Our process",
     header: {
-      title: [[{ text: "From first call to" }], [{ text: "AI in production", classNames: "text-(--cta-button-background)" }]],
+      title: [
+        [{ text: "From first call to" }],
+        [{ text: "AI in production", classNames: "text-(--cta-button-background)" }],
+      ],
       description: [
         [
           {
@@ -375,7 +372,8 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       },
       {
         title: "Proof of concept",
-        description: "We build a working version on your real data, so you see results before committing to a full build.",
+        description:
+          "We build a working version on your real data, so you see results before committing to a full build.",
         deliverables: ["Working prototype on your data", "Accuracy and cost benchmarks", "Clear go or no-go call"],
       },
       {
@@ -402,7 +400,10 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     id: "skyai-security",
     badge: { label: "Security & responsible AI", icon: createElement(LuShieldCheck) },
     header: {
-      title: [[{ text: "AI you can trust" }], [{ text: "with your business", classNames: "text-(--cta-button-background)" }]],
+      title: [
+        [{ text: "AI you can trust" }],
+        [{ text: "with your business", classNames: "text-(--cta-button-background)" }],
+      ],
       description: [
         [
           {
