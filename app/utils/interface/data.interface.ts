@@ -158,7 +158,7 @@ export interface SkyAiBuiltByStackChip {
 }
 
 export interface SkyAiSkyAgentCard {
-  status: string;
+  status?: string;
   title: string;
   description: string;
   stats: SkyAiBuiltByStat[];

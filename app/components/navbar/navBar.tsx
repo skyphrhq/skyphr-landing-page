@@ -15,7 +15,7 @@ import { FaXmark } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { twMerge } from "tailwind-merge";
 
-const SHOW_SKYAI_NAV = process.env.NEXT_PUBLIC_SHOW_SKYAI_NAV === "true";
+
 
 function NavBarComponent() {
   const navBarContainer = useRef<HTMLDivElement | null>(null);
@@ -162,7 +162,7 @@ function NavBarComponent() {
               data-lenis-prevent-wheel
               className="w-full grow skyphr-navbar-links-wrapper">
               <ul className="w-full flex items-center justify-center gap-2 skyphr-nav-links-wrapper-list">
-                {SHOW_SKYAI_NAV ? <SkyAiNavPill pathname={pathname} onNavigate={handleNavigate} /> : null}
+                <SkyAiNavPill pathname={pathname} onNavigate={handleNavigate} />
                 {NAVBAR_LINKS_DATA?.map((item) => {
                   if (item.type === "listing" || item.id === "home") {
                     return null; // Skip rendering this item in the navbar (Home is reached via the logo)

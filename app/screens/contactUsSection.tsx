@@ -36,7 +36,7 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
             <div className="flex flex-col md:flex-row lg:flex-col items-stretch lg:items-start justify-stretch gap-8">
               <div
                 className={twMerge(
-                  "contact-card bg-(--cta-button-background) w-full p-6 xl:p-10 xl:px-14 lg:h-1/2 grow",
+                  "contact-card bg-gradient-to-br from-[#3846da] via-[#4f5de8] to-[#6d7bfa] w-full p-6 xl:p-10 xl:px-14 lg:h-1/2 grow",
                   COMMON_BORDER_RADIUS,
                 )}>
                 <div className="w-full h-full flex flex-col items-start justify-center">

@@ -12,12 +12,14 @@ function ProcessStepCard({
   icon,
   className,
   contentClassName,
+  style,
 }: ProcessStepCardInterface) {
   const stepNumber = String(index + 1).padStart(2, "0");
   const isIconVariant = variant === "icon";
 
   return (
     <li
+      style={{ zIndex: 10 - index, ...style }}
       className={twMerge(
         "relative flex gap-4 px-4 py-5 sm:gap-5 ",
         isIconVariant
@@ -37,7 +39,7 @@ function ProcessStepCard({
           {!isLastStep && (
             <span
               aria-hidden="true"
-              className="absolute left-1/2 top-11 z-20 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-(--cta-button-background) sm:top-12"
+              className="absolute left-1/2 top-11 z-20 h-[calc(100%+1.5rem)] sm:h-[calc(100%+2rem)] w-0.5 -translate-x-1/2 bg-[#8b95f6]"
             />
           )}
         </div>
@@ -50,7 +52,7 @@ function ProcessStepCard({
           {!isLastStep && (
             <span
               aria-hidden="true"
-              className="absolute left-1/2 top-11 z-20 h-[calc(100%+4rem)] w-px -translate-x-1/2 bg-(--border-color) sm:top-12"
+              className="absolute left-1/2 top-11 sm:top-12 z-20 h-[calc(100%+1.5rem)] sm:h-[calc(100%+2rem)] w-0.5 -translate-x-1/2 bg-[#8b95f6]"
             />
           )}
         </div>

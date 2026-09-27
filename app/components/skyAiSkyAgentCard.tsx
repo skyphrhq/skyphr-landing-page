@@ -8,8 +8,8 @@ import { HiPhone, HiPlay } from "react-icons/hi2";
 function SkyAiSkyAgentCard({ data }: SkyAiSkyAgentCardInterface) {
   return (
     <article className="relative overflow-hidden rounded-[28px] bg-(--root-white-color) grid grid-cols-1 lg:grid-cols-[55fr_45fr]">
-      <div className="p-5 pb-6 sm:p-8 lg:p-10 xl:p-12 xl:pr-6 relative z-10">
-        <SkyAiStatusPill label={data.status} tone="green" pulse />
+      <div className="p-5 pb-6 sm:p-8 lg:p-10 xl:p-12 xl:pr-6 relative z-10 flex flex-col justify-center">
+        {data.status && <SkyAiStatusPill label={data.status} tone="green" pulse />}
 
         <h3 className="font-instrument-sans text-[28px] sm:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-(--text-main-color) text-balance pt-4 card-text-reveal">
           {data.title}
