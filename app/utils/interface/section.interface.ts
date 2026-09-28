@@ -20,6 +20,8 @@ import type {
   WhatWeBuildSectionData,
 } from "@/app/utils/interface/page.interface";
 import type {
+  BlogListingSection,
+  BlogPostData,
   SkyAiBuiltBySection,
   SkyAiChallengesSection,
   SkyAiHeroSection,
@@ -197,5 +199,16 @@ export interface SkyVoiceAfterCallSectionInterface {
 
 export interface SkyVoiceTrustSectionInterface {
   data: SkyVoiceTrustSection;
+  classNames?: string;
+}
+
+export interface BlogListingSectionInterface {
+  data: BlogListingSection;
+  posts: BlogPostData[];
+  classNames?: string;
+}
+
+export interface BlogArticleScreenInterface {
+  data: BlogPostData;
   classNames?: string;
 }

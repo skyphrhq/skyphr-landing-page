@@ -28,6 +28,19 @@ export const FormatCallTime = (totalSeconds: number) =>
 // Client-only: call from effects or event handlers, never during render (the server has no window)
 export const PrefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// "2026-09-21T09:00:00+05:30" -> "Sep 21, 2026". Uses the date part only, so the day never shifts with the timezone
+export const FormatBlogDate = (isoDate: string) => {
+  const datePart = isoDate.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return "";
+
+  return new Date(`${datePart}T00:00:00Z`).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+};
+
 export const NormalizePath = (path: string) => {
   if (path === "/") {
     return path;

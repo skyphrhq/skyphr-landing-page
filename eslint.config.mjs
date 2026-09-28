@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prebuilt local blog CMS, not part of the site
+    "blog-cms/**",
   ]),
 ]);
 

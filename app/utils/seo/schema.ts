@@ -1,6 +1,6 @@
 import { GOOGLE_MAPS_URL, SAME_AS_URLS, SITE_ALTERNATE_NAMES } from "@/app/content/pageContent/socilaLinks.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
-import type { FaqCommonCardData } from "@/app/utils/interface/data.interface";
+import type { BlogPostData, FaqCommonCardData } from "@/app/utils/interface/data.interface";
 import { isValidElement, type ReactNode } from "react";
 
 export type JsonLd = Record<string, unknown>;
@@ -237,7 +237,35 @@ export const generateArticleSchema = ({
   },
 });
 
-export const compactSchemas = (schemas: Array<JsonLd | null | undefined>) => schemas.filter(Boolean) as JsonLd[];
+// The CMS lets editors write the post's JSON-LD; use it as-is when present, otherwise generate BlogPosting + breadcrumbs
+export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
+  const cmsSchema = post.seo.schema?.data;
+  if (cmsSchema && Object.keys(cmsSchema).length) {
+    return [cmsSchema];
+  }
+
+  const path = `/blog/${post.slug}`;
+
+  return compactSchemas([
+    post.publishedAt
+      ? generateArticleSchema({
+          title: post.listing.title,
+          description: post.listing.description,
+          path,
+          authorName: post.listing.authorName,
+          publishedAt: post.publishedAt,
+          image: post.listing.image.url,
+        })
+      : null,
+    generateBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.listing.title, path },
+    ]),
+  ]);
+};
+
+export const compactSchemas =(schemas: Array<JsonLd | null | undefined>) => schemas.filter(Boolean) as JsonLd[];
 
 export const generatePersonSchema = ({
   id,
