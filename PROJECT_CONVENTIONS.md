@@ -25,9 +25,16 @@ Marketing site for **Skyphr** (AI, SaaS and custom software studio) at https://s
 | Lint | ESLint 9 flat config: `eslint-config-next` core-web-vitals + typescript (`eslint.config.mjs`) |
 | Formatter | No Prettier config in the repo. Match existing formatting: double quotes, semicolons, trailing commas, 2-space indent, long lines (~120 chars) |
 | Commits | Husky `commit-msg` hook runs commitlint (`commitlint.config.cjs`): conventional commits, lower-case type/scope, header ≤ 72 chars, no trailing period. Allowed types: `build chore ci docs feat feature fix perf refactor revert style test` |
-| Content | Hardcoded TypeScript data objects in `app/content/pageContent/` (no CMS, no API) + Markdown mirrors of pages in `app/content/markdown/` for AI agents |
+| Content | Hardcoded TypeScript data objects in `app/content/pageContent/` (no API; blog blocks are edited through the local blog CMS, see "Blog CMS" below) + Markdown mirrors of pages in `app/content/markdown/` for AI agents |
 
-Scripts: `pnpm dev`, `pnpm build`, `pnpm start`, `pnpm lint`.
+Scripts: `pnpm dev` (site on **http://localhost:3000** + blog CMS on **http://localhost:5175**), `pnpm dev:site` (site only), `pnpm dev:cms` (CMS only), `pnpm build`, `pnpm start`, `pnpm lint`.
+
+### Blog CMS
+- `pnpm dev` runs `blog-cms/dev.mjs`, which starts both servers and stops both when either exits (Ctrl+C included).
+- `blog-cms/` holds the prebuilt blog CMS (`index.html` + `assets/`), its API (`services/`, a Vite plugin) and `server.mjs`, which serves the UI and runs the plugin's `/api/*` handler (port 5175, override with `CMS_PORT`). The CMS code itself is maintained in its own repo; only `server.mjs`, `dev.mjs` and `package.json` (`"type": "module"`) are ours. It is **local-only**: excluded from `tsconfig.json`, ESLint, Next output tracing (`outputFileTracingExcludes` in `next.config.ts`) and the Vercel upload (`.vercelignore`). Never import from `blog-cms/` in `app/`.
+- The CMS API needs the devDependencies `vite`, `formidable`, `sharp` and `chokidar`. If it fails with "Cannot find native binding" (rolldown), run `pnpm install --force`.
+- `skyphr-cms-config/blog.config.json` registers blog blocks. The CMS aliases `@` to `baseEntryPoint`, so it must be `.` (the repo root, same as `tsconfig` `@/*`) for the blocks' `@/app/...` imports to resolve; section `module` paths are therefore `./app/components/blog/<block>`. Saved posts are JSON in `data/blogs/<slug>.json`; uploaded images go to `public/blog/images/` (`hero/` for Blog Hero; the `assets` key is the lower-cased section name) so they're servable by URL. The saved image `url` is a file path (`./public/blog/images/...`): strip `./public` to get the site URL.
+- CMS field types (`STRING`, `TEXTAREA`, `RICH_TEXT`, `NUMBER`, `BOOLEAN`, `IMAGE`, `ARRAY`) and `CMSImageData` (the saved IMAGE value: `url`, `alt?`, `width`, `height`) live in `types/type.ts`.
 
 ---
 
@@ -43,7 +50,7 @@ LandingPage/
 │   ├── (page)/                 # Route group: every public page lives here
 │   │   ├── page.tsx            # Home "/"
 │   │   ├── about-us/page.tsx
-│   │   ├── blog/page.tsx
+│   │   ├── blog/page.tsx  +  blog/[slug]/page.tsx   # listing + one post
 │   │   ├── contact/page.tsx
 │   │   ├── hire/page.tsx  +  hire/[slug]/page.tsx
 │   │   ├── services/page.tsx  +  services/[slug]/page.tsx
@@ -79,7 +86,9 @@ LandingPage/
 │       ├── helpers/helper.ts   # Pure helper functions
 │       ├── interface/          # All TS interfaces/types (4 files, see below)
 │       └── seo/                # metadata.ts (Next Metadata builders), schema.ts (JSON-LD builders)
-├── types/type.ts               # SectionSchema types for blog blocks
+├── types/type.ts               # SectionSchema + CMSImageData types for blog blocks
+├── blog-cms/                   # Prebuilt local blog CMS + server.mjs (port 5175). Never deployed
+├── skyphr-cms-config/          # blog.config.json: blog block registry for the CMS
 ├── public/                     # Static files served by URL
 │   ├── favicon/  og-image/  .well-known/  skills/
 │   ├── robots.txt  llms.txt  site.webmanifest  auth.md
@@ -109,6 +118,7 @@ LandingPage/
 | Color / design token | `:root` in `app/styles/globals.css` | `--skyai-lavender-bg` |
 | Keyframes / animation classes | `app/styles/animation.css` | `skyai-sparkle-spin` |
 | Page-specific complex CSS (too big for utilities) | its own file in `app/styles/`, `@import`ed from `globals.css`, classes prefixed | `app/styles/skyVoice.css` (`.skyai-voice-*`) |
+| HTML from a CMS `RICH_TEXT` field | render it in an element with `.skyphr-blog-rich-text` (`app/styles/blogRichText.css`), which restores spacing/lists/headings that Tailwind's preflight removes | `blog/textSection.tsx` |
 | 3D scene (Spline `.splinecode`) | `public/spline/<kebab-name>.splinecode`, URL in a `common.constant.ts` constant | `SKY_VOICE_ORB_SCENE_URL` → `/spline/sky-voice-orb.splinecode` |
 | Indexable page that isn't in the header nav | `EXTRA_SITEMAP_PAGES` in `app/sitemap.ts` | `/ai-voice-agent` |
 | Image used in a component | `app/assets/webp/` (subfolder per page if > 2 images) | `app/assets/webp/sky-ai/` |
@@ -468,6 +478,12 @@ Pages are thin: they only read a data object, render sections conditionally (`DA
 2. Add matching `markdown/<group>/<slug>.md` and `public/og-image/<slug>.png`.
 3. `generateStaticParams` picks it up automatically (`dynamicParams = false`).
 
+### Add a blog post
+1. Create and publish it in the blog CMS (`pnpm dev` → http://localhost:5175). It saves `data/blogs/<slug>.json` (`seo`, `listing`, `sections`); that file is the **only** source for the post. Don't write posts as TS data files.
+2. `/blog` (listing, newest first), `/blog/<slug>` (`generateStaticParams`, `dynamicParams = false`), the sitemap, metadata (`createBlogPostMetadata`) and JSON-LD (`generateBlogPostSchemas`: the CMS `seo.schema.data` as-is, else generated) all read it through `app/content/pageContent/pageData/blog/index.ts` at build time. Commit the JSON and its images in `public/blog/images/`.
+3. Sections render through `BLOG_SECTION_COMPONENTS` in `app/screens/blogs/blogArticleScreen.tsx`, keyed by the section `name` in `blog.config.json`. A new blog block needs both: a `blog.config.json` entry and a registry entry. `Blog Hero` is the only hero block; without one the page renders `BlogHero` from `listing` so every post has its `<h1>`.
+4. Add a line for it in `app/content/markdown/blog.md`.
+
 ### Add a new section
 1. Define the data shape in `page.interface.ts` (shared) or `data.interface.ts` (page-specific) and add it as an optional key on the page data interface.
 2. Add `<Name>SectionInterface` (`data`, `classNames?`) to `section.interface.ts`.
@@ -527,7 +543,7 @@ Pages are thin: they only read a data object, render sections conditionally (`DA
 | `@media only scree and (max-width: 767px)` typo (rule never applies) | `app/styles/globals.css:208` | Write `only screen` |
 | `width: 130 !important` missing unit | `app/styles/globals.css:226`, `:292` | Always add units |
 | Export style | 70 files use `function X` + `export default X`; 3 use `export default function` (`webMcpProvider`, `smoothScrollProvider`, `trustedPill`); 2 use named exports (`navbar/skyAiNavPill`, `common/navBarCommonLinkComponent`); `common/inputField` is an arrow const | `function X` + `export default X` at the bottom |
-| Blog blocks use a different pattern: `export const UIComponent` + `export const Schema: SectionSchema`, local `type …Props` | `app/components/blog/*.tsx` | Keep this pattern **only** inside `components/blog/` (CMS-style blocks). Everywhere else, use section 6 |
+| Blog blocks use a different pattern: `export const UIComponent` + `export const Schema: SectionSchema`, local `type …Props` | `app/components/blog/*.tsx` | Keep this pattern **only** inside `components/blog/` (CMS-style blocks). Everywhere else, use section 6. New blocks still use tokens, Tailwind and `next/image` (reference: `blog/blogHero.tsx`), and get registered in `skyphr-cms-config/blog.config.json` |
 | Inline prop types instead of an interface | `heroBgAbstract`, `commonBgAbstract`, `ourTeamIntroCard`, `skyAiTechStrip`, `skyAiSubNav`, `common/sparkleIcon`, `testimonialCard`, `screens/common/commonHirePageHeroSection` | Interface in `app/utils/interface/` |
 | Sub-component defined inside another file | `LogoGroup` in `components/skyAiTechStrip.tsx` | Own file in `app/components/` |
 | Relative imports | `app/layout.tsx`, `app/not-found.tsx`, `components/blogCard.tsx`, `components/ourServiceCardComponent.tsx` | `@/app/...` alias |

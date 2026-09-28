@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./animation.css";
 @import "./skyVoice.css";
+@import "./blogRichText.css";
 
 @theme {
   --breakpoint-xs: 491px;

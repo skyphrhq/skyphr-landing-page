@@ -6,6 +6,8 @@ import {
   ImageOptionsInterface,
   SectionHeader,
 } from "@/app/utils/interface/page.interface";
+import type { CMSImageData } from "@/types/type";
+import type { Metadata } from "next";
 import { StaticImageData } from "next/image";
 
 export interface NavbarLinksInterface {
@@ -17,6 +19,78 @@ export interface NavbarLinksInterface {
   isLink?: boolean;
   dropDown: NavbarLinksInterface[];
   target?: "_blank" | "_self";
+}
+
+// ===============================
+// BLOG
+// ===============================
+// A blog post as the blog CMS saves it in data/blogs/<slug>.json (the file is the source of truth).
+// Image `url`s are rewritten from "./public/..." file paths to site URLs when the file is read.
+export interface BlogCmsSeo {
+  title: string;
+  description: string;
+  keywords?: string[];
+  canonicalUrl?: string;
+  // Meta robots string, e.g. "index, follow"
+  robots?: string;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    image?: CMSImageData;
+    type?: "article" | "website";
+  };
+  twitter?: {
+    card?: "summary" | "summary_large_image";
+    title?: string;
+    description?: string;
+    image?: CMSImageData;
+  };
+  // Ready-made JSON-LD written in the CMS; empty `data` falls back to the generated schema
+  schema?: {
+    type?: string;
+    data?: Record<string, unknown>;
+  };
+}
+
+export interface BlogCmsListing {
+  title: string;
+  description: string;
+  image: CMSImageData;
+  authorName: string;
+  // ISO date; may be empty, then the BlogPosting datePublished from seo.schema is used
+  date: string;
+  isFeatured: boolean;
+}
+
+// `type` is the section `name` from skyphr-cms-config/blog.config.json, `data` the block's props
+export interface BlogCmsSection {
+  type: string;
+  data: Record<string, unknown>;
+}
+
+export interface BlogCmsPost {
+  seo: BlogCmsSeo;
+  listing: BlogCmsListing;
+  sections: BlogCmsSection[];
+}
+
+export interface BlogPostData extends BlogCmsPost {
+  // File name without .json
+  slug: string;
+  // Resolved publish date (listing.date or the schema's datePublished), "" if neither is set
+  publishedAt: string;
+}
+
+export interface BlogListingSection {
+  header: SectionHeader;
+  readMoreLabel: string;
+  featuredLabel: string;
+  emptyStateLabel: string;
+}
+
+export interface BlogListingPageDataInterface {
+  metadata: Metadata;
+  listing: BlogListingSection;
 }
 
 export interface FeaturedWorkInterface {

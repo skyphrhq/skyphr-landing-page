@@ -1,4 +1,6 @@
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
+import type { BlogPostData } from "@/app/utils/interface/data.interface";
+import type { CMSImageData } from "@/types/type";
 import type { Metadata } from "next";
 
 export const SITE_NAME = "Skyphr";
@@ -85,7 +87,54 @@ export const createPageMetadata = ({
   };
 };
 
-export const normalizePageMetadata = (metadata: Metadata, path: string): Metadata => {
+// /blog/<slug> metadata from the CMS `seo` block; every field falls back to the listing data
+export const createBlogPostMetadata = (post: BlogPostData): Metadata => {
+  const { seo, listing } = post;
+  const title = seo.title || `${listing.title} | ${SITE_NAME}`;
+  const description = seo.description || listing.description;
+  const url = absoluteUrl(seo.canonicalUrl || `/blog/${post.slug}`);
+  const ogImage = seo.openGraph?.image?.url ? seo.openGraph.image : listing.image;
+  const twitterImage = seo.twitter?.image?.url ? seo.twitter.image : ogImage;
+  const toImage = (image: CMSImageData) => ({
+    url: absoluteUrl(image.url),
+    width: image.width,
+    height: image.height,
+    alt: image.alt || listing.title,
+  });
+
+  return {
+    title,
+    description,
+    keywords: seo.keywords,
+    alternates: {
+      canonical: url,
+      languages: {
+        [DEFAULT_LANGUAGE]: url,
+      },
+    },
+    openGraph: {
+      title: seo.openGraph?.title || title,
+      description: seo.openGraph?.description || description,
+      url,
+      siteName: SITE_NAME,
+      images: [toImage(ogImage)],
+      type: "article",
+      ...(post.publishedAt && { publishedTime: post.publishedAt }),
+      authors: [listing.authorName],
+    },
+    twitter: {
+      title: seo.twitter?.title || title,
+      description: seo.twitter?.description || description,
+      card: seo.twitter?.card || "summary_large_image",
+      creator: TWITTER_HANDLE,
+      site: TWITTER_HANDLE,
+      images: [toImage(twitterImage)],
+    },
+    robots: seo.robots || DEFAULT_ROBOTS,
+  };
+};
+
+export const normalizePageMetadata =(metadata: Metadata, path: string): Metadata => {
   const title = typeof metadata.title === "string" ? metadata.title : SITE_NAME;
   const description =
     metadata.description ??

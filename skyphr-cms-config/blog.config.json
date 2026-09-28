@@ -1,0 +1,41 @@
+{
+    "name": "Blog ManageMent",
+    "label": "blog",
+    "outDir": "./data/blogs",
+    "baseEntryPoint": ".",
+    "useWebp": true,
+    "assets": {
+        "baseDir": "./public/blog/images",
+        "blog hero": "./public/blog/images/hero"
+    },
+    "sections": [
+        {
+            "name": "Blog Hero",
+            "module": "./app/components/blog/blogHero"
+        },
+        {
+            "name": "Featured Visual",
+            "module": "./app/components/blog/featuredVisual"
+        },
+        {
+            "name": "Article Intro",
+            "module": "./app/components/blog/articleIntro"
+        },
+        {
+            "name": "Text Section",
+            "module": "./app/components/blog/textSection"
+        },
+        {
+            "name": "Quote Block",
+            "module": "./app/components/blog/quoteBlock"
+        },
+        {
+            "name": "Author Card",
+            "module": "./app/components/blog/authorCard"
+        },
+        {
+            "name": "Blogs Sidebar",
+            "module": "./app/components/blog/blogsSideBar"
+        }
+    ]
+}

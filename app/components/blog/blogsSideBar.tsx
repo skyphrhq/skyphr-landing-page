@@ -52,8 +52,11 @@ export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: Bl
         </div>
       </div>
       <div className="rounded-lg bg-(--text-main-color) p-5 text-white">
-        <p className="font-instrument-sans text-xl font-bold">{newsletterTitle}</p>
-        <p className="mt-2 font-inter text-sm leading-5 text-white/70">{newsletterDescription}</p>
+        <p className="font-instrument-sans text-xl font-bold">Subscribe to Skyphr insights</p>
+        <p className="mt-2 font-inter text-sm leading-5 text-white/70 ">
+          Practical insights on software architecture, technical debt, AI, and scaling products, written for founders
+          and tech leaders who want to build smarter and ship faster. From the team at Skyphr.
+        </p>
         <Button
           type="button"
           onClick={handleOpenSubscribeModal}
@@ -159,6 +162,4 @@ export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: Bl
 
 export const Schema: SectionSchema = {
   tags: { type: "STRING", required: true },
-  newsletterTitle: { type: "STRING", required: true },
-  newsletterDescription: { type: "TEXTAREA", required: true },
 };

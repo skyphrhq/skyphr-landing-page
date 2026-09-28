@@ -6,6 +6,10 @@ const isDevelopmentBranch = branch === "DEVELOPMENT";
 console.log("[next.config] branch:", branch, "| redirect enabled:", !isDevelopmentBranch);
 
 const nextConfig: NextConfig = {
+  // The local blog CMS (blog-cms/) must never end up in the server bundle
+  outputFileTracingExcludes: {
+    "*": ["blog-cms/**"],
+  },
   async redirects() {
     return [
       ...(!isDevelopmentBranch

@@ -63,15 +63,6 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     alternates: {
       canonical: `${SITE_BASE_URL}/sky-ai`,
     },
-    // Keep SkyAI out of search results until the page is complete
-    robots: {
-      index: false,
-      follow: false,
-      googleBot: {
-        index: false,
-        follow: false,
-      },
-    },
   },
   subNav: [
     {

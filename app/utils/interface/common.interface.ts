@@ -1,4 +1,5 @@
 import {
+  BlogPostData,
   SkyAiChallengeCard,
   SkyAiChallengesSection,
   SkyAiLensCard,
@@ -90,6 +91,13 @@ export interface BlogCardInterface {
   description: string;
   label?: string;
   date?: string;
+}
+
+export interface BlogListingCardInterface {
+  data: BlogPostData;
+  readMoreLabel: string;
+  featuredLabel: string;
+  className?: string;
 }
 
 export interface FaqCommonCardInterface {
