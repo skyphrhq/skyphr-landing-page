@@ -60,7 +60,7 @@ function BlogArticleScreen({ data, classNames }: BlogArticleScreenInterface) {
       <div>
         {restSections.length > 0 && (
           <div className="flex flex-col-reverse lg:flex-row gap-12 py-12 lg:gap-15 mx-auto w-full xl:max-w-[95%]">
-            {sidebarSections.length > 0 && <div className="lg:w-120">{sidebarSections.map(renderSection)}</div>}
+            {sidebarSections.length > 0 && <div className="lg:w-120 xl:w-160">{sidebarSections.map(renderSection)}</div>}
             <div className="w-full space-y-10">{bodySections.map(renderSection)}</div>
           </div>
         )}

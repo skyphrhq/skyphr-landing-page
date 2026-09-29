@@ -32,14 +32,18 @@ export const UIComponent = ({ title, excerpt, authorName, authorRole, publishedA
           <div>
             <p className="font-instrument-sans text-sm font-bold text-(--text-main-color)">{authorName}</p>
             <p className="font-inter text-xs text-(--text-secondary-color)">
-              {[authorRole, publishedAt].filter(Boolean).join(" · ")}
+              {[authorRole].filter(Boolean).join(" · ")}
             </p>
           </div>
         </div>
       </div>
       {/* Posts saved before the image field existed have no image, so it's optional here */}
       {image?.url && (
-        <div className={twMerge("mt-8 w-full overflow-hidden bg-(--about-us-card-bg)", COMMON_BORDER_RADIUS)}>
+        <div
+          className={twMerge(
+            "mt-8 w-full overflow-hidden bg-(--about-us-card-bg) border border-slate-100",
+            COMMON_BORDER_RADIUS,
+          )}>
           {/* Hero image is the LCP element, so load it eagerly */}
           <Image
             src={image.url}

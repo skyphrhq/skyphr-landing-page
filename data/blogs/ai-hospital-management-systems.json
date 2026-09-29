@@ -21,7 +21,7 @@
       "title": "How AI Is Revolutionizing Hospital Management Systems | Skyphr",
       "description": "How AI improves hospital management: bed allocation, staff scheduling, early-warning alerts, inventory, and EHR integration built around real workflows.",
       "image": {
-        "url": "./public/blog/images/true-cost-of-technical-debt.png",
+        "url": "./public/blog/images/ai-hospital-management-systems.png",
         "width": 1200,
         "height": 630,
         "alt": ""
@@ -33,7 +33,7 @@
       "title": "How AI Is Revolutionizing Hospital Management Systems | Skyphr",
       "description": "How AI improves hospital management: bed allocation, staff scheduling, early-warning alerts, inventory, and EHR integration built around real workflows.",
       "image": {
-        "url": "./public/blog/images/true-cost-of-technical-debt.png",
+        "url": "./public/blog/images/ai-hospital-management-systems.png",
         "width": 1200,
         "height": 630,
         "alt": ""
@@ -142,6 +142,12 @@
           }
         ]
       }
+    },
+    "image": {
+      "url": "./public/blog/images/ai-hospital-management-systems.png",
+      "width": 1200,
+      "height": 630,
+      "alt": ""
     }
   },
   "listing": {
@@ -234,6 +240,12 @@
       "data": {
         "heading": "How Skyphr Can Help You",
         "content": "<p>This is exactly the kind of system we build at <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"oJeEetkcgVJdqpkDEytCxmVFJoNcCBvprw \" href=\"https://www.linkedin.com/company/skyphr/\"><strong>Skyphr</strong></a> . AI-integrated software that connects into existing operational data (EHR systems, scheduling platforms, inventory logs) rather than replacing what a hospital already runs, and turns that data into predictions and workflows staff actually use.</p><p></p><p>We don't start with the AI model. We start with the bottleneck - the bed that stays empty an extra six hours, the shift that's short-staffed every Thursday, the inventory order that always runs late. Then we build the system that fixes that specific problem, using the data the hospital already has.</p><p></p><p>If that sounds like a gap in your own operations, that's usually where this conversation starts.</p>"
+      }
+    },
+    {
+      "type": "Blogs Sidebar",
+      "data": {
+        "tags": "AI in hospital management, hospital management system, AI in healthcare,AI hospital management software, predictive bed management, AI staff scheduling healthcare, clinical documentation AI, EHR integration, FHIR integration, healthcare inventory management, patient flow optimization"
       }
     }
   ]
