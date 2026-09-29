@@ -42,6 +42,7 @@ async function handleApiRequests(req, res, next) {
             pageManifestConfig?.sections?.map((item) => {
                 sectionConfig.push({
                     name: item.name,
+                    module: item.module,
                     schema: item.schema,
                 });
             });
@@ -51,6 +52,7 @@ async function handleApiRequests(req, res, next) {
                 success: true,
                 data: {
                     useWebP: pageManifestConfig?.useWebp,
+                    baseEntryPoint: pageManifestConfig?.baseEntryPoint,
                     sections: sectionConfig,
                 },
             }));
@@ -147,6 +149,58 @@ async function handleApiRequests(req, res, next) {
             return res.end(JSON.stringify({
                 success: true,
                 message: "Content saved successfully",
+            }));
+        }
+        catch (error) {
+            res.setHeader("Content-Type", "application/json");
+            res.statusCode = 500;
+            return res.end(JSON.stringify({
+                success: false,
+                error: error instanceof Error ? error.message : "Unknown error",
+            }));
+        }
+    }
+    if (req.method === "DELETE" && url.pathname === "/api/content/delete") {
+        try {
+            const label = url.searchParams.get("label");
+            const slug = url.searchParams.get("slug");
+            if (!label || !slug) {
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 400;
+                return res.end(JSON.stringify({
+                    success: false,
+                    error: "Missing label or slug parameter",
+                }));
+            }
+            // Slug must be a plain file name so it can't escape the content directory
+            if (slug !== path.basename(slug) || slug.startsWith(".")) {
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 400;
+                return res.end(JSON.stringify({
+                    success: false,
+                    error: "Invalid slug parameter",
+                }));
+            }
+            const manifestConfig = await loadManifestByLabel(label);
+            const CONTENT_DIR = path.resolve(process.cwd(), manifestConfig.outDir);
+            try {
+                await fs.rm(path.join(CONTENT_DIR, `${slug}.json`));
+            }
+            catch (error) {
+                if (error?.code !== "ENOENT")
+                    throw error;
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 404;
+                return res.end(JSON.stringify({
+                    success: false,
+                    error: "No Such Content Found",
+                }));
+            }
+            res.setHeader("Content-Type", "application/json");
+            res.statusCode = 200;
+            return res.end(JSON.stringify({
+                success: true,
+                message: "Content deleted successfully",
             }));
         }
         catch (error) {

@@ -20,7 +20,7 @@
       "title": "The True Cost of Technical Debt at Enterprise Scale | Skyphr",
       "description": "Technical debt rarely shows up as a bug. It shows up as friction. Learn why it compounds, why rewrites fail, and how architecture reviews cut the cost.",
       "image": {
-        "url": "./public/blog/images/technical-debt-artical-blog.png",
+        "url": "./public/blog/images/true-cost-of-technical-debt-enterprise-scale.png",
         "width": 1200,
         "height": 630,
         "alt": ""
@@ -32,7 +32,7 @@
       "title": "The True Cost of Technical Debt at Enterprise Scale | Skyphr",
       "description": "Technical debt rarely shows up as a bug. It shows up as friction. Learn why it compounds, why rewrites fail, and how architecture reviews cut the cost.",
       "image": {
-        "url": "./public/blog/images/technical-debt-artical-blog.png",
+        "url": "./public/blog/images/true-cost-of-technical-debt-enterprise-scale.png",
         "width": 1200,
         "height": 630,
         "alt": ""
@@ -137,6 +137,12 @@
           }
         ]
       }
+    },
+    "image": {
+      "url": "./public/blog/images/true-cost-of-technical-debt-enterprise-scale.png",
+      "width": 1200,
+      "height": 630,
+      "alt": ""
     }
   },
   "listing": {
