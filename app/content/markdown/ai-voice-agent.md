@@ -26,6 +26,8 @@ A sample call from a dental clinic in Manchester:
 
 **Result:** consultation booked (Thursday, 4:30 PM, 30 minutes), lead saved, transcript saved.
 
+The same sample call can be read in English, Hindi, Spanish, French and German. Don't see your language? [Hear Sky speak it live](https://cal.com/skyphr/30min).
+
 ## What happens in 90 seconds
 
 One real call, from the first ring to a meeting on your calendar and a lead in your records.

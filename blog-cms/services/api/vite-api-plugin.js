@@ -4,6 +4,7 @@ import path from "path";
 import { processImage } from "../scripts/imageProcessor.js";
 import { loadManifest } from "../scripts/loadManifest.js";
 import { loadManifestByLabel } from "../scripts/loadManifestByLabel.js";
+import { isMarkdownEnabled, readAllPosts, regenerateAllMarkdown, removePostMarkdown, runMarkdownTask, syncPostMarkdown, } from "../markdown/markdownExport.js";
 export function viteApiPlugin() {
     return {
         name: "vite-api-plugin",
@@ -144,11 +145,14 @@ async function handleApiRequests(req, res, next) {
             const CONTENT_DIR = path.resolve(process.cwd(), manifestConfig.outDir);
             await fs.mkdir(CONTENT_DIR, { recursive: true });
             await fs.writeFile(path.join(CONTENT_DIR, `${slug}.json`), JSON.stringify(content, null, 2));
+            // A markdown failure must not block the save, it is reported as a warning
+            const warning = await runMarkdownTask(() => syncPostMarkdown(manifestConfig, slug, content));
             res.setHeader("Content-Type", "application/json");
             res.statusCode = 200;
             return res.end(JSON.stringify({
                 success: true,
                 message: "Content saved successfully",
+                warning,
             }));
         }
         catch (error) {
@@ -196,11 +200,13 @@ async function handleApiRequests(req, res, next) {
                     error: "No Such Content Found",
                 }));
             }
+            const warning = await runMarkdownTask(() => removePostMarkdown(manifestConfig, slug));
             res.setHeader("Content-Type", "application/json");
             res.statusCode = 200;
             return res.end(JSON.stringify({
                 success: true,
                 message: "Content deleted successfully",
+                warning,
             }));
         }
         catch (error) {
@@ -338,20 +344,44 @@ async function handleApiRequests(req, res, next) {
         try {
             const manifestConfig = await loadManifestByLabel("blog");
             const CONTENT_DIR = path.resolve(process.cwd(), manifestConfig.outDir);
-            const files = await fs.readdir(CONTENT_DIR).catch((error) => {
-                if (error?.code === "ENOENT")
-                    return [];
-                throw error;
-            });
-            const blogs = await Promise.all(files.map(async (file) => {
-                const content = await fs.readFile(path.join(CONTENT_DIR, file), "utf-8");
-                return { ...JSON.parse(content)?.listing, filename: file.replace(".json", "") };
-            }));
+            const posts = await readAllPosts(CONTENT_DIR);
+            const blogs = posts.map((post) => ({ ...post.content?.listing, filename: post.slug }));
             res.setHeader("Content-Type", "application/json");
             res.statusCode = 200;
             return res.end(JSON.stringify({
                 success: true,
                 data: blogs,
+                markdownEnabled: isMarkdownEnabled(manifestConfig),
+            }));
+        }
+        catch (error) {
+            res.setHeader("Content-Type", "application/json");
+            res.statusCode = 500;
+            return res.end(JSON.stringify({
+                success: false,
+                error: error instanceof Error ? error.message : "Unknown error",
+            }));
+        }
+    }
+    if (req.method === "POST" && url.pathname === "/api/markdown/regenerate") {
+        try {
+            const label = url.searchParams.get("label");
+            if (!label) {
+                res.setHeader("Content-Type", "application/json");
+                res.statusCode = 400;
+                return res.end(JSON.stringify({
+                    success: false,
+                    error: "Missing label parameter",
+                }));
+            }
+            const manifestConfig = await loadManifestByLabel(label);
+            const result = await regenerateAllMarkdown(manifestConfig);
+            res.setHeader("Content-Type", "application/json");
+            res.statusCode = 200;
+            return res.end(JSON.stringify({
+                success: true,
+                message: `Markdown regenerated for ${result.posts} post(s)`,
+                data: result,
             }));
         }
         catch (error) {

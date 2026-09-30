@@ -80,6 +80,15 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
     isLink: false,
     target: "_self",
     priority: 0.9,
+    featured: {
+      title: "Meet Sky",
+      subtitle: "Our AI voice calling agent that handles your business calls 24/7.",
+      cta: {
+        label: "See how Sky works",
+        href: "/ai-voice-agent",
+        target: "_self",
+      },
+    },
     dropDown: [
       {
         id: "frontend-engineering",
@@ -233,6 +242,40 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
             dropDown: [],
           },
         ],
+      },
+    ],
+  },
+  {
+    id: "our-products",
+    label: "Our Products",
+    // Dropdown trigger only: there is no products page
+    href: "#",
+    type: "link",
+    isLink: false,
+    target: "_self",
+    priority: 0.8,
+    dropDown: [
+      {
+        id: "skylens",
+        label: "SkyLens",
+        description: "Website audit tool",
+        href: "https://lens.skyphr.com",
+        type: "link",
+        isLink: true,
+        target: "_blank",
+        priority: 0.8,
+        dropDown: [],
+      },
+      {
+        id: "sky",
+        label: "Sky",
+        description: "AI voice calling agent",
+        href: "/ai-voice-agent",
+        type: "link",
+        isLink: true,
+        target: "_self",
+        priority: 0.8,
+        dropDown: [],
       },
     ],
   },

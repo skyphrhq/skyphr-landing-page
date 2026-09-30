@@ -1,9 +1,12 @@
 import { SkyVoiceBookedCardInterface } from "@/app/utils/interface/common.interface";
 import { LuCalendarCheck } from "react-icons/lu";
 
-function SkyVoiceBookedCard({ data }: SkyVoiceBookedCardInterface) {
+function SkyVoiceBookedCard({ data, lang, enterDelayMs }: SkyVoiceBookedCardInterface) {
   return (
-    <div className="skyai-voice-booked skyai-voice-enter-pop grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 rounded-2xl p-3.5">
+    <div
+      lang={lang}
+      className="skyai-voice-booked skyai-voice-enter-pop grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 rounded-2xl p-3.5"
+      style={enterDelayMs ? { animationDelay: `${enterDelayMs}ms` } : undefined}>
       <span
         aria-hidden="true"
         className="row-span-2 grid size-9.5 place-items-center rounded-[11px] bg-(--skyai-voice-green) text-(--root-white-color)">

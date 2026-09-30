@@ -114,26 +114,6 @@
   position: relative;
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-dropdown {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition:
-    opacity 0.2s ease,
-    visibility 0.2s ease,
-    transform 0.2s ease;
-  z-index: 10;
-}
-
-.skyphr-navbar-main-wrapper .skyphr-nav-dropdown-root {
-  transform: translate(-50%, 8px);
-}
-
-.skyphr-navbar-main-wrapper .skyphr-nav-dropdown-nested {
-  transform: translate(8px, 0);
-}
-
 .skyphr-navbar-main-wrapper .skyphr-nav-link {
   appearance: none;
   border: 0;
@@ -180,52 +160,157 @@
   .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-down {
     transform: rotate(180deg);
   }
-
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-link .skyphr-nav-chevron-right {
-    transform: translateX(2px);
-  }
-
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-root {
-    transform: translate(-50%, 0);
-  }
-
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:hover > .skyphr-nav-dropdown-nested {
-    transform: translate(0, 0);
-  }
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-down {
+/* ---------- Navbar dropdown panels ---------- */
+/* .skyphr-nav-panel is the shared shell. Grouped links (Hire) get .skyphr-nav-mega-panel,
+   a flat list of links (Services) gets .skyphr-nav-compact-panel. The choice is made from the data */
+/* The trigger keeps the grey pill and flipped chevron while its panel is open (click / keyboard, not only hover) */
+.skyphr-navbar-main-wrapper .skyphr-nav-links-wrapper-list > .skyphr-nav-item.is-open > .skyphr-nav-link {
+  background-color: var(--active-hover-link-bg) !important;
+  color: var(--text-main-color) !important;
+}
+
+.skyphr-navbar-main-wrapper .skyphr-nav-item.is-open > .skyphr-nav-link .skyphr-nav-chevron-down {
   transform: rotate(180deg);
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-right {
-  transform: translateX(2px);
+.skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-mobile-header {
+  display: none;
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+@media (min-width: 992px) {
+  /* Static, so the mega panel is positioned against .skyphr-container (site width) instead of its own link */
+  .skyphr-navbar-main-wrapper .skyphr-nav-item.has-mega-panel {
+    position: static;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-panel {
+    /* Navbar bottom padding between the links and the panel */
+    --skyphr-nav-panel-bridge: 10px;
+    --skyphr-nav-panel-gutter: 0px;
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Switching from one panel to another: the old one hides at once, so two panels never show together */
+  .skyphr-navbar-main-wrapper
+    .skyphr-nav-links-wrapper-list:has(> .skyphr-nav-item.is-open)
+    .skyphr-nav-panel:not(.is-open) {
+    transition: none;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-panel-inner {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background-color: var(--root-white-color);
+    box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.14);
+  }
+
+  /* Mega panel: as wide as its columns (up to 960px) and centered under the navbar */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel {
+    left: var(--skyphr-nav-panel-gutter);
+    right: var(--skyphr-nav-panel-gutter);
+    width: fit-content;
+    max-width: min(1200px, calc(100% - 2 * var(--skyphr-nav-panel-gutter)));
+    margin-inline: auto;
+    padding-top: 10px;
+  }
+
+  /* Invisible strip over the navbar's bottom padding, so the mouse can travel from the link to the panel */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: var(--skyphr-nav-panel-bridge);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel > .skyphr-nav-panel-inner {
+    max-height: calc(100dvh - 140px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 28px 32px;
+  }
+
+  /* Columns size to their content and wrap, so a new category in the data becomes a new column */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 40px;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-grid > li {
+    flex: 0 1 auto;
+    min-width: 160px;
+  }
+
+  /* Link columns on the left, featured card as a fixed-width sidebar behind a divider on the right */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-body {
+    display: flex;
+    gap: 28px;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-body > .skyphr-nav-mega-panel-grid {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-featured {
+    flex: 0 0 269px;
+    padding-left: 28px;
+    border-left: 1px solid var(--border-color);
+  }
+
+  /* Compact panel: sits under its own trigger. The top padding spans the gap below the link and the navbar's
+     bottom padding, so it opens at the same height as the mega panel and the mouse can travel into it */
+  .skyphr-navbar-main-wrapper .skyphr-nav-compact-panel {
+    left: 0;
+    width: max-content;
+    min-width: 260px;
+    max-width: 320px;
+    padding-top: calc(var(--skyphr-nav-panel-bridge) + 14px);
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-compact-panel > .skyphr-nav-panel-inner {
+    padding: 8px;
+  }
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown-root {
-  transform: translate(-50%, 0);
+/* Below 1200px .skyphr-container is full width with 16px padding, so keep the mega panel inside that gutter */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .skyphr-navbar-main-wrapper .skyphr-nav-panel {
+    --skyphr-nav-panel-gutter: 16px;
+  }
 }
 
-.skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-dropdown-nested {
-  transform: translate(0, 0);
+@media (min-width: 1280px) {
+  .skyphr-navbar-main-wrapper .skyphr-nav-panel {
+    --skyphr-nav-panel-bridge: 20px;
+  }
 }
 
-.skyphr-navbar-main-wrapper.is-dropdown-suppressed .skyphr-nav-dropdown {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
+@media (prefers-reduced-motion: reduce) {
+  .skyphr-navbar-main-wrapper .skyphr-nav-panel {
+    transition: none !important;
+  }
 }
 
 .skyphr-navbar-main-wrapper .skyphr-mobile-nav-close-btn-wrapper {
@@ -335,6 +420,9 @@
     flex: 1 !important;
     min-height: 0 !important;
     background-color: var(--root-white-color) !important;
+    /* Containing block for the drill-down screen; hidden so it stays inside the drawer while off-screen */
+    position: relative;
+    overflow: hidden;
   }
   .skyphr-navbar-main-wrapper .skyphr-navbar-links-wrapper .skyphr-nav-links-wrapper-list {
     flex-direction: column !important;
@@ -350,58 +438,78 @@
     max-height: calc(100vh - 10px) !important;
     padding-top: 90px !important;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-item,
-  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown,
-  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown > ul {
+  .skyphr-navbar-main-wrapper .skyphr-nav-item {
     width: 100% !important;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown {
-    position: static !important;
-    display: grid !important;
+  /* Drill-down: the mega panel becomes a screen that slides over the link list, below the drawer header */
+  .skyphr-navbar-main-wrapper .skyphr-nav-item.has-mega-panel {
+    position: static;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-item.has-mega-panel > .skyphr-nav-link .skyphr-nav-chevron-down {
+    transform: rotate(-90deg) !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    /* Height of the drawer header (logo + close button) */
+    padding-top: 68px;
+    background-color: var(--root-white-color);
+    visibility: hidden;
+    transform: translateX(100%);
+    /* Hidden only once it has slid out; visible straight away on open so the Back button can take focus */
+    transition:
+      transform 0.35s ease,
+      visibility 0s linear 0.35s;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel.is-open {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.35s ease;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel > .skyphr-nav-panel-inner {
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 16px 32px;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-mobile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 20px;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-featured {
+    padding-top: 28px;
+  }
+  /* Flat list (Services): expands in place under its trigger instead of drilling down */
+  .skyphr-navbar-main-wrapper .skyphr-nav-compact-panel {
+    display: grid;
     grid-template-rows: 0fr;
-    overflow: hidden;
-    padding: 0px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: none !important;
+    visibility: hidden;
+    /* Hidden only once it has collapsed, so closed links can't be tabbed to */
     transition:
       grid-template-rows 0.3s ease,
-      padding-top 0.3s ease !important;
+      visibility 0s linear 0.3s;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown.is-open {
+  .skyphr-navbar-main-wrapper .skyphr-nav-compact-panel.is-open {
     grid-template-rows: 1fr;
-    padding-top: 8px !important;
+    visibility: visible;
+    transition: grid-template-rows 0.3s ease;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown > ul {
-    min-width: 0 !important;
-    box-shadow: none !important;
-    border: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
+  .skyphr-navbar-main-wrapper .skyphr-nav-compact-panel > .skyphr-nav-panel-inner {
+    min-height: 0;
+    overflow: hidden;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-dropdown.is-open > ul {
-    overflow: visible !important;
-  }
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-down,
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:focus-within > .skyphr-nav-link .skyphr-nav-chevron-right {
-    transform: none;
-  }
-  .skyphr-navbar-main-wrapper .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open) > .skyphr-nav-link {
-    background-color: var(--active-link-bg) !important;
-    color: var(--text-white-color) !important;
-  }
-  .skyphr-navbar-main-wrapper
-    .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open)
-    > .skyphr-nav-link
-    .skyphr-nav-chevron-down {
-    transform: rotate(180deg);
-  }
-  .skyphr-navbar-main-wrapper
-    .skyphr-nav-item:has(> .skyphr-nav-dropdown.is-open)
-    > .skyphr-nav-link
-    .skyphr-nav-chevron-right {
-    transform: rotate(90deg);
+  .skyphr-navbar-main-wrapper .skyphr-nav-compact-panel-list {
+    padding: 8px 0 0 14px;
   }
   .skyphr-navbar-main-wrapper .skyphr-nav-cta-btn-wrapper {
     width: 100% !important;
