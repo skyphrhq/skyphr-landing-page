@@ -89,35 +89,177 @@ export const AI_VOICE_AGENT_PAGE_DATA: AiVoiceAgentPageDataInterface = {
       },
       transcript: {
         title: "Transcript",
-        note: "Saved automatically",
         emptyText: "The call transcript appears here as Sky talks.",
       },
-      booked: {
-        title: "Consultation booked",
-        detail: "Thursday, 4:30 PM, 30 minutes",
-        items: [
-          { label: "Lead saved", icon: createElement(LuCheck) },
-          { label: "Transcript saved", icon: createElement(LuFileText) },
+      languages: {
+        label: "Transcript language",
+        // The selected language is kept in the URL (?lang=hi) so a reload keeps it; the default has no param
+        queryParam: "lang",
+        defaultCode: "en",
+        // Not shown right now; kept so the count can go back into the text ("+ 30 more languages")
+        moreLanguagesCount: 30,
+        demoLink: {
+          label: "Don't see your language? Book a call to see a live demo →",
+          href: SKY_AI_CONSULTATION_URL,
+          target: "_blank",
+          rel: "noopener noreferrer",
+        },
+        // Scripted demo call, one object per language with the same lines in the same order.
+        // TODO: every translation below (hi, es, fr, de) needs a native-speaker review before launch.
+        // Keep each line close to the English length so the transcript doesn't jump when switching.
+        options: [
+          {
+            code: "en",
+            label: "English",
+            note: "Saved automatically",
+            booked: {
+              title: "Consultation booked",
+              detail: "Thursday, 4:30 PM, 30 minutes",
+              items: [
+                { label: "Lead saved", icon: createElement(LuCheck) },
+                { label: "Transcript saved", icon: createElement(LuFileText) },
+              ],
+            },
+            script: [
+              {
+                speaker: "caller",
+                text: "Hi, I run a dental clinic in Manchester. Can you build us an online booking system?",
+              },
+              {
+                speaker: "sky",
+                text: "Absolutely. We build web apps, mobile apps and booking platforms. Is it for new patients, existing ones, or both?",
+              },
+              { speaker: "caller", text: "Both, ideally. Could I speak to someone this week?" },
+              {
+                speaker: "sky",
+                text: "Of course. Thursday at 4:30 PM is free for a 30-minute call. Shall I book it?",
+              },
+              { speaker: "caller", text: "Yes, that works." },
+              { speaker: "sky", text: "Done. The invite is on its way to your inbox." },
+            ],
+          },
+          {
+            code: "hi",
+            label: "हिन्दी",
+            note: "अपने आप सेव हुआ",
+            booked: {
+              title: "कंसल्टेशन बुक हो गया",
+              detail: "गुरुवार, शाम 4:30 बजे, 30 मिनट",
+              items: [
+                { label: "लीड सेव हो गई", icon: createElement(LuCheck) },
+                { label: "ट्रांसक्रिप्ट सेव हो गई", icon: createElement(LuFileText) },
+              ],
+            },
+            script: [
+              {
+                speaker: "caller",
+                text: "नमस्ते, मैं मैनचेस्टर में एक डेंटल क्लिनिक चलाता हूँ। क्या आप हमारे लिए ऑनलाइन बुकिंग सिस्टम बना सकते हैं?",
+              },
+              {
+                speaker: "sky",
+                text: "बिल्कुल। हम वेब ऐप, मोबाइल ऐप और बुकिंग प्लेटफ़ॉर्म बनाते हैं। यह नए मरीज़ों के लिए है, पुराने मरीज़ों के लिए, या दोनों के लिए?",
+              },
+              { speaker: "caller", text: "दोनों के लिए। क्या मैं इसी हफ़्ते किसी से बात कर सकता हूँ?" },
+              {
+                speaker: "sky",
+                text: "ज़रूर। गुरुवार शाम 4:30 बजे 30 मिनट की कॉल के लिए समय खाली है। क्या मैं बुक कर दूँ?",
+              },
+              { speaker: "caller", text: "हाँ, यह ठीक रहेगा।" },
+              { speaker: "sky", text: "हो गया। इनवाइट आपके इनबॉक्स में पहुँच रहा है।" },
+            ],
+          },
+          {
+            code: "es",
+            label: "Español",
+            note: "Guardado automático",
+            booked: {
+              title: "Consulta reservada",
+              detail: "Jueves, 16:30, 30 minutos",
+              items: [
+                { label: "Lead guardado", icon: createElement(LuCheck) },
+                { label: "Transcripción guardada", icon: createElement(LuFileText) },
+              ],
+            },
+            script: [
+              {
+                speaker: "caller",
+                text: "Hola, tengo una clínica dental en Mánchester. ¿Pueden crearnos un sistema de reservas online?",
+              },
+              {
+                speaker: "sky",
+                text: "Por supuesto. Creamos apps web, apps móviles y plataformas de reservas. ¿Es para pacientes nuevos, actuales o ambos?",
+              },
+              { speaker: "caller", text: "Para ambos, idealmente. ¿Podría hablar con alguien esta semana?" },
+              {
+                speaker: "sky",
+                text: "Claro. El jueves a las 16:30 hay un hueco para una llamada de 30 minutos. ¿Se la reservo?",
+              },
+              { speaker: "caller", text: "Sí, me va bien." },
+              { speaker: "sky", text: "Listo. La invitación ya va de camino a su correo." },
+            ],
+          },
+          {
+            code: "fr",
+            label: "Français",
+            note: "Enregistré automatiquement",
+            booked: {
+              title: "Consultation réservée",
+              detail: "Jeudi, 16 h 30, 30 minutes",
+              items: [
+                { label: "Lead enregistré", icon: createElement(LuCheck) },
+                { label: "Transcription enregistrée", icon: createElement(LuFileText) },
+              ],
+            },
+            script: [
+              {
+                speaker: "caller",
+                text: "Bonjour, je dirige un cabinet dentaire à Manchester. Pouvez-vous nous créer un système de réservation en ligne ?",
+              },
+              {
+                speaker: "sky",
+                text: "Bien sûr. Nous créons des applis web, mobiles et des plateformes de réservation. Pour les nouveaux patients, les actuels, ou les deux ?",
+              },
+              { speaker: "caller", text: "Les deux, idéalement. Puis-je parler à quelqu'un cette semaine ?" },
+              {
+                speaker: "sky",
+                text: "Avec plaisir. Jeudi à 16 h 30, un créneau est libre pour un appel de 30 minutes. Je le réserve ?",
+              },
+              { speaker: "caller", text: "Oui, c'est parfait." },
+              { speaker: "sky", text: "C'est fait. L'invitation arrive dans votre boîte mail." },
+            ],
+          },
+          {
+            code: "de",
+            label: "Deutsch",
+            note: "Automatisch gespeichert",
+            booked: {
+              title: "Beratung gebucht",
+              detail: "Donnerstag, 16:30 Uhr, 30 Minuten",
+              items: [
+                { label: "Lead gespeichert", icon: createElement(LuCheck) },
+                { label: "Transkript gespeichert", icon: createElement(LuFileText) },
+              ],
+            },
+            script: [
+              {
+                speaker: "caller",
+                text: "Hallo, ich leite eine Zahnarztpraxis in Manchester. Können Sie uns ein Online-Buchungssystem bauen?",
+              },
+              {
+                speaker: "sky",
+                text: "Auf jeden Fall. Wir entwickeln Web-Apps, mobile Apps und Buchungsplattformen. Ist es für neue Patienten, bestehende oder beide?",
+              },
+              { speaker: "caller", text: "Am besten beide. Könnte ich diese Woche mit jemandem sprechen?" },
+              {
+                speaker: "sky",
+                text: "Gern. Am Donnerstag um 16:30 Uhr ist ein 30-minütiger Termin frei. Soll ich ihn buchen?",
+              },
+              { speaker: "caller", text: "Ja, das passt." },
+              { speaker: "sky", text: "Erledigt. Die Einladung ist unterwegs in Ihr Postfach." },
+            ],
+          },
         ],
       },
-      // Scripted demo call (UK / US market, English only)
-      script: [
-        {
-          speaker: "caller",
-          text: "Hi, I run a dental clinic in Manchester. Can you build us an online booking system?",
-        },
-        {
-          speaker: "sky",
-          text: "Absolutely. We build web apps, mobile apps and booking platforms. Is it for new patients, existing ones, or both?",
-        },
-        { speaker: "caller", text: "Both, ideally. Could I speak to someone this week?" },
-        {
-          speaker: "sky",
-          text: "Of course. Thursday at 4:30 PM is free for a 30-minute call. Shall I book it?",
-        },
-        { speaker: "caller", text: "Yes, that works." },
-        { speaker: "sky", text: "Done. The invite is on its way to your inbox." },
-      ],
     },
   },
   callFlow: {

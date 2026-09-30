@@ -69,5 +69,20 @@ export function validateManifestConfig(config, fileName) {
         if (typeof section.module !== "string" || section.module.trim().length === 0) {
             throw new Error(`Invalid section.module at index ${index}${fileContext}: expected a non-empty string`);
         }
+        if (section.markdown !== undefined && typeof section.markdown !== "string") {
+            throw new Error(`Invalid section.markdown at index ${index}${fileContext}: expected a string`);
+        }
     });
+    // markdown (optional)
+    if (manifest.markdown !== undefined) {
+        if (!manifest.markdown || typeof manifest.markdown !== "object") {
+            throw new Error(`Invalid "markdown"${fileContext}: expected an object`);
+        }
+        ["outDir", "indexFile", "urlBase"].forEach((key) => {
+            const value = manifest.markdown?.[key];
+            if (typeof value !== "string" || value.trim().length === 0) {
+                throw new Error(`Invalid "markdown.${key}"${fileContext}: expected a non-empty string`);
+            }
+        });
+    }
 }

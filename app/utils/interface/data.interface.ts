@@ -10,15 +10,29 @@ import type { CMSImageData } from "@/types/type";
 import type { Metadata } from "next";
 import { StaticImageData } from "next/image";
 
+// Promo card shown beside the link columns of a mega panel (never in a compact dropdown)
+export interface NavFeaturedCard {
+  title: string;
+  subtitle: string;
+  cta: {
+    label: string;
+    href: string;
+    target?: "_blank" | "_self";
+  };
+}
+
 export interface NavbarLinksInterface {
   id: string;
   label: string;
+  // One short line shown under the label in a dropdown
+  description?: string;
   href: string;
   priority: number;
   type: "button" | "link" | "listing"; // The "Listing" will be only visible in the sitemap.xml and not in the navbar
   isLink?: boolean;
   dropDown: NavbarLinksInterface[];
   target?: "_blank" | "_self";
+  featured?: NavFeaturedCard;
 }
 
 // ===============================
@@ -348,9 +362,28 @@ export interface SkyVoiceCallConsoleData {
     endAria: string;
     replayAria: string;
   };
-  transcript: { title: string; note: string; emptyText: string };
+  transcript: { title: string; emptyText: string };
+  languages: SkyVoiceLanguages;
+}
+
+// One demo call in one language. Every language has the same lines, in the same order
+export interface SkyVoiceLanguage {
+  // BCP 47 code: used in the URL (?lang=hi) and as the `lang` attribute
+  code: string;
+  // Language name in its own script
+  label: string;
+  note: string;
   booked: { title: string; detail: string; items: SkyVoiceBookedItem[] };
   script: SkyVoiceScriptLine[];
+}
+
+export interface SkyVoiceLanguages {
+  label: string;
+  queryParam: string;
+  defaultCode: string;
+  moreLanguagesCount: number;
+  demoLink: { label: string; href: string; target?: string; rel?: string };
+  options: SkyVoiceLanguage[];
 }
 
 export interface SkyVoiceHeroSection extends HeroSection {

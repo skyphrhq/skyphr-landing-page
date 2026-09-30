@@ -24,8 +24,9 @@ function SkyVoiceHeroSection({ data, classNames }: SkyVoiceHeroSectionInterface)
       ref={animationContainer}
       id={data.id}
       className={twMerge(
-        "relative isolate w-full h-auto overflow-hidden pt-36 pb-18 text-(--text-main-color) sm:pt-40 sm:pb-24 xl:pt-48",
+        "relative isolate w-full h-auto overflow-hidden text-(--text-main-color)",
         classNames,
+        "pt-30 pb-20 xl:pt-55 xl:pb-35",
       )}>
       {/* Faint vertical grid, lavender wash, two blurred glows and film grain */}
       <div aria-hidden="true" className="skyai-voice-bg absolute inset-0 -z-10">

@@ -42,9 +42,19 @@ export const SKY_VOICE_PHONE_NUMBER = {
 // Spline scene for the orb in the /ai-voice-agent call demo (served from public/spline/)
 export const SKY_VOICE_ORB_SCENE_URL = "/spline/sky-voice-orb.splinecode";
 
-export const SKY_AI_CONSULTATION_URL = "https://cal.com/skyphr/30min";
+export const SKY_AI_CONSULTATION_URL = "https://cal.com/skyphr/sky-demo";
 
 export const SITE_BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "https://skyphr.com").replace(
   /\/$/,
   "",
 );
+
+// Below this width the navbar is the mobile drawer (same breakpoint as the navbar CSS in globals.css)
+export const NAV_MOBILE_MEDIA_QUERY = "(max-width: 991px)";
+
+// How long the desktop mega panel stays open after the mouse leaves, so crossing the gap to it doesn't flicker
+export const NAV_PANEL_CLOSE_DELAY_MS = 150;
+
+// Hover intent: with a panel open, another trigger has to be hovered this long before its panel replaces it,
+// so moving diagonally from a link into the open panel doesn't switch panels on the way
+export const NAV_PANEL_SWITCH_DELAY_MS = 120;

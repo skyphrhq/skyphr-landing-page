@@ -1,5 +1,7 @@
 import {
   BlogPostData,
+  NavbarLinksInterface,
+  NavFeaturedCard,
   SkyAiChallengeCard,
   SkyAiChallengesSection,
   SkyAiLensCard,
@@ -14,6 +16,8 @@ import {
   SkyVoiceIndustry,
   SkyVoiceInfoCardData,
   SkyVoiceIntegration,
+  SkyVoiceLanguage,
+  SkyVoiceLanguages,
   SkyVoiceParticipant,
   SkyVoiceScriptLine,
   SkyVoiceSpeaker,
@@ -291,6 +295,7 @@ export interface SkyVoiceCallPartyInterface {
 export interface SkyVoiceWaveBarsInterface {
   tone: SkyVoiceSpeaker;
   isActive: boolean;
+  className?: string;
 }
 
 export interface SkyVoiceCallControlInterface {
@@ -320,19 +325,42 @@ export interface SkyVoiceTranscriptLine extends SkyVoiceScriptLine {
 
 export interface SkyVoiceTranscriptInterface {
   data: SkyVoiceCallConsoleData["transcript"];
-  booked: SkyVoiceCallConsoleData["booked"];
+  languages: SkyVoiceLanguages;
+  language: SkyVoiceLanguage;
+  onLanguageChange: (code: string) => void;
   names: Record<SkyVoiceSpeaker, string>;
   lines: SkyVoiceTranscriptLine[];
+  // Lines that were already on screen at the last language switch; they fade back in one after another
+  staggeredLineCount: number;
   phase: SkyVoiceCallPhase;
 }
 
 export interface SkyVoiceTranscriptLineInterface {
   line: SkyVoiceTranscriptLine;
   name: string;
+  // Language of the spoken text (the speaker name and timestamp stay as they are)
+  lang?: string;
+  enterDelayMs?: number;
 }
 
 export interface SkyVoiceBookedCardInterface {
-  data: SkyVoiceCallConsoleData["booked"];
+  data: SkyVoiceLanguage["booked"];
+  lang?: string;
+  enterDelayMs?: number;
+}
+
+export interface SkyVoiceLanguageSelectorInterface {
+  data: SkyVoiceLanguages;
+  activeCode: string;
+  onChange: (code: string) => void;
+  className?: string;
+}
+
+export interface SkyVoiceLanguageChipInterface {
+  language: SkyVoiceLanguage;
+  isSelected: boolean;
+  onSelect: (code: string) => void;
+  className?: string;
 }
 
 export interface SkyVoiceCallFlowScrubberInterface {
@@ -468,5 +496,60 @@ export interface SkyVoiceInfoCardPracticeInterface {
 
 export interface SkyVoiceIntegrationCardInterface {
   data: SkyVoiceIntegration;
+  className?: string;
+}
+
+export interface NavBarCommonLinkComponentInterface {
+  item: NavbarLinksInterface;
+  className?: string;
+  parentWrapperClassName?: string;
+  isPanelOpen: boolean;
+  onOpenPanel: (id: string) => void;
+  onHoverPanel: (id: string) => void;
+  onClosePanel: () => void;
+  onScheduleClosePanel: () => void;
+  onNavigate: () => void;
+  pathname: string;
+}
+
+export interface NavMegaPanelInterface {
+  item: NavbarLinksInterface;
+  panelId: string;
+  isOpen: boolean;
+  pathname: string;
+  onNavigate: () => void;
+  onBack: () => void;
+  className?: string;
+}
+
+export interface NavCompactPanelInterface {
+  item: NavbarLinksInterface;
+  panelId: string;
+  isOpen: boolean;
+  pathname: string;
+  onNavigate: () => void;
+  className?: string;
+}
+
+export interface NavMegaPanelColumnInterface {
+  item: NavbarLinksInterface;
+  headingId: string;
+  pathname: string;
+  onNavigate: () => void;
+  className?: string;
+}
+
+export interface NavFeaturedCardInterface {
+  data: NavFeaturedCard;
+  // Runs the voice wave; only true while the panel is open, so it doesn't animate while hidden
+  isActive: boolean;
+  onNavigate: () => void;
+  className?: string;
+}
+
+export interface NavMegaPanelLinkInterface {
+  item: NavbarLinksInterface;
+  pathname: string;
+  onNavigate: () => void;
   className?: string;
 }

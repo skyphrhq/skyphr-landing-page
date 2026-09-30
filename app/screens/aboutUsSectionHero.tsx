@@ -25,7 +25,7 @@ function AboutUsSectionHeroElem({ data, classNames }: AboutUsHeroSectionInterfac
       <div className="skyphr-container">
         <div
           ref={animationContainer}
-          className="w-full h-full relative z-20 flex flex-col items-center max-w-4xl mx-auto justify-center">
+          className="w-full h-full relative z-20 flex flex-col items-center max-w-5xl mx-auto justify-center">
           <div className="flex flex-col items-center justify-center gap-2 text-center">
             {data?.header?.title?.map((text, index) => (
               <h1

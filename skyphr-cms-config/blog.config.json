@@ -8,10 +8,16 @@
         "baseDir": "./public/blog/images",
         "blog hero": "./public/blog/images/hero"
     },
+    "markdown": {
+        "outDir": "./app/content/markdown/blog",
+        "indexFile": "./app/content/markdown/blog.md",
+        "urlBase": "/blog"
+    },
     "sections": [
         {
             "name": "Blog Hero",
-            "module": "./app/components/blog/blogHero"
+            "module": "./app/components/blog/blogHero",
+            "markdown": "# {{title}}\n\n{{excerpt}}\n\nBy {{authorName}}, {{authorRole}} · {{publishedAt}}"
         },
         {
             "name": "Featured Visual",
@@ -19,19 +25,23 @@
         },
         {
             "name": "Article Intro",
-            "module": "./app/components/blog/articleIntro"
+            "module": "./app/components/blog/articleIntro",
+            "markdown": "{{firstParagraph}}\n\n{{secondParagraph}}"
         },
         {
             "name": "Text Section",
-            "module": "./app/components/blog/textSection"
+            "module": "./app/components/blog/textSection",
+            "markdown": "## {{heading}}\n\n{{content}}"
         },
         {
             "name": "Quote Block",
-            "module": "./app/components/blog/quoteBlock"
+            "module": "./app/components/blog/quoteBlock",
+            "markdown": "> {{quote}}\n>\n> — {{author}}"
         },
         {
             "name": "Author Card",
-            "module": "./app/components/blog/authorCard"
+            "module": "./app/components/blog/authorCard",
+            "markdown": "## About the author\n\n**{{name}}**, {{title}}\n\n{{bio}}"
         },
         {
             "name": "Blogs Sidebar",

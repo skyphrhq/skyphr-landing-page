@@ -14,12 +14,6 @@ const EXTRA_SITEMAP_PAGES: MetadataRoute.Sitemap = [
     changeFrequency: "monthly",
     priority: 0.85,
   },
-  {
-    url: `${siteUrl}/ai-voice-agent`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
 ];
 
 const createSiteMapEntry = (page: NavbarLinksInterface): MetadataRoute.Sitemap[number] => {
@@ -34,7 +28,8 @@ const createSiteMapEntry = (page: NavbarLinksInterface): MetadataRoute.Sitemap[n
 const generateSiteMapEntries = (page: NavbarLinksInterface): MetadataRoute.Sitemap => {
   const entries: MetadataRoute.Sitemap = [];
 
-  if (page.isLink) {
+  // External links (e.g. SkyLens on its own subdomain) don't belong in this site's sitemap
+  if (page.isLink && page.href.startsWith("/")) {
     entries.push(createSiteMapEntry(page));
   }
 

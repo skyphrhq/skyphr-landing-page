@@ -34,6 +34,19 @@ const subscribeToReducedMotion = (onChange: () => void) => {
 const getReducedMotion = () => window.matchMedia(REDUCED_MOTION_QUERY).matches;
 const getServerReducedMotion = () => false;
 
+// The transcript language lives in the URL, so a reload keeps it. Read straight from `window.location` instead of
+// `useSearchParams`, which would force the whole page out of static rendering
+const LANGUAGE_CHANGE_EVENT = "skyai-voice-language-change";
+const subscribeToLanguageParam = (onChange: () => void) => {
+  window.addEventListener("popstate", onChange);
+  window.addEventListener(LANGUAGE_CHANGE_EVENT, onChange);
+  return () => {
+    window.removeEventListener("popstate", onChange);
+    window.removeEventListener(LANGUAGE_CHANGE_EVENT, onChange);
+  };
+};
+const getServerLanguageParam = () => null;
+
 const getSecondsSince = (startedAt: number) => Math.floor((Date.now() - startedAt) / 1000);
 
 // Where each line would start if typed at normal speed; used to show real-looking timestamps without the animation
@@ -53,20 +66,34 @@ function SkyVoiceCallConsole({ data, className }: SkyVoiceCallConsoleInterface) 
   const [charIndex, setCharIndex] = useState(0);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [timestamps, setTimestamps] = useState<number[]>([]);
+  const [staggeredLineCount, setStaggeredLineCount] = useState(0);
   const consoleRef = useRef<HTMLDivElement>(null);
   const startedAtRef = useRef(0);
   const reducedMotion = useSyncExternalStore(subscribeToReducedMotion, getReducedMotion, getServerReducedMotion);
 
+  const { queryParam, defaultCode, options } = data.languages;
+  const languageParam = useSyncExternalStore(
+    subscribeToLanguageParam,
+    () => new URLSearchParams(window.location.search).get(queryParam),
+    getServerLanguageParam,
+  );
+  // Unknown or missing `?lang=` falls back to the default language
+  const language =
+    options.find((option) => option.code === languageParam) ??
+    options.find((option) => option.code === defaultCode) ??
+    options[0];
+
   // Split into code points so the typewriter never cuts a character in half
   const script = useMemo(
-    () => data.script.map((line) => ({ ...line, characters: Array.from(line.text) })),
-    [data.script],
+    () => language.script.map((line) => ({ ...line, characters: Array.from(line.text) })),
+    [language.script],
   );
 
   const scriptTimeline = useMemo(() => getScriptTimeline(script), [script]);
 
   const startCall = useCallback(() => {
     setCharIndex(0);
+    setStaggeredLineCount(0);
     if (reducedMotion) {
       // No typing animation: show the finished call straight away
       setTimestamps(scriptTimeline.starts);
@@ -89,7 +116,13 @@ function SkyVoiceCallConsole({ data, className }: SkyVoiceCallConsoleInterface) 
     setPhase("ended");
   };
 
-  // Auto-play once, the first time the console scrolls into view
+  // `startCall` changes with the language; the ref lets the auto-play effect below run once and still call the latest one
+  const startCallRef = useRef(startCall);
+  useEffect(() => {
+    startCallRef.current = startCall;
+  }, [startCall]);
+
+  // Auto-play once, the first time the console scrolls into view (switching language must not restart the call)
   useEffect(() => {
     const consoleElement = consoleRef.current;
     if (!consoleElement) return;
@@ -99,7 +132,7 @@ function SkyVoiceCallConsole({ data, className }: SkyVoiceCallConsoleInterface) 
       ([entry]) => {
         if (!entry.isIntersecting) return;
         observer.disconnect();
-        timeoutId = window.setTimeout(startCall, AUTO_START_DELAY_MS);
+        timeoutId = window.setTimeout(() => startCallRef.current(), AUTO_START_DELAY_MS);
       },
       { threshold: 0.2 },
     );
@@ -109,7 +142,7 @@ function SkyVoiceCallConsole({ data, className }: SkyVoiceCallConsoleInterface) 
       observer.disconnect();
       window.clearTimeout(timeoutId);
     };
-  }, [startCall]);
+  }, []);
 
   // Typewriter: one character at a time, a pause between lines, then the "booked" card
   useEffect(() => {
@@ -156,6 +189,17 @@ function SkyVoiceCallConsole({ data, className }: SkyVoiceCallConsoleInterface) 
       isTyping,
     };
   });
+
+  // The call keeps its place (phase, line, timestamps); only the text changes, and the visible lines fade back in
+  const handleLanguageChange = (code: string) => {
+    if (code === language.code) return;
+    const url = new URL(window.location.href);
+    if (code === defaultCode) url.searchParams.delete(queryParam);
+    else url.searchParams.set(queryParam, code);
+    window.history.replaceState(null, "", url);
+    window.dispatchEvent(new Event(LANGUAGE_CHANGE_EVENT));
+    setStaggeredLineCount(visibleLineCount);
+  };
 
   return (
     <div
@@ -210,13 +254,17 @@ function SkyVoiceCallConsole({ data, className }: SkyVoiceCallConsoleInterface) 
       </div>
 
       {/* The transcript never sizes the console: stacked it gets a fixed height, side by side it fills the row
-          (at least 520px, or the stage's height if that's taller) and scrolls its lines, booked card included */}
-      <div className="relative h-95 xmd:h-auto xmd:min-h-130">
+          (at least 520px, or the stage's height if that's taller) and scrolls its lines, booked card included.
+          So switching language can never change the card's height */}
+      <div className="relative h-115 xmd:h-auto xmd:min-h-130">
         <SkyVoiceTranscript
           data={data.transcript}
-          booked={data.booked}
+          languages={data.languages}
+          language={language}
+          onLanguageChange={handleLanguageChange}
           names={{ caller: data.caller.name, sky: data.sky.name }}
           lines={transcriptLines}
+          staggeredLineCount={staggeredLineCount}
           phase={phase}
         />
       </div>

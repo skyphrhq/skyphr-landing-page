@@ -137,6 +137,13 @@
 .skyai-voice-bars.is-active span {
   animation: skyai-voice-eq 0.9s ease-in-out infinite;
 }
+/* Calm variant (navbar "Meet Sky" card): slow, low ripple that doesn't pull the eye away from the links */
+.skyai-voice-bars-calm span {
+  transform: scaleY(0.35);
+}
+.skyai-voice-bars-calm.is-active span {
+  animation: skyai-voice-eq-calm 2.8s ease-in-out infinite;
+}
 
 /* ---------- Orb ---------- */
 .skyai-voice-orb-glow {
@@ -390,6 +397,16 @@
   }
   50% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes skyai-voice-eq-calm {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(0.6);
   }
 }
 
