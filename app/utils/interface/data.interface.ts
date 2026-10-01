@@ -287,7 +287,7 @@ export interface SkyAiBuiltBySection {
 export interface SkyAiProcessStep {
   title: string;
   description: string;
-  deliverables: string[];
+  // deliverables: string[];
 }
 
 export interface SkyAiProcessPrinciple {

@@ -47,7 +47,7 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
                 <span
                   className={twMerge(
                     "font-instrument-sans",
-                    chunk.variant === "italic" && "font-playfair-display italic font-semibold",
+                    chunk.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
                     chunk.classNames,
                   )}
                   key={index}>

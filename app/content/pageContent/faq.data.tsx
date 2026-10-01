@@ -140,6 +140,72 @@ export const HOME_PAGE_FAQ_DATA: FaqCommonCardData[] = [
   },
 ];
 
+export const SKY_AI_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "Why choose Skyphr for AI development?",
+    answer: (
+      <p>
+        <span className="font-semibold">Skyphr</span> combines <span className="font-semibold">AI engineering,</span>{" "}
+        <span className="font-semibold">software development</span>,{" "}
+        <span className="font-semibold">UI/UX design,</span> and{" "}
+        <span className="font-semibold">product strategy,</span> to build practical AI solutions that integrate with
+        real business systems. We focus on production-ready AI applications rather than isolated prototypes.
+      </p>
+    ),
+  },
+  {
+    question: "Do you work with international clients?",
+    answer: (
+      <p>
+        Yes. <span className="font-semibold">Skyphr,</span> works with <span className="font-semibold">Startups,</span>{" "}
+        <span className="font-semibold">SaaS companies,</span> and{" "}
+        <span className="font-semibold">Enterprises globally,</span> with a strong focus on serving businesses across{" "}
+        <span className="font-semibold">Europe,</span> <span className="font-semibold">United Kingdom,</span>{" "}
+        <span className="font-semibold">North America,</span> and{" "}
+        <span className="font-semibold">Emerging markets.</span>
+      </p>
+    ),
+  },
+  {
+    question: "Can you build an AI MVP for a startup?",
+    answer: (
+      <p>
+        Yes. We can help startups validate <span className="font-semibold">AI</span> product ideas through focused{" "}
+        <span className="font-semibold">MVP development</span> and proof-of-concept solutions before expanding into a
+        larger production system.
+      </p>
+    ),
+  },
+  {
+    question: " What AI development services do you provide?",
+    answer: (
+      <p>
+        Our <span className="font-semibold">AI development</span> services include
+        <span className="font-semibold">AI agent development,</span>{" "}
+        <span className="font-semibold">LLM integration,</span> <span className="font-semibold">RAG development,</span>{" "}
+        <span className="font-semibold">AI chatbot development,</span>{" "}
+        <span className="font-semibold">AI workflow automation,</span>{" "}
+        <span className="font-semibold">custom AI applications,</span>{" "}
+        <span className="font-semibold">AI-powered SaaS development,</span> and{" "}
+        <span className="font-semibold">AI strategy and consulting</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide ongoing AI support after launch?",
+    answer: (
+      <p>
+        Yes. We provide ongoing <span className="font-semibold">AI system maintenance,</span>{" "}
+        <span className="font-semibold">monitoring,</span> <span className="font-semibold">model,</span> and{" "}
+        <span className="font-semibold">workflow improvements</span>
+        <span className="font-semibold">feature development,</span> <span className="font-semibold">integrations,</span>{" "}
+        and <span className="font-semibold">technical support</span>
+        as your AI solution evolves.
+      </p>
+    ),
+  },
+];
+
 // hire page
 export const HIRE_REACT_JS_DEVELOPER_FAQ_DATA: FaqCommonCardData[] = [
   {

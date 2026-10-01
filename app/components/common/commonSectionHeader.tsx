@@ -24,7 +24,7 @@ function CommonSectionHeader({
           <span
             className={twMerge(
               "font-instrument-sans reveal-text-animation",
-              chunk?.variant === "italic" && "italic font-bold! font-playfair-display text-(--cta-button-background)",
+              chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
               chunk?.classNames,
             )}
             key={index}>
