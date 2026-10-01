@@ -1,6 +1,7 @@
 import JsonLd from "@/app/components/JsonLd";
 import CTAButton from "@/app/components/common/ctaButton";
-import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { EXTRA_PAGE_LINKS_DATA, NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { GET_SORTED_BLOG_POSTS } from "@/app/content/pageContent/pageData/blog";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { createPageMetadata } from "@/app/utils/seo/metadata";
@@ -22,6 +23,7 @@ export const metadata: Metadata = createPageMetadata({
 type SitemapLink = {
   label: string;
   href: string;
+  target?: "_blank" | "_self";
 };
 
 type SitemapGroup = {
@@ -32,7 +34,14 @@ type SitemapGroup = {
 const sitemapGroups: SitemapGroup[] = [
   {
     title: "Company Pages",
-    links: NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+    links: [
+      ...NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+      ...EXTRA_PAGE_LINKS_DATA,
+    ],
+  },
+  {
+    title: "Product Pages",
+    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "our-products" ? page.dropDown : [])).flat(),
   },
   {
     title: "Services Pages",
@@ -43,6 +52,10 @@ const sitemapGroups: SitemapGroup[] = [
     links: NAVBAR_LINKS_DATA.map((page) =>
       page.id === "hire" ? page.dropDown.flatMap((category) => category.dropDown) : [],
     ).flat(),
+  },
+  {
+    title: "Blog Posts",
+    links: GET_SORTED_BLOG_POSTS().map((post) => ({ label: post.listing.title, href: `/blog/${post.slug}` })),
   },
 ];
 
@@ -65,7 +78,7 @@ export default function SitemapPage() {
               Explore every <span className="font-playfair-display italic font-semibold">Skyphr</span> page
             </h1>
             <p className="max-w-2xl pt-5 font-instrument-sans text-base font-medium leading-7 text-(--text-secondary-color) md:text-lg">
-              Browse the complete website structure, including company pages, service pages, and all hire pages.
+              Browse the complete website structure, including company pages, products, service pages, hire pages, and blog posts.
             </p>
           </div>
         </div>
@@ -83,7 +96,7 @@ export default function SitemapPage() {
                 <ul className="flex flex-wrap gap-3 pt-7 md:gap-4">
                   {group.links.map((link) => (
                     <li key={`${group.title}-${link.href}-${link.label}`}>
-                      <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href}>
+                      <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href} target={link.target}>
                         {link.label}
                       </CTAButton>
                     </li>

@@ -45,7 +45,7 @@ LandingPage/
 ├── app/
 │   ├── layout.tsx              # Root layout: fonts, GTM, JSON-LD, NavBar, Footer, providers
 │   ├── not-found.tsx           # 404 page
-│   ├── sitemap.ts              # Built from NAVBAR_LINKS_DATA
+│   ├── sitemap.ts              # Built from NAVBAR_LINKS_DATA + EXTRA_PAGE_LINKS_DATA + blog posts
 │   ├── favicon.ico
 │   ├── (page)/                 # Route group: every public page lives here
 │   │   ├── page.tsx            # Home "/"
@@ -120,7 +120,7 @@ LandingPage/
 | Page-specific complex CSS (too big for utilities) | its own file in `app/styles/`, `@import`ed from `globals.css`, classes prefixed | `app/styles/skyVoice.css` (`.skyai-voice-*`) |
 | HTML from a CMS `RICH_TEXT` field | render it in an element with `.skyphr-blog-rich-text` (`app/styles/blogRichText.css`), which restores spacing/lists/headings that Tailwind's preflight removes | `blog/textSection.tsx` |
 | 3D scene (Spline `.splinecode`) | `public/spline/<kebab-name>.splinecode`, URL in a `common.constant.ts` constant | `SKY_VOICE_ORB_SCENE_URL` → `/spline/sky-voice-orb.splinecode` |
-| Indexable page that isn't in the header nav | `EXTRA_SITEMAP_PAGES` in `app/sitemap.ts` | `/sky-ai` |
+| Indexable page that isn't in the header nav | `EXTRA_PAGE_LINKS_DATA` in `navbar.data.tsx` (feeds `app/sitemap.ts`, the `/sitemap` page and the footer "Company" column) | `/sky-ai` |
 | Dropdown link description / mega panel promo card | `description` / `featured` on the item in `navbar.data.tsx` (`NavFeaturedCard`); external `href`s are skipped by `app/sitemap.ts` | `our-products`, `hire.featured` |
 | Image used in a component | `app/assets/webp/` (subfolder per page if > 2 images) | `app/assets/webp/sky-ai/` |
 | OG image | `public/og-image/<route-slug>.png` | `public/og-image/hire-nextjs-developers.png` |
@@ -470,7 +470,7 @@ Pages are thin: they only read a data object, render sections conditionally (`DA
    - Data that only this page uses (e.g. the voice demo call script) stays inline in the page's data file. Only data used by 2+ pages goes in `app/content/pageContent/<name>.data.ts`.
 3. Add `public/og-image/<route-slug>.png`.
 4. Add `app/content/markdown/<route>.md` (mirror of the page copy) so `/agent/<route>` works.
-5. Add the link to `NAVBAR_LINKS_DATA` in `app/content/pageContent/navbar.data.tsx` (this also feeds `app/sitemap.ts`; set `isLink`, `priority`). If the page is linked from elsewhere instead of the header, add it to `EXTRA_SITEMAP_PAGES` in `app/sitemap.ts` so it's still in the sitemap.
+5. Add the link to `NAVBAR_LINKS_DATA` in `app/content/pageContent/navbar.data.tsx` (this also feeds `app/sitemap.ts`; set `isLink`, `priority`). If the page is linked from elsewhere instead of the header, add it to `EXTRA_PAGE_LINKS_DATA` in `navbar.data.tsx` so it's still in `sitemap.xml`, the `/sitemap` page and the footer.
 6. If relevant, update `public/llms.txt`.
 7. Reuse `app/screens/common/*` sections (FAQ, ContactUs, ReadyToScale) before writing new ones.
 
