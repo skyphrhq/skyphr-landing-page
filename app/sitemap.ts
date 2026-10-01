@@ -1,20 +1,10 @@
-import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { EXTRA_PAGE_LINKS_DATA, NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { GET_SORTED_BLOG_POSTS } from "@/app/content/pageContent/pageData/blog";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import type { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
 import type { MetadataRoute } from "next";
 
 const siteUrl = SITE_BASE_URL;
-
-// Indexable pages that aren't in the header navigation, so NAVBAR_LINKS_DATA doesn't cover them
-const EXTRA_SITEMAP_PAGES: MetadataRoute.Sitemap = [
-  {
-    url: `${siteUrl}/sky-ai`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.85,
-  },
-];
 
 const createSiteMapEntry = (page: NavbarLinksInterface): MetadataRoute.Sitemap[number] => {
   return {
@@ -47,7 +37,7 @@ const BLOG_POST_SITEMAP_PAGES: MetadataRoute.Sitemap = GET_SORTED_BLOG_POSTS().m
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...NAVBAR_LINKS_DATA.flatMap((page) => generateSiteMapEntries(page)),
-    ...EXTRA_SITEMAP_PAGES,
+    ...EXTRA_PAGE_LINKS_DATA.flatMap((page) => generateSiteMapEntries(page)),
     ...BLOG_POST_SITEMAP_PAGES,
   ];
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import SkyphrWhiteLogo from "@/app/assets/logo/skyphr-logo-transparent-white.webp";
-import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { EXTRA_PAGE_LINKS_DATA, NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { SOCIAL_LINKS } from "@/app/content/pageContent/socilaLinks.data";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,10 @@ import { FaChevronDown } from "react-icons/fa";
 const FOOTER_LINK_GROUPS = [
   {
     title: "Company",
-    links: NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+    links: [
+      ...NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+      ...EXTRA_PAGE_LINKS_DATA,
+    ],
   },
   { title: "Services", links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat() },
   {

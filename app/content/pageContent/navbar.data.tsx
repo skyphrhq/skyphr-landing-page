@@ -320,3 +320,17 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
     dropDown: [],
   },
 ];
+
+// Pages linked from outside the header dropdowns (e.g. the SkyAI nav pill). Feeds app/sitemap.ts, /sitemap and the footer
+export const EXTRA_PAGE_LINKS_DATA: NavbarLinksInterface[] = [
+  {
+    id: "sky-ai",
+    label: "SkyAI",
+    href: "/sky-ai",
+    type: "link",
+    isLink: true,
+    target: "_self",
+    priority: 0.85,
+    dropDown: [],
+  },
+];
