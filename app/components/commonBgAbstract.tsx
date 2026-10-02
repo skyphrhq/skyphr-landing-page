@@ -16,10 +16,11 @@ function CommonBgAbstract({ className = "" }: { className?: string }) {
         priority={true}
       />
       <div
-        className={twMerge(
-          "w-full aspect-square absolute inset-0 pointer-events-none flex items-center justify-center blur-[200px] rounded-[200%] opacity-70 bg-(--skyai-lavender-soft)",
-          className,
-        )}
+        className={twMerge("w-full h-full absolute inset-0 pointer-events-none", className)}
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 55% at 50% 35%, rgba(238,240,253,0.9) 0%, rgba(238,240,253,0.5) 40%, rgba(238,240,253,0.15) 65%, transparent 80%)",
+        }}
       />
     </>
   );
