@@ -57,8 +57,8 @@ function SkyVoiceWhoForSection({ data, classNames }: SkyVoiceWhoForSectionInterf
         const timeline = gsap.timeline({ scrollTrigger: { trigger: container, start: "30% bottom", once: true } });
         timeline.fromTo(
           ".skyai-voice-who-reveal-header",
-          { y: 30, opacity: 0, filter: "blur(8px)" },
-          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.8, ease: "power3.out", stagger: 0.1 },
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.1 },
         );
         timeline.fromTo(
           ".skyai-voice-who-row",

@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "*": ["blog-cms/**"],
   },
+  images: {
+    // AVIF is ~30-50% smaller than WebP; browsers without AVIF support fall back to WebP
+    formats: ["image/avif", "image/webp"],
+  },
   experimental: {
     optimizePackageImports: ["react-icons", "gsap", "lenis"],
   },

@@ -5,10 +5,12 @@ export const COMMON_REVEL_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars 
   FROM: {
     y: 50,
     opacity: 0,
+    filter: "blur(3px)",
   },
   TO: {
     y: 0,
     opacity: 1,
+    filter: "blur(0px)",
     duration: 1,
     ease: "power3.out",
     stagger: 0.1,
@@ -32,10 +34,12 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
     FROM: {
       y: 50,
       opacity: 0,
+      filter: "blur(3px)",
     },
     TO: {
       y: 0,
       opacity: 1,
+      filter: "blur(0px)",
       duration: 1,
       ease: "power3.out",
       stagger: stagger || 0.1,
@@ -54,11 +58,13 @@ export const SKY_VOICE_CALL_FLOW_STAGE_ANIMATION: { FROM: gsap.TweenVars; TO: gs
     y: 12,
     scale: 0.98,
     opacity: 0,
+    filter: "blur(4px)",
   },
   TO: {
     y: 0,
     scale: 1,
     opacity: 1,
+    filter: "blur(0px)",
     duration: 0.6,
     ease: "expo.out",
     delay: (_index: number, target: HTMLElement) => Number(target.dataset.flowDelay ?? 0),

@@ -58,8 +58,6 @@ export default function RootLayout({ children }: RootLayoutInterface) {
       suppressHydrationWarning
       className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} antialiased`}>
       <head suppressHydrationWarning>
-        <link rel="dns-prefetch" href="https://api.ipinfo.io" />
-        <link rel="preconnect" href="https://api.ipinfo.io" />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){

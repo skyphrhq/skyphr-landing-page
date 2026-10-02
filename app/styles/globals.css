@@ -70,6 +70,18 @@
   height: 100dvh !important;
 }
 
+/* Fluted vertical stripes behind heroes (HeroBgAbstract / CommonBgAbstract). Pure CSS on purpose:
+   a gradient is never an LCP candidate, while the old full-bleed <img> was the LCP element. */
+.skyphr-fluted-bg {
+  background-image: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--root-black-color) 0.8%, transparent),
+    color-mix(in srgb, var(--root-black-color) 3.3%, transparent)
+  );
+  background-size: calc(100% / 21.75) 100%;
+  background-repeat: repeat-x;
+}
+
 .skyphr-container {
   width: 100%;
   margin: 0 auto;
