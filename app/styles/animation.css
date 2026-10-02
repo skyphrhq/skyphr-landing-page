@@ -169,3 +169,23 @@
 .skyai-subnav-scroll::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== Above-the-fold hero reveal (GSAP: HERO_REVEAL_ANIMATION) =====
+ * Start states live in CSS so the server HTML paints in its final layout with no flash before hydration;
+ * GSAP then tweens them to opacity 1 / y 0. Only opacity/transform (compositor-only, no blur).
+ * `.skyphr-hero-rise` keeps full opacity: use it on the LCP element (the hero <h1> rows) so LCP isn't delayed.
+ */
+.skyphr-hero-rise {
+  transform: translate3d(0, 24px, 0);
+}
+.skyphr-hero-fade {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .skyphr-hero-rise,
+  .skyphr-hero-fade {
+    opacity: 1;
+    transform: none;
+  }
+}
