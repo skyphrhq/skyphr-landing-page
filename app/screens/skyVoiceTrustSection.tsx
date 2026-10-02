@@ -41,7 +41,7 @@ function SkyVoiceTrustSection({ data, classNames }: SkyVoiceTrustSectionInterfac
         header={data.header}
         isSingleHeading
         className="pb-10! md:pb-16!"
-        headerParentClass="tracking-tight"
+        headerParentClass=""
         descriptionClass="max-w-140 text-(--skyai-voice-muted)"
       />
 

@@ -174,6 +174,34 @@ Transform business data into actionable insights through advanced reporting and 
 
 ---
 
+## Industries We Serve
+
+We build SaaS products for founders and teams across industries, with the multi-tenant, billing and integration needs each market expects.
+
+### B2B & Productivity
+
+Workflow, collaboration and team tools with role-based access, workspaces and integrations businesses rely on.
+
+### Fintech
+
+Subscription, payments and financial management platforms built with security and compliance in mind.
+
+### Healthcare & Wellness
+
+Practice management, booking and patient engagement platforms designed for secure, reliable everyday use.
+
+### E-commerce & Marketplaces
+
+Multi-vendor platforms, storefront tools and seller dashboards that scale with orders and users.
+
+### EdTech
+
+Course platforms, learning management systems and assessment tools for schools, creators and companies.
+
+### HR & Recruitment
+
+Hiring, onboarding and people management products with clean workflows and reporting.
+
 ## Technologies We Use
 
 ### Frontend Development

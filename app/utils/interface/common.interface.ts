@@ -23,7 +23,13 @@ import {
   SkyVoiceSpeaker,
   SkyVoiceWhoForSection,
 } from "@/app/utils/interface/data.interface";
-import { DevelopmentProcessStep, SectionHeader, TextChunk } from "@/app/utils/interface/page.interface";
+import {
+  DeliveryApproachItem,
+  DevelopmentProcessStep,
+  IndustryItem,
+  SectionHeader,
+  TextChunk,
+} from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 import { ButtonHTMLAttributes } from "react";
 
@@ -551,5 +557,19 @@ export interface NavMegaPanelLinkInterface {
   item: NavbarLinksInterface;
   pathname: string;
   onNavigate: () => void;
+  className?: string;
+}
+
+export interface IndustryServeCardInterface {
+  data: IndustryItem;
+  // Position in the list, shown as the "01", "02"... index
+  index: number;
+  className?: string;
+}
+
+export interface DeliveryApproachCardInterface {
+  data: DeliveryApproachItem;
+  // Position in the list, shown as the "01", "02"... marker
+  index: number;
   className?: string;
 }

@@ -73,7 +73,7 @@ function SkyVoiceAfterCallSection({ data, classNames }: SkyVoiceAfterCallSection
             <h3 className="text-2xl font-semibold tracking-[-0.02em] text-(--text-main-color)">
               {data.integrations.title}
             </h3>
-            <p className="text-[15px] text-(--skyai-voice-muted)">{data.integrations.description}</p>
+            <p className="text-[15px] text-(--skyai-voice-muted) text-end max-w-130">{data.integrations.description}</p>
           </div>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {data.integrations.items.map((integration) => (

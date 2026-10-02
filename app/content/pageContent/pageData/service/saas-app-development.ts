@@ -301,6 +301,50 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
+  industriesServe: {
+    header: {
+      title: [[{ text: "Industries" }, { text: "We" }, { text: "Serve", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "We build SaaS products for founders and teams across industries, with the multi-tenant, billing and integration needs each market expects.",
+          },
+        ],
+      ],
+    },
+    items: [
+      {
+        title: "B2B & Productivity",
+        description:
+          "Workflow, collaboration and team tools with role-based access, workspaces and integrations businesses rely on.",
+      },
+      {
+        title: "Fintech",
+        description:
+          "Subscription, payments and financial management platforms built with security and compliance in mind.",
+      },
+      {
+        title: "Healthcare & Wellness",
+        description:
+          "Practice management, booking and patient engagement platforms designed for secure, reliable everyday use.",
+      },
+      {
+        title: "E-commerce & Marketplaces",
+        description:
+          "Multi-vendor platforms, storefront tools and seller dashboards that scale with orders and users.",
+      },
+      {
+        title: "EdTech",
+        description:
+          "Course platforms, learning management systems and assessment tools for schools, creators and companies.",
+      },
+      {
+        title: "HR & Recruitment",
+        description:
+          "Hiring, onboarding and people management products with clean workflows and reporting.",
+      },
+    ],
+  },
   technologyStack: {
     header: {
       title: [[{ text: "Technologies" }, { text: "We" }, { text: "Use" }]],

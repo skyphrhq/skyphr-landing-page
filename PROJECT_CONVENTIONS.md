@@ -173,7 +173,7 @@ There is **no** `hooks/`, `services/` or `api/` folder. No custom hooks exist to
 | `--skyai-voice-bg-mid` / `--skyai-voice-bg-end` | `#f7f6ff` / `#efeeff` | Sky voice agent: hero background gradient |
 | `--skyai-voice-avatar-grey` | `#e7e8f3` | Sky voice agent: caller avatar gradient |
 | `--skyai-voice-green` / `-green-bright` / `-green-light` | `#16a34a` / `#22c55e` / `#4ade80` | Sky voice agent: live dot, start-call button, booked icon |
-| `--skyai-voice-red` / `-red-light` | `#ef4444` / `#f87171` | Sky voice agent: end-call button |
+| `--skyai-voice-red` / `-red-light` | `#ef4444` / `#f87171` | Sky voice agent: end-call button, "who it's for" important note |
 | `--skyai-voice-success-bg` / `-bg-end` / `-border` / `-text` | `#f0fbf4` / `#e6f7ec` / `#cbebd6` / `#3f5b48` | Sky voice agent: "Consultation booked" card |
 | `--skyai-voice-orb-cyan` / `-orb-magenta` / `-orb-orange` | `#22b8f0` / `#e0409a` / `#f5692a` | Sky voice agent: orb loading placeholder (matches the Spline scene) |
 

@@ -11,7 +11,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSectionProps) {
+function WhyChooseSection({ data: { header, reasons, items }, classNames }: WhyChooseSectionProps) {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -61,14 +61,14 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
                 <div className="w-full">
                   {header?.title?.map((titleRow, rowIndex) => (
                     <h2
-                      className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[20px] md:text-2xl lg:text-3xl xl:text-[34px] font-bold"
+                      className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
                       key={rowIndex}>
                       {titleRow?.map((chunk, index) => {
                         return (
                           <span
                             className={twMerge(
                               "font-instrument-sans reveal-text-animation",
-                              chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                              chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
                               chunk?.classNames,
                             )}
                             key={index}>
@@ -95,7 +95,26 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
                       ))}
                     </div>
                   )}
-                  {reasons && (
+                  {!!items?.length && (
+                    <div className="pt-5">
+                      <ul className="flex flex-col gap-4">
+                        {items.map((item) => (
+                          <li key={item.title} className="flex items-start gap-2.5 max-w-[70%]">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--cta-button-background)" />
+                            <div className="flex flex-col gap-1">
+                              <h3 className="font-instrument-sans text-base font-semibold text-(--text-main-color) reveal-text-animation">
+                                {item.title}
+                              </h3>
+                              <p className="font-inter text-sm leading-5 text-(--text-secondary-color) reveal-text-animation">
+                                {item.description}
+                              </p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {!!reasons?.length && (
                     <div className="pt-5">
                       <ul className="flex flex-col gap-2">
                         {reasons.map((item) => (

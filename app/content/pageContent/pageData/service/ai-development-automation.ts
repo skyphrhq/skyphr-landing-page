@@ -218,6 +218,50 @@ export const AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA: CommonPageDataInterfac
       },
     ],
   },
+  industriesServe: {
+    header: {
+      title: [[{ text: "Industries" }, { text: "We" }, { text: "Serve", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "Our AI development expertise supports organizations across multiple industries and business models.",
+          },
+        ],
+      ],
+    },
+    items: [
+      {
+        title: "SaaS & Technology",
+        description:
+          "AI-powered SaaS platforms, intelligent workflows, customer support automation, and product enhancement solutions.",
+      },
+      {
+        title: "Financial Services",
+        description:
+          "Risk analysis, fraud detection, document processing, customer intelligence, and operational automation.",
+      },
+      {
+        title: "Healthcare",
+        description:
+          "AI-driven data management, patient engagement tools, workflow optimization, and knowledge systems.",
+      },
+      {
+        title: "Professional Services",
+        description:
+          "Process automation, document intelligence, client support systems, and productivity enhancement solutions.",
+      },
+      {
+        title: "E-commerce & Retail",
+        description:
+          "Recommendation engines, customer analytics, demand forecasting, inventory optimization, and AI-powered customer experiences.",
+      },
+      {
+        title: "Manufacturing & Operations",
+        description:
+          "Predictive maintenance, operational analytics, workflow automation, and process optimization systems.",
+      },
+    ],
+  },
 
   developmentProcess: {
     header: {

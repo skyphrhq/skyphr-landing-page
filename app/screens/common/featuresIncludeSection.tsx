@@ -73,30 +73,61 @@ function FeaturesIncludeSection({ data, classNames }: FeaturesIncludeSectionProp
           </div>
         </div>
 
-        <div
-          className={twMerge(
-            "border border-(--border-color) bg-(--root-white-color) p-4 md:p-6 w-full lg:w-[60%] xl:w-[50%]",
-            COMMON_BORDER_RADIUS,
-          )}>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {data.features.map((feature) => (
-              <li
-                key={feature}
-                className={twMerge(
-                  "flex min-h-15 items-center gap-3 border border-(--border-color) bg-(--active-hover-link-bg) px-4 py-3 reveal-animation",
-                  COMMON_BORDER_RADIUS,
-                )}>
-                <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-(--root-white-color) text-(--cta-button-background)">
-                  <FaCheck aria-hidden="true" className="size-3" />
-                </span>
+        {data.features && (
+          <div
+            className={twMerge(
+              "border border-(--border-color) bg-(--root-white-color) p-4 md:p-6 w-full lg:w-[60%] xl:w-[50%]",
+              COMMON_BORDER_RADIUS,
+            )}>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {data.features.map((feature) => (
+                <li
+                  key={feature}
+                  className={twMerge(
+                    "flex min-h-15 items-center gap-3 border border-(--border-color) bg-(--active-hover-link-bg) px-4 py-3 reveal-animation",
+                    COMMON_BORDER_RADIUS,
+                  )}>
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-(--root-white-color) text-(--cta-button-background)">
+                    <FaCheck aria-hidden="true" className="size-3" />
+                  </span>
 
-                <span className="font-instrument-sans text-sm font-semibold leading-5 text-(--text-main-color) md:text-base">
-                  {feature}
-                </span>
-              </li>
+                  <span className="font-instrument-sans text-sm font-semibold leading-5 text-(--text-main-color) md:text-base">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {data?.items && (
+          <div className="grid grid-cols-1 gap-4">
+            {data.items.map((item) => (
+              <div key={item.title} className="reveal-animation">
+                <div
+                  className={twMerge(
+                    "group h-full border border-(--border-color) bg-(--root-white-color) p-5 transition-transform duration-300 hover:-translate-y-1",
+                    COMMON_BORDER_RADIUS,
+                  )}>
+                  {/* <div className="mb-5 flex items-center justify-between gap-4">
+                  <span className="flex size-10 items-center justify-center rounded-full border border-(--border-color) bg-(--active-hover-link-bg) font-instrument-sans text-xs font-bold text-(--text-main-color)">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div> */}
+
+                  <h3 className="font-instrument-sans text-lg font-bold text-(--text-main-color) md:text-xl">
+                    {item.title}
+                  </h3>
+
+                  {item.description && (
+                    <p className="mt-3 font-instrument-sans text-sm leading-6 text-(--text-secondary-color) md:text-base md:leading-7">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              </div>
             ))}
-          </ul>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

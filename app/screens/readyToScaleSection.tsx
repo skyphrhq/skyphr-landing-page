@@ -44,7 +44,7 @@ function ReadyToScaleSection({ data, classNames }: ReadyToScaleSectionInterface)
                       <span
                         key={wordIndex}
                         className={twMerge(
-                          `${word?.variant === "italic" ? "font-playfair-display italic font-semibold text-(--cta-button-background)" : ""}`,
+                          `${word?.variant === "italic" ? "font-playfair-display italic font-semibold text-(--cta-button-background)!" : ""}`,
                           word?.classNames,
                         )}>
                         {word?.text}
