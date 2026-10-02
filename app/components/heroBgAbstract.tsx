@@ -14,6 +14,7 @@ function HeroBgAbstract({ className = "" }: { className?: string }) {
         loading="eager"
         fetchPriority="high"
         priority={true}
+        sizes="100vw"
       />
       <div
         className={twMerge("w-full h-full absolute inset-0 pointer-events-none", className)}
