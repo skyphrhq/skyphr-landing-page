@@ -152,6 +152,7 @@ function NavBarComponent() {
       gsap.to(animationElement, {
         opacity: 1,
         duration: 0.5,
+        filter: "blur(0px)",
         ease: "power2.out",
         scrollTrigger: {
           trigger: document.body,

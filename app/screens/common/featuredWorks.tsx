@@ -47,7 +47,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={item.id}
-                className={twMerge("min-w-95 aspect-380/380 overflow-hidden", COMMON_BORDER_RADIUS)}>
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.alt}
@@ -67,7 +67,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-${item.id}`}
-                className={twMerge("min-w-95 aspect-380/380 overflow-hidden", COMMON_BORDER_RADIUS)}>
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.alt}
@@ -87,7 +87,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
             {data?.featuredWorksData?.map((item) => (
               <div
                 key={`clone-two-${item.id}`}
-                className={twMerge("min-w-95 aspect-380/380 overflow-hidden", COMMON_BORDER_RADIUS)}>
+                className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
                   alt={item.alt}

@@ -27,7 +27,7 @@ function DevelopmentProcessSection({ data, classNames }: DevelopmentProcessSecti
       const revealElements = gsap.utils.toArray(".reveal-animation");
       const revealAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({
         trigger: containerRef.current,
-        start: "top 65%",
+        start: "top 80%",
         end: "bottom top",
       });
       gsap.fromTo(revealElements, revealAnimation.FROM, revealAnimation.TO);
