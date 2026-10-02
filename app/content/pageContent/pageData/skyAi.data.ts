@@ -2,7 +2,7 @@ import SkyAiDemoVsProductionFailure from "@/app/assets/webp/sky-ai/skyai-demo-vs
 import SkyAiMessyDataNotReady from "@/app/assets/webp/sky-ai/skyai-messy-data-not-ready.webp";
 import SkyAiRisingAiApiCosts from "@/app/assets/webp/sky-ai/skyai-rising-ai-api-costs.webp";
 import SkyAiSkyVoiceAgentCall from "@/app/assets/webp/sky-ai/skyai-sky-voice-agent-call.webp";
-import SparkleIcon from "@/app/components/common/sparkleIcon";
+import { SKY_AI_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { SkyAiPageDataInterface } from "@/app/utils/interface/data.interface";
 import { createElement } from "react";
@@ -20,7 +20,6 @@ import {
   HiOutlineCircleStack,
   HiOutlineDocument,
   HiOutlineDocumentText,
-  HiOutlineUserGroup,
   HiSparkles,
   HiUserGroup,
 } from "react-icons/hi2";
@@ -102,11 +101,14 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       highlightedText: "AI",
     },
     header: {
-      title: [[{ text: "SkyAI The AI Engineering Division of Skyphr" }]],
+      title: [[{ text: "The AI Engineering Division of Skyphr" }]],
       description: [
         [
-          { text: "AI agents, LLM integrations, and workflow automations ", classNames: "sm:block" },
-          { text: "built to run reliably in production, not just in a demo.", classNames: "sm:block" },
+          {
+            text: `AI development services, intelligent agents, LLM integrations, RAG solutions, and workflow automation built for real business use. SkyAI helps startups, SaaS companies, and enterprises turn AI opportunities into secure, scalable, production-ready systems.
+`,
+            classNames: "sm:block",
+          },
         ],
       ],
     },
@@ -119,15 +121,15 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       },
     ],
     tags: [
-      { label: "AI Agents", icon: createElement(HiSparkles) },
+      { label: "AI Agent Development", icon: createElement(HiSparkles) },
       { label: "LLM Integration", icon: createElement(HiDocumentText) },
-      { label: "RAG Assistants", icon: createElement(HiCircleStack) },
-      { label: "Workflow Automation", icon: createElement(HiBolt) },
-      { label: "AI Chatbots", icon: createElement(HiChatBubbleOvalLeftEllipsis) },
+      { label: "RAG Development", icon: createElement(HiCircleStack) },
+      { label: "AI Workflow Automation", icon: createElement(HiBolt) },
+      { label: "AI Chatbot Development", icon: createElement(HiChatBubbleOvalLeftEllipsis) },
     ],
   },
   techStrip: {
-    label: ["Built with the tools", "behind modern AI"],
+    label: ["Built with the technologies", "powering modern AI"],
     logos: [
       { name: "OpenAI", icon: createElement(SiOpenai) },
       { name: "Anthropic", labelClassName: "uppercase font-bold tracking-wide text-xs sm:text-sm" },
@@ -148,11 +150,19 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     id: "skyai-services",
     badge: "What SkyAI builds",
     header: {
-      title: [[{ text: "AI that does real work" }], [{ text: "inside your business" }]],
+      title: [
+        [{ text: "AI" }, { text: "that" }, { text: "does" }, { text: "real" }, { text: "work" }],
+        [
+          { text: "inside", variant: "italic" },
+          { text: "your", variant: "italic" },
+          { text: "business", variant: "italic" },
+        ],
+      ],
       description: [
         [
-          { text: "From autonomous agents to assistants trained on your own data, ", classNames: "md:block" },
-          { text: "we build AI systems that plug into the tools you already use.", classNames: "md:block" },
+          {
+            text: "From autonomous AI agents and enterprise assistants to LLM-powered applications and intelligent workflow automation, we build AI systems that connect with your existing data, software, and business processes.",
+          },
         ],
       ],
     },
@@ -161,48 +171,72 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
         id: "ai-agents-automation",
         title: "AI Agents",
         description:
-          "Autonomous agents that take multi-step actions across your tools: research, qualify, update, and follow up without constant supervision.",
+          "Build intelligent AI agents that can understand goals, make decisions, use business tools, and complete multi-step tasks with minimal human intervention.",
         icon: createElement(HiCpuChip),
-        points: ["Lead qualification and outreach", "Research and report generation", "Back-office task automation"],
+        points: [
+          "Lead qualification and sales outreach",
+          "Research and report generation",
+          "Customer and operational task automation",
+        ],
         link: { label: "Discuss your use case", href: "/contact" },
       },
       {
         id: "llm-integration-rag",
         title: "LLM Integration",
         description:
-          "Add GPT, Claude, or open-source models to your product, with the guardrails and cost controls production needs.",
+          "Integrate OpenAI, Claude, Gemini, or open-source large language models into your existing software and digital products with the infrastructure, security, controls, and monitoring required for production.",
         icon: createElement(HiDocumentText),
-        points: ["AI features inside SaaS", "Summarization and content generation", "Smart search and classification"],
+        points: [
+          "AI features inside SaaS applications",
+          "Content generation and document summarization",
+          "Semantic search, classification, and information extraction",
+        ],
         link: { label: "Discuss your use case", href: "/contact" },
       },
       {
         id: "rag-assistants",
         title: "RAG Assistants",
-        description: "Assistants that answer from your own documents and data, and show their sources.",
+        description:
+          "Build retrieval-augmented generation systems that connect AI models with your trusted business data, documents, and knowledge bases to provide relevant, contextual answers with source references.",
         icon: createElement(HiCircleStack),
-        points: ["Internal knowledge base", "Product documentation Q&A", "SOP and policy assistant"],
+        points: [
+          "Internal AI knowledge bases",
+          "Product and documentation Q&A",
+          "SOP, policy, and employee assistants",
+        ],
         link: { label: "Discuss your use case", href: "/contact" },
       },
       {
         id: "workflow-automation",
         title: "Workflow Automation",
-        description: "Let AI handle the steps between your apps, from a new form submission to an updated CRM.",
+        description:
+          "Use AI to automate repetitive business processes and connect the applications your teams already rely on, from incoming forms and documents to CRM updates and customer communication.",
         icon: createElement(HiBolt),
-        points: ["Lead routing and CRM updates", "Document and invoice processing", "Email triage and draft replies"],
+        points: [
+          "Lead routing and CRM automation",
+          "Document, invoice, and data processing",
+          "Email classification and response drafting",
+        ],
         link: { label: "Discuss your use case", href: "/contact" },
       },
       {
         id: "ai-chatbots-assistants",
         title: "AI Chatbots",
-        description: "Chatbots that answer questions, capture leads, and hand off to your team when needed.",
+        description:
+          "Deploy intelligent AI chatbots and virtual assistants that can answer questions, qualify prospects, support customers, and hand complex conversations to your team when human expertise is required.",
         icon: createElement(HiChatBubbleOvalLeftEllipsis),
-        points: ["24/7 customer support", "Lead capture and booking", "Human handoff for complex queries"],
+        points: [
+          "24/7 customer support",
+          "Lead qualification, capture, and booking",
+          "Human handoff for complex requests",
+        ],
         link: { label: "Discuss your use case", href: "/contact" },
       },
     ],
     ctaCard: {
-      title: "Not sure which one fits?",
-      description: "Tell us what you want to automate, and we'll suggest the right AI approach. Free, no commitment.",
+      title: "Not sure which AI solution fits?",
+      description:
+        "Tell us about the process, product, or business problem you want to improve. We’ll help identify the right AI architecture, technology, and automation approach for your use case.",
       cta: {
         label: "Book a Free AI Consultation",
         href: "https://cal.com/skyphr/30min",
@@ -216,15 +250,22 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     badge: "The reality of AI",
     header: {
       title: [
-        [{ text: "Why most AI projects " }, { text: "never", classNames: "text-(--cta-button-background)" }],
-        [{ text: "make it", classNames: "text-(--cta-button-background)" }, { text: " to production" }],
+        [{ text: "Why" }, { text: "most" }, { text: "AI" }, { text: "projects" }, { text: "never", variant: "italic" }],
+        [{ text: "make it", variant: "italic" }, { text: "to" }, { text: "production" }],
       ],
-      description: [[{ text: "Teams rarely fail because of the model. They fail at everything around it." }]],
+      description: [
+        [
+          {
+            text: "Many AI initiatives fail to move beyond the prototype stage. The challenge is often not the AI model itself, but the data, integrations, infrastructure, reliability, security, and cost controls surrounding it.",
+          },
+        ],
+      ],
     },
     cards: [
       {
         title: "The demo worked. Production didn't.",
-        description: "Prototypes impress in meetings, then break with real users and real data.",
+        description:
+          "An AI prototype can look impressive in a controlled environment but struggle when exposed to real users, large datasets, changing inputs, business rules, and production traffic.",
         icon: createElement(HiOutlineDocument),
         imageOptions: {
           imagePath: SkyAiDemoVsProductionFailure,
@@ -235,7 +276,8 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       },
       {
         title: "Our data isn't ready.",
-        description: "Scattered files, messy sheets, and no clean source of truth.",
+        description:
+          "Business information is often spread across documents, spreadsheets, databases, CRMs, and internal systems. Without reliable data pipelines and a clear source of truth, AI outputs can become inconsistent or difficult to trust.",
         icon: createElement(HiOutlineCircleStack),
         imageOptions: {
           imagePath: SkyAiMessyDataNotReady,
@@ -246,7 +288,8 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       },
       {
         title: "Costs grew with every API call.",
-        description: "No model strategy, no limits. The monthly bill surprised everyone.",
+        description:
+          "Without the right model strategy, usage controls, caching, routing, and monitoring, AI infrastructure costs can increase quickly as adoption grows.",
         icon: createElement(HiOutlineChartBar),
         imageOptions: {
           imagePath: SkyAiRisingAiApiCosts,
@@ -259,7 +302,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     ctaCard: {
       title: "Sound familiar? We fix all three.",
       description:
-        "We clean up the data, control the costs, and ship AI that holds up in production, not just in a demo.",
+        "SkyAI helps businesses prepare their data, select the right AI architecture, control model and infrastructure costs, and build AI systems designed for reliable production use—not just impressive demonstrations.",
       cta: {
         label: "Book a Free AI Consultation",
         href: "https://cal.com/skyphr/30min",
@@ -273,25 +316,50 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     badge: "Built by SkyAI",
     header: {
       title: [
-        [{ text: "We don't just build AI for clients." }],
+        [
+          { text: "We" },
+          { text: "don't" },
+          { text: "just" },
+          { text: "build" },
+          { text: "AI" },
+          { text: "for" },
+          { text: "clients." },
+        ],
         [
           {
-            text: "We run it ourselves.",
+            text: "We",
             variant: "italic",
-            classNames: "bg-gradient-to-r from-[#B8A7FF] via-[#8B7CFF] to-[#6D8BFF] bg-clip-text text-transparent",
+          },
+          {
+            text: "run",
+            variant: "italic",
+          },
+          {
+            text: "it",
+            variant: "italic",
+          },
+          {
+            text: "ourselves.",
+            variant: "italic",
           },
         ],
       ],
-      description: [[{ text: "Real AI products we designed, built and use every day at Skyphr." }]],
+      description: [
+        [
+          {
+            text: "We design, build, operate, and improve AI products internally at Skyphr. Our own AI systems give us practical experience with real conversations, integrations, automation workflows, AI costs, and production performance.",
+          },
+        ],
+      ],
     },
     skyCard: {
       title: "Sky, our AI voice agent",
       description:
-        "Built in-house by Skyphr. Sky answers real phone calls, talks naturally in the caller's language, and books real consultations on our calendar.",
+        "Built in-house by Skyphr, Sky is an AI voice agent designed to handle real business calls, communicate naturally with callers, support multiple languages, and book consultations directly through our scheduling system.",
       stats: [
         { value: "24/7", label: "Every call answered" },
-        { value: "Multilingual", label: "Switches mid-call" },
-        { value: "Real bookings", label: "Via Cal.com" },
+        { value: "Multilingual", label: "Switches between languages during conversations" },
+        { value: "Real bookings", label: "Connected to Cal.com" },
       ],
 
       stack: [
@@ -312,7 +380,8 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     lensCard: {
       status: "Live",
       title: "SkyLens, AI website audit",
-      description: "Paste any URL and get an AI-powered audit of performance, SEO and UX, with prioritized fixes.",
+      description:
+        "SkyLens is an AI-powered website auditing tool that analyzes a website's performance, SEO, and UX and identifies prioritized opportunities for improvement.",
       cta: {
         label: "Try SkyLens",
         href: "https://lens.skyphr.com",
@@ -329,7 +398,8 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     },
     ctaCard: {
       title: "Your AI system could be next.",
-      description: "Tell us the process that eats your team's time. We'll show you how AI can run it.",
+      description:
+        "Tell us about the business process that consumes your team's time. We’ll identify where AI agents, LLMs, intelligent automation, or AI-powered software can create measurable operational value.",
       cta: {
         label: "Book a Free AI Consultation",
         href: "https://cal.com/skyphr/30min",
@@ -338,67 +408,19 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       },
     },
   },
-  buildProcess: {
-    id: "skyai-process",
-    badge: "Our process",
-    header: {
-      title: [
-        [{ text: "From first call to" }],
-        [{ text: "AI in production", classNames: "text-(--cta-button-background)" }],
-      ],
-      description: [
-        [
-          {
-            text: "A clear, four-step process that gets a working prototype in front of you in weeks, not months, and a system you can rely on after launch.",
-          },
-        ],
-      ],
-    },
-    deliverablesLabel: "What you get",
-    steps: [
-      {
-        title: "Discovery & use-case mapping",
-        description: "We map your processes, data and tools, then pick the one use case with the clearest return.",
-        deliverables: ["Use cases ranked by impact", "Data and systems review", "Success metrics and cost estimate"],
-      },
-      {
-        title: "Proof of concept",
-        description:
-          "We build a working version on your real data, so you see results before committing to a full build.",
-        deliverables: ["Working prototype on your data", "Accuracy and cost benchmarks", "Clear go or no-go call"],
-      },
-      {
-        title: "Production build & integration",
-        description: "We turn the prototype into a reliable system and connect it to your CRM, apps and workflows.",
-        deliverables: ["Integrations with your tools", "Guardrails and human handoff", "Security and access controls"],
-      },
-      {
-        title: "Deploy, monitor & improve",
-        description: "We launch, track every conversation and cost, and keep improving as real usage grows.",
-        deliverables: ["Monitoring and full transcripts", "Cost and usage limits", "Monthly improvement cycles"],
-      },
-    ],
-    principles: {
-      label: "In every step",
-      items: [
-        { label: "You own the code and data", icon: createElement(HiOutlineCircleStack) },
-        { label: "Weekly demos, no black box", icon: createElement(SparkleIcon) },
-        { label: "Engineers on every call", icon: createElement(HiOutlineUserGroup) },
-      ],
-    },
-  },
+
   security: {
     id: "skyai-security",
     badge: { label: "Security & responsible AI", icon: createElement(LuShieldCheck) },
     header: {
       title: [
-        [{ text: "AI you can trust" }],
-        [{ text: "with your business", classNames: "text-(--cta-button-background)" }],
+        [{ text: "AI", variant: "italic" }, { text: "you" }, { text: "can" }, { text: "trust" }],
+        [{ text: "with" }, { text: "your" }, { text: "business", variant: "italic" }],
       ],
       description: [
         [
           {
-            text: "Every system we build follows the same rules: your data stays yours, answers come from facts you approve, and a real person is always one step away.",
+            text: "Every AI system we build is designed around practical business requirements: protecting your data, grounding AI responses in trusted information, maintaining human oversight, and providing visibility into system usage and costs.",
           },
         ],
       ],
@@ -407,54 +429,61 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       {
         icon: createElement(LuLockKeyhole),
         title: "Your data stays yours",
-        description: "Your data is used to run your AI system, and nothing else.",
+        description:
+          "Your business data is used to operate your AI solution according to the agreed system architecture and access controls.",
         list: {
           title: "What this means:",
           items: [
-            "Never used to train AI models",
-            "Access limited to what the system needs",
-            "Deployment on your own cloud if needed",
-            "You own the code and the data",
+            "Data access limited to what the AI system requires",
+            "Secure handling of business information",
+            "Deployment on your preferred cloud infrastructure when required",
+            "Your organization retains ownership of its data and custom code",
           ],
         },
       },
       {
         icon: createElement(LuFileCheck),
         title: "Answers you can rely on",
-        description: "Your AI answers from information you approve, and says so when it doesn't know.",
+        description:
+          "We design AI systems to use approved business information and appropriate retrieval or validation mechanisms rather than relying solely on a model's general knowledge.",
         list: {
           title: "What this means:",
           items: [
-            "Answers only from approved information",
-            "No made-up prices, policies or promises",
-            "Clear fallback when it isn't sure",
+            "Responses grounded in approved information",
+            "RAG and knowledge retrieval where appropriate",
+            "Clear fallback behavior when information is unavailable",
+            "Reduced risk of unsupported or inaccurate responses",
           ],
         },
       },
       {
         icon: createElement(LuUserCheck),
         title: "Humans stay in control",
-        description: "Sensitive or complex cases always reach a real person.",
+        description:
+          "AI should support your team, not remove human oversight from important business decisions. We design workflows with human review and escalation where appropriate.",
         list: {
           title: "What this means:",
           items: [
-            "Human handoff for sensitive cases",
+            "Human handoff for sensitive or complex cases",
             "Approval steps before critical actions",
-            "Easy to pause or update anytime",
+            "Configurable automation boundaries",
+            "Ability to pause, modify, or update workflows",
           ],
         },
       },
       {
         icon: createElement(LuEye),
         title: "Full visibility, no black box",
-        description: "See every conversation and every rupee your AI spends.",
+        description:
+          "Understand how your AI system is being used, where it performs well, and how much it costs as usage grows.",
         list: {
           title: "What this means:",
           items: [
-            "Full call and chat transcripts",
-            "Cost and usage limits",
-            "Alerts before budgets are hit",
-            "Usage dashboards",
+            "Call and chat transcripts where applicable",
+            "AI usage and cost monitoring",
+            "Configurable usage limits",
+            "Budget and usage alerts",
+            "Performance and operational dashboards",
           ],
         },
       },
@@ -465,15 +494,15 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       title: [
         [{ text: "From" }, { text: "first" }, { text: "call" }, { text: "to" }],
         [
-          { text: "AI", classNames: "text-(--cta-button-background)" },
-          { text: "in", classNames: "text-(--cta-button-background)" },
-          { text: "production", classNames: "text-(--cta-button-background)" },
+          { text: "AI", variant: "italic" },
+          { text: "in", variant: "italic" },
+          { text: "production", variant: "italic" },
         ],
       ],
       description: [
         [
           {
-            text: "A clear, four-step process that gets a working prototype in front of you in weeks, not months, and a system you can rely on after launch.",
+            text: "A practical four-step AI development process designed to move from an initial business problem to a working prototype and then into a reliable production environment.",
           },
         ],
       ],
@@ -483,11 +512,12 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
         description: [{ text: "Discover. Prove. Build. Improve." }],
       },
     },
+
     steps: [
       {
         num: "01",
         title: "Discovery & use-case mapping",
-        desc: "We map your processes, data and tools, then pick the one use case with the clearest return.",
+        desc: "We understand your business processes, users, data sources, existing software, and operational challenges. We then identify the AI use case with the clearest business value and define the technical requirements.",
         icon: createElement(FaRegCompass, { className: "w-4 h-4 md:w-6 md:h-6 text-gray-800" }),
         iconBgColor: "bg-purple-50",
         numBgColor: "bg-purple-100",
@@ -496,7 +526,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       {
         num: "02",
         title: "Proof of concept",
-        desc: "We build a working version on your real data, so you see results before committing to a full build.",
+        desc: "We build a focused proof of concept using representative data and real workflows, allowing your team to validate the AI solution before committing to a larger production implementation.",
         icon: createElement(FaRegLightbulb, { className: "w-4 h-4 md:w-6 md:h-6 text-gray-800" }),
         iconBgColor: "bg-yellow-50",
         numBgColor: "bg-yellow-100",
@@ -505,7 +535,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       {
         num: "03",
         title: "Production build & integration",
-        desc: "We turn the prototype into a reliable system and connect it to your CRM, apps and workflows.",
+        desc: "We transform the validated solution into a production-ready AI system and integrate it with your applications, CRM, databases, APIs, internal tools, and existing business workflows.",
         icon: createElement(FaCode, { className: "w-4 h-4 md:w-6 md:h-6 text-gray-800" }),
         iconBgColor: "bg-pink-50",
         numBgColor: "bg-pink-100",
@@ -514,12 +544,40 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       {
         num: "04",
         title: "Deploy, monitor & improve",
-        desc: "We launch, track every conversation and cost, and keep improving as real usage grows.",
+        desc: "We deploy the AI system, monitor usage, performance, conversations, errors, and costs, and continuously improve the solution as your data, users, and business requirements evolve.",
         icon: createElement(FaRocket, { className: "w-4 h-4 md:w-6 md:h-6 text-gray-800" }),
         iconBgColor: "bg-indigo-50",
         numBgColor: "bg-indigo-100",
         numTextColor: "text-indigo-800",
       },
     ],
+  },
+  faq: {
+    header: {
+      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+      description: [
+        [
+          { text: "Everything you need to know before starting your project with " },
+          { text: "Skyphr", variant: "brand", classNames: "font-bold" },
+        ],
+      ],
+    },
+    faqsItems: SKY_AI_PAGE_FAQ_DATA,
+  },
+  contactUs: {
+    header: {
+      title: [
+        [{ text: "Let’s " }, { text: "Talk ", variant: "italic" }],
+        [{ text: "About Your " }, { text: "Project", variant: "italic", classNames: "font-semibold" }],
+      ],
+
+      description: [
+        [
+          {
+            text: "Have an AI idea, automation challenge, or existing product you want to enhance with AI? Share your requirements and our team will help you identify the right approach.",
+          },
+        ],
+      ],
+    },
   },
 };

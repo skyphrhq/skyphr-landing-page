@@ -41,26 +41,30 @@ function SkyAiSecuritySection({ data, classNames }: SkyAiSecuritySectionInterfac
       className={twMerge("w-full h-auto scroll-mt-20 bg-(--skyai-lavender-bg)", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container flex items-stretch flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-20">
         <div className="lg:sticky top-40 self-start w-full lg:w-1/2">
-          <h2
-            id="skyai-security-heading"
-            className="font-instrument-sans text-(--text-main-color) text-4xl sm:text-5xl xl:text-6xl font-bold tracking-tighter leading-[1.05] text-balance">
-            {data.header.title.map((titleRow, rowIndex) => (
-              <span className="block" key={rowIndex}>
-                {titleRow.map((chunk, index) => (
-                  <span className={twMerge("inline-block security-header-reveal", chunk?.classNames)} key={index}>
-                    {chunk.text}
-                  </span>
-                ))}
-              </span>
-            ))}
-          </h2>
+          {data.header.title.map((titleRow, rowIndex) => (
+            <h2
+              className="flex flex-wrap items-center gap-2 lg:gap-4 font-instrument-sans font-bold leading-tight text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[50px] 2xl:text-[58px]"
+              key={rowIndex}>
+              {titleRow.map((chunk, index) => (
+                <span
+                  className={twMerge(
+                    "font-instrument-sans",
+                    chunk.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                    chunk.classNames,
+                  )}
+                  key={index}>
+                  {chunk.text}
+                </span>
+              ))}
+            </h2>
+          ))}
 
           {data.header.description?.map((description, index) => (
             <p
-              className="security-header-reveal max-w-140 font-instrument-sans text-base lg:text-lg text-pretty text-(--text-secondary-color) pt-5"
+              className="mt-5 max-w-140 font-instrument-sans text-base leading-7 text-(--text-secondary-color) md:text-lg"
               key={index}>
               {description.map((chunk, chunkIndex) => (
-                <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                <span className={twMerge(chunk.classNames)} key={chunkIndex}>
                   {chunk.text}
                 </span>
               ))}

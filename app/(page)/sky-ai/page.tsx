@@ -1,7 +1,6 @@
 import JsonLd from "@/app/components/JsonLd";
 import SkyAiSubNav from "@/app/components/skyAiSubNav";
 import SkyAiTechStrip from "@/app/components/skyAiTechStrip";
-import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SKY_AI_PAGE_DATA } from "@/app/content/pageContent/pageData/skyAi.data";
 import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
 import OurApproachSection from "@/app/screens/common/ourApproachSec";
@@ -72,14 +71,14 @@ function SkyAiPage() {
           <SkyAiSecuritySection data={SKY_AI_PAGE_DATA.security} />
         </section>
       )}
-      {HOME_PAGE_DATA?.faq && (
+      {SKY_AI_PAGE_DATA?.faq && (
         <section className="w-full h-auto overflow-hidden">
-          <FrequentlyAskedQuestions  data={HOME_PAGE_DATA.faq} />
+          <FrequentlyAskedQuestions data={SKY_AI_PAGE_DATA.faq} />
         </section>
       )}
-      {HOME_PAGE_DATA?.contactUs && (
+      {SKY_AI_PAGE_DATA?.contactUs && (
         <section className="w-full h-auto overflow-hidden">
-          <ContactUsSection data={HOME_PAGE_DATA.contactUs} />
+          <ContactUsSection data={SKY_AI_PAGE_DATA.contactUs} />
         </section>
       )}
     </>
