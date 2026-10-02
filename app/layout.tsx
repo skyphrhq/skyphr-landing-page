@@ -58,7 +58,7 @@ export default function RootLayout({ children }: RootLayoutInterface) {
       suppressHydrationWarning
       className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} antialiased`}>
       <head suppressHydrationWarning>
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];

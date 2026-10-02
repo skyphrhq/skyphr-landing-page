@@ -17,6 +17,15 @@ export const COMMON_REVEL_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars 
   },
 };
 
+// Above-the-fold hero: start states are the `.skyphr-hero-rise` / `.skyphr-hero-fade` classes, so GSAP only tweens to the end state
+export const HERO_REVEAL_ANIMATION: gsap.TweenVars = {
+  y: 0,
+  opacity: 1,
+  duration: 0.8,
+  ease: "power3.out",
+  stagger: 0.1,
+};
+
 export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
   trigger,
   start = "top 80%",

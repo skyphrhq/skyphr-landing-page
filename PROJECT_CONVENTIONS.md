@@ -191,6 +191,7 @@ Naming rule for new tokens: kebab-case, **role-based** (`--text-*-color`, `--*-b
 | Buttons | `GET_BUTTON_STYLE(btnStyle, theme)` in `common.constant.ts`, used by `CTAButton` | `CTA_PRIMARY`, `CTA_SECONDARY` × `LIGHT` / `DARK` |
 | SkyAI card base | `SKYAI_SERVICE_CARD_BASE` in `common.constant.ts` | Shared class string for SkyAI service cards |
 | Scroll reveal | `COMMON_SCROLL_TRIGGER_ANIMATION` / `COMMON_REVEL_ANIMATION` in `animation.constant.ts` | y 50 → 0, blur 10px → 0, 1s `power3.out`, stagger 0.1 |
+| Above-the-fold hero reveal | `HERO_REVEAL_ANIMATION` in `animation.constant.ts` + start-state classes `.skyphr-hero-rise` / `.skyphr-hero-fade` in `app/styles/animation.css` | GSAP `to()` only (no `from`/`fromTo`, so there's no flash on hydration), opacity + y only, no blur. The LCP element (the hero `<h1>` rows) gets `.skyphr-hero-rise`, which never hides it; everything else gets `.skyphr-hero-fade` |
 | Spacing / shadow / radius / transition vars | none | There are **no** spacing, shadow, radius or transition CSS variables. Use Tailwind's scale; transitions are `duration-200` / `duration-300` in utilities and `0.2s ease` in CSS |
 
 ### 3.4 How to consume tokens
