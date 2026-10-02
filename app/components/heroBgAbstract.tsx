@@ -16,15 +16,10 @@ function HeroBgAbstract({ className = "" }: { className?: string }) {
         priority={true}
       />
       <div
-        className={twMerge(
-          "w-full aspect-square absolute inset-0 pointer-events-none flex items-center justify-center blur-[200px] rounded-[200%] opacity-70",
-          className,
-        )}
+        className={twMerge("w-full h-full absolute inset-0 pointer-events-none", className)}
         style={{
-          background: `
-radial-gradient(circle at center, rgba(105,116,226,0.6) 0%, rgba(105,116,226,0.3) 30%, transparent 60%),
-linear-gradient(to top, #6974e2 0%, white 100%)
-`,
+          background:
+            "radial-gradient(ellipse 80% 55% at 50% 35%, rgba(105,116,226,0.35) 0%, rgba(105,116,226,0.14) 40%, rgba(105,116,226,0.04) 65%, transparent 80%)",
         }}
       />
     </>
