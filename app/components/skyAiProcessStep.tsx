@@ -1,5 +1,4 @@
 import { SkyAiProcessStepInterface } from "@/app/utils/interface/common.interface";
-import { HiCheckCircle } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 
 // Dividers per position: stacked with top borders on mobile, 2 × 2 on tablet, 4 columns from lg
@@ -36,17 +35,6 @@ function SkyAiProcessStep({ step, index, deliverablesLabel, className }: SkyAiPr
       <p className="font-instrument-sans text-xs font-semibold uppercase tracking-[0.12em] text-(--text-secondary-color) pt-7">
         {deliverablesLabel}
       </p>
-
-      <ul className="flex flex-col gap-2.5 pt-4">
-        {step.deliverables.map((deliverable) => (
-          <li
-            key={deliverable}
-            className="flex items-start gap-2.5 font-instrument-sans text-[15px] text-(--text-main-color)">
-            <HiCheckCircle aria-hidden="true" className="shrink-0 text-lg text-(--cta-button-background)" />
-            <span className="-mt-0.5">{deliverable}</span>
-          </li>
-        ))}
-      </ul>
     </li>
   );
 }
