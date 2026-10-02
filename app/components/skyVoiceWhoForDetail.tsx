@@ -5,7 +5,7 @@ import { PrefersReducedMotion } from "@/app/utils/helpers/helper";
 import { SkyVoiceWhoForDetailInterface } from "@/app/utils/interface/common.interface";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { LuCalendarCheck, LuCheck } from "react-icons/lu";
+import { LuCheck } from "react-icons/lu";
 import { twMerge } from "tailwind-merge";
 
 const OUT_SECONDS = 0.2;
@@ -79,10 +79,10 @@ function SkyVoiceWhoForDetail({
           <h3 className="text-lg font-semibold tracking-[-0.015em] text-(--text-main-color)">{industry.name}</h3>
           <span className="text-[13.5px] text-(--skyai-voice-muted)">{industry.who}</span>
         </div>
-        <span className="ml-14.5 inline-flex h-8 items-center gap-1.5 rounded-full bg-(--skyai-lavender-soft) px-3 text-[13px] font-semibold whitespace-nowrap text-(--cta-button-background) sm:ml-0">
+        {/* <span className="ml-14.5 inline-flex h-8 items-center gap-1.5 rounded-full bg-(--skyai-lavender-soft) px-3 text-[13px] font-semibold whitespace-nowrap text-(--cta-button-background) sm:ml-0">
           <LuCalendarCheck aria-hidden="true" className="size-3.75" />
           {labels.books} {industry.books.toLowerCase()}
-        </span>
+        </span> */}
       </div>
 
       <div className="skyai-voice-line-border border-b py-6.5">
@@ -92,14 +92,14 @@ function SkyVoiceWhoForDetail({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-7 pt-6.5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-7 pt-6.5">
         <div>
           <span className="mb-3 block text-[13px] font-medium text-(--skyai-voice-subtle)">{labels.handles}</span>
-          <ul className="flex flex-col">
+          <ul className="grid grid-cols-1 gap-x-5 sm:grid-cols-2">
             {industry.handles.map((handle) => (
               <li
                 key={handle}
-                className="skyai-voice-who-handle skyai-voice-line-border flex items-start gap-3 border-t py-2.75 text-[14.5px] leading-normal text-(--skyai-voice-body) first:border-t-0 first:pt-0">
+                className="skyai-voice-who-handle skyai-voice-line-border flex items-start gap-3 border-t py-2.75 text-[14.5px] leading-normal text-(--skyai-voice-body) first:border-t-0 first:pt-0 sm:nth-2:border-t-0 sm:nth-2:pt-0">
                 <span
                   aria-hidden="true"
                   className="mt-0.5 grid size-4.5 flex-none place-items-center rounded-full bg-(--cta-button-background) text-[11px] text-(--root-white-color)">
@@ -109,10 +109,19 @@ function SkyVoiceWhoForDetail({
               </li>
             ))}
           </ul>
+          {industry.important && (
+            <p className="mt-3 text-[13.5px] leading-normal font-medium text-(--skyai-voice-red)">
+              {industry.important}
+            </p>
+          )}
         </div>
         <div>
           <span className="mb-3 block text-[13px] font-medium text-(--skyai-voice-subtle)">{labels.answers}</span>
-          <SkyVoiceWhoForGreeting name={labels.sky} greeting={industry.greeting} isAnimating={isActive && isAnimating} />
+          <SkyVoiceWhoForGreeting
+            name={labels.sky}
+            greeting={industry.greeting}
+            isAnimating={isActive && isAnimating}
+          />
         </div>
       </div>
 

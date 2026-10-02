@@ -119,6 +119,34 @@ Design conversion-focused experiences that increase signups, engagement, upgrade
 
 Build trust and credibility through professional, consistent, and modern digital experiences.
 
+## Industries We Serve
+
+We design interfaces that fit how users in each industry think and work, so products feel familiar, clear and easy to adopt.
+
+### SaaS & B2B Products
+
+Dashboards, onboarding and complex workflows designed to be clear for both new and power users.
+
+### Fintech
+
+Banking, payments and investment experiences that make financial data easy to read and build user trust.
+
+### Healthcare
+
+Patient and clinician interfaces focused on accessibility, clarity and fewer steps in critical tasks.
+
+### E-commerce & Retail
+
+Product discovery, checkout and account flows designed to reduce friction and lift conversions.
+
+### EdTech
+
+Learning experiences and course layouts that keep students engaged and make progress easy to follow.
+
+### AI Products
+
+Interfaces for chat, agents and AI-powered features that set clear expectations and keep users in control.
+
 ## How We Design & Scale
 
 A strategic approach to creating user experiences that align business objectives, customer expectations, and product growth.

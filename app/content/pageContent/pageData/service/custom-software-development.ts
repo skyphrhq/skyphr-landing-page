@@ -219,6 +219,80 @@ export const CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterf
       },
     ],
   },
+  industriesServe: {
+    header: {
+      title: [[{ text: "Industries" }, { text: "We" }, { text: "Serve", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "We develop custom software solutions for organizations across multiple industries and business models.",
+          },
+        ],
+      ],
+    },
+    items: [
+      {
+        title: "SaaS & Technology Companies",
+        description:
+          "Internal tools, admin platforms, and integrations that support product teams and scale with their customer base.",
+      },
+      {
+        title: "Manufacturing & Industrial Businesses",
+        description:
+          "Production tracking, quality control, and ERP integrations that replace spreadsheets and manual handoffs.",
+      },
+      {
+        title: "Healthcare Organizations",
+        description:
+          "Patient portals, internal systems, and integrations built around secure data handling and daily operations.",
+      },
+      {
+        title: "Financial Services",
+        description:
+          "Dashboards, transaction workflows, and reporting systems built for accuracy, security, and audit trails.",
+      },
+      {
+        title: "Professional Services Firms",
+        description:
+          "Client management, project tracking, and document workflows that cut admin work for consulting and service teams.",
+      },
+      {
+        title: "Logistics & Transportation",
+        description:
+          "Fleet, dispatch, and shipment tracking software that gives operations teams real-time visibility.",
+      },
+      {
+        title: "Real Estate Companies",
+        description:
+          "Property, listing, and tenant management systems that connect sales, leasing, and operations.",
+      },
+      {
+        title: "Educational Institutions",
+        description:
+          "Learning platforms, admin systems, and student portals designed for institutions, trainers, and learners.",
+      },
+      {
+        title: "E-commerce Businesses",
+        description:
+          "Custom storefront features, inventory systems, and order management tools that connect sales channels.",
+      },
+      {
+        title: "Construction & Engineering Firms",
+        description:
+          "Project scheduling, resource planning, and site reporting tools that keep teams and stakeholders aligned.",
+      },
+      {
+        title: "Hospitality & Travel Companies",
+        description:
+          "Booking, reservation, and guest management systems that simplify operations and improve guest experiences.",
+      },
+      {
+        title: "Government & Public Sector Organizations",
+        description:
+          "Secure citizen services, case management, and internal workflow systems built for reliability and compliance.",
+      },
+    ],
+  },
 
   developmentProcess: {
     header: {

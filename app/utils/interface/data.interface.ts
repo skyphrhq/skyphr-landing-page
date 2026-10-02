@@ -449,6 +449,8 @@ export interface SkyVoiceIndustry {
   who: string;
   problem: string;
   handles: string[];
+  // Optional important line shown in red right after the "handles" list
+  important?: string;
   greeting: string;
   books: string;
   // Shown under the detail, e.g. for the industry Skyphr itself is in

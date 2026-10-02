@@ -142,7 +142,8 @@ export type DevelopmentProcessSectionData = {
 };
 export type FeaturesIncludeSectionData = {
   header: SectionHeader;
-  features: string[];
+  features?: string[];
+  items?: UseCaseItem[];
 };
 
 export type WhatWeBuildSectionData = {
@@ -158,6 +159,28 @@ export type UseCaseItem = {
 export type UseCaseSectionData = {
   header: SectionHeader;
   items: UseCaseItem[];
+};
+
+export type IndustryItem = {
+  title: string;
+  description: string;
+};
+
+export type IndustriesServeSectionData = {
+  header: SectionHeader;
+  items: IndustryItem[];
+};
+
+export type DeliveryApproachItem = {
+  title: string;
+  description: string;
+};
+
+export type DeliveryApproachSectionData = {
+  // Small label shown above the title, e.g. "Delivery Approach"
+  eyebrow?: string;
+  header: SectionHeader;
+  items: DeliveryApproachItem[];
 };
 
 export type TechnologyItem = {
@@ -189,6 +212,7 @@ export type WhyChooseReason = {
 export type WhyChooseSectionData = {
   header: SectionHeader;
   reasons?: string[];
+  items?: WhyChooseReason[];
 };
 
 // ===============================
@@ -211,6 +235,8 @@ export interface CommonPageDataInterface {
   whatWeBuild?: WhatWeBuildSectionData;
   featuresInclude?: FeaturesIncludeSectionData;
   useCase?: UseCaseSectionData;
+  industriesServe?: IndustriesServeSectionData;
+  deliveryApproach?: DeliveryApproachSectionData;
   technologyStack?: TechnologyStackSectionData;
   whyChoose?: WhyChooseSectionData;
   ourTeam?: OurTeamSectionInterface;

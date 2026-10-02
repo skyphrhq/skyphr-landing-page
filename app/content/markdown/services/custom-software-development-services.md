@@ -123,18 +123,53 @@ Access real-time reporting, analytics, and operational data to support faster an
 
 We develop custom software solutions for organizations across multiple industries and business models.
 
-- SaaS & Technology Companies
-- Manufacturing & Industrial Businesses
-- Healthcare Organizations
-- Financial Services
-- Professional Services Firms
-- Logistics & Transportation
-- Real Estate Companies
-- Educational Institutions
-- E-commerce Businesses
-- Construction & Engineering Firms
-- Hospitality & Travel Companies
-- Government & Public Sector Organizations
+### SaaS & Technology Companies
+
+Internal tools, admin platforms, and integrations that support product teams and scale with their customer base.
+
+### Manufacturing & Industrial Businesses
+
+Production tracking, quality control, and ERP integrations that replace spreadsheets and manual handoffs.
+
+### Healthcare Organizations
+
+Patient portals, internal systems, and integrations built around secure data handling and daily operations.
+
+### Financial Services
+
+Dashboards, transaction workflows, and reporting systems built for accuracy, security, and audit trails.
+
+### Professional Services Firms
+
+Client management, project tracking, and document workflows that cut admin work for consulting and service teams.
+
+### Logistics & Transportation
+
+Fleet, dispatch, and shipment tracking software that gives operations teams real-time visibility.
+
+### Real Estate Companies
+
+Property, listing, and tenant management systems that connect sales, leasing, and operations.
+
+### Educational Institutions
+
+Learning platforms, admin systems, and student portals designed for institutions, trainers, and learners.
+
+### E-commerce Businesses
+
+Custom storefront features, inventory systems, and order management tools that connect sales channels.
+
+### Construction & Engineering Firms
+
+Project scheduling, resource planning, and site reporting tools that keep teams and stakeholders aligned.
+
+### Hospitality & Travel Companies
+
+Booking, reservation, and guest management systems that simplify operations and improve guest experiences.
+
+### Government & Public Sector Organizations
+
+Secure citizen services, case management, and internal workflow systems built for reliability and compliance.
 
 ## How We Build & Scale
 

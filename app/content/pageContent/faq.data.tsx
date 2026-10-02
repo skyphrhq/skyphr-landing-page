@@ -206,6 +206,115 @@ export const SKY_AI_PAGE_FAQ_DATA: FaqCommonCardData[] = [
   },
 ];
 
+export const RAG_DEVELOPMENT_SERVICE_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is RAG development?",
+    answer: (
+      <p>
+        <span className="font-semibold">RAG development</span> involves building AI systems that retrieve relevant
+        information from <span className="font-semibold">external or proprietary data sources</span> and provide that
+        information to an <span className="font-semibold">LLM as context</span> for generating responses.
+      </p>
+    ),
+  },
+  {
+    question: "What is the difference between RAG and a standard LLM application?",
+    answer: (
+      <p>
+        A standard <span className="font-semibold">LLM application</span> primarily relies on the model&apos;s existing
+        knowledge and provided prompts. A <span className="font-semibold">RAG application</span> retrieves relevant
+        information from connected data sources and uses that information as{" "}
+        <span className="font-semibold">context when generating responses</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Why should businesses use RAG?",
+    answer: (
+      <p>
+        <span className="font-semibold">RAG</span> can help businesses connect AI applications with their own{" "}
+        <span className="font-semibold">documents, databases, knowledge bases,</span> and other information sources,
+        making AI systems more useful for <span className="font-semibold">business-specific applications</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build a RAG system using our existing business data?",
+    answer: (
+      <p>
+        Yes. RAG applications can be designed to work with sources such as{" "}
+        <span className="font-semibold">documents, databases, APIs, websites, cloud storage,</span> and existing{" "}
+        <span className="font-semibold">knowledge bases</span>, depending on the requirements of the project.
+      </p>
+    ),
+  },
+  {
+    question: "Can RAG integrate with our existing SaaS application?",
+    answer: (
+      <p>
+        Yes. RAG functionality can be integrated into{" "}
+        <span className="font-semibold">SaaS platforms, web applications, customer portals,</span> internal tools, and
+        other digital products through <span className="font-semibold">APIs and application-level integrations</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build a custom enterprise RAG solution?",
+    answer: (
+      <p>
+        Yes. Skyphr can develop <span className="font-semibold">custom RAG solutions</span> based on enterprise data
+        sources, application requirements,{" "}
+        <span className="font-semibold">security considerations, user workflows,</span> and scalability requirements.
+      </p>
+    ),
+  },
+  {
+    question: "How do you improve RAG response quality?",
+    answer: (
+      <p>
+        Response quality can be improved through better{" "}
+        <span className="font-semibold">data preparation, document chunking, embeddings, retrieval strategies,</span>{" "}
+        metadata filtering, <span className="font-semibold">prompt design, context management,</span> and continuous
+        evaluation.
+      </p>
+    ),
+  },
+  {
+    question: "Can RAG systems work with private company information?",
+    answer: (
+      <p>
+        Yes. RAG architectures can be designed to retrieve information from{" "}
+        <span className="font-semibold">private and controlled business data sources</span>, with access and security
+        requirements considered as part of the <span className="font-semibold">system architecture</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How scalable are RAG applications?",
+    answer: (
+      <p>
+        RAG systems can be designed to scale across increasing{" "}
+        <span className="font-semibold">datasets, users, queries, integrations,</span> and AI workloads. The appropriate
+        architecture depends on your application&apos;s{" "}
+        <span className="font-semibold">requirements and expected scale</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How much does RAG development cost?",
+    answer: (
+      <p>
+        RAG development costs depend on factors such as the{" "}
+        <span className="font-semibold">
+          number and type of data sources, application complexity, LLM requirements,
+        </span>{" "}
+        integrations, <span className="font-semibold">security requirements, infrastructure,</span> and expected scale.
+        Skyphr can define the scope and provide a <span className="font-semibold">project-specific estimate</span>.
+      </p>
+    ),
+  },
+];
+
 // hire page
 export const HIRE_REACT_JS_DEVELOPER_FAQ_DATA: FaqCommonCardData[] = [
   {
@@ -1089,5 +1198,208 @@ export const HIRE_WIREFRAME_DESIGNER_FAQ_DATA = [
     question: "How long does a wireframing project take?",
     answer:
       "Project timelines depend on complexity, but most wireframing engagements range from a few days for MVP concepts to several weeks for enterprise platforms.",
+  },
+];
+
+export const LLM_INTEGRATION_SERVICE_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is LLM integration?",
+    answer: (
+      <p>
+        <span className="font-semibold">LLM integration</span> is the process of connecting large language models with
+        your existing applications, products, databases, workflows, or business systems to add{" "}
+        <span className="font-semibold">AI-powered capabilities</span>.
+      </p>
+    ),
+  },
+  {
+    question: "What can you build with LLM integration?",
+    answer: (
+      <p>
+        We can build{" "}
+        <span className="font-semibold">AI assistants, chatbots, document processing systems, AI search,</span> content
+        generation features, knowledge-based applications, automated workflows, and{" "}
+        <span className="font-semibold">custom AI-powered product features</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you integrate an LLM into an existing application?",
+    answer: (
+      <p>
+        Yes. We can integrate LLM capabilities into existing{" "}
+        <span className="font-semibold">SaaS platforms, web applications, dashboards, internal tools,</span> customer
+        portals, and other digital products.
+      </p>
+    ),
+  },
+  {
+    question: "Which LLMs can you integrate?",
+    answer: (
+      <p>
+        We can work with leading LLM platforms and APIs, including{" "}
+        <span className="font-semibold">OpenAI, Anthropic, Google Gemini,</span> and other models based on your
+        technical and business requirements.
+      </p>
+    ),
+  },
+  {
+    question: "Can you connect an LLM with our company data?",
+    answer: (
+      <p>
+        Yes. We can connect LLM-powered applications with approved{" "}
+        <span className="font-semibold">business data, documents, knowledge bases, databases,</span> and other
+        information sources using appropriate integration architectures.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide RAG-based LLM solutions?",
+    answer: (
+      <p>
+        Yes. We can build <span className="font-semibold">Retrieval-Augmented Generation (RAG)</span> solutions that
+        allow LLM applications to retrieve relevant information from your business knowledge and use it to generate{" "}
+        <span className="font-semibold">contextual responses</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How secure is LLM integration?",
+    answer: (
+      <p>
+        Security depends on the architecture, data, model provider, and application requirements. We design integrations
+        with <span className="font-semibold">secure API handling, controlled data access, authentication,</span> and
+        appropriate application-level protections.
+      </p>
+    ),
+  },
+  {
+    question: "Can LLM integration reduce business costs?",
+    answer: (
+      <p>
+        LLM integration can automate repetitive knowledge-based tasks and improve{" "}
+        <span className="font-semibold">team productivity</span>. We also optimize model usage, architecture, and
+        workflows to help manage <span className="font-semibold">AI infrastructure costs</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How long does LLM integration take?",
+    answer: (
+      <p>
+        The timeline depends on the complexity of the use case, integrations, data requirements, and product scope.
+        After understanding your requirements, we can define an appropriate{" "}
+        <span className="font-semibold">development roadmap</span>.
+      </p>
+    ),
+  },
+];
+export const AI_VOICE_AGENT_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is an AI voice agent?",
+    answer: (
+      <p>
+        An <span className="font-semibold">AI voice agent</span> is an artificial intelligence system that can answer
+        and manage phone conversations in real time. Sky can understand customer requests, answer{" "}
+        <span className="font-semibold">approved questions, capture information, qualify enquiries, book appointments,</span>{" "}
+        and escalate calls when human assistance is required.
+      </p>
+    ),
+  },
+  {
+    question: "What can Sky's AI voice agent do?",
+    answer: (
+      <p>
+        Sky can answer business calls, handle{" "}
+        <span className="font-semibold">common customer questions, qualify leads, capture caller information,</span>{" "}
+        book and reschedule appointments, schedule consultations, collect enquiry details, and save{" "}
+        <span className="font-semibold">call transcripts</span> for your team.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky answer calls 24/7?",
+    answer: (
+      <p>
+        Yes. Sky is designed to handle business calls{" "}
+        <span className="font-semibold">around the clock</span>, including after-hours and periods when your team is
+        unavailable. This allows businesses to maintain a consistent phone response without requiring staff to answer
+        every call manually.
+      </p>
+    ),
+  },
+  {
+    question: "Can an AI voice agent book appointments?",
+    answer: (
+      <p>
+        Yes. Sky can connect with scheduling systems such as{" "}
+        <span className="font-semibold">Cal.com</span> to check availability, offer appointment times, confirm the
+        caller&apos;s choice, and create the booking.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky connect with our CRM or business tools?",
+    answer: (
+      <p>
+        Sky can be configured around your existing{" "}
+        <span className="font-semibold">business workflow</span>. Depending on your technology stack and requirements,
+        Skyphr can evaluate integrations with calendars, CRMs, lead-management systems, and other business tools.
+      </p>
+    ),
+  },
+  {
+    question: "Does Sky provide legal, medical, or financial advice?",
+    answer: (
+      <p>
+        No. Sky can be configured to stay within an{" "}
+        <span className="font-semibold">approved business scope</span> and escalate questions that require professional
+        judgment to an appropriate human team member.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky capture and qualify leads?",
+    answer: (
+      <p>
+        Yes. Sky can ask <span className="font-semibold">predefined qualification questions</span>, collect contact
+        information, understand the reason for the enquiry, capture relevant requirements, and provide your team with{" "}
+        <span className="font-semibold">structured information for follow-up</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky be customized for my business?",
+    answer: (
+      <p>
+        Yes. Sky can be configured around your{" "}
+        <span className="font-semibold">business name, greeting, services, FAQs, opening hours, policies,</span>{" "}
+        qualification questions, booking process, escalation rules, and approved responses.
+      </p>
+    ),
+  },
+  {
+    question: "Which businesses can use an AI voice agent?",
+    answer: (
+      <p>
+        AI voice agents can support many businesses that depend on inbound phone calls, including{" "}
+        <span className="font-semibold">
+          healthcare clinics, dental practices, law firms, home service companies, real estate agencies, salons,
+          spas, agencies, and consultancies
+        </span>
+        , as well as other service-based businesses.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky handle calls when our team is already busy?",
+    answer: (
+      <p>
+        Yes. Sky can answer calls when your staff are{" "}
+        <span className="font-semibold">serving customers, attending meetings, working on-site,</span> or otherwise
+        unavailable. This helps businesses reduce missed calls and capture more enquiries without interrupting ongoing
+        work.
+      </p>
+    ),
   },
 ];

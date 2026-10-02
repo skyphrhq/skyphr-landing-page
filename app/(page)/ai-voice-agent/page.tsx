@@ -70,15 +70,15 @@ function AiVoiceAgentPage() {
           <SkyVoiceTrustSection data={AI_VOICE_AGENT_PAGE_DATA.trust} />
         </section>
       )}
-      {HOME_PAGE_DATA?.faq && (
+      {AI_VOICE_AGENT_PAGE_DATA?.faq && (
         <section className="w-full h-auto overflow-hidden">
-          <FrequentlyAskedQuestions classNames="pb-0! md:pb-0! xl:pb-0!" data={HOME_PAGE_DATA.faq} />
+          <FrequentlyAskedQuestions classNames="pb-0! md:pb-0! xl:pb-0!" data={AI_VOICE_AGENT_PAGE_DATA.faq} />
         </section>
       )}
 
-      {HOME_PAGE_DATA?.readyToScale && (
+      {AI_VOICE_AGENT_PAGE_DATA?.readyToScale && (
         <section className="w-full h-auto overflow-hidden">
-          <ReadyToScaleSection data={HOME_PAGE_DATA.readyToScale} />
+          <ReadyToScaleSection data={AI_VOICE_AGENT_PAGE_DATA.readyToScale} />
         </section>
       )}
       {AI_VOICE_AGENT_PAGE_DATA?.contactUs && (

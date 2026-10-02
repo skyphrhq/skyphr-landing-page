@@ -1,11 +1,13 @@
 import type {
   AboutSection,
   ContactUsSectionInterface,
+  DeliveryApproachSectionData,
   DevelopmentProcessSectionData,
   FAQSection,
   FeaturedWorkDataInterface,
   FeaturesIncludeSectionData,
   HeroSection,
+  IndustriesServeSectionData,
   OurApproachInterface,
   OurInsightsSection,
   OurTeamSectionInterface as OurTeamSectionDataInterface,
@@ -134,6 +136,16 @@ export interface WhatWeBuildSectionProps {
 
 export interface UseCaseSectionProps {
   data: UseCaseSectionData;
+  classNames?: string;
+}
+
+export interface IndustriesServeSectionInterface {
+  data: IndustriesServeSectionData;
+  classNames?: string;
+}
+
+export interface DeliveryApproachSectionInterface {
+  data: DeliveryApproachSectionData;
   classNames?: string;
 }
 

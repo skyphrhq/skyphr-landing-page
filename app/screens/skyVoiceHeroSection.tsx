@@ -40,7 +40,7 @@ function SkyVoiceHeroSection({ data, classNames }: SkyVoiceHeroSectionInterface)
           <h1 className="flex flex-col items-center justify-center gap-2">
             {data?.header?.title?.map((titleRow, rowIndex) => (
               <span
-                className="font-instrument-sans text-center text-4xl lg:text-5xl xl:text-[75px] 2xl:text-[92px] font-bold tracking-tight text-(--text-main-color)"
+                className="font-instrument-sans text-center text-4xl lg:text-5xl xl:text-[75px] 2xl:text-[92px] font-bold text-(--text-main-color)"
                 key={rowIndex}>
                 {titleRow?.map((chunk, index) => {
                   return (
@@ -49,7 +49,7 @@ function SkyVoiceHeroSection({ data, classNames }: SkyVoiceHeroSectionInterface)
                         "font-instrument-sans reveal-animation",
                         chunk?.classNames,
                         chunk?.variant === "italic" &&
-                          "italic font-bold! font-playfair-display skyai-voice-headline-accent",
+                          "italic font-bold! font-playfair-display skyai-voice-headline-accent px-2",
                       )}
                       key={index}>
                       {chunk.text}
