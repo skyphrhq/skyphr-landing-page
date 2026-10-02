@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "*": ["blog-cms/**"],
   },
+  experimental: {
+    optimizePackageImports: ["react-icons", "gsap", "lenis"],
+  },
   async redirects() {
     return [
       ...(!isDevelopmentBranch
