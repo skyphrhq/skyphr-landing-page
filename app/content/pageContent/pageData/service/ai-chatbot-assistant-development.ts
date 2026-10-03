@@ -1,4 +1,4 @@
-import AI_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/ai-development-automation-4x.webp";
+import AI_CHATBOT_ASSISTANT_SERVICE_4X_IMG from "@/app/assets/webp/4x/ai-chatbot-assistant-development-4x.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -12,7 +12,7 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     openGraph: {
       title: "AI Chatbot & Assistant Development Services | Skyphr",
       description: "Build intelligent AI chatbots and assistants with Skyphr. Automate support, sales, workflows and customer interactions with scalable AI solutions.",
-      images: "/og-image/ai-chatbot-assistant.png",
+      images: "/og-image/ai-chatbot-assistant-development.png",
       type: "website",
     },
     twitter: {
@@ -21,7 +21,7 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       card: "summary_large_image",
       creator: "@skyphrhq",
       site: "@skyphrhq",
-      images: "/og-image/ai-chatbot-assistant.png",
+      images: "/og-image/ai-chatbot-assistant-development.png",
     },
     alternates: {
       canonical: `${SITE_BASE_URL}/services/ai-chatbot-assistant-development`,
@@ -45,7 +45,7 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
       heroImage: {
-        imagePath: AI_DEVELOPMENT_4X_IMG,
+        imagePath: AI_CHATBOT_ASSISTANT_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
         alt: "AI Chatbot and Assistant Development services hero illustration",

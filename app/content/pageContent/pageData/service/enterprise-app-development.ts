@@ -1,4 +1,4 @@
-import CUSTOM_SOFTWARE_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/custom-software-development-4x.webp";
+import ENTERPRISE_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/enterprise-app-development-4x.webp";
 import { ENTERPRISE_APP_DEVELOPMENT_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { ENTERPRISE_APP_DEVELOPMENT_VALUES_CARDS } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -32,10 +32,7 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
   },
   hero: {
     header: {
-      title: [
-        [{ text: "Enterprise" }, { text: "App" }, { text: "Development" }, { text: "Services" }],
-
-      ],
+      title: [[{ text: "Enterprise" }, { text: "App" }, { text: "Development" }, { text: "Services" }]],
       description: [
         [
           {
@@ -44,7 +41,7 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
         ],
       ],
       heroImage: {
-        imagePath: CUSTOM_SOFTWARE_DEVELOPMENT_4X_IMG,
+        imagePath: ENTERPRISE_APP_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
         alt: "Enterprise app development services hero illustration",
@@ -67,7 +64,11 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
     header: {
       title: [
         [{ text: "What" }, { text: "We" }, { text: "Build" }, { text: "under" }],
-        [{ text: "Enterprise", variant: "italic", classNames: "text-center" }, { text: "App", variant: "italic" }, { text: "Development", variant: "italic" }],
+        [
+          { text: "Enterprise", variant: "italic", classNames: "text-center" },
+          { text: "App", variant: "italic" },
+          { text: "Development", variant: "italic" },
+        ],
       ],
       description: [
         [
@@ -114,7 +115,10 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
     header: {
       title: [
         [{ text: "Features" }, { text: "of" }, { text: "Our" }],
-        [{ text: "Enterprise", variant: "italic" }, { text: "Applications", variant: "italic" }],
+        [
+          { text: "Enterprise", variant: "italic" },
+          { text: "Applications", variant: "italic" },
+        ],
       ],
       description: [
         [
@@ -141,9 +145,7 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
   },
   useCase: {
     header: {
-      title: [
-        [{ text: "Business" }, { text: "Benefits" }],
-      ],
+      title: [[{ text: "Business" }, { text: "Benefits" }]],
       description: [],
     },
     items: [
@@ -242,20 +244,11 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
     groups: [
       {
         title: "Frontend",
-        technologies: [
-          { name: "React.js" },
-          { name: "Next.js" },
-          { name: "TypeScript" },
-          { name: "Tailwind CSS" },
-        ],
+        technologies: [{ name: "React.js" }, { name: "Next.js" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
       },
       {
         title: "Backend",
-        technologies: [
-          { name: "Node.js" },
-          { name: "Python" },
-          { name: "FastAPI" },
-        ],
+        technologies: [{ name: "Node.js" }, { name: "Python" }, { name: "FastAPI" }],
       },
       {
         title: "Databases",
@@ -433,13 +426,12 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
   },
   faq: {
     header: {
-      title: [
-        [{ text: "Got Questions? " }],
-        [{ text: "We've Got " }, { text: "Answers", variant: "italic" }],
-      ],
+      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
       description: [
         [
-          { text: "Everything you need to know about our services and how we can help your business grow. Can't find the answer you're looking for? " },
+          {
+            text: "Everything you need to know about our services and how we can help your business grow. Can't find the answer you're looking for? ",
+          },
           { text: "Reach out to our team", classNames: "font-bold", variant: "brand" },
           { text: " and we'll be happy to help." },
         ],
@@ -450,7 +442,12 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
   readyToScale: {
     header: {
       title: [
-        [{ text: "Build" }, { text: "Your" }, { text: "Enterprise", variant: "italic" }, { text: "Application", variant: "italic" }],
+        [
+          { text: "Build" },
+          { text: "Your" },
+          { text: "Enterprise", variant: "italic" },
+          { text: "Application", variant: "italic" },
+        ],
         [{ text: "With" }, { text: "Skyphr" }],
       ],
       description: [

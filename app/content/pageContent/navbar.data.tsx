@@ -131,9 +131,9 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
             dropDown: [],
           },
           {
-            id: "enterprise-app-development",
-            label: "Enterprise App Development",
-            href: "/services/enterprise-app-development",
+            id: "enterprise-software-development",
+            label: "Enterprise Software Development",
+            href: "/services/enterprise-software-development",
             type: "link",
             isLink: true,
             target: "_self",
@@ -165,6 +165,16 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
             id: "mobile-app-development",
             label: "Mobile App Development",
             href: "/services/mobile-app-development",
+            type: "link",
+            isLink: true,
+            target: "_self",
+            priority: 0.85,
+            dropDown: [],
+          },
+          {
+            id: "enterprise-app-development",
+            label: "Enterprise App Development",
+            href: "/services/enterprise-app-development",
             type: "link",
             isLink: true,
             target: "_self",
@@ -226,7 +236,7 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
     dropDown: [
       {
         id: "frontend-engineering",
-        label: "Frontend Engineering",
+        label: "Frontend",
         href: "/hire/frontend",
         type: "link",
         isLink: false,
@@ -307,7 +317,7 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
       },
       {
         id: "backend-engineering",
-        label: "Backend Engineering",
+        label: "Backend",
         href: "/hire/backend",
         type: "link",
         isLink: false,

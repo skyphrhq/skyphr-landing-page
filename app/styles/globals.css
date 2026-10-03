@@ -239,7 +239,7 @@
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel {
     left: var(--skyphr-nav-panel-gutter);
     right: var(--skyphr-nav-panel-gutter);
-    width: min(1160px, calc(100% - 2 * var(--skyphr-nav-panel-gutter)));
+    width: min(1260px, calc(100% - 2 * var(--skyphr-nav-panel-gutter)));
     margin-inline: auto;
     padding-top: 10px;
   }
@@ -258,22 +258,22 @@
     max-height: calc(100dvh - 140px);
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 28px 32px;
+    padding: 20px 24px;
   }
 
   /* Category tabs in a rail on the left, the selected category's links in the middle, featured card on the right */
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-body {
     display: flex;
-    gap: 28px;
-    min-height: 260px;
+    gap: 24px;
+    min-height: 220px;
   }
 
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-rail {
     display: flex;
-    flex: 0 0 240px;
+    flex: 0 0 200px;
     flex-direction: column;
-    gap: 12px;
-    padding-right: 20px;
+    gap: 10px;
+    padding-right: 16px;
     border-right: 1px solid var(--border-color);
   }
 

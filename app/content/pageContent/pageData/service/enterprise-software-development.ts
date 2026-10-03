@@ -1,9 +1,9 @@
-import CUSTOM_SOFTWARE_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/custom-software-development-4x.webp";
+import ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_4X_IMG from "@/app/assets/webp/4x/enterprise-software-development-4x.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 import { createElement } from "react";
-import { FiLayers, FiTrendingUp, FiZap, FiUsers } from "react-icons/fi";
+import { FiLayers, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 
 export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   metadata: {
@@ -50,7 +50,7 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
         ],
       ],
       heroImage: {
-        imagePath: CUSTOM_SOFTWARE_DEVELOPMENT_4X_IMG,
+        imagePath: ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
         alt: "Enterprise software development services hero illustration",
@@ -259,21 +259,11 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
     groups: [
       {
         title: "Frontend Development",
-        technologies: [
-          { name: "React.js" },
-          { name: "Next.js" },
-          { name: "TypeScript" },
-          { name: "Tailwind CSS" },
-        ],
+        technologies: [{ name: "React.js" }, { name: "Next.js" }, { name: "TypeScript" }, { name: "Tailwind CSS" }],
       },
       {
         title: "Backend Development",
-        technologies: [
-          { name: "Node.js" },
-          { name: "Python" },
-          { name: "FastAPI" },
-          { name: "REST APIs" },
-        ],
+        technologies: [{ name: "Node.js" }, { name: "Python" }, { name: "FastAPI" }, { name: "REST APIs" }],
       },
       {
         title: "AI & LLM Technologies",
@@ -317,8 +307,7 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
     items: [
       {
         title: "Business-Focused Development",
-        description:
-          "We focus on solving actual business problems rather than simply delivering software features.",
+        description: "We focus on solving actual business problems rather than simply delivering software features.",
       },
       {
         title: "Modular Architecture",
@@ -448,7 +437,10 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
       { title: "SaaS & Technology", description: "Internal tools, admin platforms, and integrations." },
       { title: "Financial Services", description: "Dashboards, transaction workflows, and reporting systems." },
       { title: "Healthcare", description: "Patient portals, internal systems, and integrations." },
-      { title: "E-commerce & Retail", description: "Custom storefront features, inventory systems, and order management." },
+      {
+        title: "E-commerce & Retail",
+        description: "Custom storefront features, inventory systems, and order management.",
+      },
       { title: "Logistics & Supply Chain", description: "Fleet, dispatch, and shipment tracking software." },
       { title: "Manufacturing", description: "Production tracking, quality control, and ERP integrations." },
       { title: "Professional Services", description: "Client management, project tracking, and document workflows." },

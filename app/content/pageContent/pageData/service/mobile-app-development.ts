@@ -1,9 +1,9 @@
-import UI_UX_DESIGN_4X_IMG from "@/app/assets/webp/4x/ui-ux-design-4x.webp";
+import MOBILE_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/mobile-app-development-4x.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 import { createElement } from "react";
-import { FiLayers, FiTrendingUp, FiZap, FiUsers } from "react-icons/fi";
+import { FiLayers, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 
 export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   metadata: {
@@ -55,7 +55,7 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
         ],
       ],
       heroImage: {
-        imagePath: UI_UX_DESIGN_4X_IMG,
+        imagePath: MOBILE_APP_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
         alt: "Mobile App Development services hero illustration",
@@ -302,8 +302,7 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
     items: [
       {
         title: "Product-Focused Development",
-        description:
-          "We focus on the complete product experience rather than building isolated mobile features.",
+        description: "We focus on the complete product experience rather than building isolated mobile features.",
       },
       {
         title: "Scalable Architecture",
@@ -390,8 +389,10 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
       ],
       description: [
         [
-          { text: "Skyphr combines product thinking, design, engineering, and AI expertise to build mobile applications for modern businesses." }
-        ]
+          {
+            text: "Skyphr combines product thinking, design, engineering, and AI expertise to build mobile applications for modern businesses.",
+          },
+        ],
       ],
     },
     reasons: [
@@ -412,13 +413,41 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
       description: [],
     },
     items: [
-      { title: "SaaS & Technology", description: "Mobile applications for SaaS platforms, digital products, customer portals, and technology businesses." },
-      { title: "Healthcare", description: "Patient applications, healthcare platforms, appointment systems, communication tools, and digital health products." },
-      { title: "FinTech", description: "Financial applications, payment solutions, dashboards, account management, and secure mobile experiences." },
-      { title: "E-Commerce", description: "Shopping applications, marketplaces, customer accounts, payments, order tracking, and personalized experiences." },
-      { title: "Education", description: "Learning applications, student platforms, course systems, communication tools, and educational products." },
-      { title: "Logistics & Transportation", description: "Delivery applications, tracking systems, driver applications, logistics workflows, and real-time operations." },
-      { title: "Professional Services", description: "Mobile applications for customer management, bookings, communication, business workflows, and internal operations." },
+      {
+        title: "SaaS & Technology",
+        description:
+          "Mobile applications for SaaS platforms, digital products, customer portals, and technology businesses.",
+      },
+      {
+        title: "Healthcare",
+        description:
+          "Patient applications, healthcare platforms, appointment systems, communication tools, and digital health products.",
+      },
+      {
+        title: "FinTech",
+        description:
+          "Financial applications, payment solutions, dashboards, account management, and secure mobile experiences.",
+      },
+      {
+        title: "E-Commerce",
+        description:
+          "Shopping applications, marketplaces, customer accounts, payments, order tracking, and personalized experiences.",
+      },
+      {
+        title: "Education",
+        description:
+          "Learning applications, student platforms, course systems, communication tools, and educational products.",
+      },
+      {
+        title: "Logistics & Transportation",
+        description:
+          "Delivery applications, tracking systems, driver applications, logistics workflows, and real-time operations.",
+      },
+      {
+        title: "Professional Services",
+        description:
+          "Mobile applications for customer management, bookings, communication, business workflows, and internal operations.",
+      },
     ],
   },
   faq: {
