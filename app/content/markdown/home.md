@@ -28,29 +28,38 @@ Whether you're launching an MVP, building a SaaS platform, automating operations
 
 ## Our Services
 
-### UI/UX Design Services
-
-We create user-centered UI/UX designs that improve engagement, increase conversions, and deliver seamless experiences across web and mobile applications. Our product design process focuses on usability, accessibility, and business outcomes.
-
-[Explore Design Solutions](#ui-ux-design-services)
-
-### SaaS & Web Application Development
-
-As a SaaS development company, we build scalable web applications and cloud-based software platforms using modern technologies and robust architectures. Our solutions are optimized for performance, security, and future growth.
-
-[Explore Web App Solutions](#saas-web-application-development)
-
-### AI Development & Automation Services
+### AI/ML
 
 We help businesses automate workflows, improve efficiency, and unlock new opportunities through custom AI solutions, AI integrations, intelligent automation, and machine learning-powered systems tailored to business needs.
 
-[Explore AI Solutions](#ai-development-automation-services)
+- [Rag Development Services](/services/rag-development-services)
+- [AI Development & Automation](/services/ai-development-services)
+- [LLM Integration Service](/services/llm-integration-service)
+- [AI Consulting Services](/services/ai-consulting-services)
+- [AI Chatbot & Assistant Development](/services/ai-chatbot-assistant-development)
 
-### Custom Software Development
+### Software
 
 We develop scalable custom software solutions designed around your unique business requirements. From MVP development to enterprise software systems, we deliver reliable products built to support long-term growth.
 
-[Explore Software Solutions](#custom-software-development)
+- [SaaS & Web App Development](/services/saas-development-services)
+- [Custom Software Development](/services/custom-software-development-services)
+- [Enterprise Software Development](/services/enterprise-software-development)
+
+### Application
+
+We build progressive web apps, mobile apps, and enterprise applications that are fast, secure, and easy to use. Every app is designed to perform across devices and scale with your business as it grows.
+
+- [Progressive Web App Development](/services/progressive-web-app-development)
+- [Mobile App Development](/services/mobile-app-development)
+- [Enterprise App Development](/services/enterprise-app-development)
+
+### UI/UX Design
+
+We create user-centered UI/UX designs that improve engagement, increase conversions, and deliver seamless experiences across web and mobile applications. Our product design process focuses on usability, accessibility, and business outcomes.
+
+- [UI UX Design](/services/ui-ux-design)
+- [Wireframe Designer](/services/wireframe-designer)
 
 ## Our Simple & Proven Product Development Process
 

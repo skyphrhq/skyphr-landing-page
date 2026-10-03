@@ -7,32 +7,47 @@ function CtaServiceButton({
   className,
   showArrow = true,
   theme = "white",
+  size = "default",
 }: {
   label: string;
   href: string;
   className?: string;
   showArrow?: boolean;
   theme?: "white" | "black";
+  size?: "default" | "small";
 }) {
   const isBlackTheme = theme === "black";
+  const isSmall = size === "small";
+  // Each label row is one button tall; hovering slides up by one row plus the gap-2 between rows
+  const rowClassName = twMerge(
+    "text-nowrap min-h-11.25 flex px-5 sm:px-8 items-center gap-5 w-full text-center",
+    showArrow ? "justify-between" : "justify-center",
+    isSmall && "min-h-8 px-3 sm:px-4 gap-2",
+  );
 
   return (
     <a
       href={href}
-      title={label}
+      // Small pills already show their full label, so skip the native tooltip that pops over the next row
+      title={isSmall ? undefined : label}
       className={twMerge(
         "w-fit h-fit min-w-57.5 min-h-11.25 max-h-11.25 rounded-full font-bold font-instrument-sans overflow-hidden flex items-start justify-start text-sm md:text-base lg:text-lg hover:scale-x-105 group transition-all duration-300 relative",
+        isSmall && "min-w-0 min-h-8 max-h-8 font-semibold text-xs md:text-sm lg:text-sm",
         isBlackTheme
           ? "bg-(--root-black-color) text-(--root-white-color) hover:text-(--root-black-color)"
           : "bg-(--root-white-color) text-(--root-black-color) hover:text-(--root-white-color)",
         className,
       )}>
-      <span className="flex flex-col gap-2 items-start justify-start group-hover:-translate-y-13.25 transition-all duration-300 relative z-2 w-full">
-        <span className={`text-nowrap min-h-11.25 flex px-5 sm:px-8 items-center ${showArrow ? "justify-between" : "justify-center"} gap-5 w-full text-center`}>
+      <span
+        className={twMerge(
+          "flex flex-col gap-2 items-start justify-start group-hover:-translate-y-13.25 transition-all duration-300 relative z-2 w-full",
+          isSmall && "group-hover:-translate-y-10",
+        )}>
+        <span className={rowClassName}>
           <span>{label}</span>
           {showArrow && <ImArrowUpRight2 />}
         </span>
-        <span className={`text-nowrap min-h-11.25 flex px-5 sm:px-8 items-center ${showArrow ? "justify-between" : "justify-center"} gap-5 w-full text-center`}>
+        <span className={rowClassName}>
           <span>{label}</span>
           {showArrow && <ImArrowUpRight2 />}
         </span>
