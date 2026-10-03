@@ -1507,7 +1507,73 @@ export const AI_CONSULTING_FAQ_DATA: FaqCommonCardData[] = [
       <p>
         Start by sharing your <span className="font-semibold">business goals,</span>{" "}
         current challenges, existing technology, or AI idea with our team. We can
-        then assess the opportunity and define the appropriate next steps.
+      </p>
+    ),
+  },
+];
+
+export const ENTERPRISE_APP_DEVELOPMENT_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is enterprise app development?",
+    answer: (
+      <p>
+        Enterprise app development involves designing and building custom applications that support complex business operations, workflows, users, data, integrations, and organizational requirements.
+      </p>
+    ),
+  },
+  {
+    question: "Why should businesses build custom enterprise applications?",
+    answer: (
+      <p>
+        Custom enterprise applications allow businesses to create software around their specific workflows, processes, users, and operational requirements instead of relying entirely on generic solutions.
+      </p>
+    ),
+  },
+  {
+    question: "Can Skyphr integrate enterprise applications with existing systems?",
+    answer: (
+      <p>
+        Yes. We can develop APIs and integrations that connect enterprise applications with existing business systems, third-party platforms, databases, and other technologies.
+      </p>
+    ),
+  },
+  {
+    question: "Can enterprise applications scale as the business grows?",
+    answer: (
+      <p>
+        Yes. We use scalable application architecture and development practices designed to accommodate increasing users, data, functionality, and integrations.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build secure enterprise applications?",
+    answer: (
+      <p>
+        Yes. Security can be incorporated across application architecture, authentication, authorization, access control, APIs, data handling, and development practices.
+      </p>
+    ),
+  },
+  {
+    question: "Can enterprise apps include AI and automation?",
+    answer: (
+      <p>
+        Yes. Enterprise applications can include AI-powered features, workflow automation, intelligent data processing, and other automation capabilities based on business requirements.
+      </p>
+    ),
+  },
+  {
+    question: "How long does enterprise app development take?",
+    answer: (
+      <p>
+        The timeline depends on application complexity, features, integrations, users, technology requirements, and scope. After understanding your requirements, we can define a suitable development roadmap.
+      </p>
+    ),
+  },
+  {
+    question: "Does Skyphr provide ongoing enterprise application support?",
+    answer: (
+      <p>
+        Yes. We can continue supporting, maintaining, optimizing, and scaling enterprise applications as business requirements evolve.
       </p>
     ),
   },
