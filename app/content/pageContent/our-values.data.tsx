@@ -700,3 +700,38 @@ export const HIRE_WIREFRAME_DESIGNER_VALUES_CARDS: OurValueCardInterface[] = [
     bgColor: "rgba(93, 173, 226, 0.5)",
   },
 ];
+
+export const ENTERPRISE_APP_DEVELOPMENT_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description: "We simplify complex enterprise workflows into clear, intuitive application experiences that teams can understand and use efficiently.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description: "We create enterprise applications with architecture and technology choices that support long-term business and operational growth.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description: "We focus on responsive applications, efficient systems and optimized workflows that help teams work faster.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Reliability Matters",
+    description: "Enterprise applications need dependable performance. We build with maintainability, stability, testing and long-term reliability in mind.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];

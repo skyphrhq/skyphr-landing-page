@@ -75,7 +75,7 @@ function FooterScreen() {
                   />
                 </div>
                 <p className="text-neutral-300 text-sm leading-6">
-                  Skyphr designs and builds scalable digital products with strategy, clean interfaces, and reliable
+                  Skyphr designs and builds scalable digital products with strategy, clean interfaces and reliable
                   engineering.
                 </p>
                 <address className="not-italic text-neutral-300 text-sm leading-6 mt-4 hidden">
