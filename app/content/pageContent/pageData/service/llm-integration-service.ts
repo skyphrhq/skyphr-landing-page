@@ -329,7 +329,6 @@ export const LLM_INTEGRATION_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     ],
   },
   deliveryApproach: {
-    eyebrow: "Delivery Approach",
     header: {
       title: [
         [

@@ -117,7 +117,44 @@ export const AI_AUTOMATION_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
     bgColor: "rgba(93, 173, 226, 0.5)",
   },
 ];
-
+export const AI_CONSULTING_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description:
+      "We simplify complex AI technologies and translate them into practical strategies that business and technical teams can understand.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description:
+      "We consider long-term growth when planning AI architectures, integrations, workflows, and technology decisions.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description:
+      "We focus on efficient AI systems that deliver useful results while considering response times, infrastructure, operational efficiency, and scalability.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Business Impact",
+    description:
+      "We focus on AI applications that solve meaningful business problems and create measurable operational or product value.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
 export const CUSTOM_SOFTWARE_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
   {
     id: 1,

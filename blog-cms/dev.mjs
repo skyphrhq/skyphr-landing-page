@@ -15,7 +15,8 @@ const PROCESSES = [
 ];
 
 const children = PROCESSES.map(({ name, command, args }) => {
-  const child = spawn(command, args, { cwd: PROJECT_ROOT, stdio: "inherit", shell: process.platform === "win32" });
+  // No shell: we spawn node.exe directly, and a shell would split paths containing spaces on Windows.
+  const child = spawn(command, args, { cwd: PROJECT_ROOT, stdio: "inherit" });
 
   child.on("exit", (code) => {
     console.log(`[${name}] exited with code ${code}`);

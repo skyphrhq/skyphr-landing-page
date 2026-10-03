@@ -177,8 +177,6 @@ export type DeliveryApproachItem = {
 };
 
 export type DeliveryApproachSectionData = {
-  // Small label shown above the title, e.g. "Delivery Approach"
-  eyebrow?: string;
   header: SectionHeader;
   items: DeliveryApproachItem[];
 };
