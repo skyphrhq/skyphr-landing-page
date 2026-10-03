@@ -1,5 +1,5 @@
-import AiDevelopmentAutomation from "@/app/assets/webp/ai-development-automation.webp";
-import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-development.webp";
+import AiDevelopmentAutomation from "@/app/assets/webp/artificial-Intelligence-automation.webp";
+import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-engineering.webp";
 import MobileAppDevelopment from "@/app/assets/webp/mobile-app-development.webp";
 import MockupFive from "@/app/assets/webp/mockup-five.webp";
 import MockupFour from "@/app/assets/webp/mockup-four.webp";
@@ -137,7 +137,7 @@ export const ABOUT_US_INFO_CARD_DATA: AboutUsCardsDataArrayInterface[] = [
     direction: "BOTTOM_LEFT",
     icon: <FaClock className="text-lg md:text-xl text-(--text-main-color)" />,
     count: 4,
-    label: "Years Building Scalable Digital Products",
+    label: "Years Building Scalable Digital Producnets",
   },
   {
     direction: "BOTTOM_RIGHT",
@@ -149,7 +149,7 @@ export const ABOUT_US_INFO_CARD_DATA: AboutUsCardsDataArrayInterface[] = [
 
 export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   {
-    title: "AI/ML",
+    title: "Artificial Intelligence & Automation",
     className: "sticky top-[100px] md:top-[20%]",
     description:
       "We help businesses automate workflows, improve efficiency, and unlock new opportunities through custom AI solutions, AI integrations, intelligent automation, and machine learning-powered systems tailored to business needs.",
@@ -162,11 +162,11 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: AiDevelopmentAutomation,
       width: 350,
       height: 300,
-      alt: "AI development and automation service illustration",
+      alt: "Artificial intelligence and automation service illustration",
     },
   },
   {
-    title: "Software",
+    title: "Custom Software Engineering",
     className: "sticky top-[130px] md:top-[25%]",
     description:
       "We develop scalable custom software solutions designed around your unique business requirements. From MVP development to enterprise software systems, we deliver reliable products built to support long-term growth.",
@@ -179,11 +179,11 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: CustomSoftwareDevelopment,
       width: 350,
       height: 300,
-      alt: "Custom software development service illustration",
+      alt: "Custom software engineering service illustration",
     },
   },
   {
-    title: "Application",
+    title: "Application Engineering",
     className: "sticky top-[160px] md:top-[30%]",
     description:
       "We build progressive web apps, mobile apps, and enterprise applications that are fast, secure, and easy to use. Every app is designed to perform across devices and scale with your business as it grows.",
@@ -196,11 +196,11 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: MobileAppDevelopment,
       width: 350,
       height: 300,
-      alt: "Mobile and web application development service illustration",
+      alt: "Application engineering for web and mobile apps service illustration",
     },
   },
   {
-    title: "UI/UX Design",
+    title: "Product Design & Experience",
     className: "sticky top-[160px] md:top-[30%]",
     description:
       "We create user-centered UI/UX designs that improve engagement, increase conversions, and deliver seamless experiences across web and mobile applications. Our product design process focuses on usability, accessibility, and business outcomes.",
@@ -213,7 +213,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       imagePath: UiUxDesign,
       width: 350,
       height: 300,
-      alt: "UI/UX design service illustration",
+      alt: "Product design and UI/UX experience service illustration",
     },
   },
 ];

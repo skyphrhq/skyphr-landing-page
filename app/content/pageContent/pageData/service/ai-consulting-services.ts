@@ -58,7 +58,7 @@ export const AI_CONSULTING_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: AI_CONSULTING_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "AI development and automation services hero illustration",
+        alt: "AI consulting services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

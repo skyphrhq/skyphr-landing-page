@@ -16,7 +16,9 @@ function SkyVoiceCallParty({ participant, tone, avatar, isSpeaking, activityLabe
             : "skyai-voice-avatar-caller",
         )}>
         {tone === "sky" ? (
-          <Image src={SkyphrIconWhiteLogo} width={30} height={30} alt="Skyphr Icon White Transparent" />
+          <Image src={SkyphrIconWhiteLogo} width={30} height={30} alt="Sky, Skyphr's AI voice agent"
+            title="Sky, Skyphr's AI voice agent"
+          />
         ) : (
           <> {avatar}</>
         )}

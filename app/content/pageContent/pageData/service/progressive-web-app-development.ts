@@ -44,7 +44,7 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
         imagePath: PROGRESSIVE_WEB_APP_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "Progressive Web App Development services hero illustration",
+        alt: "Progressive web app development services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

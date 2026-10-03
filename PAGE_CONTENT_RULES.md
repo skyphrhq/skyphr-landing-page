@@ -66,8 +66,14 @@ app/content/
 | `/services/ai-development-services` | `service/ai-development-automation.ts` | `AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA` | ✓ | ✓ |
 | `/services/custom-software-development-services` | `service/custom-software-development.ts` | `CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA` | ✓ | ✓ |
 | `/services/rag-development-services` | `service/rag-development-services.ts` | `RAG_DEVELOPMENT_SERVICE_PAGE_DATA` | ✓ | ✓ |
-| `/services/llm-integration-service` | `service/llm-integration-service.ts` | `LLM_INTEGRATION_SERVICE_PAGE_DATA` | ✓ | **missing** |
-| `/services/ai-consulting-services` | `service/ai-consulting-services.ts` | `AI_CONSULTING_SERVICE_PAGE_DATA` | **missing** | **missing** |
+| `/services/llm-integration-service` | `service/llm-integration-service.ts` | `LLM_INTEGRATION_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/ai-consulting-services` | `service/ai-consulting-services.ts` | `AI_CONSULTING_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/enterprise-app-development` | `service/enterprise-app-development.ts` | `ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/enterprise-software-development` | `service/enterprise-software-development.ts` | `ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/mobile-app-development` | `service/mobile-app-development.ts` | `MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/ai-chatbot-assistant-development` | `service/ai-chatbot-assistant-development.ts` | `AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/progressive-web-app-development` | `service/progressive-web-app-development.ts` | `PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA` | ✓ | ✓ |
+| `/services/wireframe-designer` | `service/wireframe-designer.ts` | `WIREFRAME_DESIGNER_SERVICE_PAGE_DATA` | ✓ | ✓ |
 
 The markdown/OG file name is always the URL slug, not the data file name.
 
@@ -304,6 +310,7 @@ description: "<metadata.description>"
 - Section titles in markdown are the title chunks joined into one plain sentence ("Why Choose Skyphr for FastAPI Development?").
 - Keep the numbering style **that markdown file** already uses. It varies: `ai-development-services`, `custom-software-development-services`, `saas-development-services`, `ui-ux-design` and `hire-react-js-developers` number cards/steps as `### 01. Title`; all the others don't.
 - Only mirror sections that render on the page (section 3). FAQ entries are `### Question` + plain-text answer.
+- Mirror what the page shows, not raw JSX: write FAQ answers as the visible sentence (add the space a JSX line break swallows, e.g. `across{" "}<span>`), skip placeholder data (`CLIENT_TESTIMONIAL_DATA`) and UI-only labels (button states, demo stage widgets). Standalone pages use clean markdown (`#`, `-`), never escaped (`\-`) or bolded (`**# Title**`) headings.
 - Don't edit `markdown/blog/*` or the posts list in `markdown/blog.md`; the blog CMS generates them.
 
 ---
@@ -328,8 +335,6 @@ description: "<metadata.description>"
 | Hero description is a template literal with a trailing newline | `hire/nextjs-developer.data.ts` (hero paragraph 2) |
 | `HIRE_UI_DESIGNER_FAQ_DATA`, `HIRE_WIREFRAME_DESIGNER_FAQ_DATA` have no type annotation | `faq.data.tsx` |
 | RAG hero image imported under the name `SAAS_APP_DEVELOPMENT_4X_IMG`; LLM page reuses the RAG image; AI consulting reuses the AI automation image | `service/rag-development-services.ts`, `service/llm-integration-service.ts`, `service/ai-consulting-services.ts` |
-| Missing markdown mirror | `/services/ai-consulting-services` |
-| Missing OG image | `ai-consulting-services.png`, `llm-integration-service.png` |
 | `skyAi.data.ts` uses `const title` / `const description` for metadata | `pageData/skyAi.data.ts` |
 | Service data files lack the `.data.ts` suffix | `pageData/service/*.ts` |
 | `service-steps.data.tsx` uses Tailwind palette colors | accepted for per-item decorative data only |

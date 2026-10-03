@@ -44,7 +44,7 @@ export const LLM_INTEGRATION_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: LLM_INTEGRATION_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "SaaS application development services hero illustration",
+        alt: "LLM integration services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

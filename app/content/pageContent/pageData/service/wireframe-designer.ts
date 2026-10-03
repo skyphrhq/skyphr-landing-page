@@ -44,7 +44,7 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: WIREFRAME_DESIGNER_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "Wireframe Designer Services hero illustration",
+        alt: "Wireframe designer services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

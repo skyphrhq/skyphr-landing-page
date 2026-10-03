@@ -36,6 +36,18 @@ export const absoluteUrl = (path: string) => {
   return `${SITE_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 };
 
+// Every OG image in public/og-image is a 1200x630 PNG; declaring size, type and alt lets crawlers render the card without fetching it first
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+
+export const createOgImage = (image: string, alt: string) => ({
+  url: absoluteUrl(image),
+  width: OG_IMAGE_WIDTH,
+  height: OG_IMAGE_HEIGHT,
+  alt,
+  type: "image/png",
+});
+
 export const createPageMetadata = ({
   title,
   description,
@@ -45,7 +57,7 @@ export const createPageMetadata = ({
   robots,
 }: MetadataInput): Metadata => {
   const url = absoluteUrl(path);
-  const imageUrl = absoluteUrl(image);
+  const ogImage = createOgImage(image, title);
   const openGraph =
     type === "article"
       ? {
@@ -53,7 +65,7 @@ export const createPageMetadata = ({
           description,
           url,
           siteName: SITE_NAME,
-          images: [imageUrl],
+          images: [ogImage],
           type: "article" as const,
         }
       : {
@@ -61,7 +73,7 @@ export const createPageMetadata = ({
           description,
           url,
           siteName: SITE_NAME,
-          images: [imageUrl],
+          images: [ogImage],
           type: "website" as const,
         };
 
@@ -81,7 +93,7 @@ export const createPageMetadata = ({
       card: "summary_large_image",
       creator: TWITTER_HANDLE,
       site: TWITTER_HANDLE,
-      images: [imageUrl],
+      images: [ogImage],
     },
     robots: robots ?? DEFAULT_ROBOTS,
   };
@@ -157,7 +169,7 @@ export const normalizePageMetadata =(metadata: Metadata, path: string): Metadata
       description,
       url: absoluteUrl(path),
       siteName: SITE_NAME,
-      images: [absoluteUrl(openGraphImage)],
+      images: [createOgImage(openGraphImage, title)],
       type: "website",
     },
     twitter: {
@@ -167,7 +179,7 @@ export const normalizePageMetadata =(metadata: Metadata, path: string): Metadata
       card: "summary_large_image",
       creator: metadata.twitter?.creator ?? TWITTER_HANDLE,
       site: metadata.twitter?.site ?? TWITTER_HANDLE,
-      images: [absoluteUrl(twitterImage)],
+      images: [createOgImage(twitterImage, title)],
     },
     robots: metadata.robots ?? DEFAULT_ROBOTS,
   };

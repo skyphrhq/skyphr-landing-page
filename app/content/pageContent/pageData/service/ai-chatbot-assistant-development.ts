@@ -48,7 +48,7 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: AI_CHATBOT_ASSISTANT_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "AI Chatbot and Assistant Development services hero illustration",
+        alt: "AI chatbot and assistant development services hero illustration",
         className: "object-contain",
         loading: "eager",
       },
