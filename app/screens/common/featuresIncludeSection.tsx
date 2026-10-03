@@ -47,7 +47,8 @@ function FeaturesIncludeSection({ data, classNames }: FeaturesIncludeSectionProp
                   <span
                     className={twMerge(
                       "font-instrument-sans reveal-text-animation",
-                      chunk.variant === "italic" && "font-playfair-display italic font-semibold",
+                      chunk.variant === "italic" &&
+                        "italic! font-bold! font-playfair-display text-(--cta-button-background)",
                       chunk.classNames,
                     )}
                     key={index}>

@@ -1403,3 +1403,112 @@ export const AI_VOICE_AGENT_FAQ_DATA: FaqCommonCardData[] = [
     ),
   },
 ];
+export const AI_CONSULTING_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What are AI consulting services?",
+    answer: (
+      <p>
+        AI consulting services help businesses identify valuable AI opportunities,
+        develop an <span className="font-semibold">AI strategy,</span> select suitable
+        technologies, design <span className="font-semibold">AI architectures,</span>{" "}
+        and plan or implement AI-powered solutions.
+      </p>
+    ),
+  },
+  {
+    question: "Why does my business need an AI consultant?",
+    answer: (
+      <p>
+        An AI consultant can help you identify practical{" "}
+        <span className="font-semibold">AI use cases,</span> evaluate technology
+        options, reduce implementation risks, and create a roadmap aligned with your
+        business objectives.
+      </p>
+    ),
+  },
+  {
+    question: "What types of AI solutions can Skyphr help plan?",
+    answer: (
+      <p>
+        Skyphr can help plan <span className="font-semibold">AI assistants,</span>{" "}
+        chatbots, <span className="font-semibold">LLM applications,</span>{" "}
+        <span className="font-semibold">RAG systems,</span> AI automation workflows,
+        intelligent search, AI-powered SaaS products, document processing systems,
+        and custom AI applications.
+      </p>
+    ),
+  },
+  {
+    question: "Can Skyphr integrate AI into an existing application?",
+    answer: (
+      <p>
+        Yes. We can help plan and implement{" "}
+        <span className="font-semibold">AI integrations</span> within existing SaaS
+        platforms, websites, web applications, internal tools, and business systems.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide LLM consulting?",
+    answer: (
+      <p>
+        Yes. Skyphr provides <span className="font-semibold">LLM consulting</span>{" "}
+        for businesses looking to integrate large language models into products,
+        applications, workflows, and customer experiences.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide RAG consulting?",
+    answer: (
+      <p>
+        Yes. We can help businesses design{" "}
+        <span className="font-semibold">RAG solutions</span> that connect AI models
+        with internal documents, knowledge bases, and business data to provide more
+        context-aware responses.
+      </p>
+    ),
+  },
+  {
+    question: "Can you help us identify AI use cases?",
+    answer: (
+      <p>
+        Yes. We assess your <span className="font-semibold">business processes,</span>{" "}
+        workflows, technology environment, and objectives to identify practical AI
+        opportunities and prioritize potential use cases.
+      </p>
+    ),
+  },
+  {
+    question: "Can Skyphr build the AI solution after consulting?",
+    answer: (
+      <p>
+        Yes. Skyphr can support the transition from{" "}
+        <span className="font-semibold">AI strategy and consulting</span> into
+        proof-of-concept development, custom AI development, integration, and ongoing
+        optimization.
+      </p>
+    ),
+  },
+  {
+    question: "How do you choose the right AI technology?",
+    answer: (
+      <p>
+        We evaluate your business requirements, use case, data, performance
+        expectations, scalability requirements, integrations, and operational needs
+        before recommending an appropriate{" "}
+        <span className="font-semibold">AI technology approach.</span>
+      </p>
+    ),
+  },
+  {
+    question: "How do we get started with AI consulting?",
+    answer: (
+      <p>
+        Start by sharing your <span className="font-semibold">business goals,</span>{" "}
+        current challenges, existing technology, or AI idea with our team. We can
+        then assess the opportunity and define the appropriate next steps.
+      </p>
+    ),
+  },
+];

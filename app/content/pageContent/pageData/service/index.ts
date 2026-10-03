@@ -1,3 +1,4 @@
+import { AI_CONSULTING_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/service/ai-consulting-services";
 import { AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/service/ai-development-automation";
 import { CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/service/custom-software-development";
 import { LLM_INTEGRATION_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/service/llm-integration-service";
@@ -14,6 +15,7 @@ export const SERVICE_PAGE_DATA_BY_SLUG: Record<string, CommonPageDataInterface> 
   "custom-software-development-services": CUSTOM_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA,
   "rag-development-services": RAG_DEVELOPMENT_SERVICE_PAGE_DATA,
   "llm-integration-service": LLM_INTEGRATION_SERVICE_PAGE_DATA,
+  "ai-consulting-services": AI_CONSULTING_SERVICE_PAGE_DATA,
 };
 
 export function getServicePageData(slug: string) {
