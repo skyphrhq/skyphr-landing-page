@@ -2,6 +2,8 @@ Before doing ANY task in this project, read PROJECT_CONVENTIONS.md and follow it
 
 # Agent instructions (Cursor, Codex, Copilot, Claude, etc.)
 
+Before adding or editing any page copy/data in `app/content/`, read [PAGE_CONTENT_RULES.md](PAGE_CONTENT_RULES.md) and follow it strictly: change values only, never the structure, and split titles exactly like the current file.
+
 This repo is the Skyphr marketing site: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, GSAP, pnpm.
 
 [PROJECT_CONVENTIONS.md](PROJECT_CONVENTIONS.md) is the single source of truth for folder placement, design tokens, naming, component templates and known inconsistencies. [CLAUDE.md](CLAUDE.md) has a one-screen summary of the most critical rules.

@@ -545,6 +545,20 @@ export interface NavMegaPanelColumnInterface {
   className?: string;
 }
 
+export interface NavMegaPanelTabInterface {
+  item: NavbarLinksInterface;
+  tabId: string;
+  // Id of the pane this tab shows (aria-controls)
+  paneId: string;
+  isActive: boolean;
+  // Focus / click: selects at once
+  onActivate: () => void;
+  // Mouse: selects after a short delay, cancelled when the mouse leaves first
+  onHoverStart: () => void;
+  onHoverEnd: () => void;
+  className?: string;
+}
+
 export interface NavFeaturedCardInterface {
   data: NavFeaturedCard;
   // Runs the voice wave; only true while the panel is open, so it doesn't animate while hidden

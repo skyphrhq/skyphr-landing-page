@@ -211,7 +211,7 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "Our React.js developers work across modern frontend ecosystems and complementary technologies.",
+            text: "Our React.js developers use modern frameworks, libraries, APIs, and cloud technologies to build secure, scalable, high-performance applications that integrate seamlessly with your existing systems and support long-term product growth.",
           },
         ],
       ],
@@ -325,7 +325,7 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "The principles behind every product we build and every engineering decision we make.",
+            text: "Our React development team combines technical excellence, scalable architecture, performance-focused engineering, and product thinking to build reliable digital experiences that support business goals, user needs, and long-term growth.",
           },
         ],
       ],

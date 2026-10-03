@@ -47,7 +47,7 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
                 </h1>
               ))}
             </div>
-            <div className="w-full flex flex-col items-start justify-start gap-4 pt-4">
+            <div className="w-full flex flex-col items-start justify-start gap-4 pt-6">
               {data?.header?.description?.map((desc, index) => (
                 <p
                   className="font-instrument-sans text-sm sm:text-base lg:text-lg max-w-xl font-medium text-pretty text-start  text-(--text-main-color)  reveal-animation"

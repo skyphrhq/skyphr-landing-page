@@ -2,6 +2,8 @@
 
 This file is the single source of truth for how code is written in this repo. Everything here is taken from the code as it is today (audited 27 Sep 2026). Where the code is inconsistent, the rule below is the **dominant** pattern, and section 9 lists the exceptions.
 
+> **Content work** (copy, titles, FAQs, metadata in `app/content/`) follows [PAGE_CONTENT_RULES.md](PAGE_CONTENT_RULES.md). Read it before every content change.
+
 > If a change needs to break a convention, ask first. If you add a convention (a new color variable, a new folder, a new file type), update this file in the same change.
 
 ---
@@ -64,7 +66,7 @@ LandingPage/
 │   │   └── *.tsx               # Page-specific sections (heroSectionEle, skyAiHeroSection...)
 │   ├── components/             # Smaller building blocks: cards, pills, modals, providers
 │   │   ├── common/             # Generic UI primitives (button, ctaButton, inputField, commonSectionHeader...)
-│   │   ├── navbar/             # navBar, skyAiNavPill, dropdowns: navMegaPanel (grouped links) / navCompactPanel (flat list), picked from the data
+│   │   ├── navbar/             # navBar, skyAiNavPill, dropdowns: navMegaPanel (grouped links: category tabs + pane on desktop, stacked on mobile) / navCompactPanel (flat list), picked from the data
 │   │   ├── blog/               # CMS-style blog blocks (UIComponent + Schema pattern)
 │   │   └── *.tsx               # Cards/pieces (testimonialCard, skyAiLensCard...)
 │   ├── content/

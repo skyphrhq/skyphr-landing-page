@@ -19,8 +19,8 @@ function SkyAiTechStrip({ data, classNames }: { data: SkyAiTechStripData; classN
           </p>
         </div>
 
-        {/* Scrolls as a marquee until there is room to show every logo in one row */}
-        <div className="marquee-custom-slider relative flex-1 min-w-0 overflow-hidden mask-x-from-90% mask-x-to-100% 2xl:mask-none">
+        {/* Logos scroll as a continuous marquee at every breakpoint */}
+        <div className="marquee-custom-slider relative flex-1 min-w-0 overflow-hidden mask-x-from-90% mask-x-to-100%">
           <div className="flex marquee-wrapper">
             <LogoGroup logos={data.logos} />
             <LogoGroup logos={data.logos} cloned />
@@ -35,10 +35,7 @@ function LogoGroup({ logos, cloned }: { logos: SkyAiTechLogo[]; cloned?: boolean
   return (
     <ul
       aria-hidden={cloned || undefined}
-      className={twMerge(
-        "marquee-group shrink-0 flex items-center gap-10 pr-10 2xl:animate-none! 2xl:flex-1 2xl:justify-between 2xl:gap-6 2xl:pr-0",
-        cloned && "2xl:hidden",
-      )}>
+      className="marquee-group shrink-0 flex items-center gap-10 pr-10">
       {logos.map((logo) => (
         <li
           key={logo.name}
