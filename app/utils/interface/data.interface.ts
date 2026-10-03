@@ -126,10 +126,8 @@ export interface OurServiceCardDataArrayInterface {
   description: string;
   className?: string;
   imageOptions: ImageOptionsInterface;
-  ctaButton: {
-    label: string;
-    href: string;
-  };
+  // Service pages shown as pills, taken from the matching group in the navbar
+  services: NavbarLinksInterface[];
   style: {
     baseColor: string;
     darkColor: string;

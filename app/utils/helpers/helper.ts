@@ -1,3 +1,4 @@
+import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { PHONE_NUMBER_FORMATE } from "@/app/utils/constants/numberFormate.constants";
 import { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
 
@@ -98,3 +99,9 @@ export const verifyPhoneNumberLength = (phoneNumber: string, countryCode: string
 
   return rowPhoneNumber.length === expectedLength;
 };
+
+// "ai-ml-services" -> the service links listed under that group in the navbar's Services dropdown
+export const GetServiceNavLinks = (groupId: string) =>
+  NAVBAR_LINKS_DATA.find((link) => link.id === "services")
+    ?.dropDown.find((group) => group.id === groupId)
+    ?.dropDown.filter((link) => link.isLink) ?? [];

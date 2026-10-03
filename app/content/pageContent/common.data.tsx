@@ -1,5 +1,6 @@
 import AiDevelopmentAutomation from "@/app/assets/webp/ai-development-automation.webp";
 import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-development.webp";
+import MobileAppDevelopment from "@/app/assets/webp/mobile-app-development.webp";
 import MockupFive from "@/app/assets/webp/mockup-five.webp";
 import MockupFour from "@/app/assets/webp/mockup-four.webp";
 import MockupOne from "@/app/assets/webp/mockup-one.webp";
@@ -13,9 +14,9 @@ import MockupSeven from "@/app/assets/webp/mockup-seven.webp";
 import MockupSix from "@/app/assets/webp/mockup-six.webp";
 import MockupTen from "@/app/assets/webp/mockup-ten.webp";
 
-import WebAppDevelopment from "@/app/assets/webp/saas-app-development.webp";
 import UiUxDesign from "@/app/assets/webp/ui-ux-design.webp";
 import CEOImage from "@/app/assets/webp/varun-patel.webp";
+import { GetServiceNavLinks } from "@/app/utils/helpers/helper";
 import {
   AboutUsCardsDataArrayInterface,
   OurTeamMembersDataArrayInterface,
@@ -148,54 +149,11 @@ export const ABOUT_US_INFO_CARD_DATA: AboutUsCardsDataArrayInterface[] = [
 
 export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
   {
-    title: "UI/UX Design Services",
+    title: "AI/ML",
     className: "sticky top-[100px] md:top-[20%]",
     description:
-      "We create user-centered UI/UX designs that improve engagement, increase conversions, and deliver seamless experiences across web and mobile applications. Our product design process focuses on usability, accessibility, and business outcomes.",
-    ctaButton: {
-      label: "Explore Design Solutions",
-      href: "/services/ui-ux-design",
-    },
-    style: {
-      baseColor: "#AC9BFF",
-      darkColor: "#8674ED",
-    },
-    imageOptions: {
-      imagePath: UiUxDesign,
-      width: 350,
-      height: 300,
-      alt: "UI/UX design service illustration",
-    },
-  },
-  {
-    title: "SaaS & Web Application Development",
-    className: "sticky top-[130px] md:top-[25%]",
-    description:
-      "As a SaaS development company, we build scalable web applications and cloud-based software platforms using modern technologies and robust architectures. Our solutions are optimized for performance, security, and future growth.",
-    ctaButton: {
-      label: "Explore Web App Solutions",
-      href: "/services/saas-development-services",
-    },
-    style: {
-      baseColor: "#FF767A",
-      darkColor: "#FF5B60",
-    },
-    imageOptions: {
-      imagePath: WebAppDevelopment,
-      width: 350,
-      height: 300,
-      alt: "SaaS and web application development service illustration",
-    },
-  },
-  {
-    title: "AI Development & Automation Services",
-    className: "sticky top-[160px] md:top-[30%]",
-    description:
       "We help businesses automate workflows, improve efficiency, and unlock new opportunities through custom AI solutions, AI integrations, intelligent automation, and machine learning-powered systems tailored to business needs.",
-    ctaButton: {
-      label: "Explore AI Solutions",
-      href: "/services/ai-development-services",
-    },
+    services: GetServiceNavLinks("ai-ml-services"),
     style: {
       baseColor: "#B8C56F",
       darkColor: "#9FAD4A",
@@ -208,14 +166,11 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
   },
   {
-    title: "Custom Software Development",
-    className: "sticky top-[160px] md:top-[30%]",
+    title: "Software",
+    className: "sticky top-[130px] md:top-[25%]",
     description:
       "We develop scalable custom software solutions designed around your unique business requirements. From MVP development to enterprise software systems, we deliver reliable products built to support long-term growth.",
-    ctaButton: {
-      label: "Explore Software Solutions",
-      href: "/services/custom-software-development-services",
-    },
+    services: GetServiceNavLinks("Software-development-services"),
     style: {
       baseColor: "#FC905F",
       darkColor: "#FB7D44",
@@ -225,6 +180,40 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       width: 350,
       height: 300,
       alt: "Custom software development service illustration",
+    },
+  },
+  {
+    title: "Application",
+    className: "sticky top-[160px] md:top-[30%]",
+    description:
+      "We build progressive web apps, mobile apps, and enterprise applications that are fast, secure, and easy to use. Every app is designed to perform across devices and scale with your business as it grows.",
+    services: GetServiceNavLinks("application-development-services"),
+    style: {
+      baseColor: "#FF767A",
+      darkColor: "#FF5B60",
+    },
+    imageOptions: {
+      imagePath: MobileAppDevelopment,
+      width: 350,
+      height: 300,
+      alt: "Mobile and web application development service illustration",
+    },
+  },
+  {
+    title: "UI/UX Design",
+    className: "sticky top-[160px] md:top-[30%]",
+    description:
+      "We create user-centered UI/UX designs that improve engagement, increase conversions, and deliver seamless experiences across web and mobile applications. Our product design process focuses on usability, accessibility, and business outcomes.",
+    services: GetServiceNavLinks("ui-ux-design-column"),
+    style: {
+      baseColor: "#AC9BFF",
+      darkColor: "#8674ED",
+    },
+    imageOptions: {
+      imagePath: UiUxDesign,
+      width: 350,
+      height: 300,
+      alt: "UI/UX design service illustration",
     },
   },
 ];

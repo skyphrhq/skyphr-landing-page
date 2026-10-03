@@ -1,23 +1,26 @@
-import SAAS_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/saas-app-development-4x.webp";
+import WIREFRAME_DESIGNER_SERVICE_4X_IMG from "@/app/assets/webp/4x/wireframe-designer-4x.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
 import { createElement } from "react";
-import { FiLayers, FiTrendingUp, FiZap, FiUsers } from "react-icons/fi";
+import { FiLayers, FiTrendingUp, FiUsers, FiZap } from "react-icons/fi";
 
 export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   metadata: {
     title: "Wireframe Designer Services | UX Wireframing & Prototyping | Skyphr",
-    description: "Hire expert wireframe designers at Skyphr to create clear, user-focused wireframes and prototypes that improve UX, validate ideas, and accelerate digital product development.",
+    description:
+      "Hire expert wireframe designers at Skyphr to create clear, user-focused wireframes and prototypes that improve UX, validate ideas, and accelerate digital product development.",
     openGraph: {
       title: "Wireframe Designer Services | UX Wireframing & Prototyping | Skyphr",
-      description: "Hire expert wireframe designers at Skyphr to create clear, user-focused wireframes and prototypes that improve UX, validate ideas, and accelerate digital product development.",
+      description:
+        "Hire expert wireframe designers at Skyphr to create clear, user-focused wireframes and prototypes that improve UX, validate ideas, and accelerate digital product development.",
       images: "/og-image/wireframe-designer.png",
       type: "website",
     },
     twitter: {
       title: "Wireframe Designer Services | UX Wireframing & Prototyping | Skyphr",
-      description: "Hire expert wireframe designers at Skyphr to create clear, user-focused wireframes and prototypes that improve UX, validate ideas, and accelerate digital product development.",
+      description:
+        "Hire expert wireframe designers at Skyphr to create clear, user-focused wireframes and prototypes that improve UX, validate ideas, and accelerate digital product development.",
       card: "summary_large_image",
       creator: "@skyphrhq",
       site: "@skyphrhq",
@@ -29,9 +32,7 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   },
   hero: {
     header: {
-      title: [
-        [{ text: "Expert Wireframe Designer Services" }],
-      ],
+      title: [[{ text: "Expert Wireframe Designer Services" }]],
       description: [
         [
           {
@@ -40,7 +41,7 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
       heroImage: {
-        imagePath: SAAS_APP_DEVELOPMENT_4X_IMG,
+        imagePath: WIREFRAME_DESIGNER_SERVICE_4X_IMG,
         height: 2000,
         width: 2000,
         alt: "Wireframe Designer Services hero illustration",
@@ -63,40 +64,49 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     header: {
       title: [
         [{ text: "Professional" }, { text: "Wireframe" }],
-        [{ text: "Design", variant: "italic", classNames: "text-center" }, { text: "Services", variant: "italic" }],
+        [
+          { text: "Design", variant: "italic", classNames: "text-center" },
+          { text: "Services", variant: "italic" },
+        ],
       ],
       description: [
         [
           {
             text: "Our wireframe designers transform business requirements and product ideas into practical UX structures. We create low-fidelity and high-fidelity wireframes for websites, SaaS platforms, mobile apps, dashboards, and digital products.",
           },
-        ]
+        ],
       ],
     },
     cards: [
       {
         title: "Website Wireframing",
-        description: "Create structured website layouts with clear navigation, content hierarchy, and user journeys designed around business goals.",
+        description:
+          "Create structured website layouts with clear navigation, content hierarchy, and user journeys designed around business goals.",
       },
       {
         title: "Mobile App Wireframes",
-        description: "Plan intuitive mobile experiences with organized screens, interactions, navigation patterns, and user flows before visual design begins.",
+        description:
+          "Plan intuitive mobile experiences with organized screens, interactions, navigation patterns, and user flows before visual design begins.",
       },
       {
         title: "SaaS Wireframes",
-        description: "Design scalable SaaS product structures for dashboards, workflows, onboarding, account areas, and complex product experiences.",
+        description:
+          "Design scalable SaaS product structures for dashboards, workflows, onboarding, account areas, and complex product experiences.",
       },
       {
         title: "Dashboard Wireframes",
-        description: "Structure information-heavy dashboards with clear layouts, navigation, data organization, and efficient user interactions.",
+        description:
+          "Structure information-heavy dashboards with clear layouts, navigation, data organization, and efficient user interactions.",
       },
       {
         title: "User Flow Wireframes",
-        description: "Map complete user journeys and transform them into logical screen-by-screen experiences that reduce friction.",
+        description:
+          "Map complete user journeys and transform them into logical screen-by-screen experiences that reduce friction.",
       },
       {
         title: "Interactive Wireframes",
-        description: "Build clickable wireframes to demonstrate navigation, interactions, and product functionality before development.",
+        description:
+          "Build clickable wireframes to demonstrate navigation, interactions, and product functionality before development.",
       },
     ],
   },
@@ -104,7 +114,11 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     header: {
       title: [
         [{ text: "Features" }, { text: "of" }, { text: "Our" }],
-        [{ text: "Wireframe", variant: "italic" }, { text: "Design", variant: "italic" }, { text: "Services", variant: "italic" }],
+        [
+          { text: "Wireframe", variant: "italic" },
+          { text: "Design", variant: "italic" },
+          { text: "Services", variant: "italic" },
+        ],
       ],
       description: [],
     },
@@ -139,19 +153,23 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
       {
         title: "Reduce Development Rework",
-        description: "Identify usability and structural issues early so development teams can work from a clearer product direction.",
+        description:
+          "Identify usability and structural issues early so development teams can work from a clearer product direction.",
       },
       {
         title: "Improve User Experience",
-        description: "Build logical navigation and intuitive user flows around real user needs and business objectives.",
+        description:
+          "Build logical navigation and intuitive user flows around real user needs and business objectives.",
       },
       {
         title: "Align Teams Faster",
-        description: "Give stakeholders, designers, developers, and product teams a shared visual understanding of the product.",
+        description:
+          "Give stakeholders, designers, developers, and product teams a shared visual understanding of the product.",
       },
       {
         title: "Speed Up Product Development",
-        description: "Establish a clear foundation for UI design and development before moving into detailed implementation.",
+        description:
+          "Establish a clear foundation for UI design and development before moving into detailed implementation.",
       },
       {
         title: "Make Better Product Decisions",
@@ -181,19 +199,23 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
       {
         title: "03. Create Wireframes",
-        description: "Our wireframe designers create clear layouts that define the structure and functionality of each screen.",
+        description:
+          "Our wireframe designers create clear layouts that define the structure and functionality of each screen.",
       },
       {
         title: "04. Review & Refine",
-        description: "We review wireframes with your team, collect feedback, and refine the experience based on your requirements.",
+        description:
+          "We review wireframes with your team, collect feedback, and refine the experience based on your requirements.",
       },
       {
         title: "05. Interactive Prototyping",
-        description: "Where required, we connect screens into interactive prototypes to demonstrate the intended user journey.",
+        description:
+          "Where required, we connect screens into interactive prototypes to demonstrate the intended user journey.",
       },
       {
         title: "06. Design Handoff",
-        description: "Final wireframes are organized and prepared as a clear foundation for UI design and product development.",
+        description:
+          "Final wireframes are organized and prepared as a clear foundation for UI design and product development.",
       },
     ],
   },
@@ -244,14 +266,15 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         [
           {
             text: "We combine UX thinking, business requirements, and practical product knowledge to create wireframes that are useful beyond presentations. Every wireframe is structured to provide a clear foundation for the next stages of UI design and development.",
-          }
-        ]
+          },
+        ],
       ],
     },
     items: [
       {
         title: "Clear communication",
-        description: "We ensure transparent and effective communication throughout the wireframing process to align with your vision.",
+        description:
+          "We ensure transparent and effective communication throughout the wireframing process to align with your vision.",
       },
       {
         title: "User-focused structures",
@@ -263,7 +286,8 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
       {
         title: "Practical interactions",
-        description: "We define interactions that are both meaningful to users and feasible for developers to implement.",
+        description:
+          "We define interactions that are both meaningful to users and feasible for developers to implement.",
       },
       {
         title: "Consistent design logic",
@@ -291,7 +315,8 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       {
         id: 1,
         title: "Clarity Over Complexity",
-        description: "We simplify complex product requirements into clear layouts, logical navigation, and understandable user flows.",
+        description:
+          "We simplify complex product requirements into clear layouts, logical navigation, and understandable user flows.",
         icon: createElement(FiLayers, { className: "text-2xl" }),
         color: "#AC9BFF",
         bgColor: "rgba(172, 155, 255, 0.5)",
@@ -315,7 +340,8 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       {
         id: 4,
         title: "Purposeful Design",
-        description: "Every layout and interaction has a clear purpose connected to the product and business objectives.",
+        description:
+          "Every layout and interaction has a clear purpose connected to the product and business objectives.",
         icon: createElement(FiZap, { className: "text-2xl" }),
         color: "#5DADE2",
         bgColor: "rgba(93, 173, 226, 0.5)",
@@ -334,9 +360,9 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       description: [
         [
           {
-            text: "Skyphr helps businesses transform product concepts into structured digital experiences before development begins. Our wireframe designers combine UX expertise with product and technology understanding to create practical foundations for websites, SaaS platforms, mobile applications, and custom software."
-          }
-        ]
+            text: "Skyphr helps businesses transform product concepts into structured digital experiences before development begins. Our wireframe designers combine UX expertise with product and technology understanding to create practical foundations for websites, SaaS platforms, mobile applications, and custom software.",
+          },
+        ],
       ],
     },
     reasons: [
@@ -357,12 +383,15 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         [
           {
             text: "Our wireframe design services support businesses across multiple industries, including:",
-          }
-        ]
+          },
+        ],
       ],
     },
     items: [
-      { title: "SaaS & Technology", description: "Wireframes for digital platforms, dashboards, and enterprise software." },
+      {
+        title: "SaaS & Technology",
+        description: "Wireframes for digital platforms, dashboards, and enterprise software.",
+      },
       { title: "FinTech", description: "Secure, clear layouts for financial applications and user portals." },
       { title: "Healthcare", description: "Intuitive structures for patient portals and healthcare management tools." },
       { title: "E-commerce", description: "Optimized user journeys for shopping experiences and product catalogs." },
@@ -371,7 +400,10 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       { title: "Logistics", description: "Clear navigation for tracking systems and operational dashboards." },
       { title: "Professional Services", description: "Professional layouts for service offerings and client portals." },
       { title: "Startups", description: "Agile wireframing to rapidly validate product ideas and MVPs." },
-      { title: "Enterprise Businesses", description: "Scalable structures for complex internal tools and large-scale applications." },
+      {
+        title: "Enterprise Businesses",
+        description: "Scalable structures for complex internal tools and large-scale applications.",
+      },
     ],
   },
   faq: {
@@ -382,35 +414,43 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     faqsItems: [
       {
         question: "What is a wireframe in UX design?",
-        answer: "A wireframe is a visual structure of a digital product screen that defines layout, content hierarchy, navigation, and key interactions before detailed UI design begins.",
+        answer:
+          "A wireframe is a visual structure of a digital product screen that defines layout, content hierarchy, navigation, and key interactions before detailed UI design begins.",
       },
       {
         question: "Why does my business need wireframe design?",
-        answer: "Wireframes help validate product structure and user flows early, identify potential usability issues, and give designers and developers a clear direction.",
+        answer:
+          "Wireframes help validate product structure and user flows early, identify potential usability issues, and give designers and developers a clear direction.",
       },
       {
         question: "What types of wireframes do you create?",
-        answer: "We create low-fidelity, high-fidelity, responsive, interactive, website, mobile app, SaaS, dashboard, and web application wireframes.",
+        answer:
+          "We create low-fidelity, high-fidelity, responsive, interactive, website, mobile app, SaaS, dashboard, and web application wireframes.",
       },
       {
         question: "Can you create wireframes for an existing product?",
-        answer: "Yes. We can analyze your existing product and create improved wireframes based on your current interface, user flows, business requirements, and UX goals.",
+        answer:
+          "Yes. We can analyze your existing product and create improved wireframes based on your current interface, user flows, business requirements, and UX goals.",
       },
       {
         question: "Do you provide mobile and responsive wireframes?",
-        answer: "Yes. We create wireframes for mobile applications as well as responsive websites and web applications across different screen sizes.",
+        answer:
+          "Yes. We create wireframes for mobile applications as well as responsive websites and web applications across different screen sizes.",
       },
       {
         question: "Can wireframes be converted into UI designs?",
-        answer: "Yes. Wireframes can provide the structural foundation for complete UI design. Our team can continue from wireframing into detailed interface design when required.",
+        answer:
+          "Yes. Wireframes can provide the structural foundation for complete UI design. Our team can continue from wireframing into detailed interface design when required.",
       },
       {
         question: "Do you create clickable wireframe prototypes?",
-        answer: "Yes. We can connect wireframe screens into interactive prototypes to demonstrate navigation, user flows, and product interactions.",
+        answer:
+          "Yes. We can connect wireframe screens into interactive prototypes to demonstrate navigation, user flows, and product interactions.",
       },
       {
         question: "Can you work with our existing product team?",
-        answer: "Yes. Our wireframe designers can collaborate with your product managers, developers, designers, and internal stakeholders throughout the design process.",
+        answer:
+          "Yes. Our wireframe designers can collaborate with your product managers, developers, designers, and internal stakeholders throughout the design process.",
       },
     ],
   },
@@ -418,14 +458,18 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     header: {
       title: [
         [{ text: "Build" }, { text: "a" }, { text: "Clear" }, { text: "Foundation" }, { text: "for" }],
-        [{ text: "Your", variant: "italic" }, { text: "Digital", variant: "italic" }, { text: "Product", variant: "italic" }],
+        [
+          { text: "Your", variant: "italic" },
+          { text: "Digital", variant: "italic" },
+          { text: "Product", variant: "italic" },
+        ],
       ],
       description: [
         [
           {
             text: "Turn your ideas, requirements, and workflows into structured user experiences with professional wireframe design from Skyphr. Build with greater clarity before moving into UI design and development.",
           },
-        ]
+        ],
       ],
     },
     ctas: [
