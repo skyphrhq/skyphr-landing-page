@@ -2,6 +2,8 @@ Before doing ANY task in this project, read PROJECT_CONVENTIONS.md and follow it
 
 # Skyphr Landing Page
 
+Before adding or editing any page copy/data in `app/content/`, read [PAGE_CONTENT_RULES.md](PAGE_CONTENT_RULES.md) and follow it strictly: change values only, never the structure, and split titles exactly like the current file.
+
 Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4 + GSAP. Package manager: pnpm. Full rules: [PROJECT_CONVENTIONS.md](PROJECT_CONVENTIONS.md).
 
 ## Critical rules (summary)

@@ -48,7 +48,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     openGraph: {
       title,
       description,
-      images: "/og-image/ai-development-services.png",
+      images: "/og-image/sky-ai.png",
       type: "website",
     },
     twitter: {
@@ -57,7 +57,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       card: "summary_large_image",
       creator: "@skyphrhq",
       site: "@skyphrhq",
-      images: "/og-image/ai-development-services.png",
+      images: "/og-image/sky-ai.png",
     },
     alternates: {
       canonical: `${SITE_BASE_URL}/sky-ai`,

@@ -11,9 +11,9 @@ export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY", them
     case "CTA_SECONDARY":
       return {
         parentWrapper: twMerge(
-          "px-6 min-w-[170px] py-2.5 min-h-[45px] font-instrument-sans text-sm sm:text-base rounded-full border-0 outline-0 font-semibold group/btn overflow-hidden relative cursor-pointer ring-[1px] ring-(--root-black-color) flex items-center justify-between gap-6 pr-10",
+          "px-6 min-w-[170px] py-2.5 min-h-[45px] font-instrument-sans text-sm sm:text-base rounded-full border-0 outline-0 font-semibold group/btn overflow-hidden relative cursor-pointer flex items-center justify-between gap-6 pr-10",
           theme === "DARK"
-            ? "bg-(--root-black-color) text-(--root-white-color) ring-(--root-black-color)"
+            ? "bg-(--root-black-color) text-(--root-white-color)"
             : "bg-(--root-white-color) text-(--root-black-color)",
         ),
         childrenWrapper: twMerge(

@@ -175,7 +175,7 @@
 }
 
 /* ---------- Navbar dropdown panels ---------- */
-/* .skyphr-nav-panel is the shared shell. Grouped links (Hire) get .skyphr-nav-mega-panel,
+/* .skyphr-nav-panel is the shared shell. Grouped links (Services, Hire) get .skyphr-nav-mega-panel,
    a flat list of links (Services) gets .skyphr-nav-compact-panel. The choice is made from the data */
 /* The trigger keeps the grey pill and flipped chevron while its panel is open (click / keyboard, not only hover) */
 .skyphr-navbar-main-wrapper .skyphr-nav-links-wrapper-list > .skyphr-nav-item.is-open > .skyphr-nav-link {
@@ -235,12 +235,11 @@
     box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.14);
   }
 
-  /* Mega panel: as wide as its columns (up to 960px) and centered under the navbar */
+  /* Mega panel: fixed width (so switching tabs never resizes it), centered under the navbar */
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel {
     left: var(--skyphr-nav-panel-gutter);
     right: var(--skyphr-nav-panel-gutter);
-    width: fit-content;
-    max-width: min(1200px, calc(100% - 2 * var(--skyphr-nav-panel-gutter)));
+    width: min(1160px, calc(100% - 2 * var(--skyphr-nav-panel-gutter)));
     margin-inline: auto;
     padding-top: 10px;
   }
@@ -262,27 +261,48 @@
     padding: 28px 32px;
   }
 
-  /* Columns size to their content and wrap, so a new category in the data becomes a new column */
-  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px 40px;
-  }
-
-  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-grid > li {
-    flex: 0 1 auto;
-    min-width: 160px;
-  }
-
-  /* Link columns on the left, featured card as a fixed-width sidebar behind a divider on the right */
+  /* Category tabs in a rail on the left, the selected category's links in the middle, featured card on the right */
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-body {
     display: flex;
     gap: 28px;
+    min-height: 260px;
   }
 
-  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-body > .skyphr-nav-mega-panel-grid {
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-rail {
+    display: flex;
+    flex: 0 0 240px;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 20px;
+    border-right: 1px solid var(--border-color);
+  }
+
+  /* Links without a category sit under the tabs, behind a divider */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-tabs + .skyphr-nav-mega-panel-loose-links {
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Same inset as the tabs so the labels line up */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-loose-links > li > a {
+    margin-inline: 0;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-panes {
     flex: 1 1 auto;
     min-width: 0;
+    padding-top: 10px;
+  }
+
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-pane:not(.is-active) {
+    display: none;
+  }
+
+  /* Two columns of links, so a long category stays short */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-pane .skyphr-nav-mega-panel-column-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
   }
 
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-featured {
@@ -493,10 +513,17 @@
     gap: 12px;
     padding-bottom: 20px;
   }
-  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-grid {
+  /* No tabs on mobile: every category is listed one under another */
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-tabs {
+    display: none !important;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-panes {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
+  }
+  .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-loose-links {
+    padding-bottom: 28px;
   }
   .skyphr-navbar-main-wrapper .skyphr-nav-mega-panel-featured {
     padding-top: 28px;

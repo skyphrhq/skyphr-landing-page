@@ -29,7 +29,7 @@ function NavMegaPanelColumn({ item, headingId, pathname, onNavigate, className }
           {item?.label}
         </p>
       )}
-      <ul aria-labelledby={headingId} className="flex flex-col gap-0.5 pt-2">
+      <ul aria-labelledby={headingId} className="skyphr-nav-mega-panel-column-list flex flex-col gap-0.5 pt-2">
         {item?.dropDown?.map((link) => (
           <li key={link?.id}>
             <NavMegaPanelLink item={link} pathname={pathname} onNavigate={onNavigate} />

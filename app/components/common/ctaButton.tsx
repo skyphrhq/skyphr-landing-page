@@ -46,6 +46,12 @@ function CTAButton({
             theme === "DARK" ? "bg-(--root-black-color)" : "bg-(--root-white-color)",
           )}></span>
       )}
+      {/* Outline drawn above the hover fill, so the fill's anti-aliased curved edge can't thicken the line at the rounded ends */}
+      {btnStyle === "CTA_SECONDARY" && (
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full border border-(--root-black-color) pointer-events-none z-20"></span>
+      )}
     </Tag>
   );
 }
