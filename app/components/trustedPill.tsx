@@ -16,11 +16,11 @@ export default function TrustedPill({ className }: TrustedPillInterface) {
       )}>
       <div className="flex -space-x-3">
         <div className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full overflow-hidden border border-(--text-main-color)">
-          <Image src={DummyImage} alt="Client avatar" title="Client avatar" width={32} height={32} />
+          <Image src={DummyImage} alt="Skyphr client avatar" title="Skyphr client avatar" width={32} height={32} />
         </div>
 
         <div className="w-6.5 h-6.5 md:w-8 md:h-8 rounded-full overflow-hidden border border-(--text-main-color)">
-          <Image src={DummyImageTwo} alt="Client avatar" title="Client avatar" width={32} height={32} />
+          <Image src={DummyImageTwo} alt="Skyphr client avatar" title="Skyphr client avatar" width={32} height={32} />
         </div>
 
         <div

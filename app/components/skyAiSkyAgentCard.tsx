@@ -67,6 +67,7 @@ function SkyAiSkyAgentCard({ data }: SkyAiSkyAgentCardInterface) {
           <Image
             src={data.imageOptions.imagePath}
             alt={data.imageOptions.alt}
+            title={data.imageOptions.alt}
             width={data.imageOptions.width}
             height={data.imageOptions.height}
             sizes="(min-width: 1540px) 700px, (min-width: 1024px) 45vw, (min-width: 672px) 672px, 100vw"

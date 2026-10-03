@@ -268,6 +268,8 @@ Rules:
 - **3D / WebGL:** use Spline (`@splinetool/react-spline`, the client import, not `/next`, which can't load local files). Load it through `next/dynamic` with `ssr: false`, show a same-size skeleton while it loads (`skyVoiceOrbSkeleton.tsx`) and a static fallback without WebGL (`skyVoiceOrbPlaceholder.tsx`), fade the canvas edges with a radial `mask-image` so the scene's glow never shows as a square (`.skyai-voice-orb-scene`), and `stop()`/`play()` it from an IntersectionObserver + `visibilitychange` (see `skyVoiceOrb.tsx`). Scene files go in `public/spline/`, because Spline fetches them by URL.
 - **Rendering:** always `next/image` (`Image`) with `alt` and `title`; pass `width`/`height` from data (`ImageOptionsInterface` in `page.interface.ts`: `imagePath`, `alt`, `width`, `height`, `loading`, `className`). Default `loading="lazy"`; hero images set it explicitly in data. No raw `<img>` tags exist.
 - Images are referenced from **data files**, not hardcoded in the component.
+- **Alt / title text:** describe what the image shows and match the page or card it sits on (never copy another page's alt). Purely decorative images (background textures) use `alt=""` + `aria-hidden="true"`. Blog CMS images (`listing.image`, hero `image`, `seo.*.image`) always get a filled `alt`.
+- **OG / Twitter images:** OG PNGs are 1200×630. Page metadata goes through `createPageMetadata` / `normalizePageMetadata`, which emit each image via `createOgImage` (`url`, `width`, `height`, `alt` = page title, `type`). Never pass a bare URL string to `openGraph.images` outside those helpers.
 
 ---
 

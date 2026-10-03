@@ -70,7 +70,8 @@ function ContactUsSection({ data, classNames }: ContactUsSectionDataInterface) {
                   width={200}
                   height={200}
                   className="absolute right-5 bottom-[-20%] opacity-20"
-                  alt="Skyphr White Logo"
+                  alt="Skyphr logo"
+                  title="Skyphr logo"
                 />
               </div>
 

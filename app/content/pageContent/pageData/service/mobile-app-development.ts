@@ -58,7 +58,7 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
         imagePath: MOBILE_APP_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "Mobile App Development services hero illustration",
+        alt: "Mobile app development services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

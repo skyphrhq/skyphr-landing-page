@@ -58,7 +58,7 @@ export const RAG_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         imagePath: SAAS_APP_DEVELOPMENT_4X_IMG,
         height: 2000,
         width: 2000,
-        alt: "SaaS application development services hero illustration",
+        alt: "RAG development services hero illustration",
         className: "object-contain",
         loading: "eager",
       },

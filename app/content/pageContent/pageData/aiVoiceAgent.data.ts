@@ -35,7 +35,7 @@ export const AI_VOICE_AGENT_PAGE_DATA: AiVoiceAgentPageDataInterface = {
       title: "AI Voice Agent for Business | AI Call Automation | Skyphr",
       description:
         "Deploy an AI voice agent that answers calls 24/7, qualifies leads, books appointments, captures caller details, and automates business calls with Skyphr.",
-      images: "/og-image/ai-development-services.png",
+      images: "/og-image/ai-voice-agent.png",
       type: "website",
     },
     twitter: {
@@ -44,7 +44,7 @@ export const AI_VOICE_AGENT_PAGE_DATA: AiVoiceAgentPageDataInterface = {
         "Deploy an AI voice agent that answers calls 24/7, qualifies leads, books appointments, captures caller details, and automates business calls with Skyphr.",
       creator: "@skyphrhq",
       site: "@skyphrhq",
-      images: "/og-image/ai-development-services.png",
+      images: "/og-image/ai-voice-agent.png",
     },
     alternates: {
       canonical: `${SITE_BASE_URL}/ai-voice-agent`,
