@@ -387,6 +387,27 @@ export const NAVBAR_LINKS_DATA: NavbarLinksInterface[] = [
           },
         ],
       },
+      {
+        id: "ai-ml-hire",
+        label: "AI/ML",
+        href: "/hire",
+        type: "link",
+        isLink: false,
+        target: "_self",
+        priority: 0.75,
+        dropDown: [
+          {
+            id: "hire-ai-developers-hire",
+            label: "Hire AI Developers",
+            href: "/hire/hire-ai-developers",
+            type: "link",
+            isLink: true,
+            target: "_self",
+            priority: 0.85,
+            dropDown: [],
+          },
+        ],
+      },
     ],
   },
   {
