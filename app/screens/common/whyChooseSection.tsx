@@ -59,27 +59,31 @@ function WhyChooseSection({ data: { header, reasons, items }, classNames }: WhyC
             <div className="w-full md:w-[60%] relative z-10">
               <div className="w-full h-full flex flex-col items-start justify-center gap-6 md:gap-10 relative z-10">
                 <div className="w-full">
-                  {header?.title?.map((titleRow, rowIndex) => (
-                    <h2
-                      className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
-                      key={rowIndex}>
-                      {titleRow?.map((chunk, index) => {
-                        // The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO
-                        return (
-                          <Fragment key={index}>
-                            <span
-                              className={twMerge(
-                                "font-instrument-sans reveal-text-animation",
-                                chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
-                                chunk?.classNames,
-                              )}>
-                              {chunk.text.trim()}
-                            </span>{" "}
-                          </Fragment>
-                        );
-                      })}
-                    </h2>
-                  ))}
+                  {/* All title rows sit in one heading so crawlers read the full title, not one heading per row */}
+                  <h2 className="flex flex-col">
+                    {header?.title?.map((titleRow, rowIndex) => (
+                      <span
+                        className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
+                        key={rowIndex}>
+                        {titleRow?.map((chunk, index) => {
+                          // The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO
+                          return (
+                            <Fragment key={index}>
+                              <span
+                                className={twMerge(
+                                  "font-instrument-sans reveal-text-animation",
+                                  chunk?.variant === "italic" &&
+                                    "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                                  chunk?.classNames,
+                                )}>
+                                {chunk.text.trim()}
+                              </span>{" "}
+                            </Fragment>
+                          );
+                        })}
+                      </span>
+                    ))}
+                  </h2>
                   {header?.description?.length !== 0 && (
                     <div className="w-full flex flex-col items-start justify-start gap-4 pt-5">
                       {header?.description?.map((description, index) => (

@@ -5,7 +5,7 @@ import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation
 import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { OurServiceSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
@@ -31,19 +31,22 @@ function OurServiceSection({ data, classNames }: OurServiceSectionInterface) {
       className={twMerge("w-full h-auto bg-(--about-us-card-bg)",COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container @container">
         <div className="w-full flex items-center justify-center md:sticky md:top-[30vh] overflow-hidden">
-          {data?.header?.title?.map((titleRow, rowIndex) => (
-            <h2
-              className="bg-clip-text text-transparent bg-linear-to-t text-nowrap from-(--border-color) to-[#a7a7a7] font-black uppercase text-[clamp(40px,4.5vh,120px)] sm:text-[clamp(60px,11.5vh,120px)] lg:text-[clamp(100px,14vh,160px)] xl:text-[clamp(60px,25vh,180px)] font-instrument-sans reveal-animation"
-              key={rowIndex}>
-              {titleRow?.map((chunk, chunkIndex) => {
-                return (
-                  <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
-                    {chunk.text}
-                  </span>
-                );
-              })}
-            </h2>
-          ))}
+          {/* All title rows sit in one heading so crawlers read the full title, not one heading per row */}
+          <h2 className="bg-clip-text text-transparent bg-linear-to-t text-nowrap from-(--border-color) to-[#a7a7a7] font-black uppercase text-[clamp(40px,4.5vh,120px)] sm:text-[clamp(60px,11.5vh,120px)] lg:text-[clamp(100px,14vh,160px)] xl:text-[clamp(60px,25vh,180px)] font-instrument-sans reveal-animation">
+            {data?.header?.title?.map((titleRow, rowIndex) => (
+              <Fragment key={rowIndex}>
+                <span className="block">
+                  {titleRow?.map((chunk, chunkIndex) => {
+                    return (
+                      <span className={twMerge(chunk?.classNames)} key={chunkIndex}>
+                        {chunk.text}
+                      </span>
+                    );
+                  })}
+                </span>{" "}
+              </Fragment>
+            ))}
+          </h2>
         </div>
         <div className="max-w-6xl mx-auto space-y-10 md:space-y-20 reveal-animation">
           {data?.items?.map((item, index) => (
