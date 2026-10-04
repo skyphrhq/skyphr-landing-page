@@ -86,6 +86,7 @@ LandingPage/
 │   └── utils/
 │       ├── constants/          # *.constant(s).ts — shared class strings, animation presets, config
 │       ├── helpers/helper.ts   # Pure helper functions
+│       ├── helpers/clientInquiry.ts # Turnstile + client inquiry API submit, shared by every form
 │       ├── interface/          # All TS interfaces/types (4 files, see below)
 │       └── seo/                # metadata.ts (Next Metadata builders), schema.ts (JSON-LD builders)
 ├── types/type.ts               # SectionSchema + CMSImageData types for blog blocks
@@ -116,6 +117,7 @@ LandingPage/
 | Data shape for page content | `page.interface.ts` (shared page blocks) or `data.interface.ts` (navbar, hire, SkyAI) | `CommonPageDataInterface`, `SkyAiPageDataInterface` |
 | Shared Tailwind class string / animation preset | `app/utils/constants/common.constant.ts` / `animation.constant.ts` | `COMMON_SECTION_PADDING` |
 | Helper function | `app/utils/helpers/helper.ts` | `NormalizePath` |
+| Form submission (Turnstile token + client inquiry API) | `app/utils/helpers/clientInquiry.ts`; each form passes its own `NEXT_PUBLIC_*_FORM_ID` | `GetTurnstileToken`, `SubmitClientInquiry` |
 | SEO metadata / JSON-LD | `app/utils/seo/metadata.ts` / `schema.ts` | `normalizePageMetadata`, `generateFaqSchema` |
 | Color / design token | `:root` in `app/styles/globals.css` | `--skyai-lavender-bg` |
 | Keyframes / animation classes | `app/styles/animation.css` | `skyai-sparkle-spin` |

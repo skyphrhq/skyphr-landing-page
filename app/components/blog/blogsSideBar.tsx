@@ -1,11 +1,15 @@
 "use client";
 
 import Button from "@/app/components/common/button";
+import { GetTurnstileToken, RemoveTurnstileWidget, SubmitClientInquiry } from "@/app/utils/helpers/clientInquiry";
 import { SectionSchema } from "@/types/type";
-import { FormEvent, useEffect, useId, useState } from "react";
+import { FormEvent, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 import { twMerge } from "tailwind-merge";
+
+const NEWSLETTER_FORM_ID = process.env.NEXT_PUBLIC_NEWSLETTER_FORM_ID;
+const NEWSLETTER_TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_NEWSLETTER_TURNSTILE_SITE_KEY;
 
 type BlogsSideBarProps = {
   tags: string;
@@ -15,19 +19,49 @@ type BlogsSideBarProps = {
 export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: BlogsSideBarProps) => {
   const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [isMounted, setIsMounted] = useState(false);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
 
   const modalTitleId = useId();
 
-  const handleSubscribeSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubscribeSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsSubscribed(true);
+    const formData = new FormData(event.currentTarget);
+    setSubmitError("");
+    setIsSubmitting(true);
+
+    try {
+      const payload = new FormData();
+      payload.append("name", String(formData.get("name") ?? "").trim());
+      payload.append("email", String(formData.get("email") ?? "").trim());
+
+      const turnstileToken = await GetTurnstileToken(
+        turnstileContainerRef.current,
+        turnstileWidgetIdRef,
+        NEWSLETTER_TURNSTILE_SITE_KEY,
+      );
+      await SubmitClientInquiry(NEWSLETTER_FORM_ID, payload, turnstileToken);
+      setIsSubscribed(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+    } finally {
+      RemoveTurnstileWidget(turnstileWidgetIdRef);
+      setIsSubmitting(false);
+    }
   };
 
   const handleOpenSubscribeModal = () => {
     setIsSubscribed(false);
+    setSubmitError("");
     setIsSubscribeModalOpen(true);
   };
+
+  useEffect(() => {
+    return () => RemoveTurnstileWidget(turnstileWidgetIdRef);
+  }, []);
   useEffect(() => {
     const initialize = () => {
       setIsMounted(true);
@@ -145,10 +179,15 @@ export const UIComponent = ({ tags, newsletterTitle, newsletterDescription }: Bl
                       type="email"
                     />
                   </label>
+                  <div ref={turnstileContainerRef} className="hidden" />
+
+                  {submitError && <p className="font-inter text-sm text-red-500">{submitError}</p>}
+
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full rounded-lg bg-(--cta-button-background) px-5 py-3 font-instrument-sans text-base font-bold text-(--root-white-color)">
-                    Subscribe
+                    {isSubmitting ? "Subscribing..." : "Subscribe"}
                   </Button>
                 </form>
               )}
