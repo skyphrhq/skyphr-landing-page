@@ -1,5 +1,6 @@
 "use client";
 import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
+import CommonBgAbstract from "@/app/components/commonBgAbstract";
 import OurTeamIntroCard from "@/app/components/ourTeamIntroCard";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
@@ -35,10 +36,11 @@ function OurTeamSection({ data, classNames }: OurTeamSectionInterface) {
     { scope: containerRef },
   );
   return (
-    <div className={twMerge("w-full h-fit overflow-hidden", COMMON_SECTION_PADDING, classNames)} ref={containerRef}>
-      <div className="skyphr-container">
+    <div className={twMerge("w-full h-fit overflow-hidden relative", COMMON_SECTION_PADDING, classNames)} ref={containerRef}>
+      <CommonBgAbstract />
+      <div className="skyphr-container relative z-30">
         <CommonSectionHeader header={data.header} />
-        <div className="lg:max-w-[85%] xl:max-w-[60%] mx-auto">
+        <div className="xl:max-w-[85%] mx-auto">
           {data.members?.map((member, index) => (
             <div key={index} className="reveal-animation">
               <OurTeamIntroCard data={member} />

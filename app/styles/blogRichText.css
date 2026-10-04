@@ -1,0 +1,119 @@
+/* Blog CMS rich text (RICH_TEXT fields rendered with dangerouslySetInnerHTML, e.g. blog/textSection.tsx).
+   Tailwind's preflight strips margins and list styles from raw HTML, so the editor's formatting is restored here.
+   Covers everything the CMS editor can output: p, h1, h2, strong, em, s, u, ul, ol, blockquote, a, pre/code, hr. */
+
+.skyphr-blog-rich-text > * + * {
+  margin-top: 0px;
+}
+
+/* An empty line in the editor is saved as <p></p>; keep it one line tall instead of collapsing to nothing */
+.skyphr-blog-rich-text p:empty::before {
+  content: "\00a0";
+}
+
+.skyphr-blog-rich-text h1,
+.skyphr-blog-rich-text h2 {
+  font-family: var(--font-instrument-sans);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-main-color);
+}
+
+.skyphr-blog-rich-text h1 {
+  font-size: 1.875rem;
+}
+
+.skyphr-blog-rich-text h2 {
+  font-size: 1.5rem;
+}
+
+.skyphr-blog-rich-text :is(h1, h2) + * {
+  margin-top: 0.75em;
+}
+
+.skyphr-blog-rich-text strong {
+  font-weight: 700;
+  color: var(--text-main-color);
+}
+
+.skyphr-blog-rich-text em {
+  font-style: italic;
+}
+
+.skyphr-blog-rich-text s {
+  text-decoration: line-through;
+}
+
+.skyphr-blog-rich-text u {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.skyphr-blog-rich-text a {
+  color: var(--cta-button-background);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.skyphr-blog-rich-text ul,
+.skyphr-blog-rich-text ol {
+  padding-left: 1.5em;
+}
+
+.skyphr-blog-rich-text ul {
+  list-style: disc;
+}
+
+.skyphr-blog-rich-text ol {
+  list-style: decimal;
+}
+
+.skyphr-blog-rich-text li + li {
+  margin-top: 0.5em;
+}
+
+.skyphr-blog-rich-text li::marker {
+  color: var(--cta-button-background);
+}
+
+.skyphr-blog-rich-text blockquote {
+  padding: 0.75em 1.25em;
+  border-left: 4px solid var(--cta-button-background);
+  background: var(--about-us-card-bg);
+  border-radius: 0 8px 8px 0;
+  color: var(--text-main-color);
+  font-style: italic;
+}
+
+.skyphr-blog-rich-text code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--about-us-card-bg);
+  color: var(--text-main-color);
+}
+
+.skyphr-blog-rich-text pre {
+  overflow-x: auto;
+  padding: 1em 1.25em;
+  border-radius: 8px;
+  background: var(--about-us-card-bg);
+}
+
+.skyphr-blog-rich-text pre code {
+  padding: 0;
+  background: none;
+}
+
+.skyphr-blog-rich-text hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.skyphr-blog-rich-text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

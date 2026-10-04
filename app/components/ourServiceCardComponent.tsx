@@ -1,8 +1,8 @@
+import CtaServiceButton from "@/app/components/common/ctaServiceBtn";
 import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { OurServiceCardDataArrayInterface } from "@/app/utils/interface/data.interface";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import CtaServiceButton from "./common/ctaServiceBtn";
 
 function OurServiceCardComponent({
   data,
@@ -27,11 +27,11 @@ function OurServiceCardComponent({
       style={{ background: data?.style?.baseColor }}>
       <div
         className={twMerge(
-          "w-full h-full flex flex-col md:flex-row gap-5 md:gap-0 items-stretch justify-between @container",
+          "w-full h-full flex flex-col md:flex-row gap-5 md:gap-0 items-stretch justify-between",
           innerWrapperClassNames,
         )}>
         <div className="md:w-1/2 grow">
-          <div className="w-full h-full py-5 px-4 md:p-5 lg:p-10 @container">
+          <div className="w-full h-full py-5 px-4 md:p-5 lg:p-10">
             <div className="space-y-5 md:space-y-7">
               <span className="text-[20px] md:text-[26px] lg:text-[28px] xl:text-[30px] 2xl:text-[34px] inline-block font-bold font-instrument-sans text-(--root-black-color)">
                 {data?.title}
@@ -39,9 +39,15 @@ function OurServiceCardComponent({
               <p className="text-sm sm:text-base lg:text-lg font-normal font-inter text-(--text-main-color)">
                 {data?.description}
               </p>
-              <div className="w-fit">
-                <CtaServiceButton href={data?.ctaButton?.href} label={data?.ctaButton?.label} />
-              </div>
+              {data?.services?.length > 0 && (
+                <ul className="flex flex-wrap gap-x-2 gap-y-3">
+                  {data?.services?.map((service) => (
+                    <li key={service?.id}>
+                      <CtaServiceButton href={service?.href} label={service?.label} size="small" />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </div>
@@ -56,12 +62,12 @@ function OurServiceCardComponent({
               width={data?.imageOptions.width}
               height={data?.imageOptions.height}
               className={twMerge(
-                "object-cover w-full h-full min-w-full! max-w-full!",
+                "object-cover w-full h-full max-w-full! aspect-500/400 min-w-125 min-h-100",
                 data?.imageOptions.className,
                 COMMON_BORDER_RADIUS,
               )}
               loading={data?.imageOptions?.loading ? data?.imageOptions?.loading : "lazy"}
-              style={{ minWidth: `${data?.imageOptions?.width}px`, minHeight: `${data?.imageOptions?.height}px` }}
+              // style={{ minWidth: `${data?.imageOptions?.width}px`, minHeight: `${data?.imageOptions?.height}px` }}
             />
           </div>
         </div>

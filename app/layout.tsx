@@ -15,14 +15,20 @@ import { RootLayoutInterface } from "./utils/interface/common.interface";
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,9 +55,10 @@ export default function RootLayout({ children }: RootLayoutInterface) {
     <html
       lang="en-US"
       dir="ltr"
+      suppressHydrationWarning
       className={`${playfairDisplay.variable} ${inter.variable} ${instrumentSans.variable} antialiased`}>
-      <head>
-        <Script id="google-tag-manager" strategy="beforeInteractive">
+      <head suppressHydrationWarning>
+        <Script id="google-tag-manager" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){
               w[l]=w[l]||[];

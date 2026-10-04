@@ -6,7 +6,7 @@ import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
 import { ServicesSectionHeroInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface) {
@@ -25,29 +25,32 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
           ref={animationContainer}
           className="w-ful h-full relative z-20 flex flex-col gap-10 xl:gap-20 md:flex-row items-center justify-center">
           <div className="w-full md:w-1/2">
-            <div className="flex flex-col items-start justify-start gap-2">
+            {/* All title rows sit in one heading so crawlers read the full title, not one heading per row */}
+            <h1 className="flex flex-col items-start justify-start gap-2">
               {data?.header?.title?.map((titleRow, rowIndex) => (
-                <h1
-                  className="font-instrument-sans text-start text-4xl xl:text-5xl font-bold tracking-tight text-(--text-main-color) flex flex-wrap items-start justify-start gap-2 lg:gap-4"
+                <span
+                  className="font-instrument-sans text-start text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-(--text-main-color) flex flex-wrap items-start justify-start gap-2 lg:gap-4"
                   key={rowIndex}>
+                  {/* The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO */}
                   {titleRow?.map((chunk, index) => {
                     return (
-                      <span
-                        className={twMerge(
-                          "font-instrument-sans reveal-animation",
-                          chunk?.classNames,
-                          "reveal-animation",
-                          chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
-                        )}
-                        key={index}>
-                        {chunk.text}
-                      </span>
+                      <Fragment key={index}>
+                        <span
+                          className={twMerge(
+                            "font-instrument-sans reveal-animation",
+                            chunk?.classNames,
+                            "reveal-animation",
+                            chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                          )}>
+                          {chunk.text.trim()}
+                        </span>{" "}
+                      </Fragment>
                     );
                   })}
-                </h1>
+                </span>
               ))}
-            </div>
-            <div className="w-full flex flex-col items-start justify-start gap-4 pt-4">
+            </h1>
+            <div className="w-full flex flex-col items-start justify-start gap-4 pt-6">
               {data?.header?.description?.map((desc, index) => (
                 <p
                   className="font-instrument-sans text-sm sm:text-base lg:text-lg max-w-xl font-medium text-pretty text-start  text-(--text-main-color)  reveal-animation"

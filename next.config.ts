@@ -1,14 +1,34 @@
 import type { NextConfig } from "next";
 
+const branch = process.env.VERCEL_GIT_COMMIT_REF;
+const isDevelopmentBranch = branch === "DEVELOPMENT";
+
+console.log("[next.config] branch:", branch, "| redirect enabled:", !isDevelopmentBranch);
+
 const nextConfig: NextConfig = {
+  // The local blog CMS (blog-cms/) must never end up in the server bundle
+  outputFileTracingExcludes: {
+    "*": ["blog-cms/**"],
+  },
+  images: {
+    // AVIF is ~30-50% smaller than WebP; browsers without AVIF support fall back to WebP
+    formats: ["image/avif", "image/webp"],
+  },
+  experimental: {
+    optimizePackageImports: ["react-icons", "gsap", "lenis"],
+  },
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "skyphr-landing-page.vercel.app" }],
-        destination: "https://skyphr.com/:path*",
-        permanent: true,
-      },
+      ...(!isDevelopmentBranch
+        ? [
+            {
+              source: "/:path*",
+              has: [{ type: "host" as const, value: "skyphr-landing-page.vercel.app" }],
+              destination: "https://skyphr.com/:path*",
+              permanent: true,
+            },
+          ]
+        : []),
       {
         source: "/varun-patel",
         destination: "/about-us",

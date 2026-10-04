@@ -1,62 +1,78 @@
+import NavCompactPanel from "@/app/components/navbar/navCompactPanel";
+import NavMegaPanel from "@/app/components/navbar/navMegaPanel";
+import { NAV_MOBILE_MEDIA_QUERY } from "@/app/utils/constants/common.constant";
 import { IsNavItemActive } from "@/app/utils/helpers/helper";
-import { NavbarLinksInterface } from "@/app/utils/interface/data.interface";
+import { NavBarCommonLinkComponentInterface } from "@/app/utils/interface/common.interface";
 import Link from "next/link";
-import { MouseEvent } from "react";
-import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { FocusEvent, MouseEvent, PointerEvent, useRef } from "react";
+import { FaChevronDown } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 
 export function NavBarCommonLinkComponent({
   item,
-  isNested = false,
   className,
-  openDropdowns,
-  onToggleDropdown,
-  onCloseMobileMenu,
+  isPanelOpen,
+  onOpenPanel,
+  onHoverPanel,
+  onClosePanel,
+  onScheduleClosePanel,
   onNavigate,
   parentWrapperClassName,
   pathname,
-}: {
-  item: NavbarLinksInterface;
-  isNested?: boolean;
-  className?: string;
-  parentWrapperClassName?: string;
-  openDropdowns: Set<string>;
-  onToggleDropdown: (id: string) => void;
-  onCloseMobileMenu: () => void;
-  onNavigate: () => void;
-  pathname: string;
-}) {
+}: NavBarCommonLinkComponentInterface) {
+  const itemRef = useRef<HTMLLIElement | null>(null);
+  // True while the panel is open only because the mouse is over it, so the first click pins it instead of closing it
+  const isHoverOpenedRef = useRef(false);
   const hasDropdown = item?.dropDown?.length > 0;
-  const isOpen = openDropdowns.has(item?.id);
+  // Grouped sub-links (children with their own children) get the mega panel; a flat list gets the compact dropdown
+  const hasMegaPanel = hasDropdown && item.dropDown.some((child) => child?.dropDown?.length > 0);
   const isActive = IsNavItemActive(item, pathname);
   const shouldRenderLink = item?.isLink ?? true;
+  const panelId = `skyphr-nav-panel-${item?.id}`;
   const navContent = (
     <>
       <span>{item?.label}</span>
-      {hasDropdown ? (
-        isNested ? (
-          <FaChevronRight className="skyphr-nav-chevron-right text-xs shrink-0 transition-transform" />
-        ) : (
-          <FaChevronDown className="skyphr-nav-chevron-down text-xs shrink-0 transition-transform" />
-        )
-      ) : null}
+      {hasDropdown ? <FaChevronDown className="skyphr-nav-chevron-down text-xs shrink-0 transition-transform" /> : null}
     </>
   );
   const navLinkClassName = twMerge(
     "skyphr-nav-link flex items-center justify-between gap-2 font-medium font-instrument-sans transition-all text-(--text-secondary-color)",
-    `${isNested ? "w-full min-w-64 px-4 py-3 text-base rounded" : "px-3 py-1 text-lg rounded"}`,
-    `${hasDropdown && isOpen ? "max-xmd:bg-(--active-link-bg)" : ""}`,
+    "h-9 px-3.5 text-lg rounded-full",
     !shouldRenderLink && hasDropdown && "cursor-pointer",
     !shouldRenderLink && !hasDropdown && "cursor-default",
     className,
   );
+  const panelTriggerProps = hasDropdown
+    ? ({ "aria-haspopup": "true", "aria-expanded": isPanelOpen, "aria-controls": panelId } as const)
+    : {};
+
+  const isMobileNav = () => window.matchMedia(NAV_MOBILE_MEDIA_QUERY).matches;
 
   const handleNavLinkClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    const isMobileNav = window.matchMedia("(max-width: 991px)").matches;
+    const isMobile = isMobileNav();
 
-    if (isMobileNav && hasDropdown) {
+    if (hasDropdown && (isMobile || !shouldRenderLink)) {
       event.preventDefault();
-      onToggleDropdown(item?.id);
+      const shouldClose = isPanelOpen && !isHoverOpenedRef.current;
+      isHoverOpenedRef.current = false;
+
+      if (shouldClose) {
+        onClosePanel();
+      } else {
+        onOpenPanel(item?.id);
+      }
+
+      if (isMobile && hasMegaPanel) {
+        // Move focus into the drill-down screen; preventScroll because it is still sliding in
+        requestAnimationFrame(() => {
+          itemRef.current
+            ?.querySelector<HTMLButtonElement>(".skyphr-nav-mega-panel-back-btn")
+            ?.focus({ preventScroll: true });
+        });
+      } else if (!isMobile && event.detail > 0) {
+        // Mouse clicks shouldn't leave the focus pill behind; keyboard activation keeps focus so Tab enters the panel
+        event.currentTarget.blur();
+      }
       return;
     }
 
@@ -64,11 +80,48 @@ export function NavBarCommonLinkComponent({
     event.currentTarget.blur();
   };
 
+  const handlePointerEnter = (event: PointerEvent<HTMLLIElement>) => {
+    if (!hasDropdown || event.pointerType !== "mouse" || isMobileNav()) return;
+
+    if (!isPanelOpen) {
+      isHoverOpenedRef.current = true;
+    }
+    onHoverPanel(item?.id);
+  };
+
+  const handlePointerLeave = (event: PointerEvent<HTMLLIElement>) => {
+    if (!hasDropdown || event.pointerType !== "mouse" || isMobileNav()) return;
+
+    onScheduleClosePanel();
+  };
+
+  // Tabbing out of the panel closes it. Focus moving to nothing (a click on empty space) is left to the outside-click handler
+  const handleBlur = (event: FocusEvent<HTMLLIElement>) => {
+    if (!hasDropdown || !isPanelOpen || isMobileNav()) return;
+
+    const nextFocused = event.relatedTarget;
+    if (nextFocused instanceof Node && !event.currentTarget.contains(nextFocused)) {
+      onClosePanel();
+    }
+  };
+
+  const handleBack = () => {
+    onClosePanel();
+    itemRef.current?.querySelector<HTMLElement>(".skyphr-nav-link")?.focus({ preventScroll: true });
+  };
+
   return (
     <li
+      ref={itemRef}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onBlur={handleBlur}
       className={twMerge(
-        "skyphr-nav-item @container xmd:@container-normal",
+        "skyphr-nav-item",
+        // The mega panel is positioned against the navbar container / drawer, so its item can't be a containing block
+        hasDropdown ? (hasMegaPanel ? "has-mega-panel" : "has-compact-panel") : "@container xmd:@container-normal",
         isActive && "is-active",
+        hasDropdown && isPanelOpen && "is-open",
         parentWrapperClassName,
       )}>
       {shouldRenderLink ? (
@@ -77,7 +130,8 @@ export function NavBarCommonLinkComponent({
           target={item?.target}
           title={item?.label}
           onClick={handleNavLinkClick}
-          className={navLinkClassName}>
+          className={navLinkClassName}
+          {...panelTriggerProps}>
           {navContent}
         </Link>
       ) : hasDropdown ? (
@@ -85,37 +139,29 @@ export function NavBarCommonLinkComponent({
           type="button"
           onClick={handleNavLinkClick}
           className={twMerge(navLinkClassName, "w-full skyphr-nav-btn-link")}
-          aria-haspopup="true"
-          aria-expanded={isOpen}>
+          {...panelTriggerProps}>
           {navContent}
         </button>
       ) : (
         <span className={navLinkClassName}>{navContent}</span>
       )}
-      {hasDropdown ? (
-        <div
-          className={`skyphr-nav-dropdown ${isOpen ? "is-open" : ""} ${
-            isNested
-              ? "skyphr-nav-dropdown-nested left-full top-0 pl-2"
-              : "skyphr-nav-dropdown-root left-1/2 top-full pt-3"
-          }`}>
-          <ul className="min-w-72 rounded-xl border border-(--border-color) bg-(--root-white-color) p-2 shadow-[0px_18px_45px_rgba(0,0,0,0.14)]">
-            {item?.dropDown?.map((dropdownItem) => (
-              <NavBarCommonLinkComponent
-                key={dropdownItem?.id}
-                item={dropdownItem}
-                isNested
-                className="px-4 py-2"
-                openDropdowns={openDropdowns}
-                onToggleDropdown={onToggleDropdown}
-                onCloseMobileMenu={onCloseMobileMenu}
-                onNavigate={onNavigate}
-                pathname={pathname}
-                parentWrapperClassName="px-0! py-0!"
-              />
-            ))}
-          </ul>
-        </div>
+      {hasMegaPanel ? (
+        <NavMegaPanel
+          item={item}
+          panelId={panelId}
+          isOpen={isPanelOpen}
+          pathname={pathname}
+          onNavigate={onNavigate}
+          onBack={handleBack}
+        />
+      ) : hasDropdown ? (
+        <NavCompactPanel
+          item={item}
+          panelId={panelId}
+          isOpen={isPanelOpen}
+          pathname={pathname}
+          onNavigate={onNavigate}
+        />
       ) : null}
     </li>
   );

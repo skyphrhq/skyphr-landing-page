@@ -326,7 +326,13 @@ export const TAILWIND_CSS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring Tailwind CSS developers, our development process, engagement models, technical expertise, timelines, and ongoing support.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_TAILWIND_CSS_DEVELOPER_FAQ_DATA,
   },

@@ -218,6 +218,50 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
     ],
   },
+  industriesServe: {
+    header: {
+      title: [[{ text: "Industries" }, { text: "We" }, { text: "Serve", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "We design interfaces that fit how users in each industry think and work, so products feel familiar, clear and easy to adopt.",
+          },
+        ],
+      ],
+    },
+    items: [
+      {
+        title: "SaaS & B2B Products",
+        description:
+          "Dashboards, onboarding and complex workflows designed to be clear for both new and power users.",
+      },
+      {
+        title: "Fintech",
+        description:
+          "Banking, payments and investment experiences that make financial data easy to read and build user trust.",
+      },
+      {
+        title: "Healthcare",
+        description:
+          "Patient and clinician interfaces focused on accessibility, clarity and fewer steps in critical tasks.",
+      },
+      {
+        title: "E-commerce & Retail",
+        description:
+          "Product discovery, checkout and account flows designed to reduce friction and lift conversions.",
+      },
+      {
+        title: "EdTech",
+        description:
+          "Learning experiences and course layouts that keep students engaged and make progress easy to follow.",
+      },
+      {
+        title: "AI Products",
+        description:
+          "Interfaces for chat, agents and AI-powered features that set clear expectations and keep users in control.",
+      },
+    ],
+  },
   whyChoose: {
     header: {
       title: [
