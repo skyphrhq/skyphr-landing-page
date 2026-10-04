@@ -25,7 +25,10 @@ function SkyVoiceTrustSection({ data, classNames }: SkyVoiceTrustSectionInterfac
         const titleAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({ trigger: container, start: "top 70%" });
         gsap.fromTo(gsap.utils.toArray(".reveal-text-animation"), titleAnimation.FROM, titleAnimation.TO);
 
-        const cardAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({ trigger: ".skyai-voice-trust-cards", start: "top 80%" });
+        const cardAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({
+          trigger: ".skyai-voice-trust-cards",
+          start: "top 80%",
+        });
         gsap.fromTo(gsap.utils.toArray(".reveal-animation"), cardAnimation.FROM, cardAnimation.TO);
       });
     },
@@ -36,10 +39,13 @@ function SkyVoiceTrustSection({ data, classNames }: SkyVoiceTrustSectionInterfac
     <div
       ref={containerRef}
       id={data.id}
-      className={twMerge("relative w-full h-auto scroll-mt-20 bg-(--about-us-card-bg)", COMMON_SECTION_PADDING, classNames)}>
+      className={twMerge(
+        "relative w-full h-auto scroll-mt-20 bg-(--about-us-card-bg)",
+        COMMON_SECTION_PADDING,
+        classNames,
+      )}>
       <CommonSectionHeader
         header={data.header}
-        isSingleHeading
         className="pb-10! md:pb-16!"
         headerParentClass=""
         descriptionClass="max-w-140 text-(--skyai-voice-muted)"

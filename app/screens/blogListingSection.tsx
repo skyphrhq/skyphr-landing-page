@@ -5,7 +5,7 @@ import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation
 import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { BlogListingSectionInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function BlogListingSection({ data, posts, classNames }: BlogListingSectionInterface) {
@@ -33,15 +33,17 @@ function BlogListingSection({ data, posts, classNames }: BlogListingSectionInter
             <h1 className="font-instrument-sans text-4xl lg:text-5xl xl:text-[62px] 2xl:text-[72px] font-bold text-(--text-main-color)">
               {data.header.title.map((titleRow, rowIndex) => (
                 <span key={rowIndex} className="flex flex-wrap items-center justify-center gap-2 lg:gap-4">
+                  {/* The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO */}
                   {titleRow.map((chunk, index) => (
-                    <span
-                      key={index}
-                      className={twMerge(
-                        chunk.variant === "italic" && "italic font-playfair-display text-(--cta-button-background)",
-                        chunk.classNames,
-                      )}>
-                      {chunk.text.trim()}
-                    </span>
+                    <Fragment key={index}>
+                      <span
+                        className={twMerge(
+                          chunk.variant === "italic" && "italic font-playfair-display text-(--cta-button-background)",
+                          chunk.classNames,
+                        )}>
+                        {chunk.text.trim()}
+                      </span>{" "}
+                    </Fragment>
                   ))}
                 </span>
               ))}

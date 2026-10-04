@@ -26,9 +26,25 @@ type SitemapLink = {
   target?: "_blank" | "_self";
 };
 
+type SitemapSubGroup = {
+  title: string;
+  links: SitemapLink[];
+};
+
 type SitemapGroup = {
   title: string;
   links: SitemapLink[];
+  subGroups?: SitemapSubGroup[];
+};
+
+// Main listing page first, then every dropdown column as its own sub group
+const getDropDownGroup = (id: string, title: string): SitemapGroup => {
+  const page = NAVBAR_LINKS_DATA.find((item) => item.id === id);
+  return {
+    title,
+    links: page ? [{ label: page.label, href: page.href, target: page.target }] : [],
+    subGroups: page?.dropDown.map((category) => ({ title: category.label, links: category.dropDown })) ?? [],
+  };
 };
 
 const sitemapGroups: SitemapGroup[] = [
@@ -43,16 +59,8 @@ const sitemapGroups: SitemapGroup[] = [
     title: "Product Pages",
     links: NAVBAR_LINKS_DATA.map((page) => (page.id === "our-products" ? page.dropDown : [])).flat(),
   },
-  {
-    title: "Services Pages",
-    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat(),
-  },
-  {
-    title: "Hire Pages",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire" ? page.dropDown.flatMap((category) => category.dropDown) : [],
-    ).flat(),
-  },
+  getDropDownGroup("services", "Services Pages"),
+  getDropDownGroup("hire", "Hire Pages"),
   {
     title: "Blog Posts",
     links: GET_SORTED_BLOG_POSTS().map((post) => ({ label: post.listing.title, href: `/blog/${post.slug}` })),
@@ -102,6 +110,23 @@ export default function SitemapPage() {
                     </li>
                   ))}
                 </ul>
+
+                {group.subGroups?.map((subGroup) => (
+                  <div key={`${group.title}-${subGroup.title}`} className="pt-10">
+                    <h3 className="font-instrument-sans text-xl font-semibold text-(--text-main-color) md:text-2xl">
+                      {subGroup.title}
+                    </h3>
+                    <ul className="flex flex-wrap gap-3 pt-5 md:gap-4">
+                      {subGroup.links.map((link) => (
+                        <li key={`${subGroup.title}-${link.href}-${link.label}`}>
+                          <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href} target={link.target}>
+                            {link.label}
+                          </CTAButton>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </section>
             ))}
           </div>

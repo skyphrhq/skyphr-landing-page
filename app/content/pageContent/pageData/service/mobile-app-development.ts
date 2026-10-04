@@ -201,7 +201,13 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
           { text: "Process", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our Mobile App Development Process covers strategy, UI/UX design, development, testing, deployment, and optimization to deliver scalable, high-performance mobile applications aligned with your business goals and user needs.",
+          },
+        ],
+      ],
     },
     steps: [
       {

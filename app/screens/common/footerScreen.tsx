@@ -9,6 +9,13 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
+// Links of one navbar dropdown category, e.g. ("hire", "backend-engineering") → the backend hire pages
+const getCategoryLinks = (pageId: string, categoryId: string) =>
+  NAVBAR_LINKS_DATA.filter((page) => page.id === pageId)
+    .flatMap((page) => page.dropDown ?? [])
+    .filter((category) => category.id === categoryId)
+    .flatMap((category) => category.dropDown);
+
 const FOOTER_LINK_GROUPS = [
   {
     title: "Company",
@@ -17,31 +24,16 @@ const FOOTER_LINK_GROUPS = [
       ...EXTRA_PAGE_LINKS_DATA,
     ],
   },
-  { title: "Services", links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat() },
   {
-    title: "Hire Frontend",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire"
-        ? page.dropDown?.filter((item) => item.id === "frontend-engineering").flatMap((category) => category.dropDown)
-        : [],
-    ).flat(),
+    // One link per service category: the first service of each sub-group
+    title: "Services",
+    links: NAVBAR_LINKS_DATA.filter((page) => page.id === "services")
+      .flatMap((page) => page.dropDown ?? [])
+      .flatMap((category) => category.dropDown?.slice(0, 1) ?? []),
   },
-  {
-    title: "Hire Backend",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire"
-        ? page.dropDown?.filter((item) => item.id === "backend-engineering").flatMap((category) => category.dropDown)
-        : [],
-    ).flat(),
-  },
-  {
-    title: "Hire UI/UX",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire"
-        ? page.dropDown?.filter((item) => item.id === "ui-ux-design").flatMap((category) => category.dropDown)
-        : [],
-    ).flat(),
-  },
+  { title: "Hire Frontend", links: getCategoryLinks("hire", "frontend-engineering") },
+  { title: "Hire Backend", links: getCategoryLinks("hire", "backend-engineering") },
+  { title: "Hire UI/UX", links: getCategoryLinks("hire", "ui-ux-design") },
 ];
 
 function FooterScreen() {

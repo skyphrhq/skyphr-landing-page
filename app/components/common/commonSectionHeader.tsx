@@ -1,5 +1,6 @@
 "use client";
 import { CommonSectionHeaderInterface } from "@/app/utils/interface/common.interface";
+import { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
 
 function CommonSectionHeader({
@@ -7,7 +8,7 @@ function CommonSectionHeader({
   className,
   headerParentClass,
   descriptionClass,
-  isSingleHeading = false,
+  isSingleHeading = true,
 }: CommonSectionHeaderInterface) {
   // Each title row is its own <h2> by default; with isSingleHeading the rows become lines of one <h2>
   const TitleRow = isSingleHeading ? "span" : "h2";
@@ -20,16 +21,18 @@ function CommonSectionHeader({
       )}
       key={rowIndex}>
       {titleRow?.map((chunk, index) => {
+        // The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO
         return (
-          <span
-            className={twMerge(
-              "font-instrument-sans reveal-text-animation",
-              chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
-              chunk?.classNames,
-            )}
-            key={index}>
-            {chunk.text.trim()}
-          </span>
+          <Fragment key={index}>
+            <span
+              className={twMerge(
+                "font-instrument-sans reveal-text-animation",
+                chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                chunk?.classNames,
+              )}>
+              {chunk.text.trim()}
+            </span>{" "}
+          </Fragment>
         );
       })}
     </TitleRow>

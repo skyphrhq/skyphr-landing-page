@@ -146,7 +146,13 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
   useCase: {
     header: {
       title: [[{ text: "Business" }, { text: "Benefits" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Discover how enterprise applications improve operational efficiency, automate workflows, strengthen security, connect systems, and provide scalable technology that supports long-term business growth.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -190,7 +196,13 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
           { text: "Process", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our enterprise app development process combines business discovery, strategic planning, UI/UX design, development, testing, deployment, and ongoing optimization for scalable applications.",
+          },
+        ],
+      ],
     },
     steps: [
       {
@@ -336,7 +348,13 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
           { text: "Development", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our enterprise app development is driven by clarity, scalability, performance, security, and reliability, ensuring every application delivers lasting value and supports evolving business needs.",
+          },
+        ],
+      ],
     },
     valuesCards: ENTERPRISE_APP_DEVELOPMENT_VALUES_CARDS,
   },
