@@ -4,7 +4,7 @@ import type { CMSImageData } from "@/types/type";
 import type { Metadata } from "next";
 
 export const SITE_NAME = "Skyphr";
-export const DEFAULT_OG_IMAGE = "/og-image/saas-development-services.png";
+export const DEFAULT_OG_IMAGE = "/og-image/home-page.png";
 export const TWITTER_HANDLE = "@skyphrhq";
 export const DEFAULT_LANGUAGE = "en-US";
 export const DEFAULT_ROBOTS: Metadata["robots"] = {
