@@ -20,6 +20,7 @@ export function SkyAiNavPill({ pathname, onNavigate }: { pathname: string; onNav
     <li className={twMerge("skyphr-nav-item skyai-nav-item", isActive && "is-active")}>
       <Link
         href={SKYAI_HREF}
+        title="SkyAI"
         onClick={handleClick}
         aria-current={isActive ? "page" : undefined}
         className="skyai-nav-pill">

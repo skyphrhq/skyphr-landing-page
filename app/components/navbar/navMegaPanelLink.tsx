@@ -38,6 +38,7 @@ function NavMegaPanelLink({ item, pathname, onNavigate, className }: NavMegaPane
       href={item?.href}
       target={item?.target}
       rel={item?.target === "_blank" ? "noopener noreferrer" : undefined}
+      title={item?.label}
       onClick={onNavigate}
       aria-current={isActive ? "page" : undefined}
       className={linkClassName}>

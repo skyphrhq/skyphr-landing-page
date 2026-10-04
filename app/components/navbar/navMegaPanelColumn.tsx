@@ -17,6 +17,7 @@ function NavMegaPanelColumn({ item, headingId, pathname, onNavigate, className }
           id={headingId}
           href={item?.href}
           target={item?.target}
+          title={item?.label}
           onClick={onNavigate}
           className={twMerge(
             HEADING_CLASS_NAME,
