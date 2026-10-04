@@ -23,8 +23,8 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
     <div className={twMerge("w-full h-fit relative bg-white overflow-hidden pt-32 pb-20 xl:pt-55 xl:pb-35", classNames)}>
       <Image
         src={HumanRoboHand}
-        alt=""
-        title=""
+        alt="Human hand reaching towards a robotic hand, representing human and AI collaboration"
+        title="Human hand reaching towards a robotic hand, representing human and AI collaboration"
         width={1500}
         height={982}
         className="w-full h-full pointer-events-none select-none absolute object-cover opacity-8 top-0 right-0 z-10"
@@ -38,7 +38,7 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
             {data?.header?.title?.map((title, rowIndex) => {
               return (
                 <h1
-                  className="font-instrument-sans text-center text-4xl  xl:text-6xl font-bold tracking-tight text-(--text-main-color)"
+                  className="font-instrument-sans text-center text-4xl lg:text-5xl xl:text-[62px] 2xl:text-[72px] font-bold tracking-tight text-(--text-main-color)"
                   key={rowIndex}>
                   {title?.map((chunk, index) => {
                     return (
@@ -47,7 +47,7 @@ function ContactHeroSection({ data, onStartProjectClick, classNames }: ContactHe
                           "font-instrument-sans reveal-animation",
                           chunk?.classNames,
                           "reveal-animation",
-                          chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
+                          chunk?.variant === "italic" && "italic font-semibold font-playfair-display text-(--cta-button-background)",
                         )}
                         key={index}>
                         {chunk.text}

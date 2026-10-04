@@ -1,44 +1,33 @@
 import JsonLd from "@/app/components/JsonLd";
-import { NEXTJS_MODERN_BUSINESSES_BLOG_DATA } from "@/app/content/pageContent/pageData/blog/nextjs-modern-businesses.data";
-import BlogArticleScreen from "@/app/screens/blogs/blogArticleScreen";
-import { createPageMetadata } from "@/app/utils/seo/metadata";
-import { generateArticleSchema, generateBreadcrumbSchema } from "@/app/utils/seo/schema";
+import { GET_SORTED_BLOG_POSTS } from "@/app/content/pageContent/pageData/blog";
+import { BLOG_PAGE_DATA } from "@/app/content/pageContent/pageData/blog.data";
+import BlogListingSection from "@/app/screens/blogListingSection";
+import { normalizePageMetadata } from "@/app/utils/seo/metadata";
+import { generateBreadcrumbSchema, generateWebPageSchema } from "@/app/utils/seo/schema";
 import type { Metadata } from "next";
 
-const blog = NEXTJS_MODERN_BUSINESSES_BLOG_DATA;
-const title = `${blog.hero.title} | Skyphr`;
-const description = blog.hero.excerpt;
+const title =
+  typeof BLOG_PAGE_DATA.metadata.title === "string" ? BLOG_PAGE_DATA.metadata.title : "Blog | Skyphr";
+const description = BLOG_PAGE_DATA.metadata.description ?? "Insights from the Skyphr team.";
 const path = "/blog";
-const image = "/og-image/hire-nextjs-developers.png";
 
-export const metadata: Metadata = createPageMetadata({
-  title,
-  description,
-  path,
-  image,
-  type: "article",
-});
+export const metadata: Metadata = normalizePageMetadata(BLOG_PAGE_DATA.metadata, path);
 
 function BlogPage() {
   return (
     <>
       <JsonLd
         data={[
-          generateArticleSchema({
-            title,
-            description,
-            path,
-            authorName: blog.hero.authorName,
-            publishedAt: "2025-06-18",
-            image,
-          }),
+          generateWebPageSchema({ title, description, path }),
           generateBreadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Blog", path },
           ]),
         ]}
       />
-      <BlogArticleScreen />
+      <section className="w-full h-auto">
+        <BlogListingSection data={BLOG_PAGE_DATA.listing} posts={GET_SORTED_BLOG_POSTS()} />
+      </section>
     </>
   );
 }

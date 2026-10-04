@@ -1,11 +1,13 @@
 import type {
   AboutSection,
   ContactUsSectionInterface,
+  DeliveryApproachSectionData,
   DevelopmentProcessSectionData,
   FAQSection,
   FeaturedWorkDataInterface,
   FeaturesIncludeSectionData,
   HeroSection,
+  IndustriesServeSectionData,
   OurApproachInterface,
   OurInsightsSection,
   OurTeamSectionInterface as OurTeamSectionDataInterface,
@@ -19,6 +21,21 @@ import type {
   WhyChooseSectionData,
   WhatWeBuildSectionData,
 } from "@/app/utils/interface/page.interface";
+import type {
+  BlogListingSection,
+  BlogPostData,
+  SkyAiBuiltBySection,
+  SkyAiChallengesSection,
+  SkyAiHeroSection,
+  SkyAiProcessSection,
+  SkyAiSecuritySection,
+  SkyAiServicesSection,
+  SkyVoiceAfterCallSection,
+  SkyVoiceCallFlowSection,
+  SkyVoiceHeroSection,
+  SkyVoiceTrustSection,
+  SkyVoiceWhoForSection,
+} from "@/app/utils/interface/data.interface";
 
 export interface HeroSectionElementInterface {
   data: HeroSection;
@@ -122,6 +139,16 @@ export interface UseCaseSectionProps {
   classNames?: string;
 }
 
+export interface IndustriesServeSectionInterface {
+  data: IndustriesServeSectionData;
+  classNames?: string;
+}
+
+export interface DeliveryApproachSectionInterface {
+  data: DeliveryApproachSectionData;
+  classNames?: string;
+}
+
 export interface TechnologyStackSectionProps {
   data: TechnologyStackSectionData;
   classNames?: string;
@@ -129,5 +156,71 @@ export interface TechnologyStackSectionProps {
 
 export interface WhyChooseSectionProps {
   data: WhyChooseSectionData;
+  classNames?: string;
+}
+
+export interface SkyAiHeroSectionInterface {
+  data: SkyAiHeroSection;
+  classNames?: string;
+}
+
+export interface SkyAiServicesSectionInterface {
+  data: SkyAiServicesSection;
+  classNames?: string;
+}
+
+export interface SkyAiChallengesSectionInterface {
+  data: SkyAiChallengesSection;
+  classNames?: string;
+}
+
+export interface SkyAiBuiltBySectionInterface {
+  data: SkyAiBuiltBySection;
+  classNames?: string;
+}
+
+export interface SkyAiProcessSectionInterface {
+  data: SkyAiProcessSection;
+  classNames?: string;
+}
+
+export interface SkyAiSecuritySectionInterface {
+  data: SkyAiSecuritySection;
+  classNames?: string;
+}
+
+export interface SkyVoiceHeroSectionInterface {
+  data: SkyVoiceHeroSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceCallFlowSectionInterface {
+  data: SkyVoiceCallFlowSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceWhoForSectionInterface {
+  data: SkyVoiceWhoForSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceAfterCallSectionInterface {
+  data: SkyVoiceAfterCallSection;
+  classNames?: string;
+}
+
+export interface SkyVoiceTrustSectionInterface {
+  data: SkyVoiceTrustSection;
+  classNames?: string;
+}
+
+export interface BlogListingSectionInterface {
+  data: BlogListingSection;
+  posts: BlogPostData[];
+  classNames?: string;
+}
+
+export interface BlogArticleScreenInterface {
+  data: BlogPostData;
   classNames?: string;
 }

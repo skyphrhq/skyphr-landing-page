@@ -166,7 +166,10 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
 
   faq: {
     header: {
-      title: [[{ text: "Got Questions? " }], [{ text: "We've Got " }, { text: "Answers", variant: "italic" }]],
+      title: [
+        [{ text: "Got" }, { text: "Questions?", variant: "italic" }],
+        [{ text: "We've Got " }, { text: "Answers", variant: "italic" }],
+      ],
       description: [
         [
           { text: "Everything you need to know before starting your project with " },

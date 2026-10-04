@@ -225,6 +225,8 @@ At Skyphr, we combine experienced TypeScript engineering, product-focused execut
 
 ## Frequently Asked Questions
 
+Find answers to common questions about hiring TypeScript developers, our development expertise, engagement models, technologies, project timelines, and ongoing support.
+
 ### Why should I hire TypeScript developers instead of JavaScript developers?
 
 TypeScript offers static typing, improved code quality, better scalability, and enhanced maintainability, making it ideal for large-scale and enterprise applications.

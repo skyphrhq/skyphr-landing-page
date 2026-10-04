@@ -195,6 +195,8 @@ At Skyphr, we combine product-focused design thinking, experienced UI profession
 
 ## Frequently Asked Questions
 
+Find answers to common questions about hiring UI designers, our design process, engagement models, expertise, timelines, and how Skyphr can support your digital product design needs.
+
 ### Why should I hire dedicated UI designers?
 
 Dedicated UI designers focus entirely on creating intuitive, engaging, and scalable interfaces that improve user experience and business outcomes.

@@ -332,7 +332,13 @@ export const UI_DESIGNER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring UI designers, our design process, engagement models, expertise, timelines, and how Skyphr can support your digital product design needs.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_UI_DESIGNER_FAQ_DATA,
   },

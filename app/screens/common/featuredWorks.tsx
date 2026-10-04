@@ -54,6 +54,7 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                   title={item.alt}
                   width={380}
                   height={380}
+                  sizes="380px"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -69,10 +70,11 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt=""
-                  title=""
+                  alt={item.alt}
+                  title={item.alt}
                   width={380}
                   height={380}
+                  sizes="380px"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -88,10 +90,11 @@ function FeaturedWorks({ data, showShadow = true, classNames }: FeaturedWorksSec
                 className={twMerge("min-w-95 aspect-380/380 overflow-hidden reveal-animation", COMMON_BORDER_RADIUS)}>
                 <Image
                   src={item.imagePath}
-                  alt=""
-                  title=""
+                  alt={item.alt}
+                  title={item.alt}
                   width={380}
                   height={380}
+                  sizes="380px"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />

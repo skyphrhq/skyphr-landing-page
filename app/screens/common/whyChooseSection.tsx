@@ -8,10 +8,10 @@ import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/consta
 import { WhyChooseSectionProps } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSectionProps) {
+function WhyChooseSection({ data: { header, reasons, items }, classNames }: WhyChooseSectionProps) {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -59,25 +59,31 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
             <div className="w-full md:w-[60%] relative z-10">
               <div className="w-full h-full flex flex-col items-start justify-center gap-6 md:gap-10 relative z-10">
                 <div className="w-full">
-                  {header?.title?.map((titleRow, rowIndex) => (
-                    <h2
-                      className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[20px] md:text-2xl lg:text-3xl xl:text-[34px] font-bold"
-                      key={rowIndex}>
-                      {titleRow?.map((chunk, index) => {
-                        return (
-                          <span
-                            className={twMerge(
-                              "font-instrument-sans reveal-text-animation",
-                              chunk?.variant === "italic" && "italic font-semibold font-playfair-display",
-                              chunk?.classNames,
-                            )}
-                            key={index}>
-                            {chunk.text.trim()}
-                          </span>
-                        );
-                      })}
-                    </h2>
-                  ))}
+                  {/* All title rows sit in one heading so crawlers read the full title, not one heading per row */}
+                  <h2 className="flex flex-col">
+                    {header?.title?.map((titleRow, rowIndex) => (
+                      <span
+                        className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
+                        key={rowIndex}>
+                        {titleRow?.map((chunk, index) => {
+                          // The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO
+                          return (
+                            <Fragment key={index}>
+                              <span
+                                className={twMerge(
+                                  "font-instrument-sans reveal-text-animation",
+                                  chunk?.variant === "italic" &&
+                                    "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                                  chunk?.classNames,
+                                )}>
+                                {chunk.text.trim()}
+                              </span>{" "}
+                            </Fragment>
+                          );
+                        })}
+                      </span>
+                    ))}
+                  </h2>
                   {header?.description?.length !== 0 && (
                     <div className="w-full flex flex-col items-start justify-start gap-4 pt-5">
                       {header?.description?.map((description, index) => (
@@ -95,7 +101,26 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
                       ))}
                     </div>
                   )}
-                  {reasons && (
+                  {!!items?.length && (
+                    <div className="pt-5">
+                      <ul className="flex flex-col gap-4">
+                        {items.map((item) => (
+                          <li key={item.title} className="flex items-start gap-2.5 max-w-[70%]">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-(--cta-button-background)" />
+                            <div className="flex flex-col gap-1">
+                              <h3 className="font-instrument-sans text-base font-semibold text-(--text-main-color) reveal-text-animation">
+                                {item.title}
+                              </h3>
+                              <p className="font-inter text-sm leading-5 text-(--text-secondary-color) reveal-text-animation">
+                                {item.description}
+                              </p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {!!reasons?.length && (
                     <div className="pt-5">
                       <ul className="flex flex-col gap-2">
                         {reasons.map((item) => (
@@ -113,8 +138,8 @@ function WhyChooseSection({ data: { header, reasons }, classNames }: WhyChooseSe
               </div>
               <Image
                 src={QuoteIcon}
-                alt=""
-                title=""
+                alt="Quotation mark icon"
+                title="Quotation mark icon"
                 width={280}
                 height={225}
                 className="absolute top-0 right-0"

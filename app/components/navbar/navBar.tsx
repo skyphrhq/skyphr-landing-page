@@ -3,8 +3,14 @@ import SkyPhrLogo from "@/app/assets/logo/skyphr-logo-transparent-black.webp";
 import Button from "@/app/components/common/button";
 import CTAButton from "@/app/components/common/ctaButton";
 import { NavBarCommonLinkComponent } from "@/app/components/common/navBarCommonLinkComponent";
+import { SkyAiNavPill } from "@/app/components/navbar/skyAiNavPill";
 import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { gsap } from "@/app/lib/gsap";
+import {
+  NAV_MOBILE_MEDIA_QUERY,
+  NAV_PANEL_CLOSE_DELAY_MS,
+  NAV_PANEL_SWITCH_DELAY_MS,
+} from "@/app/utils/constants/common.constant";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,36 +20,96 @@ import { FaXmark } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { twMerge } from "tailwind-merge";
 
+
+
 function NavBarComponent() {
   const navBarContainer = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
-  const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
+  // The open mega panel (desktop) / drill-down screen (mobile). Storing the pathname closes it on any route change
+  const [openPanel, setOpenPanel] = useState<{ id: string; pathname: string } | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [areDropdownsSuppressed, setAreDropdownsSuppressed] = useState(false);
+  // One pending hover action at a time: a delayed close or a delayed switch to another panel
+  const panelTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openPanelId = openPanel?.pathname === pathname ? openPanel.id : null;
 
-  const handleToggleDropdown = (id: string) => {
-    setOpenDropdowns((prevOpenDropdowns) => {
-      const updatedOpenDropdowns = new Set(prevOpenDropdowns);
+  const clearPanelTimer = () => {
+    if (panelTimerRef.current) {
+      clearTimeout(panelTimerRef.current);
+      panelTimerRef.current = null;
+    }
+  };
 
-      if (updatedOpenDropdowns.has(id)) {
-        updatedOpenDropdowns.delete(id);
-      } else {
-        updatedOpenDropdowns.add(id);
-      }
+  const handleOpenPanel = (id: string) => {
+    clearPanelTimer();
+    setOpenPanel({ id, pathname });
+  };
 
-      return updatedOpenDropdowns;
-    });
+  const handleClosePanel = () => {
+    clearPanelTimer();
+    setOpenPanel(null);
+  };
+
+  const handleHoverPanel = (id: string) => {
+    clearPanelTimer();
+
+    if (openPanelId && openPanelId !== id) {
+      panelTimerRef.current = setTimeout(() => setOpenPanel({ id, pathname }), NAV_PANEL_SWITCH_DELAY_MS);
+      return;
+    }
+
+    setOpenPanel({ id, pathname });
+  };
+
+  const handleScheduleClosePanel = () => {
+    clearPanelTimer();
+    panelTimerRef.current = setTimeout(() => setOpenPanel(null), NAV_PANEL_CLOSE_DELAY_MS);
   };
 
   const handleCloseMobileMenu = () => {
     setIsMobileMenuOpen(false);
-    setOpenDropdowns(new Set());
+    handleClosePanel();
   };
 
   const handleNavigate = () => {
     handleCloseMobileMenu();
-    setAreDropdownsSuppressed(true);
   };
+
+  useEffect(() => clearPanelTimer, []);
+
+  // Escape and outside clicks close the open panel
+  useEffect(() => {
+    if (!openPanelId) return;
+
+    const getOpenItem = () => navBarContainer.current?.querySelector<HTMLElement>(".skyphr-nav-item.is-open");
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+
+      const openItem = getOpenItem();
+      if (openItem?.contains(document.activeElement)) {
+        openItem.querySelector<HTMLElement>(".skyphr-nav-link")?.focus({ preventScroll: true });
+      }
+      setOpenPanel(null);
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      // In the mobile drawer the drill-down screen is closed with Back / the close button
+      if (window.matchMedia(NAV_MOBILE_MEDIA_QUERY).matches) return;
+
+      const openItem = getOpenItem();
+      if (openItem && event.target instanceof Node && !openItem.contains(event.target)) {
+        setOpenPanel(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [openPanelId]);
 
   useEffect(() => {
     document.body.classList.toggle("fixed-body-container", isMobileMenuOpen);
@@ -100,14 +166,10 @@ function NavBarComponent() {
   return (
     <nav
       ref={navBarContainer}
-      onPointerLeave={() => setAreDropdownsSuppressed(false)}
-      className={twMerge(
-        "w-full max-w-full top-0 left-1/2 -translate-x-1/2 fixed z-9999 bg-transparent border-b border-b-(--border-color) skyphr-navbar-main-wrapper",
-        areDropdownsSuppressed && "is-dropdown-suppressed",
-      )}>
+      className="w-full max-w-full top-0 left-1/2 -translate-x-1/2 fixed z-9999 bg-transparent border-b border-b-(--border-color) skyphr-navbar-main-wrapper">
       <div className="w-full skyphr-container h-auto backdrop-blur-[1px] relative z-2">
-        <div className="py-2.5 xl:py-5 navbar-inner-wrapper  flex items-center justify-between ">
-          <Link href="/" title="Skyphr Home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+        <div className="py-2.5 xl:py-5 navbar-inner-wrapper  flex items-center justify-between px-0!">
+          <Link href="/" title="Skyphr Home" aria-label="Skyphr home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
             <Image
               width={180}
               height={40}
@@ -134,7 +196,7 @@ function NavBarComponent() {
               isMobileMenuOpen && "is-open",
             )}>
             <div className="skyphr-mobile-nav-close-btn-wrapper">
-              <Link href="/" title="Skyphr Home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
+              <Link href="/" title="Skyphr Home" aria-label="Skyphr home" className="cursor-pointer skyphr-navbar-logo-wrapper -ml-3.75">
                 <Image
                   width={130}
                   height={30}
@@ -158,18 +220,21 @@ function NavBarComponent() {
               data-lenis-prevent-touch
               data-lenis-prevent-wheel
               className="w-full grow skyphr-navbar-links-wrapper">
-              <ul className="w-full flex items-center justify-center gap-3 skyphr-nav-links-wrapper-list">
+              <ul className="w-full flex items-center justify-center gap-2 skyphr-nav-links-wrapper-list">
+                <SkyAiNavPill pathname={pathname} onNavigate={handleNavigate} />
                 {NAVBAR_LINKS_DATA?.map((item) => {
-                  if (item.type === "listing") {
-                    return null; // Skip rendering this item in the navbar
+                  if (item.type === "listing" || item.id === "home") {
+                    return null; // Skip rendering this item in the navbar (Home is reached via the logo)
                   } else {
                     return (
                       <NavBarCommonLinkComponent
                         key={item?.id}
                         item={item}
-                        openDropdowns={openDropdowns}
-                        onToggleDropdown={handleToggleDropdown}
-                        onCloseMobileMenu={handleCloseMobileMenu}
+                        isPanelOpen={openPanelId === item?.id}
+                        onOpenPanel={handleOpenPanel}
+                        onHoverPanel={handleHoverPanel}
+                        onClosePanel={handleClosePanel}
+                        onScheduleClosePanel={handleScheduleClosePanel}
                         onNavigate={handleNavigate}
                         pathname={pathname}
                       />
@@ -193,10 +258,7 @@ function NavBarComponent() {
             type="button"
             aria-label="Open navigation menu"
             aria-expanded={isMobileMenuOpen}
-            onClick={() => {
-              setAreDropdownsSuppressed(false);
-              setIsMobileMenuOpen(true);
-            }}
+            onClick={() => setIsMobileMenuOpen(true)}
             className="block xmd:hidden">
             <GiHamburgerMenu className="text-2xl text-(--text-main-color) transition-all" />
           </Button>

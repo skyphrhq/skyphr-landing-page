@@ -1,7 +1,7 @@
 "use client";
 
 import SkyphrWhiteLogo from "@/app/assets/logo/skyphr-logo-transparent-white.webp";
-import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { EXTRA_PAGE_LINKS_DATA, NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
 import { SOCIAL_LINKS } from "@/app/content/pageContent/socilaLinks.data";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,36 +9,31 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
+// Links of one navbar dropdown category, e.g. ("hire", "backend-engineering") → the backend hire pages
+const getCategoryLinks = (pageId: string, categoryId: string) =>
+  NAVBAR_LINKS_DATA.filter((page) => page.id === pageId)
+    .flatMap((page) => page.dropDown ?? [])
+    .filter((category) => category.id === categoryId)
+    .flatMap((category) => category.dropDown);
+
 const FOOTER_LINK_GROUPS = [
   {
     title: "Company",
-    links: NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
-  },
-  { title: "Services", links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat() },
-  {
-    title: "Hire Frontend",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire"
-        ? page.dropDown?.filter((item) => item.id === "frontend-engineering").flatMap((category) => category.dropDown)
-        : [],
-    ).flat(),
+    links: [
+      ...NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+      ...EXTRA_PAGE_LINKS_DATA,
+    ],
   },
   {
-    title: "Hire Backend",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire"
-        ? page.dropDown?.filter((item) => item.id === "backend-engineering").flatMap((category) => category.dropDown)
-        : [],
-    ).flat(),
+    // One link per service category: the first service of each sub-group
+    title: "Services",
+    links: NAVBAR_LINKS_DATA.filter((page) => page.id === "services")
+      .flatMap((page) => page.dropDown ?? [])
+      .flatMap((category) => category.dropDown?.slice(0, 1) ?? []),
   },
-  {
-    title: "Hire UI/UX",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire"
-        ? page.dropDown?.filter((item) => item.id === "ui-ux-design").flatMap((category) => category.dropDown)
-        : [],
-    ).flat(),
-  },
+  { title: "Hire Frontend", links: getCategoryLinks("hire", "frontend-engineering") },
+  { title: "Hire Backend", links: getCategoryLinks("hire", "backend-engineering") },
+  { title: "Hire UI/UX", links: getCategoryLinks("hire", "ui-ux-design") },
 ];
 
 function FooterScreen() {
@@ -72,9 +67,13 @@ function FooterScreen() {
                   />
                 </div>
                 <p className="text-neutral-300 text-sm leading-6">
-                  Skyphr designs and builds scalable digital products with strategy, clean interfaces, and reliable
+                  Skyphr designs and builds scalable digital products with strategy, clean interfaces and reliable
                   engineering.
                 </p>
+                <address className="not-italic text-neutral-300 text-sm leading-6 mt-4 hidden">
+                  A-568, Money Plant High St, Gota, Ahmedabad, Gujarat 382470, India
+                  <span className="block text-neutral-500">GSTIN: 24HARPP4908J1Z2</span>
+                </address>
               </div>
               <div className="flex items-center justify-start md:justify-end gap-3 grow">
                 {SOCIAL_LINKS.map(({ icon: Icon, href, label }, index) => (

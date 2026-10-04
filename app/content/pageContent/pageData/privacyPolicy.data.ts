@@ -640,7 +640,7 @@ export const PRIVACY_POLICY_PAGE_DATA: PrivacyPolicyPageData = {
       "If you have questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact:",
     email: "support@skyphr.com",
     website: "www.skyphr.com",
-    address: "A 568, Money Plant High Street, Gota, Ahmedabad, Gujarat 382470",
+    address: "A-568, Money Plant High St, Gota, Ahmedabad, Gujarat 382470, India",
     responseNote:
       "We will make reasonable efforts to respond to privacy-related requests in accordance with applicable laws and regulations.",
   },

@@ -5,7 +5,7 @@ export const COMMON_REVEL_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars 
   FROM: {
     y: 50,
     opacity: 0,
-    filter: "blur(10px)",
+    filter: "blur(3px)",
   },
   TO: {
     y: 0,
@@ -15,6 +15,15 @@ export const COMMON_REVEL_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars 
     ease: "power3.out",
     stagger: 0.1,
   },
+};
+
+// Above-the-fold hero: start states are the `.skyphr-hero-rise` / `.skyphr-hero-fade` classes, so GSAP only tweens to the end state
+export const HERO_REVEAL_ANIMATION: gsap.TweenVars = {
+  y: 0,
+  opacity: 1,
+  duration: 0.8,
+  ease: "power3.out",
+  stagger: 0.1,
 };
 
 export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
@@ -34,7 +43,7 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
     FROM: {
       y: 50,
       opacity: 0,
-      filter: "blur(10px)",
+      filter: "blur(3px)",
     },
     TO: {
       y: 0,
@@ -52,6 +61,25 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
     },
   };
 };
+// /ai-voice-agent call flow: stage elements rise in; each element sets its own delay with `data-flow-delay`
+export const SKY_VOICE_CALL_FLOW_STAGE_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars } = {
+  FROM: {
+    y: 12,
+    scale: 0.98,
+    opacity: 0,
+    filter: "blur(4px)",
+  },
+  TO: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    filter: "blur(0px)",
+    duration: 0.6,
+    ease: "expo.out",
+    delay: (_index: number, target: HTMLElement) => Number(target.dataset.flowDelay ?? 0),
+  },
+};
+
 export const ABOUT_US_CARD_ANIMATION_CLASS = (direction: ANIMATION_DIRECTION) => {
   switch (direction) {
     case "TOP_LEFT":

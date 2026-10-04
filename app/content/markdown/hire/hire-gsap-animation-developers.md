@@ -206,6 +206,8 @@ At Skyphr, we combine animation engineering, modern frontend expertise, and busi
 
 ## Frequently Asked Questions
 
+Find answers to common questions about hiring GSAP animation developers, our development process, technologies, engagement models, performance optimization, and interactive web animation services.
+
 ### Why should I hire GSAP animation developers?
 
 GSAP developers help create high-performance web animations, interactive user experiences, and engaging digital products that improve user engagement and conversions.

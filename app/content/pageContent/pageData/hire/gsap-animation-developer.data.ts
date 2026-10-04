@@ -357,7 +357,13 @@ export const GSAP_ANIMATION_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring GSAP animation developers, our development process, technologies, engagement models, performance optimization, and interactive web animation services.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_GSAP_DEVELOPER_FAQ_DATA,
   },

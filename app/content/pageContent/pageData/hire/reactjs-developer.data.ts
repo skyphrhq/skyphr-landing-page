@@ -64,7 +64,7 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "We help businesses design and develop scalable React.js applications that improve user engagement, accelerate product delivery, and support long-term business objectives.",
+            text: "We help businesses design and develop scalable React.js applications that improve user engagement, accelerate product delivery and support long-term business objectives.",
           },
         ],
       ],
@@ -211,7 +211,7 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "Our React.js developers work across modern frontend ecosystems and complementary technologies.",
+            text: "Our React.js developers use modern frameworks, libraries, APIs, and cloud technologies to build secure, scalable, high-performance applications that integrate seamlessly with your existing systems and support long-term product growth.",
           },
         ],
       ],
@@ -325,7 +325,7 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "The principles behind every product we build and every engineering decision we make.",
+            text: "Our React development team combines technical excellence, scalable architecture, performance-focused engineering, and product thinking to build reliable digital experiences that support business goals, user needs, and long-term growth.",
           },
         ],
       ],
@@ -385,7 +385,13 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring React.js developers, including expertise, engagement models, project requirements, development processes, technology capabilities, and how Skyphr can help you build and scale high-performance digital products.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_REACT_JS_DEVELOPER_FAQ_DATA,
   },

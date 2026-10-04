@@ -140,6 +140,181 @@ export const HOME_PAGE_FAQ_DATA: FaqCommonCardData[] = [
   },
 ];
 
+export const SKY_AI_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "Why choose Skyphr for AI development?",
+    answer: (
+      <p>
+        <span className="font-semibold">Skyphr</span> combines <span className="font-semibold">AI engineering,</span>{" "}
+        <span className="font-semibold">software development</span>,{" "}
+        <span className="font-semibold">UI/UX design,</span> and{" "}
+        <span className="font-semibold">product strategy,</span> to build practical AI solutions that integrate with
+        real business systems. We focus on production-ready AI applications rather than isolated prototypes.
+      </p>
+    ),
+  },
+  {
+    question: "Do you work with international clients?",
+    answer: (
+      <p>
+        Yes. <span className="font-semibold">Skyphr,</span> works with <span className="font-semibold">Startups,</span>{" "}
+        <span className="font-semibold">SaaS companies,</span> and{" "}
+        <span className="font-semibold">Enterprises globally,</span> with a strong focus on serving businesses across{" "}
+        <span className="font-semibold">Europe,</span> <span className="font-semibold">United Kingdom,</span>{" "}
+        <span className="font-semibold">North America,</span> and{" "}
+        <span className="font-semibold">Emerging markets.</span>
+      </p>
+    ),
+  },
+  {
+    question: "Can you build an AI MVP for a startup?",
+    answer: (
+      <p>
+        Yes. We can help startups validate <span className="font-semibold">AI</span> product ideas through focused{" "}
+        <span className="font-semibold">MVP development</span> and proof-of-concept solutions before expanding into a
+        larger production system.
+      </p>
+    ),
+  },
+  {
+    question: " What AI development services do you provide?",
+    answer: (
+      <p>
+        Our <span className="font-semibold">AI development</span> services include
+        <span className="font-semibold">AI agent development,</span>{" "}
+        <span className="font-semibold">LLM integration,</span> <span className="font-semibold">RAG development,</span>{" "}
+        <span className="font-semibold">AI chatbot development,</span>{" "}
+        <span className="font-semibold">AI workflow automation,</span>{" "}
+        <span className="font-semibold">custom AI applications,</span>{" "}
+        <span className="font-semibold">AI-powered SaaS development,</span> and{" "}
+        <span className="font-semibold">AI strategy and consulting</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide ongoing AI support after launch?",
+    answer: (
+      <p>
+        Yes. We provide ongoing <span className="font-semibold">AI system maintenance,</span>{" "}
+        <span className="font-semibold">monitoring,</span> <span className="font-semibold">model,</span> and{" "}
+        <span className="font-semibold">workflow improvements</span>
+        <span className="font-semibold">feature development,</span> <span className="font-semibold">integrations,</span>{" "}
+        and <span className="font-semibold">technical support</span>
+        as your AI solution evolves.
+      </p>
+    ),
+  },
+];
+
+export const RAG_DEVELOPMENT_SERVICE_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is RAG development?",
+    answer: (
+      <p>
+        <span className="font-semibold">RAG development</span> involves building AI systems that retrieve relevant
+        information from <span className="font-semibold">external or proprietary data sources</span> and provide that
+        information to an <span className="font-semibold">LLM as context</span> for generating responses.
+      </p>
+    ),
+  },
+  {
+    question: "What is the difference between RAG and a standard LLM application?",
+    answer: (
+      <p>
+        A standard <span className="font-semibold">LLM application</span> primarily relies on the model&apos;s existing
+        knowledge and provided prompts. A <span className="font-semibold">RAG application</span> retrieves relevant
+        information from connected data sources and uses that information as{" "}
+        <span className="font-semibold">context when generating responses</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Why should businesses use RAG?",
+    answer: (
+      <p>
+        <span className="font-semibold">RAG</span> can help businesses connect AI applications with their own{" "}
+        <span className="font-semibold">documents, databases, knowledge bases,</span> and other information sources,
+        making AI systems more useful for <span className="font-semibold">business-specific applications</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build a RAG system using our existing business data?",
+    answer: (
+      <p>
+        Yes. RAG applications can be designed to work with sources such as{" "}
+        <span className="font-semibold">documents, databases, APIs, websites, cloud storage,</span> and existing{" "}
+        <span className="font-semibold">knowledge bases</span>, depending on the requirements of the project.
+      </p>
+    ),
+  },
+  {
+    question: "Can RAG integrate with our existing SaaS application?",
+    answer: (
+      <p>
+        Yes. RAG functionality can be integrated into{" "}
+        <span className="font-semibold">SaaS platforms, web applications, customer portals,</span> internal tools, and
+        other digital products through <span className="font-semibold">APIs and application-level integrations</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build a custom enterprise RAG solution?",
+    answer: (
+      <p>
+        Yes. Skyphr can develop <span className="font-semibold">custom RAG solutions</span> based on enterprise data
+        sources, application requirements,{" "}
+        <span className="font-semibold">security considerations, user workflows,</span> and scalability requirements.
+      </p>
+    ),
+  },
+  {
+    question: "How do you improve RAG response quality?",
+    answer: (
+      <p>
+        Response quality can be improved through better{" "}
+        <span className="font-semibold">data preparation, document chunking, embeddings, retrieval strategies,</span>{" "}
+        metadata filtering, <span className="font-semibold">prompt design, context management,</span> and continuous
+        evaluation.
+      </p>
+    ),
+  },
+  {
+    question: "Can RAG systems work with private company information?",
+    answer: (
+      <p>
+        Yes. RAG architectures can be designed to retrieve information from{" "}
+        <span className="font-semibold">private and controlled business data sources</span>, with access and security
+        requirements considered as part of the <span className="font-semibold">system architecture</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How scalable are RAG applications?",
+    answer: (
+      <p>
+        RAG systems can be designed to scale across increasing{" "}
+        <span className="font-semibold">datasets, users, queries, integrations,</span> and AI workloads. The appropriate
+        architecture depends on your application&apos;s{" "}
+        <span className="font-semibold">requirements and expected scale</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How much does RAG development cost?",
+    answer: (
+      <p>
+        RAG development costs depend on factors such as the{" "}
+        <span className="font-semibold">
+          number and type of data sources, application complexity, LLM requirements,
+        </span>{" "}
+        integrations, <span className="font-semibold">security requirements, infrastructure,</span> and expected scale.
+        Skyphr can define the scope and provide a <span className="font-semibold">project-specific estimate</span>.
+      </p>
+    ),
+  },
+];
+
 // hire page
 export const HIRE_REACT_JS_DEVELOPER_FAQ_DATA: FaqCommonCardData[] = [
   {
@@ -1023,5 +1198,383 @@ export const HIRE_WIREFRAME_DESIGNER_FAQ_DATA = [
     question: "How long does a wireframing project take?",
     answer:
       "Project timelines depend on complexity, but most wireframing engagements range from a few days for MVP concepts to several weeks for enterprise platforms.",
+  },
+];
+
+export const LLM_INTEGRATION_SERVICE_PAGE_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is LLM integration?",
+    answer: (
+      <p>
+        <span className="font-semibold">LLM integration</span> is the process of connecting large language models with
+        your existing applications, products, databases, workflows, or business systems to add{" "}
+        <span className="font-semibold">AI-powered capabilities</span>.
+      </p>
+    ),
+  },
+  {
+    question: "What can you build with LLM integration?",
+    answer: (
+      <p>
+        We can build{" "}
+        <span className="font-semibold">AI assistants, chatbots, document processing systems, AI search,</span> content
+        generation features, knowledge-based applications, automated workflows, and{" "}
+        <span className="font-semibold">custom AI-powered product features</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can you integrate an LLM into an existing application?",
+    answer: (
+      <p>
+        Yes. We can integrate LLM capabilities into existing{" "}
+        <span className="font-semibold">SaaS platforms, web applications, dashboards, internal tools,</span> customer
+        portals, and other digital products.
+      </p>
+    ),
+  },
+  {
+    question: "Which LLMs can you integrate?",
+    answer: (
+      <p>
+        We can work with leading LLM platforms and APIs, including{" "}
+        <span className="font-semibold">OpenAI, Anthropic, Google Gemini,</span> and other models based on your
+        technical and business requirements.
+      </p>
+    ),
+  },
+  {
+    question: "Can you connect an LLM with our company data?",
+    answer: (
+      <p>
+        Yes. We can connect LLM-powered applications with approved{" "}
+        <span className="font-semibold">business data, documents, knowledge bases, databases,</span> and other
+        information sources using appropriate integration architectures.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide RAG-based LLM solutions?",
+    answer: (
+      <p>
+        Yes. We can build <span className="font-semibold">Retrieval-Augmented Generation (RAG)</span> solutions that
+        allow LLM applications to retrieve relevant information from your business knowledge and use it to generate{" "}
+        <span className="font-semibold">contextual responses</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How secure is LLM integration?",
+    answer: (
+      <p>
+        Security depends on the architecture, data, model provider, and application requirements. We design integrations
+        with <span className="font-semibold">secure API handling, controlled data access, authentication,</span> and
+        appropriate application-level protections.
+      </p>
+    ),
+  },
+  {
+    question: "Can LLM integration reduce business costs?",
+    answer: (
+      <p>
+        LLM integration can automate repetitive knowledge-based tasks and improve{" "}
+        <span className="font-semibold">team productivity</span>. We also optimize model usage, architecture, and
+        workflows to help manage <span className="font-semibold">AI infrastructure costs</span>.
+      </p>
+    ),
+  },
+  {
+    question: "How long does LLM integration take?",
+    answer: (
+      <p>
+        The timeline depends on the complexity of the use case, integrations, data requirements, and product scope.
+        After understanding your requirements, we can define an appropriate{" "}
+        <span className="font-semibold">development roadmap</span>.
+      </p>
+    ),
+  },
+];
+export const AI_VOICE_AGENT_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is an AI voice agent?",
+    answer: (
+      <p>
+        An <span className="font-semibold">AI voice agent</span> is an artificial intelligence system that can answer
+        and manage phone conversations in real time. Sky can understand customer requests, answer{" "}
+        <span className="font-semibold">approved questions, capture information, qualify enquiries, book appointments,</span>{" "}
+        and escalate calls when human assistance is required.
+      </p>
+    ),
+  },
+  {
+    question: "What can Sky's AI voice agent do?",
+    answer: (
+      <p>
+        Sky can answer business calls, handle{" "}
+        <span className="font-semibold">common customer questions, qualify leads, capture caller information,</span>{" "}
+        book and reschedule appointments, schedule consultations, collect enquiry details, and save{" "}
+        <span className="font-semibold">call transcripts</span> for your team.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky answer calls 24/7?",
+    answer: (
+      <p>
+        Yes. Sky is designed to handle business calls{" "}
+        <span className="font-semibold">around the clock</span>, including after-hours and periods when your team is
+        unavailable. This allows businesses to maintain a consistent phone response without requiring staff to answer
+        every call manually.
+      </p>
+    ),
+  },
+  {
+    question: "Can an AI voice agent book appointments?",
+    answer: (
+      <p>
+        Yes. Sky can connect with scheduling systems such as{" "}
+        <span className="font-semibold">Cal.com</span> to check availability, offer appointment times, confirm the
+        caller&apos;s choice, and create the booking.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky connect with our CRM or business tools?",
+    answer: (
+      <p>
+        Sky can be configured around your existing{" "}
+        <span className="font-semibold">business workflow</span>. Depending on your technology stack and requirements,
+        Skyphr can evaluate integrations with calendars, CRMs, lead-management systems, and other business tools.
+      </p>
+    ),
+  },
+  {
+    question: "Does Sky provide legal, medical, or financial advice?",
+    answer: (
+      <p>
+        No. Sky can be configured to stay within an{" "}
+        <span className="font-semibold">approved business scope</span> and escalate questions that require professional
+        judgment to an appropriate human team member.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky capture and qualify leads?",
+    answer: (
+      <p>
+        Yes. Sky can ask <span className="font-semibold">predefined qualification questions</span>, collect contact
+        information, understand the reason for the enquiry, capture relevant requirements, and provide your team with{" "}
+        <span className="font-semibold">structured information for follow-up</span>.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky be customized for my business?",
+    answer: (
+      <p>
+        Yes. Sky can be configured around your{" "}
+        <span className="font-semibold">business name, greeting, services, FAQs, opening hours, policies,</span>{" "}
+        qualification questions, booking process, escalation rules, and approved responses.
+      </p>
+    ),
+  },
+  {
+    question: "Which businesses can use an AI voice agent?",
+    answer: (
+      <p>
+        AI voice agents can support many businesses that depend on inbound phone calls, including{" "}
+        <span className="font-semibold">
+          healthcare clinics, dental practices, law firms, home service companies, real estate agencies, salons,
+          spas, agencies, and consultancies
+        </span>
+        , as well as other service-based businesses.
+      </p>
+    ),
+  },
+  {
+    question: "Can Sky handle calls when our team is already busy?",
+    answer: (
+      <p>
+        Yes. Sky can answer calls when your staff are{" "}
+        <span className="font-semibold">serving customers, attending meetings, working on-site,</span> or otherwise
+        unavailable. This helps businesses reduce missed calls and capture more enquiries without interrupting ongoing
+        work.
+      </p>
+    ),
+  },
+];
+export const AI_CONSULTING_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What are AI consulting services?",
+    answer: (
+      <p>
+        AI consulting services help businesses identify valuable AI opportunities,
+        develop an <span className="font-semibold">AI strategy,</span> select suitable
+        technologies, design <span className="font-semibold">AI architectures,</span>{" "}
+        and plan or implement AI-powered solutions.
+      </p>
+    ),
+  },
+  {
+    question: "Why does my business need an AI consultant?",
+    answer: (
+      <p>
+        An AI consultant can help you identify practical{" "}
+        <span className="font-semibold">AI use cases,</span> evaluate technology
+        options, reduce implementation risks, and create a roadmap aligned with your
+        business objectives.
+      </p>
+    ),
+  },
+  {
+    question: "What types of AI solutions can Skyphr help plan?",
+    answer: (
+      <p>
+        Skyphr can help plan <span className="font-semibold">AI assistants,</span>{" "}
+        chatbots, <span className="font-semibold">LLM applications,</span>{" "}
+        <span className="font-semibold">RAG systems,</span> AI automation workflows,
+        intelligent search, AI-powered SaaS products, document processing systems,
+        and custom AI applications.
+      </p>
+    ),
+  },
+  {
+    question: "Can Skyphr integrate AI into an existing application?",
+    answer: (
+      <p>
+        Yes. We can help plan and implement{" "}
+        <span className="font-semibold">AI integrations</span> within existing SaaS
+        platforms, websites, web applications, internal tools, and business systems.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide LLM consulting?",
+    answer: (
+      <p>
+        Yes. Skyphr provides <span className="font-semibold">LLM consulting</span>{" "}
+        for businesses looking to integrate large language models into products,
+        applications, workflows, and customer experiences.
+      </p>
+    ),
+  },
+  {
+    question: "Do you provide RAG consulting?",
+    answer: (
+      <p>
+        Yes. We can help businesses design{" "}
+        <span className="font-semibold">RAG solutions</span> that connect AI models
+        with internal documents, knowledge bases, and business data to provide more
+        context-aware responses.
+      </p>
+    ),
+  },
+  {
+    question: "Can you help us identify AI use cases?",
+    answer: (
+      <p>
+        Yes. We assess your <span className="font-semibold">business processes,</span>{" "}
+        workflows, technology environment, and objectives to identify practical AI
+        opportunities and prioritize potential use cases.
+      </p>
+    ),
+  },
+  {
+    question: "Can Skyphr build the AI solution after consulting?",
+    answer: (
+      <p>
+        Yes. Skyphr can support the transition from{" "}
+        <span className="font-semibold">AI strategy and consulting</span> into
+        proof-of-concept development, custom AI development, integration, and ongoing
+        optimization.
+      </p>
+    ),
+  },
+  {
+    question: "How do you choose the right AI technology?",
+    answer: (
+      <p>
+        We evaluate your business requirements, use case, data, performance
+        expectations, scalability requirements, integrations, and operational needs
+        before recommending an appropriate{" "}
+        <span className="font-semibold">AI technology approach.</span>
+      </p>
+    ),
+  },
+  {
+    question: "How do we get started with AI consulting?",
+    answer: (
+      <p>
+        Start by sharing your <span className="font-semibold">business goals,</span>{" "}
+        current challenges, existing technology, or AI idea with our team. We can
+      </p>
+    ),
+  },
+];
+
+export const ENTERPRISE_APP_DEVELOPMENT_FAQ_DATA: FaqCommonCardData[] = [
+  {
+    question: "What is enterprise app development?",
+    answer: (
+      <p>
+        Enterprise app development involves designing and building custom applications that support complex business operations, workflows, users, data, integrations, and organizational requirements.
+      </p>
+    ),
+  },
+  {
+    question: "Why should businesses build custom enterprise applications?",
+    answer: (
+      <p>
+        Custom enterprise applications allow businesses to create software around their specific workflows, processes, users, and operational requirements instead of relying entirely on generic solutions.
+      </p>
+    ),
+  },
+  {
+    question: "Can Skyphr integrate enterprise applications with existing systems?",
+    answer: (
+      <p>
+        Yes. We can develop APIs and integrations that connect enterprise applications with existing business systems, third-party platforms, databases, and other technologies.
+      </p>
+    ),
+  },
+  {
+    question: "Can enterprise applications scale as the business grows?",
+    answer: (
+      <p>
+        Yes. We use scalable application architecture and development practices designed to accommodate increasing users, data, functionality, and integrations.
+      </p>
+    ),
+  },
+  {
+    question: "Can you build secure enterprise applications?",
+    answer: (
+      <p>
+        Yes. Security can be incorporated across application architecture, authentication, authorization, access control, APIs, data handling, and development practices.
+      </p>
+    ),
+  },
+  {
+    question: "Can enterprise apps include AI and automation?",
+    answer: (
+      <p>
+        Yes. Enterprise applications can include AI-powered features, workflow automation, intelligent data processing, and other automation capabilities based on business requirements.
+      </p>
+    ),
+  },
+  {
+    question: "How long does enterprise app development take?",
+    answer: (
+      <p>
+        The timeline depends on application complexity, features, integrations, users, technology requirements, and scope. After understanding your requirements, we can define a suitable development roadmap.
+      </p>
+    ),
+  },
+  {
+    question: "Does Skyphr provide ongoing enterprise application support?",
+    answer: (
+      <p>
+        Yes. We can continue supporting, maintaining, optimizing, and scaling enterprise applications as business requirements evolve.
+      </p>
+    ),
   },
 ];

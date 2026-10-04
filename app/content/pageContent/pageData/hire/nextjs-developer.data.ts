@@ -64,7 +64,13 @@ export const NEXTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
         [{ text: "Dedicated " }, { text: "Next.js", variant: "italic" }],
         [{ text: "Development" }, { text: "Services" }],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Hire dedicated Next.js developers from Skyphr to build fast, scalable, and SEO-friendly web applications with modern architecture, seamless user experiences, and reliable performance for growing businesses.",
+          },
+        ],
+      ],
     },
     cards: [
       {
@@ -121,25 +127,9 @@ export const NEXTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
           ],
         },
       },
-      // {
-      //   title: "Headless CMS & Content Platforms",
-      //   description: "Build highly scalable content-driven experiences using Next.js and headless CMS solutions.",
-      //   list: {
-      //     title: "CMS Expertise:",
-      //     items: [
-      //       "Contentful",
-      //       "Strapi",
-      //       "Sanity",
-      //       "Prismic",
-      //       "Storyblok",
-      //       "Headless WordPress",
-      //       "Custom CMS integrations",
-      //     ],
-      //   },
-      // },
     ],
   },
- 
+
   useCase: {
     header: {
       title: [
@@ -363,7 +353,7 @@ export const NEXTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "The principles behind every product we build and every engineering decision we make.",
+            text: "Our Next.js development team values clean code, scalable architecture, strong performance, and clear communication to deliver reliable, user-focused applications that support your business goals and long-term growth.",
           },
         ],
       ],
@@ -423,15 +413,28 @@ export const NEXTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring Next.js developers, including our development expertise, engagement options, project delivery, scalability, and ongoing support for your web application.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_NEXT_JS_DEVELOPER_FAQ_DATA,
   },
   readyToScale: {
     header: {
       title: [
-        [{ text: "Partner" }, { text: "with" }, { text: "Skyphr" }],
-        [{ text: "to" }, { text: "Build", variant: "italic" }, { text: "Faster,", variant: "italic" }],
+        [
+          { text: "Partner" },
+          { text: "with" },
+          { text: "Skyphr", variant: "italic" },
+          { text: "to" },
+          { text: "Build", variant: "italic" },
+          { text: "Faster,", variant: "italic" },
+        ],
+
         [
           { text: "Scale", variant: "italic" },
           { text: "Smarter,", variant: "italic" },

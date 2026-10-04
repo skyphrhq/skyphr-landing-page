@@ -349,7 +349,13 @@ export const WIREFRAME_DESIGNER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about wireframe design, including our process, deliverables, project timelines, collaboration, prototypes, and how professional wireframes support better digital product development.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_WIREFRAME_DESIGNER_FAQ_DATA,
   },
