@@ -240,7 +240,7 @@ export const NODEJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
 
   ourValues: {
     header: {
-      title: [[{ text: "Flexible" }, { text: "Hiring" }], [{ text: "Models", variant: "italic" }]],
+      title: [[{ text: "Flexible" }, { text: "Hiring" }, { text: "Models", variant: "italic" }]],
       description: [
         [
           {

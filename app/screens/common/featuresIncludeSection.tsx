@@ -4,7 +4,7 @@ import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation
 import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { FeaturesIncludeSectionProps } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
 
@@ -43,17 +43,19 @@ function FeaturesIncludeSection({ data, classNames }: FeaturesIncludeSectionProp
               <h2
                 className="flex flex-wrap items-center gap-2 font-instrument-sans font-bold leading-tight text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px]"
                 key={rowIndex}>
+                {/* The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO */}
                 {titleRow.map((chunk, index) => (
-                  <span
-                    className={twMerge(
-                      "font-instrument-sans reveal-text-animation",
-                      chunk.variant === "italic" &&
-                        "italic! font-bold! font-playfair-display text-(--cta-button-background)",
-                      chunk.classNames,
-                    )}
-                    key={index}>
-                    {chunk.text}
-                  </span>
+                  <Fragment key={index}>
+                    <span
+                      className={twMerge(
+                        "font-instrument-sans reveal-text-animation",
+                        chunk.variant === "italic" &&
+                          "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                        chunk.classNames,
+                      )}>
+                      {chunk.text.trim()}
+                    </span>{" "}
+                  </Fragment>
                 ))}
               </h2>
             ))}

@@ -8,7 +8,7 @@ import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/consta
 import { WhyChooseSectionProps } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function WhyChooseSection({ data: { header, reasons, items }, classNames }: WhyChooseSectionProps) {
@@ -64,16 +64,18 @@ function WhyChooseSection({ data: { header, reasons, items }, classNames }: WhyC
                       className="flex flex-wrap items-start justify-start gap-2 lg:gap-4 font-instrument-sans text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px] font-bold"
                       key={rowIndex}>
                       {titleRow?.map((chunk, index) => {
+                        // The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO
                         return (
-                          <span
-                            className={twMerge(
-                              "font-instrument-sans reveal-text-animation",
-                              chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
-                              chunk?.classNames,
-                            )}
-                            key={index}>
-                            {chunk.text.trim()}
-                          </span>
+                          <Fragment key={index}>
+                            <span
+                              className={twMerge(
+                                "font-instrument-sans reveal-text-animation",
+                                chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                                chunk?.classNames,
+                              )}>
+                              {chunk.text.trim()}
+                            </span>{" "}
+                          </Fragment>
                         );
                       })}
                     </h2>

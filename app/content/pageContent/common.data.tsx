@@ -160,8 +160,8 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: AiDevelopmentAutomation,
-      width: 350,
-      height: 300,
+      width: 500,
+      height: 400,
       alt: "Artificial intelligence and automation service illustration",
     },
   },
@@ -177,8 +177,8 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: CustomSoftwareDevelopment,
-      width: 350,
-      height: 300,
+      width: 500,
+      height: 400,
       alt: "Custom software engineering service illustration",
     },
   },
@@ -194,8 +194,8 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: MobileAppDevelopment,
-      width: 350,
-      height: 300,
+      width: 500,
+      height: 400,
       alt: "Application engineering for web and mobile apps service illustration",
     },
   },
@@ -211,8 +211,8 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
     },
     imageOptions: {
       imagePath: UiUxDesign,
-      width: 350,
-      height: 300,
+      width: 500,
+      height: 400,
       alt: "Product design and UI/UX experience service illustration",
     },
   },
