@@ -65,32 +65,44 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
   },
   subNav: [
     {
-      label: "AI Agents & Automation",
-      href: "#ai-agents-automation",
+      label: "AI Development & Automation",
+      href: "/services/ai-development-services",
       icon: createElement(HiCpuChip),
-      trailingIcon: "chevron",
+      trailingIcon: "arrow",
     },
     {
       label: "LLM Integration & RAG",
       href: "#llm-integration-rag",
       icon: createElement(HiCircleStack),
       trailingIcon: "chevron",
+      children: [
+        {
+          label: "LLM Integration Service",
+          href: "/services/llm-integration-service",
+          icon: createElement(HiCpuChip),
+        },
+        {
+          label: "RAG Development Services",
+          href: "/services/rag-development-services",
+          icon: createElement(HiCpuChip),
+        },
+      ],
     },
     {
       label: "AI Chatbots & Assistants",
-      href: "#ai-chatbots-assistants",
+      href: "/services/ai-chatbot-assistant-development",
       icon: createElement(HiChatBubbleOvalLeftEllipsis),
-      trailingIcon: "chevron",
+      trailingIcon: "arrow",
     },
     {
       label: "AI Strategy & Consulting",
-      href: "#ai-strategy-consulting",
+      href: "services/ai-consulting-services",
       icon: createElement(HiLightBulb),
-      trailingIcon: "chevron",
+      trailingIcon: "arrow",
     },
     {
       label: "Hire AI Developers",
-      href: "/hire",
+      href: "hire/hire-ai-developers",
       icon: createElement(HiUserGroup),
       trailingIcon: "arrow",
     },
@@ -169,14 +181,14 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
     cards: [
       {
         id: "ai-agents-automation",
-        title: "AI Agents",
+        title: "AI Consulting",
         description:
-          "Build intelligent AI agents that can understand goals, make decisions, use business tools, and complete multi-step tasks with minimal human intervention.",
+          "Get expert guidance to identify the right AI opportunities, define practical strategies, and build a clear roadmap for adopting AI across your business.",
         icon: createElement(HiCpuChip),
         points: [
-          "Lead qualification and sales outreach",
-          "Research and report generation",
-          "Customer and operational task automation",
+          "AI strategy and use-case identification",
+          "AI readiness and technology assessment",
+          "AI roadmap, architecture, and implementation planning",
         ],
         link: { label: "Discuss your use case", href: "/contact" },
       },

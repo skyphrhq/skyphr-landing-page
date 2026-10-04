@@ -385,7 +385,13 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring React.js developers, including expertise, engagement models, project requirements, development processes, technology capabilities, and how Skyphr can help you build and scale high-performance digital products.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_REACT_JS_DEVELOPER_FAQ_DATA,
   },

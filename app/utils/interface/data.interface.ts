@@ -164,11 +164,20 @@ export interface SkyAiHeroSection extends HeroSection {
   tags?: SkyAiHeroTag[];
 }
 
+export interface SkyAiSubNavChild {
+  label: string;
+  href: string;
+  icon?: React.ReactNode;
+  description?: string;
+}
+
 export interface SkyAiSubNavItem {
   label: string;
+  // Ignored when `children` is set: the item becomes a dropdown trigger instead of a link
   href: string;
   icon: React.ReactNode;
   trailingIcon: "chevron" | "arrow";
+  children?: SkyAiSubNavChild[];
 }
 
 export interface SkyAiTechLogo {

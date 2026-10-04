@@ -157,7 +157,13 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
           { text: "Development", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Build mobile applications for eCommerce, SaaS, healthcare, fintech, logistics, education, marketplaces, customer portals, and internal business workflows.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -303,7 +309,13 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
           { text: "Approach", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "We combine agile development, scalable architecture, continuous testing, and clear communication to deliver reliable mobile applications aligned with your product goals and growth plans.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -342,7 +354,13 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
           { text: "Development", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "We prioritize clarity, performance, scalability, security, and user experience to build mobile applications that are intuitive, reliable, maintainable, and designed for long-term business value.",
+          },
+        ],
+      ],
     },
     valuesCards: [
       {
@@ -416,7 +434,13 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
   industriesServe: {
     header: {
       title: [[{ text: "Industries" }, { text: "We" }, { text: "Serve", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "We build mobile solutions for SaaS, healthcare, fintech, eCommerce, education, logistics, professional services, and other industries with evolving digital product needs.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -459,7 +483,13 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
   faq: {
     header: {
       title: [[{ text: "Frequently Asked Questions" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about mobile app development costs, timelines, platforms, technologies, integrations, AI features, MVP development, and ongoing application support.",
+          },
+        ],
+      ],
     },
     faqsItems: [
       {

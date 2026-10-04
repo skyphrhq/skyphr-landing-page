@@ -299,7 +299,13 @@ export const NODEJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Get answers to common questions about hiring Node.js developers, our development expertise, engagement models, project delivery, technology stack, and ongoing support.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_NODE_JS_DEVELOPER_FAQ_DATA,
   },

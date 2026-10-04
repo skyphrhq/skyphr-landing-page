@@ -47,6 +47,7 @@ function DeliveryApproachSection({ data, classNames }: DeliveryApproachSectionIn
               className="w-full! px-0! pb-0! md:pb-0!"
               headerParentClass="justify-start gap-x-2 lg:gap-x-3 xl:text-[45px] 2xl:text-[50px]"
               descriptionClass="max-w-none mx-0 text-start xl:text-lg"
+              h2ParentClass="text-start! items-start!"
             />
           </div>
 

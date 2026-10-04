@@ -9,6 +9,7 @@ import {
   SkyAiServiceCard,
   SkyAiServicesSection,
   SkyAiSkyAgentCard,
+  SkyAiSubNavChild,
   SkyVoiceCallConsoleData,
   SkyVoiceCallFlowMessage,
   SkyVoiceCallFlowStages,
@@ -171,6 +172,7 @@ export interface CommonSectionHeaderInterface {
   descriptionClass?: string;
   // Render all title rows as lines of a single <h2> (default: one <h2> per row)
   isSingleHeading?: boolean;
+  h2ParentClass?: string;
 }
 
 export interface OurStepsDataInterface {
@@ -585,5 +587,17 @@ export interface DeliveryApproachCardInterface {
   data: DeliveryApproachItem;
   // Position in the list, shown as the "01", "02"... marker
   index: number;
+  className?: string;
+}
+
+export interface SkyAiSubNavDropdownInterface {
+  id: string;
+  label: string;
+  items: SkyAiSubNavChild[];
+  // Horizontal centre of the trigger, in px from the left edge of the sub nav wrapper
+  left: number;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onNavigate: () => void;
   className?: string;
 }

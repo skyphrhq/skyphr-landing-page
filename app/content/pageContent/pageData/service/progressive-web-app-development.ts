@@ -284,7 +284,7 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
   },
   deliveryApproach: {
     header: {
-      title: [[{ text: "Our" }, { text: "Delivery" }], [{ text: "Approach", variant: "italic" }]],
+      title: [[{ text: "Our" }, { text: "Delivery" }, { text: "Approach", variant: "italic" }]],
       description: [
         [
           {
@@ -330,7 +330,13 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
           { text: "Development", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our Progressive Web App development values focus on clarity, scalability, performance, and quality to create reliable digital experiences that support long-term business growth.",
+          },
+        ],
+      ],
     },
     valuesCards: [
       {
@@ -404,7 +410,13 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
   industriesServe: {
     header: {
       title: [[{ text: "Industries" }, { text: "We" }, { text: "Serve", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "We build scalable Progressive Web Apps for industries including SaaS, e-commerce, healthcare, finance, education, retail, logistics, and other growing businesses.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -440,7 +452,13 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
   faq: {
     header: {
       title: [[{ text: "Frequently Asked Questions" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about Progressive Web App development, including features, costs, timelines, integrations, offline capabilities, SEO, scalability, and ongoing support.",
+          },
+        ],
+      ],
     },
     faqsItems: [
       {

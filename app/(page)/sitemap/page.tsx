@@ -38,12 +38,17 @@ type SitemapGroup = {
 };
 
 // Main listing page first, then every dropdown column as its own sub group
+// Entries with isLink: false are dropdown triggers/column titles, not pages, so they are skipped
 const getDropDownGroup = (id: string, title: string): SitemapGroup => {
   const page = NAVBAR_LINKS_DATA.find((item) => item.id === id);
   return {
     title,
-    links: page ? [{ label: page.label, href: page.href, target: page.target }] : [],
-    subGroups: page?.dropDown.map((category) => ({ title: category.label, links: category.dropDown })) ?? [],
+    links: page?.isLink ? [{ label: page.label, href: page.href, target: page.target }] : [],
+    subGroups:
+      page?.dropDown.map((category) => ({
+        title: category.label,
+        links: category.dropDown.filter((link) => link.isLink),
+      })) ?? [],
   };
 };
 
@@ -53,11 +58,13 @@ const sitemapGroups: SitemapGroup[] = [
     links: [
       ...NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
       ...EXTRA_PAGE_LINKS_DATA,
-    ],
+    ].filter((page) => page.isLink),
   },
   {
     title: "Product Pages",
-    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "our-products" ? page.dropDown : [])).flat(),
+    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "our-products" ? page.dropDown : []))
+      .flat()
+      .filter((page) => page.isLink),
   },
   getDropDownGroup("services", "Services Pages"),
   getDropDownGroup("hire", "Hire Pages"),
@@ -101,17 +108,19 @@ export default function SitemapPage() {
                   {group.title}
                 </h2>
 
-                <ul className="flex flex-wrap gap-3 pt-7 md:gap-4">
-                  {group.links.map((link) => (
-                    <li key={`${group.title}-${link.href}-${link.label}`}>
-                      <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href} target={link.target}>
-                        {link.label}
-                      </CTAButton>
-                    </li>
-                  ))}
-                </ul>
+                {group.links.length > 0 && (
+                  <ul className="flex flex-wrap gap-3 pt-7 md:gap-4">
+                    {group.links.map((link) => (
+                      <li key={`${group.title}-${link.href}-${link.label}`}>
+                        <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href} target={link.target}>
+                          {link.label}
+                        </CTAButton>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
-                {group.subGroups?.map((subGroup) => (
+                {group.subGroups?.filter((subGroup) => subGroup.links.length > 0).map((subGroup) => (
                   <div key={`${group.title}-${subGroup.title}`} className="pt-10">
                     <h3 className="font-instrument-sans text-xl font-semibold text-(--text-main-color) md:text-2xl">
                       {subGroup.title}

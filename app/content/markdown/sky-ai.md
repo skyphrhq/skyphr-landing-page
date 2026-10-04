@@ -25,13 +25,13 @@ OpenAI · Anthropic · Gemini · LangChain · LlamaIndex · Hugging Face · Pyth
 
 From autonomous AI agents and enterprise assistants to LLM-powered applications and intelligent workflow automation, we build AI systems that connect with your existing data, software, and business processes.
 
-### AI Agents
+### AI Consulting
 
-Build intelligent AI agents that can understand goals, make decisions, use business tools, and complete multi-step tasks with minimal human intervention.
+Get expert guidance to identify the right AI opportunities, define practical strategies, and build a clear roadmap for adopting AI across your business.
 
-- Lead qualification and sales outreach
-- Research and report generation
-- Customer and operational task automation
+- AI strategy and use-case identification
+- AI readiness and technology assessment
+- AI roadmap, architecture, and implementation planning
 
 [Discuss your use case](/contact)
 

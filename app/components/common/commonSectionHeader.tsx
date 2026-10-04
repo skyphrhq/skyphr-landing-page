@@ -9,6 +9,7 @@ function CommonSectionHeader({
   headerParentClass,
   descriptionClass,
   isSingleHeading = true,
+  h2ParentClass,
 }: CommonSectionHeaderInterface) {
   // Each title row is its own <h2> by default; with isSingleHeading the rows become lines of one <h2>
   const TitleRow = isSingleHeading ? "span" : "h2";
@@ -27,7 +28,8 @@ function CommonSectionHeader({
             <span
               className={twMerge(
                 "font-instrument-sans reveal-text-animation",
-                chunk?.variant === "italic" && "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                chunk?.variant === "italic" &&
+                  "italic! font-bold! font-playfair-display text-(--cta-button-background)",
                 chunk?.classNames,
               )}>
               {chunk.text.trim()}
@@ -40,7 +42,11 @@ function CommonSectionHeader({
 
   return (
     <div className={twMerge("skyphr-container pb-7! md:pb-15!", className)}>
-      {isSingleHeading ? <h2 className="flex flex-col items-center">{titleRows}</h2> : titleRows}
+      {isSingleHeading ? (
+        <h2 className={twMerge("flex flex-col items-center", h2ParentClass)}>{titleRows}</h2>
+      ) : (
+        titleRows
+      )}
       {header?.description?.length !== 0 && (
         <div className="w-full flex flex-col items-start justify-start gap-5 pt-4">
           {" "}

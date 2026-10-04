@@ -185,6 +185,8 @@ At Skyphr, we combine modern engineering expertise, business-driven execution, a
 
 ## Frequently Asked Questions
 
+Find answers to common questions about hiring Full Stack Developers, including our expertise, technologies, engagement models, development process, onboarding, pricing, and ongoing support.
+
 ### What is a Full Stack Developer?
 
 A Full Stack Developer works across both front-end and back-end development, handling user interfaces, databases, APIs, server-side logic, and application deployment.

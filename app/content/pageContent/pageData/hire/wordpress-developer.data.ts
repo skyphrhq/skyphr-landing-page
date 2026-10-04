@@ -58,8 +58,17 @@ export const WORDPRESS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   },
   whatWeBuild: {
     header: {
-      title: [[{ text: "WordPress " }, { text: "Development " }, { text: "Services " }, { text: "We Offer" }]],
-      description: [],
+      title: [
+        [{ text: "WordPress ", variant: "italic" }, { text: "Development " }],
+        [{ text: "Services " }, { text: "We Offer" }],
+      ],
+      description: [
+        [
+          {
+            text: "We build scalable WordPress websites, WooCommerce stores, custom platforms, and digital experiences designed for performance, flexibility, security, and long-term business growth.",
+          },
+        ],
+      ],
     },
     cards: [
       {
@@ -400,7 +409,13 @@ export const WORDPRESS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Get clear answers about hiring WordPress developers, development capabilities, engagement models, project timelines, integrations, maintenance, and ongoing technical support.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_WORDPRESS_DEVELOPER_FAQ_DATA,
   },

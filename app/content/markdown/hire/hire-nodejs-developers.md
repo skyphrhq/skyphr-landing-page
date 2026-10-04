@@ -164,6 +164,8 @@ At Skyphr, we combine experienced backend engineering, product-focused execution
 
 ## Frequently Asked Questions
 
+Get answers to common questions about hiring Node.js developers, our development expertise, engagement models, project delivery, technology stack, and ongoing support.
+
 ### Why should I hire Node.js developers for my project?
 
 Node.js enables fast, scalable, and efficient backend development, making it ideal for SaaS products, enterprise applications, APIs, and real-time systems.

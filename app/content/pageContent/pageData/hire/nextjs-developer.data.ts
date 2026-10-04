@@ -413,7 +413,13 @@ export const NEXTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring Next.js developers, including our development expertise, engagement options, project delivery, scalability, and ongoing support for your web application.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_NEXT_JS_DEVELOPER_FAQ_DATA,
   },

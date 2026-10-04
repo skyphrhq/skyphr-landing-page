@@ -390,7 +390,13 @@ export const FASTAPI_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Get answers to common questions about hiring FastAPI developers, development expertise, engagement models, project timelines, scalability, AI integrations, and ongoing support from Skyphr.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_FASTAPI_DEVELOPER_FAQ_DATA,
   },

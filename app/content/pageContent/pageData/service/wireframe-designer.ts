@@ -120,7 +120,13 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
           { text: "Services", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Explore the essential wireframing features we use to create clear, user-focused product structures, intuitive layouts, and scalable experiences ready for UI design and development.",
+          },
+        ],
+      ],
     },
     features: [
       "Low-fidelity and high-fidelity wireframes",
@@ -144,7 +150,13 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
           { text: "Wireframing", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Discover how professional wireframing helps businesses validate ideas, map user journeys, improve usability, and define digital products before investing in full-scale design and development.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -186,7 +198,13 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
           { text: "Process", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our structured wireframing process transforms business requirements into clear user flows, organized screen layouts, interactive prototypes, and development-ready product foundations.",
+          },
+        ],
+      ],
     },
     steps: [
       {
@@ -309,7 +327,13 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
           { text: "Team", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "We focus on clarity, usability, scalability, and purposeful design to create wireframes that align business goals with user needs and provide a strong foundation for digital products.",
+          },
+        ],
+      ],
     },
     valuesCards: [
       {
@@ -409,7 +433,13 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }, { text: "Asked" }, { text: "Questions" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about wireframe design, UX planning, interactive prototypes, project collaboration, deliverables, and how our wireframing services support product development.",
+          },
+        ],
+      ],
     },
     faqsItems: [
       {
