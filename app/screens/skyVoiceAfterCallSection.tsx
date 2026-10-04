@@ -26,10 +26,20 @@ function SkyVoiceAfterCallSection({ data, classNames }: SkyVoiceAfterCallSection
         const titleAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({ trigger: container, start: "top 70%" });
         gsap.fromTo(gsap.utils.toArray(".reveal-text-animation"), titleAnimation.FROM, titleAnimation.TO);
 
-        const cardAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({ trigger: ".skyai-voice-after-call-cards", start: "top 80%" });
-        gsap.fromTo(gsap.utils.toArray(".skyai-voice-after-call-cards .reveal-animation"), cardAnimation.FROM, cardAnimation.TO);
+        const cardAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({
+          trigger: ".skyai-voice-after-call-cards",
+          start: "top 80%",
+        });
+        gsap.fromTo(
+          gsap.utils.toArray(".skyai-voice-after-call-cards .reveal-animation"),
+          cardAnimation.FROM,
+          cardAnimation.TO,
+        );
 
-        const integrationAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({ trigger: ".skyai-voice-integrations", start: "top 80%" });
+        const integrationAnimation = COMMON_SCROLL_TRIGGER_ANIMATION({
+          trigger: ".skyai-voice-integrations",
+          start: "top 80%",
+        });
         gsap.fromTo(
           gsap.utils.toArray(".skyai-voice-integrations .reveal-animation"),
           integrationAnimation.FROM,
@@ -51,7 +61,6 @@ function SkyVoiceAfterCallSection({ data, classNames }: SkyVoiceAfterCallSection
       )}>
       <CommonSectionHeader
         header={data.header}
-        isSingleHeading
         className="pb-10! md:pb-16!"
         headerParentClass="tracking-tight"
         descriptionClass="max-w-140 text-(--skyai-voice-muted)"
@@ -77,11 +86,7 @@ function SkyVoiceAfterCallSection({ data, classNames }: SkyVoiceAfterCallSection
           </div>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {data.integrations.items.map((integration) => (
-              <SkyVoiceIntegrationCard
-                key={integration.name}
-                data={integration}
-                className="reveal-animation"
-              />
+              <SkyVoiceIntegrationCard key={integration.name} data={integration} className="reveal-animation" />
             ))}
           </div>
         </div>

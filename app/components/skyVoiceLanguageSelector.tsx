@@ -20,6 +20,7 @@ function SkyVoiceLanguageSelector({ data, activeCode, onChange, className }: Sky
         href={data.demoLink.href}
         target={data.demoLink.target}
         rel={data.demoLink.rel}
+        title={data.demoLink.label}
         className="font-instrument-sans text-xs text-(--skyai-voice-muted) underline-offset-2 transition-colors duration-200 hover:text-(--cta-button-background) hover:underline focus-visible:text-(--cta-button-background) focus-visible:underline focus-visible:outline-none motion-reduce:transition-none">
         {data.demoLink.label}
       </a>

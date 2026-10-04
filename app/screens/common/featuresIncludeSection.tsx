@@ -4,7 +4,7 @@ import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation
 import { COMMON_BORDER_RADIUS, COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { FeaturesIncludeSectionProps } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
 
@@ -38,26 +38,29 @@ function FeaturesIncludeSection({ data, classNames }: FeaturesIncludeSectionProp
     <section ref={containerRef} className={twMerge("w-full h-auto", COMMON_SECTION_PADDING, classNames)}>
       <div className="skyphr-container flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16 xl:gap-20">
         <div className="lg:sticky lg:top-30 lg:w-[40%] xl:w-[50%]">
-          <div className="flex flex-col items-start justify-start gap-2">
+          {/* All title rows sit in one heading so crawlers read the full title, not one heading per row */}
+          <h2 className="flex flex-col items-start justify-start gap-2">
             {data.header.title.map((titleRow, rowIndex) => (
-              <h2
+              <span
                 className="flex flex-wrap items-center gap-2 font-instrument-sans font-bold leading-tight text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[45px]"
                 key={rowIndex}>
+                {/* The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO */}
                 {titleRow.map((chunk, index) => (
-                  <span
-                    className={twMerge(
-                      "font-instrument-sans reveal-text-animation",
-                      chunk.variant === "italic" &&
-                        "italic! font-bold! font-playfair-display text-(--cta-button-background)",
-                      chunk.classNames,
-                    )}
-                    key={index}>
-                    {chunk.text}
-                  </span>
+                  <Fragment key={index}>
+                    <span
+                      className={twMerge(
+                        "font-instrument-sans reveal-text-animation",
+                        chunk.variant === "italic" &&
+                          "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                        chunk.classNames,
+                      )}>
+                      {chunk.text.trim()}
+                    </span>{" "}
+                  </Fragment>
                 ))}
-              </h2>
+              </span>
             ))}
-          </div>
+          </h2>
 
           <div className="flex flex-col items-start justify-start gap-2">
             {data.header.description?.map((description, index) => (

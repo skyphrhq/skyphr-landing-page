@@ -8,7 +8,7 @@ import { COMMON_SECTION_PADDING } from "@/app/utils/constants/common.constant";
 import { AboutSectionElementInterface } from "@/app/utils/interface/section.interface";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 function AboutSection({ classNames, data }: AboutSectionElementInterface) {
@@ -50,19 +50,24 @@ function AboutSection({ classNames, data }: AboutSectionElementInterface) {
       <div className="w-full flex flex-col lg:flex-row items-stretch justify-start gap-10 md:gap-15 lg:gap-20">
         <div className="w-full md:w-full lg:w-[45%]">
           <div className="w-full flex flex-col items-start justify-start gap-6 lg:py-10 @container">
-            {data?.header?.title?.map((titleRow, rowIndex) => (
-              <h2
-                className="text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[38px] 2xl:text-[45px] font-instrument-sans font-semibold leading-9 md:leading-12 xl:leading-13 2xl:leading-15"
-                key={rowIndex}>
-                {titleRow.map((chunk, index) => (
-                  <span
-                    key={index}
-                    className={twMerge("block", chunk?.variant === "brand" && "text-(--primary-color-variant)")}>
-                    {chunk?.text}
-                  </span>
-                ))}
-              </h2>
-            ))}
+            {/* All title rows sit in one heading so crawlers read the full title, not one heading per row */}
+            <h2 className="flex flex-col gap-6">
+              {data?.header?.title?.map((titleRow, rowIndex) => (
+                <span
+                  className="block text-(--text-main-color) text-[28px] md:text-3xl lg:text-[32px] xl:text-[38px] 2xl:text-[45px] font-instrument-sans font-semibold leading-9 md:leading-12 xl:leading-13 2xl:leading-15"
+                  key={rowIndex}>
+                  {/* Chunks are block lines, so the " " between them only separates words in the HTML */}
+                  {titleRow.map((chunk, index) => (
+                    <Fragment key={index}>
+                      <span
+                        className={twMerge("block", chunk?.variant === "brand" && "text-(--primary-color-variant)")}>
+                        {chunk?.text.trim()}
+                      </span>{" "}
+                    </Fragment>
+                  ))}
+                </span>
+              ))}
+            </h2>
 
             <div className="w-full flex flex-col items-start justify-start gap-5">
               {data?.header?.description?.map((description, index) => (

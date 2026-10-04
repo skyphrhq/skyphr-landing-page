@@ -151,7 +151,13 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
           { text: "Development", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Enterprise software helps streamline operations, automate workflows, centralize data, improve decision-making, reduce inefficiencies, and provide a scalable foundation for long-term business growth.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -200,7 +206,13 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
           { text: "Process", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our Enterprise Software Development Process combines strategy, scalable architecture, secure development, intuitive design, testing, and deployment to build reliable software that supports business growth.",
+          },
+        ],
+      ],
     },
     steps: [
       {
@@ -302,7 +314,13 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
           { text: "Approach", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our delivery approach combines agile collaboration, scalable engineering, secure development, continuous testing, and transparent communication to deliver reliable enterprise software aligned with business goals.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -341,7 +359,13 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
           { text: "Development", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Our values guide how we design and develop enterprise software, focusing on clarity, scalability, performance, security, and reliability to create solutions that deliver lasting business value.",
+          },
+        ],
+      ],
     },
     valuesCards: [
       {
@@ -392,7 +416,13 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
           { text: "Development?", variant: "italic" },
         ],
       ],
-      description: [],
+      description: [
+        [
+          {
+            text: "Skyphr combines product strategy, UI/UX design, modern engineering, AI expertise, and scalable architecture to build secure enterprise software tailored to complex business requirements and growth.",
+          },
+        ],
+      ],
     },
     items: [
       {
@@ -454,7 +484,13 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
   faq: {
     header: {
       title: [[{ text: "Frequently Asked Questions" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Skyphr combines product strategy, UI/UX design, modern engineering, AI expertise, and scalable architecture to build secure enterprise software tailored to complex business requirements and growth.",
+          },
+        ],
+      ],
     },
     faqsItems: [
       {
