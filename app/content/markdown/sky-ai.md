@@ -33,7 +33,7 @@ Get expert guidance to identify the right AI opportunities, define practical str
 - AI readiness and technology assessment
 - AI roadmap, architecture, and implementation planning
 
-[Discuss your use case](/contact)
+[Discuss your use case](/services/ai-consulting-services)
 
 ### LLM Integration
 
@@ -43,7 +43,7 @@ Integrate OpenAI, Claude, Gemini, or open-source large language models into your
 - Content generation and document summarization
 - Semantic search, classification, and information extraction
 
-[Discuss your use case](/contact)
+[Discuss your use case](/services/llm-integration-service)
 
 ### RAG Assistants
 
@@ -53,17 +53,17 @@ Build retrieval-augmented generation systems that connect AI models with your tr
 - Product and documentation Q&A
 - SOP, policy, and employee assistants
 
-[Discuss your use case](/contact)
+[Discuss your use case](/services/rag-development-services)
 
 ### Workflow Automation
 
-Use AI to automate repetitive business processes and connect the applications your teams already rely on, from incoming forms and documents to CRM updates and customer communication.
+Build custom AI solutions and automate complex business workflows with intelligent systems designed to improve efficiency, reduce manual work, and scale with your business.
 
-- Lead routing and CRM automation
-- Document, invoice, and data processing
-- Email classification and response drafting
+- Custom AI applications and intelligent systems
+- AI-powered workflow and process automation
+- AI integrations with business tools and existing software
 
-[Discuss your use case](/contact)
+[Discuss your use case](/services/ai-development-services)
 
 ### AI Chatbots
 
@@ -73,7 +73,7 @@ Deploy intelligent AI chatbots and virtual assistants that can answer questions,
 - Lead qualification, capture, and booking
 - Human handoff for complex requests
 
-[Discuss your use case](/contact)
+[Discuss your use case](/services/ai-chatbot-assistant-development)
 
 ### Not sure which AI solution fits?
 

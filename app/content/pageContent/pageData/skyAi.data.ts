@@ -79,12 +79,12 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
         {
           label: "LLM Integration Service",
           href: "/services/llm-integration-service",
-          icon: createElement(HiCpuChip),
+          icon: createElement(HiDocumentText),
         },
         {
           label: "RAG Development Services",
           href: "/services/rag-development-services",
-          icon: createElement(HiCpuChip),
+          icon: createElement(HiCircleStack),
         },
       ],
     },
@@ -190,7 +190,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
           "AI readiness and technology assessment",
           "AI roadmap, architecture, and implementation planning",
         ],
-        link: { label: "Discuss your use case", href: "/contact" },
+        link: { label: "Discuss your use case", href: "/services/ai-consulting-services" },
       },
       {
         id: "llm-integration-rag",
@@ -203,7 +203,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
           "Content generation and document summarization",
           "Semantic search, classification, and information extraction",
         ],
-        link: { label: "Discuss your use case", href: "/contact" },
+        link: { label: "Discuss your use case", href: "/services/llm-integration-service" },
       },
       {
         id: "rag-assistants",
@@ -216,20 +216,20 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
           "Product and documentation Q&A",
           "SOP, policy, and employee assistants",
         ],
-        link: { label: "Discuss your use case", href: "/contact" },
+        link: { label: "Discuss your use case", href: "/services/rag-development-services" },
       },
       {
-        id: "workflow-automation",
+        id: "AI Development & Automation",
         title: "Workflow Automation",
         description:
-          "Use AI to automate repetitive business processes and connect the applications your teams already rely on, from incoming forms and documents to CRM updates and customer communication.",
+          "Build custom AI solutions and automate complex business workflows with intelligent systems designed to improve efficiency, reduce manual work, and scale with your business.",
         icon: createElement(HiBolt),
         points: [
-          "Lead routing and CRM automation",
-          "Document, invoice, and data processing",
-          "Email classification and response drafting",
+          "Custom AI applications and intelligent systems",
+          "AI-powered workflow and process automation",
+          "AI integrations with business tools and existing software",
         ],
-        link: { label: "Discuss your use case", href: "/contact" },
+        link: { label: "Discuss your use case", href: "/services/ai-development-services" },
       },
       {
         id: "ai-chatbots-assistants",
@@ -242,7 +242,7 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
           "Lead qualification, capture, and booking",
           "Human handoff for complex requests",
         ],
-        link: { label: "Discuss your use case", href: "/contact" },
+        link: { label: "Discuss your use case", href: "/services/ai-chatbot-assistant-development" },
       },
     ],
     ctaCard: {
@@ -341,18 +341,22 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
           {
             text: "We",
             variant: "italic",
+            classNames: "text-(--skyai-periwinkle-light)",
           },
           {
             text: "run",
             variant: "italic",
+            classNames: "text-(--skyai-periwinkle-light)",
           },
           {
             text: "it",
             variant: "italic",
+            classNames: "text-(--skyai-periwinkle-light)",
           },
           {
             text: "ourselves.",
             variant: "italic",
+            classNames: "text-(--skyai-periwinkle-light)",
           },
         ],
       ],
