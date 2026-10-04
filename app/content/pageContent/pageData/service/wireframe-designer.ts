@@ -190,30 +190,30 @@ export const WIREFRAME_DESIGNER_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     },
     steps: [
       {
-        title: "01. Understand Requirements",
+        title: "Understand Requirements",
         description: "We learn about your product, users, business objectives, features, and functional requirements.",
       },
       {
-        title: "02. Research & Information Architecture",
+        title: "Research & Information Architecture",
         description: "We organize content, features, navigation, and user journeys into a logical product structure.",
       },
       {
-        title: "03. Create Wireframes",
+        title: "Create Wireframes",
         description:
           "Our wireframe designers create clear layouts that define the structure and functionality of each screen.",
       },
       {
-        title: "04. Review & Refine",
+        title: "Review & Refine",
         description:
           "We review wireframes with your team, collect feedback, and refine the experience based on your requirements.",
       },
       {
-        title: "05. Interactive Prototyping",
+        title: "Interactive Prototyping",
         description:
           "Where required, we connect screens into interactive prototypes to demonstrate the intended user journey.",
       },
       {
-        title: "06. Design Handoff",
+        title: "Design Handoff",
         description:
           "Final wireframes are organized and prepared as a clear foundation for UI design and product development.",
       },

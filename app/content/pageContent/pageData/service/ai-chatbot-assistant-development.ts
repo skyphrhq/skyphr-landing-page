@@ -187,27 +187,27 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     },
     steps: [
       {
-        title: "01. Discovery & Strategy",
+        title: "Discovery & Strategy",
         description: "We understand your business goals, users, workflows, data sources and chatbot requirements to define the right AI assistant strategy.",
       },
       {
-        title: "02. Conversation & Experience Design",
+        title: "Conversation & Experience Design",
         description: "We map user intents, conversation flows, assistant behavior, fallback scenarios and user journeys to create a useful conversational experience.",
       },
       {
-        title: "03. AI & Technology Architecture",
+        title: "AI & Technology Architecture",
         description: "We select the appropriate AI models, knowledge sources, integrations, APIs and architecture based on your requirements.",
       },
       {
-        title: "04. Development & Integration",
+        title: "Development & Integration",
         description: "Our team develops the chatbot or assistant and integrates it with your website, application, knowledge base, CRM, databases or other business systems.",
       },
       {
-        title: "05. Testing & Optimization",
+        title: "Testing & Optimization",
         description: "We test responses, conversation flows, integrations, edge cases and reliability to improve the quality and consistency of the assistant.",
       },
       {
-        title: "06. Deployment & Improvement",
+        title: "Deployment & Improvement",
         description: "We deploy the AI assistant and monitor its performance while continuously improving responses, workflows and capabilities based on real usage.",
       },
     ],

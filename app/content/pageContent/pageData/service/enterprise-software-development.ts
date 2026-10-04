@@ -216,42 +216,42 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
     },
     steps: [
       {
-        title: "01. Business & Requirements Analysis",
+        title: "Business & Requirements Analysis",
         description:
           "We understand your business processes, technical environment, users, challenges, and software requirements to establish a clear development direction.",
       },
       {
-        title: "02. Product Strategy & Architecture",
+        title: "Product Strategy & Architecture",
         description:
           "We define the product structure, technical architecture, integrations, workflows, and scalability requirements before development begins.",
       },
       {
-        title: "03. UI/UX Design",
+        title: "UI/UX Design",
         description:
           "We create intuitive interfaces and user experiences that make complex enterprise software easier for employees, customers, and stakeholders to use. For enterprise products requiring a dedicated experience strategy, our UI/UX Design services can support the design of dashboards, portals, workflows, and application interfaces.",
       },
       {
-        title: "04. Software Development",
+        title: "Software Development",
         description:
           "Our engineers build the enterprise application using scalable development practices, modular architecture, secure coding standards, and maintainable technologies.",
       },
       {
-        title: "05. Integration & Automation",
+        title: "Integration & Automation",
         description:
           "We integrate APIs, databases, third-party platforms, business systems, and automation workflows to connect your enterprise ecosystem.",
       },
       {
-        title: "06. Testing & Quality Assurance",
+        title: "Testing & Quality Assurance",
         description:
           "We test functionality, performance, security, integrations, responsiveness, and reliability to identify issues before deployment.",
       },
       {
-        title: "07. Deployment & Launch",
+        title: "Deployment & Launch",
         description:
           "We deploy the software into the required environment and support the transition from development to production.",
       },
       {
-        title: "08. Continuous Improvement",
+        title: "Continuous Improvement",
         description:
           "After launch, we can continue improving, optimizing, scaling, and extending the enterprise platform as your business requirements evolve.",
       },

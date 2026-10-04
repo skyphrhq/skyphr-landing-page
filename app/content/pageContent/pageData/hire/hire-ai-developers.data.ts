@@ -220,32 +220,32 @@ export const HIRE_AI_DEVELOPERS_SERVICE_PAGE_DATA: HirePageDataInterface = {
     },
     steps: [
       {
-        title: "01. Understand Your Requirements",
+        title: "Understand Your Requirements",
         description:
           "We start by understanding your business objectives, technical requirements, workflows, users, and AI use cases.",
       },
       {
-        title: "02. Define the AI Solution",
+        title: "Define the AI Solution",
         description:
           "Our team identifies the right AI approach, technologies, integrations, data requirements, and architecture for your project.",
       },
       {
-        title: "03. Design & Architecture",
+        title: "Design & Architecture",
         description:
           "We create the technical architecture and user experience required to build a reliable and scalable AI solution.",
       },
       {
-        title: "04. AI Development",
+        title: "AI Development",
         description:
           "Our AI developers build the core functionality, integrations, AI workflows, APIs, and application components.",
       },
       {
-        title: "05. Testing & Optimization",
+        title: "Testing & Optimization",
         description:
           "We test the system for functionality, accuracy, performance, security, and scalability before deployment.",
       },
       {
-        title: "06. Deployment & Support",
+        title: "Deployment & Support",
         description:
           "Once the solution is ready, we help deploy it and provide ongoing improvements, optimization, and technical support.",
       },
