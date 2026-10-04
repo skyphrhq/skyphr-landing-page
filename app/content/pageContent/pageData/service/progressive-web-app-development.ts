@@ -195,32 +195,32 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
     },
     steps: [
       {
-        title: "01. Discovery & Requirements",
+        title: "Discovery & Requirements",
         description:
           "We understand your business objectives, users, workflows, technical requirements, and PWA opportunities.",
       },
       {
-        title: "02. UX Strategy & Interface Design",
+        title: "UX Strategy & Interface Design",
         description:
           "We plan user flows and create responsive interfaces focused on usability, accessibility, and consistent cross-device experiences.",
       },
       {
-        title: "03. Architecture & Technology Planning",
+        title: "Architecture & Technology Planning",
         description:
           "We define the frontend architecture, APIs, data requirements, caching strategy, integrations, security requirements, and scalability approach.",
       },
       {
-        title: "04. PWA Development",
+        title: "PWA Development",
         description:
           "Our developers build the application, implement service workers and PWA capabilities, and integrate required backend services and APIs.",
       },
       {
-        title: "05. Testing & Optimization",
+        title: "Testing & Optimization",
         description:
           "We test functionality, responsiveness, browser compatibility, performance, accessibility, security, and offline behavior.",
       },
       {
-        title: "06. Deployment & Support",
+        title: "Deployment & Support",
         description:
           "We deploy the application and provide ongoing improvements, maintenance, optimization, and technical support as your product evolves.",
       },

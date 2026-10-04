@@ -64,7 +64,7 @@ export const REACTJS_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
       description: [
         [
           {
-            text: "We help businesses design and develop scalable React.js applications that improve user engagement, accelerate product delivery, and support long-term business objectives.",
+            text: "We help businesses design and develop scalable React.js applications that improve user engagement, accelerate product delivery and support long-term business objectives.",
           },
         ],
       ],

@@ -205,37 +205,37 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
     },
     steps: [
       {
-        title: "01. Discovery & Strategy",
+        title: "Discovery & Strategy",
         description:
           "We understand your business goals, target users, product requirements, competitors, and technical needs to define a clear mobile product strategy.",
       },
       {
-        title: "02. UX & Product Planning",
+        title: "UX & Product Planning",
         description:
           "We structure user journeys, application flows, information architecture, and core functionality before development begins.",
       },
       {
-        title: "03. UI/UX Design",
+        title: "UI/UX Design",
         description:
           "Our designers create intuitive interfaces and interactive prototypes that establish the visual and functional direction of the mobile application.",
       },
       {
-        title: "04. Mobile App Development",
+        title: "Mobile App Development",
         description:
           "Our engineers develop the application using suitable mobile technologies, scalable architecture, APIs, and backend integrations.",
       },
       {
-        title: "05. Testing & Optimization",
+        title: "Testing & Optimization",
         description:
           "We test the application across relevant devices and scenarios to identify usability, performance, security, and functionality issues.",
       },
       {
-        title: "06. Launch & Deployment",
+        title: "Launch & Deployment",
         description:
           "We prepare the application for production and support deployment through the relevant app distribution platforms and infrastructure.",
       },
       {
-        title: "07. Continuous Improvement",
+        title: "Continuous Improvement",
         description:
           "After launch, we can continue improving the application with new features, integrations, performance enhancements, and product iterations.",
       },
