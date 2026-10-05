@@ -31,3 +31,5 @@ package-lock.json
 !app/content/
 !app/content/markdown/
 !app/content/markdown/**/*.md
+!public/auth.md
+!public/skills/**/*.md

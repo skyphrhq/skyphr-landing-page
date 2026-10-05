@@ -1,0 +1,56 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Skyphr",
+    "identifier": "did:web:skyphr.com",
+    "url": "https://skyphr.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:skyphr.com:docs:llms-txt",
+      "displayName": "Skyphr llms.txt",
+      "description": "Summary of Skyphr's AI, SaaS and custom software services with links to every public page.",
+      "type": "text/plain",
+      "url": "https://skyphr.com/llms.txt",
+      "representativeQueries": [
+        "what services does Skyphr offer",
+        "find a company that builds AI-powered SaaS products",
+        "list Skyphr's public pages"
+      ]
+    },
+    {
+      "identifier": "urn:air:skyphr.com:content:site-markdown",
+      "displayName": "Skyphr pages as Markdown",
+      "description": "Markdown version of Skyphr's public pages. Append the page path (for example /agent/services/ui-ux-design) or request any page with Accept: text/markdown.",
+      "type": "text/markdown",
+      "url": "https://skyphr.com/agent",
+      "representativeQueries": [
+        "read Skyphr's homepage as markdown",
+        "get details of Skyphr's UI/UX design service",
+        "how do I hire Next.js developers from Skyphr"
+      ]
+    },
+    {
+      "identifier": "urn:air:skyphr.com:skills:index",
+      "displayName": "Skyphr agent skills",
+      "description": "Agent Skills discovery index, including the site-navigation skill for finding and retrieving Skyphr's public pages.",
+      "type": "application/json",
+      "url": "https://skyphr.com/.well-known/agent-skills/index.json",
+      "representativeQueries": [
+        "how should an agent navigate skyphr.com",
+        "which agent skills does Skyphr publish"
+      ]
+    },
+    {
+      "identifier": "urn:air:skyphr.com:docs:sitemap",
+      "displayName": "Skyphr sitemap",
+      "description": "XML sitemap of every indexable Skyphr page and blog post.",
+      "type": "application/xml",
+      "url": "https://skyphr.com/sitemap.xml",
+      "representativeQueries": [
+        "list all pages on skyphr.com",
+        "find Skyphr blog posts"
+      ]
+    }
+  ]
+}
