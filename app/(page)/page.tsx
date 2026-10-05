@@ -1,12 +1,6 @@
 import JsonLd from "@/app/components/JsonLd";
 import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
-import AboutSection from "@/app/screens/aboutSection";
-import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
-import OurProcessSection from "@/app/screens/common/ourProcessSection";
-import OurServiceSection from "@/app/screens/common/ourServiceSection";
-import ContactUsSection from "@/app/screens/contactUsSection";
 import HeroSectionElement from "@/app/screens/heroSectionEle";
-import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
 import {
   compactSchemas,
@@ -19,6 +13,12 @@ import dynamic from "next/dynamic";
 
 // const ClientTestimonial = dynamic(() => import("@/app/screens/common/clientTestimonial"));
 const FeaturedWorks = dynamic(() => import("@/app/screens/common/featuredWorks"));
+const AboutSection = dynamic(() => import("@/app/screens/aboutSection"));
+const OurServiceSection = dynamic(() => import("@/app/screens/common/ourServiceSection"));
+const OurProcessSection = dynamic(() => import("@/app/screens/common/ourProcessSection"));
+const FrequentlyAskedQuestions = dynamic(() => import("@/app/screens/common/frequentlyAskedQuestions"));
+const ReadyToScaleSection = dynamic(() => import("@/app/screens/readyToScaleSection"));
+const ContactUsSection = dynamic(() => import("@/app/screens/contactUsSection"));
 
 const title =
   typeof HOME_PAGE_DATA.metadata?.title === "string"

@@ -1,6 +1,7 @@
 import JsonLd from "@/app/components/JsonLd";
 import CTAButton from "@/app/components/common/ctaButton";
-import { NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { EXTRA_PAGE_LINKS_DATA, NAVBAR_LINKS_DATA } from "@/app/content/pageContent/navbar.data";
+import { GET_SORTED_BLOG_POSTS } from "@/app/content/pageContent/pageData/blog";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import ContactUsSection from "@/app/screens/contactUsSection";
 import { createPageMetadata } from "@/app/utils/seo/metadata";
@@ -22,27 +23,54 @@ export const metadata: Metadata = createPageMetadata({
 type SitemapLink = {
   label: string;
   href: string;
+  target?: "_blank" | "_self";
+};
+
+type SitemapSubGroup = {
+  title: string;
+  links: SitemapLink[];
 };
 
 type SitemapGroup = {
   title: string;
   links: SitemapLink[];
+  subGroups?: SitemapSubGroup[];
+};
+
+// Main listing page first, then every dropdown column as its own sub group
+// Entries with isLink: false are dropdown triggers/column titles, not pages, so they are skipped
+const getDropDownGroup = (id: string, title: string): SitemapGroup => {
+  const page = NAVBAR_LINKS_DATA.find((item) => item.id === id);
+  return {
+    title,
+    links: page?.isLink ? [{ label: page.label, href: page.href, target: page.target }] : [],
+    subGroups:
+      page?.dropDown.map((category) => ({
+        title: category.label,
+        links: category.dropDown.filter((link) => link.isLink),
+      })) ?? [],
+  };
 };
 
 const sitemapGroups: SitemapGroup[] = [
   {
     title: "Company Pages",
-    links: NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+    links: [
+      ...NAVBAR_LINKS_DATA.filter((page) => page.dropDown.length == 0).filter((page) => page.id !== "sitemap"),
+      ...EXTRA_PAGE_LINKS_DATA,
+    ].filter((page) => page.isLink),
   },
   {
-    title: "Services Pages",
-    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "services" ? page.dropDown : [])).flat(),
+    title: "Product Pages",
+    links: NAVBAR_LINKS_DATA.map((page) => (page.id === "our-products" ? page.dropDown : []))
+      .flat()
+      .filter((page) => page.isLink),
   },
+  getDropDownGroup("services", "Services Pages"),
+  getDropDownGroup("hire", "Hire Pages"),
   {
-    title: "Hire Pages",
-    links: NAVBAR_LINKS_DATA.map((page) =>
-      page.id === "hire" ? page.dropDown.flatMap((category) => category.dropDown) : [],
-    ).flat(),
+    title: "Blog Posts",
+    links: GET_SORTED_BLOG_POSTS().map((post) => ({ label: post.listing.title, href: `/blog/${post.slug}` })),
   },
 ];
 
@@ -65,7 +93,7 @@ export default function SitemapPage() {
               Explore every <span className="font-playfair-display italic font-semibold">Skyphr</span> page
             </h1>
             <p className="max-w-2xl pt-5 font-instrument-sans text-base font-medium leading-7 text-(--text-secondary-color) md:text-lg">
-              Browse the complete website structure, including company pages, service pages, and all hire pages.
+              Browse the complete website structure, including company pages, products, service pages, hire pages, and blog posts.
             </p>
           </div>
         </div>
@@ -80,15 +108,34 @@ export default function SitemapPage() {
                   {group.title}
                 </h2>
 
-                <ul className="flex flex-wrap gap-3 pt-7 md:gap-4">
-                  {group.links.map((link) => (
-                    <li key={`${group.title}-${link.href}-${link.label}`}>
-                      <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href}>
-                        {link.label}
-                      </CTAButton>
-                    </li>
-                  ))}
-                </ul>
+                {group.links.length > 0 && (
+                  <ul className="flex flex-wrap gap-3 pt-7 md:gap-4">
+                    {group.links.map((link) => (
+                      <li key={`${group.title}-${link.href}-${link.label}`}>
+                        <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href} target={link.target}>
+                          {link.label}
+                        </CTAButton>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {group.subGroups?.filter((subGroup) => subGroup.links.length > 0).map((subGroup) => (
+                  <div key={`${group.title}-${subGroup.title}`} className="pt-10">
+                    <h3 className="font-instrument-sans text-xl font-semibold text-(--text-main-color) md:text-2xl">
+                      {subGroup.title}
+                    </h3>
+                    <ul className="flex flex-wrap gap-3 pt-5 md:gap-4">
+                      {subGroup.links.map((link) => (
+                        <li key={`${subGroup.title}-${link.href}-${link.label}`}>
+                          <CTAButton btnStyle="CTA_SECONDARY" className="pr-15!" theme="LIGHT" href={link.href} target={link.target}>
+                            {link.label}
+                          </CTAButton>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </section>
             ))}
           </div>

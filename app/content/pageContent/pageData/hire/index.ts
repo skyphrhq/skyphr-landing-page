@@ -12,6 +12,7 @@ import { TYPESCRIPT_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/p
 import { UI_DESIGNER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/ui-designer.data";
 import { WIREFRAME_DESIGNER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/wireframe-designer.data";
 import { WORDPRESS_DEVELOPER_HIRE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/wordpress-developer.data";
+import { HIRE_AI_DEVELOPERS_SERVICE_PAGE_DATA } from "@/app/content/pageContent/pageData/hire/hire-ai-developers.data";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
 
 export const HIRE_PAGE_DATA_BY_SLUG: Record<string, HirePageDataInterface> = {
@@ -27,6 +28,7 @@ export const HIRE_PAGE_DATA_BY_SLUG: Record<string, HirePageDataInterface> = {
   "hire-python-developers": PYTHON_DEVELOPER_HIRE_PAGE_DATA,
   "hire-ui-designers": UI_DESIGNER_HIRE_PAGE_DATA,
   "hire-wireframe-designers": WIREFRAME_DESIGNER_HIRE_PAGE_DATA,
+  "hire-ai-developers": HIRE_AI_DEVELOPERS_SERVICE_PAGE_DATA,
 };
 
 export function getHirePageData(slug: string) {

@@ -200,6 +200,8 @@ At Skyphr, we combine product-first thinking, experienced UX professionals, coll
 
 ## Frequently Asked Questions
 
+Find answers to common questions about wireframe design, including our process, deliverables, project timelines, collaboration, prototypes, and how professional wireframes support better digital product development.
+
 ### Why should I hire a wireframe designer before UI design?
 
 Wireframe designers help define structure, functionality, and user journeys before visual design begins, reducing costly revisions later in the project.

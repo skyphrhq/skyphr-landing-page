@@ -183,6 +183,8 @@ At Skyphr, we combine modern frontend expertise, business-focused development, s
 
 ## Frequently Asked Questions
 
+Find answers to common questions about hiring Tailwind CSS developers, our development process, engagement models, technical expertise, timelines, and ongoing support.
+
 ### Why should I hire Tailwind CSS developers?
 
 Tailwind CSS developers help build fast, responsive, and scalable interfaces while reducing development time and improving maintainability.

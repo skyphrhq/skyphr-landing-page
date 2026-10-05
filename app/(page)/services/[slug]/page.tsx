@@ -1,8 +1,10 @@
 import JsonLd from "@/app/components/JsonLd";
 import { getServicePageData, SERVICE_PAGE_DATA_BY_SLUG } from "@/app/content/pageContent/pageData/service";
+import DeliveryApproachSection from "@/app/screens/common/deliveryApproachSection";
 import DevelopmentProcessSection from "@/app/screens/common/developmentProcessSection";
 import FeaturesIncludeSection from "@/app/screens/common/featuresIncludeSection";
 import FrequentlyAskedQuestions from "@/app/screens/common/frequentlyAskedQuestions";
+import IndustriesServeSection from "@/app/screens/common/industriesServeSection";
 import OurApproachSection from "@/app/screens/common/ourApproachSec";
 import OurValuesSection from "@/app/screens/common/ourValuesSection";
 import TechnologyStackSection from "@/app/screens/common/technologyStackSection";
@@ -13,7 +15,12 @@ import ContactUsSection from "@/app/screens/contactUsSection";
 import ReadyToScaleSection from "@/app/screens/readyToScaleSection";
 import ServicesSectionHero from "@/app/screens/servicesSectionHero";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
-import { compactSchemas, generateBreadcrumbSchema, generateFaqSchema, generateServiceSchema } from "@/app/utils/seo/schema";
+import {
+  compactSchemas,
+  generateBreadcrumbSchema,
+  generateFaqSchema,
+  generateServiceSchema,
+} from "@/app/utils/seo/schema";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -50,7 +57,8 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
     notFound();
   }
 
-  const metadataTitle = typeof servicePageData.metadata?.title === "string" ? servicePageData.metadata.title : "Skyphr Service";
+  const metadataTitle =
+    typeof servicePageData.metadata?.title === "string" ? servicePageData.metadata.title : "Skyphr Service";
   const metadataDescription = servicePageData.metadata?.description ?? "";
   const schemas = compactSchemas([
     generateServiceSchema({
@@ -81,10 +89,10 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
       {servicePageData.useCase && (
         <UseCaseSection data={servicePageData.useCase} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
+
       {servicePageData.technologyStack && (
         <TechnologyStackSection data={servicePageData.technologyStack} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
-
       {servicePageData.developmentProcess && (
         <DevelopmentProcessSection classNames="pb-0! md:pb-0! xl:pb-0!" data={servicePageData.developmentProcess} />
       )}
@@ -98,6 +106,13 @@ async function ServicesPage({ params }: HireFromSkyphrProps) {
         <section className="w-full h-auto">
           <OurValuesSection data={servicePageData.ourValues} classNames="pb-0! md:pb-0! xl:pb-0!" />
         </section>
+      )}
+      {servicePageData.deliveryApproach && (
+        <DeliveryApproachSection data={servicePageData.deliveryApproach} classNames="pb-0! md:pb-0! xl:pb-0!" />
+      )}
+
+      {servicePageData.industriesServe && (
+        <IndustriesServeSection data={servicePageData.industriesServe} classNames="pb-0! md:pb-0! xl:pb-0!" />
       )}
       {servicePageData.whyChoose && (
         <WhyChooseSection data={servicePageData.whyChoose} classNames="pb-0! md:pb-0! xl:pb-0!" />

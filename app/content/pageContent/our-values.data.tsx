@@ -117,7 +117,44 @@ export const AI_AUTOMATION_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
     bgColor: "rgba(93, 173, 226, 0.5)",
   },
 ];
-
+export const AI_CONSULTING_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description:
+      "We simplify complex AI technologies and translate them into practical strategies that business and technical teams can understand.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description:
+      "We consider long-term growth when planning AI architectures, integrations, workflows, and technology decisions.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description:
+      "We focus on efficient AI systems that deliver useful results while considering response times, infrastructure, operational efficiency, and scalability.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Business Impact",
+    description:
+      "We focus on AI applications that solve meaningful business problems and create measurable operational or product value.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
 export const CUSTOM_SOFTWARE_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
   {
     id: 1,
@@ -195,6 +232,82 @@ export const SAAS_DEVELOPMENT_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] 
   },
 ];
 
+export const RAG_DEVELOPMENT_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description:
+      "We build AI systems with clear architectures, understandable workflows, and practical user experiences.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description:
+      "Our RAG solutions are designed to support expanding data, users, integrations, and business requirements.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description:
+      "We optimize retrieval, processing, response generation, and application performance to create efficient AI experiences.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Business-Driven AI",
+    description:
+      "We focus on solving meaningful business problems with RAG technology instead of adding AI where it does not provide practical value.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+export const LLM_INTEGRATION_SERVICE_VALUES_CARD_DATA: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description:
+      "We simplify complex LLM capabilities into practical features, intuitive workflows, and experiences that users and businesses can easily understand.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description:
+      "We build LLM integrations with scalable architectures that can evolve alongside your product, users, data, and changing AI requirements.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description:
+      "We optimize model interactions, response times, workflows, infrastructure, and AI usage to deliver responsive and efficient applications.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Business Impact",
+    description:
+      "We focus on LLM solutions that address meaningful business challenges, improve workflows, and deliver practical value rather than adding AI for its own sake.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
 // hire page
 export const HIRE_REACT_JS_DEVELOPER_VALUES_CARDS: OurValueCardInterface[] = [
   {
@@ -582,6 +695,41 @@ export const HIRE_WIREFRAME_DESIGNER_VALUES_CARDS: OurValueCardInterface[] = [
     id: 4,
     title: "Design Consulting",
     description: "Engage experienced UX strategists for product planning, research, and wireframe architecture.",
+    icon: <FiZap className="text-2xl" />,
+    color: "#5DADE2",
+    bgColor: "rgba(93, 173, 226, 0.5)",
+  },
+];
+
+export const ENTERPRISE_APP_DEVELOPMENT_VALUES_CARDS: OurValueCardInterface[] = [
+  {
+    id: 1,
+    title: "Clarity Over Complexity",
+    description: "We simplify complex enterprise workflows into clear, intuitive application experiences that teams can understand and use efficiently.",
+    icon: <FiUsers className="text-2xl" />,
+    color: "#AC9BFF",
+    bgColor: "rgba(172, 155, 255, 0.5)",
+  },
+  {
+    id: 2,
+    title: "Built for Scale",
+    description: "We create enterprise applications with architecture and technology choices that support long-term business and operational growth.",
+    icon: <FiLayers className="text-2xl" />,
+    color: "#B8C56F",
+    bgColor: "rgba(184, 197, 111, 0.5)",
+  },
+  {
+    id: 3,
+    title: "Performance First",
+    description: "We focus on responsive applications, efficient systems and optimized workflows that help teams work faster.",
+    icon: <FiTrendingUp className="text-2xl" />,
+    color: "#FF767A",
+    bgColor: "rgba(255, 118, 122, 0.5)",
+  },
+  {
+    id: 4,
+    title: "Reliability Matters",
+    description: "Enterprise applications need dependable performance. We build with maintainability, stability, testing and long-term reliability in mind.",
     icon: <FiZap className="text-2xl" />,
     color: "#5DADE2",
     bgColor: "rgba(93, 173, 226, 0.5)",

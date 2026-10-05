@@ -341,7 +341,13 @@ export const FULLSTACK_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring Full Stack Developers, including our expertise, technologies, engagement models, development process, onboarding, pricing, and ongoing support.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_FULL_STACK_DEVELOPER_FAQ_DATA,
   },

@@ -381,7 +381,13 @@ export const PYTHON_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring Python developers, including expertise, engagement models, development capabilities, technologies, timelines, and ongoing support from Skyphr.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_PYTHON_DEVELOPER_FAQ_DATA,
   },

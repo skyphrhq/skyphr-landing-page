@@ -384,7 +384,13 @@ export const TYPESCRIPT_DEVELOPER_HIRE_PAGE_DATA: HirePageDataInterface = {
   faq: {
     header: {
       title: [[{ text: "Frequently" }], [{ text: "Asked" }, { text: "Questions", variant: "italic" }]],
-      description: [],
+      description: [
+        [
+          {
+            text: "Find answers to common questions about hiring TypeScript developers, our development expertise, engagement models, technologies, project timelines, and ongoing support.",
+          },
+        ],
+      ],
     },
     faqsItems: HIRE_TYPESCRIPT_DEVELOPER_FAQ_DATA,
   },

@@ -3,32 +3,10 @@
 import ContactFormSuccessModal from "@/app/components/common/contactFormSuccessModal";
 import InputField from "@/app/components/common/inputField";
 import { PHONE_NUMBER_FORMATE } from "@/app/utils/constants/numberFormate.constants";
+import { GetTurnstileToken, RemoveTurnstileWidget, SubmitClientInquiry } from "@/app/utils/helpers/clientInquiry";
 import { formateAndVerifyPhoneNumber, verifyPhoneNumberLength } from "@/app/utils/helpers/helper";
 import { FormErrors, FormValues, IpInfoLiteResponse } from "@/app/utils/interface/common.interface";
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type FormEvent } from "react";
-
-type TurnstileWidgetId = string;
-
-type TurnstileApi = {
-  render: (
-    container: HTMLElement,
-    options: {
-      sitekey: string;
-      size: "invisible";
-      callback: (token: string) => void;
-      "error-callback": () => void;
-      "expired-callback": () => void;
-    },
-  ) => TurnstileWidgetId;
-  execute: (widgetId: TurnstileWidgetId) => void;
-  remove?: (widgetId: TurnstileWidgetId) => void;
-};
-
-declare global {
-  interface Window {
-    turnstile?: TurnstileApi;
-  }
-}
 
 const initialFormValues: FormValues = {
   firstName: "",
@@ -41,49 +19,10 @@ const initialFormValues: FormValues = {
 };
 
 const IP_INFO_LITE_URL = process.env.NEXT_PUBLIC_IP_INFO_LITE_URL;
-const TURNSTILE_SCRIPT_URL = process.env.NEXT_PUBLIC_TURNSTILE_SCRIPT_URL;
-const CLIENT_INQUIRY_API_URL = process.env.NEXT_PUBLIC_CLIENT_INQUIRY_API_URL;
 const CLIENT_INQUIRY_FORM_ID = process.env.NEXT_PUBLIC_CLIENT_INQUIRY_FORM_ID;
-const CLIENT_INQUIRY_API_KEY = process.env.NEXT_PUBLIC_CLIENT_INQUIRY_API_KEY;
-const CLIENT_INQUIRY_API_SECRET = process.env.NEXT_PUBLIC_CLIENT_INQUIRY_API_SECRET;
-const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 if (!IP_INFO_LITE_URL) throw new Error("IP_INFO_LITE_URL is not defined in the environment variables.");
-if (!TURNSTILE_SCRIPT_URL) throw new Error("TURNSTILE_SCRIPT_URL is not defined in the environment variables.");
-if (!CLIENT_INQUIRY_API_URL) throw new Error("CLIENT_INQUIRY_API_URL is not defined in the environment variables.");
 if (!CLIENT_INQUIRY_FORM_ID) throw new Error("CLIENT_INQUIRY_FORM_ID is not defined in the environment variables.");
-if (!CLIENT_INQUIRY_API_KEY) throw new Error("CLIENT_INQUIRY_API_KEY is not defined in the environment variables.");
-if (!CLIENT_INQUIRY_API_SECRET)
-  throw new Error("CLIENT_INQUIRY_API_SECRET is not defined in the environment variables.");
-if (!TURNSTILE_SITE_KEY) throw new Error("TURNSTILE_SITE_KEY is not defined in the environment variables.");
-
-let turnstileScriptPromise: Promise<void> | null = null;
-
-const loadTurnstileScript = () => {
-  if (typeof window === "undefined") return Promise.reject(new Error("Turnstile is only available in the browser."));
-  if (window.turnstile) return Promise.resolve();
-  if (turnstileScriptPromise) return turnstileScriptPromise;
-
-  turnstileScriptPromise = new Promise((resolve, reject) => {
-    const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${TURNSTILE_SCRIPT_URL}"]`);
-
-    if (existingScript) {
-      existingScript.addEventListener("load", () => resolve(), { once: true });
-      existingScript.addEventListener("error", () => reject(new Error("Unable to load Turnstile.")), { once: true });
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = TURNSTILE_SCRIPT_URL;
-    script.async = true;
-    script.defer = true;
-    script.addEventListener("load", () => resolve(), { once: true });
-    script.addEventListener("error", () => reject(new Error("Unable to load Turnstile.")), { once: true });
-    document.head.appendChild(script);
-  });
-
-  return turnstileScriptPromise;
-};
 
 const getSupportedCountryCode = (countryCode?: string) => {
   if (!countryCode) return null;
@@ -112,12 +51,6 @@ const getCountryName = (countryCode: string) => {
   } catch {
     return countryCode;
   }
-};
-
-const getClientInquiryApiUrl = () => {
-  const url = new URL(CLIENT_INQUIRY_API_URL);
-  url.searchParams.set("form_id", CLIENT_INQUIRY_FORM_ID);
-  return url.toString();
 };
 
 const validateForm = (values: FormValues) => {
@@ -152,7 +85,7 @@ function CommonContactUsForm() {
   const hasSubmittedRef = useRef(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const turnstileContainerRef = useRef<HTMLDivElement>(null);
-  const turnstileWidgetIdRef = useRef<TurnstileWidgetId | null>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
 
   const countryOptions = useMemo(() => {
     const displayNames = new Intl.DisplayNames(["en"], { type: "region" });
@@ -198,11 +131,7 @@ function CommonContactUsForm() {
   }, [hasSubmitted]);
 
   useEffect(() => {
-    return () => {
-      if (turnstileWidgetIdRef.current) {
-        window.turnstile?.remove?.(turnstileWidgetIdRef.current);
-      }
-    };
+    return () => RemoveTurnstileWidget(turnstileWidgetIdRef);
   }, []);
 
   const updateFormValue = (name: keyof FormValues, value: string) => {
@@ -247,42 +176,7 @@ function CommonContactUsForm() {
     updateFormValue(name as keyof FormValues, value);
   };
 
-  const getTurnstileToken = async () => {
-    if (!TURNSTILE_SITE_KEY) throw new Error("Turnstile site key is missing.");
-    if (!turnstileContainerRef.current) throw new Error("Turnstile container is missing.");
-
-    await loadTurnstileScript();
-
-    return await new Promise<string>((resolve, reject) => {
-      const turnstile = window.turnstile;
-
-      if (!turnstile || !turnstileContainerRef.current) {
-        reject(new Error("Turnstile is not ready."));
-        return;
-      }
-
-      if (turnstileWidgetIdRef.current) {
-        turnstile.remove?.(turnstileWidgetIdRef.current);
-        turnstileWidgetIdRef.current = null;
-      }
-
-      turnstileWidgetIdRef.current = turnstile.render(turnstileContainerRef.current, {
-        sitekey: TURNSTILE_SITE_KEY,
-        size: "invisible",
-        callback: (token) => resolve(token),
-        "error-callback": () => reject(new Error("Turnstile verification failed.")),
-        "expired-callback": () => reject(new Error("Turnstile verification expired. Please try again.")),
-      });
-
-      turnstile.execute(turnstileWidgetIdRef.current);
-    });
-  };
-
   const submitClientInquiry = async (turnstileToken: string) => {
-    if (!CLIENT_INQUIRY_API_KEY || !CLIENT_INQUIRY_API_SECRET || CLIENT_INQUIRY_FORM_ID === "YOUR_FORM_ID") {
-      throw new Error("Client inquiry API configuration is missing.");
-    }
-
     const payload = new FormData();
     payload.append("first_name", formValues.firstName.trim());
     payload.append("last_name", formValues.lastName.trim());
@@ -296,19 +190,7 @@ function CommonContactUsForm() {
       payload.append("attachment", new File([], "", { type: "application/octet-stream" }));
     }
 
-    const response = await fetch(getClientInquiryApiUrl(), {
-      method: "POST",
-      headers: {
-        "X-API-Key": CLIENT_INQUIRY_API_KEY,
-        "X-API-Secret": CLIENT_INQUIRY_API_SECRET,
-        "X-Turnstile-Token": turnstileToken,
-      },
-      body: payload,
-    });
-
-    if (!response.ok) {
-      throw new Error("Unable to submit the form. Please try again.");
-    }
+    await SubmitClientInquiry(CLIENT_INQUIRY_FORM_ID, payload, turnstileToken);
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -325,7 +207,7 @@ function CommonContactUsForm() {
     setSubmitState("submitting");
 
     try {
-      const turnstileToken = await getTurnstileToken();
+      const turnstileToken = await GetTurnstileToken(turnstileContainerRef.current, turnstileWidgetIdRef);
       await submitClientInquiry(turnstileToken);
 
       setFormValues(initialFormValues);
@@ -341,10 +223,7 @@ function CommonContactUsForm() {
       setSubmitState("error");
       setSubmitMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
     } finally {
-      if (turnstileWidgetIdRef.current) {
-        window.turnstile?.remove?.(turnstileWidgetIdRef.current);
-        turnstileWidgetIdRef.current = null;
-      }
+      RemoveTurnstileWidget(turnstileWidgetIdRef);
     }
   };
 

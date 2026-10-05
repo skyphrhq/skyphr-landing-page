@@ -1,30 +1,19 @@
-import BgAbstractImage from "@/app/assets/webp/skyphr-hero-background.webp";
-import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 function HeroBgAbstract({ className = "" }: { className?: string }) {
   return (
     <>
-      <Image
-        width={1500}
-        height={1000}
-        src={BgAbstractImage}
-        alt="Abstract gradient background design"
-        title="Abstract gradient background design"
-        className={twMerge("w-full h-full absolute inset-0 z-10 opacity-70 pointer-events-none", className)}
-        loading="eager"
-        fetchPriority="high"
-        priority={true}
-      />
       <div
+        aria-hidden="true"
         className={twMerge(
-          "w-full aspect-square absolute inset-0 pointer-events-none flex items-center justify-center blur-[200px] rounded-[200%] opacity-70",
+          "skyphr-fluted-bg w-full h-full absolute inset-0 z-10 opacity-70 pointer-events-none",
           className,
         )}
+      />
+      <div
+        className={twMerge("w-full h-full absolute inset-0 pointer-events-none", className)}
         style={{
-          background: `
-radial-gradient(circle at center, rgba(105,116,226,0.6) 0%, rgba(105,116,226,0.3) 30%, transparent 60%),
-linear-gradient(to top, #6974e2 0%, white 100%)
-`,
+          background:
+            "radial-gradient(ellipse 80% 55% at 50% 35%, rgba(105,116,226,0.35) 0%, rgba(105,116,226,0.14) 40%, rgba(105,116,226,0.04) 65%, transparent 80%)",
         }}
       />
     </>
