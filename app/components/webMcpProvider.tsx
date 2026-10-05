@@ -99,7 +99,7 @@ async function searchSite({ query }: Record<string, string>) {
     throw new Error("The site search index could not be loaded.");
   }
 
-  const lines = (await response.text()).split("\\n");
+  const lines = (await response.text()).split("\n");
   const matches = lines.filter((line) => line.toLowerCase().includes(normalizedQuery)).slice(0, 10);
 
   return {
@@ -127,7 +127,7 @@ async function retrievePage({ path }: Record<string, string>) {
 
 export default function WebMcpProvider() {
   useEffect(() => {
-    const modelContext = navigator.modelContext ?? document.modelContext;
+    const modelContext = document.modelContext ?? navigator.modelContext;
 
     if (!modelContext) {
       return;

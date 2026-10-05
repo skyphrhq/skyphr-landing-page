@@ -2,48 +2,37 @@
 
 ## Audience
 
-This document is for AI agents and agent platforms that need to discover how
-to access Skyphr's public website and services.
+This document is for AI agents and agent platforms that want to access
+skyphr.com, the public marketing website of Skyphr (AI, SaaS and custom
+software studio).
 
-## Authentication
+## Registration
 
-Public pages and discovery documents require no credentials. Protected agent
-access uses the OAuth 2.0 authorization-code flow described by the public
-metadata at:
+Skyphr does not offer agent registration, accounts, API keys or OAuth. There is
+no registration endpoint and no credentials to obtain. Every resource on
+skyphr.com is public.
 
-- `https://skyphr.com/.well-known/oauth-protected-resource`
-- `https://skyphr.com/.well-known/oauth-authorization-server`
-
-## agent_auth
-
-```yaml
-agent_auth:
-  skill: https://skyphr.com/auth.md
-  register_uri: https://skyphr.com/oauth/register
-  methods:
-    - id: oauth2-authorization-code
-      type: oauth2
-      grant_type: authorization_code
-      authorization_endpoint: https://skyphr.com/oauth/authorize
-      token_endpoint: https://skyphr.com/oauth/token
-      scopes: [openid]
-      credential_type: bearer_access_token
-      use: Send the access token in the HTTP Authorization header as Bearer <token>.
-```
-
-Agents should use the registration URI to obtain client credentials, then
-complete the authorization-code flow before requesting protected resources.
+To start a project or partnership with Skyphr, a human should use the contact
+form at https://skyphr.com/contact. Agents must not submit that form, or any
+other form, on a user's behalf without the user's explicit consent.
 
 ## Supported access method
 
-- **Public web access:** Use standard HTTPS `GET` requests to access public
-  pages, `robots.txt`, `llms.txt`, the XML sitemap, and other published agent
-  discovery documents.
-- **OAuth 2.0:** Use a bearer access token in the `Authorization` header for
-  protected resources.
+- **Anonymous HTTPS:** Use plain `GET` requests with no `Authorization` header.
+  This covers every public page, `robots.txt`, `llms.txt`, `sitemap.xml` and the
+  discovery documents under `/.well-known/`.
+- **Markdown:** Request any page with `Accept: text/markdown`, or read it under
+  `/agent` (for example `https://skyphr.com/agent/about-us`).
+- **Capability manifest:** `https://skyphr.com/.well-known/ai-catalog.json`
+  lists the agent-readable resources.
+- **In-browser tools:** Pages register read-only WebMCP tools
+  (`navigate_site`, `search_site`, `retrieve_page`) through
+  `document.modelContext`.
 
 ## Credential use
 
-Do not submit credentials or attempt to create an account on behalf of an
-agent. Respect the site's published robots rules, Content-Signal preferences,
-and any applicable privacy or usage policies.
+No credentials are issued or accepted. Do not send tokens, cookies or
+passwords to skyphr.com, and do not create accounts on a user's behalf. Respect
+the rules and Content-Signal preferences in `robots.txt`
+(`ai-train=no, search=yes, ai-input=yes`) and the privacy policy at
+https://skyphr.com/privacy-policy.
