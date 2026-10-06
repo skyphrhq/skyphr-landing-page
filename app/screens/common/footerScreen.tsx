@@ -45,7 +45,7 @@ function FooterScreen() {
     <div className="w-full bg-(--root-black-color) relative overflow-hidden font-inter">
       {/* Huge Background Text */}
       <div className="absolute hidden xl:flex xl:bottom-[-5%] left-0 right-0 justify-center w-full pointer-events-none select-none overflow-hidden">
-        <span className="text-[clamp(120px,24vw,500px)]  leading-none font-bold text-white/3 font-instrument-sans whitespace-nowrap text-center">
+        <span className="text-[clamp(120px,24vw,500px)]  leading-none font-bold text-white/8 font-instrument-sans whitespace-nowrap text-center">
           Skyphr
         </span>
       </div>
@@ -84,7 +84,7 @@ function FooterScreen() {
                     rel="noopener noreferrer"
                     aria-label={label}
                     title={label}
-                    className="group w-11 h-11 flex items-center justify-center rounded-full border border-white/20 text-neutral-300 hover:text-white hover:border-white hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,255,255,0.12)] transition-all duration-300">
+                    className="group w-11 h-11 flex items-center justify-center rounded-full border border-white/20 text-(--root-white-color) hover:border-(--root-white-color) hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,255,255,0.12)] transition-all duration-300">
                     <Icon className="text-xl transition-transform duration-300 group-hover:scale-110" />
                   </Link>
                 ))}
@@ -126,7 +126,7 @@ function FooterScreen() {
           <div className="hidden flex-1 grid-cols-2 md:grid md:grid-cols-3 xl:flex xl:items-start xl:justify-between gap-x-7 gap-y-10 pt-2">
             {FOOTER_LINK_GROUPS.map((group) => (
               <div key={group.title} className="flex flex-col gap-4">
-                <span className="text-white font-medium text-sm">{group.title}</span>
+                <span className="text-white font-semibold text-base xl:text-lg">{group.title}</span>
                 {group.links.map((link) => (
                   <Link
                     key={`${group.title}-${link.href}-${link.label}`}
@@ -143,7 +143,7 @@ function FooterScreen() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center py-5 border-t border-white/10 gap-4">
-          <p className="text-neutral-500 text-sm">© {new Date().getFullYear()} Skyphr. All rights reserved.</p>
+          <p className="text-(--footer-links-color) text-sm">© {new Date().getFullYear()} Skyphr. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link
               href="/privacy-policy"

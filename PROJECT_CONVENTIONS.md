@@ -158,7 +158,7 @@ There is **no** `hooks/`, `services/` or `api/` folder. No custom hooks exist to
 | `--border-color` | `#dddddd` | Default borders (≈40) |
 | `--about-us-card-bg` | `#f5f5f5` | Light grey card/surface background (≈15) |
 | `--placeholder-color` | `#9ca3af` | Input placeholders |
-| `--footer-links-color` | `#707070` | Footer link text |
+| `--footer-links-color` | `#a3a3a3` | Footer link text (≈8:1 on black) |
 | `--skyai-lavender-bg` | `#f6f7fe` | SkyAI page section/surface background |
 | `--skyai-lavender-soft` | `#eef0fd` | SkyAI soft chips, pill gradient |
 | `--skyai-lavender-border` | `#e5e8fb` | SkyAI borders, pill gradient |

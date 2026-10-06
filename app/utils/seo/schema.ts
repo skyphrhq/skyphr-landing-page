@@ -1,3 +1,4 @@
+import { FOUNDER_PERSON_DATA } from "@/app/content/pageContent/pageData/founder.data";
 import { GOOGLE_MAPS_URL, SAME_AS_URLS, SITE_ALTERNATE_NAMES } from "@/app/content/pageContent/socilaLinks.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import type { BlogPostData, FaqCommonCardData } from "@/app/utils/interface/data.interface";
@@ -56,11 +57,17 @@ export const generateOrganizationSchema = (): JsonLd => ({
   image: absoluteSchemaUrl("/og-image/home-page.png"),
   description:
     "Skyphr is a digital product, software, and AI engineering company in Ahmedabad, India, offering UI/UX design, website development, custom software, SaaS product development, AI agents and integrations, and Shopify/e-commerce development.",
+  // Inline the founder so pages without the About page's Person node (e.g. the homepage) still resolve the name
   founder: {
+    "@type": "Person",
     "@id": FOUNDER_PERSON_ID,
+    name: FOUNDER_PERSON_DATA.name,
+    jobTitle: FOUNDER_PERSON_DATA.jobTitle,
+    url: absoluteSchemaUrl("/about-us"),
+    sameAs: FOUNDER_PERSON_DATA.sameAs,
   },
   email: "sales@skyphr.com",
-  telephone: "+91-92748-29076",
+  telephone: "+91 92748 29076",
   address: {
     "@type": "PostalAddress",
     streetAddress: "A-568, Money Plant High St, Gota",
@@ -72,7 +79,7 @@ export const generateOrganizationSchema = (): JsonLd => ({
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    telephone: "+91-92748-29076",
+    telephone: "+91 92748 29076",
     email: "sales@skyphr.com",
     url: "https://cal.com/skyphr/30min",
     availableLanguage: ["English"],
