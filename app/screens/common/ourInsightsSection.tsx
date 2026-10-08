@@ -1,5 +1,5 @@
 "use client";
-import BlogCard from "@/app/components/blogCard";
+import BlogListingCard from "@/app/components/blogListingCard";
 import CommonSectionHeader from "@/app/components/common/commonSectionHeader";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_SCROLL_TRIGGER_ANIMATION } from "@/app/utils/constants/animation.constant";
@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-function OurInsightsSection({ data, classNames }: OurInsightsSectionInterface) {
+function OurInsightsSection({ data, posts, classNames }: OurInsightsSectionInterface) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -41,11 +41,16 @@ function OurInsightsSection({ data, classNames }: OurInsightsSectionInterface) {
       ref={containerRef}>
       <div className="skyphr-container">
         <CommonSectionHeader header={data.header} />
-        <div className="w-full flex flex-row overflow-y-hidden overflow-x-auto items-stretch justify-start lg:grid lg:grid-cols-3 gap-6">
-          {data.blogsData.slice(0, 3).map((item, index) => (
-            <div key={index} className="w-full lg:col-span-1 reveal-animation">
-              <BlogCard {...item} />
-            </div>
+        {/* Same card as /blog (it carries the reveal-animation class); swipeable row below lg, three columns from lg */}
+        <div className="w-full flex flex-row overflow-y-hidden overflow-x-auto snap-x snap-mandatory items-stretch justify-start lg:grid lg:grid-cols-3 gap-6">
+          {posts.slice(0, 3).map((post) => (
+            <BlogListingCard
+              key={post.slug}
+              data={post}
+              readMoreLabel={data.readMoreLabel}
+              featuredLabel={data.featuredLabel}
+              className="min-w-[85%] sm:min-w-[60%] lg:min-w-0 snap-start"
+            />
           ))}
         </div>
       </div>

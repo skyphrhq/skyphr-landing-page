@@ -69,6 +69,7 @@ export interface FrequentlyAskedQuestionsInterface {
 
 export interface OurInsightsSectionInterface {
   data: OurInsightsSection;
+  posts: BlogPostData[];
   classNames?: string;
 }
 

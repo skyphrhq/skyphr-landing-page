@@ -89,21 +89,6 @@ export interface OurProcessCardInterface {
   label?: string;
 }
 
-export interface BlogCardInterface {
-  imageOptions: {
-    imagePath: StaticImageData;
-    width: number;
-    height: number;
-    alt: string;
-    className?: string;
-    loading?: "lazy" | "eager";
-  };
-  title: string;
-  description: string;
-  label?: string;
-  date?: string;
-}
-
 export interface BlogListingCardInterface {
   data: BlogPostData;
   readMoreLabel: string;

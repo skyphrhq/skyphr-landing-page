@@ -1,4 +1,5 @@
 import JsonLd from "@/app/components/JsonLd";
+import { GET_SORTED_BLOG_POSTS } from "@/app/content/pageContent/pageData/blog";
 import { HOME_PAGE_DATA } from "@/app/content/pageContent/pageData/home.data";
 import HeroSectionElement from "@/app/screens/heroSectionEle";
 import { normalizePageMetadata } from "@/app/utils/seo/metadata";
@@ -17,6 +18,7 @@ const AboutSection = dynamic(() => import("@/app/screens/aboutSection"));
 const OurServiceSection = dynamic(() => import("@/app/screens/common/ourServiceSection"));
 const OurProcessSection = dynamic(() => import("@/app/screens/common/ourProcessSection"));
 const FrequentlyAskedQuestions = dynamic(() => import("@/app/screens/common/frequentlyAskedQuestions"));
+const OurInsightsSection = dynamic(() => import("@/app/screens/common/ourInsightsSection"));
 const ReadyToScaleSection = dynamic(() => import("@/app/screens/readyToScaleSection"));
 const ContactUsSection = dynamic(() => import("@/app/screens/contactUsSection"));
 
@@ -34,6 +36,8 @@ export const metadata: Metadata = HOME_PAGE_DATA.metadata
   : { title, description };
 
 export default function Home() {
+  // Newest first, read from data/blogs/ at build time like /blog
+  const latestPosts = GET_SORTED_BLOG_POSTS().slice(0, 3);
   const schemas = compactSchemas([
     generateWebPageSchema({ title, description, path }),
     HOME_PAGE_DATA.faq ? generateFaqSchema(HOME_PAGE_DATA.faq.faqsItems) : null,
@@ -76,14 +80,14 @@ export default function Home() {
       )} */}
       {HOME_PAGE_DATA?.faq && (
         <section className="w-full h-auto overflow-hidden">
-          <FrequentlyAskedQuestions classNames="py-0! md:py-0! xl:py-0!" data={HOME_PAGE_DATA.faq} />
+          <FrequentlyAskedQuestions data={HOME_PAGE_DATA.faq} />
         </section>
       )}
-      {/* {HOME_PAGE_DATA?.ourInsights && (
+      {HOME_PAGE_DATA?.ourInsights && latestPosts.length > 0 && (
         <section className="w-full h-auto overflow-hidden">
-          <OurInsightsSection data={HOME_PAGE_DATA.ourInsights} />
+          <OurInsightsSection data={HOME_PAGE_DATA.ourInsights} posts={latestPosts} />
         </section>
-      )} */}
+      )}
       {HOME_PAGE_DATA?.readyToScale && (
         <section className="w-full h-auto overflow-hidden">
           <ReadyToScaleSection data={HOME_PAGE_DATA.readyToScale} />

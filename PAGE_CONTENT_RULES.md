@@ -31,7 +31,7 @@ app/content/
 │   ├── our-values.data.tsx     # ALL "values" / hiring-model card arrays → <PAGE>_VALUES_CARD(S)_DATA
 │   ├── service-steps.data.tsx  # ALL "our approach" step arrays           → <PAGE>_STEPS_WE_FOLLOW
 │   ├── testimonial.data.tsx    # CLIENT_TESTIMONIAL_DATA (shared, don't edit for one page)
-│   ├── common.data.tsx, navbar.data.tsx, insights.data.tsx, ourProcess.data.tsx, socilaLinks.data.tsx
+│   ├── common.data.tsx, navbar.data.tsx, ourProcess.data.tsx, socilaLinks.data.tsx
 │   └── pageData/
 │       ├── hire/<slug>.data.ts       # one file per /hire/<slug> page   (HirePageDataInterface)
 │       ├── hire/index.ts             # URL slug → data map
