@@ -34,6 +34,7 @@ Scripts: `pnpm dev` (site on **http://localhost:3000** + blog CMS on **http://lo
 ### Blog CMS
 - `pnpm dev` runs `blog-cms/dev.mjs`, which starts both servers and stops both when either exits (Ctrl+C included).
 - `blog-cms/` holds the prebuilt blog CMS (`index.html` + `assets/`), its API (`services/`, a Vite plugin) and `server.mjs`, which serves the UI and runs the plugin's `/api/*` handler (port 5175, override with `CMS_PORT`). The CMS code itself is maintained in its own repo; only `server.mjs`, `dev.mjs` and `package.json` (`"type": "module"`) are ours. It is **local-only**: excluded from `tsconfig.json`, ESLint, Next output tracing (`outputFileTracingExcludes` in `next.config.ts`) and the Vercel upload (`.vercelignore`). Never import from `blog-cms/` in `app/`.
+- The CMS loads every block in `blog.config.json` (and everything they import) outside Next, so `server.mjs` loads the root `.env` itself (`process.loadEnvFile`). If any block's import throws (e.g. `clientInquiry.ts` without its `NEXT_PUBLIC_*` vars), the whole API fails and the CMS shows "No blogs yet". Keep top-level code in blog blocks and their imports free of browser-only or Next-only APIs.
 - The CMS API needs the devDependencies `vite`, `formidable`, `sharp` and `chokidar`. If it fails with "Cannot find native binding" (rolldown), run `pnpm install --force`.
 - `skyphr-cms-config/blog.config.json` registers blog blocks. The CMS aliases `@` to `baseEntryPoint`, so it must be `.` (the repo root, same as `tsconfig` `@/*`) for the blocks' `@/app/...` imports to resolve; section `module` paths are therefore `./app/components/blog/<block>`. Saved posts are JSON in `data/blogs/<slug>.json`; uploaded images go to `public/blog/images/` (`hero/` for Blog Hero; the `assets` key is the lower-cased section name) so they're servable by URL. The saved image `url` is a file path (`./public/blog/images/...`): strip `./public` to get the site URL.
 - CMS field types (`STRING`, `TEXTAREA`, `RICH_TEXT`, `NUMBER`, `BOOLEAN`, `IMAGE`, `ARRAY`) and `CMSImageData` (the saved IMAGE value: `url`, `alt?`, `width`, `height`) live in `types/type.ts`.
@@ -87,6 +88,7 @@ LandingPage/
 │       ├── constants/          # *.constant(s).ts — shared class strings, animation presets, config
 │       ├── helpers/helper.ts   # Pure helper functions
 │       ├── helpers/clientInquiry.ts # Turnstile + client inquiry API submit, shared by every form
+│       ├── helpers/blogContent.ts # Parsers for blog CMS TEXTAREA tables / FAQs (blocks + blog JSON-LD)
 │       ├── interface/          # All TS interfaces/types (4 files, see below)
 │       └── seo/                # metadata.ts (Next Metadata builders), schema.ts (JSON-LD builders)
 ├── types/type.ts               # SectionSchema + CMSImageData types for blog blocks
@@ -122,6 +124,7 @@ LandingPage/
 | Color / design token | `:root` in `app/styles/globals.css` | `--skyai-lavender-bg` |
 | Keyframes / animation classes | `app/styles/animation.css` | `skyai-sparkle-spin` |
 | Page-specific complex CSS (too big for utilities) | its own file in `app/styles/`, `@import`ed from `globals.css`, classes prefixed | `app/styles/skyVoice.css` (`.skyai-voice-*`) |
+| Table or FAQ in a blog post (the CMS has no table / repeatable-list editor) | a `TEXTAREA` field parsed by `ParseBlogTable` / `ParseBlogFaqs` in `app/utils/helpers/blogContent.ts` | `blog/comparisonTable.tsx`, `blog/faqSection.tsx` |
 | HTML from a CMS `RICH_TEXT` field | render it in an element with `.skyphr-blog-rich-text` (`app/styles/blogRichText.css`), which restores spacing/lists/headings that Tailwind's preflight removes | `blog/textSection.tsx` |
 | 3D scene (Spline `.splinecode`) | `public/spline/<kebab-name>.splinecode`, URL in a `common.constant.ts` constant | `SKY_VOICE_ORB_SCENE_URL` → `/spline/sky-voice-orb.splinecode` |
 | Indexable page that isn't in the header nav | `EXTRA_PAGE_LINKS_DATA` in `navbar.data.tsx` (feeds `app/sitemap.ts`, the `/sitemap` page and the footer "Company" column) | `/sky-ai` |
@@ -225,7 +228,7 @@ Mobile-first Tailwind prefixes. Frequency: `md:` 320, `lg:` 169, `xl:` 128, `sm:
 
 | File | What |
 |---|---|
-| `app/components/blog/quoteBlock.tsx`, `blogHero.tsx`, `authorCard.tsx`, `featuredVisual.tsx` | `#5b45f4`, `#edeaff`, `#4f3ff0`, `bg-white`, `rgba(...)` shadow |
+| `app/components/blog/blogHero.tsx` | `bg-[#5b45f4]`, `text-white` |
 | `app/components/processStepCard.tsx` | `bg-[#8b95f6]` (x2) |
 | `app/components/navbar/skyAiNavPill.tsx` | SVG `stopColor="#3846da"` / `"#6974e2"` (= CTA / blue-shade tokens) |
 | `app/components/heroBgAbstract.tsx` | `#6974e2`, `rgba(105,116,226,…)` (= `--bg-blue-shade`) |
@@ -489,8 +492,9 @@ Pages are thin: they only read a data object, render sections conditionally (`DA
 ### Add a blog post
 1. Create and publish it in the blog CMS (`pnpm dev` → http://localhost:5175). It saves `data/blogs/<slug>.json` (`seo`, `listing`, `sections`); that file is the **only** source for the post. Don't write posts as TS data files.
 2. `/blog` (listing, newest first), `/blog/<slug>` (`generateStaticParams`, `dynamicParams = false`), the sitemap, metadata (`createBlogPostMetadata`) and JSON-LD (`generateBlogPostSchemas`: the CMS `seo.schema.data` as-is, else generated) all read it through `app/content/pageContent/pageData/blog/index.ts` at build time. Commit the JSON and its images in `public/blog/images/`.
-3. Sections render through `BLOG_SECTION_COMPONENTS` in `app/screens/blogs/blogArticleScreen.tsx`, keyed by the section `name` in `blog.config.json`. A new blog block needs both: a `blog.config.json` entry and a registry entry. `Blog Hero` is the only hero block; without one the page renders `BlogHero` from `listing` so every post has its `<h1>`.
-4. The markdown mirror is generated by the CMS on save, from the `markdown` block in `blog.config.json`: `app/content/markdown/blog/<slug>.md` (served at `/agent/blog/<slug>`) and the list between the `<!-- cms:posts:start -->` / `<!-- cms:posts:end -->` markers in `app/content/markdown/blog.md`. Don't edit either by hand; commit them with the post. A blog block appears in the markdown only if its `blog.config.json` entry has a `markdown` template (`{{field}}` placeholders; blocks without one, like `Blogs Sidebar`, are skipped). To rebuild everything: `node blog-cms/services/scripts/regenerateMarkdown.js blog`.
+3. Blocks: `Blog Hero` (title, byline, hero image), `Text Section` (optional H2 + rich text: paragraphs, bullet/numbered lists, bold, links, blockquote for callouts/formulas), `Comparison Table` (optional H2 + table pasted into a TEXTAREA: one row per line, cells split by tabs or `|`, first row = header, first column = row labels), `FAQ Section` (optional H2 + the site FAQ accordion with `variant="LINE"`: no background, bottom border only, first question open; question on one line, answer below, blank line between questions; also emitted as `FAQPage` JSON-LD unless the CMS schema already has one) and `Blogs Sidebar`.
+4. Sections render through `BLOG_SECTION_COMPONENTS` in `app/screens/blogs/blogArticleScreen.tsx`, keyed by the section `name` in `blog.config.json`. A new blog block needs both: a `blog.config.json` entry and a registry entry. `Blog Hero` is the only hero block; without one the page renders `BlogHero` from `listing` so every post has its `<h1>`.
+5. The markdown mirror is generated by the CMS on save, from the `markdown` block in `blog.config.json`: `app/content/markdown/blog/<slug>.md` (served at `/agent/blog/<slug>`) and the list between the `<!-- cms:posts:start -->` / `<!-- cms:posts:end -->` markers in `app/content/markdown/blog.md`. Don't edit either by hand; commit them with the post. A blog block appears in the markdown only if its `blog.config.json` entry has a `markdown` template (`{{field}}` placeholders; blocks without one, like `Blogs Sidebar`, are skipped). To rebuild everything: `node blog-cms/services/scripts/regenerateMarkdown.js blog`.
 
 ### Add a new section
 1. Define the data shape in `page.interface.ts` (shared) or `data.interface.ts` (page-specific) and add it as an optional key on the page data interface.

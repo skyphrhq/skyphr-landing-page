@@ -20,28 +20,19 @@
             "markdown": "# {{title}}\n\n{{excerpt}}\n\nBy {{authorName}}, {{authorRole}} · {{publishedAt}}"
         },
         {
-            "name": "Featured Visual",
-            "module": "./app/components/blog/featuredVisual"
-        },
-        {
-            "name": "Article Intro",
-            "module": "./app/components/blog/articleIntro",
-            "markdown": "{{firstParagraph}}\n\n{{secondParagraph}}"
-        },
-        {
             "name": "Text Section",
             "module": "./app/components/blog/textSection",
             "markdown": "## {{heading}}\n\n{{content}}"
         },
         {
-            "name": "Quote Block",
-            "module": "./app/components/blog/quoteBlock",
-            "markdown": "> {{quote}}\n>\n> — {{author}}"
+            "name": "Comparison Table",
+            "module": "./app/components/blog/comparisonTable",
+            "markdown": "## {{heading}}\n\n{{table}}"
         },
         {
-            "name": "Author Card",
-            "module": "./app/components/blog/authorCard",
-            "markdown": "## About the author\n\n**{{name}}**, {{title}}\n\n{{bio}}"
+            "name": "FAQ Section",
+            "module": "./app/components/blog/faqSection",
+            "markdown": "## {{heading}}\n\n{{faqs}}"
         },
         {
             "name": "Blogs Sidebar",

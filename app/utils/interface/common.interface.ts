@@ -117,6 +117,9 @@ export interface FaqCommonCardInterface {
   isOpen: boolean;
   onToggle: () => void;
   index: number;
+  // CARD (default): grey bordered card. LINE: no background, bottom border only (blog posts)
+  variant?: "CARD" | "LINE";
+  className?: string;
 }
 
 export interface ClientTestimonialCardInterface {

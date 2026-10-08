@@ -5,6 +5,11 @@ import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { viteApiPlugin } from "./services/api/vite-api-plugin.js";
 
+// The CMS loads the blog blocks (and what they import, e.g. app/utils/helpers/clientInquiry.ts, which throws without its
+// NEXT_PUBLIC_* vars) outside Next, so .env isn't loaded for us. Without it every block load fails and the CMS lists no posts.
+const ENV_FILE = fileURLToPath(new URL("../.env", import.meta.url));
+if (existsSync(ENV_FILE)) process.loadEnvFile(ENV_FILE);
+
 const PORT = Number(process.env.CMS_PORT) || 5175;
 const ROOT = fileURLToPath(new URL(".", import.meta.url));
 // The site's public/ folder: uploaded images live in public/blog/images/

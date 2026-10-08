@@ -1,6 +1,7 @@
 import { FOUNDER_PERSON_DATA } from "@/app/content/pageContent/pageData/founder.data";
 import { GOOGLE_MAPS_URL, SAME_AS_URLS, SITE_ALTERNATE_NAMES } from "@/app/content/pageContent/socilaLinks.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
+import { ParseBlogFaqs } from "@/app/utils/helpers/blogContent";
 import type { BlogPostData, FaqCommonCardData } from "@/app/utils/interface/data.interface";
 import { isValidElement, type ReactNode } from "react";
 
@@ -244,11 +245,20 @@ export const generateArticleSchema = ({
   },
 });
 
-// The CMS lets editors write the post's JSON-LD; use it as-is when present, otherwise generate BlogPosting + breadcrumbs
+// FAQPage from the post's "FAQ Section" blocks (the section `name` in skyphr-cms-config/blog.config.json)
+const generateBlogFaqSchema = (post: BlogPostData) =>
+  generateFaqSchema(
+    post.sections
+      .filter((section) => section.type === "FAQ Section" && typeof section.data.faqs === "string")
+      .flatMap((section) => ParseBlogFaqs(section.data.faqs as string)),
+  );
+
+// The CMS lets editors write the post's JSON-LD; use it as-is when present, otherwise generate BlogPosting + breadcrumbs.
+// Either way an FAQ block adds an FAQPage, unless the CMS JSON-LD already has one.
 export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
   const cmsSchema = post.seo.schema?.data;
   if (cmsSchema && Object.keys(cmsSchema).length) {
-    return [cmsSchema];
+    return compactSchemas([cmsSchema, JSON.stringify(cmsSchema).includes('"FAQPage"') ? null : generateBlogFaqSchema(post)]);
   }
 
   const path = `/blog/${post.slug}`;
@@ -269,6 +279,7 @@ export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
       { name: "Blog", path: "/blog" },
       { name: post.listing.title, path },
     ]),
+    generateBlogFaqSchema(post),
   ]);
 };
 
