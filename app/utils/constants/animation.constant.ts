@@ -11,6 +11,8 @@ export const COMMON_REVEL_ANIMATION: { FROM: gsap.TweenVars; TO: gsap.TweenVars 
     y: 0,
     opacity: 1,
     filter: "blur(0px)",
+    // A leftover `filter` makes iOS Safari clip text to its box, cutting off slanted italic glyphs
+    clearProps: "filter",
     duration: 1,
     ease: "power3.out",
     stagger: 0.1,
@@ -49,6 +51,8 @@ export const COMMON_SCROLL_TRIGGER_ANIMATION = ({
       y: 0,
       opacity: 1,
       filter: "blur(0px)",
+      // A leftover `filter` makes iOS Safari clip text to its box, cutting off slanted italic glyphs
+      clearProps: "filter",
       duration: 1,
       ease: "power3.out",
       stagger: stagger || 0.1,
@@ -74,6 +78,7 @@ export const SKY_VOICE_CALL_FLOW_STAGE_ANIMATION: { FROM: gsap.TweenVars; TO: gs
     scale: 1,
     opacity: 1,
     filter: "blur(0px)",
+    clearProps: "filter",
     duration: 0.6,
     ease: "expo.out",
     delay: (_index: number, target: HTMLElement) => Number(target.dataset.flowDelay ?? 0),
