@@ -115,11 +115,6 @@
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.reveal-animation,
-.reveal-text-animation {
-  overflow: auto !important;
-}
-
 .skyphr-navbar-main-wrapper .skyphr-nav-item {
   position: relative;
 }

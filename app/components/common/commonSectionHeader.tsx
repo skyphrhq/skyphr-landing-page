@@ -29,7 +29,7 @@ function CommonSectionHeader({
               className={twMerge(
                 "font-instrument-sans reveal-text-animation",
                 chunk?.variant === "italic" &&
-                  "italic! font-bold! font-playfair-display text-(--cta-button-background)",
+                  "italic! font-bold! font-playfair-display text-(--cta-button-background) px-[0.2em] -mx-[0.2em]",
                 chunk?.classNames,
               )}>
               {chunk.text.trim()}
