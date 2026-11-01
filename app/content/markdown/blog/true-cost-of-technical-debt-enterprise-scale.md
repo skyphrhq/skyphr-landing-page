@@ -7,7 +7,7 @@ description: "Technical debt rarely shows up as a bug. It shows up as friction. 
 
 Technical debt rarely shows up as a bug. It shows up as friction: longer estimates, nervous deployments, and code nobody wants to touch. Here's why it compounds quietly, why a full rewrite is usually the wrong instinct, and how a short architecture review up front can save months of rework.
 
-By Varun Patel, Founder · 28-09-2026
+By Varun Patel, CEO · 28-09-2026
 
 Most founders find out about technical debt the same way. A feature that used to take a week now takes a month, and nobody can say exactly why.
 

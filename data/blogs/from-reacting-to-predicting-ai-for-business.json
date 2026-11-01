@@ -71,7 +71,7 @@
               "@type": "Person",
               "@id": "https://skyphr.com/#varun-patel",
               "name": "Varun Patel",
-              "jobTitle": "Founder",
+              "jobTitle": "CEO",
               "worksFor": {
                 "@id": "https://skyphr.com/#organization"
               },
@@ -171,7 +171,7 @@
         "title": "From Reacting to Predicting. The Shift Every Brand Needs to Make",
         "excerpt": "Most businesses make decisions based on what already happened. The ones pulling ahead use the data already in their ERP, CRM, and sales sheets to see what's coming, like demand spikes, customer churn, and slow months. Here's what that shift looks like and how to start with just one prediction.",
         "authorName": "Varun Patel",
-        "authorRole": "Founder",
+        "authorRole": "CEO",
         "publishedAt": "1-10-26",
         "image": {
           "url": "./public/blog/images/hero/from-reacting-to-predicting-ai-for-business-hero.webp",

@@ -66,7 +66,7 @@
             "author": {
               "@type": "Person",
               "name": "Varun Patel",
-              "jobTitle": "Founder",
+              "jobTitle": "CEO",
               "worksFor": {
                 "@type": "Organization",
                 "name": "Skyphr",
@@ -168,7 +168,7 @@
         "title": "AI Voice Agent for Business: How It Works, What It Costs You Not to Have One",
         "excerpt": "Missed calls mean lost customers. An AI voice agent answers every call 24/7, holds natural conversations, books appointments and captures leads automatically, even at 2 a.m. In this guide, learn how AI voice agents work, how they compare to IVR, the best use cases by industry, and what to check before you invest in one for your business.",
         "authorName": "Varun Patel",
-        "authorRole": "Founder",
+        "authorRole": "CEO",
         "publishedAt": "8-10-2026",
         "image": {
           "url": "./public/blog/images/hero/ai-voice-agent-for-business-hero.webp",

@@ -66,7 +66,7 @@
               "@type": "Person",
               "@id": "https://skyphr.com/#varun-patel",
               "name": "Varun Patel",
-              "jobTitle": "Founder",
+              "jobTitle": "CEO",
               "worksFor": {
                 "@id": "https://skyphr.com/#organization"
               },
@@ -172,7 +172,7 @@
         "title": "How AI Is Revolutionizing Hospital Management Systems",
         "excerpt": "Hospitals generate huge amounts of data every day, but most systems only store it. This piece covers six places where AI turns that data into better decisions: bed allocation, staff scheduling, early-warning alerts, clinical documentation, inventory, and EHR integration.",
         "authorName": "Varun Patel",
-        "authorRole": "Founder",
+        "authorRole": "CEO",
         "publishedAt": "28-09-26",
         "image": {
           "url": "./public/blog/images/hero/ai-in-health-care-blog-hero.webp",

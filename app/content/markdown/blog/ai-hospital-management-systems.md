@@ -7,7 +7,7 @@ description: "How AI improves hospital management: bed allocation, staff schedul
 
 Hospitals generate huge amounts of data every day, but most systems only store it. This piece covers six places where AI turns that data into better decisions: bed allocation, staff scheduling, early-warning alerts, clinical documentation, inventory, and EHR integration.
 
-By Varun Patel, Founder · 28-09-26
+By Varun Patel, CEO · 28-09-26
 
 Healthcare generates enormous amounts of data every single day. From patient records, lab results, bed occupancy, staff schedules, equipment logs, and insurance claims.
 

@@ -65,7 +65,7 @@
               "@type": "Person",
               "@id": "https://skyphr.com/#varun-patel",
               "name": "Varun Patel",
-              "jobTitle": "Founder",
+              "jobTitle": "CEO",
               "worksFor": {
                 "@id": "https://skyphr.com/#organization"
               },
@@ -167,7 +167,7 @@
         "title": "The True Cost of Technical Debt at Enterprise Scale",
         "excerpt": "Technical debt rarely shows up as a bug. It shows up as friction: longer estimates, nervous deployments, and code nobody wants to touch. Here's why it compounds quietly, why a full rewrite is usually the wrong instinct, and how a short architecture review up front can save months of rework.",
         "authorName": "Varun Patel",
-        "authorRole": "Founder",
+        "authorRole": "CEO",
         "publishedAt": "28-09-2026",
         "image": {
           "url": "./public/blog/images/hero/true-cost-of-technical-debt-hero.webp",

@@ -7,7 +7,7 @@ description: "Learn how an AI voice agent answers calls 24/7, books appointments
 
 Missed calls mean lost customers. An AI voice agent answers every call 24/7, holds natural conversations, books appointments and captures leads automatically, even at 2 a.m. In this guide, learn how AI voice agents work, how they compare to IVR, the best use cases by industry, and what to check before you invest in one for your business.
 
-By Varun Patel, Founder · 8-10-2026
+By Varun Patel, CEO · 8-10-2026
 
 Your phone rings while you're with a client. By the time you call back, that lead has already booked with a competitor. For service businesses, the phone is still the highest-intent channel there is. Every unanswered call is revenue walking out the door.\
 \
