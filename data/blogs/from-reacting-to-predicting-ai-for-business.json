@@ -57,9 +57,9 @@
             "description": "Most businesses act on what already happened. See how AI predicts demand, churn, and cash flow using the ERP and CRM data you already have.",
             "image": {
               "@type": "ImageObject",
-              "url": "https://skyphr.com/images/blog/from-reacting-to-predicting.jpg",
-              "width": 1920,
-              "height": 1080
+              "url": "https://skyphr.com/blog/images/from-reacting-to-predicting-ai-for-business.png",
+              "width": 1200,
+              "height": 630
             },
             "datePublished": "2026-09-29T09:00:00+05:30",
             "dateModified": "2026-09-29T09:00:00+05:30",
@@ -75,9 +75,9 @@
               "worksFor": {
                 "@id": "https://skyphr.com/#organization"
               },
-              "url": "https://skyphr.com/about",
+              "url": "https://skyphr.com/about-us",
               "sameAs": [
-                "https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"
+                "https://www.linkedin.com/in/varun-patel-aa465828b/"
               ]
             },
             "publisher": {
@@ -87,7 +87,9 @@
               "url": "https://skyphr.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://skyphr.com/images/skyphr-logo.png"
+                "url": "https://skyphr.com/favicon/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
               },
               "sameAs": [
                 "https://www.linkedin.com/company/skyphr"

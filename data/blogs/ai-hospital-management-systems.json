@@ -52,7 +52,7 @@
             "description": "How AI improves hospital management: bed allocation, staff scheduling, early-warning alerts, inventory, and EHR integration built around real workflows.",
             "image": {
               "@type": "ImageObject",
-              "url": "https://skyphr.com/images/blog/ai-hospital-management-systems.jpg",
+              "url": "https://skyphr.com/blog/images/ai-hospital-management-systems.png",
               "width": 1200,
               "height": 630
             },
@@ -70,9 +70,9 @@
               "worksFor": {
                 "@id": "https://skyphr.com/#organization"
               },
-              "url": "https://skyphr.com/about",
+              "url": "https://skyphr.com/about-us",
               "sameAs": [
-                "https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"
+                "https://www.linkedin.com/in/varun-patel-aa465828b/"
               ]
             },
             "publisher": {
@@ -82,7 +82,9 @@
               "url": "https://skyphr.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://skyphr.com/images/skyphr-logo.png"
+                "url": "https://skyphr.com/favicon/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
               },
               "sameAs": [
                 "https://www.linkedin.com/company/skyphr"

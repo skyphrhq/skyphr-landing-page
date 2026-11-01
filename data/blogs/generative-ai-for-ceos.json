@@ -1,0 +1,200 @@
+{
+  "seo": {
+    "title": "Generative AI for CEOs: 10 Things to Know | Skyphr",
+    "description": "What every CEO should know about generative AI: how it works, real use cases, risks, costs, and how to pick your first AI project. A practical guide from Skyphr.",
+    "image": {
+      "url": "./public/blog/images/generative-ai-for-ceos-1200x630.png",
+      "width": 1200,
+      "height": 630,
+      "alt": "Generative AI for CEOs: 10 Things You Should Know Before You Invest"
+    },
+    "keywords": [
+      "generative AI for CEOs",
+      "generative AI for business",
+      "GenAI",
+      "generative AI strategy",
+      "AI for business leaders",
+      "enterprise generative AI",
+      "AI adoption",
+      "large language models for business",
+      "AI implementation",
+      "custom AI solutions"
+    ],
+    "canonicalUrl": "/blog/generative-ai-for-ceos",
+    "robots": "index, follow",
+    "openGraph": {
+      "title": "Generative AI for CEOs: 10 Things to Know | Skyphr",
+      "description": "What every CEO should know about generative AI: how it works, real use cases, risks, costs, and how to pick your first AI project. A practical guide from Skyphr.",
+      "image": {
+        "url": "./public/blog/images/generative-ai-for-ceos-1200x630.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Generative AI for CEOs: 10 Things You Should Know Before You Invest"
+      },
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Generative AI for CEOs: 10 Things to Know | Skyphr",
+      "description": "What every CEO should know about generative AI: how it works, real use cases, risks, costs, and how to pick your first AI project. A practical guide from Skyphr.",
+      "image": {
+        "url": "./public/blog/images/generative-ai-for-ceos-1200x630.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Generative AI for CEOs: 10 Things You Should Know Before You Invest"
+      }
+    },
+    "schema": {
+      "type": "BlogPosting",
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Generative AI for CEOs: 10 Things You Should Know Before You Invest",
+        "description": "What every CEO should know about generative AI: how it works, real use cases, risks, costs and how to pick your first AI project. A practical guide from Skyphr.",
+        "image": "https://skyphr.com/blog/images/generative-ai-for-ceos-1200x630.png",
+        "author": {
+          "@type": "Person",
+          "name": "Bhavini Patel",
+          "jobTitle": "Business Development Executive",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Skyphr"
+          }
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Skyphr",
+          "url": "https://skyphr.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://skyphr.com/favicon/android-chrome-512x512.png",
+            "width": 512,
+            "height": 512
+          }
+        },
+        "datePublished": "2026-11-01",
+        "dateModified": "2026-11-01",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://skyphr.com/blog/generative-ai-for-ceos"
+        },
+        "keywords": "generative AI for CEOs, generative AI for business, GenAI, generative AI strategy, AI for business leaders, enterprise generative AI, AI adoption, large language models for business, AI implementation, custom AI solutions",
+        "articleSection": "Artificial Intelligence",
+        "inLanguage": "en"
+      }
+    }
+  },
+  "listing": {
+    "title": "Generative AI for CEOs: 10 Things You Should Know.",
+    "description": "Generative AI is now a leadership decision. Learn how it works, where it pays back, the risks to manage and how to choose your first AI project.",
+    "image": {
+      "url": "./public/blog/images/generative-ai-for-ceos-1200x630.webp",
+      "width": 1200,
+      "height": 630,
+      "alt": "Generative AI for CEOs: 10 Things You Should Know."
+    },
+    "authorName": "Bhavini Patel",
+    "date": "",
+    "isFeatured": false
+  },
+  "sections": [
+    {
+      "type": "Blog Hero",
+      "data": {
+        "title": "Generative AI for CEOs: 10 Things You Should Know Before You Invest",
+        "excerpt": "AI is on every board agenda. Generative AI can draft, summarise, answer customers and automate hours of manual work, but it also brings new risks and costs. In this guide, learn what generative AI is, how it compares to traditional automation, the 10 things every CEO should know, and how to choose your first AI project.",
+        "authorName": "Bhavini Patel",
+        "authorRole": "Business Development Executive",
+        "publishedAt": "2-11-2026",
+        "image": {
+          "url": "./public/blog/images/hero/generative-ai-for-ceos-1900x997.webp",
+          "width": 1900,
+          "height": 997,
+          "alt": "Generative AI for CEOs: 10 Things You Should Know Before You Invest"
+        }
+      }
+    },
+    {
+      "type": "Blogs Sidebar",
+      "data": {
+        "tags": "generative AI for CEOs, generative AI for business, GenAI, generative AI strategy, AI for business leaders, enterprise generative AI, AI adoption, large language models for business, AI implementation, custom AI solutions"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "content": "<p>Your board asks about your AI strategy. A competitor announces an AI feature. Your team is already pasting company data into free chatbots. Generative AI is no longer a future topic. It is a decision sitting on your desk right now.</p><p></p><p>Generative AI for business can write, summarise, answer questions and automate work that used to take hours of human effort. It also brings new risks, new costs and a lot of noise. This guide explains what generative AI is and how it differs from traditional automation. It also covers the 10 things every CEO should know, where it delivers the most value and how to choose the right first project.</p><p></p><p>At Skyphr, we build generative AI solutions through <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/sky-ai\">SkyAI</a>, our AI engineering division. We also run our own AI products, like Sky, our AI voice agent, and SkyLens, our website audit tool. Everything here comes from real deployment, not theory.</p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "What is generative AI?",
+        "content": "<p>Generative AI is a type of artificial intelligence that creates new content, such as text, images, code, or speech, from simple instructions.</p><p></p><p>In a business setting, it usually has three layers:</p><ul><li><p><strong>The model.</strong> A large language model (LLM) such as GPT, Claude, or Gemini understands and generates language.</p></li><li><p><strong>Your data.</strong> Documents, product details, policies, and customer history make the answers specific to your company.</p></li><li><p><strong>The workflow.</strong> Connections to your CRM, helpdesk or ERP let it act, not just answer.</p></li></ul><p></p><p>Once connected, generative AI can draft a proposal, answer a customer enquiry, summarise a 40-page contract, qualify a lead or write the first version of code. The real value comes from the workflow, not the chatbot.</p><p></p><p>You'll also hear it called GenAI, LLM-powered automation or AI copilots. When it takes actions on its own, it's usually called an AI agent.</p>"
+      }
+    },
+    {
+      "type": "Comparison Table",
+      "data": {
+        "heading": "Generative AI vs traditional automation: what's the difference?",
+        "table": "Aspect\tTraditional automation\tGenerative AI\nInput\tStructured data, fixed forms\tNatural language, documents, images\nRules\tHard-coded if/then logic\tFollows instructions and context\nNew situations\tBreaks on exceptions\tAdapts within your guardrails\nOutput\tSame result every time\tDrafts, answers, summaries, decisions\nBest for\tRepetitive, predictable tasks\tLanguage-heavy, judgement-based work"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "How does generative AI work in a business? A typical workflow",
+        "content": "<ol><li><p>An employee or customer starts a task, for example \"draft a reply to this complaint\".</p></li><li><p>The system pulls context from your approved data, such as past tickets and your refund policy.</p></li><li><p>The model generates a response that follows your instructions, tone and rules.</p></li><li><p>Guardrails check the output for accuracy, sensitive data and policy limits.</p></li><li><p>A team member reviews and approves it, or the system acts directly on low-risk tasks.</p></li><li><p>Every interaction is logged, so you can measure quality and improve over time.</p></li></ol><p></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "10 things CEOs should know about generative AI",
+        "content": "<ol><li><p><strong>Generative AI is a business decision, not an IT project.</strong> The biggest gains come when leadership chooses the problems worth solving, not when a tool is bought and handed to the tech team.</p></li><li><p><strong>Start with a problem, not a tool.</strong> Look for work that is high-volume, language-heavy and costly, like support tickets, proposals, reports and onboarding. That's where generative AI pays back first.</p></li><li><p><strong>Your data is your competitive advantage.</strong> Anyone can use a public model. An AI system connected to your own documents and processes is something competitors can't easily copy.</p></li><li><p><strong>It can be confidently wrong.</strong> Models sometimes produce answers that sound right but are false, known as hallucinations. Grounding answers in your data and keeping people in the loop for high-stakes outputs manages this risk.</p></li><li><p><strong>AI data privacy and security come first.</strong> Decide what data can go into which tools. Free consumer chatbots are not the place for client contracts or financial records.</p></li><li><p><strong>Costs are usage-based.</strong> Most models charge per use, so costs grow with volume. Budget for model fees, integration, monitoring and ongoing improvement, not just the build.</p></li><li><p><strong>Custom beats off-the-shelf for core workflows.</strong> Generic AI tools are fine for personal productivity. For customer-facing or core operations, custom AI solutions fit your rules and systems.</p></li><li><p><strong>It supports your team before it replaces anyone.</strong> The fastest wins come from removing repetitive work, so your people spend more time on clients and decisions.</p></li><li><p><strong>Regulation is catching up.</strong> Rules on AI, data protection and copyright keep changing in India, the EU, the US and beyond. Build with clear data ownership and audit trails from day one.</p></li><li><p><strong>Small pilots win</strong>. A focused pilot on one workflow, with one clear success metric, teaches you more than a year of strategy decks.</p></li></ol><p></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "The hidden cost of waiting",
+        "content": "<p>Try this simple calculation for your business:</p><p></p><blockquote><p><strong>Hours spent on repetitive tasks per week × number of people doing them × hourly cost × 52 = annual cost of manual work</strong></p></blockquote><p></p><p>Generative AI won't remove all of those hours. But automating even part of them frees real budget and capacity. Meanwhile, competitors who start now are building the data, skills and processes that take time to catch up with. The cost of waiting isn't just money. It's lost learning time.</p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "Best generative AI use cases by business function",
+        "content": "<ul><li><p><strong>Customer support:</strong> answering enquiries 24/7, drafting replies and summarising tickets.</p></li><li><p><strong>Sales:</strong> qualifying leads, personalising outreach and drafting proposals.</p></li><li><p><strong>Marketing:</strong> first drafts of blogs, ads, product descriptions and social posts in your brand voice.</p></li><li><p><strong>Operations:</strong> summarising reports and extracting data from invoices and documents.</p></li><li><p><strong>HR:</strong> screening CVs, answering policy questions and onboarding new hires.</p></li><li><p><strong>Finance and legal:</strong> reviewing contracts, flagging risks and preparing summaries.</p></li><li><p><strong>Product and engineering:</strong> code assistance, test writing, and documentation.</p></li></ul><p></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "How to choose the right generative AI project",
+        "content": "<p>Before you invest, ask these questions:</p><p></p><ul><li><p><strong>What problem are we solving, and how will we measure it?</strong> Time saved, faster responses, or more leads converted. Pick one metric.</p></li><li><p><strong>Is our data ready?</strong> AI is only as good as the information it can access. Scattered or outdated data needs cleanup first.</p></li><li><p><strong>Where does our data go?</strong> Check where it's stored, who can access it, and whether it's used to train third-party models.</p></li><li><p><strong>Does it integrate with our existing systems?</strong> A tool that sits outside your CRM, ERP, or helpdesk creates more work, not less.</p></li><li><p><strong>Who reviews the output?</strong> Define which tasks need human approval and which can run on their own.</p></li><li><p><strong>Can it scale?</strong> A pilot should be built so it can grow into a full system without starting over.</p></li></ul><p></p><p>Generative AI rarely works alone. It usually sits on top of your website, CRM, internal tools, or mobile app. That's why it pays to plan everything with a team that does both <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/services/ai-development-services\">custom AI agents and integrations</a> and <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/services/custom-software-development-services\">custom software development</a>.</p><p></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "How Skyphr builds generative AI solutions",
+        "content": "<p>We don't sell a one-size-fits-all AI tool. We design, build, and deploy generative AI around how your business actually works:</p><p></p><ol><li><p><strong>Discovery:</strong> we find the workflows where AI gives the clearest return and define the success metric.</p></li><li><p><strong>Design:</strong> we plan the data flow, guardrails, user experience, and where people stay in control.</p></li><li><p><strong>Build and integration:</strong> we connect the right model to your data and systems, such as your CRM, ERP, or helpdesk.</p></li><li><p><strong>Testing:</strong> we test real scenarios for accuracy, security, and edge cases.</p></li><li><p><strong>Launch and improve:</strong> we monitor usage, cost, and quality, and refine the system over time.</p></li></ol><p></p><p>Building a product with generative AI at its core? Our <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/services/saas-development-services\">SaaS product development</a> team can take it from MVP to scale.</p><p></p><p>Want to see generative AI in action? Explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/sky-ai\">SkyAI</a>, or book a call to hear Sky, our AI voice agent, in a live demo.</p>"
+      }
+    },
+    {
+      "type": "FAQ Section",
+      "data": {
+        "heading": "Frequently asked questions",
+        "faqs": "How much does generative AI cost for a business?\nIt depends on the scope. A focused pilot on one workflow costs far less than a full platform. Ongoing costs include model usage, hosting and improvements, so plan a monthly budget, not just a one-time build.\n\nHow long does it take to implement generative AI? \nA pilot on a single workflow can often go live in a few weeks. Larger systems with several integrations take longer, depending on how ready your data is.\n\nWill generative AI replace my employees? \nIn most businesses, it takes over repetitive tasks rather than full roles. Your team spends less time drafting, searching, and copying data, and more time on clients and decisions.\n\nIs our company data safe with generative AI? \nIt can be, with the right setup. Use business-grade models with clear data protection terms, control access by role, and keep sensitive data out of public tools.\n\nCan generative AI work with our existing software? \nYes. Through APIs and integrations, it connects to CRMs, ERPs, helpdesks, websites, and internal tools. This is usually where most of the business value comes from.\n\nDoes generative AI work in Hindi, Gujarati, and other languages? \nModern models handle many languages, including Indian regional languages, though quality varies by language and task. Test with real examples from your customers before a full rollout."
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "Ready to put generative AI to work?",
+        "content": "<p>Generative AI is already changing how businesses sell, serve, and operate. The CEOs who win are the ones who start with a clear problem and the right partner.</p><p></p><p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cal.com/skyphr/30min\">Book a free 30-minute consultation</a> with Skyphr, or explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/sky-ai\">SkyAI</a> to see what else we build with AI. While you're here, get a free website audit with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://lens.skyphr.com\">SkyLens</a> to check that your site is ready for AI-driven search and customers.</p>"
+      }
+    }
+  ]
+}

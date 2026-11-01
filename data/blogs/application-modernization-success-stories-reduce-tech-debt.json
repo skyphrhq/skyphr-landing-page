@@ -53,7 +53,7 @@
             "@type": "BlogPosting",
             "headline": "6 Success Stories Where Application Modernization Helped Reduce Tech Debt",
             "description": "See how Amazon, GitHub, Shopify, Netflix, Segment and Prime Video used application modernization to reduce tech debt, cut costs and ship faster.",
-            "image": "https://skyphr.com/images/blog/application-modernization-tech-debt-1200x630.png",
+            "image": "https://skyphr.com/blog/images/application-modernization-tech-debt-1200x630.png",
             "datePublished": "2026-10-30",
             "dateModified": "2026-10-30",
             "author": {
@@ -71,7 +71,9 @@
               "url": "https://skyphr.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://skyphr.com/logo.png"
+                "url": "https://skyphr.com/favicon/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
               }
             },
             "mainEntityOfPage": "https://skyphr.com/blog/application-modernization-success-stories-reduce-tech-debt",

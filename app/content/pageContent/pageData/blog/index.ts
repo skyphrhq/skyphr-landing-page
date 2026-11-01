@@ -14,12 +14,13 @@ const CmsAssetUrlReviver = (key: string, value: unknown) =>
     ? value.slice(PUBLIC_DIR_PREFIX.length)
     : value;
 
-// Falls back to the BlogPosting datePublished inside the CMS-written JSON-LD when listing.date is empty
+// Falls back to the BlogPosting datePublished inside the CMS-written JSON-LD when listing.date is empty.
+// The CMS JSON-LD is either an "@graph" list or a single flat BlogPosting object.
 const GetSchemaPublishedAt = (post: BlogCmsPost): string => {
-  const graph = post.seo.schema?.data?.["@graph"];
-  if (!Array.isArray(graph)) return "";
+  const schema = post.seo.schema?.data;
+  const graph = schema?.["@graph"];
+  const blogPosting = Array.isArray(graph) ? graph.find((item) => item?.["@type"] === "BlogPosting") : schema;
 
-  const blogPosting = graph.find((item) => item?.["@type"] === "BlogPosting");
   return typeof blogPosting?.datePublished === "string" ? blogPosting.datePublished : "";
 };
 

@@ -56,6 +56,12 @@
             "datePublished": "2026-10-08",
             "dateModified": "2026-10-08",
             "mainEntityOfPage": "https://skyphr.com/blog/ai-voice-agent-for-business",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://skyphr.com/blog/images/ai-voice-agent-for-business.png",
+              "width": 1200,
+              "height": 630
+            },
             "keywords": "AI voice agent for business, AI voice agent, AI receptionist, AI phone agent, AI call answering service, 24/7 call answering, automated appointment booking, conversational AI",
             "author": {
               "@type": "Person",
@@ -70,7 +76,13 @@
             "publisher": {
               "@type": "Organization",
               "name": "Skyphr",
-              "url": "https://skyphr.com"
+              "url": "https://skyphr.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://skyphr.com/favicon/android-chrome-512x512.png",
+                "width": 512,
+                "height": 512
+              }
             }
           },
           {
