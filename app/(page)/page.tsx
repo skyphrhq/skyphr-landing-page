@@ -70,7 +70,7 @@ export default function Home() {
       )}
       {HOME_PAGE_DATA?.process && (
         <section className="w-full h-auto">
-          <OurProcessSection data={HOME_PAGE_DATA.process} />
+          <OurProcessSection data={HOME_PAGE_DATA.process} classNames="pb-0! md:pb-0! xl:pb-0!" />
         </section>
       )}
       {/* {HOME_PAGE_DATA?.testimonials && (
