@@ -1,0 +1,286 @@
+{
+  "seo": {
+    "title": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders | Skyphr",
+    "description": "The key questions to ask when implementing AI in your business: strategy, data, integration, security, cost and choosing the right AI partner. A practical checklist from Skyphr.",
+    "image": {
+      "url": "./public/blog/images/questions-to-ask-when-implementing-ai-og-1200x630.png",
+      "width": 1200,
+      "height": 630,
+      "alt": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders | Skyphr"
+    },
+    "keywords": [
+      "questions to ask when implementing AI",
+      "AI implementation",
+      "AI implementation checklist",
+      "AI readiness assessment",
+      "AI adoption strategy",
+      "implementing AI in business",
+      "questions to ask an AI vendor",
+      "AI project planning",
+      "AI ROI",
+      "custom AI solutions"
+    ],
+    "canonicalUrl": "/blog/questions-to-ask-when-implementing-ai",
+    "robots": "index, follow",
+    "openGraph": {
+      "title": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders | Skyphr",
+      "description": "The key questions to ask when implementing AI in your business: strategy, data, integration, security, cost and choosing the right AI partner. A practical checklist from Skyphr.",
+      "image": {
+        "url": "./public/blog/images/questions-to-ask-when-implementing-ai-og-1200x630.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders | Skyphr"
+      },
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders | Skyphr",
+      "description": "The key questions to ask when implementing AI in your business: strategy, data, integration, security, cost and choosing the right AI partner. A practical checklist from Skyphr.",
+      "image": {
+        "url": "./public/blog/images/questions-to-ask-when-implementing-ai-og-1200x630.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders | Skyphr"
+      }
+    },
+    "schema": {
+      "type": "BlogPosting",
+      "data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://skyphr.com/blog/questions-to-ask-when-implementing-ai#article",
+            "headline": "Questions to Ask When Implementing AI: A Practical Checklist for Leaders",
+            "description": "The key questions to ask when implementing AI in your business: strategy, data, integration, security, cost and choosing the right AI partner. A practical checklist from Skyphr.",
+            "image": [
+              "https://skyphr.com/images/blog/questions-to-ask-ai-cover.png",
+              "https://skyphr.com/images/blog/questions-to-ask-ai-1200x630.png"
+            ],
+            "datePublished": "2026-11-04T09:00:00+05:30",
+            "dateModified": "2026-11-04T09:00:00+05:30",
+            "author": {
+              "@type": "Person",
+              "name": "Varun Patel",
+              "jobTitle": "Founder",
+              "url": "https://varunpatel.vercel.app/",
+              "worksFor": {
+                "@id": "https://skyphr.com/#organization"
+              }
+            },
+            "publisher": {
+              "@id": "https://skyphr.com/#organization"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://skyphr.com/blog/questions-to-ask-when-implementing-ai"
+            },
+            "articleSection": "AI",
+            "keywords": "questions to ask when implementing AI, AI implementation checklist, AI readiness assessment, AI adoption strategy, implementing AI in business, questions to ask an AI vendor, AI project planning",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://skyphr.com/#organization",
+            "name": "Skyphr",
+            "url": "https://skyphr.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://skyphr.com/images/skyphr-logo.png"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://skyphr.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://skyphr.com/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Questions to Ask When Implementing AI",
+                "item": "https://skyphr.com/blog/questions-to-ask-when-implementing-ai"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the first step in implementing AI in a business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pick one specific problem that costs your business real time or money, and decide how you'll measure success. Choosing the tool comes after that, not before."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does it cost to implement AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It depends on the scope. A focused pilot on one workflow costs far less than a company-wide platform. Plan for ongoing costs too, such as model usage, hosting and improvements, not just the initial build."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does an AI implementation take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A pilot on a single workflow can often go live in a few weeks. Larger systems with several integrations take longer, mostly depending on how ready your data is."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do we need a lot of data to implement AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not always. Many modern AI systems work well with your existing documents, FAQs and records. What matters more is that the data is accurate, current and accessible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is it better to build custom AI or buy an off-the-shelf tool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Off-the-shelf tools are quick to start and fine for general tasks. For customer-facing or core workflows, custom AI usually fits your rules, systems and data far better. Many businesses combine both."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do we keep our data safe when implementing AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use business-grade AI services with clear data protection terms, control access by role and log every interaction. Keep sensitive data out of free consumer tools, and check which data protection laws apply to you."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "listing": {
+    "title": "Questions to Ask When Implementing AI",
+    "description": "A practical checklist of the questions every business leader should answer before an AI project: strategy, data, integration, risk, cost and choosing a partner.",
+    "image": {
+      "url": "./public/blog/images/questions-to-ask-when-implementing-ai-1200x630.webp",
+      "width": 1200,
+      "height": 630,
+      "alt": "Questions to Ask When Implementing AI"
+    },
+    "authorName": "Varun Patel",
+    "date": "",
+    "isFeatured": false
+  },
+  "sections": [
+    {
+      "type": "Blog Hero",
+      "data": {
+        "title": "Questions to Ask When Implementing AI. A Practical Checklist for Leader",
+        "excerpt": "Most AI projects fail before a single line of code is written. The wrong problem, messy data or unclear ownership can turn a promising idea into wasted budget. In this guide, learn the key questions to ask when implementing AI, how planned AI adoption compares to ad hoc experiments, what to ask your AI vendor, and how to set up your first project for success.",
+        "authorName": "Varun Patel",
+        "authorRole": "CEO",
+        "publishedAt": "04-11-2026",
+        "image": {
+          "url": "./public/blog/images/hero/questions-to-ask-when-implementing-ai-1900x997.webp",
+          "width": 1900,
+          "height": 997,
+          "alt": "Questions to Ask When Implementing AI. A Practical Checklist for Leaders"
+        }
+      }
+    },
+    {
+      "type": "Blogs Sidebar",
+      "data": {
+        "tags": "questions to ask when implementing AI, AI implementation, AI implementation checklist, AI readiness assessment, AI adoption strategy, implementing AI in business, questions to ask an AI vendor, AI project planning, AI ROI, custom AI solutions"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "content": "<p>You've seen the demos. A competitor says they've \"added AI\". Your team is excited, and a vendor has already sent a proposal. Then, three months and a big invoice later, the tool sits unused because nobody asked the right questions at the start.<br></p><p></p><p>Asking the right questions when implementing AI solves this. A clear set of questions turns a vague \"we should use AI\" into a focused project with a goal, a budget, and an owner. This guide explains what AI implementation really involves and the questions to ask at each stage. It also covers what to ask your AI vendor and how to pick a first project that actually pays back.</p><p><br></p><p>At Skyphr, we build custom AI systems through <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/sky-ai\">SkyAI</a>, our AI engineering division. We also run our own AI products, like Sky, our AI voice agent, and SkyLens, our website audit tool. Every question here is one we ask in real client discovery calls. Everything here comes from real deployment, not theory.</p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "What does implementing AI actually involve?",
+        "content": "<p>Implementing AI means putting an AI system into a real business workflow so it does useful work every day, not just in a demo.<br></p><p>Every AI implementation has three parts:</p><ul><li><p><strong>The model.</strong> The AI itself, such as a large language model (LLM), a vision model, or a prediction model.</p></li><li><p><strong>Your data.</strong> The documents, records, and history that make the AI specific to your business.</p></li><li><p><strong>The workflow.</strong> The connections to your CRM, ERP, helpdesk, website or app that let the AI take action.</p></li></ul><p></p><p>Most teams spend their time choosing the model. In practice, data and workflow decide whether the project succeeds. A great model with no access to your systems is just a clever chatbot.<br></p><p>You'll also hear this called AI adoption, AI integration, or AI transformation. The idea is the same: making AI part of how your business runs.</p>"
+      }
+    },
+    {
+      "type": "Comparison Table",
+      "data": {
+        "heading": "Ad hoc AI experiments vs planned AI implementation: what's the difference?",
+        "table": "Aspect\tAd hoc AI experiments\tPlanned AI implementation\nStarting point\tA tool someone liked\tA business problem with a cost\nData\tCopied and pasted manually\tConnected, cleaned and controlled\nSuccess measure\t\"It looks impressive\"\tOne clear, tracked metric\nRisk and security\tUsually ignored\tPlanned from day one\nResult after 6 months\tAbandoned or unmanaged\tUsed daily and improving"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "How does an AI implementation work? A typical project",
+        "content": "<ol><li><p>You pick one business problem that costs real time or money.</p></li><li><p>You check whether the data needed to solve it exists and can be accessed.</p></li><li><p>A small pilot is built for that one workflow, with guardrails and human review.</p></li><li><p>Real users test it, and results are measured against the goal you set.</p></li><li><p>If it works, the system is connected more deeply to your tools and rolled out.</p></li><li><p>Usage, cost and quality are monitored, and the system improves over time.</p></li></ol><p></p><p>The questions below map to these stages. Answer them in order, and most of the common mistakes disappear.</p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "20 questions to ask when implementing AI",
+        "content": "<p><strong>Strategy and goals</strong></p><p></p><ol><li><p><strong>What exact problem are we solving?</strong> \"Use AI in support\" is not a problem. \"Reply to routine support enquiries within five minutes\" is.</p></li><li><p><strong>How will we measure success?</strong> Pick one primary metric, such as hours saved, response time, leads converted or errors reduced.</p></li><li><p><strong>Does this problem actually need AI?</strong> Some tasks are solved faster and cheaper with simple automation, a better form or a cleaner process.</p></li><li><p><strong>Who owns this project on the business side?</strong> AI projects without a clear business owner drift. The owner decides priorities and signs off on results.</p></li></ol><p></p><p><strong>Data readiness</strong></p><p></p><ol start=\"5\"><li><p><strong>What data does the AI need, and where does it live today?</strong> List the sources: documents, spreadsheets, CRM records, emails or call transcripts.</p></li><li><p><strong>Is that data accurate and up to date?</strong> AI repeats whatever it is given. Outdated policies and duplicate records lead to confident wrong answers.</p></li><li><p><strong>Who owns and can access this data?</strong> Check permissions early. Some data may belong to clients or partners and come with contract limits.</p></li><li><p><strong>Will our data be used to train someone else's model?</strong> Read the provider's terms. For business data, the answer should be no.</p></li></ol><p></p><p><strong>Technology and integration</strong></p><p></p><ol start=\"9\"><li><p><strong>Which systems does the AI need to connect to?</strong> An AI that can't read your CRM or update your helpdesk creates extra copy-paste work.</p></li><li><p><strong>Should we build custom, buy off-the-shelf or combine both?</strong> Ready-made tools suit general tasks. Core, customer-facing workflows usually need a custom fit.</p></li><li><p><strong>Which AI model fits this task, and can we switch later?</strong> Models improve fast. A good setup lets you change models without rebuilding everything.</p></li><li><p><strong>Can this pilot scale into a full system?</strong> Build the pilot on a foundation that can grow, so success doesn't mean starting over.</p></li></ol><p></p><p><strong>Risk, security and compliance</strong></p><p></p><ol start=\"13\"><li><p><strong>What happens when the AI is wrong?</strong> Plan for mistakes. Decide which outputs need human approval and how errors get caught and fixed.</p></li><li><p><strong>Which regulations apply to our data?</strong> In India, the DPDP Act governs personal data. Sector rules, such as RBI guidelines for payments, may add more. Global customers may bring GDPR into scope.</p></li><li><p><strong>How do we keep sensitive data safe?</strong> Look at encryption, role-based access, audit logs and where data is processed and stored.</p></li><li><p><strong>What are the AI's limits and rules?</strong> Define what it may say, what it must never do and when it should hand over to a person.</p></li></ol><p></p><p><strong>People, cost and return</strong></p><p></p><ol start=\"17\"><li><p><strong>How will this change our team's daily work?</strong> Explain the change early. Teams adopt AI faster when they see it removes their most boring tasks.</p></li><li><p><strong>Who will maintain and improve the system after launch?</strong> AI is not \"set and forget\". Someone needs to review outputs, update data and tune prompts.</p></li><li><p><strong>What is the full cost, not just the build?</strong> Include model usage fees, hosting, integration, monitoring and ongoing improvement. Usage-based costs grow with volume.</p></li><li><p><strong>When do we expect to see a return?</strong> Set a realistic review point, such as 60 or 90 days after launch, and decide in advance what \"worth continuing\" looks like.</p></li></ol><p></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "The hidden cost of skipping these questions",
+        "content": "<p>Try this simple calculation for your business:</p><p></p><blockquote><p><strong>Months spent on the wrong AI project × monthly project cost + team hours lost to rework × hourly cost = cost of a poorly planned AI project</strong></p></blockquote><p></p><p>That number doesn't include the harder loss: a team that tried AI once, saw it fail, and now resists the next attempt. A few hours spent on these questions upfront is the cheapest insurance an AI project can have.</p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "Best first AI projects by business function",
+        "content": "<p>If you're unsure where to start, these workflows usually answer the questions above well:</p><p></p><ul><li><p><strong>Customer support:</strong> answering routine enquiries and drafting replies for agents to approve.</p></li><li><p><strong>Sales:</strong> qualifying leads, summarising calls and drafting follow-up emails.</p></li><li><p><strong>Front desk and phone lines:</strong> an <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/blog/ai-voice-agent-for-business\">AI voice agent</a> that answers calls and books appointments 24/7.</p></li><li><p><strong>Operations:</strong> extracting data from invoices, forms and reports.</p></li><li><p><strong>HR:</strong> answering policy questions and screening CVs against clear criteria.</p></li><li><p><strong>Marketing:</strong> first drafts of product descriptions, blogs and social posts in your brand voice.</p></li><li><p><strong>Internal knowledge:</strong> an assistant that answers staff questions from your own documents.</p></li></ul><p></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "Questions to ask your AI vendor or development partner",
+        "content": "<p>Before you sign, ask these questions:</p><p></p><ul><li><p><strong>Have you built something similar before?</strong> Ask for a live demo or a case study, not just slides.</p></li><li><p><strong>How will you test accuracy before launch?</strong> A good partner tests with your real examples and shares the results.</p></li><li><p><strong>Who owns the code, prompts and data?</strong> You should own what you pay for, including transcripts and outputs.</p></li><li><p><strong>How do you handle security and compliance?</strong> Ask where data is stored, who can access it and how it is logged.</p></li><li><p><strong>What does support look like after go-live?</strong> Clarify monitoring, fixes, updates and response times.</p></li><li><p><strong>Can we start small?</strong> A partner who pushes a large build before a pilot is a warning sign.</p></li></ul><p></p><p>AI rarely works alone. It sits on top of your website, CRM, internal tools or mobile app, and those often need work too. That's why it pays to plan everything with a team that does both <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/services/ai-chatbot-assistant-development\">custom AI agents and integrations</a> and <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/services/custom-software-development-services\">custom software development</a></p>"
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "How Skyphr implements AI for your business",
+        "content": "<p>We don't sell a one-size-fits-all AI tool. We work through these questions with you, then design, build and deploy AI around how your business actually works:</p><p></p><ol><li><p><strong>Discovery:</strong> we find the workflow with the clearest return, check your data and agree on one success metric.</p></li><li><p><strong>Design:</strong> we plan the data flow, guardrails, user experience and where people stay in control.</p></li><li><p><strong>Build and integration:</strong> we connect the right model to your data and systems, such as your CRM, ERP or helpdesk.</p></li><li><p><strong>Testing:</strong> we test real scenarios for accuracy, security and edge cases before anyone relies on it.</p></li><li><p><strong>Launch and improve:</strong> we monitor usage, cost and quality, and refine the system over time.</p></li></ol><p></p><p>We start with a focused pilot and build it to scale. Building a product with AI at its core? Our <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/services/saas-development-services\">SaaS product development</a> team can take it from MVP to a full platform.</p><p></p><p>Want to see AI implementation in practice? Explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/sky-ai\">SkyAI</a>, or book a call to hear Sky, our AI voice agent, in a live demo.</p>"
+      }
+    },
+    {
+      "type": "FAQ Section",
+      "data": {
+        "heading": "Frequently asked questions",
+        "faqs": "What is the first step in implementing AI in a business?\nPick one specific problem that costs your business real time or money, and decide how you'll measure success. Choosing the tool comes after that, not before.\n\nHow much does it cost to implement AI? \nIt depends on the scope. A focused pilot on one workflow costs far less than a company-wide platform. Plan for ongoing costs too, such as model usage, hosting, and improvements, not just the initial build.\n\nHow long does an AI implementation take? \nA pilot on a single workflow can often go live in a few weeks. Larger systems with several integrations take longer, mostly depending on how ready your data is.\n\nDo we need a lot of data to implement AI? \nNot always. Many modern AI systems work well with your existing documents, FAQs, and records. What matters more is that the data is accurate, current, and accessible.\n\nIs it better to build custom AI or buy an off-the-shelf tool? \nOff-the-shelf tools are quick to start and fine for general tasks. For customer-facing or core workflows, custom AI usually fits your rules, systems, and data far better. Many businesses combine both.\n\nHow do we keep our data safe when implementing AI? \nUse business-grade AI services with clear data protection terms, control access by role, and log every interaction. Keep sensitive data out of free consumer tools, and check which data protection laws apply to you."
+      }
+    },
+    {
+      "type": "Text Section",
+      "data": {
+        "heading": "Ready to implement AI the right way?",
+        "content": "<p>Most AI projects don't fail because of the technology. They fail because the right questions weren't asked at the start. Answer them first, and your first AI project has a real chance to pay back.</p><p></p><p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cal.com/skyphr/30min\">Book a free 30-minute consultation</a> with Skyphr to walk through these questions for your business, or explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://skyphr.com/sky-ai\">SkyAI</a> to see what we build with AI. While you're here, get a free website audit with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://lens.skyphr.com\">SkyLens</a> to check that your site is ready for AI-driven search and customers.</p>"
+      }
+    }
+  ]
+}
