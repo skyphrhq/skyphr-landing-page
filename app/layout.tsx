@@ -16,6 +16,8 @@ const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
   subsets: ["latin"],
   weight: ["400", "700"],
+  // Upright only on purpose: italic text uses the browser's synthesized slant (see px/-mx overhang fix on italic spans)
+  style: ["normal"],
   display: "swap",
 });
 const inter = Inter({

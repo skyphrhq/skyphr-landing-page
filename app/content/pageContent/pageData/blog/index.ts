@@ -14,13 +14,28 @@ const CmsAssetUrlReviver = (key: string, value: unknown) =>
     ? value.slice(PUBLIC_DIR_PREFIX.length)
     : value;
 
-// Falls back to the BlogPosting datePublished inside the CMS-written JSON-LD when listing.date is empty
+// Falls back to the BlogPosting datePublished inside the CMS-written JSON-LD when listing.date is empty.
+// The CMS JSON-LD is either an "@graph" list or a single flat BlogPosting object.
 const GetSchemaPublishedAt = (post: BlogCmsPost): string => {
-  const graph = post.seo.schema?.data?.["@graph"];
-  if (!Array.isArray(graph)) return "";
+  const schema = post.seo.schema?.data;
+  const graph = schema?.["@graph"];
+  const blogPosting = Array.isArray(graph) ? graph.find((item) => item?.["@type"] === "BlogPosting") : schema;
 
-  const blogPosting = graph.find((item) => item?.["@type"] === "BlogPosting");
   return typeof blogPosting?.datePublished === "string" ? blogPosting.datePublished : "";
+};
+
+// Last fallback: the Blog Hero "publishedAt" field, typed by hand in the CMS as DD-MM-YYYY or DD-MM-YY
+// (e.g. "25-11-2026", "1-10-26"). Returned as YYYY-MM-DD so it sorts and formats like the other sources.
+const GetHeroPublishedAt = (post: BlogCmsPost): string => {
+  const hero = post.sections?.find((section) => section.type === "Blog Hero");
+  const value = typeof hero?.data?.publishedAt === "string" ? hero.data.publishedAt.trim() : "";
+  if (/^\d{4}-\d{2}-\d{2}/.test(value)) return value;
+
+  const match = value.match(/^(\d{1,2})[-/.](\d{1,2})[-/.](\d{2}|\d{4})$/);
+  if (!match) return "";
+
+  const [, day, month, year] = match;
+  return `${year.length === 2 ? `20${year}` : year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
 };
 
 const READ_BLOG_POSTS = (): BlogPostData[] => {
@@ -35,7 +50,7 @@ const READ_BLOG_POSTS = (): BlogPostData[] => {
         ...post,
         sections: post.sections ?? [],
         slug: file.replace(/\.json$/, ""),
-        publishedAt: post.listing.date || GetSchemaPublishedAt(post),
+        publishedAt: post.listing.date || GetSchemaPublishedAt(post) || GetHeroPublishedAt(post),
       };
     });
 };

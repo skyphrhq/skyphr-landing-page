@@ -88,6 +88,7 @@ For LLMs and AI agents, this file summarizes the public Skyphr website and point
 - [llms.txt](https://skyphr.com/llms.txt): LLM-oriented public website summary and preferred page map.
 - [XML Sitemap](https://skyphr.com/sitemap.xml): Machine-readable sitemap for public pages.
 - [API Catalog](https://skyphr.com/.well-known/api-catalog): Well-known resource catalog for agents.
+- [AI Catalog](https://skyphr.com/.well-known/ai-catalog.json): ARD capability manifest listing Skyphr's agent-readable resources.
 - [Agent Index](https://skyphr.com/.well-known/agents.json): Organization-level agent discovery index for DNS-AID and web-based discovery.
 - [DNS-AID Records](https://skyphr.com/.well-known/dns-aid-records.txt): DNS record reference for `_index._agents.skyphr.com` and related DNS-AID publication.
 - [HTTP Message Signatures Directory](https://skyphr.com/.well-known/http-message-signatures-directory): Public key directory for Web Bot Auth-style signed requests.

@@ -4,7 +4,6 @@ import {
   OUR_SERVICE_CARD_DATA,
 } from "@/app/content/pageContent/common.data";
 import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
-import { INSIGHTS_DATA } from "@/app/content/pageContent/insights.data";
 import { OUR_PROCESS_DATA } from "@/app/content/pageContent/ourProcess.data";
 import { CLIENT_TESTIMONIAL_DATA } from "@/app/content/pageContent/testimonial.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
@@ -182,8 +181,16 @@ export const HOME_PAGE_DATA: CommonPageDataInterface = {
   ourInsights: {
     header: {
       title: [[{ text: "Insights That Build" }], [{ text: "Better " }, { text: "Products", variant: "italic" }]],
+      description: [
+        [
+          {
+            text: "Practical guides and lessons from the Skyphr team on AI, SaaS development, and building software that scales, drawn from the products we design, build, and run for our clients.",
+          },
+        ],
+      ],
     },
-    blogsData: INSIGHTS_DATA,
+    readMoreLabel: "Read article",
+    featuredLabel: "Featured",
   },
   readyToScale: {
     header: {

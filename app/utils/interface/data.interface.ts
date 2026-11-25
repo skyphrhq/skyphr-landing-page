@@ -91,7 +91,7 @@ export interface BlogCmsPost {
 export interface BlogPostData extends BlogCmsPost {
   // File name without .json
   slug: string;
-  // Resolved publish date (listing.date or the schema's datePublished), "" if neither is set
+  // Resolved publish date (listing.date, else the schema's datePublished, else the Blog Hero publishedAt), "" if none is set
   publishedAt: string;
 }
 
