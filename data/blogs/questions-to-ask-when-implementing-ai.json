@@ -55,8 +55,8 @@
             "headline": "Questions to Ask When Implementing AI: A Practical Checklist for Leaders",
             "description": "The key questions to ask when implementing AI in your business: strategy, data, integration, security, cost and choosing the right AI partner. A practical checklist from Skyphr.",
             "image": [
-              "https://skyphr.com/images/blog/questions-to-ask-ai-cover.png",
-              "https://skyphr.com/images/blog/questions-to-ask-ai-1200x630.png"
+              "https://skyphr.com/blog/images/hero/questions-to-ask-when-implementing-ai-1900x997.webp",
+              "https://skyphr.com/blog/images/questions-to-ask-when-implementing-ai-og-1200x630.png"
             ],
             "datePublished": "2026-11-04T09:00:00+05:30",
             "dateModified": "2026-11-04T09:00:00+05:30",
@@ -64,7 +64,7 @@
               "@type": "Person",
               "name": "Varun Patel",
               "jobTitle": "Founder",
-              "url": "https://varunpatel.vercel.app/",
+              "url": "https://www.linkedin.com/in/varun-patel-aa465828b/",
               "worksFor": {
                 "@id": "https://skyphr.com/#organization"
               }
@@ -87,7 +87,7 @@
             "url": "https://skyphr.com",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://skyphr.com/images/skyphr-logo.png"
+              "url": "https://skyphr.com/favicon/android-chrome-512x512.png"
             }
           },
           {

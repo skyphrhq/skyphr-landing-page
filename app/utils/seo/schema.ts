@@ -254,14 +254,25 @@ const generateBlogFaqSchema = (post: BlogPostData) =>
   );
 
 // The CMS lets editors write the post's JSON-LD; use it as-is when present, otherwise generate BlogPosting + breadcrumbs.
-// Either way an FAQ block adds an FAQPage, unless the CMS JSON-LD already has one.
+// Either way breadcrumbs and an FAQ block's FAQPage are added, unless the CMS JSON-LD already has them.
 export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
   const cmsSchema = post.seo.schema?.data;
-  if (cmsSchema && Object.keys(cmsSchema).length) {
-    return compactSchemas([cmsSchema, JSON.stringify(cmsSchema).includes('"FAQPage"') ? null : generateBlogFaqSchema(post)]);
-  }
-
   const path = `/blog/${post.slug}`;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.listing.title, path },
+  ]);
+
+  if (cmsSchema && Object.keys(cmsSchema).length) {
+    const cmsSchemaText = JSON.stringify(cmsSchema);
+
+    return compactSchemas([
+      cmsSchema,
+      cmsSchemaText.includes('"BreadcrumbList"') ? null : breadcrumbSchema,
+      cmsSchemaText.includes('"FAQPage"') ? null : generateBlogFaqSchema(post),
+    ]);
+  }
 
   return compactSchemas([
     post.publishedAt
@@ -274,11 +285,7 @@ export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
           image: post.listing.image.url,
         })
       : null,
-    generateBreadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Blog", path: "/blog" },
-      { name: post.listing.title, path },
-    ]),
+    breadcrumbSchema,
     generateBlogFaqSchema(post),
   ]);
 };

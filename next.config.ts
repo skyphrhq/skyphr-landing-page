@@ -38,6 +38,16 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      // The DEVELOPMENT build is the staging site on skyphr-landing-page.vercel.app (no redirect above). Keep it out of
+      // search results, or Google indexes it as a duplicate of skyphr.com and can pick it as the canonical.
+      ...(isDevelopmentBranch
+        ? [
+            {
+              source: "/:path*",
+              headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+            },
+          ]
+        : []),
       {
         source: "/",
         headers: [
