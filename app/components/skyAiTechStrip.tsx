@@ -1,5 +1,5 @@
-import { SkyAiTechLogo, SkyAiTechStrip as SkyAiTechStripData } from "@/app/utils/interface/data.interface";
 import SparkleIcon from "@/app/components/common/sparkleIcon";
+import { SkyAiTechLogo, SkyAiTechStrip as SkyAiTechStripData } from "@/app/utils/interface/data.interface";
 import { twMerge } from "tailwind-merge";
 
 function SkyAiTechStrip({ data, classNames }: { data: SkyAiTechStripData; classNames?: string }) {
@@ -7,7 +7,7 @@ function SkyAiTechStrip({ data, classNames }: { data: SkyAiTechStripData; classN
     <section
       aria-label="Technologies we build with"
       className={twMerge("w-full bg-(--root-white-color) border-y border-(--border-color)/70", classNames)}>
-      <div className="skyphr-container flex flex-col md:flex-row md:items-center gap-5 md:gap-0 py-6 md:py-8">
+      <div className="skyphr-container flex flex-col md:flex-row md:items-center gap-5 md:gap-0 py-4! md:py-8!">
         <div className="shrink-0 flex items-center justify-center md:justify-start gap-4 md:pr-8 xl:pr-10 md:mr-8 xl:mr-10 md:border-r md:border-(--border-color)/70 md:py-3">
           <SparkleIcon className="w-6 h-6 shrink-0 text-(--cta-button-background)" />
           <p className="font-instrument-sans text-sm xl:text-base font-medium leading-snug text-(--cta-button-background)">
@@ -16,7 +16,7 @@ function SkyAiTechStrip({ data, classNames }: { data: SkyAiTechStripData; classN
                 {line}{" "}
               </span>
             ))}
-          </p>
+          </p> 
         </div>
 
         {/* Logos scroll as a continuous marquee at every breakpoint */}
@@ -33,9 +33,7 @@ function SkyAiTechStrip({ data, classNames }: { data: SkyAiTechStripData; classN
 
 function LogoGroup({ logos, cloned }: { logos: SkyAiTechLogo[]; cloned?: boolean }) {
   return (
-    <ul
-      aria-hidden={cloned || undefined}
-      className="marquee-group shrink-0 flex items-center gap-10 pr-10">
+    <ul aria-hidden={cloned || undefined} className="marquee-group shrink-0 flex items-center gap-10 pr-10">
       {logos.map((logo) => (
         <li
           key={logo.name}

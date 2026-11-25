@@ -113,23 +113,9 @@ Yes. We offer Product Maintenance, Performance Optimization, feature development
 
 ## Insights That Build Better Products
 
-### How We Design Products That Scale
+Practical guides and lessons from the Skyphr team on AI, SaaS development, and building software that scales, drawn from the products we design, build, and run for our clients.
 
-Design · January 12, 2025
-
-Great products don't happen by accident. We walk through the principles behind scalable UI architecture and why design systems matter from day one.
-
-### From Idea to Launch in 8 Weeks
-
-Process · February 28, 2025
-
-A behind-the-scenes look at how Skyphr's sprint-based process takes a raw concept and ships a polished, production-ready product in under two months.
-
-### Why Most SaaS Products Fail at Onboarding
-
-Growth · March 15, 2025
-
-Onboarding is the make-or-break moment for any SaaS product. We break down the most common mistakes and what a frictionless first-run experience actually looks like.
+The three latest articles from the [Skyphr blog](/blog).
 
 ## Ready to Scale? Get Your Custom Roadmap
 

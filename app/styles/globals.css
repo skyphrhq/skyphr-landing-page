@@ -21,7 +21,7 @@
   --placeholder-color: #9ca3af;
   --active-link-bg: #3846da;
   --active-hover-link-bg: #e3e3e3;
-  --footer-links-color: #707070;
+  --footer-links-color: #a3a3a3;
   --skyai-lavender-bg: #f6f7fe;
   --skyai-lavender-soft: #eef0fd;
   --skyai-lavender-border: #e5e8fb;
@@ -114,13 +114,6 @@
   -webkit-text-fill-color: var(--root-black-color) !important;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-/* .reveal-animation,
-.reveal-text-animation {
-  opacity: 0;
-  filter: blur(10px);
-  transform: translateY(30px);
-} */
 
 .skyphr-navbar-main-wrapper .skyphr-nav-item {
   position: relative;

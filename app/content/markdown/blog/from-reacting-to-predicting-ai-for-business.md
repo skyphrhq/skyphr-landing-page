@@ -7,7 +7,7 @@ description: "Most businesses act on what already happened. See how AI predicts 
 
 Most businesses make decisions based on what already happened. The ones pulling ahead use the data already in their ERP, CRM, and sales sheets to see what's coming, like demand spikes, customer churn, and slow months. Here's what that shift looks like and how to start with just one prediction.
 
-By Varun Patel, Founder · 1-10-26
+By Varun Patel, CEO · 1-10-26
 
 **Your reports tell you what happened. The brands pulling ahead want to know what's about to happen.**
 

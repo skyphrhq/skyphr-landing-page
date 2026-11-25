@@ -3,7 +3,6 @@
 
 import type {
   AboutUsCardsDataArrayInterface,
-  BlogCardInterface,
   ClientTestimonialCardInterface,
   OurProcessCardInterface,
   OurStepsDataInterface,
@@ -96,9 +95,11 @@ export interface FAQSection {
   faqsItems: FaqCommonCardData[]; // replace with FAQ type
 }
 
+// The cards are the latest blog posts from the CMS (passed to the section as `posts`), so only labels live in page data
 export interface OurInsightsSection {
   header: SectionHeader;
-  blogsData: BlogCardInterface[];
+  readMoreLabel: string;
+  featuredLabel: string;
 }
 
 export interface ReadyToScaleSectionDataInterface {

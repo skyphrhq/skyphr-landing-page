@@ -1,5 +1,7 @@
+import { FOUNDER_PERSON_DATA } from "@/app/content/pageContent/pageData/founder.data";
 import { GOOGLE_MAPS_URL, SAME_AS_URLS, SITE_ALTERNATE_NAMES } from "@/app/content/pageContent/socilaLinks.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
+import { ParseBlogFaqs } from "@/app/utils/helpers/blogContent";
 import type { BlogPostData, FaqCommonCardData } from "@/app/utils/interface/data.interface";
 import { isValidElement, type ReactNode } from "react";
 
@@ -56,11 +58,17 @@ export const generateOrganizationSchema = (): JsonLd => ({
   image: absoluteSchemaUrl("/og-image/home-page.png"),
   description:
     "Skyphr is a digital product, software, and AI engineering company in Ahmedabad, India, offering UI/UX design, website development, custom software, SaaS product development, AI agents and integrations, and Shopify/e-commerce development.",
+  // Inline the founder so pages without the About page's Person node (e.g. the homepage) still resolve the name
   founder: {
+    "@type": "Person",
     "@id": FOUNDER_PERSON_ID,
+    name: FOUNDER_PERSON_DATA.name,
+    jobTitle: FOUNDER_PERSON_DATA.jobTitle,
+    url: absoluteSchemaUrl("/about-us"),
+    sameAs: FOUNDER_PERSON_DATA.sameAs,
   },
   email: "sales@skyphr.com",
-  telephone: "+91-92748-29076",
+  telephone: "+91 92748 29076",
   address: {
     "@type": "PostalAddress",
     streetAddress: "A-568, Money Plant High St, Gota",
@@ -72,7 +80,7 @@ export const generateOrganizationSchema = (): JsonLd => ({
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    telephone: "+91-92748-29076",
+    telephone: "+91 92748 29076",
     email: "sales@skyphr.com",
     url: "https://cal.com/skyphr/30min",
     availableLanguage: ["English"],
@@ -237,14 +245,34 @@ export const generateArticleSchema = ({
   },
 });
 
-// The CMS lets editors write the post's JSON-LD; use it as-is when present, otherwise generate BlogPosting + breadcrumbs
+// FAQPage from the post's "FAQ Section" blocks (the section `name` in skyphr-cms-config/blog.config.json)
+const generateBlogFaqSchema = (post: BlogPostData) =>
+  generateFaqSchema(
+    post.sections
+      .filter((section) => section.type === "FAQ Section" && typeof section.data.faqs === "string")
+      .flatMap((section) => ParseBlogFaqs(section.data.faqs as string)),
+  );
+
+// The CMS lets editors write the post's JSON-LD; use it as-is when present, otherwise generate BlogPosting + breadcrumbs.
+// Either way breadcrumbs and an FAQ block's FAQPage are added, unless the CMS JSON-LD already has them.
 export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
   const cmsSchema = post.seo.schema?.data;
-  if (cmsSchema && Object.keys(cmsSchema).length) {
-    return [cmsSchema];
-  }
-
   const path = `/blog/${post.slug}`;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.listing.title, path },
+  ]);
+
+  if (cmsSchema && Object.keys(cmsSchema).length) {
+    const cmsSchemaText = JSON.stringify(cmsSchema);
+
+    return compactSchemas([
+      cmsSchema,
+      cmsSchemaText.includes('"BreadcrumbList"') ? null : breadcrumbSchema,
+      cmsSchemaText.includes('"FAQPage"') ? null : generateBlogFaqSchema(post),
+    ]);
+  }
 
   return compactSchemas([
     post.publishedAt
@@ -257,11 +285,8 @@ export const generateBlogPostSchemas = (post: BlogPostData): JsonLd[] => {
           image: post.listing.image.url,
         })
       : null,
-    generateBreadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Blog", path: "/blog" },
-      { name: post.listing.title, path },
-    ]),
+    breadcrumbSchema,
+    generateBlogFaqSchema(post),
   ]);
 };
 

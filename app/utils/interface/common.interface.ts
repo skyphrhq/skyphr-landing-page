@@ -89,21 +89,6 @@ export interface OurProcessCardInterface {
   label?: string;
 }
 
-export interface BlogCardInterface {
-  imageOptions: {
-    imagePath: StaticImageData;
-    width: number;
-    height: number;
-    alt: string;
-    className?: string;
-    loading?: "lazy" | "eager";
-  };
-  title: string;
-  description: string;
-  label?: string;
-  date?: string;
-}
-
 export interface BlogListingCardInterface {
   data: BlogPostData;
   readMoreLabel: string;
@@ -117,6 +102,9 @@ export interface FaqCommonCardInterface {
   isOpen: boolean;
   onToggle: () => void;
   index: number;
+  // CARD (default): grey bordered card. LINE: no background, bottom border only (blog posts)
+  variant?: "CARD" | "LINE";
+  className?: string;
 }
 
 export interface ClientTestimonialCardInterface {
