@@ -1,4 +1,4 @@
-import AI_DEVELOPMENT_AUTOMATION_4X_IMG from "@/app/assets/webp/4x/ai-development-automation-4x.webp";
+import AI_DEVELOPMENT_AUTOMATION_SERVICE_HERO_IMG from "@/app/assets/webp/service-hero/ai-development-automation-service.webp";
 import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { AI_AUTOMATION_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -55,9 +55,9 @@ export const AI_DEVELOPMENT_AUTOMATION_SERVICE_PAGE_DATA: CommonPageDataInterfac
         ],
       ],
       heroImage: {
-        imagePath: AI_DEVELOPMENT_AUTOMATION_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: AI_DEVELOPMENT_AUTOMATION_SERVICE_HERO_IMG,
+        height: 1280,
+        width: 1680,
         alt: "AI development and automation services hero illustration",
         className: "object-contain",
         loading: "eager",

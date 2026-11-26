@@ -1,4 +1,4 @@
-import ENTERPRISE_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/enterprise-app-development-4x.webp";
+import ENTERPRISE_APP_DEVELOPMENT_SERVICE_HERO_IMAGE from "@/app/assets/webp/service-hero/enterprise-app-development-service.webp";
 import { ENTERPRISE_APP_DEVELOPMENT_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { ENTERPRISE_APP_DEVELOPMENT_VALUES_CARDS } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -41,9 +41,9 @@ export const ENTERPRISE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterfa
         ],
       ],
       heroImage: {
-        imagePath: ENTERPRISE_APP_DEVELOPMENT_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: ENTERPRISE_APP_DEVELOPMENT_SERVICE_HERO_IMAGE,
+        height: 1280,
+        width: 1680,
         alt: "Enterprise app development services hero illustration",
         className: "object-contain",
         loading: "eager",

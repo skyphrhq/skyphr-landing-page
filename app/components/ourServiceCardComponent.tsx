@@ -52,22 +52,19 @@ function OurServiceCardComponent({
           </div>
         </div>
         <div
-          className={twMerge("w-full md:w-1/2", COMMON_BORDER_RADIUS)}
+          className={twMerge("w-full md:w-1/2 overflow-hidden", COMMON_BORDER_RADIUS)}
           style={{ background: data?.style?.darkColor }}>
-          <div className="w-full h-full min-w-full! max-w-full! md:p-5 lg:p-10">
+          <div className="w-full h-full min-w-full! max-w-full! md:p-5 lg:p-10 overflow-hidden">
             <Image
               src={data?.imageOptions.imagePath}
               alt={data?.imageOptions.alt}
               title={data?.imageOptions.alt}
-              width={data?.imageOptions.width}
-              height={data?.imageOptions.height}
-              className={twMerge(
-                "object-cover w-full h-full max-w-full! aspect-500/400 min-w-125 min-h-100",
-                data?.imageOptions.className,
-                COMMON_BORDER_RADIUS,
-              )}
+              width={500}
+              height={500}
+              quality={90}
+              sizes="500px"
+              className={twMerge("object-cover", data?.imageOptions.className, COMMON_BORDER_RADIUS)}
               loading={data?.imageOptions?.loading ? data?.imageOptions?.loading : "lazy"}
-              // style={{ minWidth: `${data?.imageOptions?.width}px`, minHeight: `${data?.imageOptions?.height}px` }}
             />
           </div>
         </div>

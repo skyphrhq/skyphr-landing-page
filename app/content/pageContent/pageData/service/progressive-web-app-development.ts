@@ -1,4 +1,4 @@
-import PROGRESSIVE_WEB_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/progressive-web-app-development-4x.webp";
+import PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_HERO_IMG from "@/app/assets/webp/service-hero/progressive-web-app-development-service.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -41,9 +41,9 @@ export const PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
         ],
       ],
       heroImage: {
-        imagePath: PROGRESSIVE_WEB_APP_DEVELOPMENT_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: PROGRESSIVE_WEB_APP_DEVELOPMENT_SERVICE_HERO_IMG,
+        height: 1280,
+        width: 1680,
         alt: "Progressive web app development services hero illustration",
         className: "object-contain",
         loading: "eager",

@@ -5,7 +5,7 @@
 
 @theme {
   --breakpoint-xs: 491px;
-  --breakpoint-xmd: 991px;
+  --breakpoint-xmd: 1092px;
 }
 
 :root {
@@ -92,6 +92,11 @@
   }
 }
 @media (min-width: 1200px) {
+  .skyphr-container {
+    width: min(calc(100% - 80px), 1540px);
+  }
+}
+@media (min-width: 1400px) {
   .skyphr-container {
     width: min(calc(100% - 150px), 1540px);
   }
@@ -348,7 +353,7 @@
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1091px) {
   .skyphr-navbar-main-wrapper {
     width: 100% !important;
     max-width: 100% !important;

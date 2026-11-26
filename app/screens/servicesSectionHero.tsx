@@ -1,5 +1,6 @@
 "use client";
 import CTAButton from "@/app/components/common/ctaButton";
+import HeroVideo from "@/app/components/common/heroVideo";
 import { gsap } from "@/app/lib/gsap";
 import { COMMON_REVEL_ANIMATION } from "@/app/utils/constants/animation.constant";
 import { COMMON_BORDER_RADIUS } from "@/app/utils/constants/common.constant";
@@ -29,7 +30,7 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
             <h1 className="flex flex-col items-start justify-start gap-2">
               {data?.header?.title?.map((titleRow, rowIndex) => (
                 <span
-                  className="font-instrument-sans text-start text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-(--text-main-color) flex flex-wrap items-start justify-start gap-2 lg:gap-4"
+                  className="font-instrument-sans text-start text-4xl lg:text-[42px] 2xl:text-[54px] font-bold tracking-tight text-(--text-main-color) flex flex-wrap items-start justify-start gap-2 lg:gap-2.5 xl:gap-4"
                   key={rowIndex}>
                   {/* The trailing " " is invisible between flex items but keeps real word spaces in the HTML for SEO */}
                   {titleRow?.map((chunk, index) => {
@@ -87,22 +88,33 @@ function ServicesSectionHero({ data, classNames }: ServicesSectionHeroInterface)
               </div>
             )}
           </div>
-          {data?.header?.heroImage && (
+          {data?.header?.heroVideo ? (
             <div className="w-full md:w-1/2">
-              <Image
-                src={data.header.heroImage.imagePath}
-                width={data.header.heroImage.width}
-                height={data.header.heroImage.height}
-                alt={data.header.heroImage.alt}
-                title={data.header.heroImage.alt}
-                loading={data.header.heroImage.loading}
-                className={twMerge(
-                  "select-none pointer-events-none",
-                  COMMON_BORDER_RADIUS,
-                  data.header.heroImage.className,
-                )}
-              />
+              <HeroVideo data={data.header.heroVideo} />
             </div>
+          ) : (
+            data?.header?.heroImage && (
+              <div className="w-full md:w-1/2">
+                <Image
+                  src={data.header.heroImage.imagePath}
+                  // width={data.header.heroImage.width}
+                  // height={data.header.heroImage.height}
+                  width={840}
+                  height={640}
+                  quality={90}
+                  priority
+                  sizes="(min-width: 1280px) 720px, (min-width: 768px) 50vw, 100vw"
+                  alt={data.header.heroImage.alt}
+                  title={data.header.heroImage.alt}
+                  loading={data.header.heroImage.loading}
+                  className={twMerge(
+                    "select-none pointer-events-none",
+                    COMMON_BORDER_RADIUS,
+                    data.header.heroImage.className,
+                  )}
+                />
+              </div>
+            )
           )}
         </div>
       </div>

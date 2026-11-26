@@ -1,4 +1,4 @@
-import ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_4X_IMG from "@/app/assets/webp/4x/enterprise-software-development-4x.webp";
+import ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_HERO_IMAGE from "@/app/assets/webp/service-hero/enterprise-app-development-service.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -50,9 +50,9 @@ export const ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataIn
         ],
       ],
       heroImage: {
-        imagePath: ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_HERO_IMAGE,
+        height: 1280,
+        width: 1680,
         alt: "Enterprise software development services hero illustration",
         className: "object-contain",
         loading: "eager",

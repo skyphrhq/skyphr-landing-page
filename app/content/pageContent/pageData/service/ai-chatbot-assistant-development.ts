@@ -1,4 +1,4 @@
-import AI_CHATBOT_ASSISTANT_SERVICE_4X_IMG from "@/app/assets/webp/4x/ai-chatbot-assistant-development-4x.webp";
+import AI_CHATBOT_ASSISTANT_SERVICE_HERO_IMG from "@/app/assets/webp/service-hero/ai-chatbot-assistant-development-service.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -46,9 +46,9 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
       heroImage: {
-        imagePath: AI_CHATBOT_ASSISTANT_SERVICE_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: AI_CHATBOT_ASSISTANT_SERVICE_HERO_IMG,
+        height: 1280,
+        width: 1680,
         alt: "AI chatbot and assistant development services hero illustration",
         className: "object-contain",
         loading: "eager",
@@ -204,27 +204,33 @@ export const AI_CHATBOT_ASSISTANT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     steps: [
       {
         title: "Discovery & Strategy",
-        description: "We understand your business goals, users, workflows, data sources and chatbot requirements to define the right AI assistant strategy.",
+        description:
+          "We understand your business goals, users, workflows, data sources and chatbot requirements to define the right AI assistant strategy.",
       },
       {
         title: "Conversation & Experience Design",
-        description: "We map user intents, conversation flows, assistant behavior, fallback scenarios and user journeys to create a useful conversational experience.",
+        description:
+          "We map user intents, conversation flows, assistant behavior, fallback scenarios and user journeys to create a useful conversational experience.",
       },
       {
         title: "AI & Technology Architecture",
-        description: "We select the appropriate AI models, knowledge sources, integrations, APIs and architecture based on your requirements.",
+        description:
+          "We select the appropriate AI models, knowledge sources, integrations, APIs and architecture based on your requirements.",
       },
       {
         title: "Development & Integration",
-        description: "Our team develops the chatbot or assistant and integrates it with your website, application, knowledge base, CRM, databases or other business systems.",
+        description:
+          "Our team develops the chatbot or assistant and integrates it with your website, application, knowledge base, CRM, databases or other business systems.",
       },
       {
         title: "Testing & Optimization",
-        description: "We test responses, conversation flows, integrations, edge cases and reliability to improve the quality and consistency of the assistant.",
+        description:
+          "We test responses, conversation flows, integrations, edge cases and reliability to improve the quality and consistency of the assistant.",
       },
       {
         title: "Deployment & Improvement",
-        description: "We deploy the AI assistant and monitor its performance while continuously improving responses, workflows and capabilities based on real usage.",
+        description:
+          "We deploy the AI assistant and monitor its performance while continuously improving responses, workflows and capabilities based on real usage.",
       },
     ],
   },

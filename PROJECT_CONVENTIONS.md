@@ -95,7 +95,7 @@ LandingPage/
 ├── blog-cms/                   # Prebuilt local blog CMS + server.mjs (port 5175). Never deployed
 ├── skyphr-cms-config/          # blog.config.json: blog block registry for the CMS
 ├── public/                     # Static files served by URL
-│   ├── favicon/  og-image/  .well-known/  skills/
+│   ├── favicon/  og-image/  .well-known/  skills/  spline/  videos/
 │   ├── robots.txt  llms.txt  site.webmanifest  auth.md
 └── next.config.ts              # Redirects + headers for /.well-known files
 ```
@@ -131,6 +131,7 @@ LandingPage/
 | Dropdown link description / mega panel promo card | `description` / `featured` on the item in `navbar.data.tsx` (`NavFeaturedCard`); external `href`s are skipped by `app/sitemap.ts` | `our-products`, `hire.featured` |
 | Image used in a component | `app/assets/webp/` (subfolder per page if > 2 images) | `app/assets/webp/sky-ai/` |
 | OG image | `public/og-image/<route-slug>.png` | `public/og-image/hire-nextjs-developers.png` |
+| Hero video on a service page | `public/videos/<kebab-name>.mp4` + `heroVideo` in the page's `header` (shown instead of `heroImage`), rendered by `app/components/common/heroVideo.tsx` | `/videos/rag-development-services-hero.mp4` |
 | Env variable | `.env` (git-ignored) + document it in `.env.example`; must be `NEXT_PUBLIC_*` if used client-side | `NEXT_PUBLIC_BASE_URL` |
 
 There is **no** `hooks/`, `services/` or `api/` folder. No custom hooks exist today; API calls (`fetch`) live inside the component that uses them (`commonContatcUsForm.tsx`, `webMcpProvider.tsx`). If you need a reusable hook or service, ask first and add the folder here.
@@ -262,6 +263,7 @@ Per-item decorative colors stored in **data files** (card accent colors) are an 
 | UI icons | `react-icons` | `import { HiSparkles } from "react-icons/hi2"`; in data files wrap with `createElement(Icon)` |
 | Custom inline SVG icons | a component in `app/components/common/` | `sparkleIcon.tsx` |
 | OG images | `public/og-image/<route-slug>.png` (1 per page) | string path in page data `metadata.openGraph.images` |
+| Hero videos | `public/videos/<kebab-name>.mp4` (H.264, muted loop, keep it small) | string URL in page data `header.heroVideo.src`; poster is a `.webp` import from `app/assets` |
 | Favicons, manifest | `public/favicon/`, `public/site.webmanifest` | string paths in `app/layout.tsx` |
 | Agent/SEO files | `public/.well-known/`, `public/llms.txt`, `public/robots.txt` | served statically; headers set in `next.config.ts` |
 
@@ -273,6 +275,7 @@ Rules:
 - **3D / WebGL:** use Spline (`@splinetool/react-spline`, the client import, not `/next`, which can't load local files). Load it through `next/dynamic` with `ssr: false`, show a same-size skeleton while it loads (`skyVoiceOrbSkeleton.tsx`) and a static fallback without WebGL (`skyVoiceOrbPlaceholder.tsx`), fade the canvas edges with a radial `mask-image` so the scene's glow never shows as a square (`.skyai-voice-orb-scene`), and `stop()`/`play()` it from an IntersectionObserver + `visibilitychange` (see `skyVoiceOrb.tsx`). Scene files go in `public/spline/`, because Spline fetches them by URL.
 - **Rendering:** always `next/image` (`Image`) with `alt` and `title`; pass `width`/`height` from data (`ImageOptionsInterface` in `page.interface.ts`: `imagePath`, `alt`, `width`, `height`, `loading`, `className`). Default `loading="lazy"`; hero images set it explicitly in data. No raw `<img>` tags exist.
 - Images are referenced from **data files**, not hardcoded in the component.
+- **Videos:** never a raw `<video>` in a section; use `HeroVideo` (`app/components/common/heroVideo.tsx`) with `VideoOptionsInterface` data (`src`, `alt`, `width`, `height`, optional `poster`, `type`, `preload`, `className`). It sets `muted`/`playsinline` on the element and calls `play()` in an effect, because Safari ignores React's `muted` prop and blocks autoplay otherwise.
 - **Alt / title text:** describe what the image shows and match the page or card it sits on (never copy another page's alt). Purely decorative images (background textures) use `alt=""` + `aria-hidden="true"`. Blog CMS images (`listing.image`, hero `image`, `seo.*.image`) always get a filled `alt`.
 - **OG / Twitter images:** OG PNGs are 1200×630. Page metadata goes through `createPageMetadata` / `normalizePageMetadata`, which emit each image via `createOgImage` (`url`, `width`, `height`, `alt` = page title, `type`). Never pass a bare URL string to `openGraph.images` outside those helpers.
 

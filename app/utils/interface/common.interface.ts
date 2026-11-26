@@ -30,6 +30,7 @@ import {
   IndustryItem,
   SectionHeader,
   TextChunk,
+  VideoOptionsInterface,
 } from "@/app/utils/interface/page.interface";
 import { StaticImageData } from "next/image";
 import { ButtonHTMLAttributes } from "react";
@@ -587,5 +588,10 @@ export interface SkyAiSubNavDropdownInterface {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onNavigate: () => void;
+  className?: string;
+}
+
+export interface HeroVideoInterface {
+  data: VideoOptionsInterface;
   className?: string;
 }
