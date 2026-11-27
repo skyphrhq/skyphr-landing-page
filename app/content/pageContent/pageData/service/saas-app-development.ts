@@ -1,4 +1,4 @@
-import SAAS_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/saas-app-development-4x.webp";
+import SAAS_APP_DEVELOPMENT_SERVICE_HERO_IMG from "@/app/assets/webp/service-hero/saas-app-development-service.webp";
 import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { SAAS_DEVELOPMENT_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -64,9 +64,9 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
       heroImage: {
-        imagePath: SAAS_APP_DEVELOPMENT_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: SAAS_APP_DEVELOPMENT_SERVICE_HERO_IMG,
+        height: 1280,
+        width: 1680,
         alt: "SaaS application development services hero illustration",
         className: "object-contain",
         loading: "eager",
@@ -330,8 +330,7 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
       {
         title: "E-commerce & Marketplaces",
-        description:
-          "Multi-vendor platforms, storefront tools and seller dashboards that scale with orders and users.",
+        description: "Multi-vendor platforms, storefront tools and seller dashboards that scale with orders and users.",
       },
       {
         title: "EdTech",
@@ -340,8 +339,7 @@ export const SAAS_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
       {
         title: "HR & Recruitment",
-        description:
-          "Hiring, onboarding and people management products with clean workflows and reporting.",
+        description: "Hiring, onboarding and people management products with clean workflows and reporting.",
       },
     ],
   },

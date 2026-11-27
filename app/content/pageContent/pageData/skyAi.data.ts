@@ -3,7 +3,7 @@ import SkyAiMessyDataNotReady from "@/app/assets/webp/sky-ai/skyai-messy-data-no
 import SkyAiRisingAiApiCosts from "@/app/assets/webp/sky-ai/skyai-rising-ai-api-costs.webp";
 import SkyAiSkyVoiceAgentCall from "@/app/assets/webp/sky-ai/skyai-sky-voice-agent-call.webp";
 import { SKY_AI_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
-import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
+import { SITE_BASE_URL, SKY_VOICE_PHONE_NUMBER } from "@/app/utils/constants/common.constant";
 import { SkyAiPageDataInterface } from "@/app/utils/interface/data.interface";
 import { createElement } from "react";
 import { FaCode, FaRegCompass, FaRegLightbulb, FaRocket } from "react-icons/fa";
@@ -392,6 +392,11 @@ export const SKY_AI_PAGE_DATA: SkyAiPageDataInterface = {
       },
 
       pageLink: { label: "Let Sky answer your calls", href: "/ai-voice-agent" },
+      callCta: {
+        label: `Try Sky: ${SKY_VOICE_PHONE_NUMBER.display}`,
+        href: `tel:${SKY_VOICE_PHONE_NUMBER.e164}`,
+        variant: "CTA_SECONDARY",
+      },
     },
     lensCard: {
       status: "Live",

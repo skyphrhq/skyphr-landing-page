@@ -1,4 +1,4 @@
-import UI_UX_DESIGN_HERO_4X_IMAGE from "@/app/assets/webp/4x/ui-ux-design-4x.webp";
+import UI_UX_DESIGN_HERO_SERVICE_HERO_IMAGE from "@/app/assets/webp/service-hero/ui-ux-design-service.webp";
 import { HOME_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { UI_UX_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -56,9 +56,9 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
         ],
       ],
       heroImage: {
-        imagePath: UI_UX_DESIGN_HERO_4X_IMAGE,
-        height: 2000,
-        width: 2000,
+        imagePath: UI_UX_DESIGN_HERO_SERVICE_HERO_IMAGE,
+        height: 1280,
+        width: 1680,
         alt: "UI/UX design services hero illustration",
         className: "object-contain",
         loading: "eager",
@@ -232,8 +232,7 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     items: [
       {
         title: "SaaS & B2B Products",
-        description:
-          "Dashboards, onboarding and complex workflows designed to be clear for both new and power users.",
+        description: "Dashboards, onboarding and complex workflows designed to be clear for both new and power users.",
       },
       {
         title: "Fintech",
@@ -247,8 +246,7 @@ export const UI_UX_DESIGN_SERVICE_PAGE_DATA: CommonPageDataInterface = {
       },
       {
         title: "E-commerce & Retail",
-        description:
-          "Product discovery, checkout and account flows designed to reduce friction and lift conversions.",
+        description: "Product discovery, checkout and account flows designed to reduce friction and lift conversions.",
       },
       {
         title: "EdTech",

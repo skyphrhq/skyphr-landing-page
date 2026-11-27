@@ -48,6 +48,21 @@ export interface ImageOptionsInterface {
   loading?: "lazy" | "eager";
 }
 
+export interface VideoOptionsInterface {
+  // URL of a file in public/videos/, e.g. "/videos/rag-development-services-hero.mp4"
+  src: string;
+  // MIME type of src, defaults to "video/mp4"
+  type?: string;
+  // Still frame shown before the video plays (a .webp from app/assets)
+  poster?: StaticImageData;
+  width: number;
+  height: number;
+  // Read by screen readers as the video's aria-label
+  alt: string;
+  className?: string;
+  preload?: "auto" | "metadata" | "none";
+}
+
 export interface heroHighlightedText {
   textOne: string;
   textTwo: string;
@@ -57,6 +72,8 @@ export interface SectionHeader {
   title: TextChunk[][];
   description?: TextChunk[][];
   heroImage?: ImageOptionsInterface;
+  // When set, the hero shows this video instead of heroImage
+  heroVideo?: VideoOptionsInterface;
   heroHighlightedText?: heroHighlightedText;
 }
 
