@@ -3,6 +3,7 @@ import CTAButton from "@/app/components/common/ctaButton";
 import SkyAiStatusPill from "@/app/components/skyAiStatusPill";
 import { SkyAiSkyAgentCardInterface } from "@/app/utils/interface/common.interface";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 function SkyAiSkyAgentCard({ data }: SkyAiSkyAgentCardInterface) {
   return (
@@ -47,16 +48,28 @@ function SkyAiSkyAgentCard({ data }: SkyAiSkyAgentCardInterface) {
           ))}
         </ul>
 
-        {data.pageLink && (
+        {(data.pageLink || data.callCta) && (
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 pt-7">
-            <CTAButton
-              type="button"
-              btnStyle="CTA_PRIMARY"
-              aria-haspopup="dialog"
-              href={data?.pageLink?.href}
-              className="w-full sm:w-fit min-w-0 card-text-reveal">
-              {data.pageLink.label}
-            </CTAButton>
+            {data.pageLink && (
+              <CTAButton
+                type="button"
+                btnStyle="CTA_PRIMARY"
+                aria-haspopup="dialog"
+                href={data?.pageLink?.href}
+                className="w-full sm:w-fit min-w-0 card-text-reveal">
+                {data.pageLink.label}
+              </CTAButton>
+            )}
+            {data.callCta && (
+              <CTAButton
+                btnStyle={data.callCta.variant}
+                href={data.callCta.href}
+                target={data.callCta.target}
+                rel={data.callCta.rel}
+                className={twMerge("w-full sm:w-fit min-w-0 card-text-reveal", data.callCta.classNames)}>
+                {data.callCta.label}
+              </CTAButton>
+            )}
           </div>
         )}
       </div>

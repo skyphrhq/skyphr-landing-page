@@ -11,6 +11,8 @@ Sky is the AI voice agent built by Skyphr to handle business phone calls 24/7. I
 
 [Book a Free Demo Call](https://cal.com/skyphr/sky-demo)
 
+[Try Sky: +91 22 6423 2076](tel:+912264232076)
+
 ### Live Call Demo
 
 Caller (Dental clinic, Manchester) talking to Sky (Skyphr AI agent).

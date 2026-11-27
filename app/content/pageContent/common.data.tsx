@@ -1,6 +1,6 @@
-import AiDevelopmentAutomation from "@/app/assets/webp/artificial-Intelligence-automation.webp";
-import CustomSoftwareDevelopment from "@/app/assets/webp/custom-software-engineering.webp";
-import MobileAppDevelopment from "@/app/assets/webp/mobile-app-development.webp";
+import AiDevelopmentAutomationListingIMG from "@/app/assets/webp/artificial-intelligence-&-automation-listing.webp";
+import CustomSoftwareDevelopmentListingIMG from "@/app/assets/webp/custom-software-engineering-listing.webp";
+import ApplicationEngineeringListingIMG from "@/app/assets/webp/application-engineering-listing.webp";
 import MockupFive from "@/app/assets/webp/mockup-five.webp";
 import MockupFour from "@/app/assets/webp/mockup-four.webp";
 import MockupOne from "@/app/assets/webp/mockup-one.webp";
@@ -159,7 +159,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       darkColor: "#9FAD4A",
     },
     imageOptions: {
-      imagePath: AiDevelopmentAutomation,
+      imagePath: AiDevelopmentAutomationListingIMG,
       width: 500,
       height: 400,
       alt: "Artificial intelligence and automation service illustration",
@@ -176,7 +176,7 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       darkColor: "#FB7D44",
     },
     imageOptions: {
-      imagePath: CustomSoftwareDevelopment,
+      imagePath: CustomSoftwareDevelopmentListingIMG,
       width: 500,
       height: 400,
       alt: "Custom software engineering service illustration",
@@ -193,9 +193,9 @@ export const OUR_SERVICE_CARD_DATA: OurServiceCardDataArrayInterface[] = [
       darkColor: "#FF5B60",
     },
     imageOptions: {
-      imagePath: MobileAppDevelopment,
+      imagePath: ApplicationEngineeringListingIMG,
       width: 500,
-      height: 400,
+      height: 500,
       alt: "Application engineering for web and mobile apps service illustration",
     },
   },

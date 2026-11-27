@@ -1,4 +1,4 @@
-import MOBILE_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/mobile-app-development-4x.webp";
+import MOBILE_APP_DEVELOPMENT_SERVICE_HERO_IMG from "@/app/assets/webp/service-hero/mobile-app-development-service.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
@@ -55,9 +55,9 @@ export const MOBILE_APP_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface =
         ],
       ],
       heroImage: {
-        imagePath: MOBILE_APP_DEVELOPMENT_4X_IMG,
-        height: 2000,
-        width: 2000,
+        imagePath: MOBILE_APP_DEVELOPMENT_SERVICE_HERO_IMG,
+        height: 1280,
+        width: 1680,
         alt: "Mobile app development services hero illustration",
         className: "object-contain",
         loading: "eager",

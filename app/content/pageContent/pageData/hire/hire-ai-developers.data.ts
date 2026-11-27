@@ -1,4 +1,3 @@
-import SAAS_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/saas-app-development-4x.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { HirePageDataInterface } from "@/app/utils/interface/data.interface";
@@ -45,14 +44,6 @@ export const HIRE_AI_DEVELOPERS_SERVICE_PAGE_DATA: HirePageDataInterface = {
           },
         ],
       ],
-      heroImage: {
-        imagePath: SAAS_APP_DEVELOPMENT_4X_IMG,
-        height: 2000,
-        width: 2000,
-        alt: "Hire AI Developers hero illustration",
-        className: "object-contain",
-        loading: "eager",
-      },
     },
     highlights: [],
     ctas: [

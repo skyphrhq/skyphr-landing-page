@@ -155,47 +155,10 @@
   filter: blur(28px);
 }
 
-/* The Spline scene's glow is larger than its canvas; fade the edges so it never shows as a square */
-.skyai-voice-orb-scene {
+/* The orb video has a flat light background and a particle haze; fade its edges so it never shows as a square */
+.skyai-voice-orb-video {
   -webkit-mask-image: radial-gradient(circle at center, black 52%, transparent 70%);
   mask-image: radial-gradient(circle at center, black 52%, transparent 70%);
-}
-
-/* Skeleton shown while the Spline scene loads: soft grey disc with a light sweep across it */
-.skyai-voice-orb-skeleton {
-  background-color: var(--skyai-voice-avatar-grey);
-}
-.skyai-voice-orb-skeleton::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    100deg,
-    transparent 20%,
-    color-mix(in srgb, var(--root-white-color) 70%, transparent) 50%,
-    transparent 80%
-  );
-  transform: translateX(-100%);
-  animation: skyai-voice-shimmer 1.4s ease-in-out infinite;
-}
-
-/* Static fallback when WebGL isn't available.
- * Approximates the scene's glossy multicolour sphere: cyan, violet, magenta and orange under a soft highlight. */
-.skyai-voice-orb-placeholder {
-  background:
-    radial-gradient(circle at 36% 30%, color-mix(in srgb, var(--root-white-color) 75%, transparent) 0%, transparent 26%),
-    conic-gradient(
-      from 200deg,
-      var(--skyai-voice-orb-cyan),
-      var(--cta-button-background),
-      var(--skyai-voice-orb-magenta),
-      var(--skyai-voice-orb-orange),
-      var(--skyai-voice-orb-magenta),
-      var(--skyai-voice-orb-cyan)
-    );
-  box-shadow:
-    0 0 0 3px color-mix(in srgb, var(--root-white-color) 60%, transparent),
-    inset -14px -18px 40px color-mix(in srgb, var(--skyai-navy) 35%, transparent);
 }
 
 /* ---------- Call control ---------- */
@@ -385,11 +348,6 @@
     opacity: 0.35;
   }
 }
-@keyframes skyai-voice-shimmer {
-  to {
-    transform: translateX(100%);
-  }
-}
 @keyframes skyai-voice-eq {
   0%,
   100% {
@@ -434,8 +392,7 @@
   .skyai-voice-enter-pop,
   .skyai-voice-blink,
   .skyai-voice-caret,
-  .skyai-voice-bars.is-active span,
-  .skyai-voice-orb-skeleton::after {
+  .skyai-voice-bars.is-active span {
     animation: none;
   }
   .skyai-voice-bars span,
