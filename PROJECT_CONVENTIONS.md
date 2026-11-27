@@ -95,7 +95,7 @@ LandingPage/
 ├── blog-cms/                   # Prebuilt local blog CMS + server.mjs (port 5175). Never deployed
 ├── skyphr-cms-config/          # blog.config.json: blog block registry for the CMS
 ├── public/                     # Static files served by URL
-│   ├── favicon/  og-image/  .well-known/  skills/
+│   ├── favicon/  og-image/  .well-known/  skills/  videos/
 │   ├── robots.txt  llms.txt  site.webmanifest  auth.md
 └── next.config.ts              # Redirects + headers for /.well-known files
 ```
@@ -126,11 +126,12 @@ LandingPage/
 | Page-specific complex CSS (too big for utilities) | its own file in `app/styles/`, `@import`ed from `globals.css`, classes prefixed | `app/styles/skyVoice.css` (`.skyai-voice-*`) |
 | Table or FAQ in a blog post (the CMS has no table / repeatable-list editor) | a `TEXTAREA` field parsed by `ParseBlogTable` / `ParseBlogFaqs` in `app/utils/helpers/blogContent.ts` | `blog/comparisonTable.tsx`, `blog/faqSection.tsx` |
 | HTML from a CMS `RICH_TEXT` field | render it in an element with `.skyphr-blog-rich-text` (`app/styles/blogRichText.css`), which restores spacing/lists/headings that Tailwind's preflight removes | `blog/textSection.tsx` |
-| 3D scene (Spline `.splinecode`) | `public/spline/<kebab-name>.splinecode`, URL in a `common.constant.ts` constant | `SKY_VOICE_ORB_SCENE_URL` → `/spline/sky-voice-orb.splinecode` |
+| Decorative looping video outside page data (e.g. Sky's orb) | `public/videos/<kebab-name>.mp4` + `VideoOptionsInterface` constant in `common.constant.ts`, rendered by `HeroVideo` | `SKY_VOICE_ORB_VIDEO` → `/videos/sky-orb-video.mp4` |
 | Indexable page that isn't in the header nav | `EXTRA_PAGE_LINKS_DATA` in `navbar.data.tsx` (feeds `app/sitemap.ts`, the `/sitemap` page and the footer "Company" column) | `/sky-ai` |
 | Dropdown link description / mega panel promo card | `description` / `featured` on the item in `navbar.data.tsx` (`NavFeaturedCard`); external `href`s are skipped by `app/sitemap.ts` | `our-products`, `hire.featured` |
 | Image used in a component | `app/assets/webp/` (subfolder per page if > 2 images) | `app/assets/webp/sky-ai/` |
 | OG image | `public/og-image/<route-slug>.png` | `public/og-image/hire-nextjs-developers.png` |
+| Hero video on a service page | `public/videos/<kebab-name>.mp4` + `heroVideo` in the page's `header` (shown instead of `heroImage`), rendered by `app/components/common/heroVideo.tsx` | `/videos/rag-development-services-hero.mp4` |
 | Env variable | `.env` (git-ignored) + document it in `.env.example`; must be `NEXT_PUBLIC_*` if used client-side | `NEXT_PUBLIC_BASE_URL` |
 
 There is **no** `hooks/`, `services/` or `api/` folder. No custom hooks exist today; API calls (`fetch`) live inside the component that uses them (`commonContatcUsForm.tsx`, `webMcpProvider.tsx`). If you need a reusable hook or service, ask first and add the folder here.
@@ -175,14 +176,13 @@ There is **no** `hooks/`, `services/` or `api/` folder. No custom hooks exist to
 | `--skyai-voice-idle` | `#c4c6d6` | Sky voice agent: idle status/transcript dots |
 | `--skyai-voice-indigo` | `#5560f0` | Sky voice agent: glow behind the orb |
 | `--skyai-voice-periwinkle` | `#7f89ff` | Sky voice agent: headline gradient end, Sky avatar highlight |
-| `--skyai-voice-haze` | `#b9beff` | Sky voice agent: background glow, orb placeholder highlight |
+| `--skyai-voice-haze` | `#b9beff` | Sky voice agent: background glow |
 | `--skyai-voice-lilac` | `#e3d9ff` | Sky voice agent: corner glow, placeholder rim |
 | `--skyai-voice-bg-mid` / `--skyai-voice-bg-end` | `#f7f6ff` / `#efeeff` | Sky voice agent: hero background gradient |
 | `--skyai-voice-avatar-grey` | `#e7e8f3` | Sky voice agent: caller avatar gradient |
 | `--skyai-voice-green` / `-green-bright` / `-green-light` | `#16a34a` / `#22c55e` / `#4ade80` | Sky voice agent: live dot, start-call button, booked icon |
 | `--skyai-voice-red` / `-red-light` | `#ef4444` / `#f87171` | Sky voice agent: end-call button, "who it's for" important note |
 | `--skyai-voice-success-bg` / `-bg-end` / `-border` / `-text` | `#f0fbf4` / `#e6f7ec` / `#cbebd6` / `#3f5b48` | Sky voice agent: "Consultation booked" card |
-| `--skyai-voice-orb-cyan` / `-orb-magenta` / `-orb-orange` | `#22b8f0` / `#e0409a` / `#f5692a` | Sky voice agent: orb loading placeholder (matches the Spline scene) |
 
 Naming rule for new tokens: kebab-case, **role-based** (`--text-*-color`, `--*-bg`, `--*-border`), and prefix page-specific tokens with the page/brand (`--skyai-*`).
 
@@ -262,6 +262,7 @@ Per-item decorative colors stored in **data files** (card accent colors) are an 
 | UI icons | `react-icons` | `import { HiSparkles } from "react-icons/hi2"`; in data files wrap with `createElement(Icon)` |
 | Custom inline SVG icons | a component in `app/components/common/` | `sparkleIcon.tsx` |
 | OG images | `public/og-image/<route-slug>.png` (1 per page) | string path in page data `metadata.openGraph.images` |
+| Hero videos | `public/videos/<kebab-name>.mp4` (H.264, muted loop, keep it small) | string URL in page data `header.heroVideo.src`; poster is a `.webp` import from `app/assets` |
 | Favicons, manifest | `public/favicon/`, `public/site.webmanifest` | string paths in `app/layout.tsx` |
 | Agent/SEO files | `public/.well-known/`, `public/llms.txt`, `public/robots.txt` | served statically; headers set in `next.config.ts` |
 
@@ -270,9 +271,10 @@ Rules:
 - **File names:** kebab-case, descriptive, brand/page-prefixed where relevant: `skyphr-hero-background.webp`, `ai-development-automation.webp`, `skyai-messy-data-not-ready.webp`. No spaces, no `Frame 73`, no `dummy-*` in shipped UI.
 - **Import names:** PascalCase describing the image: `import NotFoundImage from "@/app/assets/webp/skyphr-404.webp"`. (Service data files use SCREAMING_CASE `…_4X_IMG`; prefer PascalCase for new code.)
 - **Timed / looping section animations** (e.g. the /ai-voice-agent call flow): one GSAP master timeline in the section drives every progress indicator (no CSS keyframes, no manual rAF loop, no React state per frame). Pause it with `timeline.pause()` / `resume()` from a ScrollTrigger, `visibilitychange` and hover/keyboard focus; use `gsap.matchMedia()` for reduced motion. See `skyVoiceCallFlowSection.tsx`.
-- **3D / WebGL:** use Spline (`@splinetool/react-spline`, the client import, not `/next`, which can't load local files). Load it through `next/dynamic` with `ssr: false`, show a same-size skeleton while it loads (`skyVoiceOrbSkeleton.tsx`) and a static fallback without WebGL (`skyVoiceOrbPlaceholder.tsx`), fade the canvas edges with a radial `mask-image` so the scene's glow never shows as a square (`.skyai-voice-orb-scene`), and `stop()`/`play()` it from an IntersectionObserver + `visibilitychange` (see `skyVoiceOrb.tsx`). Scene files go in `public/spline/`, because Spline fetches them by URL.
+- **Sky's orb (`/ai-voice-agent`):** a muted looping video (`SKY_VOICE_ORB_VIDEO`) played by `HeroVideo` inside `skyVoiceOrb.tsx`, with the edges faded by a radial `mask-image` (`.skyai-voice-orb-video`) so its square background never shows. With reduced motion it renders the poster frame instead.
 - **Rendering:** always `next/image` (`Image`) with `alt` and `title`; pass `width`/`height` from data (`ImageOptionsInterface` in `page.interface.ts`: `imagePath`, `alt`, `width`, `height`, `loading`, `className`). Default `loading="lazy"`; hero images set it explicitly in data. No raw `<img>` tags exist.
 - Images are referenced from **data files**, not hardcoded in the component.
+- **Videos:** never a raw `<video>` in a section; use `HeroVideo` (`app/components/common/heroVideo.tsx`) with `VideoOptionsInterface` data (`src`, `alt`, `width`, `height`, optional `poster`, `type`, `preload`, `className`). It sets `muted`/`playsinline` on the element and calls `play()` in an effect, because Safari ignores React's `muted` prop and blocks autoplay otherwise.
 - **Alt / title text:** describe what the image shows and match the page or card it sits on (never copy another page's alt). Purely decorative images (background textures) use `alt=""` + `aria-hidden="true"`. Blog CMS images (`listing.image`, hero `image`, `seo.*.image`) always get a filled `alt`.
 - **OG / Twitter images:** OG PNGs are 1200×630. Page metadata goes through `createPageMetadata` / `normalizePageMetadata`, which emit each image via `createOgImage` (`url`, `width`, `height`, `alt` = page title, `type`). Never pass a bare URL string to `openGraph.images` outside those helpers.
 

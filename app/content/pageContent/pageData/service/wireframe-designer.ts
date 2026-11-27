@@ -1,4 +1,4 @@
-import WIREFRAME_DESIGNER_SERVICE_4X_IMG from "@/app/assets/webp/4x/wireframe-designer-4x.webp";
+import WIREFRAME_DESIGNER_SERVICE_4X_IMG from "@/app/assets/webp/service-hero/wireframe-designer-service.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";

@@ -1,4 +1,4 @@
-import SAAS_APP_DEVELOPMENT_4X_IMG from "@/app/assets/webp/4x/rag-development-services-4x.webp";
+import RAG_DEVELOPMENT_SERVICE_VIDEO_POSTER from "@/app/assets/webp/video-poster/rag-development-services-hero-video-poster.webp";
 import { RAG_DEVELOPMENT_SERVICE_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { RAG_DEVELOPMENT_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -54,13 +54,16 @@ export const RAG_DEVELOPMENT_SERVICE_PAGE_DATA: CommonPageDataInterface = {
           },
         ],
       ],
-      heroImage: {
-        imagePath: SAAS_APP_DEVELOPMENT_4X_IMG,
-        height: 2000,
-        width: 2000,
-        alt: "RAG development services hero illustration",
+
+      heroVideo: {
+        alt: "RAG development services hero video",
+        src: "/videos/rag-development-services-hero-video.mp4",
+        height: 840,
+        width: 640,
         className: "object-contain",
-        loading: "eager",
+        poster: RAG_DEVELOPMENT_SERVICE_VIDEO_POSTER,
+        preload: "auto",
+        type: "video/mp4",
       },
     },
     ctas: [

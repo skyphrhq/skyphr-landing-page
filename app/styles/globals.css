@@ -5,7 +5,7 @@
 
 @theme {
   --breakpoint-xs: 491px;
-  --breakpoint-xmd: 991px;
+  --breakpoint-xmd: 1092px;
 }
 
 :root {
@@ -50,9 +50,6 @@
   --skyai-voice-success-bg-end: #e6f7ec;
   --skyai-voice-success-border: #cbebd6;
   --skyai-voice-success-text: #3f5b48;
-  --skyai-voice-orb-cyan: #22b8f0;
-  --skyai-voice-orb-magenta: #e0409a;
-  --skyai-voice-orb-orange: #f5692a;
 }
 
 .font-playfair-display {
@@ -92,6 +89,11 @@
   }
 }
 @media (min-width: 1200px) {
+  .skyphr-container {
+    width: min(calc(100% - 80px), 1540px);
+  }
+}
+@media (min-width: 1400px) {
   .skyphr-container {
     width: min(calc(100% - 150px), 1540px);
   }
@@ -348,7 +350,7 @@
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1091px) {
   .skyphr-navbar-main-wrapper {
     width: 100% !important;
     max-width: 100% !important;

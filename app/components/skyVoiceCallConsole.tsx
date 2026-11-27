@@ -1,7 +1,7 @@
 "use client";
 import SkyVoiceCallControl from "@/app/components/skyVoiceCallControl";
 import SkyVoiceCallParty from "@/app/components/skyVoiceCallParty";
-import SkyVoiceOrbSkeleton from "@/app/components/skyVoiceOrbSkeleton";
+import SkyVoiceOrb from "@/app/components/skyVoiceOrb";
 import SkyVoiceTranscript from "@/app/components/skyVoiceTranscript";
 import { FormatCallTime } from "@/app/utils/helpers/helper";
 import {
@@ -9,16 +9,9 @@ import {
   SkyVoiceCallPhase,
   SkyVoiceTranscriptLine,
 } from "@/app/utils/interface/common.interface";
-import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { LuUserRound } from "react-icons/lu";
 import { twMerge } from "tailwind-merge";
-
-// The Spline runtime only loads in the browser; the skeleton has the same footprint, so nothing shifts when it swaps in
-const SkyVoiceOrb = dynamic(() => import("@/app/components/skyVoiceOrb"), {
-  ssr: false,
-  loading: () => <SkyVoiceOrbSkeleton />,
-});
 
 const TYPING_SPEED_MS = 26;
 const LINE_PAUSE_MS = 800;

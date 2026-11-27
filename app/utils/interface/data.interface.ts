@@ -265,6 +265,8 @@ export interface SkyAiSkyAgentCard {
     alt: string;
   };
   pageLink?: { label: string; href: string };
+  // Secondary button next to `pageLink`, e.g. the "Try Sky" call link
+  callCta?: CTA;
 }
 
 export interface SkyAiLensIssue {

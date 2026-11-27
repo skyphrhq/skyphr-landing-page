@@ -1,4 +1,4 @@
-import LLM_INTEGRATION_SERVICE_4X_IMG from "@/app/assets/webp/4x/llm-integration-service-4x.webp";
+import LLM_INTEGRATION_SERVICE_VIDEO_POSTER from "@/app/assets/webp/video-poster/llm-integration-service-hero-video-poster.webp";
 import { LLM_INTEGRATION_SERVICE_PAGE_FAQ_DATA } from "@/app/content/pageContent/faq.data";
 import { LLM_INTEGRATION_SERVICE_VALUES_CARD_DATA } from "@/app/content/pageContent/our-values.data";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
@@ -40,13 +40,16 @@ export const LLM_INTEGRATION_SERVICE_PAGE_DATA: CommonPageDataInterface = {
           },
         ],
       ],
-      heroImage: {
-        imagePath: LLM_INTEGRATION_SERVICE_4X_IMG,
-        height: 2000,
-        width: 2000,
+
+      heroVideo: {
         alt: "LLM integration services hero illustration",
+        src: "/videos/llm-integration-service-hero-video.mp4",
+        height: 840,
+        width: 640,
         className: "object-contain",
-        loading: "eager",
+        poster: LLM_INTEGRATION_SERVICE_VIDEO_POSTER,
+        preload: "auto",
+        type: "video/mp4",
       },
     },
     ctas: [
@@ -329,7 +332,6 @@ export const LLM_INTEGRATION_SERVICE_PAGE_DATA: CommonPageDataInterface = {
     ],
   },
   deliveryApproach: {
-   
     header: {
       title: [
         [
