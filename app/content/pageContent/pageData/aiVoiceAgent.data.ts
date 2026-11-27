@@ -1,5 +1,5 @@
 import { AI_VOICE_AGENT_FAQ_DATA } from "@/app/content/pageContent/faq.data";
-import { SITE_BASE_URL, SKY_AI_CONSULTATION_URL } from "@/app/utils/constants/common.constant";
+import { SITE_BASE_URL, SKY_AI_CONSULTATION_URL, SKY_VOICE_PHONE_NUMBER } from "@/app/utils/constants/common.constant";
 import { AiVoiceAgentPageDataInterface } from "@/app/utils/interface/data.interface";
 import { createElement } from "react";
 import {
@@ -78,6 +78,11 @@ export const AI_VOICE_AGENT_PAGE_DATA: AiVoiceAgentPageDataInterface = {
         variant: "CTA_PRIMARY",
         target: "_blank",
         rel: "noopener noreferrer",
+      },
+      {
+        label: `Try Sky: ${SKY_VOICE_PHONE_NUMBER.display}`,
+        href: `tel:${SKY_VOICE_PHONE_NUMBER.e164}`,
+        variant: "CTA_SECONDARY",
       },
     ],
     console: {

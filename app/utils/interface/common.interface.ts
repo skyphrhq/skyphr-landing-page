@@ -306,14 +306,6 @@ export interface SkyVoiceOrbInterface {
   reducedMotion: boolean;
 }
 
-export interface SkyVoiceOrbPlaceholderInterface {
-  className?: string;
-}
-
-export interface SkyVoiceOrbSkeletonInterface {
-  className?: string;
-}
-
 export interface SkyVoiceTranscriptLine extends SkyVoiceScriptLine {
   timestamp: number;
   // True while the typewriter is still writing this line (`text` is then the partial text)

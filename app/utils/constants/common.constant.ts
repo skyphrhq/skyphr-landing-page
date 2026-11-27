@@ -1,3 +1,5 @@
+import SKY_ORB_VIDEO_POSTER from "@/app/assets/webp/video-poster/sky-orb-video-poster.webp";
+import { VideoOptionsInterface } from "@/app/utils/interface/page.interface";
 import { twMerge } from "tailwind-merge";
 
 export const GET_BUTTON_STYLE = (btnStyle: "CTA_PRIMARY" | "CTA_SECONDARY", theme?: "LIGHT" | "DARK") => {
@@ -32,15 +34,21 @@ export const COMMON_SECTION_PADDING = "py-15! md:py-20! xl:py-37.5!";
 export const SKYAI_SERVICE_CARD_BASE =
   "reveal-animation h-full flex flex-col rounded-[20px] p-6 md:p-8 transition-[translate,background-color,border-color] duration-200 hover:-translate-y-0.5";
 
-// TODO: replace with Sky's real phone number. `display` is shown to people, `e164` is used for tel: links and copying.
-// Used by /ai-voice-agent ("Call Sky yourself") and the Sky card on /sky-ai ("Try a live call").
+// Sky's live demo line. `display` is shown to people, `e164` is used for tel: links.
+// Used by the /ai-voice-agent hero and the Sky card on /sky-ai ("Try Sky" call button).
 export const SKY_VOICE_PHONE_NUMBER = {
-  display: "+1 (000) 000-0000",
-  e164: "+10000000000",
+  display: "+91 22 6423 2076",
+  e164: "+912264232076",
 };
 
-// Spline scene for the orb in the /ai-voice-agent call demo (served from public/spline/)
-export const SKY_VOICE_ORB_SCENE_URL = "/spline/sky-voice-orb.splinecode";
+// Looping, muted orb video in the /ai-voice-agent call demo (720x720, played by HeroVideo)
+export const SKY_VOICE_ORB_VIDEO: VideoOptionsInterface = {
+  src: "/videos/sky-orb-video.mp4",
+  poster: SKY_ORB_VIDEO_POSTER,
+  width: 720,
+  height: 720,
+  alt: "Sky, the Skyphr AI voice agent",
+};
 
 export const SKY_AI_CONSULTATION_URL = "https://cal.com/skyphr/sky-demo";
 

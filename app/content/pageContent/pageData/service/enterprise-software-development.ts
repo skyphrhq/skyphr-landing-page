@@ -1,4 +1,4 @@
-import ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_HERO_IMAGE from "@/app/assets/webp/service-hero/enterprise-app-development-service.webp";
+import ENTERPRISE_SOFTWARE_DEVELOPMENT_SERVICE_HERO_IMAGE from "@/app/assets/webp/service-hero/enterprise-software-development-service.webp";
 import { COMMON_CONTACT_US_SECTION_DATA } from "@/app/content/pageContent/pageData/home.data";
 import { SITE_BASE_URL } from "@/app/utils/constants/common.constant";
 import { CommonPageDataInterface } from "@/app/utils/interface/page.interface";
